@@ -126,11 +126,12 @@ class AdminDashboard extends React.Component {
    })
    .catch(e=>{
     console.log("Exception:"); 
-    console.log(e.response.data);
-    if(e.response.data.status===0){
-      this.state.notfound=0
+    // console.log(e.response.data);
+    this.state.notfound=0
+    // if(e.response.data.status===0){
+    //   this.state.notfound=0
 
-    }
+    // }
   });
      
   axios.post('http://159.65.148.197:3001/api/screening/getCaseDetails')
@@ -166,11 +167,12 @@ class AdminDashboard extends React.Component {
  })
  .catch(e=>{
   console.log("Exception:"); 
-  console.log(e.response.data);
-  if(e.response.data.status===0){
-    this.state.notfound=0
+  this.state.notfound=0
+  // console.log(e.response.data);
+  // if(e.response.data.status===0){
+  //   
 
-  }
+  // }
 });
 
 axios.post('http://159.65.148.197:3001/api/screening/getCaseDetails', {status:'1'})
