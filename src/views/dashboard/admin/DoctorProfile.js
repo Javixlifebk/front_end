@@ -58,7 +58,7 @@ class Profile extends React.Component {
 
     let postData="email=" + localStorage.getItem("doEmail");   
     console.log(postData);
-    let _targetPostURL="http://localhost:3001/api/auth/forgotpw?=";    
+    let _targetPostURL="http://159.65.148.197:3001/api/auth/forgotpw?=";    
     axios(
       {
         method: 'post',
@@ -114,7 +114,7 @@ class Profile extends React.Component {
 		//this.setState({data:null});
         
       
-		  axios.post('http://localhost:3001/api/doctor/doctorById?=', { userId: localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('http://159.65.148.197:3001/api/doctor/doctorById?=', { userId: localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
           var recs=response.data.data.data;		
           this.setState({doctorId:recs[0].doctorId});

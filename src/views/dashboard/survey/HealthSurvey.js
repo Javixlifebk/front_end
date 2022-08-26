@@ -10,7 +10,7 @@ function HealthSurvey() {
   const [rows, setUsers] = useState([])
  
   useEffect(() => {
-		  axios.post('http://localhost:3001/api/healthsurvey/HealthSurveyList')
+		  axios.post('http://159.65.148.197:3001/api/healthsurvey/HealthSurveyList')
 		 .then(response => {
 					console.log("Returned data:");
 					if(response.data.status===1)

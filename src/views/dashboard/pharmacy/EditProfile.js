@@ -102,7 +102,7 @@ class EditProfile extends React.Component {
    
           
       console.log(postData);
-      let _targetPostURL="http://localhost:3001/api/pharmacy/addprofile?=";
+      let _targetPostURL="http://159.65.148.197:3001/api/pharmacy/addprofile?=";
       axios(
         {
           method: 'post',

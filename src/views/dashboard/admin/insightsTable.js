@@ -82,7 +82,7 @@ function InsightsTable() {
    
     const [rows, setUsers] = useState('');
     useEffect(() => {
-        axios.post("http://localhost:3001/api/ngo/screenerList?=", {
+        axios.post("http://159.65.148.197:3001/api/ngo/screenerList?=", {
             token: "dfjkhsdfaksjfh3756237",
             userId: "demoUser",
           })

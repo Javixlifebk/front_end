@@ -148,7 +148,7 @@ loadRecs(recs)
   if(window.confirm("Are you sure want to Deactivate User !")){
   let postData="screenerId="+screenerId+"&ismapped=1&token=dfjkhsdfaksjfh3756237"; 
   
-  let _targetPostURL="http://localhost:3001/api/ngo/updatescreenermap?=";
+  let _targetPostURL="http://159.65.148.197:3001/api/ngo/updatescreenermap?=";
   axios(
     {
       method: 'post',
@@ -182,8 +182,8 @@ componentDidMount() {console.log("DID MOUNT ************");
 		this.mounted = true;
 		//this.setState({data:null});
         
-		//axios.post('http://localhost:3001/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
-    axios.post('http://localhost:3001/api/ngo/sevikaunmappedlist', {token:'dfjkhsdfaksjfh3756237',issubscreener:1,ismapped:false})
+		//axios.post('http://159.65.148.197:3001/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
+    axios.post('http://159.65.148.197:3001/api/ngo/sevikaunmappedlist', {token:'dfjkhsdfaksjfh3756237',issubscreener:1,ismapped:false})
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
 					if(response.data.status===1)

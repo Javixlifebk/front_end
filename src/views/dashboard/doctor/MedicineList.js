@@ -99,7 +99,7 @@ loadRecs(recs)
  handleClick(_caseId)  {    
 
 
-  axios.post('http://localhost:3001/api/report/createPrescriptionReport?=', { caseId:_caseId})
+  axios.post('http://159.65.148.197:3001/api/report/createPrescriptionReport?=', { caseId:_caseId})
   .then(response => {
        console.log("Returned data:", response.data.status);
        console.log("User MasterId=" + localStorage.getItem("usermasid"))
@@ -140,7 +140,7 @@ getSplit(_var){
 componentDidMount() {console.log("DID MOUNT ************");
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://localhost:3001/api/doctor/prescriptionList?=', { citizenId:localStorage.getItem("citizenId")})
+		  axios.post('http://159.65.148.197:3001/api/doctor/prescriptionList?=', { citizenId:localStorage.getItem("citizenId")})
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
           console.log("User MasterId=" + localStorage.getItem("usermasid"))

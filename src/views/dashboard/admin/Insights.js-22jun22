@@ -226,7 +226,7 @@ getDumpPage(){
 
  getImage(imagUrl){
   if(imagUrl===null || imagUrl===undefined || imagUrl==='' ){
-    imagUrl='http://localhost:3001/profile/no-photo-male.jpg';
+    imagUrl='http://159.65.148.197:3001/profile/no-photo-male.jpg';
   }
  return imagUrl;
 }
@@ -235,7 +235,7 @@ getDumpPage(){
     this.mounted = true;
 
       
-  axios.post('http://localhost:3001/api/screening/getCount', { severity_bp:'0'})
+  axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_bp:'0'})
    .then(response => {
 
         console.dir(response.data.data.data[0].count)
@@ -258,7 +258,7 @@ getDumpPage(){
     }
   });
 
-  axios.post('http://localhost:3001/api/labtest/getBloodGlucoseTestCount')
+  axios.post('http://159.65.148.197:3001/api/labtest/getBloodGlucoseTestCount')
   .then(response => {
 	   console.log("Checking......................................");
        console.dir(response.data.data.data)
@@ -286,7 +286,7 @@ getDumpPage(){
    }
  });
 
-	axios.post('http://localhost:3001/api/labtest/getHemoglobinCount')
+	axios.post('http://159.65.148.197:3001/api/labtest/getHemoglobinCount')
   .then(response => {
        
        if(response.data.status===1){          
@@ -315,7 +315,7 @@ getDumpPage(){
  
  //Lipid Segment
  
- axios.post('http://localhost:3001/api/labtest/getCholestCount')
+ axios.post('http://159.65.148.197:3001/api/labtest/getCholestCount')
   .then(response => {
        
        if(response.data.status===1){          
@@ -341,7 +341,7 @@ getDumpPage(){
    }
  });
  
- axios.post('http://localhost:3001/api/labtest/gettriCount')
+ axios.post('http://159.65.148.197:3001/api/labtest/gettriCount')
   .then(response => {
        
        if(response.data.status===1){          
@@ -367,7 +367,7 @@ getDumpPage(){
    }
  });
  
- axios.post('http://localhost:3001/api/labtest/gethdlCount')
+ axios.post('http://159.65.148.197:3001/api/labtest/gethdlCount')
   .then(response => {
        
        if(response.data.status===1){          
@@ -393,7 +393,7 @@ getDumpPage(){
    }
  });
  
- axios.post('http://localhost:3001/api/labtest/getldlCount')
+ axios.post('http://159.65.148.197:3001/api/labtest/getldlCount')
   .then(response => {
        
        if(response.data.status===1){          
@@ -421,7 +421,7 @@ getDumpPage(){
  
  ///End Lipid
  
- axios.post('http://localhost:3001/api/labtest/getREyeCount')
+ axios.post('http://159.65.148.197:3001/api/labtest/getREyeCount')
   .then(response => {
        
        if(response.data.status===1){          
@@ -447,7 +447,7 @@ getDumpPage(){
    }
  });
  
- axios.post('http://localhost:3001/api/labtest/getLEyeCount')
+ axios.post('http://159.65.148.197:3001/api/labtest/getLEyeCount')
   .then(response => {
        
        if(response.data.status===1){          
@@ -473,7 +473,7 @@ getDumpPage(){
    }
  });
 
-  axios.post('http://localhost:3001/api/ngo/screenerList?=', {token:'dfjkhsdfaksjfh3756237' ,userId:'demoUser'})
+  axios.post('http://159.65.148.197:3001/api/ngo/screenerList?=', {token:'dfjkhsdfaksjfh3756237' ,userId:'demoUser'})
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
           console.log("User MasterId=" + localStorage.getItem("usermasid"))
@@ -487,7 +487,7 @@ getDumpPage(){
 
 
 
-  axios.post('http://localhost:3001/api/screening/getCount', { severity_bp:'1'})
+  axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_bp:'1'})
    .then(response => {
 
         console.dir(response.data.data.data[0].count)
@@ -509,7 +509,7 @@ getDumpPage(){
 
     }
   });
-  axios.post('http://localhost:3001/api/screening/getCount', { severity_bp:'2'})
+  axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_bp:'2'})
   .then(response => {
 
        console.dir(response.data.data.data[0].count)
@@ -535,7 +535,7 @@ getDumpPage(){
  
  //SPO2
  
- axios.post('http://localhost:3001/api/screening/getCount', { severity_spo2:'0'})
+ axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_spo2:'0'})
    .then(response => {
 
         console.dir(response.data.data.data[0].count)
@@ -558,7 +558,7 @@ getDumpPage(){
     }
   });
 
-  axios.post('http://localhost:3001/api/screening/getCount', { severity_spo2:'1'})
+  axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_spo2:'1'})
    .then(response => {
 
         console.dir(response.data.data.data[0].count)
@@ -580,7 +580,7 @@ getDumpPage(){
 
     }
   });
-  axios.post('http://localhost:3001/api/screening/getCount', { severity_spo2:'2'})
+  axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_spo2:'2'})
   .then(response => {
 
        console.dir(response.data.data.data[0].count)
@@ -606,7 +606,7 @@ getDumpPage(){
  
  //Temperature
  
- axios.post('http://localhost:3001/api/screening/getCount', { severity_temperature:'0'})
+ axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_temperature:'0'})
    .then(response => {
 
         console.dir(response.data.data.data[0].count)
@@ -629,7 +629,7 @@ getDumpPage(){
     }
   });
 
-  axios.post('http://localhost:3001/api/screening/getCount', { severity_temperature:'1'})
+  axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_temperature:'1'})
    .then(response => {
 
         console.dir(response.data.data.data[0].count)
@@ -651,7 +651,7 @@ getDumpPage(){
 
     }
   });
-  axios.post('http://localhost:3001/api/screening/getCount', { severity_temperature:'2'})
+  axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_temperature:'2'})
   .then(response => {
 
        console.dir(response.data.data.data[0].count)
@@ -677,7 +677,7 @@ getDumpPage(){
  
  // Heart Rate
  
- axios.post('http://localhost:3001/api/screening/getCount', { severity_pulse:'0'})
+ axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_pulse:'0'})
    .then(response => {
 
         console.dir(response.data.data.data[0].count)
@@ -700,7 +700,7 @@ getDumpPage(){
     }
   });
 
-  axios.post('http://localhost:3001/api/screening/getCount', { severity_pulse:'1'})
+  axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_pulse:'1'})
    .then(response => {
 
         console.dir(response.data.data.data[0].count)
@@ -722,7 +722,7 @@ getDumpPage(){
 
     }
   });
-  axios.post('http://localhost:3001/api/screening/getCount', { severity_pulse:'2'})
+  axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_pulse:'2'})
   .then(response => {
 
        console.dir(response.data.data.data[0].count)
@@ -745,7 +745,7 @@ getDumpPage(){
    }
  });
  
- axios.post('http://localhost:3001/api/screening/getCount', { severity_bmi:'0'})
+ axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_bmi:'0'})
    .then(response => {
 
         console.dir(response.data.data.data[0].count)
@@ -769,7 +769,7 @@ getDumpPage(){
   });
 
 /*
-axios.get('http://localhost:3001/documents/dailyScreeningScreener.csv')
+axios.get('http://159.65.148.197:3001/documents/dailyScreeningScreener.csv')
    .then(response => {
 
         this.setState({tabledailyScreeningScreener:response.data});
@@ -779,7 +779,7 @@ axios.get('http://localhost:3001/documents/dailyScreeningScreener.csv')
    
   });
 
-axios.get('http://localhost:3001/documents/weeklyScreeningScreener.csv')
+axios.get('http://159.65.148.197:3001/documents/weeklyScreeningScreener.csv')
    .then(response => {
 
         this.setState({tableweeklyScreeningScreener:response.data});
@@ -789,7 +789,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningScreener.csv')
    
   });
 
-axios.get('http://localhost:3001/documents/dailyScreeningSevika.csv')
+axios.get('http://159.65.148.197:3001/documents/dailyScreeningSevika.csv')
    .then(response => {
 
         this.setState({tabledailyScreeningSevika:response.data});
@@ -799,7 +799,7 @@ axios.get('http://localhost:3001/documents/dailyScreeningSevika.csv')
    
   });
 
-axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
+axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
    .then(response => {
 
         this.setState({tableweeklyScreeningSevika:response.data});
@@ -809,7 +809,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
    
   });
 */
-  axios.post('http://localhost:3001/api/screening/getCount', { severity_bmi:'1'})
+  axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_bmi:'1'})
    .then(response => {
 
         console.dir(response.data.data.data[0].count)
@@ -833,7 +833,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
   });
 
 
-  axios.post('http://localhost:3001/api/screening/getCount', { severity_bmi:'2'})
+  axios.post('http://159.65.148.197:3001/api/screening/getCount', { severity_bmi:'2'})
   .then(response => {
 
        console.dir(response.data.data.data[0].count)
@@ -1082,9 +1082,9 @@ handleFilter = e => {
           <CardBody>
           <Pie data={data_bp} options={options} height={300} />
 		  </CardBody>
-		  <CardBody><a href="http://localhost:3001/documents/bpRed.csv" target="_blank"> BP Red Cases </a></CardBody>
-			<CardBody><a href="http://localhost:3001/documents/bpAmber.csv" target="_blank"> BP Amber Cases </a></CardBody>
-			<CardBody><a href="http://localhost:3001/documents/bpGreen.csv" target="_blank"> BP Green Cases </a></CardBody>
+		  <CardBody><a href="http://159.65.148.197:3001/documents/bpRed.csv" target="_blank"> BP Red Cases </a></CardBody>
+			<CardBody><a href="http://159.65.148.197:3001/documents/bpAmber.csv" target="_blank"> BP Amber Cases </a></CardBody>
+			<CardBody><a href="http://159.65.148.197:3001/documents/bpGreen.csv" target="_blank"> BP Green Cases </a></CardBody>
           
         </Card>
       
@@ -1097,9 +1097,9 @@ handleFilter = e => {
           <CardBody>
           <Pie data={data_spo2} options={options} height={300} />
           </CardBody>
-		  <CardBody><a href="http://localhost:3001/documents/spo2Red.csv" target="_blank"> SPO2 Red Cases </a></CardBody>
-<CardBody><a href="http://localhost:3001/documents/spo2Amber.csv" target="_blank"> SPO2 Amber Cases </a></CardBody>
-<CardBody><a href="http://localhost:3001/documents/spo2Green.csv" target="_blank"> SPO2 Green Cases </a></CardBody>
+		  <CardBody><a href="http://159.65.148.197:3001/documents/spo2Red.csv" target="_blank"> SPO2 Red Cases </a></CardBody>
+<CardBody><a href="http://159.65.148.197:3001/documents/spo2Amber.csv" target="_blank"> SPO2 Amber Cases </a></CardBody>
+<CardBody><a href="http://159.65.148.197:3001/documents/spo2Green.csv" target="_blank"> SPO2 Green Cases </a></CardBody>
         </Card>
       
       </Col>
@@ -1115,9 +1115,9 @@ handleFilter = e => {
           <CardBody>
           <Pie data={data_temp} options={options} height={300} />
           </CardBody>
-		  <CardBody><a href="http://localhost:3001/documents/temperatureRed.csv" target="_blank"> TEMP Red Cases </a></CardBody>
-<CardBody><a href="http://localhost:3001/documents/temperatureAmber.csv" target="_blank"> TEMP Amber Cases </a></CardBody>
-<CardBody><a href="http://localhost:3001/documents/temperatureGreen.csv" target="_blank"> TEMP Green Cases </a></CardBody>
+		  <CardBody><a href="http://159.65.148.197:3001/documents/temperatureRed.csv" target="_blank"> TEMP Red Cases </a></CardBody>
+<CardBody><a href="http://159.65.148.197:3001/documents/temperatureAmber.csv" target="_blank"> TEMP Amber Cases </a></CardBody>
+<CardBody><a href="http://159.65.148.197:3001/documents/temperatureGreen.csv" target="_blank"> TEMP Green Cases </a></CardBody>
         </Card>
       
       </Col>
@@ -1129,9 +1129,9 @@ handleFilter = e => {
           <CardBody>
           <Pie data={data_hr} options={options} height={300} />
           </CardBody>
-		  <CardBody><a href="http://localhost:3001/documents/pulseRed.csv" target="_blank"> HEART RATE Red Cases </a></CardBody>
-<CardBody><a href="http://localhost:3001/documents/pulseAmber.csv" target="_blank"> HEART RATE Amber Cases </a></CardBody>
-<CardBody><a href="http://localhost:3001/documents/pulseGreen.csv" target="_blank"> HEART RATE Red Cases </a></CardBody>
+		  <CardBody><a href="http://159.65.148.197:3001/documents/pulseRed.csv" target="_blank"> HEART RATE Red Cases </a></CardBody>
+<CardBody><a href="http://159.65.148.197:3001/documents/pulseAmber.csv" target="_blank"> HEART RATE Amber Cases </a></CardBody>
+<CardBody><a href="http://159.65.148.197:3001/documents/pulseGreen.csv" target="_blank"> HEART RATE Red Cases </a></CardBody>
         </Card>
       
       </Col>
@@ -1147,9 +1147,9 @@ handleFilter = e => {
           <CardBody>
           <Pie data={data_bmi} options={options} height={300} />
           </CardBody>
-		  <CardBody><a href="http://localhost:3001/documents/bmiRed.csv" target="_blank"> BMI Red Cases </a></CardBody>
-<CardBody><a href="http://localhost:3001/documents/bmiAmber.csv" target="_blank"> BMI Amber Cases </a></CardBody>
-<CardBody><a href="http://localhost:3001/documents/bmiGreen.csv" target="_blank"> BMI Green Cases </a></CardBody>
+		  <CardBody><a href="http://159.65.148.197:3001/documents/bmiRed.csv" target="_blank"> BMI Red Cases </a></CardBody>
+<CardBody><a href="http://159.65.148.197:3001/documents/bmiAmber.csv" target="_blank"> BMI Amber Cases </a></CardBody>
+<CardBody><a href="http://159.65.148.197:3001/documents/bmiGreen.csv" target="_blank"> BMI Green Cases </a></CardBody>
         </Card>
       
       </Col>
@@ -1293,13 +1293,13 @@ handleFilter = e => {
             <CardTitle>Survey Data Dump</CardTitle>
           </CardHeader>
           <CardBody>
-          <a href="http://localhost:3001/documents/dump.csv" target="_blank">General Survey</a>
+          <a href="http://159.65.148.197:3001/documents/dump.csv" target="_blank">General Survey</a>
           </CardBody>
           <CardBody>
-          <a href="http://localhost:3001/documents/dumpHealth.csv" target="_blank">Health Survey</a>
+          <a href="http://159.65.148.197:3001/documents/dumpHealth.csv" target="_blank">Health Survey</a>
           </CardBody>
           <CardBody>
-          <a href="http://localhost:3001/documents/dumpSocio.csv" target="_blank">SocioEconomic Survey</a>
+          <a href="http://159.65.148.197:3001/documents/dumpSocio.csv" target="_blank">SocioEconomic Survey</a>
           </CardBody>
         </Card>
         </Col>

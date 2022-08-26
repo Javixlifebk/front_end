@@ -58,7 +58,7 @@ class CitizenProfile extends React.Component {
 		//this.setState({data:null});
         
     console.log("Citizen ID=" + localStorage.getItem("citizenId"));
-		axios.post('http://localhost:3001/api/citizen/citizenById?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
+		axios.post('http://159.65.148.197:3001/api/citizen/citizenById?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
       if(response.data.status===1){
         var recs=response.data.data.data;

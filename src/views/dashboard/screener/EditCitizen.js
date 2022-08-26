@@ -104,7 +104,7 @@ this.mounted = true;
 //this.setState({data:null});
     
 console.log("Citizen ID=" + localStorage.getItem("citizenId"));
-axios.post('http://localhost:3001/api/citizen/citizenById?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
+axios.post('http://159.65.148.197:3001/api/citizen/citizenById?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
  .then(response => {
   if(response.data.status===1){
     var recs=response.data.data.data;
@@ -162,7 +162,7 @@ axios.post('http://localhost:3001/api/citizen/citizenById?=', { citizenId:localS
       var returnUrl="";
       const formData = new FormData(); 
       formData.append('profile', this.state.fileuploads)
-      axios.post("http://localhost:3001/upload/profile", formData, { 
+      axios.post("http://159.65.148.197:3001/upload/profile", formData, { 
         // receive two    parameter endpoint url ,form data
     })
     .then(res => {
@@ -192,7 +192,7 @@ axios.post('http://localhost:3001/api/citizen/citizenById?=', { citizenId:localS
      
             
         console.log(postData);
-        let _targetPostURL="http://localhost:3001/api/citizen/updateCitizen";
+        let _targetPostURL="http://159.65.148.197:3001/api/citizen/updateCitizen";
         axios(
           {
             method: 'post',

@@ -10,7 +10,7 @@ function SocieconomicSurvey() {
   const [rows, setUsers] = useState([])
  
   useEffect(() => {
-		  axios.post('http://localhost:3001/api/socioeconomicsurvey/SocioEconomicSurveyList')
+		  axios.post('http://159.65.148.197:3001/api/socioeconomicsurvey/SocioEconomicSurveyList')
 		 .then(response => {
 					console.log("Returned data:");
 					if(response.data.status===1)

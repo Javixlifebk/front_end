@@ -181,7 +181,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 		//this.setState({data:null});
     if(localStorage.getItem("_status")==="1"){
     
-		  axios.post('http://localhost:3001/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('http://159.65.148.197:3001/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
           console.log("User MasterId=" + localStorage.getItem("usermasid"))
@@ -196,7 +196,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 
      
     }else{
-      axios.post('http://localhost:3001/api/screening/getCaseDetails?=', { status:localStorage.getItem("_status"),token:'dfjkhsdfaksjfh3756237' })
+      axios.post('http://159.65.148.197:3001/api/screening/getCaseDetails?=', { status:localStorage.getItem("_status"),token:'dfjkhsdfaksjfh3756237' })
       .then(response => {
            console.log("Returned data:", response.data.status);
            console.log("User MasterId=" + localStorage.getItem("usermasid"))

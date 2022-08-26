@@ -184,7 +184,7 @@ loadRecs(recs)
   
 getImage(imagUrl){
   if(imagUrl===null || imagUrl===undefined || imagUrl==='' ){
-    imagUrl='http://localhost:3001/profile/no-photo-male.jpg';
+    imagUrl='http://159.65.148.197:3001/profile/no-photo-male.jpg';
   }
  return imagUrl;
 }
@@ -198,7 +198,7 @@ componentDidMount() {
 
 this.mounted = true;
 
-axios.get('http://localhost:3001/documents/dailyScreeningScreener.csv')
+axios.get('http://159.65.148.197:3001/documents/dailyScreeningScreener.csv')
    .then(response => {
 
         this.setState({tabledailyScreeningScreener:response.data});
@@ -208,7 +208,7 @@ axios.get('http://localhost:3001/documents/dailyScreeningScreener.csv')
    
   });
 
-axios.get('http://localhost:3001/documents/weeklyScreeningScreener.csv')
+axios.get('http://159.65.148.197:3001/documents/weeklyScreeningScreener.csv')
    .then(response => {
 
         this.setState({tableweeklyScreeningScreener:response.data});
@@ -218,7 +218,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningScreener.csv')
    
   });
 
-axios.get('http://localhost:3001/documents/dailyScreeningSevika.csv')
+axios.get('http://159.65.148.197:3001/documents/dailyScreeningSevika.csv')
    .then(response => {
 
         this.setState({tabledailyScreeningSevika:response.data});
@@ -228,7 +228,7 @@ axios.get('http://localhost:3001/documents/dailyScreeningSevika.csv')
    
   });
 
-axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
+axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
    .then(response => {
 
         this.setState({tableweeklyScreeningSevika:response.data});
@@ -240,7 +240,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
 
 //
 
-axios.get('http://localhost:3001/documents/dailyCitizens.csv')
+axios.get('http://159.65.148.197:3001/documents/dailyCitizens.csv')
    .then(response => {
 
         this.setState({tabledailyCitizens:response.data});
@@ -249,7 +249,7 @@ axios.get('http://localhost:3001/documents/dailyCitizens.csv')
    .catch(e=>{
    
   });
-axios.get('http://localhost:3001/documents/dailyCitizenDetails.csv')
+axios.get('http://159.65.148.197:3001/documents/dailyCitizenDetails.csv')
    .then(response => {
 
         this.setState({tabledailyCitizenDetails:response.data});
@@ -258,7 +258,7 @@ axios.get('http://localhost:3001/documents/dailyCitizenDetails.csv')
    .catch(e=>{
    
   });
-axios.get('http://localhost:3001/documents/weeklyCitizens.csv')
+axios.get('http://159.65.148.197:3001/documents/weeklyCitizens.csv')
    .then(response => {
 
         this.setState({tableweeklyCitizens:response.data});
@@ -267,7 +267,7 @@ axios.get('http://localhost:3001/documents/weeklyCitizens.csv')
    .catch(e=>{
    
   });
-axios.get('http://localhost:3001/documents/weeklyCitizenDetails.csv')
+axios.get('http://159.65.148.197:3001/documents/weeklyCitizenDetails.csv')
    .then(response => {
 
         this.setState({tableweeklyCitizenDetails:response.data});
@@ -276,7 +276,7 @@ axios.get('http://localhost:3001/documents/weeklyCitizenDetails.csv')
    .catch(e=>{
    
   });
-axios.get('http://localhost:3001/documents/lipidCriticalCitizens.csv')
+axios.get('http://159.65.148.197:3001/documents/lipidCriticalCitizens.csv')
    .then(response => {
 
         this.setState({tablelipidCriticalCitizens:response.data});
@@ -285,7 +285,7 @@ axios.get('http://localhost:3001/documents/lipidCriticalCitizens.csv')
    .catch(e=>{
    
   });
-axios.get('http://localhost:3001/documents/unscreened.csv')
+axios.get('http://159.65.148.197:3001/documents/unscreened.csv')
    .then(response => {
 
         this.setState({tableunscreened:response.data});
@@ -295,7 +295,7 @@ axios.get('http://localhost:3001/documents/unscreened.csv')
    
   });
 
-axios.get('http://localhost:3001/documents/dump.csv')
+axios.get('http://159.65.148.197:3001/documents/dump.csv')
    .then(response => {
 
         this.setState({tablegeneral:response.data});
@@ -305,7 +305,7 @@ axios.get('http://localhost:3001/documents/dump.csv')
    
   });
   
-axios.get('http://localhost:3001/documents/dumpHealth.csv')
+axios.get('http://159.65.148.197:3001/documents/dumpHealth.csv')
    .then(response => {
 
         this.setState({tablehealth:response.data});
@@ -315,7 +315,7 @@ axios.get('http://localhost:3001/documents/dumpHealth.csv')
    
   });
   
-axios.get('http://localhost:3001/documents/dumpSocio.csv')
+axios.get('http://159.65.148.197:3001/documents/dumpSocio.csv')
    .then(response => {
 
         this.setState({tablesocio:response.data});
@@ -370,7 +370,7 @@ display: "block",
 "table-layout": "auto"
 }}>
 {/* <DailyWeeklyReports/> */}
-<center><h2>Daily Screening Screener <a href="http://localhost:3001/documents/dailyScreeningScreener.csv" target="_blank">Download</a></h2>
+<center><h2>Daily Screening Screener <a href="http://159.65.148.197:3001/documents/dailyScreeningScreener.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tabledailyScreeningScreener" aria-expanded="false" aria-controls="tabledailyScreeningScreener">
     Collapse/Expand
   </button>
@@ -390,7 +390,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Weekly Screening Screener <a href="http://localhost:3001/documents/weeklyScreeningScreener.csv" target="_blank">Download</a></h2>
+<center><h2>Weekly Screening Screener <a href="http://159.65.148.197:3001/documents/weeklyScreeningScreener.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tableweeklyScreeningScreener" aria-expanded="false" aria-controls="tableweeklyScreeningScreener">
     Collapse/Expand
   </button>
@@ -410,7 +410,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Daily Screening Sevika <a href="http://localhost:3001/documents/dailyScreeningSevika.csv" target="_blank">Download</a></h2>
+<center><h2>Daily Screening Sevika <a href="http://159.65.148.197:3001/documents/dailyScreeningSevika.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tabledailyScreeningSevika" aria-expanded="false" aria-controls="tabledailyScreeningSevika">
     Collapse/Expand
   </button>
@@ -430,7 +430,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Weekly Screening Sevika <a href="http://localhost:3001/documents/weeklyScreeningSevika.csv" target="_blank">Download</a></h2>
+<center><h2>Weekly Screening Sevika <a href="http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tableweeklyScreeningSevika" aria-expanded="false" aria-controls="tableweeklyScreeningSevika">
     Collapse/Expand
   </button>
@@ -453,7 +453,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Daily Citizens <a href="http://localhost:3001/documents/dailyCitizens.csv" target="_blank">Download</a></h2>
+<center><h2>Daily Citizens <a href="http://159.65.148.197:3001/documents/dailyCitizens.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tabledailyCitizens" aria-expanded="false" aria-controls="tabledailyCitizens">
     Collapse/Expand
   </button>
@@ -476,7 +476,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Daily Citizen Details <a href="http://localhost:3001/documents/dailyCitizenDetails.csv" target="_blank">Download</a></h2>
+<center><h2>Daily Citizen Details <a href="http://159.65.148.197:3001/documents/dailyCitizenDetails.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tabledailyCitizenDetails" aria-expanded="false" aria-controls="tabledailyCitizenDetails">
     Collapse/Expand
   </button>
@@ -499,7 +499,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Weekly Citizens <a href="http://localhost:3001/documents/weeklyCitizens.csv" target="_blank">Download</a></h2>
+<center><h2>Weekly Citizens <a href="http://159.65.148.197:3001/documents/weeklyCitizens.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tableweeklyCitizens" aria-expanded="false" aria-controls="tableweeklyCitizens">
     Collapse/Expand
   </button>
@@ -522,7 +522,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Weekly Citizen Details <a href="http://localhost:3001/documents/weeklyCitizenDetails.csv" target="_blank">Download</a></h2>
+<center><h2>Weekly Citizen Details <a href="http://159.65.148.197:3001/documents/weeklyCitizenDetails.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tableweeklyCitizenDetails" aria-expanded="false" aria-controls="tableweeklyCitizenDetails">
     Collapse/Expand
   </button>
@@ -546,7 +546,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Lipid Critical Citizens <a href="http://localhost:3001/documents/lipidCriticalCitizens.csv" target="_blank">Download</a></h2>
+<center><h2>Lipid Critical Citizens <a href="http://159.65.148.197:3001/documents/lipidCriticalCitizens.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tablelipidCriticalCitizens" aria-expanded="false" aria-controls="tablelipidCriticalCitizens">
     Collapse/Expand
   </button>
@@ -569,7 +569,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Unscreened Citizen <a href="http://localhost:3001/documents/unscreened.csv" target="_blank">Download</a></h2>
+<center><h2>Unscreened Citizen <a href="http://159.65.148.197:3001/documents/unscreened.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tableunscreened" aria-expanded="false" aria-controls="tableunscreened">
     Collapse/Expand
   </button>
@@ -591,7 +591,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>General Survey <a href="http://localhost:3001/documents/dump.csv" target="_blank">Download</a></h2>
+<center><h2>General Survey <a href="http://159.65.148.197:3001/documents/dump.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tablegeneral" aria-expanded="false" aria-controls="tablegeneral">
     Collapse/Expand
   </button>
@@ -613,7 +613,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Health Survey <a href="http://localhost:3001/documents/dumpHealth.csv" target="_blank">Download</a></h2>
+<center><h2>Health Survey <a href="http://159.65.148.197:3001/documents/dumpHealth.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tablehealth" aria-expanded="false" aria-controls="tablehealth">
     Collapse/Expand
   </button>
@@ -635,7 +635,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>SocioEconomic Survey <a href="http://localhost:3001/documents/dumpSocio.csv" target="_blank">Download</a></h2>
+<center><h2>SocioEconomic Survey <a href="http://159.65.148.197:3001/documents/dumpSocio.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tablesocio" aria-expanded="false" aria-controls="tablesocio">
     Collapse/Expand
   </button>

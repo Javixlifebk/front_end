@@ -56,7 +56,7 @@ class Profile extends React.Component {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		  axios.post('http://localhost:3001/api/ngo/screenerById?=', { userId: localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('http://159.65.148.197:3001/api/ngo/screenerById?=', { userId: localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
       if(response.data.status===1){
         var recs=response.data.data.data;
@@ -107,7 +107,7 @@ class Profile extends React.Component {
 
   getImage(imagUrl){
     if(imagUrl===''){
-      imagUrl='http://localhost:3001/profile/no-photo-male.jpg';
+      imagUrl='http://159.65.148.197:3001/profile/no-photo-male.jpg';
     }
    return imagUrl;
   }

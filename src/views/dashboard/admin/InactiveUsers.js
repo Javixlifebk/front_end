@@ -161,7 +161,7 @@ handleClick(_userid) {
   if(window.confirm("Are you sure want to Activate User !")){
    
   let postData="forUserId="+_userid+"&status=1&isBlocked=0&isExpired=0&isUnActive=0&token=dfjkhsdfaksjfh3756237";
-  let _targetPostURL="http://localhost:3001/api/auth/approve?=";
+  let _targetPostURL="http://159.65.148.197:3001/api/auth/approve?=";
   axios(
     {
       method: 'post',
@@ -203,7 +203,7 @@ loadRecs(recs)
 componentDidMount() {console.log("DID MOUNT ************");
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://localhost:3001/api/auth/authlist', { email: 'jilani.it@gmail.com',status:0 })
+		  axios.post('http://159.65.148.197:3001/api/auth/authlist', { email: 'jilani.it@gmail.com',status:0 })
 		 .then(response => {
 					//console.dir("Returned data:", response);
 					if(response.data.status===1)

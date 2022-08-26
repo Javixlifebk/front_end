@@ -120,7 +120,7 @@ class AddWomanHistory extends React.Component {
    
           
       console.log(postData);
-      let _targetPostURL="http://localhost:3001/api/citizen/addWomenHistory?=";
+      let _targetPostURL="http://159.65.148.197:3001/api/citizen/addWomenHistory?=";
       axios(
         {
           method: 'post',

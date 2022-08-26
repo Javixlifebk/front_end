@@ -375,7 +375,7 @@ class AdminDashboard extends React.Component {
 
   getImage(imagUrl) {
     if (imagUrl === null || imagUrl === undefined || imagUrl === "") {
-      imagUrl = "http://localhost:3001/profile/no-photo-male.jpg";
+      imagUrl = "http://159.65.148.197:3001/profile/no-photo-male.jpg";
     }
     return imagUrl;
   }
@@ -385,7 +385,7 @@ class AdminDashboard extends React.Component {
     this.mounted = true;
 
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_bp: "0",
       })
       .then((response) => {
@@ -409,7 +409,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://localhost:3001/api/labtest/getBloodGlucoseTestCount")
+      .post("http://159.65.148.197:3001/api/labtest/getBloodGlucoseTestCount")
       .then((response) => {
         console.log("Checking......................................");
         console.dir(response.data.data.data);
@@ -442,7 +442,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://localhost:3001/api/labtest/getHemoglobinCount")
+      .post("http://159.65.148.197:3001/api/labtest/getHemoglobinCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -488,7 +488,7 @@ class AdminDashboard extends React.Component {
     //Lipid Segment
 
     axios
-      .post("http://localhost:3001/api/labtest/getCholestCount")
+      .post("http://159.65.148.197:3001/api/labtest/getCholestCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -518,7 +518,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://localhost:3001/api/labtest/gettriCount")
+      .post("http://159.65.148.197:3001/api/labtest/gettriCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -547,7 +547,7 @@ class AdminDashboard extends React.Component {
         }
       });
     axios
-      .post("http://localhost:3001/api/labtest/gethdlCount")
+      .post("http://159.65.148.197:3001/api/labtest/gethdlCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -577,7 +577,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://localhost:3001/api/labtest/getldlCount")
+      .post("http://159.65.148.197:3001/api/labtest/getldlCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -609,7 +609,7 @@ class AdminDashboard extends React.Component {
     ///End Lipid
 
     axios
-      .post("http://localhost:3001/api/labtest/getREyeCount")
+      .post("http://159.65.148.197:3001/api/labtest/getREyeCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -639,7 +639,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://localhost:3001/api/labtest/getLEyeCount")
+      .post("http://159.65.148.197:3001/api/labtest/getLEyeCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -669,7 +669,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://localhost:3001/api/ngo/screenerList?=", {
+      .post("http://159.65.148.197:3001/api/ngo/screenerList?=", {
         token: "dfjkhsdfaksjfh3756237",
         userId: "demoUser",
       })
@@ -685,7 +685,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_bp: "1",
       })
       .then((response) => {
@@ -708,7 +708,7 @@ class AdminDashboard extends React.Component {
         }
       });
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_bp: "2",
       })
       .then((response) => {
@@ -732,7 +732,7 @@ class AdminDashboard extends React.Component {
     //SPO2
 
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_spo2: "0",
       })
       .then((response) => {
@@ -756,7 +756,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_spo2: "1",
       })
       .then((response) => {
@@ -779,7 +779,7 @@ class AdminDashboard extends React.Component {
         }
       });
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_spo2: "2",
       })
       .then((response) => {
@@ -805,7 +805,7 @@ class AdminDashboard extends React.Component {
     //Temperature
 
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_temperature: "0",
       })
       .then((response) => {
@@ -829,7 +829,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_temperature: "1",
       })
       .then((response) => {
@@ -852,7 +852,7 @@ class AdminDashboard extends React.Component {
         }
       });
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_temperature: "2",
       })
       .then((response) => {
@@ -878,7 +878,7 @@ class AdminDashboard extends React.Component {
     // Heart Rate
 
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_pulse: "0",
       })
       .then((response) => {
@@ -902,7 +902,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_pulse: "1",
       })
       .then((response) => {
@@ -925,7 +925,7 @@ class AdminDashboard extends React.Component {
         }
       });
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_pulse: "2",
       })
       .then((response) => {
@@ -947,7 +947,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_bmi: "0",
       })
       .then((response) => {
@@ -971,7 +971,7 @@ class AdminDashboard extends React.Component {
       });
 
   // ================daily reports===========
-axios.get('http://localhost:3001/documents/dailyScreeningScreener.csv')
+axios.get('http://159.65.148.197:3001/documents/dailyScreeningScreener.csv')
    .then(response => {
 
         this.setState({tabledailyScreeningScreener:response.data});
@@ -981,7 +981,7 @@ axios.get('http://localhost:3001/documents/dailyScreeningScreener.csv')
    
   });
 
-axios.get('http://localhost:3001/documents/weeklyScreeningScreener.csv')
+axios.get('http://159.65.148.197:3001/documents/weeklyScreeningScreener.csv')
    .then(response => {
 
         this.setState({tableweeklyScreeningScreener:response.data});
@@ -991,7 +991,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningScreener.csv')
    
   });
 
-axios.get('http://localhost:3001/documents/dailyScreeningSevika.csv')
+axios.get('http://159.65.148.197:3001/documents/dailyScreeningSevika.csv')
    .then(response => {
 
         this.setState({tabledailyScreeningSevika:response.data});
@@ -1001,7 +1001,7 @@ axios.get('http://localhost:3001/documents/dailyScreeningSevika.csv')
    
   });
 
-axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
+axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
    .then(response => {
 
         this.setState({tableweeklyScreeningSevika:response.data});
@@ -1013,7 +1013,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
 
 
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_bmi: "1",
       })
       .then((response) => {
@@ -1037,7 +1037,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
       });
 
     axios
-      .post("http://localhost:3001/api/screening/getCount", {
+      .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_bmi: "2",
       })
       .then((response) => {
@@ -1359,7 +1359,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/bpRed.csv"
+                  href="http://159.65.148.197:3001/documents/bpRed.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1368,7 +1368,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/bpAmber.csv"
+                  href="http://159.65.148.197:3001/documents/bpAmber.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1377,7 +1377,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/bpGreen.csv"
+                  href="http://159.65.148.197:3001/documents/bpGreen.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1396,7 +1396,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/spo2Red.csv"
+                  href="http://159.65.148.197:3001/documents/spo2Red.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1405,7 +1405,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/spo2Amber.csv"
+                  href="http://159.65.148.197:3001/documents/spo2Amber.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1414,7 +1414,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/spo2Green.csv"
+                  href="http://159.65.148.197:3001/documents/spo2Green.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1436,7 +1436,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/temperatureRed.csv"
+                  href="http://159.65.148.197:3001/documents/temperatureRed.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1445,7 +1445,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/temperatureAmber.csv"
+                  href="http://159.65.148.197:3001/documents/temperatureAmber.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1454,7 +1454,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/temperatureGreen.csv"
+                  href="http://159.65.148.197:3001/documents/temperatureGreen.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1473,7 +1473,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/pulseRed.csv"
+                  href="http://159.65.148.197:3001/documents/pulseRed.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1482,7 +1482,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/pulseAmber.csv"
+                  href="http://159.65.148.197:3001/documents/pulseAmber.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1491,7 +1491,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/pulseGreen.csv"
+                  href="http://159.65.148.197:3001/documents/pulseGreen.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1513,7 +1513,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/bmiRed.csv"
+                  href="http://159.65.148.197:3001/documents/bmiRed.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1522,7 +1522,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/bmiAmber.csv"
+                  href="http://159.65.148.197:3001/documents/bmiAmber.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1531,7 +1531,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/bmiGreen.csv"
+                  href="http://159.65.148.197:3001/documents/bmiGreen.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1655,7 +1655,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardHeader>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/dump.csv"
+                  href="http://159.65.148.197:3001/documents/dump.csv"
                   target="_blank"
                 >
                   General Survey
@@ -1663,7 +1663,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/dumpHealth.csv"
+                  href="http://159.65.148.197:3001/documents/dumpHealth.csv"
                   target="_blank"
                 >
                   Health Survey
@@ -1671,7 +1671,7 @@ axios.get('http://localhost:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://localhost:3001/documents/dumpSocio.csv"
+                  href="http://159.65.148.197:3001/documents/dumpSocio.csv"
                   target="_blank"
                 >
                   SocioEconomic Survey

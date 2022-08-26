@@ -176,7 +176,7 @@ loadRecs(recs)
   
 getImage(imagUrl){
   if(imagUrl===null || imagUrl===undefined || imagUrl==='' ){
-    imagUrl='http://localhost:3001/profile/no-photo-male.jpg';
+    imagUrl='http://159.65.148.197:3001/profile/no-photo-male.jpg';
   }
  return imagUrl;
 }
@@ -191,7 +191,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 		this.mounted = true;
 		//this.setState({data:null});
 		let scrId=localStorage.getItem("_screenerId");
-		  axios.post('http://localhost:3001/api/citizen/citizenList?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId })
+		  axios.post('http://159.65.148.197:3001/api/citizen/citizenList?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId })
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
           console.log("User MasterId=" + localStorage.getItem("usermasid"))
@@ -237,7 +237,7 @@ componentDidMount() {console.log("DID MOUNT ************");
   callSearch=_v=>{
 	  
 		//this.setState({data:null});
-		  axios.post('http://localhost:3001/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237',v:_v })
+		  axios.post('http://159.65.148.197:3001/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237',v:_v })
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
           console.log("User MasterId=" + localStorage.getItem("usermasid"))

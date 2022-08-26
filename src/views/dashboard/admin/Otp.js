@@ -29,7 +29,7 @@ class Otp extends React.Component {
                     "&otp="+this.state.txtOtp+"";
 
                     console.log(postData);
-                    let _targetPostURL="http://localhost:3001/api/auth/verify-otp?=";
+                    let _targetPostURL="http://159.65.148.197:3001/api/auth/verify-otp?=";
                     axios(
                       {
                         method: 'post',
@@ -145,7 +145,7 @@ class Otp extends React.Component {
                   let postData="email="+localStorage.getItem("email")+""              
 
                   console.log(postData);
-                  let _targetPostURL="http://localhost:3001/api/auth/resend-verify-otp?=";
+                  let _targetPostURL="http://159.65.148.197:3001/api/auth/resend-verify-otp?=";
                   axios(
                     {
                       method: 'post',

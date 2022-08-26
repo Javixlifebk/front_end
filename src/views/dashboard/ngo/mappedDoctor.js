@@ -146,7 +146,7 @@ loadRecs(recs)
   if(window.confirm("Are you sure want to Deactivate User !")){
   let postData="doctorId="+doctorId+"&ismapped=0&token=dfjkhsdfaksjfh3756237"; 
   
-  let _targetPostURL="http://localhost:3001/api/doctor/updatemapped?=";
+  let _targetPostURL="http://159.65.148.197:3001/api/doctor/updatemapped?=";
   axios(
     {
       method: 'post',
@@ -180,7 +180,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://localhost:3001/api/doctor/mappedList', { token:'dfjkhsdfaksjfh3756237',ismapped:true })
+		axios.post('http://159.65.148.197:3001/api/doctor/mappedList', { token:'dfjkhsdfaksjfh3756237',ismapped:true })
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
 					if(response.data.status===1)

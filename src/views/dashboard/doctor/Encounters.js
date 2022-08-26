@@ -52,11 +52,11 @@ class PatientList extends React.Component {
      //alert(caseId)
 
      //RequestBody body = RequestBody.create(mediaType, "caseId=" + rec.caseid);
-     //String url="http://localhost:3001/api/report/createCaseReport";
+     //String url="http://159.65.148.197:3001/api/report/createCaseReport";
 
      
      var _url="http://google.co.in";
-     /*axios.post('http://localhost:3001/api/report/createCaseReport?=', { caseId:caseId,token:'dfjkhsdfaksjfh3756237' })
+     /*axios.post('http://159.65.148.197:3001/api/report/createCaseReport?=', { caseId:caseId,token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
 					console.log("Returned data:", response.data.data.data);
         
@@ -668,7 +668,7 @@ isNull(data,test_type,field_name){
 componentDidMount() {console.log("DID MOUNT ****");
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://localhost:3001/api/screening/getEncounters?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('http://159.65.148.197:3001/api/screening/getEncounters?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
           console.log("User MasterId=" + localStorage.getItem("usermasid"))
@@ -682,7 +682,7 @@ componentDidMount() {console.log("DID MOUNT ****");
 
    
 
-     axios.post('http://localhost:3001/api/report/createCaseReport?=', { caseId:localStorage.getItem("caseId"),token:'dfjkhsdfaksjfh3756237' })
+     axios.post('http://159.65.148.197:3001/api/report/createCaseReport?=', { caseId:localStorage.getItem("caseId"),token:'dfjkhsdfaksjfh3756237' })
     .then(response => {
          console.log("Returned data:", response.data.data.data);
        

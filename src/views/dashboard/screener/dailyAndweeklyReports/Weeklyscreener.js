@@ -30,7 +30,7 @@ const dateFilterParams = {
   },
   browserDatePicker: true,
 };
-// http://localhost:3001/api/generalsurvey/screeningScreener
+// http://159.65.148.197:3001/api/generalsurvey/screeningScreener
 function Weeklyscreener() {
   const gridRef = useRef();
   const [gridApi, setGridApi] = useState();
@@ -88,7 +88,7 @@ function Weeklyscreener() {
   }, [startDate, endDate]);
 
   axios
-    .post("http://localhost:3001/api/generalsurvey/screeningScreener")
+    .post("http://159.65.148.197:3001/api/generalsurvey/screeningScreener")
     .then((response) => {
       console.log("Returned data:");
       if (response.data.status === 1) {

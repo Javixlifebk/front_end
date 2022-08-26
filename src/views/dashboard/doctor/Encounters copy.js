@@ -52,11 +52,11 @@ class PatientList extends React.Component {
      //alert(caseId)
 
      //RequestBody body = RequestBody.create(mediaType, "caseId=" + rec.caseid);
-     //String url="http://139.59.59.31:3001/api/report/createCaseReport";
+     //String url="http://http://159.65.148.197/:3001/api/report/createCaseReport";
 
      
      var _url="http://google.co.in";
-     /*axios.post('http://139.59.59.31:3001/api/report/createCaseReport?=', { caseId:caseId,token:'dfjkhsdfaksjfh3756237' })
+     /*axios.post('http://http://159.65.148.197/:3001/api/report/createCaseReport?=', { caseId:caseId,token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
 					console.log("Returned data:", response.data.data.data);
         
@@ -629,7 +629,7 @@ loadRecs(recs)
 componentDidMount() {console.log("DID MOUNT ************");
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://139.59.59.31:3001/api/screening/getEncounters?=', { citizenId:'162219685397965216',token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('http://http://159.65.148.197/:3001/api/screening/getEncounters?=', { citizenId:'162219685397965216',token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
           console.log("User MasterId=" + localStorage.getItem("usermasid"))
@@ -643,7 +643,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 
 
 
-     axios.post('http://139.59.59.31:3001/api/report/createCaseReport?=', { caseId:'162220028503244889',token:'dfjkhsdfaksjfh3756237' })
+     axios.post('http://http://159.65.148.197/:3001/api/report/createCaseReport?=', { caseId:'162220028503244889',token:'dfjkhsdfaksjfh3756237' })
     .then(response => {
          console.log("Returned data:", response.data.data.data);
        

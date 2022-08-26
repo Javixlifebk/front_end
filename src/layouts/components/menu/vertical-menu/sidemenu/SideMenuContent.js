@@ -136,7 +136,7 @@ class SideMenuContent extends React.Component {
     let menus="";
     let postData="email="+ localStorage.getItem("_email");
     console.log(postData)
-    let _targetPostURL="http://localhost:3001/api/auth/mymenulist?=";
+    let _targetPostURL="http://159.65.148.197:3001/api/auth/mymenulist?=";
     
     /*axios(
       {
@@ -349,7 +349,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://localhost:3001/documents/dump.csv"
+              // navLink: "http://159.65.148.197:3001/documents/dump.csv"
               navLink:"../../views/dashboard/survey/generalSurvey"   
           
             },
@@ -360,7 +360,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://localhost:3001/documents/dumpHealth.csv"   
+              // navLink: "http://159.65.148.197:3001/documents/dumpHealth.csv"   
               navLink:"../../views/dashboard/survey/HealthSurvey"               
           
             },
@@ -370,7 +370,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://localhost:3001/documents/dumpHealth.csv" 
+              // navLink: "http://159.65.148.197:3001/documents/dumpHealth.csv" 
               navLink: "../../views/dashboard/survey/SocieconomicSurvey"              
           
             },

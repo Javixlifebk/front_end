@@ -99,7 +99,7 @@ loadRecs(recs)
  }
 
  handleClick(_userid) {    
-  axios.post('http://localhost:3001/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
+  axios.post('http://159.65.148.197:3001/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
 
   .then(response => {  
        if(response.data.status===1){
@@ -128,7 +128,7 @@ loadRecs(recs)
 componentDidMount() {console.log("DID MOUNT ************");
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://localhost:3001/api/citizen/getHistoryAllergy?=', { citizenId:localStorage.getItem("citizenId")})
+		  axios.post('http://159.65.148.197:3001/api/citizen/getHistoryAllergy?=', { citizenId:localStorage.getItem("citizenId")})
 		 .then(response => {
 				  
 					if(response.data.status===1)
@@ -142,7 +142,7 @@ componentDidMount() {console.log("DID MOUNT ************");
       console.log(e);
     });
 
-  /*axios.post('http://localhost:3001/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
+  /*axios.post('http://159.65.148.197:3001/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
   .then(response => {  
        if(response.data.status===1){
            var msg=response.data.message;

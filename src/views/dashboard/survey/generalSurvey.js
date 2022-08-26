@@ -16,7 +16,7 @@ function CustomToolbar() {
 function GeneralSurvey() {
   const [rows, setUsers] = useState([])
   useEffect(() => {
-		  axios.post('http://localhost:3001/api/generalsurvey/GeneralSurveyList')
+		  axios.post('http://159.65.148.197:3001/api/generalsurvey/GeneralSurveyList')
 		 .then(response => {
 					console.log("Returned data:");
 					if(response.data.status===1)
