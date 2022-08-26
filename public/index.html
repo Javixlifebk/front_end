@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      crossorigin=""
+    />
+    <title>Javix Life Health Care</title>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/ag-grid-community@28.1.0/styles/ag-grid.css" />
+  
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/ag-grid-community@28.1.0/styles/ag-theme-alpine.css" />
+    <link rel="stylesheet" href=
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity=
+    "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+      
+      <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+      </script>
+      <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+      </script>
+      <script src=
+    "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+      </script>
+      	<script>
+          var appLocation = './';
+          var boilerplatePath = '';
+          var systemJsMap = {
+              "@ag-grid-community/react": "https://unpkg.com/@ag-grid-community/react@28.0.0/",
+              "@ag-grid-community/styles": "https://unpkg.com/@ag-grid-community/styles@28.0.0/",
+              "ag-grid-community": "https://unpkg.com/ag-grid-community@28.0.0/",
+              "ag-grid-enterprise": "https://unpkg.com/ag-grid-enterprise@28.0.0/",
+              "ag-grid-react": "https://unpkg.com/ag-grid-react@28.0.0/"
+          };
+          var systemJsPaths = {
+              "@ag-grid-community/client-side-row-model": "https://unpkg.com/@ag-grid-community/client-side-row-model@28.0.0/dist/client-side-row-model.cjs.min.js",
+              "@ag-grid-community/core": "https://unpkg.com/@ag-grid-community/core@28.0.0/dist/core.cjs.min.js",
+              "@ag-grid-community/csv-export": "https://unpkg.com/@ag-grid-community/csv-export@28.0.0/dist/csv-export.cjs.min.js",
+              "@ag-grid-community/infinite-row-model": "https://unpkg.com/@ag-grid-community/infinite-row-model@28.0.0/dist/infinite-row-model.cjs.min.js"
+          };
+      </script>
+  <script src="https://unpkg.com/systemjs@0.19.47/dist/system.js">
+  </script>
+  <script src="systemjs.config.js">
+  </script>
+  <!-- <script>System.import('./').catch(function(err) { console.error(err); });</script> -->
+
+      
+  </head>
+  <body>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script>
+      
+        // Denotes total number of rows
+        var rowIdx = 0;
+        var deletedAts=[];
+        function medicineInit() { rowIdx=0;}
+        function getDeletedRowsIndex() { return(deletedAts);}
+        function addMedicine(inputs)
+        { 
+      
+        // jQuery button click event to add a row
+       
+          // Adding a row inside the tbody.
+     
+  
+    // Adding a row inside the tbody.
+    $('#tbody').append(`<tr id="R${++rowIdx}">
+         <td class="row-index text-center">
+         <p>${inputs.strMedicine}</p>
+         </td>
+          <td class="text-center">
+            <button class="btn btn-danger remove"
+              type="button">Remove</button>
+            </td>
+          </tr>`);
+          /*
+          paramHash.put("medicine",strMedicine);
+        paramHash.put("strength",strStrength);
+        paramHash.put("quantity",strQty);
+        paramHash.put("duaration",strDuration);
+        paramHash.put("direction",strDir);
+        paramHash.put("frequency",strFreq);
+        paramHash.put("preparation",strPrep);
+        paramHash.put("dose",strDosage);
+        paramHash.put("preparation",strPrep);
+        paramHash.put("route",strRoute);
+        paramHash.put("tests",etTests.getText().toString());
+
+        paramHash.put("comments",etMedicineDescripion.getText().toString());
+          */
+    
+  // jQuery button click event to remove a row.
+  $('#tbody').on('click', '.remove', function () {
+    // Getting all the rows next to the row
+    // containing the clicked button
+    var child = $(this).closest('tr').nextAll();
+
+    // Iterating across all the rows 
+    // obtained to change the index
+    child.each(function () {
+
+      // Getting <tr> id.
+      var id = $(this).attr('id');
+
+      // Getting the <p> inside the .row-index class.
+      var idx = $(this).children('.row-index').children('p');
+      
+      // Gets the row number from <tr> id.
+      var dig = parseInt(id.substring(1));
+      console.log("Deletd Row id="+dig);
+      deletedAts.push(""+(dig));
+      console.log("Deletd Row id="+dig);
+      // Modifying row index.
+      //idx.html(`Row ${dig - 1}`);
+
+      // Modifying row id.
+      $(this).attr('id', `R${dig - 1}`);
+    });
+
+    // Removing the current row.
+    $(this).closest('tr').remove();
+
+    // Decreasing total number of rows by 1.
+    rowIdx--;
+  });
+      }// addMedicine function
+      //});
+    </script>
+  </body>
+</html>
