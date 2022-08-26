@@ -203,7 +203,7 @@ loadRecs(recs)
 componentDidMount() {console.log("DID MOUNT ************");
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://159.65.148.197:3001/api/auth/authlist', { email: 'jilani.it@gmail.com',status:0 })
+		  axios.post('http://159.65.148.197:3001/api/auth/authlist', {email:'jilani.it@gmail.com',status:0 })
 		 .then(response => {
 					//console.dir("Returned data:", response);
 					if(response.data.status===1)

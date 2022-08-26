@@ -32,7 +32,7 @@ class DataCount extends React.Component {
   this.mounted = true;
   //this.setState({data:null});
       
-    axios.post('http://159.65.148.197:3001/api/screening/getCaseDetails', { doctorId: localStorage.getItem("usermasid") })
+    axios.post('http://159.65.148.197:3001/api/screening/getCaseDetails', { doctorId:localStorage.getItem("usermasid") })
    .then(response => {
 
          console.dir("Data Length=" + response.data.data.data.length)

@@ -92,7 +92,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 		this.mounted = true;
 		//this.setState({data:null});
         
-		 axios.post('http://159.65.148.197:3001/api/auth/authlist', { email:'rahul@gmail.com',status:1,roleId: '21',token:'dfjkhsdfaksjfh3756237' })
+		 axios.post('http://159.65.148.197:3001/api/auth/authlist', {email:'rahul@gmail.com',status:1,roleId: '21',token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
 					if(response.data.status===1)

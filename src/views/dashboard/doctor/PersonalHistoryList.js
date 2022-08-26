@@ -124,7 +124,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 		this.mounted = true;
     //alert(localStorage.getItem("caseReport"))
 		//this.setState({data:null});
-		  axios.post('http://159.65.148.197:3001/api/citizen/getHistoryPersonal?=', { citizenId:localStorage.getItem("citizenId")})
+		  axios.post('http://159.65.148.197:3001/api/citizen/getHistoryPersonal?=', {citizenId:localStorage.getItem("citizenId")})
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
           console.log("User MasterId=" + localStorage.getItem("usermasid"))

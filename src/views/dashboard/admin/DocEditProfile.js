@@ -116,7 +116,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 		//this.setState({data:null});
         
       
-		  axios.post('http://159.65.148.197:3001/api/doctor/doctorById?=', { userId: localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('http://159.65.148.197:3001/api/doctor/doctorById?=', {userId:localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237'})
 		 .then(response => {
           var recs=response.data.data.data;		
           this.setState({doctorId:recs[0].doctorId});

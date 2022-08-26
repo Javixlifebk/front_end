@@ -104,7 +104,7 @@ loadRecs(recs)
  }
 
  handleClick(_userid) {    
-  axios.post('http://159.65.148.197:3001/api/citizen/documentList?=', { citizenId:localStorage.getItem("citizenId")})
+  axios.post('http://159.65.148.197:3001/api/citizen/documentList?=', {citizenId:localStorage.getItem("citizenId")})
   .then(response => {
        console.log("Returned data:", response.data.status);
       
