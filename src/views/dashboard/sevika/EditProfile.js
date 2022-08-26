@@ -114,6 +114,7 @@ class EditProfile extends React.Component {
           
       console.log(postData);
       let _targetPostURL="http://159.65.148.197:3001/api/ngo/screener/addprofile?=";
+      console.log(_targetPostURL,"urlll")
       axios(
         {
           method: 'post',
