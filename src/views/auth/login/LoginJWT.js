@@ -24,8 +24,8 @@ class LoginJWT extends React.Component {
                  "&password="+this.state.password+"";
                  
     console.log(postData);
+    // let _targetPostURL="http://159.65.148.197:3001/?=";
     let _targetPostURL="http://159.65.148.197:3001/api/auth/login?=";
-    //let _targetPostURL="http://159.65.148.197:3001/api/auth/login?=";
     axios(
       {
         method: 'post',
