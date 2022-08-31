@@ -30,6 +30,26 @@ const dateFilterParams = {
   },
   browserDatePicker: true,
 };
+var screenerFilterParams = {
+  filterOptions: ['contains', 'notContains'],
+  textFormatter: (r) => {
+    if (r == null) return null;
+    return r
+      .toLowerCase()
+      .replace(/[àáâãäå]/g, 'a')
+      .replace(/æ/g, 'ae')
+      .replace(/ç/g, 'c')
+      .replace(/[èéêë]/g, 'e')
+      .replace(/[ìíîï]/g, 'i')
+      .replace(/ñ/g, 'n')
+      .replace(/[òóôõö]/g, 'o')
+      .replace(/œ/g, 'oe')
+      .replace(/[ùúûü]/g, 'u')
+      .replace(/[ýÿ]/g, 'y');
+  },
+  debounceMs: 200,
+  suppressAndOrCondition: true,
+};
 // http://159.65.148.197:3001/api/generalsurvey/screeningScreener
 function WeeklyScreenerSevika() {
   const gridRef = useRef();
@@ -39,16 +59,30 @@ function WeeklyScreenerSevika() {
   const [rowData, setUsers] = useState("");
 
   const columns = [
-    { headerName: "citizenId", field: "citizenId" },
-    { headerName: "screenerId", field: "screenerId" },
-    { headerName: "caseId", field: "caseId" },
-    { headerName: "height", field: "height" },
-    // { headerName: "pulse", field: "pulse" },
-    { headerName: "FirstName", field: "FirstName" },
-    { headerName: "LastName", field: "LastName" },
-    { headerName: "isSubscreener", field: "issubscreener" },
+    {  minWidth : 120, headerName: "citizenId", field: "citizenId" },
+    {  minWidth : 120, headerName: "screenerId", field: "screenerId",filter: true },
+    {  minWidth : 120, headerName: "caseId", field: "caseId",filter: true },
+    {  minWidth : 120, headerName: "height", field: "height",filter: true },
+    {  minWidth : 120, headerName: "pulse", field: "pulse" },
+    {  minWidth : 120, headerName: "Citizen Name", field: "fullname" , filter: true
+  },
+  {  minWidth : 120, headerName: "Mobile Number", field: "Mobile" , filter: true },
+    {  minWidth : 120, headerName: "sevika Name", field: "screenerfullname" , filter: true },
+    {  minWidth : 120, headerName: "Email", field: "Email" , filter: true },
+    {  minWidth : 120, headerName: "Aadhar Number", field: "aadhaar" , filter: true },
+    {  minWidth : 120, headerName: "Gender", field: "Gender" , filter: true },
+    {  minWidth : 120, headerName: "Address", field: "address" , filter: true },
+    { minWidth : 100, headerName: 'weight', field: 'weight'  },
+    {  minWidth : 100, headerName: 'bmi', field: 'bmi' },
+    {  minWidth : 100, headerName: 'bpsys', field: 'bpsys'  },
+    {  minWidth : 100, headerName: 'bpdia', field: 'bpdia' },
+    {  minWidth : 100, headerName: 'spo2', field: 'spo2' },
+    {  minWidth : 100, headerName: 'pulse', field: 'pulse' },
+    {  minWidth : 100, headerName: 'temperature', field: 'temperature'},
+    {  minWidth : 100, headerName: 'Arm', field: 'arm'  },
+    {  minWidth : 120, headerName: "isSubscreener", field: "issubscreener" , filter: true},
     {
-      headerName: "Date",
+       minWidth : 120, headerName: "Date",
       field: "createdAt",
       //   cellRenderer: (data) => {
       //     return moment(data.createdAt).format('DD-MM-YYYY')
@@ -88,7 +122,7 @@ function WeeklyScreenerSevika() {
   }, [startDate, endDate]);
 
   axios
-    .post("http://159.65.148.197:3001/api/generalsurvey/screenersevika")
+    .post("http://159.65.148.197:3001/api/generalsurvey/screenersevika",{issubscreener:1})
     .then((response) => {
       console.log("Returned data:");
       if (response.data.status === 1) {
