@@ -30,8 +30,28 @@ const dateFilterParams = {
   },
   browserDatePicker: true,
 };
+var screenerFilterParams = {
+  filterOptions: ['contains', 'notContains'],
+  textFormatter: (r) => {
+    if (r == null) return null;
+    return r
+      .toLowerCase()
+      .replace(/[àáâãäå]/g, 'a')
+      .replace(/æ/g, 'ae')
+      .replace(/ç/g, 'c')
+      .replace(/[èéêë]/g, 'e')
+      .replace(/[ìíîï]/g, 'i')
+      .replace(/ñ/g, 'n')
+      .replace(/[òóôõö]/g, 'o')
+      .replace(/œ/g, 'oe')
+      .replace(/[ùúûü]/g, 'u')
+      .replace(/[ýÿ]/g, 'y');
+  },
+  debounceMs: 200,
+  suppressAndOrCondition: true,
+};
 // http://159.65.148.197:3001/api/generalsurvey/screeningScreener
-function Weeklyscreener() {
+function WeeklyScreenerSevika() {
   const gridRef = useRef();
   const [gridApi, setGridApi] = useState();
   const [startDate, setStartDate] = useState("");
@@ -72,7 +92,6 @@ function Weeklyscreener() {
     {  minWidth : 100, headerName: 'specific Gravity', field: 'specificGravity'  },
     {  minWidth : 100, headerName: 'ketone', field: 'ketone'  },
     {  minWidth : 100, headerName: 'bilirubin', field: 'bilirubin'  },
-    
     {  minWidth : 100, headerName: 'FVC Predicted', field: 'fvc_predicted'  },
     {  minWidth : 100, headerName: 'FVC Actual', field: 'fvc_actual'  },
     {  minWidth : 100, headerName: 'FVC Predicted Percent', field: 'fvc_predicted_percent'  },
@@ -143,7 +162,7 @@ function Weeklyscreener() {
     <div className="App">
       {/* <h2 align="center">Ag Grid with React</h2> */}
       {/* <p align="center">Date Range Filtering </p> */}
-      <div className="ag-theme-alpine " style={{ height: 400}}>
+      <div className="ag-theme-alpine " style={{ height: 400 }}>
      
         <div className="row d-flex justify-content-end align-items-center">
           <div className="col-sm-6 pb-1">
@@ -178,7 +197,7 @@ function Weeklyscreener() {
            
          
         </div>
-       
+       sevika
         
         <AgGridReact
         className="pt-5"
@@ -195,4 +214,4 @@ function Weeklyscreener() {
   );
 }
 
-export default Weeklyscreener;
+export default WeeklyScreenerSevika;
