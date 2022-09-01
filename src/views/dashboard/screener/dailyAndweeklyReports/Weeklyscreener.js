@@ -131,7 +131,7 @@ function Weeklyscreener() {
   }, [startDate, endDate]);
 
   axios
-    .post("http://159.65.148.197:3001/api/generalsurvey/screeningScreener")
+    .post("http://159.65.148.197:3001/api/generalsurvey/screeningScreener",{issubscreener:0})
     .then((response) => {
       console.log("Returned data:");
       if (response.data.status === 1) {
@@ -143,7 +143,7 @@ function Weeklyscreener() {
     <div className="App">
       {/* <h2 align="center">Ag Grid with React</h2> */}
       {/* <p align="center">Date Range Filtering </p> */}
-      <div className="ag-theme-alpine " style={{ height: 400 }}>
+      <div className="ag-theme-alpine " style={{ height: 400}}>
      
         <div className="row d-flex justify-content-end align-items-center">
           <div className="col-sm-6 pb-1">
