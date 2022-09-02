@@ -108,16 +108,27 @@ class AdminDashboard extends React.Component {
         if(response.data.status===1){
           var recs=response.data.data.data[2];	
           //console.dir(recs)
-          
           this.setState({screeners:response.data.data.data[0].Screeners}) 
           this.setState({doctors:response.data.data.data[1].Doctors}) 
            this.setState({ngos:response.data.data.data[2].NGO}) 
-            this.setState({pharmacies:response.data.data.data[5].Pharmacy})
-            this.setState({citizen:response.data.data.data[4].Citizen})
-            this.setState({screening:response.data.data.data[6].Screening})
-            this.setState({sevika:response.data.data.data[8].Sevikas})
+            this.setState({pendingadvancescreener:response.data.data.data[5].Sevika})
+            this.setState({advancescreener:response.data.data.data[4].Sanyojika})
+            this.setState({citizen:response.data.data.data[6].Citizen})
+            this.setState({pharmacies:response.data.data.data[7].Pharmacy})
+            this.setState({screening:response.data.data.data[8].Screening})
+            this.setState({sevika:response.data.data.data[10].Sevikas})
             this.setState({prescription:response.data.data.data[3].Prescription})
-            this.setState({NonPrescription:response.data.data.data[7].NonPrescription})
+            this.setState({NonPrescription:response.data.data.data[9].NonPrescription})
+          
+          // this.setState({screeners:response.data.data.data[0].Screeners}) 
+          // this.setState({doctors:response.data.data.data[1].Doctors}) 
+          //  this.setState({ngos:response.data.data.data[2].NGO}) 
+          //   this.setState({pharmacies:response.data.data.data[5].Sanyojika})
+          //   this.setState({citizen:response.data.data.data[4].Citizen})
+          //   this.setState({screening:response.data.data.data[6].Screening})
+          //   this.setState({sevika:response.data.data.data[8].Sevikas})
+          //   this.setState({prescription:response.data.data.data[3].Prescription})
+          //   this.setState({NonPrescription:response.data.data.data[7].NonPrescription})
       
         }else{
           console.log("Not Found")
@@ -213,11 +224,12 @@ getCaseDetails(_type){
 }
   render() {
     const data = {
-      labels: ["Doctors","Screener","NGO", "Sevika","Screening","Pharmacy","Citizen"],
+      labels: ["Doctors","Screener","NGO", "Sevikas","Screening","Pharmacy","Citizen",'Sanyojika','Sevika'],
       datasets: [
         {
           label: "Total Actors Count",
           data: [this.state.doctors, this.state.screeners, this.state.ngos, this.state.sevika,this.state.screening,
+            this.state.pendingadvancescreener,this.state.advancescreener,
             this.state.citizen,this.state.pharmacies],
           backgroundColor: themeColors
         }
@@ -260,7 +272,14 @@ getCaseDetails(_type){
       {
         name: "Non Prescription",
         data: [this.state.NonPrescription]
-      }
+      },{
+      name: "Advance screening",
+      data: [this.state.advancescreener]
+    },
+    {
+      name: "pending Advance screening",
+      data: [this.state.pendingadvancescreener]
+    }
     ]
    
     
@@ -429,9 +448,11 @@ getCaseDetails(_type){
       <CardHeader>
         <CardTitle style={{textAlign:"center"}}></CardTitle>
       </CardHeader>
-      <CardBody style={{textAlign:"center"}} onClick={() =>this.getCaseDetails("Picked")}> 
+      <CardBody style={{textAlign:"center"}} onClick={() => {
+        document.location='/views/dashboard/admin/PendingadvancedScreening';
+      }}> 
       <span style={{textAlign:"center"}}><h5>Advanced Screening Pending Cases</h5></span>                        
-      <h5>{this.state.picked}</h5>  
+      <h5>{this.state.pendingadvancescreener}</h5>  
       </CardBody>
       </Card>
       </Col>
@@ -441,9 +462,11 @@ getCaseDetails(_type){
         <CardTitle></CardTitle>
       </CardHeader>
       <CardBody style={{textAlign:"center"}}> 
-      <span style={{textAlign:"center",cursor:"pointer"}} onClick={() =>this.getCaseDetails("Prescribed")}>
+      <span style={{textAlign:"center",cursor:"pointer"}} onClick={() => {
+        document.location='/views/dashboard/admin/AdvancedScreening';
+      }}>
         <h5>Advanced Screening Total Cases</h5></span>                        
-      <h5>{this.state.prescribed}</h5>  
+      <h5>{this.state.advancescreener}</h5>  
       </CardBody>
       </Card>
       </Col>

@@ -299,6 +299,12 @@ const userDirectory = lazy(() =>
   import("../../views/dashboard/admin/UserDirectory")
 )
 
+const advancedScreener = lazy(() =>
+  import("../../views/dashboard/admin/Advancescreening")
+)
+const padvancedScreener = lazy(() =>
+  import("./admin/Pendingadvancescreening")
+)
 const issueListAll = lazy(() =>
   import("../../views/dashboard/admin/IssueList")
 )
@@ -433,8 +439,9 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/views/dashboard/screener/dailyAndweeklyReports/Weeklyscreener" component={weeklyscreener} />
               <AppRoute exact path="/views/dashboard/screener/dailyAndweeklyReports/WeeklyScreenerSevika" component={weeklyscreenersevika} />
               
-              
-
+              <AppRoute exact path="/views/dashboard/admin/AdvancedScreening/" component={advancedScreener} />
+              <AppRoute exact path="/views/dashboard/admin/PendingadvancedScreening/" component={padvancedScreener} />
+                
               <AppRoute exact path="/views/dashboard/doctorlist/" component={doctorList} />
               <AppRoute exact path="/views/dashboard/docviewprofile" component={doctorerViewProfile} />
               <AppRoute exact path="/views/dashboard/doceditprofile" component={doctorEditProfile} />
