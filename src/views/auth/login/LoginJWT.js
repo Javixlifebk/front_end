@@ -109,7 +109,7 @@ class LoginJWT extends React.Component {
 
                                 /************  Resend OTP  ***********/
                                 let ipostData="email="+this.state.email+"";
-                                let _itargetPostURL="http://159.65.148.197:3001/api/auth/resend-verify-otp?=";
+                                let _itargetPostURL="http://localhost:3001/api/auth/resend-verify-otp?=";
                                 axios(
                                   {
                                     method: 'post',
