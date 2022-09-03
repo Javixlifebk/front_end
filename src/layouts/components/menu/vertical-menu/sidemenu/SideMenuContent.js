@@ -266,7 +266,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/screener/dailyAndweeklyReports/Weeklyscreener"
+                  navLink: "../../screener/dailyAndweeklyReports/Weeklyscreener"
                 },
                 // {
                 //   id: "dailySevikausers",
@@ -282,7 +282,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/screener/dailyAndweeklyReports/WeeklyScreenerSevika"
+                  navLink: "../../screener/dailyAndweeklyReports/WeeklyScreenerSevika"
                 },
                 // {
                 //   id: "dailycitizenusers",
@@ -322,7 +322,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/screener/dailyAndweeklyReports/LipidCritical"
+                  navLink: "../../screener/dailyAndweeklyReports/LipidCritical"
                 },
                 // {
                 //   id: "unscreenusers",
@@ -361,7 +361,7 @@ class SideMenuContent extends React.Component {
               target:"_blank",
               icon: <Icon.Activity size={16} />,
               // navLink: "http://159.65.148.197:3001/documents/dumpHealth.csv"   
-              navLink:"../../views/dashboard/survey/HealthSurvey"               
+              navLink:"../../survey/HealthSurvey"               
           
             },
             {
@@ -371,7 +371,7 @@ class SideMenuContent extends React.Component {
               target:"_blank",
               icon: <Icon.Activity size={16} />,
               // navLink: "http://159.65.148.197:3001/documents/dumpHealth.csv" 
-              navLink: "../../views/dashboard/survey/SocieconomicSurvey"              
+              navLink: "../../survey/SocieconomicSurvey"              
           
             },
             {
