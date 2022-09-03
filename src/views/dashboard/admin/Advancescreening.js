@@ -112,7 +112,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 		this.mounted = true;
 		//this.setState({data:null});
         
-		 axios.post("http://159.65.148.197:3001/api/generalsurvey/screeningScreener",{issubscreener:0})
+		 axios.post("http://159.65.148.197:3001/api/generalsurvey/screeningScreener")
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
 					if(response.data.status===1)
