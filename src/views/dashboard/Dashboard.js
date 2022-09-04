@@ -221,7 +221,7 @@ const generalProfile = lazy(() =>
   import("../../views/dashboard/survey/generalSurvey")
 )
 const healthProfile = lazy(() =>
-  import("../../views/dashboard/survey/HealthSurvey")
+  import("../../views/dashboard/survey/healthSurvey")
   
 )
 const socieProfile = lazy(() =>
