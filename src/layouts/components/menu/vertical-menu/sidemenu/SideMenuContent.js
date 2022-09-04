@@ -361,7 +361,7 @@ class SideMenuContent extends React.Component {
               target:"_blank",
               icon: <Icon.Activity size={16} />,
               // navLink: "http://159.65.148.197:3001/documents/dumpHealth.csv"   
-              navLink:"../../survey/HealthSurvey"               
+              navLink:"../../survey/healthSurvey"               
           
             },
             {
