@@ -220,10 +220,10 @@ const sevikaProfile = lazy(() =>
 const generalProfile = lazy(() =>
   import("../../views/dashboard/survey/generalSurvey")
 )
-// const healthProfile = lazy(() =>
-//   import("../../views/dashboard/survey/healthSurvey")
+const healthProfile = lazy(() =>
+  import("../../views/dashboard/survey/healthSurvey")
   
-// )
+)
 const socieProfile = lazy(() =>
   import("../../views/dashboard/survey/SocieconomicSurvey")
 )
@@ -485,7 +485,7 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/views/dashboard/sevviewprofile/" component={sevikaViewProfile} />
               
               <AppRoute exact path="/views/dashboard/survey/generalSurvey" component={generalProfile} />
-              {/* <AppRoute exact path="/views/dashboard/survey/healthSurvey" component={healthProfile} /> */}
+              <AppRoute exact path="/views/dashboard/survey/healthSurvey" component={healthProfile} />
               <AppRoute exact path="/views/dashboard/survey/SocieconomicSurvey" component={socieProfile} />
               <AppRoute exact path="/views/dashboard/doctor/ReferPatientList" component={referPatient} />
               

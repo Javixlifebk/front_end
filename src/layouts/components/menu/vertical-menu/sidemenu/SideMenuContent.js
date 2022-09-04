@@ -266,7 +266,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../screener/dailyAndweeklyReports/Weeklyscreener"
+                  navLink: "../../views/dashboard/screener/dailyAndweeklyReports/Weeklyscreener"
                 },
                 // {
                 //   id: "dailySevikausers",
@@ -282,7 +282,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../screener/dailyAndweeklyReports/WeeklyScreenerSevika"
+                  navLink: "../../views/dashboard/screener/dailyAndweeklyReports/WeeklyScreenerSevika"
                 },
                 // {
                 //   id: "dailycitizenusers",
@@ -322,7 +322,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../screener/dailyAndweeklyReports/LipidCritical"
+                  navLink: "../../views/dashboard/screener/dailyAndweeklyReports/LipidCritical"
                 },
                 // {
                 //   id: "unscreenusers",
@@ -350,20 +350,20 @@ class SideMenuContent extends React.Component {
               target:"_blank",
               icon: <Icon.Activity size={16} />,
               // navLink: "http://159.65.148.197:3001/documents/dump.csv"
-              navLink:"../../survey/generalSurvey"   
+              navLink:"../../views/dashboard/survey/generalSurvey"   
           
             },
             
-            // {
-            //   id: "hSurvey ",
-            //   title: "Health Survey Data",
-            //   type: "item",
-            //   target:"_blank",
-            //   icon: <Icon.Activity size={16} />,
-            //   // navLink: "http://159.65.148.197:3001/documents/dumpHealth.csv"   
-            //   navLink:"../../survey/healthSurvey"               
+            {
+              id: "hSurvey ",
+              title: "Health Survey Data",
+              type: "item",
+              target:"_blank",
+              icon: <Icon.Activity size={16} />,
+              // navLink: "http://159.65.148.197:3001/documents/dumpHealth.csv"   
+              navLink:"../../views/dashboard/survey/healthSurvey"               
           
-            // },
+            },
             {
               id: "sSurvey ",
               title: "Socieconomic Survey Data",
@@ -371,7 +371,7 @@ class SideMenuContent extends React.Component {
               target:"_blank",
               icon: <Icon.Activity size={16} />,
               // navLink: "http://159.65.148.197:3001/documents/dumpHealth.csv" 
-              navLink: "../../survey/SocieconomicSurvey"              
+              navLink: "../../views/dashboard/survey/SocieconomicSurvey"              
           
             },
             {
@@ -379,14 +379,14 @@ class SideMenuContent extends React.Component {
               title: "Change Request",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink: "../../commingsoon"
+              navLink: "../../views/dashboard/commingsoon"
             }/*,          
             {
               id: "communicate",
               title: "Directory",
               type: "item",
               icon: <Icon.Phone size={16} />,
-              navLink: "../../directory"
+              navLink: "../../views/dashboard/directory"
             }*/,
             {
               id: "complaint",
@@ -400,7 +400,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={12} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../issuelistall"
+                  navLink: "../../views/dashboard/issuelistall"
                 },
                 {
                   id: "resolve",
@@ -408,7 +408,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../issuelistalladdressed"
+                  navLink: "../../views/dashboard/issuelistalladdressed"
                 }             
                 
               ]
@@ -452,7 +452,7 @@ class SideMenuContent extends React.Component {
                     type: "item",
                     icon: <Icon.Bell size={16} />,
                     permissions: ["admin", "editor"],
-                    navLink: "../../doctor/ReferPatientList"
+                    navLink: "../../views/dashboard/doctor/ReferPatientList"
                   },
                  
               //   ]
