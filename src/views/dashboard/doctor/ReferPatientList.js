@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import '@mui/x-data-grid-generator'
 import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
+import Button from '@mui/material/Button'
 function CustomToolbar() {
   return (
     <GridToolbarContainer>
@@ -62,19 +63,76 @@ function ReferPatientList() {
       
       },
     },
+    
     { field: 'state', headerName: 'state', width: 120 },
+    // {
+    //   field: "action",
+    //   headerName: "Action",
+    //   sortable: false,
+    //   renderCell: (params) => {
+    //     const onClick = (e) => {
+    //       e.stopPropagation(); // don't select this row after clicking
   
-   
+    //       // const api: GridApi = params.api;
+    //       // const thisRow: Record<string, GridCellValue> = {};
+  
+    //       api
+    //         .getAllColumns()
+    //         .filter((c) => c.field !== "__check__" && !!c)
+    //         .forEach(
+    //           (c) => (thisRow[c.field] = params.getValue(params.id, c.field))
+    //         );
+  
+    //       return alert(JSON.stringify(thisRow, null, 4));
+    //     };
+  
+    //     return <Button onClick={onClick}>Click</Button>;
+    //   }
+    // },
+    {
+      field: 'Action',
+      headerName: 'Action',
+      sortable: false,
+      width: 200,
+      renderCell: (params) => {
+        const onClick = (e) => {
+          e.stopPropagation() // don't select this row after clicking
 
+          const api = params.api
+          const thisRow = {}
+
+          api
+            .getAllColumns()
+            .filter((c) => c.field !== '__check__' && !!c)
+            .forEach(
+              (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
+            )
+
+          return alert(JSON.stringify(thisRow, null, 4))
+        }
+        return (
+          <>
+            <button className='btn-success'>
+              Picked And Prescribed
+            </button>
+            {/* <Button onClick={setModalIsOpenToTrue2}>
+              <BallotIcon />
+            </Button> */}
+          </>
+        )
+      },
+    },
   
   ]
 
   return (
+   
     <>
+   
     <div className="bannermain">
       <div className="container">
         <h2 className="font-24-31 font-20-26 font-style-normal font-weight-600 colorformhrading titlewadd">
-        Patient Refer List
+         Referred Patient List
         </h2>
         <div style={{ height: '75vh', width: '100%' }}>
          
