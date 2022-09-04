@@ -354,16 +354,16 @@ class SideMenuContent extends React.Component {
           
             },
             
-            {
-              id: "hSurvey ",
-              title: "Health Survey Data",
-              type: "item",
-              target:"_blank",
-              icon: <Icon.Activity size={16} />,
-              // navLink: "http://159.65.148.197:3001/documents/dumpHealth.csv"   
-              navLink:"../../survey/healthSurvey"               
+            // {
+            //   id: "hSurvey ",
+            //   title: "Health Survey Data",
+            //   type: "item",
+            //   target:"_blank",
+            //   icon: <Icon.Activity size={16} />,
+            //   // navLink: "http://159.65.148.197:3001/documents/dumpHealth.csv"   
+            //   navLink:"../../survey/healthSurvey"               
           
-            },
+            // },
             {
               id: "sSurvey ",
               title: "Socieconomic Survey Data",
