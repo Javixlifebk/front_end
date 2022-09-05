@@ -197,7 +197,7 @@ function WeeklyScreener() {
            
          
         </div>
-       sevika
+       
         
         <AgGridReact
         className="pt-5"
