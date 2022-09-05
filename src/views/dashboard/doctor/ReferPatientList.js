@@ -14,8 +14,13 @@ function CustomToolbar() {
   );
 }
 
+
 function ReferPatientList() {
   const [rows, setUsers] = useState([])
+  const getCaseDetails=(citizenId) =>{
+    localStorage.setItem("citizenId",citizenId);
+    document.location="../../dashboard/patientlist";  
+  }
   useEffect(() => {
 		  axios.post('http://159.65.148.197:3001/api/citizen/citizenrefer', {token:'dfjkhsdfaksjfh3756237',isUnrefer:true })
 		 .then(response => {
@@ -29,10 +34,10 @@ function ReferPatientList() {
  })
 
   const columns = [
-    // { field: 'doctorId', headerName: 'Doctor Id', width: 150 },
+  //  { field: 'doctorId', headerName: 'Doctor Id', width: 150 },
     
     { field: 'citizenId', headerName: 'citizen Id', width: 150 },
-    { field: 'javixId', headerName: ' citizen Javix Id', width: 120 },
+    { field: 'caseId', headerName: ' Case Id', width: 120 },
     { field: 'createdAt', headerName: 'Created At', width: 150 },
     { field: 'fullname', headerName: 'Citizen Name', width: 120},
     { field: 'screenerfullname', headerName: 'screener Name', width: 120},
@@ -95,26 +100,12 @@ function ReferPatientList() {
       sortable: false,
       width: 200,
       renderCell: (params) => {
-        const onClick = (e) => {
-          e.stopPropagation() // don't select this row after clicking
-
-          const api = params.api
-          const thisRow = {}
-
-          api
-            .getAllColumns()
-            .filter((c) => c.field !== '__check__' && !!c)
-            .forEach(
-              (c) => (thisRow[c.field] = params.getValue(params.id, c.field)),
-            )
-
-          return alert(JSON.stringify(thisRow, null, 4))
-        }
         return (
           <>
-            <button className='btn-success'>
-              Picked And Prescribed
+            <button className='btn-success' onClick={() => getCaseDetails(params.citizenId)}>
+            Pick and Prescribe
             </button>
+            {/* onClick={() =>this.getCaseDetails(row.citizenId)} */}
             {/* <Button onClick={setModalIsOpenToTrue2}>
               <BallotIcon />
             </Button> */}
