@@ -188,7 +188,7 @@ componentDidMount() {console.log("DID MOUNT ************");
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Mapped Screener List  <Button.Ripple
+          <CardTitle>Screener List <Button.Ripple
                     color="primary"
                     type="submit"
                     className="mr-1 mb-1"
