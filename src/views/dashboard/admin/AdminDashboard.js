@@ -38,7 +38,6 @@ class AdminDashboard extends React.Component {
 
   state = {
     doctors:0,
-    // prescription:0,
     ngos:0,
     screeners:0,
     pharmacies:0,
@@ -89,7 +88,6 @@ class AdminDashboard extends React.Component {
 
 
   }
-
   componentDidMount() {console.log("DID MOUNT ************");
   console.log("Javix ID=" + localStorage.getItem("javixid"))
   if(localStorage.getItem("javixid")===null || localStorage.getItem("javixid")==="0"){
@@ -224,13 +222,11 @@ getCaseDetails(_type){
 }
   render() {
     const data = {
-      labels: ["Doctors","Screener","NGO", "Sevikas","Screening","Pharmacy","Citizen",'Sanyojika','Sevika'],
+      labels: ["Doctors",  "Screener","NGO", "Sevika","Screening","Pharmacy"],
       datasets: [
         {
           label: "Total Actors Count",
-          data: [this.state.doctors, this.state.screeners, this.state.ngos, this.state.sevika,this.state.screening,
-            this.state.pendingadvancescreener,this.state.advancescreener,
-            this.state.citizen,this.state.pharmacies],
+          data: [this.state.doctors, this.state.screeners, this.state.ngos, this.state.sevika,this.state.screening,this.state.pharmacies],
           backgroundColor: themeColors
         }
       ]
@@ -254,34 +250,14 @@ getCaseDetails(_type){
         data: [this.state.sevika]
       },
       {
-        name: "Citizen",
-        data: [this.state.citizen]
-      },
-      {
         name: "Screening",
         data: [this.state.screening]
       },
       {
         name: "Pharmacy",
         data: [this.state.pharmacies]
-      },
-      {
-        name: "Prescription",
-        data: [this.state.prescription]
-      },
-      {
-        name: "Non Prescription",
-        data: [this.state.NonPrescription]
-      },{
-      name: "Advance screening",
-      data: [this.state.advancescreener]
-    },
-    {
-      name: "pending Advance screening",
-      data: [this.state.pendingadvancescreener]
-    }
+      }
     ]
-   
     
     const options = {
       responsive: true,

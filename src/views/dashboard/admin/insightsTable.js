@@ -121,6 +121,13 @@ const filterData = (data) =>
         localStorage.setItem("_screenerId", _screenerId);
         document.location = "../../views/dashboard/citizenlist1";
       }
+      const  getCaseScreener=(_screenerId) =>{
+        // localStorage.setItem("_status","1");
+        // localStorage.setItem("caseType","Total Cases")
+        // document.location="../../views/dashboard/sevikaCaselist"
+        localStorage.setItem("_screenerId", _screenerId);
+        document.location = "../../views/dashboard/admin/sevikaCaselist";
+      }
     const getColumnSearchProps = (dataIndex) => ({
       filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
         <div
@@ -271,7 +278,7 @@ const filterData = (data) =>
        key: 'issubscreener',
         render: (_, row) => (
           <p size="middle">
-             {row.issubscreener > 0 ? "Sevika" : "Sanyojika"},
+             {/* {row.issubscreener > 0 ? "Sevika" : "Sanyojika"}, */}
           </p>
         ),
       
@@ -299,7 +306,7 @@ const filterData = (data) =>
         render: (_, record) => (
           <button size="middle"
           className="btn-success"
-          onClick={() => getCitizenScreener(record.screenerId)}>
+          onClick={() =>  record.issubscreener === "Sevika" ? getCitizenScreener(record.screenerId) : getCaseScreener(record.screenerId)}>
             <a>view</a>
           </button>
         ),

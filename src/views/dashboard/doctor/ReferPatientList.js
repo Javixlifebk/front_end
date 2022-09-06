@@ -5,6 +5,7 @@ import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarE
 import axios from "axios";
 import Button from '@mui/material/Button'
 function CustomToolbar() {
+  // http://localhost:3001/api/screening/updateCase
   return (
     <GridToolbarContainer>
       <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
@@ -17,6 +18,39 @@ function CustomToolbar() {
 
 function ReferPatientList() {
   const [rows, setUsers] = useState([])
+  const handleClick=(caseId)=> {
+
+    if(window.confirm("Are you sure want to Deactivate User !")){
+    let postData="caseId="+caseId+"&status=2"; 
+    
+    let _targetPostURL="http://localhost:3001/api/screening/updateCase?=";
+    axios(
+      {
+        method: 'post',
+        url: _targetPostURL,
+        data: postData,
+        headers: {'Content-Type': 'application/x-www-form-urlencoded' }
+        }
+  
+    ).then(res=>{
+      if(res.data.status===1){
+        //alert("Updated Successfully")
+        window.location.reload();
+  
+      }
+                                
+  
+    })
+    .catch(e=>{
+      console.log("Exception:"); 
+      console.log(e);
+    });
+  }
+    //alert(_userid)
+    //localStorage.setItem("Sid",scrid)
+    //document.location='/views/dashboard/screener/profile'
+    //this.props.onHeaderClick(this.props.value);
+  }
   const getCaseDetails=(citizenId) =>{
     localStorage.setItem("citizenId",citizenId);
     document.location="../../dashboard/patientlist";  
@@ -102,7 +136,7 @@ function ReferPatientList() {
       renderCell: (params) => {
         return (
           <>
-            <button className='btn-success' onClick={() => getCaseDetails(params.citizenId)}>
+            <button className='btn-success' onClick={() => {getCaseDetails(params.citizenId);handleClick(params.caseId)}}>
             Pick and Prescribe
             </button>
             {/* onClick={() =>this.getCaseDetails(row.citizenId)} */}

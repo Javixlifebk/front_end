@@ -184,7 +184,8 @@ const detaildump = lazy(() =>
   import("../../views/dashboard/screener/DetailDump")
 )
 const lipidcritical = lazy(() =>
-  import("../../views/dashboard/screener/dailyAndweeklyReports/LipidCritical")
+ import("../../views/dashboard/screener/dailyAndweeklyReports/LipidCritical")
+  // import("../../views/dashboard/screener/dailyAndweeklyReports/LipidCritical")
 )
 const weeklyscreener = lazy(() =>
   import("../../views/dashboard/screener/dailyAndweeklyReports/Weeklyscreener")
@@ -276,6 +277,9 @@ const caseDetails = lazy(() =>
 )
 const ScreeningCaseDetails = lazy(() =>
   import("../../views/dashboard/admin/ScreeningCaseDetails")
+)
+const sevikaCaseDetails = lazy(() =>
+  import("../../views/dashboard/admin/sevikaCaselist")
 )
 /**********************End of Doctor Section************************** */
 
@@ -438,6 +442,7 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/views/dashboard/screener/dailyAndweeklyReports/LipidCritical" component={lipidcritical} />
               <AppRoute exact path="/views/dashboard/screener/dailyAndweeklyReports/Weeklyscreener" component={weeklyscreener} />
               <AppRoute exact path="/views/dashboard/screener/dailyAndweeklyReports/WeeklyScreenerSevika" component={weeklyscreenersevika} />
+              <AppRoute exact path="/views/dashboard/admin/sevikaCaselist" component={sevikaCaseDetails} />
               
               <AppRoute exact path="/views/dashboard/admin/AdvancedScreening/" component={advancedScreener} />
               <AppRoute exact path="/views/dashboard/admin/PendingadvancedScreening/" component={padvancedScreener} />

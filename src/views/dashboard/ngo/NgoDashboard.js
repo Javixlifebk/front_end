@@ -93,10 +93,15 @@ class NgoDashboard extends React.Component {
           this.setState({screeners:response.data.data.data[0].Screeners}) 
           this.setState({doctors:response.data.data.data[1].Doctors}) 
            this.setState({ngos:response.data.data.data[2].NGO}) 
-            this.setState({pharmacies:response.data.data.data[4].Pharmacy})
-            this.setState({screening:response.data.data.data[3].Citizen})
-            this.setState({sevika:response.data.data.data[6].Sevikas})
-      
+            this.setState({pendingadvancescreener:response.data.data.data[5].Sevika})
+            this.setState({advancescreener:response.data.data.data[4].Sanyojika})
+            this.setState({citizen:response.data.data.data[6].Citizen})
+            this.setState({pharmacies:response.data.data.data[7].Pharmacy})
+            this.setState({screening:response.data.data.data[8].Screening})
+            this.setState({sevika:response.data.data.data[10].Sevikas})
+            this.setState({prescription:response.data.data.data[3].Prescription})
+            this.setState({NonPrescription:response.data.data.data[9].NonPrescription})
+          
         }else{
           console.log("Not Found")
         }
@@ -231,7 +236,7 @@ class NgoDashboard extends React.Component {
       </CardBody>
       </Card>
       </Col>
-      <Col lg="3">
+      <Col lg="2">
       <Card style={{cursor:'pointer'}} >
       <CardHeader>
         <CardTitle></CardTitle>
@@ -240,6 +245,63 @@ class NgoDashboard extends React.Component {
       <span style={{textAlign:"center"}}><h5>Pharmacies</h5></span>
             <h5>{this.state.pharmacies}</h5>              
           
+      </CardBody>
+      </Card>
+      </Col>
+      <Col lg="2">
+      <Card style={{cursor:'pointer'}} >
+      <CardHeader>
+        <CardTitle></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center"}}>
+      <span style={{textAlign:"center"}} onClick={() => {
+                          document.location='/views/dashboard/PrescriptionList';
+                        }}><h5>Prescribed</h5></span>
+            <h5>{this.state.prescription}</h5>              
+          
+      </CardBody>
+      </Card>
+      </Col>
+      <Col lg="2">
+      <Card style={{cursor:'pointer'}} >
+      <CardHeader>
+        <CardTitle></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center"}}>
+      <span style={{textAlign:"center"}}
+       onClick={() => {
+        document.location='/views/dashboard/nonprescriptionList';
+      }}><h5>Non-Prescribed</h5></span>
+            <h5>{this.state.NonPrescription}</h5>              
+          
+      </CardBody>
+      </Card>
+      </Col>
+
+      <Col lg="2" style={{textAlign:"center"}}>
+      <Card style={{cursor:'pointer'}}>
+      <CardHeader>
+        <CardTitle style={{textAlign:"center"}}></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center"}} onClick={() => {
+        document.location='/views/dashboard/admin/PendingadvancedScreening';
+      }}> 
+      <span style={{textAlign:"center"}}><h5>Advanced Screening Pending Cases</h5></span>                        
+      <h5>{this.state.pendingadvancescreener}</h5>  
+      </CardBody>
+      </Card>
+      </Col>
+      <Col lg="2" style={{textAlign:"center"}}>
+      <Card style={{cursor:'pointer'}}>
+      <CardHeader>
+        <CardTitle></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center"}}> 
+      <span style={{textAlign:"center",cursor:"pointer"}} onClick={() => {
+        document.location='/views/dashboard/admin/AdvancedScreening';
+      }}>
+        <h5>Advanced Screening Total Cases</h5></span>                        
+      <h5>{this.state.advancescreener}</h5>  
       </CardBody>
       </Card>
       </Col>
