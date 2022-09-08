@@ -84,6 +84,10 @@ class DoctorDashboard extends React.Component {
    
 
   }
+  getCitizenScreener() {
+    // localStorage.setItem("_screenerId", _screenerId);
+    document.location = "../../views/dashboard/citizenlist1";
+  }
 
   componentDidMount() {console.log("DID MOUNT ************");
   console.log("Javix ID=" + localStorage.getItem("javixid"))
@@ -132,21 +136,26 @@ class DoctorDashboard extends React.Component {
       datasets: [
         {
           label: ["Doctors Count"],
+        
           data: [this.state.doctors, this.state.screeners, this.state.ngos, this.state.sevika,this.state.screening,this.state.pharmacies],
           backgroundColor: themeColors
+          
         }
       ]
     }
-
+   
+  
 
     const series= [
       {
         name: "Doctors",
-        data: [this.state.doctors]
+        data: [this.state.doctors],
+      //  click:this.getCitizenScreener()
       },
       {
         name: "Screener",
-        data: [this.state.screeners]
+        data: [this.state.screeners],
+        link:"/views/dashboard/casedetails"
       },
       {
         name: "NGO",
@@ -288,6 +297,30 @@ class DoctorDashboard extends React.Component {
           <CardBody>
           <Pie data={data} options={options} height={300} />
           </CardBody>
+          <CardBody>
+                <a
+                href='/views/dashboard/doctorlist'
+                  // target="_blank"
+                >
+                  Doctors
+                </a>
+              </CardBody>
+              <CardBody>
+                <a
+                  href="/views/dashboard/screenerlist"
+                  // target="_blank"
+                >
+                  Screener
+                </a>
+              </CardBody>
+              <CardBody>
+                <a
+                  href="/views/dashboard/ngolist"
+                  // target="_blank"
+                >
+                  NGO
+                </a>
+              </CardBody>
         </Card>
       
       </Col>

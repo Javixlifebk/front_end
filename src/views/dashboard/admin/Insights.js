@@ -346,7 +346,7 @@ class AdminDashboard extends React.Component {
           
           cell: (row) => (
             <p className="text-bold-500  mb-0">
-              {row.issubscreener > 0 ? "Sevika" : "Sanyojika"}
+              {/* {row.issubscreener > 0 ? "Sevika" : "Sanyojika"} */}
             </p>
           ),
         },

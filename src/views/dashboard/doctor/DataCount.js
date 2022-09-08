@@ -189,8 +189,31 @@ getCaseDetails(_type){
       <CardTitle>Pie Chart</CardTitle>
     </CardHeader>
     <CardBody>
-    <Pie data={data} options={options} height={300} />
+    <Pie data={data} options={options} height={300}
+     />
     </CardBody>
+    <CardBody>
+                <a style={{color:"blue"}}
+                onClick={() =>this.getCaseDetails("Total")}
+                >
+                 Total Cases
+                </a>
+              </CardBody>
+              <CardBody>
+                <a
+                style={{color:"blue"}}
+                 onClick={() =>this.getCaseDetails("Picked")}
+                >
+                  Picked Cases
+                </a>
+              </CardBody>
+              <CardBody>
+                <a style={{color:"blue"}}
+                  onClick={() =>this.getCaseDetails("Prescribed")}
+                >
+                 Prescribed Cases
+                </a>
+              </CardBody>
   </Card>
   </Col>
   </Row>
