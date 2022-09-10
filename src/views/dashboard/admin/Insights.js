@@ -1551,6 +1551,15 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
               <CardBody>
                 <Pie data={data_glucose} options={options} height={300} />
               </CardBody>
+              <CardBody>
+                <a
+                  href="http://159.65.148.197:3001/documents/spo2Red.csv"
+                  target="_blank"
+                >
+                  {" "}
+                  Blood Glucose Red Cases{" "}
+                </a>
+              </CardBody>
             </Card>
           </Col>
         </Row>
