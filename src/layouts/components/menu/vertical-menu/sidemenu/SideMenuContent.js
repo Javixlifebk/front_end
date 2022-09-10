@@ -386,7 +386,7 @@ class SideMenuContent extends React.Component {
               title: "Directory",
               type: "item",
               icon: <Icon.Phone size={16} />,
-              navLink: "/directory"
+              navLink: "/dashboard/directory"
             }*/,
             {
               id: "complaint",
@@ -477,7 +477,7 @@ class SideMenuContent extends React.Component {
                 title: "Directory",
                 type: "item",
                 icon: <Icon.Phone size={16} />,
-                navLink: "/directory"
+                navLink: "/dashboard/directory"
               },*/
               {
                 id: "refer",
@@ -533,7 +533,7 @@ class SideMenuContent extends React.Component {
                 title: "Directory",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "/directory"
+                navLink: "/dashboard/directory"
               },*/
               {
                 id: "reportissue",
@@ -581,7 +581,7 @@ class SideMenuContent extends React.Component {
                 title: "Directory",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "/directory"
+                navLink: "/dashboard/directory"
               },*/
               {
                 id: "citizenlist",
@@ -708,7 +708,7 @@ class SideMenuContent extends React.Component {
               title: "Directory",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink:"/directory"
+              navLink:"/dashboard/directory"
 
 
             },*/
@@ -757,7 +757,7 @@ class SideMenuContent extends React.Component {
               title: "Directory",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink:"/directory"
+              navLink:"/dashboard/directory"
 
 
             },*/
