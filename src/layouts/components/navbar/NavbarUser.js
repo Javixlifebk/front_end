@@ -29,18 +29,18 @@ const handleNavProfile = (e) => {
   e.preventDefault()
   switch(localStorage.getItem("roleId")){
     case '1':
-      history.push("../../views/dashboard/docviewprofile");
+      history.push("/docviewprofile");
       break;
     case '2':
       //document.location='../../views/dashboard/scrviewprofile';
-        history.push("../../views/dashboard/scrviewprofile");
+        history.push("/scrviewprofile");
         break;
     case '3':
       //document.location='../../views/dashboard/scrviewprofile';
-        history.push("../../views/dashboard/ngoviewprofile");
+        history.push("/ngoviewprofile");
         break;
     case '21':
-        history.push("../../views/dashboard/sevviewprofile");
+        history.push("/sevviewprofile");
         break;
   }
   
@@ -63,7 +63,7 @@ const UserDropdown = props => {
       <DropdownItem
         tag="a"
         href="#"
-        onClick={e => handleNavigation(e, "../../views/dashboard/directory")}
+        onClick={e => handleNavigation(e, "/dashboard/directory")}
       >
         <Icon.Mail size={14} className="mr-50" />
         <span className="align-middle">Directory</span>

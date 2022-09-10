@@ -28,7 +28,7 @@ class NotAuthorized extends React.Component {
               
               <Button.Ripple
                 tag="a"
-                href="./views/auth/login"
+                href="./auth/login"
                 color="primary"
                 size="lg"
                 className="mt-2"

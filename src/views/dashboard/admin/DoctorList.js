@@ -142,7 +142,7 @@ componentDidMount() {console.log("DID MOUNT ************");
   }
   handleClick(_userid) {    
     localStorage.setItem("Docid",_userid);
-    window.location='../../views/dashboard/doctorprofile'
+    window.location='/dashboard/doctorprofile'
     
   }
 

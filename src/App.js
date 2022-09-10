@@ -35,18 +35,18 @@ function App(){
        <BrowserRouter>
         <Switch>
           <Route exact path="/" component={NotAuthorized} />  
-          <Route  path="/views/auth/login/" component={Login} />
-          <Route  path="/views/register" component={Register} />            
-          <Route  path="/views/otp" component={Otp} /> 
-          <Route  path="/views/resetpwd" component={resePwd} />           
-          <Route  path="/views/auth/forgotpassword/" component={Forgotpassword} /> 
-          <Route  path="/views/dashboard/" component={Dashboard} />
-          <Route  path="/views/pages/profile/editprofile/" component={EditProfile} />
-          <Route  path="/views/dashboard/analytics/" component={AnalyticsDashboard} /> 
-          <Route  exact path="/views/auth/logout/" component={Logout} /> 
+          <Route  path="/auth/login/" component={Login} />
+          <Route  path="/register" component={Register} />            
+          <Route  path="/otp" component={Otp} /> 
+          <Route  path="/resetpwd" component={resePwd} />           
+          <Route  path="/auth/forgotpassword/" component={Forgotpassword} /> 
+          <Route  path="/dashboard/" component={Dashboard} />
+          <Route  path="/pages/profile/editprofile/" component={EditProfile} />
+          <Route  path="/analytics/" component={AnalyticsDashboard} /> 
+          <Route  exact path="/auth/logout/" component={Logout} /> 
           <Route  exact path="/components/utility/model/" component={UsingFetch} /> 
        
-          <Route  exact path="/views/dashboard/ngo/pages/" component={Pages} /> 
+          <Route  exact path="/ngo/pages/" component={Pages} /> 
          
               
         </Switch>

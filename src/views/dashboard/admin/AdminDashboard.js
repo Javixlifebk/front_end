@@ -208,16 +208,16 @@ getCaseDetails(_type){
     if(_type==="Total"){
       localStorage.setItem("_status","1");
       localStorage.setItem("caseType","Total Cases")
-      document.location="/views/dashboard/admin/ScreeningCaseDetails";
+      document.location="/admin/ScreeningCaseDetails";
     }else if(_type=="Picked"){
      localStorage.setItem("_status","2");
      localStorage.setItem("caseType","Pending Cases")
-     document.location="/views/dashboard/admin/ScreeningCaseDetails";
+     document.location="/admin/ScreeningCaseDetails";
     }
     else if(_type=="Prescribed"){
      localStorage.setItem("_status","3");
      localStorage.setItem("caseType","Completed Cases")
-     document.location="/views/dashboard/admin/ScreeningCaseDetails";
+     document.location="/admin/ScreeningCaseDetails";
     }
 }
   render() {
@@ -283,7 +283,7 @@ getCaseDetails(_type){
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
 
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/doctorlist';
+                          document.location='/doctorlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -298,7 +298,7 @@ getCaseDetails(_type){
       </Col>
       <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/ngolist';
+                          document.location='/ngolist';
                         }}> 
       <CardHeader>
         <CardTitle></CardTitle>
@@ -313,7 +313,7 @@ getCaseDetails(_type){
       </Col>
       <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/screenerlist';
+                          document.location='/screenerlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -327,7 +327,7 @@ getCaseDetails(_type){
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/sevikalist';
+                          document.location='/sevikalist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -341,7 +341,7 @@ getCaseDetails(_type){
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/citizenlist';
+                          document.location='/citizenlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -355,7 +355,7 @@ getCaseDetails(_type){
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/citizenlist';
+                          document.location='/citizenlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -386,7 +386,7 @@ getCaseDetails(_type){
       </CardHeader>
       <CardBody style={{textAlign:"center"}}>
       <span style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/PrescriptionList';
+                          document.location='/PrescriptionList';
                         }}><h5>Prescribed</h5></span>
             <h5>{this.state.prescription}</h5>              
           
@@ -401,7 +401,7 @@ getCaseDetails(_type){
       <CardBody style={{textAlign:"center"}}>
       <span style={{textAlign:"center"}}
        onClick={() => {
-        document.location='/views/dashboard/nonprescriptionList';
+        document.location='/nonprescriptionList';
       }}><h5>Non-Prescribed</h5></span>
             <h5>{this.state.NonPrescription}</h5>              
           
@@ -425,7 +425,7 @@ getCaseDetails(_type){
         <CardTitle style={{textAlign:"center"}}></CardTitle>
       </CardHeader>
       <CardBody style={{textAlign:"center"}} onClick={() => {
-        document.location='/views/dashboard/admin/PendingadvancedScreening';
+        document.location='/admin/PendingadvancedScreening';
       }}> 
       <span style={{textAlign:"center"}}><h5>Advanced Screening Pending Cases</h5></span>                        
       <h5>{this.state.pendingadvancescreener}</h5>  
@@ -439,7 +439,7 @@ getCaseDetails(_type){
       </CardHeader>
       <CardBody style={{textAlign:"center"}}> 
       <span style={{textAlign:"center",cursor:"pointer"}} onClick={() => {
-        document.location='/views/dashboard/admin/AdvancedScreening';
+        document.location='/admin/AdvancedScreening';
       }}>
         <h5>Advanced Screening Total Cases</h5></span>                        
       <h5>{this.state.advancescreener}</h5>  
