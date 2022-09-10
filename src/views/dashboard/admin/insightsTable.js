@@ -119,14 +119,14 @@ const filterData = (data) =>
     };
    const  getCitizenScreener=(_screenerId) =>{
         localStorage.setItem("_screenerId", _screenerId);
-        document.location = "../../views/dashboard/citizenlist1";
+        document.location = "/citizenlist1";
       }
       const  getCaseScreener=(_screenerId) =>{
         // localStorage.setItem("_status","1");
         // localStorage.setItem("caseType","Total Cases")
         // document.location="../../views/dashboard/sevikaCaselist"
         localStorage.setItem("_screenerId", _screenerId);
-        document.location = "../../views/dashboard/admin/sevikaCaselist";
+        document.location = "/admin/sevikaCaselist";
       }
     const getColumnSearchProps = (dataIndex) => ({
       filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (

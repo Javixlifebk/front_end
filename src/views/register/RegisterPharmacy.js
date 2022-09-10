@@ -194,7 +194,7 @@ class RegisterPharmacy extends React.Component {
             outline
             onClick={() => {
               //history.push("/views/auth")
-              document.location="/views/auth/login"
+              document.location="/auth/login"
             }}
           >
             Login

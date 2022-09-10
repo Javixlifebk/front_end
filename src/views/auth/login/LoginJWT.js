@@ -66,7 +66,7 @@ class LoginJWT extends React.Component {
 
                       
                  console.log("User Id=" +  _javixid);
-                 document.location="/views/dashboard";
+                 document.location="/dashboard";
                  /*if(!(_rolid==91 || _rolid==92 || _rolid==93 || _rolid==21)){
                  axios(
                   {

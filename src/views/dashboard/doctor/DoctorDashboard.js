@@ -86,7 +86,7 @@ class DoctorDashboard extends React.Component {
   }
   getCitizenScreener() {
     // localStorage.setItem("_screenerId", _screenerId);
-    document.location = "../../views/dashboard/citizenlist1";
+    document.location = "/citizenlist1";
   }
 
   componentDidMount() {console.log("DID MOUNT ************");
