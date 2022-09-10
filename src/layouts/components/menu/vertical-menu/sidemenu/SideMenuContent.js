@@ -162,14 +162,14 @@ class SideMenuContent extends React.Component {
               title: "Home",
               type: "item",
               icon: <Icon.Home size={16} />,
-              navLink: "../../views/dashboard"
+              navLink: "/dashboard"
             },
             {
               id: "actors",
               title: "Add Actors",
               type: "item",
               icon: <Icon.User size={16} />,
-              navLink: "../../views/dashboard/addactors"
+              navLink: "/dashboard/add-actors"
             },   
             {
               id: "approve",
@@ -183,7 +183,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={12} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/doctorlist"
+                  navLink: "/doctorlist"
                 },
                 ,
                 {
@@ -192,7 +192,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/ngolist"
+                  navLink: "/ngolist"
                 },   
                 {
                   id: "screener",
@@ -200,7 +200,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/screenerlist"
+                  navLink: "/screenerlist"
                 },
                 {
                   id: "sevika",
@@ -208,7 +208,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/sevikalist"
+                  navLink: "/sevikalist"
                 },             
                 {
                   id: "pharmacy",
@@ -216,7 +216,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/commingsoon"
+                  navLink: "/dashboard/commingsoon"
                 }
               ]
             },            
@@ -232,7 +232,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/activeusers"
+                  navLink: "/activeusers"
                 },
                 {
                   id: "dusers",
@@ -240,7 +240,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/inactiveusers"
+                  navLink: "/inactiveusers"
                 }
               ]
             },
@@ -257,7 +257,7 @@ class SideMenuContent extends React.Component {
                 //   type: "item",
                 //   icon: <Icon.ArrowRight size={16} />,
                 //   permissions: ["admin", "editor"],
-                //   navLink: "../../views/dashboard/screener/dailyAndweeklyReports/DailyScreening"
+                //   navLink: "/screener/dailyAndweeklyReports/DailyScreening"
                 // },
                 
                 {
@@ -266,7 +266,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/screener/dailyAndweeklyReports/Weeklyscreener"
+                  navLink: "/screener/dailyAndweeklyReports/Weeklyscreener"
                 },
                 // {
                 //   id: "dailySevikausers",
@@ -274,7 +274,7 @@ class SideMenuContent extends React.Component {
                 //   type: "item",
                 //   icon: <Icon.ArrowRight size={16} />,
                 //   permissions: ["admin", "editor"],
-                //   navLink: "../../views/dashboard/screener/dailyAndweeklyReports/LipidCritical"
+                //   navLink: "/screener/dailyAndweeklyReports/LipidCritical"
                 // },
                 {
                   id: "weeklySevikausers",
@@ -282,7 +282,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../view/dashboard/screener/dailyAndweeklyReports/WeeklyScreenerSevika"
+                  navLink: "/screener/dailyAndweeklyReports/WeeklyScreenerSevika"
                 },
                 // {
                 //   id: "dailycitizenusers",
@@ -290,7 +290,7 @@ class SideMenuContent extends React.Component {
                 //   type: "item",
                 //   icon: <Icon.ArrowRight size={16} />,
                 //   permissions: ["admin", "editor"],
-                //   navLink: "../../views/dashboard/screener/dailyAndweeklyReports/LipidCritical"
+                //   navLink: "/screener/dailyAndweeklyReports/LipidCritical"
                 // },
                 // {
                 //   id: "dailycitydetailusers",
@@ -306,7 +306,7 @@ class SideMenuContent extends React.Component {
                 //   type: "item",
                 //   icon: <Icon.ArrowRight size={16} />,
                 //   permissions: ["admin", "editor"],
-                //   navLink: "../../views/dashboard/screener/dailyAndweeklyReports/LipidCritical"
+                //   navLink: "/screener/dailyAndweeklyReports/LipidCritical"
                 // },
                 // {
                 //   id: "weelcitydetailusers",
@@ -314,7 +314,7 @@ class SideMenuContent extends React.Component {
                 //   type: "item",
                 //   icon: <Icon.ArrowRight size={16} />,
                 //   permissions: ["admin", "editor"],
-                //   navLink: "../../views/dashboard/screener/dailyAndweeklyReports/LipidCritical"
+                //   navLink: "/screener/dailyAndweeklyReports/LipidCritical"
                 // },
                 {
                   id: "lipidusers",
@@ -322,7 +322,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/screener/dailyAndweeklyReports/LipidCritical"
+                  navLink: "/screener/dailyAndweeklyReports/LipidCritical"
                 },
                 // {
                 //   id: "unscreenusers",
@@ -330,7 +330,7 @@ class SideMenuContent extends React.Component {
                 //   type: "item",
                 //   icon: <Icon.ArrowRight size={16} />,
                 //   permissions: ["admin", "editor"],
-                //   navLink: "../../views/dashboard/inactiveusers"
+                //   navLink: "/inactiveusers"
                 // }
               ]
             },
@@ -340,7 +340,7 @@ class SideMenuContent extends React.Component {
               title: "Insights ",
               type: "item",
               icon: <Icon.Activity size={16} />,
-              navLink: "../../views/dashboard/insights"               
+              navLink: "/dashboard/insights"               
           
             },
             {
@@ -350,7 +350,7 @@ class SideMenuContent extends React.Component {
               target:"_blank",
               icon: <Icon.Activity size={16} />,
               // navLink: "http://159.65.148.197:3001/documents/dump.csv"
-              navLink:"../../views/dashboard/survey/generalSurvey"   
+              navLink:"/dashboard/survey/generalSurvey"   
           
             },
             
@@ -361,7 +361,7 @@ class SideMenuContent extends React.Component {
               target:"_blank",
               icon: <Icon.Activity size={16} />,
               // navLink: "http://159.65.148.197:3001/documents/dumpHealth.csv"   
-              navLink:"../../views/dashboard/survey/HealthSurvey"               
+              navLink:"/dashboard/survey/HealthSurvey"               
           
             },
             {
@@ -371,7 +371,7 @@ class SideMenuContent extends React.Component {
               target:"_blank",
               icon: <Icon.Activity size={16} />,
               // navLink: "http://159.65.148.197:3001/documents/dumpHealth.csv" 
-              navLink: "../../views/dashboard/survey/SocieconomicSurvey"              
+              navLink: "/dashboard/survey/SocieconomicSurvey"              
           
             },
             {
@@ -379,14 +379,14 @@ class SideMenuContent extends React.Component {
               title: "Change Request",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink: "../../views/dashboard/commingsoon"
+              navLink: "/dashboard/commingsoon"
             }/*,          
             {
               id: "communicate",
               title: "Directory",
               type: "item",
               icon: <Icon.Phone size={16} />,
-              navLink: "../../views/dashboard/directory"
+              navLink: "/dashboard/directory"
             }*/,
             {
               id: "complaint",
@@ -400,7 +400,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={12} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/issuelistall"
+                  navLink: "/issuelistall"
                 },
                 {
                   id: "resolve",
@@ -408,7 +408,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/issuelistalladdressed"
+                  navLink: "/issuelistalladdressed"
                 }             
                 
               ]
@@ -418,7 +418,7 @@ class SideMenuContent extends React.Component {
               title: "Logout",
               type: "item",
               icon: <Icon.LogOut size={16} />,
-              navLink: "../../views/auth/logout"
+              navLink: "/auth/logout"
             },
           
           ]
@@ -430,7 +430,7 @@ class SideMenuContent extends React.Component {
                 title: "Home",
                 type: "item",
                 icon: <Icon.Home size={16} />,
-                navLink: "../../views/dashboard"
+                navLink: "/dashboard"
               },
               // {
                 // id: "investigation",
@@ -452,7 +452,7 @@ class SideMenuContent extends React.Component {
                     type: "item",
                     icon: <Icon.Bell size={16} />,
                     permissions: ["admin", "editor"],
-                    navLink: "../../views/dashboard/doctor/ReferPatientList"
+                    navLink: "/doctor/ReferPatientList"
                   },
                  
               //   ]
@@ -463,35 +463,35 @@ class SideMenuContent extends React.Component {
                 title: "Patient View",
                 type: "item",
                 icon: <Icon.User size={16} />,
-                navLink: "../../views/dashboard/citizenlist"
+                navLink: "/citizenlist"
               },   
               /*{
                 id: "profile",
                 title: "Profile",
                 type: "item",
                 icon: <Icon.User size={16} />,
-                navLink: "../../views/dashboard/docviewprofile"
+                navLink: "/docviewprofile"
               },*/           
               /*{
                 id: "communicate",
                 title: "Directory",
                 type: "item",
                 icon: <Icon.Phone size={16} />,
-                navLink: "../../views/dashboard/directory"
+                navLink: "/dashboard/directory"
               },*/
               {
                 id: "refer",
                 title: "Help",
                 type: "item",
                 icon: <Icon.Briefcase size={16} />,
-                navLink: "../../views/dashboard/issuelist"
+                navLink: "/issuelist"
               },
               {
                 id: "Insights",
                 title: "Insights",
                 type: "item",
                 icon: <Icon.File size={16} />,
-                navLink: "../../views/dashboard/insights"
+                navLink: "/dashboard/insights"
               },
             
               {
@@ -511,7 +511,7 @@ class SideMenuContent extends React.Component {
               title: "Home",
               type: "item",
               icon: <Icon.Home size={16} />,
-              navLink: "../../views/dashboard"
+              navLink: "views/dashboard"
             },
             
               /*{
@@ -519,35 +519,35 @@ class SideMenuContent extends React.Component {
                 title: "Profile",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "../../views/dashboard/scrviewprofile"
+                navLink: "/scrviewprofile"
               },*/
               {
                 id: "citizenlist",
                 title: "Citizens",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "../../views/dashboard/citizenlist"
+                navLink: "/citizenlist"
               },
               /*{
                 id: "directory",
                 title: "Directory",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "../../views/dashboard/directory"
+                navLink: "/dashboard/directory"
               },*/
               {
                 id: "reportissue",
                 title: "Help",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "../../views/dashboard/issuelist"
+                navLink: "/issuelist"
               },
               {
                 id: "Insights",
                 title: "Insights",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "../../views/dashboard/insights"
+                navLink: "/dashboard/insights"
               },
 
             {
@@ -567,42 +567,42 @@ class SideMenuContent extends React.Component {
               title: "Home",
               type: "item",
               icon: <Icon.Home size={16} />,
-              navLink: "../../views/dashboard"
+              navLink: "/dashboard"
             },
               /*{
                 id: "editproile",
                 title: "Profile",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "../../views/dashboard/seveditprofile"
+                navLink: "/seveditprofile"
               },*/
               /*{
                 id: "directory",
                 title: "Directory",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "../../views/dashboard/directory"
+                navLink: "/dashboard/directory"
               },*/
               {
                 id: "citizenlist",
                 title: "Citizens",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "../../views/dashboard/citizenlist"
+                navLink: "/citizenlist"
               },
               {
                 id: "reportissue",
                 title: "Help",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "../../views/dashboard/issuelist"
+                navLink: "/issuelist"
               },
               {
                 id: "Insights",
                 title: "Insights",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "../../views/dashboard/commingsoon"
+                navLink: "/dashboard/commingsoon"
               },
 
             {
@@ -622,14 +622,14 @@ class SideMenuContent extends React.Component {
               title: "Home",
               type: "item",
               icon: <Icon.Home size={16} />,
-              navLink: "../../views/dashboard"
+              navLink: "/dashboard"
             },
            /* {
               id: "editproile",
               title: "Profile",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink: "../../views/dashboard/ngoviewprofile"
+              navLink: "/ngoviewprofile"
             },*/
             {
               id: "mapscreener",
@@ -643,7 +643,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/mappedscreener"
+                  navLink: "/mappedscreener"
                 },
                 {
                   id: "unmapped",
@@ -651,7 +651,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/unmappedscreener"
+                  navLink: "/unmappedscreener"
                 }
               ]
             },
@@ -667,7 +667,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/mappedsevika"
+                  navLink: "/mappedsevika"
                 },
                 {
                   id: "unmapped",
@@ -675,7 +675,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/unmappedsevika"
+                  navLink: "/unmappedsevika"
                 }
               ]
             },    
@@ -691,7 +691,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/mappedDoctor"
+                  navLink: "/mappedDoctor"
                 },
                 {
                   id: "unmapped",
@@ -699,7 +699,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "../../views/dashboard/unmappedDoctor"
+                  navLink: "/unmappedDoctor"
                 }
               ]
             },     
@@ -708,7 +708,7 @@ class SideMenuContent extends React.Component {
               title: "Directory",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink:"../../views/dashboard/directory"
+              navLink:"/dashboard/directory"
 
 
             },*/
@@ -717,14 +717,14 @@ class SideMenuContent extends React.Component {
               title: "Help",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink: "../../views/dashboard/issuelist"
+              navLink: "/issuelist"
             },
             {
               id: "Insights",
               title: "Insights",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink: "../../views/dashboard/insights"
+              navLink: "/dashboard/insights"
             },
             {
               id: "logout",
@@ -743,21 +743,21 @@ class SideMenuContent extends React.Component {
               title: "Home",
               type: "item",
               icon: <Icon.Home size={16} />,
-              navLink: "../../views/dashboard"
+              navLink: "/dashboard"
             },
             /*{
               id: "editproile",
               title: "Edit Profile",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink: "../../views/dashboard/pharmacyviewprofile"
+              navLink: "/pharmacyviewprofile"
             },*/            
            /*{
               id: "directory",
               title: "Directory",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink:"../../views/dashboard/directory"
+              navLink:"/dashboard/directory"
 
 
             },*/
@@ -766,14 +766,14 @@ class SideMenuContent extends React.Component {
               title: "Help",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink: "../../views/dashboard/issuelist"
+              navLink: "/issuelist"
             },
             {
               id: "Insights",
               title: "Insights",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink: "../../views/dashboard/commingsoon"
+              navLink: "/dashboard/commingsoon"
             },
             {
               id: "logout",

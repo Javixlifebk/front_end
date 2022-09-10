@@ -161,7 +161,7 @@ this.setState({myexection:e.response.data.message});
             Register
           </Button.Ripple>
           <Button.Ripple
-            onClick={() =>  document.location="/views/auth/login"}
+            onClick={() =>  document.location="/auth/login"}
             color="primary"
             outline
           >

@@ -356,87 +356,87 @@ export default class Dashboard extends React.Component {
          
             <Router history={history}>
             <Switch>          
-              <AppRoute exact path="/views/dashboard/" component={this.renderSwitch(parseInt(userRole))} />
+              <AppRoute exact path="/dashboard/" component={this.renderSwitch(parseInt(userRole))} />
             
              
               
-              <AppRoute exact path="/views/dashboard/activeusers/" component={activeUsers} />
-              <AppRoute exact path="/views/dashboard/inactiveusers/" component={inactiveUsers} />
-              <AppRoute exact path="/views/dashboard/commingsoon/" component={commingSoon} />
+              <AppRoute exact path="/activeusers/" component={activeUsers} />
+              <AppRoute exact path="/inactiveusers/" component={inactiveUsers} />
+              <AppRoute exact path="/dashboard/commingsoon/" component={commingSoon} />
              
 
 
-              <AppRoute exact path="/views/dashboard/mappedscreener/" component={mappedScreener} />
-              <AppRoute exact path="/views/dashboard/unmappedscreener/" component={unmappedScreener} />
+              <AppRoute exact path="/mappedscreener/" component={mappedScreener} />
+              <AppRoute exact path="/unmappedscreener/" component={unmappedScreener} />
 
-              <AppRoute exact path="/views/dashboard/mappedsevika" component={mappedSevika} />
-              <AppRoute exact path="/views/dashboard/unmappedsevika" component={unmappedSevika} />
+              <AppRoute exact path="/mappedsevika" component={mappedSevika} />
+              <AppRoute exact path="/unmappedsevika" component={unmappedSevika} />
 
-              <AppRoute exact path="/views/dashboard/screditprofile/" component={screenerProfile} />
-              <AppRoute exact path="/views/dashboard/scrviewprofile/" component={screenerViewProfile} />
-              <AppRoute exact path="/views/dashboard/screenerlist" component={screenerList} />
-              <AppRoute exact path="/views/dashboard/screenerprofile" component={viewScreenerProfile} />
-              <AppRoute exact path="/views/dashboard/citizenlist" component={citizenList} />
-              <AppRoute exact path="/views/dashboard/citizenlist1" component={citizenList1} />
-              <AppRoute exact path="/views/dashboard/editcitizen" component={editCitizen} />
+              <AppRoute exact path="/screditprofile/" component={screenerProfile} />
+              <AppRoute exact path="/scrviewprofile/" component={screenerViewProfile} />
+              <AppRoute exact path="/screenerlist" component={screenerList} />
+              <AppRoute exact path="/screenerprofile" component={viewScreenerProfile} />
+              <AppRoute exact path="/citizenlist" component={citizenList} />
+              <AppRoute exact path="/citizenlist1" component={citizenList1} />
+              <AppRoute exact path="/editcitizen" component={editCitizen} />
 
               
 
-              <AppRoute exact path="/views/dashboard/doctorlist/" component={doctorList} />
-              <AppRoute exact path="/views/dashboard/docviewprofile" component={doctorerViewProfile} />
-              <AppRoute exact path="/views/dashboard/doceditprofile" component={doctorEditProfile} />
-              <AppRoute exact path="/views/dashboard/doctorprofile" component={viewDoctorProfile} />
-              <AppRoute exact path="/views/dashboard/patientlist" component={patientList} />
-              <AppRoute exact path="/views/dashboard/patientview" component={patientTab} />
-              <AppRoute exact path="/views/dashboard/patientviewscreener" component={patientTabScreener} />
-              <AppRoute exact path="/views/dashboard/addallergy" component={addAllergey} />
-              <AppRoute exact path="/views/dashboard/addhistory" component={addHistory} />
-              <AppRoute exact path="/views/dashboard/encounters" component={Encounters} />
-              <AppRoute exact path="/views/dashboard/addmedicine" component={addMedicine} />
-              <AppRoute exact path="/views/dashboard/accordian" component={accordion} />
-              <AppRoute exact path="/views/dashboard/casedetails" component={caseDetails} />
-              <AppRoute exact path="/views/dashboard/addactors" component={addActors} />
-              <AppRoute exact path="/views/dashboard/citizenprofile" component={citizenProfile} />
-              <AppRoute exact path="/views/dashboard/issueaddressing" component={issueAddressing} />
-              <AppRoute exact path="/views/dashboard/issuelistalladdressed" component={issueListAddressed} />
-              <AppRoute exact path="/views/dashboard/insights" component={insights} />
+              <AppRoute exact path="/doctorlist/" component={doctorList} />
+              <AppRoute exact path="/docviewprofile" component={doctorerViewProfile} />
+              <AppRoute exact path="/doceditprofile" component={doctorEditProfile} />
+              <AppRoute exact path="/doctorprofile" component={viewDoctorProfile} />
+              <AppRoute exact path="/patientlist" component={patientList} />
+              <AppRoute exact path="/patientview" component={patientTab} />
+              <AppRoute exact path="/patientviewscreener" component={patientTabScreener} />
+              <AppRoute exact path="/addallergy" component={addAllergey} />
+              <AppRoute exact path="/addhistory" component={addHistory} />
+              <AppRoute exact path="/encounters" component={Encounters} />
+              <AppRoute exact path="/addmedicine" component={addMedicine} />
+              <AppRoute exact path="/accordian" component={accordion} />
+              <AppRoute exact path="/casedetails" component={caseDetails} />
+              <AppRoute exact path="/dashboard/add-actors" component={addActors} />
+              <AppRoute exact path="/citizenprofile" component={citizenProfile} />
+              <AppRoute exact path="/issueaddressing" component={issueAddressing} />
+              <AppRoute exact path="/issuelistalladdressed" component={issueListAddressed} />
+              <AppRoute exact path="/dashboard/insights" component={insights} />
 
               
                  
 
-              <AppRoute exact path="/views/dashboard/ngoviewprofile" component={ngoViewProfile} />
-              <AppRoute exact path="/views/dashboard/ngoeditwprofile" component={ngoEditProfile} />
-              <AppRoute exact path="/views/dashboard/ngoscreenerprofile" component={ngoScreenerProfile} />
-              <AppRoute exact path="/views/dashboard/ngolist/" component={ngoList} />
-              <AppRoute exact path="/views/dashboard/ngoprofile" component={viewNgoProfile} />
+              <AppRoute exact path="/ngoviewprofile" component={ngoViewProfile} />
+              <AppRoute exact path="/ngoeditwprofile" component={ngoEditProfile} />
+              <AppRoute exact path="/ngoscreenerprofile" component={ngoScreenerProfile} />
+              <AppRoute exact path="/ngolist/" component={ngoList} />
+              <AppRoute exact path="/ngoprofile" component={viewNgoProfile} />
 
               
-              <AppRoute exact path="/views/dashboard/pharmacyviewprofile" component={pharmacyViewProfile} />
-              <AppRoute exact path="/views/dashboard/pharmacyeditprofile" component={pharmacyEditProfile} />
-              <AppRoute exact path="/views/dashboard/pharmacylist" component={pharmacyList} />
-              <AppRoute exact path="/views/dashboard/pharmacyprofile" component={viewPharmacyProfile} />
+              <AppRoute exact path="/pharmacyviewprofile" component={pharmacyViewProfile} />
+              <AppRoute exact path="/pharmacyeditprofile" component={pharmacyEditProfile} />
+              <AppRoute exact path="/pharmacylist" component={pharmacyList} />
+              <AppRoute exact path="/pharmacyprofile" component={viewPharmacyProfile} />
 
               
-              <AppRoute exact path="/views/dashboard/seveditprofile/" component={sevikaProfile} />
-              <AppRoute exact path="/views/dashboard/sevviewprofile/" component={sevikaViewProfile} />
+              <AppRoute exact path="/seveditprofile/" component={sevikaProfile} />
+              <AppRoute exact path="/sevviewprofile/" component={sevikaViewProfile} />
               
 
-              <AppRoute exact path="/views/dashboard/directory/" component={userDirectory} />             
-              <AppRoute exact path="/views/dashboard/reportissue/" component={reportIssue} />
-              <AppRoute exact path="/views/dashboard/issuelistall/" component={issueListAll} />
-              <AppRoute exact path="/views/dashboard/issuelist" component={issueList} />
+              <AppRoute exact path="/directory/" component={userDirectory} />             
+              <AppRoute exact path="/reportissue/" component={reportIssue} />
+              <AppRoute exact path="/issuelistall/" component={issueListAll} />
+              <AppRoute exact path="/issuelist" component={issueList} />
 
-              <AppRoute exact path="/views/dashboard/addcitizen/" component={addCitizen} />
-              <AppRoute exact path="/views/dashboard/citizenlist" component={citizenList} />
-              <AppRoute exact path="/views/dashboard/citizenlist1" component={citizenList1} />
-              <AppRoute exact path="/views/dashboard/detaildump" component={detaildump} />
-              <AppRoute exact path="/views/dashboard/sevikalist" component={sevikaList} />
+              <AppRoute exact path="/addcitizen/" component={addCitizen} />
+              <AppRoute exact path="/citizenlist" component={citizenList} />
+              <AppRoute exact path="/citizenlist1" component={citizenList1} />
+              <AppRoute exact path="/detaildump" component={detaildump} />
+              <AppRoute exact path="/sevikalist" component={sevikaList} />
 
-              <AppRoute exact path="/views/dashboard/doceupdateprofile" component={docEditProfile} />
+              <AppRoute exact path="/doceupdateprofile" component={docEditProfile} />
               
               
 
-              <AppRoute exact path="/views/dashboard/customtable" component={myCustomTable} />
+              <AppRoute exact path="/customtable" component={myCustomTable} />
               
               
               

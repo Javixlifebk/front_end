@@ -11,7 +11,7 @@ class Logout extends React.Component {
 
     logout() {
         localStorage.clear();    
-        window.location='../../../views/auth/login'
+        window.location='/auth/login'
     }
  
     render(){

@@ -47,7 +47,7 @@ class ResetPwd extends React.Component {
                            if(res.data.status===1 || res.data.status==="1")
                               { 
                                 this.setState({myexection:'Successfully Confirmed!'});  
-                              document.location="/views/auth/login";
+                              document.location="/auth/login";
                               }
                           
                           })

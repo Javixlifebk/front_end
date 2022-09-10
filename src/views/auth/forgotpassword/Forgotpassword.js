@@ -151,7 +151,7 @@ class Forgotpassword extends React.Component {
                 outline
                 onClick={() => {
                   //history.push("/pages/register")
-                  document.location="/views/auth/login"
+                  document.location="/auth/login"
                 }}
               >
                 Back to Login
