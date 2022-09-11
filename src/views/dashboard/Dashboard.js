@@ -112,6 +112,15 @@ const BloodGlucoseRed = lazy(() =>
   import("../../views/dashboard/admin/BloodGlucoseRed")
 )
 
+const ldlLipidPanelRed = lazy(() =>
+  import("../../views/dashboard/admin/lipid-test-report/LipidPanelLdlRed")
+)
+const ldlLipidPanelGreen = lazy(() =>
+  import("../../views/dashboard/admin/lipid-test-report/LipidPanelLdlGreen")
+)
+const ldlLipidPanelAmber = lazy(() =>
+  import("../../views/dashboard/admin/lipid-test-report/LipidPanelLdlAmber")
+)
 
 /**********************End of Javix Admin Section************************** */
 
@@ -480,6 +489,10 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/BloodGlucoseGreen" component={BloodGlucoseGreen} />
               <AppRoute exact path="/dashboard/BloodGlucoseAmber" component={BloodGlucoseAmber} />
               <AppRoute exact path="/dashboard/BloodGlucoseRed" component={BloodGlucoseRed} />
+
+              <AppRoute exact path="/dashboard/LipidPanelLdlGreen" component={ldlLipidPanelGreen} />
+              <AppRoute exact path="/dashboard/LipidPanelLdlRed" component={ldlLipidPanelRed} />
+              <AppRoute exact path="/dashboard/LipidPanelLdlAmber" component={ldlLipidPanelAmber} />
 
 
               

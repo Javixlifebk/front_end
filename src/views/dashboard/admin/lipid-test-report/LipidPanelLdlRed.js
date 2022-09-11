@@ -14,7 +14,7 @@ import DataTable from "react-data-table-component"
 import { Star, Search } from "react-feather"
 import * as Icon from "react-feather"
 import axios from "axios";
-import profileImg from "../../../assets/img/icons/viewprofile.png"
+// import profileImg from "../../../assets/img/icons/viewprofile.png"
 const CustomHeader = props => {
   return (
     <div className="d-flex flex-wrap justify-content-between">
@@ -31,7 +31,7 @@ const CustomHeader = props => {
   )
 }
 
-class BloodGlucoseGreen extends React.Component {
+class LipidPanelLdlRed extends React.Component {
 
   state = {
     casetype: "",
@@ -54,12 +54,12 @@ class BloodGlucoseGreen extends React.Component {
             return(<span style={{background:'red',padding:'4px',color:'white'}}>BMI:{val}</span>);
         }
     }
-    setBP(bloodglucose){
+    setBP(ldl){
 
-        if(bloodglucose>=80 && bloodglucose<=100){
-            return(<span style={{background:'#008000',padding:'4px',color:'white',borderRadius:'25px;'}}>bloodglucose:{bloodglucose}</span>);
-         }else{
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
+        if(ldl>=160 &&  ldl<189 ){
+                return(<span style={{background:'red',padding:'4px',color:'white'}}>ldl:{ldl}</span>);
+             }else{
+            return(<span style={{background:'red',padding:'4px',color:'white'}}>ldl:{ldl}</span>);
          }
     }
     setSOP2(val){
@@ -117,7 +117,7 @@ class BloodGlucoseGreen extends React.Component {
         selector: "User",
         sortable: true,
         cell: row => (
-         <div style={{cursor:'pointer'}}  onClick={() =>this.handleClick(row.fullName)}>
+         <div style={{cursor:'pointer'}}  onClick={() =>this.handleClick(row.fullname)}>
         
           {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
           <p className="text-bold-500 mb-0">{row.fullname}</p>         
@@ -133,7 +133,7 @@ class BloodGlucoseGreen extends React.Component {
                                  
           <p className="text-bold-500 mb-0">
           {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
-          <span style={{margin:'20px;',padding:'4px;'}}>{this.setBP(row.bloodglucose)}</span>&nbsp;&nbsp;
+          <span style={{margin:'20px;',padding:'4px;'}}>{this.setBP(row.ldl)}</span>&nbsp;&nbsp;
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
@@ -181,7 +181,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 		//this.setState({data:null});
     // if(localStorage.getItem("severity")==="1"){
     
-		  axios.post('http://159.65.148.197:3001/api/labtest/getBloodGlucoseTestList',{severity:0})
+		  axios.post('http://localhost:3001/api/labtest/LipidPanelTestldlRedList')
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
         //   console.log("User MasterId=" + localStorage.getItem("usermasid"))
@@ -190,7 +190,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 						  var msg=response.data.message;
 						  var recs=response.data.data.data;
 						  this.loadRecs(recs);
-              this.state.casetype="amber";
+              this.state.casetype="red";
 					  }
 		 });// then
     // }
@@ -269,7 +269,9 @@ componentDidMount() {console.log("DID MOUNT ************");
         <CardBody className="rdt_Wrapper">
         <Row>
           <Col sm="12">
-          <CardTitle>Blood Glucose Green Cases</CardTitle>
+          {/* <CardTitle>{localStorage.getItem("caseType")}</CardTitle> */}
+          <CardTitle>Lipid Panel Red Cases</CardTitle>
+
           </Col>          
           </Row>
           <Row>
@@ -297,4 +299,4 @@ componentDidMount() {console.log("DID MOUNT ************");
   /* ENd rebder */
 }
 
-export default BloodGlucoseGreen;
+export default LipidPanelLdlRed;

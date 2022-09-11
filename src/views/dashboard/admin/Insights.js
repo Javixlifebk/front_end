@@ -1201,6 +1201,22 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
      document.location="/dashboard/BloodGlucoseRed";
     }
 }
+// getldlCaseDetails(severity_ldl){
+//   if(severity_ldl==="green"){
+//     // localStorage.setItem("_status","0");
+//     localStorage.setItem("caseType","green")
+//     document.location="/dashboard/BloodGlucoseGreen";
+//   }else if(severity=="amber"){
+//   //  localStorage.setItem("_status","1");
+//    localStorage.setItem("caseType","amber")
+//    document.location="/dashboard/BloodGlucoseAmber";
+//   }
+//   else if(severity=="red"){
+//   //  localStorage.setItem("_status","2");
+//    localStorage.setItem("caseType","red")
+//    document.location="/dashboard/BloodGlucoseRed";
+//   }
+// }
 
 
 
@@ -1642,7 +1658,7 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
                   style={{color:"blue"}}
                 >
                   {" "}
-                  Blood Glucose green Cases{" "}
+                  Blood Glucose Green Cases{" "}
                 </a>
                 </CardBody>
                 <CardBody>
@@ -1652,7 +1668,7 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
                   style={{color:"blue"}}
                 >
                   {" "}
-                  Blood Glucose red Cases{" "}
+                  Blood Glucose Red Cases{" "}
                 </a>
                 </CardBody>
                 <CardBody>
@@ -1678,6 +1694,37 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
               <CardBody>
                 <Pie data={data_ldl} options={options} height={300} />
               </CardBody>
+              <CardBody>
+                <a
+                href="/dashboard/LipidPanelLdlGreen"
+                // onClick={() =>this.getCaseDetails("green")}
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  LDL Lipid Panel Green Cases{" "}
+                </a>
+                </CardBody>
+                <CardBody>
+                <a
+               href="/dashboard/LipidPanelLdlRed"
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  LDL Lipid Panel Red Cases{" "}
+                </a>
+                </CardBody>
+                <CardBody>
+                <a
+                href="/dashboard/LipidPanelLdlAmber"
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  LDL Lipid Panel Amber Cases{" "}
+                </a>
+                </CardBody>
             </Card>
           </Col>
         </Row>
