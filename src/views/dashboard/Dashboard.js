@@ -102,6 +102,16 @@ const insights = lazy(() =>
   import("../../views/dashboard/admin/Insights")
 )
 
+const BloodGlucoseGreen = lazy(() =>
+  import("../../views/dashboard/admin/BloodGlucoseGreen")
+)
+const BloodGlucoseAmber = lazy(() =>
+  import("../../views/dashboard/admin/BloodGlucoseAmber")
+)
+const BloodGlucoseRed = lazy(() =>
+  import("../../views/dashboard/admin/BloodGlucoseRed")
+)
+
 
 /**********************End of Javix Admin Section************************** */
 
@@ -466,6 +476,11 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/issueaddressing" component={issueAddressing} />
               <AppRoute exact path="/issuelistalladdressed" component={issueListAddressed} />
               <AppRoute exact path="/dashboard/insights" component={insights} />
+
+              <AppRoute exact path="/dashboard/BloodGlucoseGreen" component={BloodGlucoseGreen} />
+              <AppRoute exact path="/dashboard/BloodGlucoseAmber" component={BloodGlucoseAmber} />
+              <AppRoute exact path="/dashboard/BloodGlucoseRed" component={BloodGlucoseRed} />
+
 
               
                  

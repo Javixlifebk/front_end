@@ -383,7 +383,7 @@ class AdminDashboard extends React.Component {
   componentDidMount() {
     console.log("DID MOUNT ************");
     this.mounted = true;
-
+    
     axios
       .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_bp: "0",
@@ -1036,6 +1036,8 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
         }
       });
 
+
+      
     axios
       .post("http://159.65.148.197:3001/api/screening/getCount", {
         severity_bmi: "2",
@@ -1057,6 +1059,73 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
           this.state.notfound = 0;
         }
       });
+// =============================================================
+      axios.post('http://localhost:3001/api/labtest/getBloodGlucoseTestList', {severity:0})
+      .then(response => {
+   
+            console.dir("Data Length=" + response.data.data.data.length)
+            if(response.data.status===1){
+             this.setState({green:response.data.data.data.length}) 
+            }
+           
+           
+           
+      })
+      .catch(e=>{
+       console.log("Exception:"); 
+       console.log(e.response.data);
+       if(e.response.data.status===0){
+         this.state.notfound=0
+   
+       }
+     });
+
+
+    //  ======================================================
+    axios.post('http://localhost:3001/api/labtest/getBloodGlucoseTestList', {severity:'1' })
+    .then(response => {
+  
+          console.dir("Data Length=" + response.data.data.data.length)
+          if(response.data.status===1){
+           this.setState({amber:response.data.data.data.length}) 
+          }
+         
+         
+         
+    })
+    .catch(e=>{
+     console.log("Exception:"); 
+     console.log(e.response.data);
+     if(e.response.data.status===0){
+       this.state.notfound=0
+  
+     }
+   });
+
+
+
+  //  =========================================================================
+
+  axios.post('http://localhost:3001/api/labtest/getBloodGlucoseTestList', { severity:'2' })
+  .then(response => {
+
+        console.dir("Data Length=" + response.data.data.data.length)
+        if(response.data.status===1){
+         this.setState({red:response.data.data.data.length}) 
+        }
+       
+       
+       
+  })
+  .catch(e=>{
+   console.log("Exception:"); 
+   console.log(e.response.data);
+   if(e.response.data.status===0){
+     this.state.notfound=0
+
+   }
+ });
+
     }
   handleFilter = (e) => {
     let value = e.target.value;
@@ -1116,7 +1185,22 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
   };
   
  
-  
+  getCaseDetails(severity){
+    if(severity==="green"){
+      // localStorage.setItem("_status","0");
+      localStorage.setItem("caseType","green")
+      document.location="/dashboard/BloodGlucoseGreen";
+    }else if(severity=="amber"){
+    //  localStorage.setItem("_status","1");
+     localStorage.setItem("caseType","amber")
+     document.location="/dashboard/BloodGlucoseAmber";
+    }
+    else if(severity=="red"){
+    //  localStorage.setItem("_status","2");
+     localStorage.setItem("caseType","red")
+     document.location="/dashboard/BloodGlucoseRed";
+    }
+}
 
 
 
@@ -1553,13 +1637,34 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://159.65.148.197:3001/documents/spo2Red.csv"
-                  target="_blank"
+                onClick={() =>this.getCaseDetails("green")}
+                  // target="_blank"
+                  style={{color:"blue"}}
                 >
                   {" "}
-                  Blood Glucose Red Cases{" "}
+                  Blood Glucose green Cases{" "}
                 </a>
-              </CardBody>
+                </CardBody>
+                <CardBody>
+                <a
+                onClick={() =>this.getCaseDetails("red")}
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  Blood Glucose red Cases{" "}
+                </a>
+                </CardBody>
+                <CardBody>
+                <a
+                onClick={() =>this.getCaseDetails("amber")}
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  Blood Glucose Amber Cases{" "}
+                </a>
+                </CardBody>
             </Card>
           </Col>
         </Row>
