@@ -341,7 +341,7 @@ getCaseDetails(_type){
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/citizenlist';
+                          document.location='/dashboard/citizenlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -355,7 +355,7 @@ getCaseDetails(_type){
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/citizenlist';
+                          document.location='/dashboard/citizenlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -425,7 +425,7 @@ getCaseDetails(_type){
         <CardTitle style={{textAlign:"center"}}></CardTitle>
       </CardHeader>
       <CardBody style={{textAlign:"center"}} onClick={() => {
-        document.location='/admin/PendingadvancedScreening';
+        document.location='/dashboard/PendingadvancedScreening';
       }}> 
       <span style={{textAlign:"center"}}><h5>Advanced Screening Pending Cases</h5></span>                        
       <h5>{this.state.pendingadvancescreener}</h5>  
@@ -439,7 +439,7 @@ getCaseDetails(_type){
       </CardHeader>
       <CardBody style={{textAlign:"center"}}> 
       <span style={{textAlign:"center",cursor:"pointer"}} onClick={() => {
-        document.location='/admin/AdvancedScreening';
+        document.location='/dashboard/AdvancedScreening';
       }}>
         <h5>Advanced Screening Total Cases</h5></span>                        
       <h5>{this.state.advancescreener}</h5>  

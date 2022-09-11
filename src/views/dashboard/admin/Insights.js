@@ -366,7 +366,7 @@ class AdminDashboard extends React.Component {
 
   getCitizenScreener(_screenerId) {
     localStorage.setItem("_screenerId", _screenerId);
-    document.location = "/citizenlist1";
+    document.location = "/dashboard/citizenlist1";
   }
 
   getDumpPage() {

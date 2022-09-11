@@ -454,8 +454,8 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/scrviewprofile/" component={screenerViewProfile} />
               <AppRoute exact path="/screenerlist" component={screenerList} />
               <AppRoute exact path="/screenerprofile" component={viewScreenerProfile} />
-              <AppRoute exact path="/citizenlist" component={citizenList} />
-              <AppRoute exact path="/citizenlist1" component={citizenList1} />
+              <AppRoute exact path="/dashboard/citizenlist" component={citizenList} />
+              <AppRoute exact path="/dashboard/citizenlist1" component={citizenList1} />
               <AppRoute exact path="/detaildump" component={detaildump} />
               <AppRoute exact path="/editcitizen" component={editCitizen} />
               <AppRoute exact path="/screener/dailyAndweeklyReports/LipidCritical" component={lipidcritical} />
@@ -463,8 +463,8 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/screener/dailyAndweeklyReports/WeeklyScreenerSevika" component={weeklyscreenersevika} />
               <AppRoute exact path="/admin/sevikaCaselist" component={sevikaCaseDetails} />
               
-              <AppRoute exact path="/admin/AdvancedScreening/" component={advancedScreener} />
-              <AppRoute exact path="/admin/PendingadvancedScreening/" component={padvancedScreener} />
+              <AppRoute exact path="/dashboard/AdvancedScreening/" component={advancedScreener} />
+              <AppRoute exact path="/dashboard/PendingadvancedScreening/" component={padvancedScreener} />
                 
               <AppRoute exact path="/doctorlist/" component={doctorList} />
               <AppRoute exact path="/docviewprofile" component={doctorerViewProfile} />

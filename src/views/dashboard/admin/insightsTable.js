@@ -119,7 +119,7 @@ const filterData = (data) =>
     };
    const  getCitizenScreener=(_screenerId) =>{
         localStorage.setItem("_screenerId", _screenerId);
-        document.location = "/citizenlist1";
+        document.location = "/dashboard/citizenlist1";
       }
       const  getCaseScreener=(_screenerId) =>{
         // localStorage.setItem("_status","1");

@@ -298,7 +298,7 @@ class NgoDashboard extends React.Component {
       </CardHeader>
       <CardBody style={{textAlign:"center"}}> 
       <span style={{textAlign:"center",cursor:"pointer"}} onClick={() => {
-        document.location='/views/dashboard/admin/AdvancedScreening';
+        document.location='/dashboard/AdvancedScreening';
       }}>
         <h5>Advanced Screening Total Cases</h5></span>                        
       <h5>{this.state.advancescreener}</h5>  
