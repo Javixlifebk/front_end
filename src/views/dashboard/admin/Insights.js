@@ -1060,7 +1060,7 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
         }
       });
 // =============================================================
-      axios.post('http://localhost:3001/api/labtest/getBloodGlucoseTestList', {severity:0})
+      axios.post('http://159.65.148.197:3001/api/labtest/getBloodGlucoseTestList', {severity:0})
       .then(response => {
    
             console.dir("Data Length=" + response.data.data.data.length)
@@ -1082,7 +1082,7 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
 
 
     //  ======================================================
-    axios.post('http://localhost:3001/api/labtest/getBloodGlucoseTestList', {severity:'1' })
+    axios.post('http://159.65.148.197:3001/api/labtest/getBloodGlucoseTestList', {severity:'1' })
     .then(response => {
   
           console.dir("Data Length=" + response.data.data.data.length)
@@ -1106,7 +1106,7 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
 
   //  =========================================================================
 
-  axios.post('http://localhost:3001/api/labtest/getBloodGlucoseTestList', { severity:'2' })
+  axios.post('http://159.65.148.197:3001/api/labtest/getBloodGlucoseTestList', { severity:'2' })
   .then(response => {
 
         console.dir("Data Length=" + response.data.data.data.length)

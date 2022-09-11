@@ -5,7 +5,7 @@ import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarE
 import axios from "axios";
 import Button from '@mui/material/Button'
 function CustomToolbar() {
-  // http://localhost:3001/api/screening/updateCase
+  // http://159.65.148.197:3001/api/screening/updateCase
   return (
     <GridToolbarContainer>
       <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
@@ -23,7 +23,7 @@ function ReferPatientList() {
     if(window.confirm("Are you sure want to Deactivate User !")){
     let postData="caseId="+caseId+"&status=2"; 
     
-    let _targetPostURL="http://localhost:3001/api/screening/updateCase?=";
+    let _targetPostURL="http://159.65.148.197:3001/api/screening/updateCase?=";
     axios(
       {
         method: 'post',
