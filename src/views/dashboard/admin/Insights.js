@@ -1738,6 +1738,37 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
               <CardBody>
                 <Pie data={data_hdl} options={options} height={300} />
               </CardBody>
+              <CardBody>
+                <a
+                href="/dashboard/LipidPanelHdlGreen"
+                // onClick={() =>this.getCaseDetails("green")}
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  HDL Lipid Panel Green Cases{" "}
+                </a>
+                </CardBody>
+                <CardBody>
+                <a
+               href="/dashboard/LipidPanelHdlRed"
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                 HDL Lipid Panel Red Cases{" "}
+                </a>
+                </CardBody>
+                <CardBody>
+                <a
+                href="/dashboard/LipidPanelHdlAmber"
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  HDL Lipid Panel Amber Cases{" "}
+                </a>
+                </CardBody>
             </Card>
           </Col>
         </Row>
@@ -1751,6 +1782,37 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
               <CardBody>
                 <Pie data={data_tri} options={options} height={300} />
               </CardBody>
+              <CardBody>
+                <a
+                href="/dashboard/LipidPaneltriglyGreen"
+                // onClick={() =>this.getCaseDetails("green")}
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  Triglycerides Lipid Panel Green Cases{" "}
+                </a>
+                </CardBody>
+                <CardBody>
+                <a
+               href="/dashboard/LipidPaneltriglyRed"
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  Triglycerides Lipid Panel Red Cases{" "}
+                </a>
+                </CardBody>
+                <CardBody>
+                <a
+                href="/dashboard/LipidPaneltriglyAmber"
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  Triglycerides Lipid Panel Amber Cases{" "}
+                </a>
+                </CardBody>
             </Card>
           </Col>
         </Row>
@@ -1764,6 +1826,37 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
               <CardBody>
                 <Pie data={data_chol} options={options} height={300} />
               </CardBody>
+              <CardBody>
+                <a
+                href="/dashboard/LipidPanelcholesterolGreen"
+                // onClick={() =>this.getCaseDetails("green")}
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  Cholesterol Lipid Panel Green Cases{" "}
+                </a>
+                </CardBody>
+                <CardBody>
+                <a
+               href="/dashboard/LipidPanelcholesterolRed"
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  Cholesterol Lipid Panel Red Cases{" "}
+                </a>
+                </CardBody>
+                <CardBody>
+                <a
+                href="/dashboard/LipidPanelcholesterolAmber"
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  Cholesterol Lipid Panel Amber Cases{" "}
+                </a>
+                </CardBody>
             </Card>
           </Col>
         </Row>

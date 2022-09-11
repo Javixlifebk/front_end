@@ -122,6 +122,36 @@ const ldlLipidPanelAmber = lazy(() =>
   import("../../views/dashboard/admin/lipid-test-report/LipidPanelLdlAmber")
 )
 
+const hdlLipidPanelRed = lazy(() =>
+  import("../../views/dashboard/admin/lipid-test-report/LipidPanelHdlRed")
+)
+const hdlLipidPanelGreen = lazy(() =>
+  import("../../views/dashboard/admin/lipid-test-report/LipidPanelHdlGreen")
+)
+const hdlLipidPanelAmber = lazy(() =>
+  import("../../views/dashboard/admin/lipid-test-report/LipidPanelHdlAmber")
+)
+
+const triglyLipidPanelRed = lazy(() =>
+  import("../../views/dashboard/admin/lipid-test-report/LipidPaneltriglyRed")
+)
+const triglyLipidPanelGreen = lazy(() =>
+  import("../../views/dashboard/admin/lipid-test-report/LipidPaneltriglyGreen")
+)
+const triglyLipidPanelAmber = lazy(() =>
+  import("../../views/dashboard/admin/lipid-test-report/LipidPaneltriglyAmber")
+)
+
+const cholesterolLipidPanelRed = lazy(() =>
+  import("../../views/dashboard/admin/lipid-test-report/LipidPanelcholesterolRed")
+)
+const cholesterolLipidPanelGreen = lazy(() =>
+  import("../../views/dashboard/admin/lipid-test-report/LipidPanelcholesterolGreen")
+)
+const cholesterolLipidPanelAmber = lazy(() =>
+  import("../../views/dashboard/admin/lipid-test-report/LipidPanelcholesterolAmber")
+)
+
 /**********************End of Javix Admin Section************************** */
 
 //*****************NGO Section****************************** */
@@ -493,6 +523,20 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/LipidPanelLdlGreen" component={ldlLipidPanelGreen} />
               <AppRoute exact path="/dashboard/LipidPanelLdlRed" component={ldlLipidPanelRed} />
               <AppRoute exact path="/dashboard/LipidPanelLdlAmber" component={ldlLipidPanelAmber} />
+
+              <AppRoute exact path="/dashboard/LipidPanelHdlGreen" component={hdlLipidPanelGreen} />
+              <AppRoute exact path="/dashboard/LipidPanelHdlRed" component={hdlLipidPanelRed} />
+              <AppRoute exact path="/dashboard/LipidPanelHdlAmber" component={hdlLipidPanelAmber} />
+
+              <AppRoute exact path="/dashboard/LipidPaneltriglyGreen" component={triglyLipidPanelGreen} />
+              <AppRoute exact path="/dashboard/LipidPaneltriglyRed" component={triglyLipidPanelRed} />
+              <AppRoute exact path="/dashboard/LipidPaneltriglyAmber" component={triglyLipidPanelAmber} />
+
+              <AppRoute exact path="/dashboard/LipidPanelcholesterolGreen" component={cholesterolLipidPanelGreen} />
+              <AppRoute exact path="/dashboard/LipidPanelcholesterolRed" component={cholesterolLipidPanelRed} />
+              <AppRoute exact path="/dashboard/LipidPanelcholesterolAmber" component={cholesterolLipidPanelAmber} />
+
+             
 
 
               
