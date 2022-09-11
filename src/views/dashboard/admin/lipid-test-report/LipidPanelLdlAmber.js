@@ -181,7 +181,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 		//this.setState({data:null});
     // if(localStorage.getItem("severity")==="1"){
     
-		  axios.post('http://localhost:3001/api/labtest/LipidPanelTestldlAmberList')
+		  axios.post('http://159.65.148.197:3001/api/labtest/LipidPanelTestldlAmberList')
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
         //   console.log("User MasterId=" + localStorage.getItem("usermasid"))
