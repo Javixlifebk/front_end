@@ -56,7 +56,7 @@ class LipidPanelHdlRed extends React.Component {
     }
     setBP(hdlcholesterol){
 
-        if(hdlcholesterol>=160 &&  hdlcholesterol<189 ){
+        if(hdlcholesterol>=35 &&  hdlcholesterol==95 ){
                 return(<span style={{background:'red',padding:'4px',color:'white'}}>hdlcholesterol:{hdlcholesterol}</span>);
              }else{
             return(<span style={{background:'red',padding:'4px',color:'white'}}>hdlcholesterol:{hdlcholesterol}</span>);
