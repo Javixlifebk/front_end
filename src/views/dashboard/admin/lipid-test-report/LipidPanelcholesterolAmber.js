@@ -56,7 +56,7 @@ class LipidPanelcholesterolAmber extends React.Component {
     }
     setBP(cholesterol){
 
-        if(cholesterol>=159 &&  cholesterol<130){
+        if(cholesterol>=185 &&  cholesterol<230){
                 return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>cholesterol:{cholesterol}</span>);
              }else{
             return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>cholesterol:{cholesterol}</span>);

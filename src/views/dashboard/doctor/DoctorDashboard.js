@@ -1,6 +1,7 @@
 import React from "react"
 import { Row, Col, Card, CardBody } from "reactstrap"
-import Chart from "react-apexcharts"
+import Chart from "react-apexcharts";
+import {Link} from "react-router-dom"
 import { CardHeader,CardTitle,
   
   CardImg,  
@@ -202,10 +203,12 @@ class DoctorDashboard extends React.Component {
       </Row>
       <Row className="match-height"  style={{textAlign:"center"}}>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
-
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/doctorlist';
-                        }}>
+      <Link to={"/doctorlist"}>
+      <Card style={{textAlign:"center"}}
+      //  onClick={() => {
+      //                     document.location='/views/dashboard/doctorlist';
+      //                   }}
+                        >
       <CardHeader>
         <CardTitle></CardTitle>
       </CardHeader>
@@ -214,13 +217,16 @@ class DoctorDashboard extends React.Component {
             <h5>{this.state.doctors}</h5>              
           
       </CardBody>
-      </Card>
+      </Card></Link>
       
       </Col>
       <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/ngolist';
-                        }}> 
+      <Link to={"/ngolist"}>
+      <Card style={{textAlign:"center"}} 
+      // onClick={() => {
+      //                     document.location='/views/dashboard/ngolist';
+      //                   }}
+                        > 
       <CardHeader>
         <CardTitle></CardTitle>
       </CardHeader>
@@ -230,12 +236,15 @@ class DoctorDashboard extends React.Component {
             
       </CardBody>
       
-      </Card>
+      </Card></Link>
       </Col>
       <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/screenerlist';
-                        }}>
+      <Link to={"/screenerlist"}>
+      <Card style={{textAlign:"center"}}
+      //  onClick={() => {
+      //                     document.location='/views/dashboard/screenerlist';
+      //                   }}
+                        >
       <CardHeader>
         <CardTitle></CardTitle>
       </CardHeader>
@@ -244,12 +253,15 @@ class DoctorDashboard extends React.Component {
             <h5>{this.state.screeners}</h5>              
             
       </CardBody>
-      </Card>
+      </Card></Link>
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/sevikalist';
-                        }}>
+      <Link to={"/sevikaList"}>
+      <Card style={{textAlign:"center"}}
+      //  onClick={() => {
+      //                     document.location='/views/dashboard/sevikalist';
+      //                   }}
+                        >
       <CardHeader>
         <CardTitle></CardTitle>
       </CardHeader>
@@ -258,12 +270,15 @@ class DoctorDashboard extends React.Component {
             <h5>{this.state.sevika}</h5>              
           
       </CardBody>
-      </Card >
+      </Card ></Link>
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/citizenlist';
-                        }}>
+        <Link to={"/citizenlist"}>
+      <Card style={{textAlign:"center"}} 
+      // onClick={() => {
+      //                     document.location='/views/dashboard/citizenlist';
+      //                   }}
+                        >
       <CardHeader>
         <CardTitle></CardTitle>
       </CardHeader>
@@ -272,9 +287,10 @@ class DoctorDashboard extends React.Component {
             <h5>{this.state.citizen}</h5>              
           
       </CardBody>
-      </Card>
+      </Card></Link>
       </Col>
       <Col lg="2">
+      <Link to={"/pharmacylist"}>
       <Card style={{cursor:'pointer'}} >
       <CardHeader>
         <CardTitle></CardTitle>
@@ -284,7 +300,7 @@ class DoctorDashboard extends React.Component {
             <h5>{this.state.pharmacies}</h5>              
           
       </CardBody>
-      </Card>
+      </Card></Link>
       </Col>
       </Row> 
 
