@@ -5,6 +5,7 @@ import { Row, Col, Card,CardHeader,CardTitle,
   Button,
   Progress } from "reactstrap"
 import SalesCard from "./SalesCard"
+import {Link} from "react-router-dom"
 //import SuberscribersGained from "../../ui-elements/cards/statistics/SubscriberGained"
 //import OrdersReceived from "../../ui-elements/cards/statistics/OrdersReceived"
 //import AvgSession from "../../ui-elements/cards/analytics/AvgSessions"
@@ -282,9 +283,9 @@ getCaseDetails(_type){
       <Row className="match-height"  style={{textAlign:"center"}}>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
 
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/doctorlist';
-                        }}>
+      <Link to={'/doctorlist'}><Card style={{textAlign:"center"}} 
+      // onClick={() => { document.location='/doctorlist';}}
+        >
       <CardHeader>
         <CardTitle></CardTitle>
       </CardHeader>
@@ -293,13 +294,16 @@ getCaseDetails(_type){
             <h5>{this.state.doctors}</h5>              
           
       </CardBody>
-      </Card>
+      </Card></Link>
       
       </Col>
       <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/ngolist';
-                        }}> 
+      <Link to={'/ngolist'}>
+      <Card style={{textAlign:"center"}} 
+      // onClick={() => {
+      //                     document.location='/ngolist';
+      //                   }}
+                        > 
       <CardHeader>
         <CardTitle></CardTitle>
       </CardHeader>
@@ -309,12 +313,15 @@ getCaseDetails(_type){
             
       </CardBody>
       
-      </Card>
+      </Card></Link>
       </Col>
       <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/screenerlist';
-                        }}>
+      <Link to={'/screenerlist'}>
+      <Card style={{textAlign:"center"}} 
+      // onClick={() => {
+      //                     document.location='/screenerlist';
+      //                   }}
+                        >
       <CardHeader>
         <CardTitle></CardTitle>
       </CardHeader>
@@ -323,12 +330,12 @@ getCaseDetails(_type){
             <h5>{this.state.screeners}</h5>              
             
       </CardBody>
-      </Card>
+      </Card></Link>
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/sevikalist';
-                        }}>
+      <Link to={"/sevikaList"} ><Card style={{textAlign:"center"}} 
+      // onClick={() => {document.location='/sevikaList';}}
+      >                           
       <CardHeader>
         <CardTitle></CardTitle>
       </CardHeader>
@@ -337,12 +344,15 @@ getCaseDetails(_type){
             <h5>{this.state.sevika}</h5>              
           
       </CardBody>
-      </Card >
+      </Card ></Link>
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/dashboard/citizenlist';
-                        }}>
+      <Link to={'/citizenlist'}>
+      <Card style={{textAlign:"center"}} 
+      // onClick={() => {
+      //                     document.location='/dashboard/citizenlist';
+      //                   }}
+                        >
       <CardHeader>
         <CardTitle></CardTitle>
       </CardHeader>
@@ -351,12 +361,15 @@ getCaseDetails(_type){
             <h5>{this.state.citizen}</h5>              
           
       </CardBody>
-      </Card>
+      </Card></Link>
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/dashboard/citizenlist';
-                        }}>
+      <Link to={'/citizenlist'}>
+      <Card style={{textAlign:"center"}} 
+      // onClick={() => {
+      //                     document.location='/dashboard/citizenlist';
+      //                   }}
+                        >
       <CardHeader>
         <CardTitle></CardTitle>
       </CardHeader>
@@ -365,9 +378,10 @@ getCaseDetails(_type){
             <h5>{this.state.screening}</h5>              
           
       </CardBody>
-      </Card>
+      </Card></Link>
       </Col>
       <Col lg="2">
+        <Link to={'/pharmacylist'}>
       <Card style={{cursor:'pointer'}} >
       <CardHeader>
         <CardTitle></CardTitle>
@@ -377,36 +391,42 @@ getCaseDetails(_type){
             <h5>{this.state.pharmacies}</h5>              
           
       </CardBody>
-      </Card>
+      </Card></Link>
       </Col>
       <Col lg="2">
+        <Link to={'/PrescriptionList'}>
       <Card style={{cursor:'pointer'}} >
       <CardHeader>
         <CardTitle></CardTitle>
       </CardHeader>
       <CardBody style={{textAlign:"center"}}>
-      <span style={{textAlign:"center"}} onClick={() => {
-                          document.location='/PrescriptionList';
-                        }}><h5>Prescribed</h5></span>
+      <span style={{textAlign:"center"}} 
+      // onClick={() => {
+      //                     document.location='/PrescriptionList';
+      //                   }}
+                        ><h5>Prescribed</h5></span>
             <h5>{this.state.prescription}</h5>              
           
       </CardBody>
-      </Card>
+      </Card></Link>
       </Col>
       <Col lg="2">
+      
+      <Link to={'/NonprescriptionList'}>
       <Card style={{cursor:'pointer'}} >
       <CardHeader>
         <CardTitle></CardTitle>
       </CardHeader>
       <CardBody style={{textAlign:"center"}}>
       <span style={{textAlign:"center"}}
-       onClick={() => {
-        document.location='/nonprescriptionList';
-      }}><h5>Non-Prescribed</h5></span>
+      //  onClick={() => {
+      //   document.location='/nonprescriptionList';
+      // }}
+      ><h5>Non-Prescribed</h5></span>
             <h5>{this.state.NonPrescription}</h5>              
           
       </CardBody>
-      </Card>
+      </Card></Link>
       </Col>
       {/* <Col lg="2" style={{textAlign:"center"}}>
       <Card style={{cursor:'pointer'}}>

@@ -33,28 +33,30 @@ const adminDashboard = lazy(() =>
 )
 
 const doctorList = lazy(() =>
-  import("../../views/dashboard/admin/DoctorList")
+  // import("../../views/dashboard/admin/DoctorList")
+  import("../dashboard/admin/DoctorList")
 )
 
 const sevikaList = lazy(() =>
-  import("../../views/dashboard/admin/SevikaList")
+  import("../dashboard/admin/SevikaList")
 )
 
 const ngoList = lazy(() =>
-  import("../../views/dashboard/admin/NgoList")
+  import("../dashboard/admin/NgoList")
 )
 const prescriptionList = lazy(() =>
-  import("../../views/dashboard/admin/PrescriptionList")
+  import("../dashboard/admin/PrescriptionList")
+  // import("../../views/dashboard/admin/PrescriptionList")
 
 )
 const nonprescriptionList = lazy(() =>
 import("../../views/dashboard/admin/NonprescribedList")
 )
 const screenerList = lazy(() =>
-  import("../../views/dashboard/admin/ScreenerList")
+  import("../dashboard/admin/ScreenerList")
 )
 const pharmacyList = lazy(() =>
-  import("../../views/dashboard/admin/PharmacyList")
+  import("../dashboard/admin/PharmacyList")
 )
 
 const activeUsers = lazy(() =>
@@ -314,7 +316,8 @@ const addHistory = lazy(() =>
 )
 
 const Encounters = lazy(() =>
-  import("../../views/dashboard/doctor/Encounters")
+  // import("../../views/dashboard/doctor/Encounters")
+  import("../dashboard/doctor/Encounters")
 )
 
 const addMedicine = lazy(() =>
@@ -463,7 +466,7 @@ export default class Dashboard extends React.Component {
             <Switch>          
               <AppRoute exact path="/dashboard/" component={this.renderSwitch(parseInt(userRole))} />
             
-             
+
               
               <AppRoute exact path="/activeusers/" component={activeUsers} />
               <AppRoute exact path="/inactiveusers/" component={inactiveUsers} />
@@ -484,8 +487,8 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/scrviewprofile/" component={screenerViewProfile} />
               <AppRoute exact path="/screenerlist" component={screenerList} />
               <AppRoute exact path="/screenerprofile" component={viewScreenerProfile} />
-              <AppRoute exact path="/dashboard/citizenlist" component={citizenList} />
-              <AppRoute exact path="/dashboard/citizenlist1" component={citizenList1} />
+              <AppRoute exact path="/citizenlist" component={citizenList} />
+              <AppRoute exact path="/citizenlist1" component={citizenList1} />
               <AppRoute exact path="/detaildump" component={detaildump} />
               <AppRoute exact path="/editcitizen" component={editCitizen} />
               <AppRoute exact path="/screener/dailyAndweeklyReports/LipidCritical" component={lipidcritical} />
@@ -546,9 +549,9 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/ngoeditwprofile" component={ngoEditProfile} />
               <AppRoute exact path="/ngoscreenerprofile" component={ngoScreenerProfile} />
               <AppRoute exact path="/ngolist/" component={ngoList} />
-              <AppRoute exact path="/NonprescriptionList/" component={nonprescriptionList} />
+              <AppRoute exact path="/NonprescriptionList" component={nonprescriptionList} />
              
-              <AppRoute exact path="/PrescriptionList/" component={prescriptionList} />
+              <AppRoute exact path="/PrescriptionList" component={prescriptionList} />
               <AppRoute exact path="/ngoprofile" component={viewNgoProfile} />
 
               
