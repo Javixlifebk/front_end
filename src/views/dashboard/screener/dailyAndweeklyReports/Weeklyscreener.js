@@ -82,8 +82,8 @@ function WeeklyScreener() {
     // {  minWidth : 100, headerName: 'Left Eye Range', field: 'leye'  },
     // {  minWidth : 100, headerName: 'Right Eye Range', field: 'reye'  },
     // {  minWidth : 100, headerName: 'hemoglobins', field: 'hemoglobins' , filter: true}, 
-    // {  minWidth : 100, headerName: 'Blood Glucose unit', field: 'unit'  },
-    // {  minWidth : 100, headerName: 'Blood Glucose type', field: 'type'  },
+    {  minWidth : 100, headerName: 'Blood Glucose unit', field: 'unit' },
+    {  minWidth : 150, headerName: 'Blood Glucose type', field: 'btype' },
     // {  minWidth : 100, headerName: 'leukocytes', field: 'leukocytes'  },
     // {  minWidth : 100, headerName: 'nitrite', field: 'nitrite'  },
     // {  minWidth : 100, headerName: 'urobilinogen', field: 'urobilinogen'  },
@@ -150,7 +150,7 @@ function WeeklyScreener() {
   }, [startDate, endDate]);
 
   axios
-    .post("http://159.65.148.197:3001/api/generalsurvey/screeningScreener")
+    .post("http://localhost:3001/api/generalsurvey/screeningScreener")
     .then((response) => {
       console.log("Returned data:");
       if (response.data.status === 1) {
