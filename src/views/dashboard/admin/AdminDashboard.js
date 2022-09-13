@@ -283,7 +283,7 @@ getCaseDetails(_type){
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
 
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/doctorlist';
+                          document.location='/dashboard/admin/doctorlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -298,7 +298,7 @@ getCaseDetails(_type){
       </Col>
       <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/ngolist';
+                          document.location='/dashboard/admin/ngolist';
                         }}> 
       <CardHeader>
         <CardTitle></CardTitle>
@@ -313,7 +313,7 @@ getCaseDetails(_type){
       </Col>
       <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/screenerlist';
+                          document.location='/dashboard/admin/screenerlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -327,7 +327,7 @@ getCaseDetails(_type){
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/sevikalist';
+                          document.location='/dashboard/sevikalist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -341,7 +341,7 @@ getCaseDetails(_type){
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/citizenlist';
+                          document.location='/dashboard/citizenlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -355,7 +355,7 @@ getCaseDetails(_type){
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/citizenlist';
+                          document.location='/dashboard/citizenlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>

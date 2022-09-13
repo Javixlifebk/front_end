@@ -93,7 +93,7 @@ class DoctorDashboard extends React.Component {
   console.log("Javix ID=" + localStorage.getItem("javixid"))
   if(localStorage.getItem("javixid")===null || localStorage.getItem("javixid")==="0"){
     console.log("Javix ID=" + localStorage.getItem("javixid"))
-    document.location="/views/dashboard/doceditprofile";
+    document.location="/dashboard/doceditprofile";
   }
 
   this.mounted = true;
@@ -155,7 +155,7 @@ class DoctorDashboard extends React.Component {
       {
         name: "Screener",
         data: [this.state.screeners],
-        link:"/views/dashboard/casedetails"
+        link:"/dashboard/casedetails"
       },
       {
         name: "NGO",
@@ -204,7 +204,7 @@ class DoctorDashboard extends React.Component {
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
 
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/doctorlist';
+                          document.location='/dashboard/admin/doctorlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -219,7 +219,7 @@ class DoctorDashboard extends React.Component {
       </Col>
       <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/ngolist';
+                          document.location='/dashboard/admin/ngolist';
                         }}> 
       <CardHeader>
         <CardTitle></CardTitle>
@@ -234,7 +234,7 @@ class DoctorDashboard extends React.Component {
       </Col>
       <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/screenerlist';
+                          document.location='/dashboard/admin/screenerlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -248,7 +248,7 @@ class DoctorDashboard extends React.Component {
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/sevikalist';
+                          document.location='/dashboard/sevikalist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -262,7 +262,7 @@ class DoctorDashboard extends React.Component {
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/citizenlist';
+                          document.location='/dashboard/citizenlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -299,7 +299,7 @@ class DoctorDashboard extends React.Component {
           </CardBody>
           <CardBody>
                 <a
-                href='/views/dashboard/doctorlist'
+                href='/dashboard/admin/doctorlist'
                   // target="_blank"
                 >
                   Doctors
@@ -307,7 +307,7 @@ class DoctorDashboard extends React.Component {
               </CardBody>
               <CardBody>
                 <a
-                  href="/views/dashboard/screenerlist"
+                  href="/dashboard/admin/screenerlist"
                   // target="_blank"
                 >
                   Screener
@@ -315,7 +315,7 @@ class DoctorDashboard extends React.Component {
               </CardBody>
               <CardBody>
                 <a
-                  href="/views/dashboard/ngolist"
+                  href="/dashboard/admin/ngolist"
                   // target="_blank"
                 >
                   NGO

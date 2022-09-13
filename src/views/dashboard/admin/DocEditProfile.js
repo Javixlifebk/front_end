@@ -186,7 +186,7 @@ componentDidMount() {console.log("DID MOUNT ************");
         console.log(res.data);
         if(res.data.status===1){
           alert('Profile Updated Successfully')
-          document.location="/views/auth/logout"
+          document.location="/auth/logout"
         }
       })
       .catch(e=>{

@@ -104,7 +104,7 @@ loadRecs(recs)
 }
 
  handleBack() {    
-  window.location='/dashboard/ngolist'
+  window.location='/dashboard/admin/ngolist'
 }
   
 componentWillUnmount(){ console.log("WIllUnmount************"); this.mounted = false;}

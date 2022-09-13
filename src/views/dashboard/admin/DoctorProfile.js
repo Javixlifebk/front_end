@@ -51,7 +51,7 @@ class Profile extends React.Component {
   }
 
   handleBack() {    
-       window.location='/dashboard/doctorlist'    
+       window.location='/dashboard/admin/doctorlist'    
   }
   handleChangePwd() {
     if(window.confirm("Do You Really Want to change Password !")===true){

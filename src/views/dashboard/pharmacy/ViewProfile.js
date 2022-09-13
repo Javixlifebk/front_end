@@ -59,7 +59,7 @@ class Profile extends React.Component {
  if(window.confirm("Do you want to edit your profile !")){
 
   //alert('okay')
-  window.location='../../views/dashboard/pharmacyeditprofile'
+  window.location='/dashboard/pharmacyeditprofile'
   }
   }
 

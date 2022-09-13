@@ -180,7 +180,7 @@ class NgoDashboard extends React.Component {
       <Col lg="3" style={{textAlign:"center",cursor:'pointer'}}>
 
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/doctorlist';
+                          document.location='/dashboard/admin/doctorlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -196,7 +196,7 @@ class NgoDashboard extends React.Component {
      
       <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/screenerlist';
+                          document.location='/dashboard/admin/screenerlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -210,7 +210,7 @@ class NgoDashboard extends React.Component {
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/screenerlist';
+                          document.location='/dashboard/admin/screenerlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -224,7 +224,7 @@ class NgoDashboard extends React.Component {
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/citizenlist';
+                          document.location='/dashboard/citizenlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -255,7 +255,7 @@ class NgoDashboard extends React.Component {
       </CardHeader>
       <CardBody style={{textAlign:"center"}}>
       <span style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/PrescriptionList';
+                          document.location='/dashboard/PrescriptionList';
                         }}><h5>Prescribed</h5></span>
             <h5>{this.state.prescription}</h5>              
           
@@ -270,7 +270,7 @@ class NgoDashboard extends React.Component {
       <CardBody style={{textAlign:"center"}}>
       <span style={{textAlign:"center"}}
        onClick={() => {
-        document.location='/views/dashboard/nonprescriptionList';
+        document.location='/dashboard/nonprescriptionList';
       }}><h5>Non-Prescribed</h5></span>
             <h5>{this.state.NonPrescription}</h5>              
           
@@ -284,7 +284,7 @@ class NgoDashboard extends React.Component {
         <CardTitle style={{textAlign:"center"}}></CardTitle>
       </CardHeader>
       <CardBody style={{textAlign:"center"}} onClick={() => {
-        document.location='/views/dashboard/admin/PendingadvancedScreening';
+        document.location='/dashboard/admin/PendingadvancedScreening';
       }}> 
       <span style={{textAlign:"center"}}><h5>Advanced Screening Pending Cases</h5></span>                        
       <h5>{this.state.pendingadvancescreener}</h5>  
@@ -298,7 +298,7 @@ class NgoDashboard extends React.Component {
       </CardHeader>
       <CardBody style={{textAlign:"center"}}> 
       <span style={{textAlign:"center",cursor:"pointer"}} onClick={() => {
-        document.location='/views/dashboard/admin/AdvancedScreening';
+        document.location='/dashboard/admin/AdvancedScreening';
       }}>
         <h5>Advanced Screening Total Cases</h5></span>                        
       <h5>{this.state.advancescreener}</h5>  

@@ -183,7 +183,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={12} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/doctorlist"
+                  navLink: "/dashboard/admin/doctorlist"
                 },
                 ,
                 {
@@ -192,7 +192,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/ngolist"
+                  navLink: "/dashboard/admin/ngolist"
                 },   
                 {
                   id: "screener",
@@ -200,7 +200,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/screenerlist"
+                  navLink: "/dashboard/admin/screenerlist"
                 },
                 {
                   id: "sevika",
@@ -208,7 +208,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/sevikalist"
+                  navLink: "/dashboard/sevikalist"
                 },             
                 {
                   id: "pharmacy",
@@ -452,7 +452,7 @@ class SideMenuContent extends React.Component {
                     type: "item",
                     icon: <Icon.Bell size={16} />,
                     permissions: ["admin", "editor"],
-                    navLink: "/doctor/ReferPatientList"
+                    navLink: "/dashboard/doctor/ReferPatientList"
                   },
                  
               //   ]
@@ -463,7 +463,7 @@ class SideMenuContent extends React.Component {
                 title: "Patient View",
                 type: "item",
                 icon: <Icon.User size={16} />,
-                navLink: "/citizenlist"
+                navLink: "/dashboard/citizenlist"
               },   
               /*{
                 id: "profile",
@@ -484,7 +484,7 @@ class SideMenuContent extends React.Component {
                 title: "Help",
                 type: "item",
                 icon: <Icon.Briefcase size={16} />,
-                navLink: "/issuelist"
+                navLink: "/dashboard/issuelist"
               },
               {
                 id: "Insights",
@@ -499,7 +499,7 @@ class SideMenuContent extends React.Component {
                 title: "Logout",
                 type: "item",
                 icon: <Icon.LogOut size={16} />,
-                navLink: "../../views/auth/logout"
+                navLink: "/auth/logout"
               },
             
             ]
@@ -526,7 +526,7 @@ class SideMenuContent extends React.Component {
                 title: "Citizens",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "/citizenlist"
+                navLink: "/dashboard/citizenlist"
               },
               /*{
                 id: "directory",
@@ -540,7 +540,7 @@ class SideMenuContent extends React.Component {
                 title: "Help",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "/issuelist"
+                navLink: "/dashboard/issuelist"
               },
               {
                 id: "Insights",
@@ -555,7 +555,7 @@ class SideMenuContent extends React.Component {
               title: "Logout",
               type: "item",
               icon: <Icon.LogOut size={16} />,
-              navLink: "../../views/auth/logout/"
+              navLink: "/auth/logout/"
             },
           
           ]
@@ -588,14 +588,14 @@ class SideMenuContent extends React.Component {
                 title: "Citizens",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "/citizenlist"
+                navLink: "/dashboard/citizenlist"
               },
               {
                 id: "reportissue",
                 title: "Help",
                 type: "item",
                 icon: <Icon.Edit size={16} />,
-                navLink: "/issuelist"
+                navLink: "/dashboard/issuelist"
               },
               {
                 id: "Insights",
@@ -610,7 +610,7 @@ class SideMenuContent extends React.Component {
               title: "Logout",
               type: "item",
               icon: <Icon.LogOut size={16} />,
-              navLink: "../../views/auth/logout/"
+              navLink: "/auth/logout/"
             },
           
           ]
@@ -717,7 +717,7 @@ class SideMenuContent extends React.Component {
               title: "Help",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink: "/issuelist"
+              navLink: "/dashboard/issuelist"
             },
             {
               id: "Insights",
@@ -731,7 +731,7 @@ class SideMenuContent extends React.Component {
               title: "Logout",
               type: "item",
               icon: <Icon.LogOut size={16} />,
-              navLink: "../../views/auth/logout/"
+              navLink: "/auth/logout/"
             },
           
           ]
@@ -766,7 +766,7 @@ class SideMenuContent extends React.Component {
               title: "Help",
               type: "item",
               icon: <Icon.Edit size={16} />,
-              navLink: "/issuelist"
+              navLink: "/dashboard/issuelist"
             },
             {
               id: "Insights",
@@ -780,7 +780,7 @@ class SideMenuContent extends React.Component {
               title: "Logout",
               type: "item",
               icon: <Icon.LogOut size={16} />,
-              navLink: "../../views/auth/logout/"
+              navLink: "/auth/logout/"
             },
           
           ]
@@ -799,7 +799,7 @@ class SideMenuContent extends React.Component {
               title: "Logout",
               type: "item",
               icon: <Icon.LogOut size={16} />,
-              navLink: "./../views/auth/logout/"
+              navLink: "/auth/logout/"
             },
           
           ]

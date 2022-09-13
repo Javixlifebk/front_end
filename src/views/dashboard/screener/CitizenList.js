@@ -160,7 +160,7 @@ loadRecs(recs)
  handleClick(_userid) {    
   localStorage.setItem("citizenId",_userid);
   //alert(_userid)
-  window.location='../../views/dashboard/citizenprofile'  
+  window.location='/dashboard/citizenprofile'  
 }
 
  handleSubmit() {
@@ -170,7 +170,7 @@ loadRecs(recs)
     alert("Sorry as a Doctor you are not entitled for this.");
 
   }else{
-  window.location='../../views/dashboard/addcitizen'
+  window.location='/dashboard/addcitizen'
   }
 }
   
@@ -183,7 +183,7 @@ getImage(imagUrl){
 
 getCaseDetails(_citizenId){
   localStorage.setItem("_citizenId",_citizenId);
-  document.location="../../views/dashboard/patientlist";  
+  document.location="/dashboard/patientlist";  
 }
 
 componentDidMount() {console.log("DID MOUNT ************");

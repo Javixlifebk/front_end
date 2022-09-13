@@ -216,7 +216,7 @@ loadRecs(recs)
 
 getCitizenScreener(_screenerId){
   localStorage.setItem("_screenerId",_screenerId);
-  document.location="../../views/dashboard/citizenlist1";  
+  document.location="/dashboard/citizenlist1";  
 }
 
 getDumpPage(){

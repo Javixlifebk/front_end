@@ -93,7 +93,7 @@ class ScreenerDashboard extends React.Component {
   console.log("Javix ID=" + localStorage.getItem("javixid"))
   if(localStorage.getItem("javixid")===null || localStorage.getItem("javixid")==="0"){
     console.log("Javix ID=" + localStorage.getItem("javixid"))
-    document.location="/views/dashboard/screditprofile";
+    document.location="/dashboard/screditprofile";
   }
 
   this.mounted = true;
@@ -199,7 +199,7 @@ class ScreenerDashboard extends React.Component {
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
 
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/doctorlist';
+                          document.location='/dashboard/admin/doctorlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -214,7 +214,7 @@ class ScreenerDashboard extends React.Component {
       </Col>
       <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/ngolist';
+                          document.location='/dashboard/admin/ngolist';
                         }}> 
       <CardHeader>
         <CardTitle></CardTitle>
@@ -229,7 +229,7 @@ class ScreenerDashboard extends React.Component {
       </Col>
       <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/screenerlist';
+                          document.location='/dashboard/admin/screenerlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -243,7 +243,7 @@ class ScreenerDashboard extends React.Component {
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/sevikalist';
+                          document.location='/dashboard/sevikalist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
@@ -257,7 +257,7 @@ class ScreenerDashboard extends React.Component {
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/views/dashboard/citizenlist';
+                          document.location='/dashboard/citizenlist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>

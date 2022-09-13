@@ -122,7 +122,7 @@ class AddAllergy extends React.Component {
       console.log(res.data);
       if(res.data.status===1){
         alert('Document Updated Successfully')
-        window.location='../../views/dashboard/patientview'
+        window.location='/dashboard/patientview'
       }
     })
     .catch(e=>{
