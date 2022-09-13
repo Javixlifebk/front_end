@@ -118,7 +118,7 @@ loadRecs(recs)
   
  handleScreener(_issueno) {    
   localStorage.setItem("issueNo",_issueno);
-  window.location='/dashboard/issueaddressing'  
+  window.location='/dashboard/admin/issueaddressing'  
 }
 
 componentDidMount() {console.log("DID MOUNT ************");

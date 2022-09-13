@@ -360,8 +360,8 @@ export default class Dashboard extends React.Component {
             
              
               
-              <AppRoute exact path="/activeusers/" component={activeUsers} />
-              <AppRoute exact path="/inactiveusers/" component={inactiveUsers} />
+              <AppRoute exact path="/dashboard/admin/activeusers/" component={activeUsers} />
+              <AppRoute exact path="/dashboard/admin/inactiveusers/" component={inactiveUsers} />
               <AppRoute exact path="/dashboard/commingsoon/" component={commingSoon} />
              
 
@@ -388,7 +388,7 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/admin/doctorprofile" component={viewDoctorProfile} />
               <AppRoute exact path="/dashboard/doctor/patientlist" component={patientList} />
               <AppRoute exact path="/patientview" component={patientTab} />
-              <AppRoute exact path="/patientviewscreener" component={patientTabScreener} />
+              <AppRoute exact path="/dashboard/patientviewscreener" component={patientTabScreener} />
               <AppRoute exact path="/addallergy" component={addAllergey} />
               <AppRoute exact path="/addhistory" component={addHistory} />
               <AppRoute exact path="/encounters" component={Encounters} />
@@ -397,7 +397,7 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/casedetails" component={caseDetails} />
               <AppRoute exact path="/dashboard/add-actors" component={addActors} />
               <AppRoute exact path="/dashboard/citizenprofile" component={citizenProfile} />
-              <AppRoute exact path="/issueaddressing" component={issueAddressing} />
+              <AppRoute exact path="/dashboard/admin/issueaddressing" component={issueAddressing} />
               <AppRoute exact path="/issuelistalladdressed" component={issueListAddressed} />
               <AppRoute exact path="/dashboard/insights" component={insights} />
 
@@ -429,7 +429,7 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/addcitizen/" component={addCitizen} />
               <AppRoute exact path="/dashboard/citizenlist" component={citizenList} />
               <AppRoute exact path="/dashboard/citizenlist1" component={citizenList1} />
-              <AppRoute exact path="/detaildump" component={detaildump} />
+              <AppRoute exact path="/dashboard/detaildump" component={detaildump} />
               <AppRoute exact path="/dashboard/sevikalist" component={sevikaList} />
 
               <AppRoute exact path="/dashboard/admin/doceupdateprofile" component={docEditProfile} />

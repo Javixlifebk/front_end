@@ -370,7 +370,7 @@ class AdminDashboard extends React.Component {
   }
 
   getDumpPage() {
-    document.location = "/detaildump";
+    document.location = "/dashboard/detaildump";
   }
 
   getImage(imagUrl) {

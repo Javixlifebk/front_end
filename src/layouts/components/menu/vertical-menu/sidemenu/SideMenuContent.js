@@ -232,7 +232,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/activeusers"
+                  navLink: "/dashboard/admin/activeusers"
                 },
                 {
                   id: "dusers",
@@ -240,7 +240,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/inactiveusers"
+                  navLink: "/dashboard/admin/inactiveusers"
                 }
               ]
             },

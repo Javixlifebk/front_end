@@ -386,7 +386,7 @@ getCaseDetails(_type){
       </CardHeader>
       <CardBody style={{textAlign:"center"}}>
       <span style={{textAlign:"center"}} onClick={() => {
-                          document.location='/PrescriptionList';
+                          document.location='/dashboard/admin/prescriptionList';
                         }}><h5>Prescribed</h5></span>
             <h5>{this.state.prescription}</h5>              
           
@@ -401,7 +401,7 @@ getCaseDetails(_type){
       <CardBody style={{textAlign:"center"}}>
       <span style={{textAlign:"center"}}
        onClick={() => {
-        document.location='/nonprescriptionList';
+        document.location='/dashboard/admin/nonprescriptionList';
       }}><h5>Non-Prescribed</h5></span>
             <h5>{this.state.NonPrescription}</h5>              
           
