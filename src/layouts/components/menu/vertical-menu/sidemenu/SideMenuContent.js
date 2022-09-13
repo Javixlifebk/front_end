@@ -702,7 +702,96 @@ class SideMenuContent extends React.Component {
                   navLink: "/unmappedDoctor"
                 }
               ]
-            },     
+            },    
+            {
+              id: "usersdaily",
+              title: "Daily and Weekly Reports",
+              type: "collapse",
+              icon: <Icon.User size={16} />,               
+              children: [
+                // {
+                //   id: "dailyusers",
+                //   title: "Daily Screening Screener",
+                //   type: "item",
+                //   icon: <Icon.ArrowRight size={16} />,
+                //   permissions: ["admin", "editor"],
+                //   navLink: "/screener/dailyAndweeklyReports/DailyScreening"
+                // },
+                
+                {
+                  id: "weeklyusers",
+                  title: "Screening Screener ",
+                  type: "item",
+                  icon: <Icon.ArrowRight size={16} />,
+                  permissions: ["admin", "editor"],
+                  navLink: "/screener/dailyAndweeklyReports/Weeklyscreener"
+                },
+                // {
+                //   id: "dailySevikausers",
+                //   title: "Daily Screening Sevika ",
+                //   type: "item",
+                //   icon: <Icon.ArrowRight size={16} />,
+                //   permissions: ["admin", "editor"],
+                //   navLink: "/screener/dailyAndweeklyReports/LipidCritical"
+                // },
+                {
+                  id: "weeklySevikausers",
+                  title: "Screening Sevika ",
+                  type: "item",
+                  icon: <Icon.ArrowRight size={16} />,
+                  permissions: ["admin", "editor"],
+                  navLink: "/screener/dailyAndweeklyReports/WeeklyScreenerSevika"
+                },
+                // {
+                //   id: "dailycitizenusers",
+                //   title: "Daily Citizens",
+                //   type: "item",
+                //   icon: <Icon.ArrowRight size={16} />,
+                //   permissions: ["admin", "editor"],
+                //   navLink: "/screener/dailyAndweeklyReports/LipidCritical"
+                // },
+                // {
+                //   id: "dailycitydetailusers",
+                //   title: "Daily Citizen Details",
+                //   type: "item",
+                //   icon: <Icon.ArrowRight size={16} />,
+                //   permissions: ["admin", "editor"],
+                //   navLink: "/screener/dailyAndweeklyReports/LipidCritical"
+                // },
+                // {
+                //   id: "weekcityusers",
+                //   title: "Weekly Citizens",
+                //   type: "item",
+                //   icon: <Icon.ArrowRight size={16} />,
+                //   permissions: ["admin", "editor"],
+                //   navLink: "/screener/dailyAndweeklyReports/LipidCritical"
+                // },
+                // {
+                //   id: "weelcitydetailusers",
+                //   title: "Weekly Citizen Details",
+                //   type: "item",
+                //   icon: <Icon.ArrowRight size={16} />,
+                //   permissions: ["admin", "editor"],
+                //   navLink: "/screener/dailyAndweeklyReports/LipidCritical"
+                // },
+                {
+                  id: "lipidusers",
+                  title: "Lipid Critical Citizens",
+                  type: "item",
+                  icon: <Icon.ArrowRight size={16} />,
+                  permissions: ["admin", "editor"],
+                  navLink: "/screener/dailyAndweeklyReports/LipidCritical"
+                },
+                // {
+                //   id: "unscreenusers",
+                //   title: "Unscreened Citizen",
+                //   type: "item",
+                //   icon: <Icon.ArrowRight size={16} />,
+                //   permissions: ["admin", "editor"],
+                //   navLink: "/inactiveusers"
+                // }
+              ]
+            }, 
            /*{
               id: "directory",
               title: "Directory",
