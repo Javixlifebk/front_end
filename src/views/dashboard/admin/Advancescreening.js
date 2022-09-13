@@ -100,7 +100,7 @@ loadRecs(recs)
 
  handleClick(_userid) {    
   localStorage.setItem("Scrid",_userid);
-  window.location='/screenerprofile'  
+  window.location='/dashboard/admin/screenerprofile'  
 }
 
  handleBack() {    

@@ -50,7 +50,7 @@ class Profile extends React.Component {
   }
 
   handleBack() {    
-    window.location='/dashboard/ngolist'
+    window.location='/dashboard/admin/ngolist'
   }
     
 

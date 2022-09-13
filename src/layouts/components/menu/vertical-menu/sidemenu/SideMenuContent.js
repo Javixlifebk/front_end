@@ -511,7 +511,7 @@ class SideMenuContent extends React.Component {
               title: "Home",
               type: "item",
               icon: <Icon.Home size={16} />,
-              navLink: "views/dashboard"
+              navLink: "/dashboard"
             },
             
               /*{

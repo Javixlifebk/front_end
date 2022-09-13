@@ -131,7 +131,7 @@ loadRecs(recs)
  }
  handleClick(_userid) {    
   localStorage.setItem("Ngoid",_userid);
-  window.location='/dashboard/ngoprofile'  
+  window.location='/dashboard/admin/ngoprofile'  
 }
 
 handleScreener(_userid) {    

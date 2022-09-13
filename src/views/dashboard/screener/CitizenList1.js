@@ -183,7 +183,7 @@ getImage(imagUrl){
 
 getCaseDetails(_citizenId){
   localStorage.setItem("_citizenId",_citizenId);
-  document.location="/dashboard/patientlist";  
+  document.location="/dashboard/doctor/patientlist";  
 }
 
 

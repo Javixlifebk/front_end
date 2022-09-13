@@ -221,7 +221,7 @@ getCitizenScreener(_screenerId){
 
 getDumpPage(){
  
-  document.location="../../views/dashboard/detaildump";  
+  document.location="/dashboard/detaildump";  
 }
 
  getImage(imagUrl){

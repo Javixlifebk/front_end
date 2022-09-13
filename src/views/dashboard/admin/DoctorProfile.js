@@ -103,7 +103,7 @@ class Profile extends React.Component {
     //localStorage.setItem("mobile",this.state.mobile);  
     //localStorage.setItem("fname",this.state.fname);  
     //localStorage.setItem("fname",this.state.fname);      
-    window.location='/dashboard/doceupdateprofile'
+    window.location='/dashboard/admin/doceupdateprofile'
  
 }
 

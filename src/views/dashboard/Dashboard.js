@@ -434,15 +434,15 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/screditprofile/" component={screenerProfile} />
               <AppRoute exact path="/scrviewprofile/" component={screenerViewProfile} />
               <AppRoute exact path="/dashboard/admin/screenerlist" component={screenerList} />
-              <AppRoute exact path="/screenerprofile" component={viewScreenerProfile} />
+              <AppRoute exact path="/dashboard/admin/screenerprofile" component={viewScreenerProfile} />
               <AppRoute exact path="/dashboard/citizenlist" component={citizenList} />
               <AppRoute exact path="/dashboard/citizenlist1" component={citizenList1} />
               <AppRoute exact path="/detaildump" component={detaildump} />
-              <AppRoute exact path="/editcitizen" component={editCitizen} />
+              <AppRoute exact path="/dashboard/editcitizen" component={editCitizen} />
               <AppRoute exact path="/screener/dailyAndweeklyReports/LipidCritical" component={lipidcritical} />
               <AppRoute exact path="/screener/dailyAndweeklyReports/Weeklyscreener" component={weeklyscreener} />
               <AppRoute exact path="/screener/dailyAndweeklyReports/WeeklyScreenerSevika" component={weeklyscreenersevika} />
-              <AppRoute exact path="/admin/sevikaCaselist" component={sevikaCaseDetails} />
+              <AppRoute exact path="/dashboard/admin/sevikaCaselist" component={sevikaCaseDetails} />
               
               <AppRoute exact path="/dashboard/admin/AdvancedScreening/" component={advancedScreener} />
               <AppRoute exact path="/dashboard/admin/PendingadvancedScreening/" component={padvancedScreener} />
@@ -450,8 +450,8 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/admin/doctorlist/" component={doctorList} />
               <AppRoute exact path="/docviewprofile" component={doctorerViewProfile} />
               <AppRoute exact path="/doceditprofile" component={doctorEditProfile} />
-              <AppRoute exact path="/doctorprofile" component={viewDoctorProfile} />
-              <AppRoute exact path="/patientlist" component={patientList} />
+              <AppRoute exact path="/dashboard/admin/doctorprofile" component={viewDoctorProfile} />
+              <AppRoute exact path="/dashboard/doctor/patientlist" component={patientList} />
               <AppRoute exact path="/patientview" component={patientTab} />
               <AppRoute exact path="/patientviewscreener" component={patientTabScreener} />
               <AppRoute exact path="/addallergy" component={addAllergey} />
@@ -462,7 +462,7 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/casedetails" component={caseDetails} />
               <AppRoute exact path="/admin/ScreeningCaseDetails" component={ScreeningCaseDetails} />
               <AppRoute exact path="/dashboard/add-actors" component={addActors} />
-              <AppRoute exact path="/citizenprofile" component={citizenProfile} />
+              <AppRoute exact path="/dashboard/citizenprofile" component={citizenProfile} />
               <AppRoute exact path="/issueaddressing" component={issueAddressing} />
               <AppRoute exact path="/issuelistalladdressed" component={issueListAddressed} />
               <AppRoute exact path="/dashboard/insights" component={insights} />
@@ -472,12 +472,12 @@ export default class Dashboard extends React.Component {
 
               <AppRoute exact path="/ngoviewprofile" component={ngoViewProfile} />
               <AppRoute exact path="/ngoeditwprofile" component={ngoEditProfile} />
-              <AppRoute exact path="/ngoscreenerprofile" component={ngoScreenerProfile} />
+              <AppRoute exact path="/dashboard/ngoscreenerprofile" component={ngoScreenerProfile} />
               <AppRoute exact path="/dashboard/admin/ngolist/" component={ngoList} />
               <AppRoute exact path="/NonprescriptionList/" component={nonprescriptionList} />
              
               <AppRoute exact path="/PrescriptionList/" component={prescriptionList} />
-              <AppRoute exact path="/ngoprofile" component={viewNgoProfile} />
+              <AppRoute exact path="/dashboard/admin/ngoprofile" component={viewNgoProfile} />
 
               
               <AppRoute exact path="/pharmacyviewprofile" component={pharmacyViewProfile} />
@@ -506,7 +506,7 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/detaildump" component={detaildump} />
               <AppRoute exact path="/dashboard/sevikalist" component={sevikaList} />
 
-              <AppRoute exact path="/doceupdateprofile" component={docEditProfile} />
+              <AppRoute exact path="/dashboard/admin/doceupdateprofile" component={docEditProfile} />
               
               
 

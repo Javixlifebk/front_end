@@ -53,7 +53,7 @@ function ReferPatientList() {
   }
   const getCaseDetails=(citizenId) =>{
     localStorage.setItem("citizenId",citizenId);
-    document.location="../../dashboard/patientlist";  
+    document.location="/dashboard/doctor/patientlist";  
   }
   useEffect(() => {
 		  axios.post('http://159.65.148.197:3001/api/citizen/citizenrefer', {token:'dfjkhsdfaksjfh3756237',isUnrefer:true })
