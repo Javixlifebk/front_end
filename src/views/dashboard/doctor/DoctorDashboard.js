@@ -87,7 +87,7 @@ class DoctorDashboard extends React.Component {
   }
   getCitizenScreener() {
     // localStorage.setItem("_screenerId", _screenerId);
-    document.location = "/dashboard/citizenlist1";
+    document.location = "/citizenlist1";
   }
 
   componentDidMount() {console.log("DID MOUNT ************");
@@ -112,10 +112,10 @@ class DoctorDashboard extends React.Component {
           this.setState({screeners:response.data.data.data[0].Screeners}) 
           this.setState({doctors:response.data.data.data[1].Doctors}) 
            this.setState({ngos:response.data.data.data[2].NGO}) 
-            this.setState({pharmacies:response.data.data.data[4].Pharmacy})
-            this.setState({screening:response.data.data.data[5].Screening})
-            this.setState({sevika:response.data.data.data[6].Sevikas})
-            this.setState({citizen:response.data.data.data[3].Citizen})
+            this.setState({pharmacies:response.data.data.data[7].Pharmacy})
+            this.setState({screening:response.data.data.data[8].Screening})
+            this.setState({sevika:response.data.data.data[10].Sevikas})
+            this.setState({citizen:response.data.data.data[6].Citizen})
       
         }else{
           console.log("Not Found")

@@ -463,7 +463,7 @@ class SideMenuContent extends React.Component {
                 title: "Patient View",
                 type: "item",
                 icon: <Icon.User size={16} />,
-                navLink: "dashboard/citizenlist"
+                navLink: "/citizenlist"
               },   
               /*{
                 id: "profile",

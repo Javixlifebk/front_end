@@ -224,13 +224,16 @@ const addCitizen = lazy(() =>
 )
 
 const citizenList = lazy(() =>
-  import("../../views/dashboard/screener/CitizenList")
+  // import("../../views/dashboard/screener/CitizenList")
+  import("../dashboard/screener/CitizenList")
 )
 
 const citizenList1 = lazy(() =>
   import("../../views/dashboard/screener/CitizenList1")
 )
-
+const citizenList2 = lazy(() =>
+  import("../dashboard/screener/CitizenList")
+)
 const detaildump = lazy(() =>
   import("../../views/dashboard/screener/DetailDump")
 )
@@ -489,6 +492,7 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/screenerprofile" component={viewScreenerProfile} />
               <AppRoute exact path="/citizenlist" component={citizenList} />
               <AppRoute exact path="/citizenlist1" component={citizenList1} />
+              <AppRoute exact path="/citizenlist2" component={citizenList2} />
               <AppRoute exact path="/detaildump" component={detaildump} />
               <AppRoute exact path="/editcitizen" component={editCitizen} />
               <AppRoute exact path="/screener/dailyAndweeklyReports/LipidCritical" component={lipidcritical} />
