@@ -425,7 +425,7 @@ getCaseDetails(_type){
         <CardTitle style={{textAlign:"center"}}></CardTitle>
       </CardHeader>
       <CardBody style={{textAlign:"center"}} onClick={() => {
-        document.location='/admin/PendingadvancedScreening';
+        document.location='/dashboard/admin/PendingadvancedScreening';
       }}> 
       <span style={{textAlign:"center"}}><h5>Advanced Screening Pending Cases</h5></span>                        
       <h5>{this.state.pendingadvancescreener}</h5>  
@@ -439,7 +439,7 @@ getCaseDetails(_type){
       </CardHeader>
       <CardBody style={{textAlign:"center"}}> 
       <span style={{textAlign:"center",cursor:"pointer"}} onClick={() => {
-        document.location='/admin/AdvancedScreening';
+        document.location='/dashboard/admin/AdvancedScreening';
       }}>
         <h5>Advanced Screening Total Cases</h5></span>                        
       <h5>{this.state.advancescreener}</h5>  
