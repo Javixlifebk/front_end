@@ -33,7 +33,7 @@ class SevikaDashboard extends React.Component {
   console.log("Javix ID=" + localStorage.getItem("roleId"))
   if(localStorage.getItem("javixid")===null || localStorage.getItem("javixid")==="0"){
     console.log("Javix ID=" + localStorage.getItem("javixid"))
-    document.location="/views/dashboard/seveditprofile";
+    document.location="/dashboard/seveditprofile";
   }
   this.mounted = true;
 }

@@ -100,11 +100,11 @@ loadRecs(recs)
 
  handleClick(_userid) {    
   localStorage.setItem("Scrid",_userid);
-  window.location='../../views/dashboard/screenerprofile'  
+  window.location='/dashboard/admin/screenerprofile'  
 }
 
  handleBack() {    
-  window.location='../../views/dashboard/ngolist'
+  window.location='/dashboard/admin/ngolist'
 }
   
 componentWillUnmount(){ console.log("WIllUnmount************"); this.mounted = false;}

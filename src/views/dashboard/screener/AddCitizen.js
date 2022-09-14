@@ -142,7 +142,7 @@ class AddCitizen extends React.Component {
           
           if(res.data.status===1){
             alert('Profile Updated Successfully')
-            window.location='../../views/dashboard/addcitizen'
+            window.location='/dashboard/addcitizen'
           }
           else if (res.status===400) {
             if(res.data.data.length>0){

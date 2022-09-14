@@ -52,7 +52,7 @@ class Profile extends React.Component {
   }
 
   handleBack() {    
-    window.location='../../views/dashboard/pharmacylist'
+    window.location='/dashboard/pharmacylist'
   }
     
 

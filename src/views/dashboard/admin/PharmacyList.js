@@ -172,7 +172,7 @@ componentDidMount() {console.log("DID MOUNT ************");
   }
   handleClick(_userid) {    
     localStorage.setItem("Phid",_userid);
-    window.location='../../views/dashboard/pharmacyprofile'
+    window.location='/dashboard/pharmacyprofile'
     
   }
 

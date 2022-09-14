@@ -52,7 +52,7 @@ class Profile extends React.Component {
   }
 
   handleBack() {    
-    window.location='../../views/dashboard/ngolist'
+    window.location='/dashboard/admin/ngolist'
  
 }
 
@@ -63,7 +63,7 @@ class Profile extends React.Component {
  if(window.confirm("Do you want to edit your profile !")){
 
   //alert('okay')
-  window.location='../../views/dashboard/ngoeditwprofile'
+  window.location='/dashboard/ngoeditwprofile'
   }
   }
 

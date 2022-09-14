@@ -26,7 +26,7 @@ class DataCount extends React.Component {
   console.log("Javix ID=" + localStorage.getItem("javixid"))
   if(localStorage.getItem("javixid")===null || localStorage.getItem("javixid")==="0"){
     console.log("Javix ID=" + localStorage.getItem("javixid"))
-    document.location="/views/dashboard/doceditprofile";
+    document.location="/dashboard/doceditprofile";
   }
 
   this.mounted = true;
@@ -96,16 +96,16 @@ getCaseDetails(_type){
      if(_type==="Total"){
        localStorage.setItem("_status","1");
        localStorage.setItem("caseType","Total Cases")
-       document.location="/views/dashboard/casedetails";
+       document.location="/dashboard/casedetails";
      }else if(_type=="Picked"){
       localStorage.setItem("_status","2");
       localStorage.setItem("caseType","Picked Cases")
-      document.location="/views/dashboard/casedetails";
+      document.location="/dashboard/casedetails";
      }
      else if(_type=="Prescribed"){
       localStorage.setItem("_status","3");
       localStorage.setItem("caseType","Prescribed Cases")
-      document.location="/views/dashboard/casedetails";
+      document.location="/dashboard/casedetails";
      }
 }
   render() {

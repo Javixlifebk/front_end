@@ -106,7 +106,7 @@ class CitizenProfile extends React.Component {
  if(window.confirm("Do you want to edit your profile !")){
 
   //alert('okay')
-  window.location='../../views/dashboard/editcitizen'
+  window.location='/dashboard/editcitizen'
   }
   }
 

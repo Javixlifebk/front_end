@@ -117,7 +117,7 @@ class EditProfile extends React.Component {
         console.log(res.data);
         if(res.data.status===1){
           alert('Profile Updated Successfully')
-          window.location="../../views/dashboard/pharmacyviewprofile"
+          window.location="/dashboard/pharmacyviewprofile"
         }
       })
       .catch(e=>{

@@ -135,7 +135,7 @@ class AddWomanHistory extends React.Component {
         console.log(res.data);
         if(res.data.status===1){
           alert('Reproductory History Added Successfully')
-          document.location="../../views/dashboard/patientview"
+          document.location="/dashboard/patientview"
           
         }
       })

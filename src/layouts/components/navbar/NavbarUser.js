@@ -80,7 +80,7 @@ const UserDropdown = props => {
       <DropdownItem divider />
       <DropdownItem
         tag="a"
-        href="./../views/auth/logout"       
+        href="/auth/logout"       
       >
         <Icon.Power size={14} className="mr-50" />
         <span  className="align-middle">Log Out</span>

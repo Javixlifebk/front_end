@@ -96,7 +96,7 @@ class ReportIssue extends React.Component {
         console.log(res.data);
         if(res.data.status===1){
           alert('Issue Raised Successfully');
-          document.location="/views/dashboard/issuelist";
+          document.location="/dashboard/issuelist";
         }
       })
       .catch(e=>{
