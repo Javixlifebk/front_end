@@ -56,7 +56,7 @@ class BloodGlucoseRed extends React.Component {
     }
     setBP(bloodglucose){
 
-        if(bloodglucose>=126 &&  bloodglucose<60){
+        if(bloodglucose>125 &&  bloodglucose<60){
                 return(<span style={{background:'red',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
              }else{
             return(<span style={{background:'red',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
@@ -181,7 +181,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 		//this.setState({data:null});
     // if(localStorage.getItem("severity")==="1"){
     
-		  axios.post('http://159.65.148.197:3001/api/labtest/getBloodGlucoseTestList',{severity:2})
+		  axios.post('http://localhost:3001/api/labtest/getBloodGlucoseTestList',{severity:2})
 		 .then(response => {
 					console.log("Returned data:", response.data.status);
         //   console.log("User MasterId=" + localStorage.getItem("usermasid"))

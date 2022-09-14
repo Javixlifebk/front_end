@@ -102,15 +102,7 @@ function WeeklyScreener() {
     {  minWidth : 100, headerName: 'PEF Predicted Percent', field: 'pef_predicted_percent'  },
     {  minWidth : 100, headerName: 'FVC1 Predicted', field: 'fvc1_predicted'  },
     {  minWidth : 100, headerName: 'FVC1 Actual', field: 'fvc1_actual'  },
-    {  minWidth : 100, headerName: 'FVC1 Predicted Percent', field: 'fvc1_predicted_percent'  },
-    {  minWidth : 100, headerName: 'cholesterol', field: 'cholesterol'  },
-    {  minWidth : 100, headerName: 'hdlcholesterol', field: 'hdlcholesterol'  },
-    {  minWidth : 100, headerName: 'triglycerides', field: 'triglycerides'  },
-    {  minWidth : 100, headerName: 'ldl', field: 'ldl'  },
-    {  minWidth : 100, headerName: 'tcl_hdl', field: 'tcl_hdl'  },
-    {  minWidth : 100, headerName: 'ldl_hdl', field: 'ldl_hdl'  },
-    {  minWidth : 100, headerName: 'non_hdl', field: 'non_hdl'  },
-    {  minWidth : 100, headerName: 'glucose', field: 'glucose'  },
+    {  minWidth : 100, headerName: 'FVC1 Predicted Percent', field: 'fvc1_predicted_percent'  }, 
     {  minWidth : 100, headerName: 'type', field: 'type' ,filter: true },
     {
       minWidth : 100, headerName: "Date",
@@ -150,7 +142,7 @@ function WeeklyScreener() {
   }, [startDate, endDate]);
 
   axios
-    .post("http://159.65.148.197:3001/api/generalsurvey/screeningScreener")
+    .post("http://localhost:3001/api/generalsurvey/screeningScreener")
     .then((response) => {
       console.log("Returned data:")
       if (response.data.status === 1) {

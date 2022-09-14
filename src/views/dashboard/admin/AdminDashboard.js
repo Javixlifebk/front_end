@@ -374,7 +374,10 @@ getCaseDetails(_type){
         <CardTitle></CardTitle>
       </CardHeader>
       <CardBody style={{textAlign:"center"}}>
-      <span style={{textAlign:"center"}}><h5>Pharmacies</h5></span>
+      <span style={{textAlign:"center"}} 
+      onClick={() => {
+        document.location='/dashboard/pharmacylist';
+      }}><h5>Pharmacies</h5></span>
             <h5>{this.state.pharmacies}</h5>              
           
       </CardBody>
