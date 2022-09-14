@@ -120,7 +120,7 @@ class AddPersonalHistory extends React.Component {
         console.log(res.data);
         if(res.data.status===1){
           alert('Personal History Added Successfully')
-          window.location='../../views/dashboard/patientview'
+          window.location='/dashboard/patientview'
         }
       })
       .catch(e=>{

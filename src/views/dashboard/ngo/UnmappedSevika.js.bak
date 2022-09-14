@@ -122,7 +122,7 @@ class JTable extends React.Component {
 handleClick(scrid) {
  
   localStorage.setItem("Scrid",scrid)  
-  document.location='../../views/dashboard/ngoscreenerprofile'
+  document.location='/dashboard/ngoscreenerprofile'
   //this.props.onHeaderClick(this.props.value);
 }
 

@@ -118,7 +118,7 @@ class EditProfile extends React.Component {
         console.log(res.data);
         if(res.data.status===1){
           alert('Profile Updated Successfully')
-          window.location='../../views/dashboard/scrviewprofile'
+          window.location='/dashboard/scrviewprofile'
         }
       })
       .catch(e=>{

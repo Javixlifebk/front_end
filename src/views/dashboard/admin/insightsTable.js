@@ -126,7 +126,7 @@ const filterData = (data) =>
         // localStorage.setItem("caseType","Total Cases")
         // document.location="../../views/dashboard/sevikaCaselist"
         localStorage.setItem("_screenerId", _screenerId);
-        document.location = "/admin/sevikaCaselist";
+        document.location = "/dashboard/admin/sevikaCaselist";
       }
     const getColumnSearchProps = (dataIndex) => ({
       filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (

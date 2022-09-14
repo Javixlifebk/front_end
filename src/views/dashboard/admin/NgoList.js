@@ -131,12 +131,12 @@ loadRecs(recs)
  }
  handleClick(_userid) {    
   localStorage.setItem("Ngoid",_userid);
-  window.location='../../views/dashboard/ngoprofile'  
+  window.location='/dashboard/admin/ngoprofile'  
 }
 
 handleScreener(_userid) {    
   localStorage.setItem("Ngoid",_userid);
-  window.location='../../views/dashboard/screenerlist'  
+  window.location='/dashboard/admin/screenerlist'  
 }
   
 componentWillUnmount(){ console.log("WIllUnmount************"); this.mounted = false;}

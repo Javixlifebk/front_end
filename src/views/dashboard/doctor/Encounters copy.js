@@ -612,7 +612,7 @@ loadRecs(recs)
  handleClick(_userid) {    
   localStorage.setItem("citizenId",_userid);
   console.log("CitizenId=" + _userid)
-  window.location='../../views/dashboard/patientview'  
+  window.location='/dashboard/patientview'  
 }
 
  handleSubmit = e => {
@@ -622,7 +622,7 @@ loadRecs(recs)
  if(window.confirm("Do you want to raise issue !")){
 
  //alert('okay')
- window.location='../../views/dashboard/reportissue'
+ window.location='/dashboard/reportissue'
  } 
 }
   
