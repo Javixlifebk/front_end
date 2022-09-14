@@ -111,9 +111,9 @@ class ScreenerDashboard extends React.Component {
           this.setState({screeners:response.data.data.data[0].Screeners}) 
           this.setState({doctors:response.data.data.data[1].Doctors}) 
            this.setState({ngos:response.data.data.data[2].NGO}) 
-            this.setState({pharmacies:response.data.data.data[4].Pharmacy})
-            this.setState({screening:response.data.data.data[3].Citizen})
-            this.setState({sevika:response.data.data.data[6].Sevikas})
+            this.setState({pharmacies:response.data.data.data[7].Pharmacy})
+            this.setState({screening:response.data.data.data[6].Citizen})
+            this.setState({sevika:response.data.data.data[10].Sevikas})
       
         }else{
           console.log("Not Found")
@@ -275,7 +275,9 @@ class ScreenerDashboard extends React.Component {
         <CardTitle></CardTitle>
       </CardHeader>
       <CardBody style={{textAlign:"center"}}>
-      <span style={{textAlign:"center"}}><h5>Pharmacies</h5></span>
+      <span style={{textAlign:"center"}} onClick={() => {
+        document.location='/dashboard/pharmacylist';
+      }}><h5>Pharmacies</h5></span>
             <h5>{this.state.pharmacies}</h5>              
           
       </CardBody>
