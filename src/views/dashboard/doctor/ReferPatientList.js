@@ -56,7 +56,7 @@ function ReferPatientList() {
     document.location="/dashboard/doctor/patientlist";  
   }
   useEffect(() => {
-		  axios.post('http://159.65.148.197:3001/api/citizen/citizenrefer', {token:'dfjkhsdfaksjfh3756237',isUnrefer:true })
+		  axios.post('http://localhost:3001/api/citizen/citizenrefer', {token:'dfjkhsdfaksjfh3756237',isUnrefer:true })
 		 .then(response => {
 					console.log("Returned data:");
 					if(response.data.status===1)

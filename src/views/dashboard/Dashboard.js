@@ -560,7 +560,7 @@ export default class Dashboard extends React.Component {
               
               <AppRoute exact path="/pharmacyviewprofile" component={pharmacyViewProfile} />
               <AppRoute exact path="/pharmacyeditprofile" component={pharmacyEditProfile} />
-              <AppRoute exact path="/pharmacylist" component={pharmacyList} />
+              <AppRoute exact path="/dashboard/pharmacylist" component={pharmacyList} />
               <AppRoute exact path="/pharmacyprofile" component={viewPharmacyProfile} />
 
               

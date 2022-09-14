@@ -55,12 +55,11 @@ class BloodGlucoseAmber extends React.Component {
         }
     }
     setBP(bloodglucose){
-
-        if(bloodglucose>=126 &&  bloodglucose<60){
-                return(<span style={{background:'red',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
+      // (x >= 0.001 && x <= 0.009)
+        if(bloodglucose > 101 && bloodglucose < 125){
+                return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
              }else{
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
-         }
+              return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);}
     }
     setSOP2(val){
         if(val>95 && val<=100 ){
