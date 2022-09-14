@@ -192,7 +192,7 @@ class LoginJWT extends React.Component {
                 onChange={this.handleRemember}
               />
               <div className="float-right">
-                <Link to="/views/auth/forgotpassword">Forgot Password?</Link>
+                <Link to="/auth/forgotpassword">Forgot Password?</Link>
               </div>
             </FormGroup>
             <div className="d-flex justify-content-between">
@@ -204,7 +204,7 @@ class LoginJWT extends React.Component {
                 outline
                 onClick={() => {
                   //history.push("/pages/register")
-                  document.location="/views/register"
+                  document.location="/auth/register"
                 }}
               >
                 Register

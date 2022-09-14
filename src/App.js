@@ -36,7 +36,7 @@ function App(){
         <Switch>
           <Route exact path="/" component={NotAuthorized} />  
           <Route  path="/auth/login/" component={Login} />
-          <Route  path="/register" component={Register} />            
+          <Route  path="/auth/register" component={Register} />            
           <Route  path="/otp" component={Otp} /> 
           <Route  path="/resetpwd" component={resePwd} />           
           <Route  path="/auth/forgotpassword/" component={Forgotpassword} /> 
