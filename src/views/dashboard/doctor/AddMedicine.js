@@ -221,7 +221,7 @@ class AddMedicine extends React.Component {
         if(res.data.status===1){
           alert('Medicine Added Successfully')
           window["medicineInit"]();
-          window.location='../../views/dashboard/patientview'
+          window.location='/dashboard/patientview'
         }
       })
       .catch(e=>{

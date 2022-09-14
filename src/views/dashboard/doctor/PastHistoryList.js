@@ -139,7 +139,7 @@ loadRecs(recs){
  if(window.confirm("Do you want to raise issue !")){
 
  //alert('okay')
- window.location='../../views/dashboard/reportissue'
+ window.location='/dashboard/reportissue'
  } 
 
 }

@@ -114,7 +114,7 @@ class Profile extends React.Component {
           if(res.data.status===1 || res.data.status==="1"){ 
            
               alert("Screener Mapped Successfully !")
-              document.location="../../views/dashboard/mappedscreener";
+              document.location="/dashboard/mappedscreener";
           
             }
           //code

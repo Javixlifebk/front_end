@@ -163,9 +163,9 @@ loadRecs(recs)
   var roleId=localStorage.getItem("roleId");
   if(roleId==='1'){
 
-    window.location='../../views/dashboard/patientview'
+    window.location='/dashboard/patientview'
   }else{
-    window.location='../../views/dashboard/patientviewscreener'
+    window.location='/dashboard/patientviewscreener'
   }
   
 }
@@ -197,7 +197,7 @@ loadData(){
  if(window.confirm("Do you want to raise issue !")){
 
  //alert('okay')
- window.location='../../views/dashboard/reportissue'
+ window.location='/dashboard/reportissue'
  } 
 
 }

@@ -115,7 +115,7 @@ class AddAllergy extends React.Component {
       console.log(res.data);
       if(res.data.status===1){
         alert('Issues Status Updated Successfully')
-        window.location='../../views/dashboard/issuelistall'
+        window.location='/dashboard/issuelistall'
       }
     })
     .catch(e=>{

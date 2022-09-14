@@ -214,7 +214,7 @@ axios.post('http://159.65.148.197:3001/api/citizen/citizenById?=', { citizenId:l
           console.log(res.data);
           if(res.data.status===1){
             alert('Profile Updated Successfully')
-            window.location='../../views/dashboard/citizenlist'
+            window.location='/dashboard/citizenlist'
           }
         })
         .catch(function (error) {

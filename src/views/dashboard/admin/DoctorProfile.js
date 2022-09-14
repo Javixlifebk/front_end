@@ -51,7 +51,7 @@ class Profile extends React.Component {
   }
 
   handleBack() {    
-       window.location='/dashboard/doctorlist'    
+       window.location='/dashboard/admin/doctorlist'    
   }
   handleChangePwd() {
     if(window.confirm("Do You Really Want to change Password !")===true){
@@ -103,7 +103,7 @@ class Profile extends React.Component {
     //localStorage.setItem("mobile",this.state.mobile);  
     //localStorage.setItem("fname",this.state.fname);  
     //localStorage.setItem("fname",this.state.fname);      
-    window.location='/dashboard/doceupdateprofile'
+    window.location='/dashboard/admin/doceupdateprofile'
  
 }
 
