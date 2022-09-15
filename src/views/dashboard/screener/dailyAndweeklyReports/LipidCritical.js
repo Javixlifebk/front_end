@@ -105,8 +105,6 @@ function LipidCritical() {
     { field: 'glucose', headerName: 'glucose hdl', width: 120 },
     { field: 'type', headerName: 'type', width: 120 },
    
-
-  
   ]
 
   return (
