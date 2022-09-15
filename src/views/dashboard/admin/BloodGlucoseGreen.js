@@ -59,7 +59,7 @@ class BloodGlucoseGreen extends React.Component {
         if(bloodglucose>=80 && bloodglucose<=100){
             return(<span style={{background:'#008000',padding:'4px',color:'white',borderRadius:'25px;'}}>bloodglucose:{bloodglucose}</span>);
          }else{
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
+            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
          }
     }
     setSOP2(val){
