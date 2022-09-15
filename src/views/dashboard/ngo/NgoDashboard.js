@@ -230,6 +230,20 @@ class NgoDashboard extends React.Component {
         <CardTitle></CardTitle>
       </CardHeader>
       <CardBody style={{textAlign:"center"}}>
+      <span style={{textAlign:"center"}}><h5>Citizen</h5></span>
+            <h5>{this.state.citizen}</h5>              
+          
+      </CardBody>
+      </Card>
+      </Col>
+      <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
+      <Card style={{textAlign:"center"}} onClick={() => {
+                          document.location='/dashboard/citizenlist';
+                        }}>
+      <CardHeader>
+        <CardTitle></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center"}}>
       <span style={{textAlign:"center"}}><h5>Screening</h5></span>
             <h5>{this.state.screening}</h5>              
           
