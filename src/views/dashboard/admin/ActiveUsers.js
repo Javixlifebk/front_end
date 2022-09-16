@@ -178,7 +178,7 @@ handleClick(_userid) {
 
   })
   .catch(e=>{
-    console.log("Exception:"); 
+   
     console.log(e);
   });
 }
@@ -193,16 +193,16 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
+	
  }
   
 
-componentDidMount() {console.log("DID MOUNT ************");
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
 		  axios.post('http://159.65.148.197:3001/api/auth/authlist', { email: 'jilani.it@gmail.com',status:1 })
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
+					
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;

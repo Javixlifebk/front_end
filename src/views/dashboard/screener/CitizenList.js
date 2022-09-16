@@ -191,12 +191,11 @@ componentDidMount() {console.log("DID MOUNT ************");
 		//this.setState({data:null});
 		  axios.post('http://159.65.148.197:3001/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
-          console.log("User MasterId=" + localStorage.getItem("usermasid"))
+				
+         
 					if(response.data.status===1){
 						  var msg=response.data.message;
 						  var recs=response.data.data.data;
-              console.log("Citize Data " + response.data.data.data[0].info.photo);
 						  this.loadRecs(recs);
 					  }
 		 });// then
@@ -237,8 +236,7 @@ componentDidMount() {console.log("DID MOUNT ************");
 		//this.setState({data:null});
 		  axios.post('http://159.65.148.197:3001/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237',v:_v })
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
-          console.log("User MasterId=" + localStorage.getItem("usermasid"))
+				
 					if(response.data.status===1){
 						  var msg=response.data.message;
 						  var recs=response.data.data.data;
@@ -293,7 +291,8 @@ componentDidMount() {console.log("DID MOUNT ************");
             className="dataTable-custom"
             data={value.length ? filteredData : data}
             columns={columns}
-            noDataComponent={""}
+             noDataComponent={""}
+            // noDataComponent="Loading...."
             noHeader
             pagination
             subHeader

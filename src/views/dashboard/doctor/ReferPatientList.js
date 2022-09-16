@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 // import { environment } from '../../api'
 import '@mui/x-data-grid-generator'
-import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
+import { DataGrid, GridToolbar,GridOverlay,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
 import Button from '@mui/material/Button'
 function CustomToolbar() {
@@ -14,7 +14,13 @@ function CustomToolbar() {
     </GridToolbarContainer>
   );
 }
-
+function customNoRowsOverlay() {
+  return (
+      <GridOverlay>
+          <div>Loading....</div>
+      </GridOverlay>
+  )
+}
 
 function ReferPatientList() {
   const [rows, setUsers] = useState([])
@@ -168,6 +174,7 @@ function ReferPatientList() {
             pageSize={8}
             components={{
               Toolbar: CustomToolbar,
+              NoRowsOverlay: customNoRowsOverlay
             }}
             getRowId={(rows) => rows._id}
           />

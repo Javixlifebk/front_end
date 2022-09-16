@@ -209,7 +209,8 @@ class NgoDashboard extends React.Component {
       </Card>
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
-      <Card style={{textAlign:"center"}} onClick={() => {
+      <Card style={{textAlign:"center"}} onCli
+      ck={() => {
                           document.location='/dashboard/admin/screenerlist';
                         }}>
       <CardHeader>
