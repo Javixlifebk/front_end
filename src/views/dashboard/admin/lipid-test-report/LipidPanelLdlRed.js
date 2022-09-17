@@ -179,7 +179,7 @@ componentDidMount() {
 		//this.setState({data:null});
     // if(localStorage.getItem("severity")==="1"){
     
-		  axios.post('http://159.65.148.197:3001/api/labtest/LipidPanelTestldlRedList')
+		  axios.post('http://143.244.136.145:3001/api/labtest/LipidPanelTestldlRedList')
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -191,7 +191,7 @@ componentDidMount() {
 		 });// then
     // }
     // else if(localStorage.getItem("severity")==="0"){
-    //   axios.post('http://159.65.148.197:3001/api/labtest/getBloodGlucoseTestList', {severity:0})
+    //   axios.post('http://143.244.136.145:3001/api/labtest/getBloodGlucoseTestList', {severity:0})
     //   .then(response => {
     //        if(response.data.status===1)
     //          {
@@ -202,7 +202,7 @@ componentDidMount() {
     //          }
     //   });// then
     // }else if(localStorage.getItem("severity")==="2"){
-    //   axios.post('http://159.65.148.197:3001/api/labtest/getBloodGlucoseTestList', {severity:2})
+    //   axios.post('http://143.244.136.145:3001/api/labtest/getBloodGlucoseTestList', {severity:2})
     //   .then(response => {
     //        if(response.data.status===1)
     //          {

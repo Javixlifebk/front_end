@@ -124,7 +124,7 @@ loadRecs(recs)
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://159.65.148.197:3001/api/issues/issuesAll', {userId:'rakesh',status:'2' })
+		  axios.post('http://143.244.136.145:3001/api/issues/issuesAll', {userId:'rakesh',status:'2' })
 		 .then(response => {
 					
 					if(response.data.status===1)
