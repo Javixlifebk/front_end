@@ -52,11 +52,11 @@ class PatientList extends React.Component {
      //alert(caseId)
 
      //RequestBody body = RequestBody.create(mediaType, "caseId=" + rec.caseid);
-     //String url="http://http://159.65.148.197/:3001/api/report/createCaseReport";
+     //String url="http://http://159.65.148.197/:3010/api/report/createCaseReport";
 
      
      var _url="http://google.co.in";
-     /*axios.post('http://http://159.65.148.197/:3001/api/report/createCaseReport?=', { caseId:caseId,token:'dfjkhsdfaksjfh3756237' })
+     /*axios.post('http://http://159.65.148.197/:3010/api/report/createCaseReport?=', { caseId:caseId,token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
         
 					if(response.data.status===1)
@@ -622,7 +622,7 @@ loadRecs(recs)
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://http://159.65.148.197/:3001/api/screening/getEncounters?=', { citizenId:'162219685397965216',token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('http://http://159.65.148.197/:3010/api/screening/getEncounters?=', { citizenId:'162219685397965216',token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -634,7 +634,7 @@ componentDidMount() {
 
 
 
-     axios.post('http://http://159.65.148.197/:3001/api/report/createCaseReport?=', { caseId:'162220028503244889',token:'dfjkhsdfaksjfh3756237' })
+     axios.post('http://http://159.65.148.197/:3010/api/report/createCaseReport?=', { caseId:'162220028503244889',token:'dfjkhsdfaksjfh3756237' })
     .then(response => {
        
          if(response.data.status===1)
