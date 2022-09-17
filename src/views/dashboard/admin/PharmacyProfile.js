@@ -60,7 +60,7 @@ class Profile extends React.Component {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://143.244.136.145:3001/api/pharmacy/pharmacyById?=', { userId: localStorage.getItem("Phid"),token:'dfjkhsdfaksjfh3756237' })
+		axios.post('http://143.244.136.145:3010/api/pharmacy/pharmacyById?=', { userId: localStorage.getItem("Phid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
       if(response.data.status===1){
         var recs=response.data.data.data;		

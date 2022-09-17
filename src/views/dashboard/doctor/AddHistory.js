@@ -148,7 +148,7 @@ class EditProfile extends React.Component {
       postData+="&rheumatic_fever="+this.state.rheumatic_fever+"&tuberculosis="+this.state.tuberculosis;
       postData+="&hiv_aids="+this.state.hiv_aids+"&other="+this.state.other;
           
-      let _targetPostURL="http://143.244.136.145:3001/api/citizen/addHistory?=";
+      let _targetPostURL="http://143.244.136.145:3010/api/citizen/addHistory?=";
       axios(
         {
           method: 'post',

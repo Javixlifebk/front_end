@@ -97,7 +97,7 @@ class AdminDashboard extends React.Component {
   this.mounted = true;
   //this.setState({data:null});
       
-  axios.post('http://143.244.136.145:3001/api/graph/getlist', {userId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237'})
+  axios.post('http://143.244.136.145:3010/api/graph/getlist', {userId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237'})
    .then(response => {
 
         //console.dir(response.data.data.data)
@@ -139,7 +139,7 @@ class AdminDashboard extends React.Component {
     // }
   });
      
-  axios.post('http://143.244.136.145:3001/api/screening/getCaseDetails')
+  axios.post('http://143.244.136.145:3010/api/screening/getCaseDetails')
   .then(response => {
 
         console.dir("Data Length=" + response.data.data.data.length)
@@ -157,7 +157,7 @@ class AdminDashboard extends React.Component {
    }
  });
 
- axios.post('http://143.244.136.145:3001/api/screening/getCaseDetails',{status:'2'})
+ axios.post('http://143.244.136.145:3010/api/screening/getCaseDetails',{status:'2'})
  .then(response => {
 
        console.dir("Data Length=" + response.data.data.data.length)
@@ -176,7 +176,7 @@ class AdminDashboard extends React.Component {
   // }
 });
 
-axios.post('http://143.244.136.145:3001/api/screening/getCaseDetails', {status:'1'})
+axios.post('http://143.244.136.145:3010/api/screening/getCaseDetails', {status:'1'})
  .then(response => {
 
        console.dir("Data Length=" + response.data.data.data.length)
