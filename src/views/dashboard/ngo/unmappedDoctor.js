@@ -146,7 +146,7 @@ loadRecs(recs)
   if(window.confirm("Are you sure want to Deactivate User !")){
   let postData="doctorId="+doctorId+"&ismapped=1&token=dfjkhsdfaksjfh3756237"; 
   
-  let _targetPostURL="http://159.65.148.197:3001/api/doctor/updatemapped?=";
+  let _targetPostURL="http://143.244.136.145:3010/api/doctor/updatemapped?=";
   axios(
     {
       method: 'post',
@@ -178,8 +178,8 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		//axios.post('http://159.65.148.197:3001/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
-    axios.post('http://159.65.148.197:3001/api/doctor/unmappedList', {token:'dfjkhsdfaksjfh3756237',ismapped:false })
+		//axios.post('http://143.244.136.145:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
+    axios.post('http://143.244.136.145:3010/api/doctor/unmappedList', {token:'dfjkhsdfaksjfh3756237',ismapped:false })
 		 .then(response => {
 					if(response.data.status===1)
 					  {

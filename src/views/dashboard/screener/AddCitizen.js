@@ -105,7 +105,7 @@ class AddCitizen extends React.Component {
       var returnUrl="";
       const formData = new FormData(); 
       formData.append('profile', this.state.fileuploads)
-      axios.post("http://159.65.148.197:3001/upload/profile", formData, { 
+      axios.post("http://143.244.136.145:3010/upload/profile", formData, { 
         // receive two    parameter endpoint url ,form data
     })
     .then(res => {
@@ -124,7 +124,7 @@ class AddCitizen extends React.Component {
             postData+="&district="+this.state.district+"&pincode="+this.state.pincode+"&address="+this.state.addr+"&photo="+returnUrl;      
      
             
-        let _targetPostURL="http://159.65.148.197:3001/api/citizen/addprofile";
+        let _targetPostURL="http://143.244.136.145:3010/api/citizen/addprofile";
         axios(
           {
             method: 'post',

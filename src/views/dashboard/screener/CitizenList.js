@@ -175,7 +175,7 @@ loadRecs(recs)
   
 getImage(imagUrl){
   if(imagUrl===null || imagUrl===undefined || imagUrl==='' ){
-    imagUrl='http://159.65.148.197:3001/profile/no-photo-male.jpg';
+    imagUrl='http://143.244.136.145:3010/profile/no-photo-male.jpg';
   }
  return imagUrl;
 }
@@ -188,7 +188,7 @@ getCaseDetails(_citizenId){
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://159.65.148.197:3001/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('http://143.244.136.145:3010/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
 				
          
@@ -233,7 +233,7 @@ componentDidMount() {
   callSearch=_v=>{
 	  
 		//this.setState({data:null});
-		  axios.post('http://159.65.148.197:3001/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237',v:_v })
+		  axios.post('http://143.244.136.145:3010/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237',v:_v })
 		 .then(response => {
 				
 					if(response.data.status===1){

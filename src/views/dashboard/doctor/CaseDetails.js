@@ -179,7 +179,7 @@ componentDidMount() {
 		//this.setState({data:null});
     if(localStorage.getItem("_status")==="1"){
     
-		  axios.post('http://159.65.148.197:3001/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('http://143.244.136.145:3010/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -190,7 +190,7 @@ componentDidMount() {
 					  }
 		 });// then
     }else{
-      axios.post('http://159.65.148.197:3001/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),status:localStorage.getItem("_status"),token:'dfjkhsdfaksjfh3756237' })
+      axios.post('http://143.244.136.145:3010/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),status:localStorage.getItem("_status"),token:'dfjkhsdfaksjfh3756237' })
       .then(response => {
            if(response.data.status===1)
              {

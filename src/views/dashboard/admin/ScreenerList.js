@@ -140,7 +140,7 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://159.65.148.197:3001/api/ngo/screenerList', {userId:localStorage.getItem("userid"),ngoId:localStorage.getItem("Ngoid"),token:'dfjkhsdfaksjfh3756237' })
+		axios.post('http://143.244.136.145:3010/api/ngo/screenerList', {userId:localStorage.getItem("userid"),ngoId:localStorage.getItem("Ngoid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
 					if(response.data.status===1)
 					  {

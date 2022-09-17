@@ -93,7 +93,7 @@ class AddAllergy extends React.Component {
     var returnUrl="";
     const formData = new FormData(); 
     formData.append('document', this.state.fileuploads)
-    axios.post("http://159.65.148.197:3001/upload/documents", formData, { 
+    axios.post("http://143.244.136.145:3010/upload/documents", formData, { 
       // receive two    parameter endpoint url ,form data
   })
   .then(res => { // then print response status
@@ -105,7 +105,7 @@ class AddAllergy extends React.Component {
     else      
     postData+="&token=dfjkhsdfaksjfh3756237"+"&screenerId="+localStorage.getItem("usermasid") ;
     postData+="&status=1" +"&recordUrl="+returnUrl+"&type="+this.state.doctype+"&description="+this.state.fname;
-    let _targetPostURL="http://159.65.148.197:3001/api/citizen/addDocuments?=";
+    let _targetPostURL="http://143.244.136.145:3010/api/citizen/addDocuments?=";
     axios(
       {
         method: 'post',
