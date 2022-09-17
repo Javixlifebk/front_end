@@ -93,7 +93,6 @@ class EditProfile extends React.Component {
 
   onChangeHandler=event=>{
 
-    //console.log(event.target.files[0])
     this.setState({
       fileuploads: event.target.files[0],
       loaded: 0,
@@ -103,7 +102,6 @@ class EditProfile extends React.Component {
 
 onSignHandler=event=>{
 
-  //console.log(event.target.files[0])
   this.setState({
     siguploads: event.target.files[0],
     loaded: 0,
@@ -142,7 +140,6 @@ onSignHandler=event=>{
           postData+="&district="+this.state.district+"&address="+this.state.addr+"&pincode="+this.state.pincode;   
           postData+="&medicalRegNo="+this.state.regno+"&statteMedicalCouncil="+this.state.medcouncil+"&yearOfReg="+this.state.regyear+"&experience="+this.state.experience;   
     
-      console.log(postData);
       let _targetPostURL="http://159.65.148.197:3001/api/doctor/addprofile?=";
       axios(
         {
@@ -154,16 +151,12 @@ onSignHandler=event=>{
   
       ).then(res=>{
 
-        console.log("In Good way:");
-        console.log(res.data);
         if(res.data.status===1){
           alert('Profile Updated Successfully')
           document.location="/auth/logout"
         }
       })
       .catch(e=>{
-        console.log("Exception:"); 
-        console.log(e);
       });
 
   }

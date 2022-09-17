@@ -179,7 +179,6 @@ handleClick(_userid) {
   })
   .catch(e=>{
    
-    console.log(e);
   });
 }
   //alert(_userid)

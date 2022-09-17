@@ -18,7 +18,6 @@ const LoginAuth0 = props => {
               loginWithRedirect()
             }
             else{
-              console.log('Already Logged In')
             }
           }}
         >

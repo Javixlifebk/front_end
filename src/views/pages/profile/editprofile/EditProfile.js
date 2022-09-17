@@ -103,7 +103,6 @@ class EditProfile extends React.Component {
           postData+="&district="+this.state.district+"&address="+this.state.addr;      
    
           
-      console.log(postData);
       let _targetPostURL="http://159.65.148.197:3001/api/ngo/addprofile?=";
       axios(
         {
@@ -115,15 +114,12 @@ class EditProfile extends React.Component {
   
       ).then(res=>{
 
-        console.log("In Good way:");
-        console.log(res.data);
         if(res.data.status===1){
           alert('Profile Updated Successfully')
         }
       })
       .catch(e=>{
-        console.log("Exception:"); 
-        console.log(e.response.data);
+        
       });
 
 

@@ -17,7 +17,6 @@ const RegisterAuth0 = (props) => {
               loginWithRedirect()
             }
             else{
-              console.log('Already Logged In')
             }
           }}
         >

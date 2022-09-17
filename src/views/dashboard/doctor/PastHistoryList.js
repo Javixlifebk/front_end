@@ -121,7 +121,6 @@ class PatientList extends React.Component {
 } // cosntructor
 loadRecs(recs){	 
 	 this.setState({data:recs});
-	 console.log("Past Recs" + this.state.recs);
  }
 
 
@@ -148,7 +147,6 @@ getData(row){
 
 var strKey="";
 for (const [key, value] of Object.entries(row)) {
-  console.log(`${key}: ${value}`);
   strKey+=`${key}` + "&nbsp;";
   //dataArray[i]=`${key}`;
   //i++;  
@@ -159,21 +157,17 @@ for (const [key, value] of Object.entries(row)) {
 }
   
 
-componentDidMount() {console.log("DID MOUNT ************");
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
 		  axios.post('http://159.65.148.197:3001/api/citizen/getHistoryMedical?=', { citizenId:localStorage.getItem("citizenId")})
 		 .then(response => {
-					console.log("Past History Returned data:", response.data.data.data.length);
-          //console.log("User MasterId=" + localStorage.getItem("usermasid"))
 					if(response.data.status===1){
 						  var msg=response.data.message;
 						  var recs=response.data.data.data;
 						  this.loadRecs(recs);
 					  }
 		 }).catch(e=>{
-      console.log("Exception:"); 
-      console.log(e);
     });
     
   /* axios.post('http://159.65.148.197:3001/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
@@ -187,8 +181,6 @@ componentDidMount() {console.log("DID MOUNT ************");
            } 
          }
   }).catch(e=>{
-   console.log("Exception:"); 
-   console.log(e);
  });*/
  
 }

@@ -54,14 +54,13 @@ class Profile extends React.Component {
   }
     
 
-  componentDidMount() {console.log("DID MOUNT ************");
+  componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
 		axios.post('http://159.65.148.197:3001/api/ngo/screenerById?=', {userId:localStorage.getItem("Scrid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
         var recs=response.data.data.data;
-					//console.log(recs[0]._id);
 
           //console.dir(response)
           //this.state.screenerId=response.data.screenerId

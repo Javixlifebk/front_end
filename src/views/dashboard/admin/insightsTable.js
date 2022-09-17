@@ -87,7 +87,7 @@ function InsightsTable() {
             userId: "demoUser",
           })
        .then(response => {
-                  console.log("Returned data:");
+                 
                   if(response.data.status===1)
                     {
                         var recs=response.data.data.data;

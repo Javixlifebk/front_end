@@ -91,7 +91,6 @@ class EditCitizen extends React.Component {
   
   onChangeHandler=event=>{
 
-    //console.log(event.target.files[0])
     this.setState({
       fileuploads: event.target.files[0],
       loaded: 0,
@@ -99,16 +98,14 @@ class EditCitizen extends React.Component {
 
 }
 
-componentDidMount() {console.log("DID MOUNT ************");
+componentDidMount() {
 this.mounted = true;
 //this.setState({data:null});
     
-console.log("Citizen ID=" + localStorage.getItem("citizenId"));
 axios.post('http://159.65.148.197:3001/api/citizen/citizenById?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
  .then(response => {
   if(response.data.status===1){
     var recs=response.data.data.data;
-      //console.log(recs[0]._id);
 
       //console.dir(response)
       //this.state.screenerId=response.data.screenerId
@@ -135,12 +132,10 @@ axios.post('http://159.65.148.197:3001/api/citizen/citizenById?=', { citizenId:l
       this.setState({bgroup:recs[0].info.bloodGroup});
       
     }else{
-      console.log("Not Found")
     }
       
  }).catch(e=>{
-  console.log("Exception:"); 
-  console.log(e.response.data);
+ 
   if(e.response.data.status===0){
     this.state.notfound=0
 
@@ -167,7 +162,7 @@ axios.post('http://159.65.148.197:3001/api/citizen/citizenById?=', { citizenId:l
     })
     .then(res => {
         returnUrl= res.data['profile-url'];
-        console.log("Return Url=" + returnUrl);
+        
 
         if(this.state.email===undefined)
         
@@ -191,7 +186,6 @@ axios.post('http://159.65.148.197:3001/api/citizen/citizenById?=', { citizenId:l
             postData+="&district="+this.state.district+"&pincode="+this.state.pincode+"&address="+this.state.addr+"&photo="+this.state.photo;      
      
             
-        console.log(postData);
         let _targetPostURL="http://159.65.148.197:3001/api/citizen/updateCitizen";
         axios(
           {
@@ -203,8 +197,7 @@ axios.post('http://159.65.148.197:3001/api/citizen/citizenById?=', { citizenId:l
     
         ).then(res=>{
   
-          console.log("In Good way:");
-          console.log(res.data);
+       
           if(res.data.status===1){
             alert('Profile Updated Successfully')
             window.location='/dashboard/citizenlist'
@@ -213,7 +206,6 @@ axios.post('http://159.65.148.197:3001/api/citizen/citizenById?=', { citizenId:l
         .catch(function (error) {
           if (error.response) {
             // Request made and server responded
-            console.log("--------------------------------------------------------------------------------BOSS");
             if(error.response.status===400){
               let msg="";
               for(var i=0;i<error.response.data.data.length;i++){
@@ -223,15 +215,11 @@ axios.post('http://159.65.148.197:3001/api/citizen/citizenById?=', { citizenId:l
               alert(msg);
               return;
             }
-            console.log(error.response.data.data);
-            console.log();
-            console.log(error.response.headers);
+           
           } else if (error.request) {
             // The request was made but no response was received
-            console.log(error.request);
           } else {
             // Something happened in setting up the request that triggered an Error
-            console.log('Error', error.message);
           }
         
         });

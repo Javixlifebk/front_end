@@ -32,7 +32,6 @@ class RegisterPharmacy extends React.Component {
                   "&roleId=4"+
                   "&userName="+this.state.userName+"";
                   
-    console.log(postData);
     let _targetPostURL="http://159.65.148.197:3001/api/auth/register?=";
     axios(
       {
@@ -43,8 +42,7 @@ class RegisterPharmacy extends React.Component {
         }
 
     ).then(res=>{
-           console.log("In Good way:");
-           console.log(res.data);
+          
            if(res.data.status===1 || res.data.status==="1")
            {           
            this.setState({myexection:'Successfully Registered !<br/>Verify your account'});
@@ -53,10 +51,7 @@ class RegisterPharmacy extends React.Component {
            }
           })
           .catch((e)=>{
-           //console.log("Exception:" + e.response.data.status);
-           //console.dir(e)
-
-           //console.log("rakesh=" + e.response.data.data.data.data.msg)
+           
            if(e.response.data.status===0 || e.response.data.status==="0")
            { 
            

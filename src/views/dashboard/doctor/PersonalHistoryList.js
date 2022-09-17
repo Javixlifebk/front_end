@@ -98,12 +98,10 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
  }
 
  handleClick(_userid) {    
   localStorage.setItem("citizenId",_userid);
-  console.log("CitizenId=" + _userid)
   window.location='/dashboard/patientview'  
 }
 
@@ -120,14 +118,12 @@ loadRecs(recs)
 }
   
 
-componentDidMount() {console.log("DID MOUNT ************");
+componentDidMount() {
 		this.mounted = true;
     //alert(localStorage.getItem("caseReport"))
 		//this.setState({data:null});
 		  axios.post('http://159.65.148.197:3001/api/citizen/getHistoryPersonal?=', {citizenId:localStorage.getItem("citizenId")})
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
-          console.log("User MasterId=" + localStorage.getItem("usermasid"))
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
@@ -135,8 +131,6 @@ componentDidMount() {console.log("DID MOUNT ************");
 						  this.loadRecs(recs);
 					  }
 		 }).catch(e=>{
-      console.log("Exception:"); 
-      console.log(e);
     });
 }
 

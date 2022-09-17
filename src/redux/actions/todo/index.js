@@ -14,7 +14,9 @@ export const getTodos = routeParams => {
           routeParams
         })
       })
-      .catch(err => console.log(err))
+      .catch(err =>
+         console.log(err)
+         )
   }
 }
 export const completeTask = todo => {

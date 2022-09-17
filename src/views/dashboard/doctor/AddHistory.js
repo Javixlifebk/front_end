@@ -148,7 +148,6 @@ class EditProfile extends React.Component {
       postData+="&rheumatic_fever="+this.state.rheumatic_fever+"&tuberculosis="+this.state.tuberculosis;
       postData+="&hiv_aids="+this.state.hiv_aids+"&other="+this.state.other;
           
-      console.log(postData);
       let _targetPostURL="http://159.65.148.197:3001/api/citizen/addHistory?=";
       axios(
         {
@@ -160,16 +159,12 @@ class EditProfile extends React.Component {
   
       ).then(res=>{
 
-        console.log("In Good way:");
-        console.log(res.data);
         if(res.data.status===1){
           alert('Past History Updated Successfully')
           window.location='/dashboard/patientview'
         }
       })
       .catch(e=>{
-        console.log("Exception:"); 
-        console.log(e);
       });
 
   }

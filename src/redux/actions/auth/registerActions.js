@@ -49,7 +49,6 @@ export const signupWithFirebase = (email, password, name) => {
         history.push("/")
       })
       .catch(error => {
-        console.log(error.message)
       })
   }
 }
@@ -80,7 +79,9 @@ export const signupWithJWT = (email, password, name) => {
         }
 
       })
-      .catch(err => console.log(err))
+      .catch(err => 
+        console.log(err)
+        )
 
   }
 }

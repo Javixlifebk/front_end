@@ -48,8 +48,6 @@ function ReferPatientList() {
   
     })
     .catch(e=>{
-      console.log("Exception:"); 
-      console.log(e);
     });
   }
     //alert(_userid)
@@ -64,7 +62,6 @@ function ReferPatientList() {
   useEffect(() => {
 		  axios.post('http://159.65.148.197:3001/api/citizen/citizenrefer', {token:'dfjkhsdfaksjfh3756237',isUnrefer:true })
 		 .then(response => {
-					console.log("Returned data:");
 					if(response.data.status===1)
 					  {
 						  var recs=response.data.data.data;

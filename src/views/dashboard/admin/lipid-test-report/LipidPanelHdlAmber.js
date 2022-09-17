@@ -481,15 +481,12 @@ export default LipidPanelHdlAmber;
 // }
   
 
-// componentDidMount() {console.log("DID MOUNT ************");
 // 		this.mounted = true;
 // 		//this.setState({data:null});
 //     // if(localStorage.getItem("severity")==="1"){
     
 // 		  axios.post('http://159.65.148.197:3001/api/labtest/LipidPanelhdlAmberList')
 // 		 .then(response => {
-// 					console.log("Returned data:", response.data.status);
-//         //   console.log("User MasterId=" + localStorage.getItem("usermasid"))
 // 					if(response.data.status===1)
 // 					  {
 // 						  var msg=response.data.message;

@@ -119,7 +119,6 @@ class AddWomanHistory extends React.Component {
           postData+="&painwithmenstruation="+this.state.painwithmenstruation+"&useofmedicationforpain="+this.state.useofmedicationforpain+"&misseddays="+this.state.misseddays;
    
           
-      console.log(postData);
       let _targetPostURL="http://159.65.148.197:3001/api/citizen/addWomenHistory?=";
       axios(
         {
@@ -131,8 +130,6 @@ class AddWomanHistory extends React.Component {
   
       ).then(res=>{
 
-        console.log("In Good way:");
-        console.log(res.data);
         if(res.data.status===1){
           alert('Reproductory History Added Successfully')
           document.location="/dashboard/patientview"
@@ -140,8 +137,6 @@ class AddWomanHistory extends React.Component {
         }
       })
       .catch(e=>{
-        console.log("Exception:"); 
-        console.log(e);
       });
 
   }

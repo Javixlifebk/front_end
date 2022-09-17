@@ -141,7 +141,6 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
  }
 
  handleClick(_userid,_caseid,row) {
@@ -150,7 +149,6 @@ loadRecs(recs)
   localStorage.setItem("caseId",_caseid);
   this.loadData();
   
-  console.log("case Report=" + this.state.imgUrl);
   localStorage.setItem("caseReport",this.state.imgUrl);
   var roleId=localStorage.getItem("roleId");
   if(roleId==='1'){
@@ -177,8 +175,6 @@ loadData(){
            } 
          }
   }).catch(e=>{
-   console.log("Exception:"); 
-   console.log(e);
  });
 }
 
@@ -194,7 +190,7 @@ loadData(){
 
 }
   
-componentDidMount() {console.log("DID MOUNT ************");
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
     /*let postData=""
@@ -205,8 +201,6 @@ componentDidMount() {console.log("DID MOUNT ************");
      }*/
 		  axios.post('http://159.65.148.197:3001/api/screening/getCaseDetails?=', {citizenId:localStorage.getItem("_citizenId"),token:'dfjkhsdfaksjfh3756237'})
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
-          console.log("User MasterId=" + localStorage.getItem("usermasid"))
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;

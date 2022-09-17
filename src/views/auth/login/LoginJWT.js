@@ -23,7 +23,6 @@ class LoginJWT extends React.Component {
     let postData="email="+this.state.email+
                  "&password="+this.state.password+"";
                  
-    console.log(postData);
     // let _targetPostURL="http://159.65.148.197:3001/?=";
     let _targetPostURL="http://159.65.148.197:3001/api/auth/login?=";
     axios(
@@ -35,8 +34,7 @@ class LoginJWT extends React.Component {
         }
 
     ).then(res=>{
-           console.log("In Good way:");
-           console.log(res.data);
+          
           
 
               if(res.data.status===1 || res.data.status==="1")
@@ -65,7 +63,6 @@ class LoginJWT extends React.Component {
                     }
 
                       
-                 console.log("User Id=" +  _javixid);
                  document.location="/dashboard";
                  /*if(!(_rolid==91 || _rolid==92 || _rolid==93 || _rolid==21)){
                  axios(
@@ -79,7 +76,6 @@ class LoginJWT extends React.Component {
                 ).then(resp=>{
 
                   //console.dir(resp.data.data.data[0].screenerId)
-                  console.log(resp.data.data.data.screnerId);
                   if(resp.data.status===1 || resp.data.status==="1"){ 
                     localStorage.setItem("usermasid",resp.data.data.data[0].actorId);                    
                     document.location="/views/dashboard";
@@ -98,8 +94,6 @@ class LoginJWT extends React.Component {
           //code
           })
           .catch(e=>{
-           console.log("Exception:"); 
-           console.log(e)   ;
            if(e.response.data.status===0 || e.response.data.status==="0")
                               { 
                               
@@ -138,7 +132,6 @@ class LoginJWT extends React.Component {
   });*/
   /*fetch(URL)
   .then(response => response.json())
-  .then(data => console.log(data));*/
       /*axios.get(URL)
         .then(res => {
           alert(res.data);

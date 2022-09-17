@@ -95,7 +95,7 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
+	
  }
 
  handleClick(_userid) {    

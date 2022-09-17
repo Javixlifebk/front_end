@@ -139,7 +139,6 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
  }
   
  handleClick(doctorId) {
@@ -166,8 +165,6 @@ loadRecs(recs)
 
   })
   .catch(e=>{
-    console.log("Exception:"); 
-    console.log(e);
   });
 }
   //alert(_userid)
@@ -176,20 +173,18 @@ loadRecs(recs)
   //this.props.onHeaderClick(this.props.value);
 }
 
-componentWillUnmount(){ console.log("WIllUnmount************"); this.mounted = false;}
-componentDidMount() {console.log("DID MOUNT ************");
+componentWillUnmount(){this.mounted = false;}
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
 		//axios.post('http://159.65.148.197:3001/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
     axios.post('http://159.65.148.197:3001/api/doctor/unmappedList', {token:'dfjkhsdfaksjfh3756237',ismapped:false })
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
 						  var recs=response.data.data.data;
-						  console.log(recs[0]);
 						  this.loadRecs(recs);
 					  }
 		 });// then

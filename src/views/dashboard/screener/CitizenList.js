@@ -153,7 +153,6 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
    this.setState({loader:null});
  }
 
@@ -186,7 +185,7 @@ getCaseDetails(_citizenId){
   document.location="/dashboard/doctor/patientlist";  
 }
 
-componentDidMount() {console.log("DID MOUNT ************");
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
 		  axios.post('http://159.65.148.197:3001/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237' })
@@ -240,7 +239,6 @@ componentDidMount() {console.log("DID MOUNT ************");
 					if(response.data.status===1){
 						  var msg=response.data.message;
 						  var recs=response.data.data.data;
-              console.log("Citize Data " + response.data.data.data[0].info.photo);
 						  this.loadRecs(recs);
 					  }
 		 });// then
