@@ -57,7 +57,7 @@ class PatientProfile extends React.Component {
   componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		axios.post('http://143.244.136.145:3001/api/citizen/citizenList?=', { citizenId: localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
+		axios.post('http://143.244.136.145:3010/api/citizen/citizenList?=', { citizenId: localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
       if(response.data.status===1){
         var recs=response.data.data.data;
@@ -93,7 +93,7 @@ class PatientProfile extends React.Component {
 
   getImage(imagUrl){
     if(imagUrl===''){
-      imagUrl='http://143.244.136.145:3001/profile/no-photo-male.jpg';
+      imagUrl='http://143.244.136.145:3010/profile/no-photo-male.jpg';
     }
   return imagUrl;
   }

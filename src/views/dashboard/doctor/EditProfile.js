@@ -140,7 +140,7 @@ onSignHandler=event=>{
           postData+="&district="+this.state.district+"&address="+this.state.addr+"&pincode="+this.state.pincode;   
           postData+="&medicalRegNo="+this.state.regno+"&statteMedicalCouncil="+this.state.medcouncil+"&yearOfReg="+this.state.regyear+"&experience="+this.state.experience;   
     
-      let _targetPostURL="http://143.244.136.145:3001/api/doctor/addprofile?=";
+      let _targetPostURL="http://143.244.136.145:3010/api/doctor/addprofile?=";
       axios(
         {
           method: 'post',

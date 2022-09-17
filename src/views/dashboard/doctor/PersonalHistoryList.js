@@ -122,7 +122,7 @@ componentDidMount() {
 		this.mounted = true;
     //alert(localStorage.getItem("caseReport"))
 		//this.setState({data:null});
-		  axios.post('http://143.244.136.145:3001/api/citizen/getHistoryPersonal?=', {citizenId:localStorage.getItem("citizenId")})
+		  axios.post('http://143.244.136.145:3010/api/citizen/getHistoryPersonal?=', {citizenId:localStorage.getItem("citizenId")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

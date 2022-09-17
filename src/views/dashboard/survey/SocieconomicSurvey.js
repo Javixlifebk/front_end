@@ -17,7 +17,7 @@ function SocieconomicSurvey() {
   const [rows, setUsers] = useState([])
  
   useEffect(() => {
-		  axios.post('http://143.244.136.145:3001/api/socioeconomicsurvey/SocioEconomicSurveyList')
+		  axios.post('http://143.244.136.145:3010/api/socioeconomicsurvey/SocioEconomicSurveyList')
 		 .then(response => {
 					if(response.data.status===1)
 					  {

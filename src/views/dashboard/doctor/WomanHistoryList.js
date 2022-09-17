@@ -98,7 +98,7 @@ loadRecs(recs)
  }
 
  handleClick(_userid) {    
-  axios.post('http://143.244.136.145:3001/api/citizen/getHistoryWomen', { citizenId:_userid})
+  axios.post('http://143.244.136.145:3010/api/citizen/getHistoryWomen', { citizenId:_userid})
   .then(response => {
        if(response.data.status===1)
          {
@@ -127,7 +127,7 @@ loadRecs(recs)
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://143.244.136.145:3001/api/citizen/getHistoryWomen?=', { citizenId:localStorage.getItem("citizenId")})
+		  axios.post('http://143.244.136.145:3010/api/citizen/getHistoryWomen?=', { citizenId:localStorage.getItem("citizenId")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -139,7 +139,7 @@ componentDidMount() {
     });
 
 
-    /*axios.post('http://143.244.136.145:3001/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
+    /*axios.post('http://143.244.136.145:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
 
   .then(response => {  
        if(response.data.status===1){
