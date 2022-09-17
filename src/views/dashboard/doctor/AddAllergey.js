@@ -99,7 +99,6 @@ class AddAllergy extends React.Component {
           postData+="&token=dfjkhsdfaksjfh3756237&screenerId="+localStorage.getItem("usermasid");
           postData+="&allergies="+this.state.allergies+"&allergydate="+this.state.curTime +"&allergyType="+this.state.allergyType;
          
-      console.log(postData);
       let _targetPostURL="http://159.65.148.197:3001/api/citizen/addAllergy?=";
       axios(
         {
@@ -110,16 +109,12 @@ class AddAllergy extends React.Component {
           }  
       ).then(res=>{
 
-        console.log("In Good way:");
-        console.log(res.data);
         if(res.data.status===1){
           alert('Allergy Added Successfully')
           window.location='/dashboard/patientview'
         }
       })
       .catch(e=>{
-        console.log("Exception:"); 
-        console.log(e);
       });
   }
   handleClick = e => {

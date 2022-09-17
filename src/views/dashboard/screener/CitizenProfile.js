@@ -53,16 +53,14 @@ class CitizenProfile extends React.Component {
     }, 2000)
   }
 
-  componentDidMount() {console.log("DID MOUNT ************");
+  componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-    console.log("Citizen ID=" + localStorage.getItem("citizenId"));
 		axios.post('http://159.65.148.197:3001/api/citizen/citizenById?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
       if(response.data.status===1){
         var recs=response.data.data.data;
-					//console.log(recs[0]._id);
 
           //console.dir(response)
           //this.state.screenerId=response.data.screenerId
@@ -86,12 +84,10 @@ class CitizenProfile extends React.Component {
           this.setState({bgroup:recs[0].info.bloodGroup});
           
         }else{
-          console.log("Not Found")
         }
 					
 		 }).catch(e=>{
-      console.log("Exception:"); 
-      console.log(e.response.data);
+   
       if(e.response.data.status===0){
         this.state.notfound=0
 

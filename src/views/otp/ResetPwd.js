@@ -31,7 +31,6 @@ class ResetPwd extends React.Component {
       let postData="email="+localStorage.getItem("email")+
                     "&existpassword="+this.state.txtKeys+"&newpassword="+this.state.txtNpwd;
 
-                    console.log(postData);
                     let _targetPostURL="http://159.65.148.197:3001/api/auth/updatepw?=";
                     axios(
                       {
@@ -42,8 +41,8 @@ class ResetPwd extends React.Component {
                         }
                 
                     ).then(res=>{
-                           console.log("In Good way:");
-                           console.log(res.data);
+                          g("In Good way:");
+                          g(res.data);
                            if(res.data.status===1 || res.data.status==="1")
                               { 
                                 this.setState({myexection:'Successfully Confirmed!'});  
@@ -52,8 +51,8 @@ class ResetPwd extends React.Component {
                           
                           })
                           .catch(e=>{
-                           console.log("Exception:"); 
-                           console.log(e)   ;
+                          g("Exception:"); 
+                          g(e)   ;
                            if(e.response.data.status===0 || e.response.data.status==="0")
                               {
                               
@@ -170,7 +169,7 @@ class ResetPwd extends React.Component {
 
                   let postData="email="+localStorage.getItem("email")+""              
 
-                  console.log(postData);
+                 g(postData);
                   let _targetPostURL="http://159.65.148.197:3001/api/auth/resend-verify-otp?=";
                   axios(
                     {
@@ -181,8 +180,8 @@ class ResetPwd extends React.Component {
                       }
               
                   ).then(res=>{
-                         console.log("In Good way:");
-                         console.log(res.data);
+                        g("In Good way:");
+                        g(res.data);
                          if(res.data.status===1 || res.data.status==="1")
                             { 
                               this.setState({myexection:'OTP Resend Successfully !'});  
@@ -191,8 +190,8 @@ class ResetPwd extends React.Component {
                         
                         })
                         .catch(e=>{
-                         console.log("Exception:"); 
-                         console.log(e)   ;
+                        g("Exception:"); 
+                        g(e)   ;
                          if(e.response.data.status===0 || e.response.data.status==="0")
                             { 
                             
@@ -200,7 +199,6 @@ class ResetPwd extends React.Component {
                             }
               
                         });   
-                  //console.log("Hellow")
                 }}
               >
                 Resend OTP

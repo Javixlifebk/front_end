@@ -83,12 +83,11 @@ class EditProfile extends React.Component {
     curTime : new Date().toLocaleString()
   }
 
-  componentDidMount() {console.log("DID MOUNT ************");
+  componentDidMount() {
   
  
  
   this.mounted = true;
-  console.log("Role ID=" + localStorage.getItem("roleId"))
 }
   handleSubmit = e => {
     e.preventDefault()   
@@ -112,9 +111,7 @@ class EditProfile extends React.Component {
           postData+="&district="+this.state.district+"&pincode="+this.state.pincode+"&address="+this.state.addr;      
    
           
-      console.log(postData);
       let _targetPostURL="http://159.65.148.197:3001/api/ngo/screener/addprofile?=";
-      console.log(_targetPostURL,"urlll")
       axios(
         {
           method: 'post',
@@ -125,16 +122,13 @@ class EditProfile extends React.Component {
   
       ).then(res=>{
 
-        console.log("In Good way:");
-        console.log(res.data);
         if(res.data.status===1){
           alert('Profile Updated Successfully')
           window.location='/dashboard/sevviewprofile'
         }
       })
       .catch(e=>{
-        console.log("Exception:"); 
-        console.log(e);
+     
       });
 
   }

@@ -58,19 +58,15 @@ class PatientList extends React.Component {
      var _url="http://google.co.in";
      /*axios.post('http://159.65.148.197:3001/api/report/createCaseReport?=', { caseId:caseId,token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
-					console.log("Returned data:", response.data.data.data);
         
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;        
-              console.log("Returned URL :", response.data.data.data.filename);
 						  _url="http://" + response.data.data.data.filename;
               this.state._myurl="http://" + response.data.data.data.filename;
 					  }     
 
 		 }).catch(e=>{
-      console.log("Exception:"); 
-      console.log(e);
     });*/
 
     //document.location=this.state._myurl;
@@ -124,7 +120,7 @@ class PatientList extends React.Component {
     }
     
     
-    /*console.log(row);
+    /*
     if(!row){
       alert("Not Null Data")
     //console.dir("row Data =" + row.thalassemias[0].createdAt);
@@ -608,18 +604,14 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-   console.log("----------------------------------------------------DATA---------------------")
-	 console.log(this.state.data);
  }
 
  handleClick(_userid) {    
   localStorage.setItem("citizenId",_userid);
-  console.log("CitizenId=" + _userid)
   window.location='/dashboard/patientview'  
 }
 
 isNull(data,test_type,field_name){
-  console.log("is Null Data" + data.length)
   if(data.length===0){
    
     return(
@@ -665,13 +657,11 @@ isNull(data,test_type,field_name){
  } 
 }
   
-componentDidMount() {console.log("DID MOUNT ****");
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
 		  axios.post('http://159.65.148.197:3001/api/screening/getEncounters?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
-          console.log("User MasterId=" + localStorage.getItem("usermasid"))
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
@@ -684,19 +674,15 @@ componentDidMount() {console.log("DID MOUNT ****");
 
      axios.post('http://159.65.148.197:3001/api/report/createCaseReport?=', { caseId:localStorage.getItem("caseId"),token:'dfjkhsdfaksjfh3756237' })
     .then(response => {
-         console.log("Returned data:", response.data.data.data);
        
          if(response.data.status===1)
            {
              var msg=response.data.message;        
-             console.log("Returned URL :", response.data.data.data.filename);
             
              this.state._myurl= response.data.data.data.filename;
            }     
 
     }).catch(e=>{
-     console.log("Exception:"); 
-     console.log(e);
    });
 
 }

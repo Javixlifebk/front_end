@@ -89,10 +89,8 @@ class AdminDashboard extends React.Component {
 
 
   }
-  componentDidMount() {console.log("DID MOUNT ************");
-  console.log("Javix ID=" + localStorage.getItem("javixid"))
+  componentDidMount() {
   if(localStorage.getItem("javixid")===null || localStorage.getItem("javixid")==="0"){
-    console.log("Javix ID=" + localStorage.getItem("javixid"))
     ///document.location="/views/dashboard/doceditprofile";
   }
 
@@ -130,13 +128,10 @@ class AdminDashboard extends React.Component {
           //   this.setState({NonPrescription:response.data.data.data[7].NonPrescription})
       
         }else{
-          console.log("Not Found")
         }
         
    })
    .catch(e=>{
-    console.log("Exception:"); 
-    // console.log(e.response.data);
     this.state.notfound=0
     // if(e.response.data.status===0){
     //   this.state.notfound=0
@@ -156,8 +151,6 @@ class AdminDashboard extends React.Component {
        
   })
   .catch(e=>{
-   console.log("Exception:"); 
-   console.log(e.response.data);
    if(e.response.data.status===0){
      this.state.notfound=0
 
@@ -176,9 +169,7 @@ class AdminDashboard extends React.Component {
       
  })
  .catch(e=>{
-  console.log("Exception:"); 
   this.state.notfound=0
-  // console.log(e.response.data);
   // if(e.response.data.status===0){
   //   
 
@@ -197,8 +188,6 @@ axios.post('http://159.65.148.197:3001/api/screening/getCaseDetails', {status:'1
       
  })
  .catch(e=>{
-  console.log("Exception:"); 
-  console.log(e.response.data);
   if(e.response.data.status===0){
     this.state.notfound=0
 

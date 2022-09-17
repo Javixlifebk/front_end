@@ -102,7 +102,6 @@ class EditProfile extends React.Component {
           postData+="&specialisation="+this.state.specialization+"&country="+this.state.country+"&state="+this.state.mstate;
           postData+="&district="+this.state.district+"&pincode="+this.state.pincode+"&address="+this.state.addr;      
    
-      console.log(postData);
       let _targetPostURL="http://159.65.148.197:3001/api/ngo/screener/addprofile?=";
       axios(
         {
@@ -114,16 +113,14 @@ class EditProfile extends React.Component {
   
       ).then(res=>{
 
-        console.log("In Good way:");
-        console.log(res.data);
+      
         if(res.data.status===1){
           alert('Profile Updated Successfully')
           window.location='/dashboard/scrviewprofile'
         }
       })
       .catch(e=>{
-        console.log("Exception:"); 
-        console.log(e);
+       
       });
 
   }

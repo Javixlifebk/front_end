@@ -80,7 +80,6 @@ class AddAllergy extends React.Component {
 
   onChangeHandler=event=>{
 
-    //console.log(event.target.files[0])
     this.setState({
       fileuploads: event.target.files[0],
       loaded: 0,
@@ -106,7 +105,6 @@ class AddAllergy extends React.Component {
     else      
     postData+="&token=dfjkhsdfaksjfh3756237"+"&screenerId="+localStorage.getItem("usermasid") ;
     postData+="&status=1" +"&recordUrl="+returnUrl+"&type="+this.state.doctype+"&description="+this.state.fname;
-    console.log(postData);
     let _targetPostURL="http://159.65.148.197:3001/api/citizen/addDocuments?=";
     axios(
       {
@@ -118,8 +116,7 @@ class AddAllergy extends React.Component {
 
     ).then(res=>{
 
-      console.log("In Good way:");
-      console.log(res.data);
+   
       if(res.data.status===1){
         alert('Document Updated Successfully')
         window.location='/dashboard/patientview'
@@ -127,8 +124,7 @@ class AddAllergy extends React.Component {
     })
     .catch(e=>{
       
-      console.log("Exception:"); 
-      console.log(e);
+
     });
   })
 

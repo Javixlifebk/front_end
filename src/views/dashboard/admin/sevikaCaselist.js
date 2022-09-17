@@ -95,7 +95,7 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
+	 
  }
 
  handleClick(_userid) {    
@@ -107,20 +107,19 @@ loadRecs(recs)
   window.location='/dashboard/admin/ngolist'
 }
   
-componentWillUnmount(){ console.log("WIllUnmount************"); this.mounted = false;}
-componentDidMount() {console.log("DID MOUNT ************");
+componentWillUnmount(){  this.mounted = false;}
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
 		 axios.post("http://159.65.148.197:3001/api/generalsurvey/screeningScreener")
     //  http://159.65.148.197:3001/api/generalsurvey/screenersevika
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
 						  var recs=response.data.data.data;
-						  console.log(recs[0]);
+						 
 						  this.loadRecs(recs);
               localStorage.removeItem("Ngoid")
 					  }

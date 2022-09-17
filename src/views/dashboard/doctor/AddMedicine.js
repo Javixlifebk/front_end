@@ -178,7 +178,6 @@ class AddMedicine extends React.Component {
           var di=delInds[i]; // remo
         }
       }
-      console.log("Medicine Name " + this.state.colsMedicine);
       var finalMedecine=this.state.colsMedicine.join(",,,");
       var finalStrength=this.state.colsStrength.join(",,,");
       var finalSUnit=this.state.colsSUnit.join(",,,");
@@ -202,7 +201,6 @@ class AddMedicine extends React.Component {
           postData+="&frequency="+finalFrequency+"&preparation="+finalPreparation+"&dose="+finalDosages;
           postData+="&route="+finalRoute+"&tests="+this.state.strTests+"&comments="+this.state.strMdescription;
          
-         //console.log(postData);
 
 
      
@@ -216,8 +214,6 @@ class AddMedicine extends React.Component {
           }  
       ).then(res=>{
 
-        console.log("In Good way:");
-        console.log(res.data);
         if(res.data.status===1){
           alert('Medicine Added Successfully')
           window["medicineInit"]();
@@ -225,8 +221,6 @@ class AddMedicine extends React.Component {
         }
       })
       .catch(e=>{
-        console.log("Exception:"); 
-        console.log(e);
       });
   }
   handleClick = e => {

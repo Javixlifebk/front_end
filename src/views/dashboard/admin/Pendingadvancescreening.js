@@ -95,7 +95,7 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
+	
  }
 
  handleClick(_userid) {    
@@ -107,19 +107,18 @@ loadRecs(recs)
   window.location='/dashboard/admin/ngolist'
 }
   
-componentWillUnmount(){ console.log("WIllUnmount************"); this.mounted = false;}
-componentDidMount() {console.log("DID MOUNT ************");
+componentWillUnmount(){ 
+   this.mounted = false;}
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
 		 axios.post("http://159.65.148.197:3001/api/generalsurvey/screenersevika",{issubscreener:1})
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
 						  var recs=response.data.data.data;
-						  console.log(recs[0]);
 						  this.loadRecs(recs);
               localStorage.removeItem("Ngoid")
 					  }
@@ -167,6 +166,7 @@ componentDidMount() {console.log("DID MOUNT ************");
             className="dataTable-custom"
             data={value.length ? filteredData : data}
             columns={columns}
+            noDataComponent="Loading...."
             noHeader
             pagination
             subHeader

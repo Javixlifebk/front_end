@@ -22,10 +22,8 @@ class DataCount extends React.Component {
     sevikas:0
 
   }
-  componentDidMount() {console.log("DID MOUNT ************");
-  console.log("Javix ID=" + localStorage.getItem("javixid"))
+  componentDidMount() {
   if(localStorage.getItem("javixid")===null || localStorage.getItem("javixid")==="0"){
-    console.log("Javix ID=" + localStorage.getItem("javixid"))
     document.location="/dashboard/doceditprofile";
   }
 
@@ -44,8 +42,8 @@ class DataCount extends React.Component {
         
    })
    .catch(e=>{
-    console.log("Exception:"); 
-    console.log(e.response.data);
+    
+    
     if(e.response.data.status===0){
       this.state.notfound=0
 
@@ -64,8 +62,8 @@ class DataCount extends React.Component {
        
   })
   .catch(e=>{
-   console.log("Exception:"); 
-   console.log(e.response.data);
+   
+   
    if(e.response.data.status===0){
      this.state.notfound=0
 
@@ -84,8 +82,8 @@ class DataCount extends React.Component {
        
   })
   .catch(e=>{
-   console.log("Exception:"); 
-   console.log(e.response.data);
+   
+   
    if(e.response.data.status===0){
      this.state.notfound=0
 

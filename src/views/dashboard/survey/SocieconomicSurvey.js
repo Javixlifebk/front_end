@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import '@mui/x-data-grid-generator'
 // import Button from '@mui/material/Button'
-import { DataGrid, GridToolbar } from '@mui/x-data-grid'
+import { DataGrid, GridToolbar,GridOverlay } from '@mui/x-data-grid'
 import axios from "axios";
+function customNoRowsOverlay() {
+  return (
+      <GridOverlay>
+          <div>Loading....</div>
+      </GridOverlay>
+  )
+}
 
 
 function SocieconomicSurvey() {
@@ -12,7 +19,6 @@ function SocieconomicSurvey() {
   useEffect(() => {
 		  axios.post('http://159.65.148.197:3001/api/socioeconomicsurvey/SocioEconomicSurveyList')
 		 .then(response => {
-					console.log("Returned data:");
 					if(response.data.status===1)
 					  {
 						  var recs=response.data.data.data;
@@ -77,7 +83,8 @@ function SocieconomicSurvey() {
             rows={rows}
             columns={columns}
             pageSize={8}
-            components={{ Toolbar: GridToolbar }}
+            components={{ Toolbar: GridToolbar,
+              NoRowsOverlay: customNoRowsOverlay }}
               getRowId={(rows) => rows._id}
           />
         </div>

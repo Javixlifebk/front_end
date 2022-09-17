@@ -154,12 +154,12 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
+
  }
 
  handleClick(_userid) {    
   localStorage.setItem("citizenId",_userid);
-  console.log("CitizenId=" + _userid)
+ 
   window.location='../../views/dashboard/patientview'  
 }
 
@@ -176,15 +176,14 @@ loadRecs(recs)
 }
   
 
-componentDidMount() {console.log("DID MOUNT ************");
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
     // if(localStorage.getItem("severity")==="1"){
     
 		  axios.post('http://159.65.148.197:3001/api/labtest/LipidPanelCholesterolAmberList')
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
-        //   console.log("User MasterId=" + localStorage.getItem("usermasid"))
+					
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
@@ -197,8 +196,7 @@ componentDidMount() {console.log("DID MOUNT ************");
     // else if(localStorage.getItem("severity")==="0"){
     //   axios.post('http://159.65.148.197:3001/api/labtest/getBloodGlucoseTestList', {severity:0})
     //   .then(response => {
-    //     //    console.log("Returned data:", response.data.status);
-    //     //    console.log("User MasterId=" + localStorage.getItem("usermasid"))
+    // 
     //        if(response.data.status===1)
     //          {
     //            var msg=response.data.message;
@@ -210,8 +208,7 @@ componentDidMount() {console.log("DID MOUNT ************");
     // }else if(localStorage.getItem("severity")==="2"){
     //   axios.post('http://159.65.148.197:3001/api/labtest/getBloodGlucoseTestList', {severity:2})
     //   .then(response => {
-    //     //    console.log("Returned data:", response.data.status);
-    //     //    console.log("User MasterId=" + localStorage.getItem("usermasid"))
+    //   
     //        if(response.data.status===1)
     //          {
     //            var msg=response.data.message;

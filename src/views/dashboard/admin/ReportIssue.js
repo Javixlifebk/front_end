@@ -80,7 +80,7 @@ class ReportIssue extends React.Component {
       let postData="userId="+localStorage.getItem("userid") + "&issue=" + this.state.subject + "&issueDetails=" + this.state.issuedetails;
          
           
-      console.log(postData);
+      
       let _targetPostURL="http://159.65.148.197:3001/api/issues/addIssue?=";
       axios(
         {
@@ -92,16 +92,14 @@ class ReportIssue extends React.Component {
   
       ).then(res=>{
 
-        console.log("In Good way:");
-        console.log(res.data);
+       
         if(res.data.status===1){
           alert('Issue Raised Successfully');
           document.location="/dashboard/issuelist";
         }
       })
       .catch(e=>{
-        console.log("Exception:"); 
-        console.log(e);
+    
       });
 
   }

@@ -144,7 +144,6 @@ function WeeklyScreener() {
   axios
     .post("http://159.65.148.197:3001/api/generalsurvey/screeningScreener")
     .then((response) => {
-      console.log("Returned data:")
       if (response.data.status === 1) {
         var recs = response.data.data.data;
         setUsers(recs);

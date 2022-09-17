@@ -175,12 +175,12 @@ class UsersList extends React.Component {
 
   async componentDidMount() {
     
-    console.log(rowData,"!!!!!!!!!!!!!!*****!!!!!!!!!!!!!");
+
     await axios.get("api/users/list").then(response => {
       let rowData = response.data
       this.setState({ rowData })
       
-      console.log(rowData,"!!!!!!!!!!!!!!*****!!!!!!!!!!!!!");
+  
     })
   }
 

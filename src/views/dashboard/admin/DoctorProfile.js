@@ -57,7 +57,6 @@ class Profile extends React.Component {
     if(window.confirm("Do You Really Want to change Password !")===true){
 
     let postData="email=" + localStorage.getItem("doEmail");   
-    console.log(postData);
     let _targetPostURL="http://159.65.148.197:3001/api/auth/forgotpw?=";    
     axios(
       {
@@ -68,8 +67,6 @@ class Profile extends React.Component {
         }
   
     ).then(res=>{
-           console.log("In Good way:");
-           console.log(res.data);                          
           
            if(res.data.status===1 || res.data.status==="1")
               { 
@@ -82,8 +79,6 @@ class Profile extends React.Component {
           
           })
           .catch(e=>{
-           console.log("Exception:"); 
-           console.log(e)   ;
          
           }); 
           
@@ -109,7 +104,7 @@ class Profile extends React.Component {
 
   
 
-  componentDidMount() {console.log("DID MOUNT ************");
+  componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         

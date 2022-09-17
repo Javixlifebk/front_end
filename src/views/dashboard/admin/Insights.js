@@ -178,7 +178,7 @@ class AdminDashboard extends React.Component {
   constructor(props) {
     super(props);
 
-    // console.log("------*********-------",props.value.issubscreener);
+    // "------*********-------",props.value.issubscreener;
     this.state = {
       severity_bp_default: "",
       severity_bp_green: "10",
@@ -360,7 +360,6 @@ class AdminDashboard extends React.Component {
   }
   loadRecs(recs) {
     this.setState({ data: recs });
-    console.log(this.state.recs);
     this.setState({ loader: null });
   }
 
@@ -381,7 +380,6 @@ class AdminDashboard extends React.Component {
   }
 
   componentDidMount() {
-    console.log("DID MOUNT ************");
     this.mounted = true;
     
     axios
@@ -397,12 +395,9 @@ class AdminDashboard extends React.Component {
             severity_bp_green: response.data.data.data[0].count,
           });
         } else {
-          console.log("Not Found");
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -411,7 +406,6 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://159.65.148.197:3001/api/labtest/getBloodGlucoseTestCount")
       .then((response) => {
-        console.log("Checking......................................");
         console.dir(response.data.data.data);
 
         if (response.data.status === 1) {
@@ -430,12 +424,10 @@ class AdminDashboard extends React.Component {
               });
           }
         } else {
-          console.log("Not Found");
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+       
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -471,15 +463,11 @@ class AdminDashboard extends React.Component {
               this.setState({
                 severity_hemo_amber: test3,
               });
-              // console.log(severity_hemo_amber, 'jjjjjjjjjjjjjjjjjj');
-          console.log(test3, 'yyyyyyyyyyyyyyyyyy');
         } else {
-          console.log("Not Found");
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+      
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -506,12 +494,11 @@ class AdminDashboard extends React.Component {
               });
           }
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+      
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -536,12 +523,11 @@ class AdminDashboard extends React.Component {
               });
           }
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+      
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -565,12 +551,10 @@ class AdminDashboard extends React.Component {
               });
           }
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -595,12 +579,10 @@ class AdminDashboard extends React.Component {
               });
           }
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -627,12 +609,10 @@ class AdminDashboard extends React.Component {
               });
           }
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -657,12 +637,10 @@ class AdminDashboard extends React.Component {
               });
           }
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -674,8 +652,6 @@ class AdminDashboard extends React.Component {
         userId: "demoUser",
       })
       .then((response) => {
-        console.log("Returned data:", response.data.status);
-        console.log("User MasterId=" + localStorage.getItem("usermasid"));
         if (response.data.status === 1) {
           var msg = response.data.message;
           var recs = response.data.data.data;
@@ -697,12 +673,10 @@ class AdminDashboard extends React.Component {
             severity_bp_amber: response.data.data.data[0].count,
           });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -718,12 +692,10 @@ class AdminDashboard extends React.Component {
           //console.dir(recs)
           this.setState({ severity_bp_red: response.data.data.data[0].count });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -744,12 +716,11 @@ class AdminDashboard extends React.Component {
             severity_spo2_green: response.data.data.data[0].count,
           });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+      
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -768,12 +739,11 @@ class AdminDashboard extends React.Component {
             severity_spo2_amber: response.data.data.data[0].count,
           });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+      
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -791,12 +761,11 @@ class AdminDashboard extends React.Component {
             severity_spo2_red: response.data.data.data[0].count,
           });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+      
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -817,12 +786,11 @@ class AdminDashboard extends React.Component {
             severity_temp_green: response.data.data.data[0].count,
           });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+     
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -841,12 +809,11 @@ class AdminDashboard extends React.Component {
             severity_temp_amber: response.data.data.data[0].count,
           });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+      
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -864,12 +831,11 @@ class AdminDashboard extends React.Component {
             severity_temp_red: response.data.data.data[0].count,
           });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+     
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -890,12 +856,11 @@ class AdminDashboard extends React.Component {
             severity_hr_green: response.data.data.data[0].count,
           });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+     
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -914,12 +879,11 @@ class AdminDashboard extends React.Component {
             severity_hr_amber: response.data.data.data[0].count,
           });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+        
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -935,12 +899,11 @@ class AdminDashboard extends React.Component {
           //console.dir(recs)
           this.setState({ severity_hr_red: response.data.data.data[0].count });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+       
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -959,12 +922,11 @@ class AdminDashboard extends React.Component {
             severity_bmi_green: response.data.data.data[0].count,
           });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+     
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -1025,12 +987,11 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
             severity_bmi_amber: response.data.data.data[0].count,
           });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+      
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -1049,12 +1010,11 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
           //console.dir(recs)
           this.setState({ severity_bmi_red: response.data.data.data[0].count });
         } else {
-          console.log("Not Found");
+         
         }
       })
       .catch((e) => {
-        console.log("Exception:");
-        console.log(e.response.data);
+     
         if (e.response.data.status === 0) {
           this.state.notfound = 0;
         }
@@ -1072,8 +1032,7 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
            
       })
       .catch(e=>{
-       console.log("Exception:"); 
-       console.log(e.response.data);
+   
        if(e.response.data.status===0){
          this.state.notfound=0
    
@@ -1094,8 +1053,8 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
          
     })
     .catch(e=>{
-     console.log("Exception:"); 
-     console.log(e.response.data);
+  
+   
      if(e.response.data.status===0){
        this.state.notfound=0
   
@@ -1118,8 +1077,8 @@ axios.get('http://159.65.148.197:3001/documents/weeklyScreeningSevika.csv')
        
   })
   .catch(e=>{
-   console.log("Exception:"); 
-   console.log(e.response.data);
+
+ 
    if(e.response.data.status===0){
      this.state.notfound=0
 

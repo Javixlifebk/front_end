@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 // import { environment } from '../../api'
 import '@mui/x-data-grid-generator'
-import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
+import { DataGrid, GridToolbar,GridToolbarContainer,GridOverlay,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
 function CustomToolbar() {
   return (
@@ -9,8 +9,19 @@ function CustomToolbar() {
       <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
       {/* <GridFilterPanel /> */}
       <GridToolbarFilterButton />
+      {/* <GridOverlay>
+     <div>Loading ....</div>
+ </GridOverlay> */}
     </GridToolbarContainer>
+    
   );
+}
+function customNoRowsOverlay() {
+  return (
+      <GridOverlay>
+          <div>Loading....</div>
+      </GridOverlay>
+  )
 }
 
 function LipidCritical() {
@@ -18,7 +29,6 @@ function LipidCritical() {
   useEffect(() => {
 		  axios.post('http://159.65.148.197:3001/api/screening/lipidCritical')
 		 .then(response => {
-					console.log("Returned data:");
 					if(response.data.status===1)
 					  {
 						  var recs=response.data.data.data;
@@ -74,7 +84,7 @@ function LipidCritical() {
     { field: 'hemoglobins', headerName: 'hemoglobins', width: 120 },
     { field: 'unit', headerName: 'Blood Glucose unit', width: 120 },
     { field: 'type', headerName: 'Blood Glucose type', width: 120 },
-    { field: 'leukocytes', headerName: 'Blood Glucose type', width: 120 },
+    { field: 'leukocytes', headerName: 'Blood Glucose Leukocytes', width: 120 },
     { field: 'nitrite', headerName: 'nitrite', width: 120 },
     { field: 'urobilinogen', headerName: 'urobilinogen', width: 120 },
     { field: 'protein', headerName: 'protein', width: 120 },
@@ -102,7 +112,7 @@ function LipidCritical() {
     { field: 'tcl_hdl', headerName: 'tcl hdl', width: 120 },
     { field: 'ldl_hdl', headerName: 'ldl hdl', width: 120 },
     { field: 'non_hdl', headerName: 'non_hdl', width: 120 },
-    { field: 'glucose', headerName: 'glucose hdl', width: 120 },
+    // { field: 'glucose', headerName: 'glucose hdl', width: 120 },
     { field: 'type', headerName: 'type', width: 120 },
    
   ]
@@ -123,6 +133,7 @@ function LipidCritical() {
             pageSize={8}
             components={{
               Toolbar: CustomToolbar,
+              NoRowsOverlay: customNoRowsOverlay
             }}
             getRowId={(rows) => rows._id}
           />

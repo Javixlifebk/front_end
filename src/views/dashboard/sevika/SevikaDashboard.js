@@ -28,11 +28,9 @@ import "../../../assets/scss/pages/dashboard-analytics.scss"
 
 class SevikaDashboard extends React.Component {
 
-  componentDidMount() {console.log("DID MOUNT ************");
+  componentDidMount() {
   
-  console.log("Javix ID=" + localStorage.getItem("roleId"))
   if(localStorage.getItem("javixid")===null || localStorage.getItem("javixid")==="0"){
-    console.log("Javix ID=" + localStorage.getItem("javixid"))
     document.location="/dashboard/seveditprofile";
   }
   this.mounted = true;

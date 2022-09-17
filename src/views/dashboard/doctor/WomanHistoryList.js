@@ -95,14 +95,11 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
  }
 
  handleClick(_userid) {    
   axios.post('http://159.65.148.197:3001/api/citizen/getHistoryWomen', { citizenId:_userid})
   .then(response => {
-       console.log("Returned data:", response.data.status);
-       console.log("User MasterId=" + localStorage.getItem("usermasid"))
        if(response.data.status===1)
          {
            var msg=response.data.message;
@@ -111,8 +108,6 @@ loadRecs(recs)
            
          }
   }).catch(e=>{
-   console.log("Exception:"); 
-   console.log(e);
  });
 }
 
@@ -129,13 +124,11 @@ loadRecs(recs)
 }
   
 
-componentDidMount() {console.log("DID MOUNT ************");
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
 		  axios.post('http://159.65.148.197:3001/api/citizen/getHistoryWomen?=', { citizenId:localStorage.getItem("citizenId")})
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
-          console.log("User MasterId=" + localStorage.getItem("usermasid"))
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
@@ -143,8 +136,6 @@ componentDidMount() {console.log("DID MOUNT ************");
 						  this.loadRecs(recs);
 					  }
 		 }).catch(e=>{
-      console.log("Exception:"); 
-      console.log(e);
     });
 
 
@@ -160,8 +151,6 @@ componentDidMount() {console.log("DID MOUNT ************");
            } 
          }
   }).catch(e=>{
-   console.log("Exception:"); 
-   console.log(e);
  });*/
 }
 

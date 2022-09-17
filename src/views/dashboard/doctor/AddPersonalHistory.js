@@ -104,7 +104,6 @@ class AddPersonalHistory extends React.Component {
           postData+="&maritalstatus="+this.state.maritalstatus+"&ocupation="+this.state.ocupation;
           postData+="&notworking="+working+"&legalproblems="+this.state.legalproblems + "&highesteducation=" +this.state.highesteducation;
          
-      console.log(postData);
       let _targetPostURL="http://159.65.148.197:3001/api/citizen/addPersonalHistory?=";
       axios(
         {
@@ -116,16 +115,12 @@ class AddPersonalHistory extends React.Component {
   
       ).then(res=>{
 
-        console.log("In Good way:");
-        console.log(res.data);
         if(res.data.status===1){
           alert('Personal History Added Successfully')
           window.location='/dashboard/patientview'
         }
       })
       .catch(e=>{
-        console.log("Exception:"); 
-        console.log(e);
       });
 
   }

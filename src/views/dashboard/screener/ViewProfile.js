@@ -52,7 +52,7 @@ class Profile extends React.Component {
     }, 2000)
   }
 
-  componentDidMount() {console.log("DID MOUNT ************");
+  componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
@@ -60,7 +60,6 @@ class Profile extends React.Component {
 		 .then(response => {
       if(response.data.status===1){
         var recs=response.data.data.data;
-					//console.log(recs[0]._id);
 
           //console.dir(response)
           //this.state.screenerId=response.data.screenerId
@@ -81,12 +80,10 @@ class Profile extends React.Component {
           this.setState({photo:recs[0].info.photo});
           
         }else{
-          console.log("Not Found")
         }
 					
 		 }).catch(e=>{
-      console.log("Exception:"); 
-      console.log(e.response.data);
+   
       if(e.response.data.status===0){
         this.state.notfound=0
 

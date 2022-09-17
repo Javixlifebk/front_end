@@ -93,12 +93,12 @@ class AggridTable extends React.Component {
   }
 
   componentDidMount() {
-    console.log(rowData,"!!!!!!!!!!!!!!*****!!!!!!!!!!!!!");
+    // "!!!!!!!!!!!!!!*****!!!!!!!!!!!!!"
     axios.get("/api/aggrid/data").then(response => {
       let rowData = response.data.data
       JSON.stringify(rowData)
       this.setState({ rowData })
-      console.log(rowData,"!!!!!!!!!!!!!!*****!!!!!!!!!!!!!");
+      // "!!!!!!!!!!!!!!*****!!!!!!!!!!!!!
     })
   }
 
