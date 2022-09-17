@@ -27,7 +27,7 @@ function customNoRowsOverlay() {
 function LipidCritical() {
   const [rows, setUsers] = useState([])
   useEffect(() => {
-		  axios.post('http://159.65.148.197:3001/api/screening/lipidCritical')
+		  axios.post('http://143.244.136.145:3001/api/screening/lipidCritical')
 		 .then(response => {
 					if(response.data.status===1)
 					  {

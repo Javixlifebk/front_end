@@ -34,7 +34,7 @@ const CustomHeader = props => {
 
 class PatientList extends React.Component {
 
-    setBMI(val,val1){
+    setBMI(val){
         if(val>18 && val<=25 ){
             return(<span style={{background:'#008000',padding:'4px',color:'white'}}>BMI:{val}</span>);
         }else if(val>25 && val<=30){
@@ -43,49 +43,57 @@ class PatientList extends React.Component {
             return(<span style={{background:'red',padding:'4px',color:'white'}}>BMI:{val}</span>);
         }
     }
-    setBP(bpsys,bpdia,val1){
+    setBP(bpsys,bpdia){
 
-        if(val1===0 ){
+        if(bpsys<=120 && bpdia<=80){
             return(<span style={{background:'#008000',padding:'4px',color:'white',borderRadius:'25px;'}}>BP:{bpsys}/{bpdia}</span>);
-         }else if(val1===1){
+         }else if((bpsys>120  && bpsys<=160) && (bpdia>80 && bpdia<=110)){
             return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>BP:{bpsys}/{bpdia}</span>);
+         }else if(bpsys>160  &&  bpdia>110){
+            return(<span style={{background:'red',padding:'4px',color:'white'}}>BP:{bpsys}/{bpdia}</span>);
          }else{
             return(<span style={{background:'red',padding:'4px',color:'white'}}>BP:{bpsys}/{bpdia}</span>);
          }
     }
-    setSOP2(val,val1){
-        if(val1===0 ){
+    setSOP2(val){
+        if(val>95 && val<=100 ){
             return(<span style={{background:'#008000',padding:'4px',color:'white'}}>SPO2:{val}</span>);
-        }else if(val1===1){
+        }else if(val>89 && val<=94){
             return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>SPO2:{val}</span>);
-        }else{
+        }else if(val<89){
             return(<span style={{background:'red',padding:'4px',color:'white'}}>SPO2:{val}</span>);
         }
     }
-    setPulse(val,val1){
-        if(val1===0 ){
+    setPulse(val){
+        if(val>65 && val<=72 ){
             return(<span style={{background:'#008000',padding:'4px',color:'white'}}>Heart:{val}</span>);
-        }else if(val1===1){
+        }else if(val>72 && val<=83){
             return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Heart:{val}</span>);
+        }else if(val>83){
+            return(<span style={{background:'red',padding:'4px',color:'white'}}>Heart:{val}</span>);
         }else{
             return(<span style={{background:'red',padding:'4px',color:'white'}}>Heart:{val}</span>);
         }
     }
-    setTemp(val,val1){
-        if(val1===0){
+    setTemp(val){
+        if(val>94 && val<=99 ){
             return(<span style={{background:'#008000',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
-        }else if(val1===1){
+        }else if(val>99 && val<=103){
             return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
+        }else if(val>103){
+            return(<span style={{background:'red',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
         }else{
             return(<span style={{background:'red',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
         }
     }
 
-    setResp(val,val1){
-        if(val1===0 ){
+    setResp(val){
+        if(val>12 && val<=20 ){
             return(<span style={{background:'#008000',padding:'4px',color:'white'}}>Resp:{val}</span>);
-        }else if(val1===1){
+        }else if(val>20 && val<=30){
             return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Resp:{val}</span>);
+        }else if(val>30){
+            return(<span style={{background:'red',padding:'4px',color:'white'}}>Resp:{val}</span>);
         }else{
             return(<span style={{background:'red',padding:'4px',color:'white'}}>Resp:{val}</span>);
         }
@@ -107,7 +115,7 @@ class PatientList extends React.Component {
           {this.loadData()}
           <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p>
           <p className="text-bold-500 mb-0">{'CASE ID:' + ' ' + row.caseId}</p>
-			<p className="text-bold-500 mb-0 text-info">{'Screener:' + ' ' + row.screeners[0].firstName + ' '+ row.screeners[0].lastName}</p>		  
+			Screener: <p className="text-bold-500 mb-0 text-info">{ row.screeners[0].firstName + ' '+ row.screeners[0].lastName}</p>		  
           </div>
         )
       },
@@ -119,11 +127,11 @@ class PatientList extends React.Component {
          <div>     
                                  
           <p className="text-bold-500 mb-0">
-          <span>{this.setBMI(row.bmi,row.severity_bmi)}</span>&nbsp;&nbsp;
-          <span style={{margin:'20px;',padding:'4px;'}}>{this.setBP(row.bpsys,row.bpdia,row.severity_bp)}</span>&nbsp;&nbsp;
-          <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2,row.severity_spo2)}</span>&nbsp;&nbsp;
-          <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse,row.severity_pulse)}</span>&nbsp;&nbsp;
-          <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature,row.severity_temperature)}</span>&nbsp;&nbsp;
+          <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp;
+          <span style={{margin:'20px;',padding:'4px;'}}>{this.setBP(row.bpsys,row.bpdia)}</span>&nbsp;&nbsp;
+          <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp;
+          <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp;
+          <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp;
           
           </p>
           </div>
@@ -149,6 +157,7 @@ loadRecs(recs)
   localStorage.setItem("caseId",_caseid);
   this.loadData();
   
+  console.log("case Report=" + this.state.imgUrl);
   localStorage.setItem("caseReport",this.state.imgUrl);
   var roleId=localStorage.getItem("roleId");
   if(roleId==='1'){
@@ -175,6 +184,8 @@ loadData(){
            } 
          }
   }).catch(e=>{
+   console.log("Exception:"); 
+   console.log(e);
  });
 }
 
@@ -190,7 +201,7 @@ loadData(){
 
 }
   
-componentDidMount() {
+componentDidMount() {console.log("DID MOUNT ************");
 		this.mounted = true;
 		//this.setState({data:null});
     /*let postData=""
@@ -201,6 +212,8 @@ componentDidMount() {
      }*/
 		  axios.post('http://143.244.136.145:3001/api/screening/getCaseDetails?=', {citizenId:localStorage.getItem("_citizenId"),token:'dfjkhsdfaksjfh3756237'})
 		 .then(response => {
+					console.log("Returned data:", response.data.status);
+          console.log("User MasterId=" + localStorage.getItem("usermasid"))
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;

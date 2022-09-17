@@ -50,7 +50,7 @@ var screenerFilterParams = {
   debounceMs: 200,
   suppressAndOrCondition: true,
 };
-// http://159.65.148.197:3001/api/generalsurvey/screeningScreener
+// http://143.244.136.145:3001/api/generalsurvey/screeningScreener
 function WeeklyScreenerSevika() {
   const gridRef = useRef();
   const [gridApi, setGridApi] = useState();
@@ -122,7 +122,7 @@ function WeeklyScreenerSevika() {
   }, [startDate, endDate]);
 
   axios
-    .post("http://159.65.148.197:3001/api/generalsurvey/screenersevika",{issubscreener:1})
+    .post("http://143.244.136.145:3001/api/generalsurvey/screenersevika",{issubscreener:1})
     .then((response) => {
       if (response.data.status === 1) {
         var recs = response.data.data.data;

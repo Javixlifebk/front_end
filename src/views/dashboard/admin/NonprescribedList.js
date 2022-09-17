@@ -153,7 +153,7 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://159.65.148.197:3001/api/screening/getCaseDetails', {status:'2'})
+		axios.post('http://143.244.136.145:3001/api/screening/getCaseDetails', {status:'2'})
 		 .then(response => {
 					
 					if(response.data.status===1)

@@ -143,7 +143,7 @@ componentWillUnmount(){  this.mounted = false;}
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		axios.post('http://159.65.148.197:3001/api/ngo/ngoList', {email:'jilani.it@gmail.com',status:1 })
+		axios.post('http://143.244.136.145:3001/api/ngo/ngoList', {email:'jilani.it@gmail.com',status:1 })
 		 .then(response => {
 					
 					if(response.data.status===1)
