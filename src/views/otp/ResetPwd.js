@@ -41,8 +41,7 @@ class ResetPwd extends React.Component {
                         }
                 
                     ).then(res=>{
-                          g("In Good way:");
-                          g(res.data);
+                         
                            if(res.data.status===1 || res.data.status==="1")
                               { 
                                 this.setState({myexection:'Successfully Confirmed!'});  
@@ -51,8 +50,7 @@ class ResetPwd extends React.Component {
                           
                           })
                           .catch(e=>{
-                          g("Exception:"); 
-                          g(e)   ;
+                      
                            if(e.response.data.status===0 || e.response.data.status==="0")
                               {
                               
@@ -169,7 +167,7 @@ class ResetPwd extends React.Component {
 
                   let postData="email="+localStorage.getItem("email")+""              
 
-                 g(postData);
+                
                   let _targetPostURL="http://159.65.148.197:3001/api/auth/resend-verify-otp?=";
                   axios(
                     {
@@ -180,8 +178,7 @@ class ResetPwd extends React.Component {
                       }
               
                   ).then(res=>{
-                        g("In Good way:");
-                        g(res.data);
+                       
                          if(res.data.status===1 || res.data.status==="1")
                             { 
                               this.setState({myexection:'OTP Resend Successfully !'});  
@@ -190,8 +187,7 @@ class ResetPwd extends React.Component {
                         
                         })
                         .catch(e=>{
-                        g("Exception:"); 
-                        g(e)   ;
+                      
                          if(e.response.data.status===0 || e.response.data.status==="0")
                             { 
                             
