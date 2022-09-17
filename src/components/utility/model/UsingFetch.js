@@ -23,7 +23,6 @@ class UsingFetch extends Component {
     })
       .then(response => {
         let json = response.json();
-        console.log(json);
         this.setState({ users: json })
         if (!response.ok) {
           throw new Error("Network response was not ok");

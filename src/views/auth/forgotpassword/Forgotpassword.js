@@ -33,7 +33,6 @@ class Forgotpassword extends React.Component {
         
     });*/              
 
-                    console.log(postData);
                     let _targetPostURL="http://159.65.148.197:3001/api/auth/forgotpw?=";
                     this.setState({ loading: true }, () => {
                     axios(
@@ -45,8 +44,7 @@ class Forgotpassword extends React.Component {
                         }
                 
                     ).then(res=>{
-                           console.log("In Good way:");
-                           console.log(res.data);                          
+                          
                           
                            if(res.data.status===1 || res.data.status==="1")
                               { 
@@ -57,8 +55,7 @@ class Forgotpassword extends React.Component {
                           
                           })
                           .catch(e=>{
-                           console.log("Exception:"); 
-                           console.log(e)   ;
+                           
                            /*if(e.response.data.status===0 || e.response.data.status==="0")
                               { 
                               

@@ -56,7 +56,7 @@ class Profile extends React.Component {
   }
     
 
-  componentDidMount() {console.log("DID MOUNT ************");
+  componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
@@ -80,7 +80,6 @@ class Profile extends React.Component {
         this.setState({addr:recs[0].info.address});
         this.state.notfound=1;
         }else{
-          console.log("Not Found")
         }
 		 });// then
 }

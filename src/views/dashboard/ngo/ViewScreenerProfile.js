@@ -53,14 +53,13 @@ class Profile extends React.Component {
     }, 2000)
   }
 
-  componentDidMount() {console.log("DID MOUNT ************");
+  componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
 		axios.post('http://159.65.148.197:3001/api/ngo/screenerById?=', { screenerId:localStorage.getItem("Scrid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
         var recs=response.data.data.data;
-					//console.log(recs[0]._id);
 
           //console.dir(response)
           //this.state.screenerId=response.data.screenerId
@@ -98,7 +97,6 @@ class Profile extends React.Component {
                 postData+="&token=dfjkhsdfaksjfh3756237";
                 
             
-          console.log(postData);
           let _targetPostURL="http://159.65.148.197:3001/api/ngo/screener/updateScreenerNgoId?=";
           axios(
           {
@@ -109,8 +107,6 @@ class Profile extends React.Component {
           }
 
           ).then(res=>{
-          console.log("In Good way:");
-          console.log(res.data);
           if(res.data.status===1 || res.data.status==="1"){ 
            
               alert("Screener Mapped Successfully !")
@@ -120,8 +116,7 @@ class Profile extends React.Component {
           //code
           })
           .catch(e=>{
-          console.log("Exception:"); 
-          console.log(e);        
+                
 
           });
 

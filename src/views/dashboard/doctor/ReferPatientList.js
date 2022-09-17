@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 // import { environment } from '../../api'
 import '@mui/x-data-grid-generator'
-import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
+import { DataGrid, GridToolbar,GridOverlay,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
 import Button from '@mui/material/Button'
 function CustomToolbar() {
@@ -14,7 +14,13 @@ function CustomToolbar() {
     </GridToolbarContainer>
   );
 }
-
+function customNoRowsOverlay() {
+  return (
+      <GridOverlay>
+          <div>Loading....</div>
+      </GridOverlay>
+  )
+}
 
 function ReferPatientList() {
   const [rows, setUsers] = useState([])
@@ -42,8 +48,6 @@ function ReferPatientList() {
   
     })
     .catch(e=>{
-      console.log("Exception:"); 
-      console.log(e);
     });
   }
     //alert(_userid)
@@ -58,7 +62,6 @@ function ReferPatientList() {
   useEffect(() => {
 		  axios.post('http://159.65.148.197:3001/api/citizen/citizenrefer', {token:'dfjkhsdfaksjfh3756237',isUnrefer:true })
 		 .then(response => {
-					console.log("Returned data:");
 					if(response.data.status===1)
 					  {
 						  var recs=response.data.data.data;
@@ -168,6 +171,7 @@ function ReferPatientList() {
             pageSize={8}
             components={{
               Toolbar: CustomToolbar,
+              NoRowsOverlay: customNoRowsOverlay
             }}
             getRowId={(rows) => rows._id}
           />

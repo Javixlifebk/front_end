@@ -95,7 +95,6 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
  }
 
  handleClick(_userid) {    
@@ -108,8 +107,6 @@ loadRecs(recs)
            console.dir("Drug Allery Report" + response);  
          }
   }).catch(e=>{
-   console.log("Exception:"); 
-   console.log(e);
  });
 }
 
@@ -125,7 +122,7 @@ loadRecs(recs)
 }
   
 
-componentDidMount() {console.log("DID MOUNT ************");
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
 		  axios.post('http://159.65.148.197:3001/api/citizen/getHistoryAllergy?=', { citizenId:localStorage.getItem("citizenId")})
@@ -138,8 +135,8 @@ componentDidMount() {console.log("DID MOUNT ************");
 						  this.loadRecs(recs);
 					  }
 		 }).catch(e=>{
-      console.log("Exception:"); 
-      console.log(e);
+     
+     
     });
 
   /*axios.post('http://159.65.148.197:3001/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
@@ -153,8 +150,8 @@ componentDidMount() {console.log("DID MOUNT ************");
            } 
          }
   }).catch(e=>{
-   console.log("Exception:"); 
-   console.log(e);
+  
+  
  });*/
 
 }

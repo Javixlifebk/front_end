@@ -66,7 +66,7 @@ class Profile extends React.Component {
   }
   }
 
-  componentDidMount() {console.log("DID MOUNT ************");
+  componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
@@ -91,12 +91,9 @@ class Profile extends React.Component {
           this.setState({photo:recs[0].info.photo});
           this.setState({pincode:recs[0].info.pincode});
         }else{
-          console.log("Not Found")
         }
 					
 		 }).catch(e=>{
-      console.log("Exception:"); 
-      console.log(e.response.data);
       if(e.response.data.status===0){
         this.state.notfound=0
 

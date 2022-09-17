@@ -154,12 +154,10 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
  }
 
  handleClick(_userid) {    
   localStorage.setItem("citizenId",_userid);
-  console.log("CitizenId=" + _userid)
   window.location='/dashboard/patientview'  
 }
 
@@ -176,15 +174,13 @@ loadRecs(recs)
 }
   
 
-componentDidMount() {console.log("DID MOUNT ************");
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
     if(localStorage.getItem("_status")==="1"){
     
 		  axios.post('http://159.65.148.197:3001/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
-          console.log("User MasterId=" + localStorage.getItem("usermasid"))
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
@@ -196,8 +192,6 @@ componentDidMount() {console.log("DID MOUNT ************");
     }else{
       axios.post('http://159.65.148.197:3001/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),status:localStorage.getItem("_status"),token:'dfjkhsdfaksjfh3756237' })
       .then(response => {
-           console.log("Returned data:", response.data.status);
-           console.log("User MasterId=" + localStorage.getItem("usermasid"))
            if(response.data.status===1)
              {
                var msg=response.data.message;

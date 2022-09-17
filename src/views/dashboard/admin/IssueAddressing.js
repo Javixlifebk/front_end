@@ -80,7 +80,6 @@ class AddAllergy extends React.Component {
 
   onChangeHandler=event=>{
 
-    //console.log(event.target.files[0])
     this.setState({
       fileuploads: event.target.files[0],
       loaded: 0,
@@ -92,14 +91,12 @@ class AddAllergy extends React.Component {
   handleSubmit = e => {
     e.preventDefault() 
   
-    console.log("Status " + this.state.doctype);
  
   
     let postData="issueNo="+localStorage.getItem("issueNo")
     postData+="&token=dfjkhsdfaksjfh3756237";
     postData+="&comments="+this.state.fname;
     postData+="&status="+this.state.doctype;
-    console.log(postData);
     let _targetPostURL="http://159.65.148.197:3001/api/issues/issuesUpdate?=";
     axios(
       {
@@ -111,8 +108,7 @@ class AddAllergy extends React.Component {
 
     ).then(res=>{
 
-      console.log("In Good way:");
-      console.log(res.data);
+   
       if(res.data.status===1){
         alert('Issues Status Updated Successfully')
         window.location='/dashboard/issuelistall'
@@ -120,8 +116,7 @@ class AddAllergy extends React.Component {
     })
     .catch(e=>{
       
-      console.log("Exception:"); 
-      console.log(e);
+     
     });
   
    

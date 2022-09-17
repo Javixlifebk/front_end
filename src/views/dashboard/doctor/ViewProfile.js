@@ -51,7 +51,7 @@ class Profile extends React.Component {
     }, 2000)
   }
 
-  componentDidMount() {console.log("DID MOUNT ************");
+  componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
@@ -78,12 +78,9 @@ class Profile extends React.Component {
           this.setState({signature:recs[0].signature});
           
         }else{
-          console.log("Not Found")
         }
 					
 		 }).catch(e=>{
-      console.log("Exception:"); 
-      console.log(e.response.data);
       if(e.response.data.status===0){
         this.state.notfound=0
 

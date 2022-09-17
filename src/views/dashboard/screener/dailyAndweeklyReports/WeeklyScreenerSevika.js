@@ -124,7 +124,6 @@ function WeeklyScreenerSevika() {
   axios
     .post("http://159.65.148.197:3001/api/generalsurvey/screenersevika",{issubscreener:1})
     .then((response) => {
-      console.log("Returned data:");
       if (response.data.status === 1) {
         var recs = response.data.data.data;
         setUsers(recs);

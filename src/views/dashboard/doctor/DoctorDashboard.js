@@ -84,13 +84,10 @@ class DoctorDashboard extends React.Component {
   }
 
   componentDidMount () {
-    console.log ('DID MOUNT ************');
-    console.log ('Javix ID=' + localStorage.getItem ('javixid'));
     if (
       localStorage.getItem ('javixid') === null ||
       localStorage.getItem ('javixid') === '0'
     ) {
-      console.log ('Javix ID=' + localStorage.getItem ('javixid'));
       document.location = '/dashboard/doceditprofile';
     }
 
@@ -117,12 +114,9 @@ class DoctorDashboard extends React.Component {
           this.setState ({sevika: response.data.data.data[10].Sevikas});
           this.setState ({citizen: response.data.data.data[6].Citizen});
         } else {
-          console.log ('Not Found')
         }
       })
       .catch (e => {
-        console.log ('Exception:');
-        console.log (e.response.data);
         if (e.response.data.status === 0) {
           this.state.notfound = 0
         }

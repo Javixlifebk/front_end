@@ -88,7 +88,7 @@ class AddCitizen extends React.Component {
   
   onChangeHandler=event=>{
 
-    //console.log(event.target.files[0])
+  
     this.setState({
       fileuploads: event.target.files[0],
       loaded: 0,
@@ -110,7 +110,6 @@ class AddCitizen extends React.Component {
     })
     .then(res => {
         returnUrl= res.data['profile-url'];
-        console.log("Return Url=" + returnUrl);
         if(this.state.gender==""){
           alert("Please select Gender");
           return;
@@ -125,7 +124,6 @@ class AddCitizen extends React.Component {
             postData+="&district="+this.state.district+"&pincode="+this.state.pincode+"&address="+this.state.addr+"&photo="+returnUrl;      
      
             
-        console.log(postData);
         let _targetPostURL="http://159.65.148.197:3001/api/citizen/addprofile";
         axios(
           {
@@ -137,8 +135,6 @@ class AddCitizen extends React.Component {
     
         ).then(res=>{
   
-          console.log("In Good way:");
-          console.log(res);
           
           if(res.data.status===1){
             alert('Profile Updated Successfully')

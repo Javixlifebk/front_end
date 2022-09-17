@@ -161,7 +161,6 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
    this.setState({loader:null});
  }
 

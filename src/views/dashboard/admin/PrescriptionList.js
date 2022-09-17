@@ -34,6 +34,19 @@ class JTable extends React.Component {
   this.state = {
     columns: [
       {
+        name: "Citizen Name",
+        selector: (row) => row.firstName + " " + row.lastname,
+        sortable: true,
+        // cell: (row) => (
+        //   <button
+        //     className="btn-success"
+        //     onClick={() => this.getCitizenScreener(row.screenerId)}
+        //   >
+        //     {row.firstName + " " + row.lastName}
+        //   </button>
+        // ),
+      },
+      {
         name: "Screener ID",
         selector: "screenerid",
         sortable: true,
@@ -86,23 +99,23 @@ class JTable extends React.Component {
     //     )
     //   },
       ,    
-      {
-        name: "Action",
-        selector: "",
-        sortable: true,
-        cell: row => (
-          <div>
-          <img
-          src={profileImg}
-          alt="porfileImg"
-          onClick={() =>this.handleClick(row.screenerLoginId)}
-          style={{width:"30px",cursor:"pointer"}}
-          className="img-fluid img-border rounded-circle box-shadow-1"
-        />
+      // {
+      //   name: "Action",
+      //   selector: "",
+      //   sortable: true,
+      //   cell: row => (
+      //     <div>
+      //     <img
+      //     src={profileImg}
+      //     alt="porfileImg"
+      //     onClick={() =>this.handleClick(row.prescriptionId)}
+      //     style={{width:"30px",cursor:"pointer"}}
+      //     className="img-fluid img-border rounded-circle box-shadow-1"
+      //   />
         
-      </div>
-        )
-      }
+      // </div>
+      //   )
+      // }
     ],
     data: [],
     filteredData: [],
@@ -115,7 +128,6 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
  }
 
  handleClick(_userid) {    
@@ -127,19 +139,18 @@ loadRecs(recs)
   window.location='/dashboard/admin/ngolist'
 }
   
-componentWillUnmount(){ console.log("WIllUnmount************"); this.mounted = false;}
-componentDidMount() {console.log("DID MOUNT ************");
+componentWillUnmount(){
+   this.mounted = false;}
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
 		axios.post('http://159.65.148.197:3001/api/doctor/prescriptionlist')
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
 						  var recs=response.data.data.data;
-						  console.log(recs[0]);
 						  this.loadRecs(recs);
               localStorage.removeItem("Ngoid")
 					  }
@@ -194,6 +205,7 @@ componentDidMount() {console.log("DID MOUNT ************");
             className="dataTable-custom"
             data={value.length ? filteredData : data}
             columns={columns}
+            noDataComponent="Loading...."
             noHeader
             pagination
             subHeader

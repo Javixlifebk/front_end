@@ -67,7 +67,7 @@ class Profile extends React.Component {
   }
   }
 
-  componentDidMount() {console.log("DID MOUNT ************");
+  componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         

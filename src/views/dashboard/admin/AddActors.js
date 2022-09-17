@@ -34,7 +34,7 @@ class AddActors extends React.Component {
     "&roleId="+this.state.roleId+""+
     "&userName="+this.state.userName+"";
     
-console.log(postData);
+
 let _targetPostURL="http://159.65.148.197:3001/api/auth/register?=";
 axios(
 {
@@ -45,8 +45,7 @@ headers: {'Content-Type': 'application/x-www-form-urlencoded' }
 }
 
 ).then(res=>{
-console.log("In Good way:");
-console.log(res.data);
+
 if(res.data.status===1 || res.data.status==="1")
 { 
 
@@ -56,12 +55,12 @@ document.location="/views/otp";
 }
 })
 .catch((e)=>{
-console.log("Exception:");
+
 if(e.response.data.status===0 || e.response.data.status==="0")
 { 
 
 //this.setState({myexection:e.response.data.message});
-//console.log("Data Length=" + e.response.data);
+
 var i=0;
 //alert(e.response.data.data.length);
 //console.dir(e.response.data.data)

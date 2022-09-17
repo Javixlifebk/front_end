@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 // import { environment } from '../../api'
 import '@mui/x-data-grid-generator'
-import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
+import { DataGrid, GridToolbar,GridOverlay,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
 function CustomToolbar() {
   return (
@@ -12,13 +12,19 @@ function CustomToolbar() {
     </GridToolbarContainer>
   );
 }
+function customNoRowsOverlay() {
+  return (
+      <GridOverlay>
+          <div>Loading....</div>
+      </GridOverlay>
+  )
+}
 
 function GeneralSurvey() {
   const [rows, setUsers] = useState([])
   useEffect(() => {
 		  axios.post('http://159.65.148.197:3001/api/generalsurvey/GeneralSurveyList')
 		 .then(response => {
-					console.log("Returned data:");
 					if(response.data.status===1)
 					  {
 						  var recs=response.data.data.data;
@@ -75,6 +81,7 @@ function GeneralSurvey() {
             pageSize={8}
             components={{
               Toolbar: CustomToolbar,
+              NoRowsOverlay: customNoRowsOverlay
             }}
             getRowId={(rows) => rows._id}
           />

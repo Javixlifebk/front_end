@@ -60,7 +60,6 @@ export const submitLoginWithFireBase = (email, password, remember) => {
         })
       })
       .catch(error => {
-        console.log(error)
       })
   }
 }
@@ -89,7 +88,7 @@ export const loginWithFB = () => {
         if (user) history.push("/")
       })
       .catch(error => {
-        console.log(error)
+     
       })
   }
 }
@@ -117,7 +116,6 @@ export const loginWithTwitter = () => {
         history.push("/")
       })
       .catch(function(error) {
-        console.log(error)
       })
   }
 }
@@ -145,7 +143,6 @@ export const loginWithGoogle = () => {
         history.push("/")
       })
       .catch(function(error) {
-        console.log(error)
       })
   }
 }
@@ -174,7 +171,6 @@ export const loginWithGithub = () => {
         history.push("/")
       })
       .catch(function(error) {
-        console.log(error)
       })
   }
 }
@@ -200,7 +196,9 @@ export const loginWithJWT = user => {
           history.push("/")
         }
       })
-      .catch(err => console.log(err))
+      .catch(err =>
+         console.log(err)
+         )
   }
 }
 

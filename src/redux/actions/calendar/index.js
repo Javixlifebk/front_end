@@ -7,7 +7,9 @@ export const fetchEvents = () => {
       .then(response => {
         dispatch({ type: "FETCH_EVENTS", events: response.data })
       })
-      .catch(err => console.log(err))
+      .catch(err => 
+        console.log(err)
+        )
   }
 }
 

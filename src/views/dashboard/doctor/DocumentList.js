@@ -100,13 +100,11 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 console.log(this.state.recs);
  }
 
  handleClick(_userid) {    
   axios.post('http://159.65.148.197:3001/api/citizen/documentList?=', {citizenId:localStorage.getItem("citizenId")})
   .then(response => {
-       console.log("Returned data:", response.data.status);
       
        if(response.data.status===1)
          {
@@ -116,8 +114,6 @@ loadRecs(recs)
            
          }
   }).catch(e=>{
-   console.log("Exception:"); 
-   console.log(e);
  });
 }
 
@@ -133,13 +129,11 @@ loadRecs(recs)
 
 } 
 
-componentDidMount() {console.log("DID MOUNT ************");
+componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
 		  axios.post('http://159.65.148.197:3001/api/citizen/documentsList?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237'})
 		 .then(response => {
-					console.log("Returned data:", response.data.status);
-          console.log("User MasterId=" + localStorage.getItem("usermasid"))
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
@@ -147,8 +141,6 @@ componentDidMount() {console.log("DID MOUNT ************");
 						  this.loadRecs(recs);
 					  }
 		 }).catch(e=>{
-      console.log("Exception:"); 
-      console.log(e);
     });
 }
 
