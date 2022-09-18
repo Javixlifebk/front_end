@@ -113,7 +113,7 @@ class LoginJWT extends React.Component {
                                     }
                             
                                 ).then(res=>{                               
-                                document.location="/views/otp"                                  
+                                document.location="/otp"                                  
                                 });
                                  /************  End Resend OTP  ***********/
                                 

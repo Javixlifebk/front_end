@@ -519,7 +519,7 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/add-actors" component={addActors} />
               <AppRoute exact path="/dashboard/citizenprofile" component={citizenProfile} />
               <AppRoute exact path="/dashboard/admin/issueaddressing" component={issueAddressing} />
-              <AppRoute exact path="/issuelistalladdressed" component={issueListAddressed} />
+              <AppRoute exact path="/dashboard/admin/issuelistalladdressed" component={issueListAddressed} />
               <AppRoute exact path="/dashboard/insights" component={insights} />
 
               <AppRoute exact path="/dashboard/BloodGlucoseGreen" component={BloodGlucoseGreen} />
@@ -575,7 +575,7 @@ export default class Dashboard extends React.Component {
 
               <AppRoute exact path="/directory/" component={userDirectory} />             
               <AppRoute exact path="/dashboard/reportissue/" component={reportIssue} />
-              <AppRoute exact path="/issuelistall/" component={issueListAll} />
+              <AppRoute exact path="/dashboard/admin/issuelistall/" component={issueListAll} />
               <AppRoute exact path="/dashboard/issuelist" component={issueList} />
 
               <AppRoute exact path="/dashboard/addcitizen/" component={addCitizen} />
