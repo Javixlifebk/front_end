@@ -119,7 +119,7 @@ class CaseDetails extends React.Component {
         cell: row => (
          <div style={{cursor:'pointer'}}  onClick={() =>this.handleClick(row.citizenId)}>
         
-          <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p>
+          <p className="text-bold-500 mb-0">{row.firstName + ' ' + row.lastname}</p>
           <p className="text-bold-500 mb-0">{row.citizenId}</p>         
           </div>
         )
@@ -214,12 +214,12 @@ componentDidMount() {
 		  console.dir(item.userId);
         let startsWithCondition =
          
-           item.citizens[0].firstName.toLowerCase().startsWith(value.toLowerCase()) ||
-           item.citizens[0].lastName.toLowerCase().startsWith(value.toLowerCase()) 
+           item.firstName.toLowerCase().startsWith(value.toLowerCase()) ||
+           item.lastname.toLowerCase().startsWith(value.toLowerCase()) 
         let includesCondition =
         
-         item.citizens[0].firstName.toLowerCase().includes(value.toLowerCase()) ||
-		     item.citizens[0].lastName.toLowerCase().includes(value.toLowerCase())
+         item.firstName.toLowerCase().includes(value.toLowerCase()) ||
+		     item.lastname.toLowerCase().includes(value.toLowerCase())
 
         if (startsWithCondition) {
           return startsWithCondition

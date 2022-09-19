@@ -399,7 +399,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={12} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/issuelistall"
+                  navLink: "/dashboard/admin/issuelistall"
                 },
                 {
                   id: "resolve",
@@ -407,7 +407,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/issuelistalladdressed"
+                  navLink: "/dashboard/admin/issuelistalladdressed"
                 }             
                 
               ]

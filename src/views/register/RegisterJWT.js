@@ -45,7 +45,7 @@ class RegisterJWT extends React.Component {
            
            this.setState({myexection:'Successfully Registered !<br/>Verify your account'});
            localStorage.setItem("email",this.state.email)
-           document.location="/views/otp";
+           document.location="/otp";
            }
           })
           .catch((e)=>{
