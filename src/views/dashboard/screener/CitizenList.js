@@ -101,7 +101,7 @@ class JTable extends React.Component {
         selector: "screener",
         sortable: true,
         cell: row => (
-          <p className="text-bold-500  mb-0">{row.firstName + ' ' + row.lastName}</p>
+          <p className="text-bold-500  mb-0">{row.screener[0].firstName + ' ' + row.screener[0].lastName}</p>
         )
       },
       {
