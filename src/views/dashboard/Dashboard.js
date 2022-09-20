@@ -507,7 +507,7 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/doceditprofile" component={doctorEditProfile} />
               <AppRoute exact path="/dashboard/admin/doctorprofile" component={viewDoctorProfile} />
               <AppRoute exact path="/dashboard/doctor/patientlist" component={patientList} />
-              <AppRoute exact path="/patientview" component={patientTab} />
+              <AppRoute exact path="/dashboard/patientview" component={patientTab} />
               <AppRoute exact path="/dashboard/patientviewscreener" component={patientTabScreener} />
               <AppRoute exact path="/addallergy" component={addAllergey} />
               <AppRoute exact path="/addhistory" component={addHistory} />
