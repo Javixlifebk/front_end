@@ -252,6 +252,9 @@ const weeklyscreenersevika = lazy(() =>
 const editCitizen = lazy(() =>
   import("../../views/dashboard/screener/EditCitizen")
 )
+const casesList = lazy(() =>
+  import("../../views/dashboard/screener/screenerCasesList")
+)
 
 
 
@@ -494,6 +497,7 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/citizenlist1" component={citizenList1} />
               <AppRoute exact path="/dashboard/detaildump" component={detaildump} />
               <AppRoute exact path="/dashboard/editcitizen" component={editCitizen} />
+              <AppRoute exact path="/dashboard/caseslist" component={casesList} />
               <AppRoute exact path="/screener/dailyAndweeklyReports/LipidCritical" component={lipidcritical} />
               <AppRoute exact path="/screener/dailyAndweeklyReports/Weeklyscreener" component={weeklyscreener} />
               <AppRoute exact path="/screener/dailyAndweeklyReports/WeeklyScreenerSevika" component={weeklyscreenersevika} />
