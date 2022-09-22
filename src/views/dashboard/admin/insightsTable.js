@@ -95,7 +95,7 @@ function InsightsTable() {
                     }
        },[]);
      
-})
+},[])
 const filterData = (data) =>
     data.map((item) => ({
       key: item,

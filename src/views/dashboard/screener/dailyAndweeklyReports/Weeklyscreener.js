@@ -149,8 +149,8 @@ function WeeklyScreener() {
         var recs = response.data.data.data;
         setUsers(recs);
       }
-    });
-  }, []);
+    },[]);
+  }, [startDate, endDate]);
   return (
     <div className="App">
       {/* <h2 align="center">Ag Grid with React</h2> */}

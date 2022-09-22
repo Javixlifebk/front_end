@@ -121,7 +121,8 @@ function WeeklyScreenerSevika() {
     }
   }, [startDate, endDate]);
 
-  axios
+  useEffect(() => {
+    axios
     .post("http://143.244.136.145:3010/api/generalsurvey/screenersevika",{issubscreener:1})
     .then((response) => {
       
@@ -139,6 +140,8 @@ function WeeklyScreenerSevika() {
           }
         },
      []);
+}, [startDate, endDate]);
+  
   return (
     <div className="App">
       {/* <h2 align="center">Ag Grid with React</h2> */}
