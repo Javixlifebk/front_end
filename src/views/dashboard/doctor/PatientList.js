@@ -263,6 +263,8 @@ componentDidMount() {
           <CardTitle>Encounters List</CardTitle>
           </Col>          
           </Row>
+
+          
           <Row>
           <Col sm="12">
           <DataTable
