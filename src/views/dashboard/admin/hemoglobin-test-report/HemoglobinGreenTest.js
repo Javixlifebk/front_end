@@ -14,7 +14,7 @@ import DataTable from "react-data-table-component"
 import { Star, Search } from "react-feather"
 import * as Icon from "react-feather"
 import axios from "axios";
-import profileImg from "../../../assets/img/icons/viewprofile.png"
+// import profileImg from "../../../assets/img/icons/viewprofile.png"
 const CustomHeader = props => {
   return (
     <div className="d-flex flex-wrap justify-content-between">
@@ -31,7 +31,7 @@ const CustomHeader = props => {
   )
 }
 
-class BloodGlucoseGreen extends React.Component {
+class HemoglobinGreenTest extends React.Component {
 
   state = {
     casetype: "",
@@ -54,12 +54,12 @@ class BloodGlucoseGreen extends React.Component {
             return(<span style={{background:'red',padding:'4px',color:'white'}}>BMI:{val}</span>);
         }
     }
-    setBP(bloodglucose){
+    setBP(hemoglobin){
 
-        if(bloodglucose>80 && bloodglucose<100){
-            return(<span style={{background:'#008000',padding:'4px',color:'white',borderRadius:'25px;'}}>bloodglucose:{bloodglucose}</span>);
+        if(hemoglobin<14 && hemoglobin>18){
+            return(<span style={{background:'#008000',padding:'4px',color:'white',borderRadius:'25px;'}}>hemoglobin:{hemoglobin}</span>);
          }else{
-            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
+            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>hemoglobin:{hemoglobin}</span>);
          }
     }
     setSOP2(val){
@@ -133,7 +133,7 @@ class BloodGlucoseGreen extends React.Component {
                                  
           <p className="text-bold-500 mb-0">
           {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
-          <span style={{margin:'20px;',padding:'4px;'}}>{this.setBP(row.bloodglucose)}</span>&nbsp;&nbsp;
+          <span style={{margin:'20px;',padding:'4px;'}}>{this.setBP(row.hemoglobin)}</span>&nbsp;&nbsp;
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
@@ -154,12 +154,12 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	
+	 
  }
 
  handleClick(_userid) {    
   localStorage.setItem("citizenId",_userid);
-
+ 
   window.location='../../views/dashboard/patientview'  
 }
 
@@ -181,9 +181,9 @@ componentDidMount() {
 		//this.setState({data:null});
     // if(localStorage.getItem("severity")==="1"){
     
-		  axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseTestList',{severity:0})
+		  axios.post('http://143.244.136.145:3010/api/labtest/getHemoglobinGreenList')
 		 .then(response => {
-		
+				
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
@@ -196,7 +196,7 @@ componentDidMount() {
     // else if(localStorage.getItem("severity")==="0"){
     //   axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseTestList', {severity:0})
     //   .then(response => {
-    //    
+    //     
     //        if(response.data.status===1)
     //          {
     //            var msg=response.data.message;
@@ -208,7 +208,7 @@ componentDidMount() {
     // }else if(localStorage.getItem("severity")==="2"){
     //   axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseTestList', {severity:2})
     //   .then(response => {
-    //    
+   
     //        if(response.data.status===1)
     //          {
     //            var msg=response.data.message;
@@ -266,7 +266,7 @@ componentDidMount() {
         <CardBody className="rdt_Wrapper">
         <Row>
           <Col sm="12">
-          <CardTitle>Blood Glucose Green Cases</CardTitle>
+          <CardTitle> Hemoglobin Green Cases</CardTitle>
           </Col>          
           </Row>
           <Row>
@@ -294,4 +294,4 @@ componentDidMount() {
   /* ENd rebder */
 }
 
-export default BloodGlucoseGreen;
+export default HemoglobinGreenTest;

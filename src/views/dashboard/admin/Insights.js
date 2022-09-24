@@ -1856,6 +1856,37 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               <CardBody>
                 <Pie data={data_hemo} options={options} height={300} />
               </CardBody>
+              <CardBody>
+                <a
+                href="/dashboard/HemoglobinGreen"
+                // onClick={() =>this.getCaseDetails("green")}
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  Hemoglobin Green Cases{" "}
+                </a>
+                </CardBody>
+                <CardBody>
+                <a
+               href="/dashboard/HemoglobinRed"
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  Hemoglobin Red Cases{" "}
+                </a>
+                </CardBody>
+                <CardBody>
+                <a
+                href="/dashboard/HemoglobinAmber"
+                  // target="_blank"
+                  style={{color:"blue"}}
+                >
+                  {" "}
+                  Hemoglobin Amber Cases{" "}
+                </a>
+                </CardBody>
             </Card>
           </Col>
         </Row>
