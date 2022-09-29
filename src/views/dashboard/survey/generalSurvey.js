@@ -31,7 +31,7 @@ function GeneralSurvey() {
 						  setUsers(recs);
 					  }
 		 },[]);
- })
+ },[])
 
   const columns = [
     { field: 'noOfFamilyMembers', headerName: 'No.of Family Member', width: 60 },

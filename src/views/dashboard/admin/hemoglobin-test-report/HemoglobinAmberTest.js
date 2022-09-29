@@ -14,7 +14,7 @@ import DataTable from "react-data-table-component"
 import { Star, Search } from "react-feather"
 import * as Icon from "react-feather"
 import axios from "axios";
-import profileImg from "../../../assets/img/icons/viewprofile.png"
+// import profileImg from "../../../assets/img/icons/viewprofile.png"
 const CustomHeader = props => {
   return (
     <div className="d-flex flex-wrap justify-content-between">
@@ -31,7 +31,7 @@ const CustomHeader = props => {
   )
 }
 
-class BloodGlucoseAmber extends React.Component {
+class HemoglobinAmberTest extends React.Component {
 
   state = {
     casetype: "",
@@ -54,12 +54,13 @@ class BloodGlucoseAmber extends React.Component {
             return(<span style={{background:'red',padding:'4px',color:'white'}}>BMI:{val}</span>);
         }
     }
-    setBP(bloodglucose){
-      // (x >= 0.001 && x <= 0.009)
-        if(bloodglucose > 101 && bloodglucose < 125){
-                return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
+    setBP(hemoglobin){
+
+        if(hemoglobin>13.5 &&  hemoglobin<17.5){
+                return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>hemoglobin:{hemoglobin}</span>);
              }else{
-              return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);}
+            return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>hemoglobin:{hemoglobin}</span>);
+         }
     }
     setSOP2(val){
         if(val>95 && val<=100 ){
@@ -116,7 +117,7 @@ class BloodGlucoseAmber extends React.Component {
         selector: "User",
         sortable: true,
         cell: row => (
-         <div style={{cursor:'pointer'}}  onClick={() =>this.handleClick(row.fullName)}>
+         <div style={{cursor:'pointer'}}  onClick={() =>this.handleClick(row.fullname)}>
         
           {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
           <p className="text-bold-500 mb-0">{row.fullname}</p>         
@@ -132,7 +133,7 @@ class BloodGlucoseAmber extends React.Component {
                                  
           <p className="text-bold-500 mb-0">
           {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
-          <span style={{margin:'20px;',padding:'4px;'}}>{this.setBP(row.bloodglucose)}</span>&nbsp;&nbsp;
+          <span style={{margin:'20px;',padding:'4px;'}}>{this.setBP(row.hemoglobin)}</span>&nbsp;&nbsp;
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
@@ -153,7 +154,7 @@ loadRecs(recs)
  {
 	 
 	 this.setState({data:recs});
-	 
+
  }
 
  handleClick(_userid) {    
@@ -180,9 +181,9 @@ componentDidMount() {
 		//this.setState({data:null});
     // if(localStorage.getItem("severity")==="1"){
     
-		  axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseAmberList')
+		  axios.post('http://143.244.136.145:3010/api/labtest/getHemoglobinAmberList')
 		 .then(response => {
-				
+					
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
@@ -195,7 +196,7 @@ componentDidMount() {
     // else if(localStorage.getItem("severity")==="0"){
     //   axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseTestList', {severity:0})
     //   .then(response => {
-    //    
+    // 
     //        if(response.data.status===1)
     //          {
     //            var msg=response.data.message;
@@ -265,7 +266,7 @@ componentDidMount() {
         <CardBody className="rdt_Wrapper">
         <Row>
           <Col sm="12">
-          <CardTitle>Blood Glucose Amber Cases</CardTitle>
+          <CardTitle>Hemoglobin Amber Cases</CardTitle>
           </Col>          
           </Row>
           <Row>
@@ -293,4 +294,4 @@ componentDidMount() {
   /* ENd rebder */
 }
 
-export default BloodGlucoseAmber;
+export default HemoglobinAmberTest;

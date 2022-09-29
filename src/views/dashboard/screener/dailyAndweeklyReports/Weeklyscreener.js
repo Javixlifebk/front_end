@@ -141,6 +141,7 @@ function WeeklyScreener() {
     }
   }, [startDate, endDate]);
 
+  useEffect(() => {
   axios
     .post("http://143.244.136.145:3010/api/generalsurvey/screeningScreener")
     .then((response) => {
@@ -148,7 +149,8 @@ function WeeklyScreener() {
         var recs = response.data.data.data;
         setUsers(recs);
       }
-    }, []);
+    },[]);
+  }, [startDate, endDate]);
   return (
     <div className="App">
       {/* <h2 align="center">Ag Grid with React</h2> */}
