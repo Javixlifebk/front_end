@@ -3,7 +3,7 @@ name: Build & Deploy
 on:
   push:
     branches: [masteJavixFrontend_Master]
-
+    
 jobs:
     build:
       runs-on: ubuntu-latest
