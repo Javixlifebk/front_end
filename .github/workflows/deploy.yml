@@ -2,7 +2,7 @@ name: Build & Deploy
 
 on:
   push:
-    branches: [masteJavixFrontend_Master]
+    branches: [JavixFrontend_Master]
     
 jobs:
     build:
