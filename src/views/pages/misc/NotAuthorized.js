@@ -21,7 +21,7 @@ class NotAuthorized extends React.Component {
                 alt="notAuthImg"
                 className="img-fluid align-self-center mt-75"
               />
-              <h1 className="font-large-2 my-2">Welcome to Javix Life Healthcare!</h1>
+              <h1 className="font-large-2 my-2">Test Welcome to Javix Life Healthcare!</h1>
               <p className="pt-2 mb-0">
               Intelligent Diagnostic With Instant Reporting. Get your health checkup done now with our unique &amp; world class technology!
               </p>
