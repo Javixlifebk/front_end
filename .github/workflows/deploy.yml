@@ -1,0 +1,23 @@
+name: Build & Deploy
+
+on:
+  #push:
+    #branches: [masteJavixFrontend_Master
+r]
+
+jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deploy React JS app
+          uses: appleboy/ssh-action@v0.1.2     
+          with:
+            host: ${{secrets.SSH_HOST}} 
+            passphrase: ${{secrets.SSH_PASSPHRASE}}
+            key:  ${{secrets.SSH_KEY}}
+            username: ${{secrets.SSH_USERNAME}}
+
+            script: |
+              cd /mnt/volume_blr1_01/javix/Javix-FrontEnd
+              sh deploy.sh
+              echo `React JS Deployment Successfult to Digital Ocean !!!`
