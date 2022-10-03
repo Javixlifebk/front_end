@@ -213,7 +213,7 @@ componentDidMount() {
 		//this.setState({data:null});
     // if(localStorage.getItem("severity")==="1"){
     
-		  axios.post('143.244.136.145:3010/api/labtest/getBloodGlucoseGreenList')
+		  axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseGreenList')
 		 .then(response => {
 		
 					if(response.data.status===1)
