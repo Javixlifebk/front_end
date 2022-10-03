@@ -125,6 +125,38 @@ class BloodGlucoseGreen extends React.Component {
         )
       },
       {
+        name: "Mobile No",
+        selector: "mobile",
+        sortable: true,
+        cell: row => (
+          <p className="text-bold-500 text-truncate mb-0">{row.mobile}</p>
+        )
+      },
+      {
+        name: "Email",
+        selector: "email",
+        sortable: true,
+        cell: row => (
+          <p className="text-bold-500 mb-0">{row.email}</p>
+        )
+      },
+      {
+        name: "onBoarding Date",
+        selector: "dateOfOnBoarding",
+        sortable: true,
+        cell: row => (
+          <p className="text-bold-500 mb-0">{row.dateOfOnBoarding}</p>
+        )
+      },
+      {
+        name: "Screener FullName",
+        selector: "screenerfullname",
+        sortable: true,
+        cell: row => (
+          <p className="text-bold-500 mb-0">{row.screenerfullname}</p>
+        )
+      },
+      {
         name: "Alerts",
         selector: "alerts",
         sortable: true,
@@ -181,7 +213,7 @@ componentDidMount() {
 		//this.setState({data:null});
     // if(localStorage.getItem("severity")==="1"){
     
-		  axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseGreenList')
+		  axios.post('143.244.136.145:3010/api/labtest/getBloodGlucoseGreenList')
 		 .then(response => {
 		
 					if(response.data.status===1)
@@ -277,6 +309,8 @@ componentDidMount() {
             columns={columns}
             noHeader
             pagination
+            noDataC
+            noDataComponent="Loading...."
             subHeader
             subHeaderComponent={
               <CustomHeader value={value} handleFilter={this.handleFilter} />
