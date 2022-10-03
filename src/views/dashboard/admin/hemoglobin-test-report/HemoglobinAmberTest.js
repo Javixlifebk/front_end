@@ -93,7 +93,7 @@ function HemoglobinAmberTest() {
    
     const [rows, setUsers] = useState('');
     useEffect(() => {
-        axios.post("http://localhost:3010/api/labtest/getHemoglobinAmberList" )
+        axios.post("http://143.244.136.145:3010/api/labtest/getHemoglobinAmberList" )
        .then(response => {
                  
                   if(response.data.status===1)
