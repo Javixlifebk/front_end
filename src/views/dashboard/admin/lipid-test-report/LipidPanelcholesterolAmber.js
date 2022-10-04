@@ -125,6 +125,66 @@ class LipidPanelcholesterolAmber extends React.Component {
         )
       },
       {
+        name: "Mobile",
+        selector: "mobile",
+        sortable: true,
+        cell: row => (
+         <div style={{cursor:'pointer'}}  >
+        
+          {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
+          <p className="text-bold-500 mb-0">{row.mobile}</p>         
+          </div>
+        )
+      },
+      {
+        name: "Citizen Id",
+        selector: "citizenId",
+        sortable: true,
+        cell: row => (
+         <div style={{cursor:'pointer'}}  >
+        
+          {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
+          <p className="text-bold-500 mb-0">{row.citizenId}</p>         
+          </div>
+        )
+      },
+      {
+        name: "Screener Name",
+        selector: "screenerfullname",
+        sortable: true,
+        cell: row => (
+         <div style={{cursor:'pointer'}}  >
+        
+          {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
+          <p className="text-bold-500 mb-0">{row.screenerfullname}</p>         
+          </div>
+        )
+      },
+      {
+        name: "Address",
+        selector: "address",
+        sortable: true,
+        cell: row => (
+         <div style={{cursor:'pointer'}}  >
+        
+          {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
+          <p className="text-bold-500 mb-0">{row.address}</p>         
+          </div>
+        )
+      },
+      {
+        name: "Date Of On Boarding",
+        selector: "dateOfOnBoarding",
+        sortable: true,
+        cell: row => (
+         <div style={{cursor:'pointer'}}  >
+        
+          {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
+          <p className="text-bold-500 mb-0">{row.dateOfOnBoarding}</p>         
+          </div>
+        )
+      },
+      {
         name: "Alerts",
         selector: "alerts",
         sortable: true,

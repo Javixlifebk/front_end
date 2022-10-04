@@ -266,19 +266,26 @@ const filterData = (data) =>
         ...getColumnSearchProps('mobile'),
       },
       
-      // {
-      //   title: 'Email',
-      //   dataIndex: 'email',
-      //   key: 'email',
-      //   width: '20%',
-      //   ...getColumnSearchProps('email'),
-      // },
+      {
+        title: 'citizen ID',
+        dataIndex: 'citizenId',
+        key: 'citizenId',
+        width: '20%',
+        ...getColumnSearchProps('citizenId'),
+      },
       {
         title: 'Screener FullName',
         dataIndex: 'screenerfullname',
         key: 'screenerfullname',
         width: '20%',
         ...getColumnSearchProps('screenerfullname'),
+      },
+      {
+        title: 'Address',
+        dataIndex: 'address',
+        key: 'address',
+        width: '20%',
+        ...getColumnSearchProps('address'),
       },
       {
         title: 'onBoarding Date',
