@@ -259,6 +259,15 @@ const filterData = (data) =>
          ...getColumnSearchProps('fullname'),
       },
       {
+        title: "Citizen ID",
+        dataIndex: "citizenId",
+        key: 'citizenId',
+        // render: (text, record) => (
+        //   <span>{record.firstName} {record.lastName}</span>
+        // ),
+         ...getColumnSearchProps('citizenId'),
+      },
+      {
         title: 'Mobile',
         dataIndex: 'mobile',
         key: 'mobile',
@@ -266,13 +275,13 @@ const filterData = (data) =>
         ...getColumnSearchProps('mobile'),
       },
       
-      // {
-      //   title: 'Email',
-      //   dataIndex: 'email',
-      //   key: 'email',
-      //   width: '20%',
-      //   ...getColumnSearchProps('email'),
-      // },
+      {
+        title: 'Address',
+        dataIndex: 'address',
+        key: 'address',
+        width: '20%',
+        ...getColumnSearchProps('address'),
+      },
       {
         title: 'Screener FullName',
         dataIndex: 'screenerfullname',
