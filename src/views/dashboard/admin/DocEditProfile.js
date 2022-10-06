@@ -114,7 +114,7 @@ componentDidMount() {
 		//this.setState({data:null});
         
       
-		  axios.post('http://159.65.148.197:3010/api/doctor/doctorById?=', {userId:localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237'})
+		  axios.post('http://143.244.136.145:3010/api/doctor/doctorById?=', {userId:localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237'})
 		 .then(response => {
           var recs=response.data.data.data;		
           this.setState({doctorId:recs[0].doctorId});
@@ -168,7 +168,7 @@ componentDidMount() {
           postData+="&district="+this.state.district+"&address="+this.state.addr+"&pincode="+this.state.pincode;   
           postData+="&medicalRegNo="+this.state.regno+"&statteMedicalCouncil="+this.state.medcouncil+"&yearOfReg="+this.state.regyear+"&experience="+this.state.experience;   
     
-      let _targetPostURL="http://159.65.148.197:3010/api/doctor/addprofile?=";
+      let _targetPostURL="http://143.244.136.145:3010/api/doctor/addprofile?=";
       axios(
         {
           method: 'post',

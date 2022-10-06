@@ -50,7 +50,7 @@ var screenerFilterParams = {
   debounceMs: 200,
   suppressAndOrCondition: true,
 };
-// http://159.65.148.197:3010/api/generalsurvey/screeningScreener
+// http://143.244.136.145:3010/api/generalsurvey/screeningScreener
 function WeeklyScreener() {
   const gridRef = useRef();
   const [gridApi, setGridApi] = useState();
@@ -143,7 +143,7 @@ function WeeklyScreener() {
 
   useEffect(() => {
   axios
-    .post("http://159.65.148.197:3010/api/generalsurvey/screeningScreener")
+    .post("http://143.244.136.145:3010/api/generalsurvey/screeningScreener")
     .then((response) => {
       if (response.data.status === 1) {
         var recs = response.data.data.data;

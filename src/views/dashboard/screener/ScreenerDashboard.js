@@ -98,7 +98,7 @@ class ScreenerDashboard extends React.Component {
   this.mounted = true;
   //this.setState({data:null});
       
-  axios.post('http://159.65.148.197:3010/api/graph/getlist', { userId: localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
+  axios.post('http://143.244.136.145:3010/api/graph/getlist', { userId: localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
    .then(response => {
 
         //console.dir(response.data.data.data)

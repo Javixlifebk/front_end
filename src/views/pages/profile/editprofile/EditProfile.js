@@ -103,7 +103,7 @@ class EditProfile extends React.Component {
           postData+="&district="+this.state.district+"&address="+this.state.addr;      
    
           
-      let _targetPostURL="http://159.65.148.197:3010/api/ngo/addprofile?=";
+      let _targetPostURL="http://143.244.136.145:3010/api/ngo/addprofile?=";
       axios(
         {
           method: 'post',
