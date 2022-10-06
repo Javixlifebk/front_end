@@ -98,7 +98,7 @@ loadRecs(recs)
  handleClick(_caseId)  {    
 
 
-  axios.post('http://143.244.136.145:3010/api/report/createPrescriptionReport?=', { caseId:_caseId})
+  axios.post('http://159.65.148.197:3010/api/report/createPrescriptionReport?=', { caseId:_caseId})
   .then(response => {
        if(response.data.status===1)
          {
@@ -134,7 +134,7 @@ getSplit(_var){
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://143.244.136.145:3010/api/doctor/prescriptionList?=', { citizenId:localStorage.getItem("citizenId")})
+		  axios.post('http://159.65.148.197:3010/api/doctor/prescriptionList?=', { citizenId:localStorage.getItem("citizenId")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

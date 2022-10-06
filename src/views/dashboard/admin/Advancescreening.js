@@ -112,8 +112,8 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		 axios.post("http://143.244.136.145:3010/api/generalsurvey/screeningScreener")
-    //  http://143.244.136.145:3010/api/generalsurvey/screenersevika
+		 axios.post("http://159.65.148.197:3010/api/generalsurvey/screeningScreener")
+    //  http://159.65.148.197:3010/api/generalsurvey/screenersevika
 		 .then(response => {
 				
 					if(response.data.status===1)

@@ -104,7 +104,7 @@ class AddPersonalHistory extends React.Component {
           postData+="&maritalstatus="+this.state.maritalstatus+"&ocupation="+this.state.ocupation;
           postData+="&notworking="+working+"&legalproblems="+this.state.legalproblems + "&highesteducation=" +this.state.highesteducation;
          
-      let _targetPostURL="http://143.244.136.145:3010/api/citizen/addPersonalHistory?=";
+      let _targetPostURL="http://159.65.148.197:3010/api/citizen/addPersonalHistory?=";
       axios(
         {
           method: 'post',
