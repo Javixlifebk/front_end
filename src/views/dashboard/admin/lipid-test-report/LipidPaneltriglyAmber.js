@@ -181,7 +181,7 @@ componentDidMount() {
 		//this.setState({data:null});
     // if(localStorage.getItem("severity")==="1"){
     
-		  axios.post('http://143.244.136.145:3010/api/labtest/LipidPaneltriglyAmberList')
+		  axios.post('http://159.65.148.197:3010/api/labtest/LipidPaneltriglyAmberList')
 		 .then(response => {
 			
 					if(response.data.status===1)

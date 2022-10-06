@@ -52,11 +52,11 @@ class ScreenerCasesList extends React.Component {
      //alert(caseId)
 
      //RequestBody body = RequestBody.create(mediaType, "caseId=" + rec.caseid);
-     //String url="http://143.244.136.145:3010/api/report/createCaseReport";
+     //String url="http://159.65.148.197:3010/api/report/createCaseReport";
 
      
      var _url="http://google.co.in";
-     /*axios.post('http://143.244.136.145:3010/api/report/createCaseReport?=', { caseId:caseId,token:'dfjkhsdfaksjfh3756237' })
+     /*axios.post('http://159.65.148.197:3010/api/report/createCaseReport?=', { caseId:caseId,token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
         
 					if(response.data.status===1)
@@ -658,9 +658,11 @@ isNull(data,test_type,field_name){
 }
   
 componentDidMount() {
+  console.log(localStorage.getItem("screenerId"), "kkkkkkkkkkkkkkkkkkkkkkk");
+  alert(localStorage.getItem("screenerId"));
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://143.244.136.145:3010/api/screening/getscreenercases', { screenerId:localStorage.getItem("screenerId") })
+		  axios.post('http://159.65.148.197:3010/api/screening/getscreenercases', { screenerId:localStorage.getItem("screenerId") })
 		 .then(response => {
 					if(response.data.status===1)
 					  {
