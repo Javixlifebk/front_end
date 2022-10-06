@@ -129,7 +129,7 @@ loadRecs(recs)
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://143.244.136.145:3010/api/pharmacy/pharmacyList', {userId:'rahulpandeyjaiho@gmail.com',token:"dfjkhsdfaksjfh3756237"})
+		  axios.post('http://159.65.148.197:3010/api/pharmacy/pharmacyList', {userId:'rahulpandeyjaiho@gmail.com',token:"dfjkhsdfaksjfh3756237"})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

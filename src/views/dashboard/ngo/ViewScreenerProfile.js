@@ -57,7 +57,7 @@ class Profile extends React.Component {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://143.244.136.145:3010/api/ngo/screenerById?=', { screenerId:localStorage.getItem("Scrid"),token:'dfjkhsdfaksjfh3756237' })
+		axios.post('http://159.65.148.197:3010/api/ngo/screenerById?=', { screenerId:localStorage.getItem("Scrid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
         var recs=response.data.data.data;
 
@@ -89,7 +89,7 @@ class Profile extends React.Component {
  if(window.confirm("Do you want to map screener !")){
 
 
-  //http://143.244.136.145:3010/api/ngo/screener/updateScreenerNgoId
+  //http://159.65.148.197:3010/api/ngo/screener/updateScreenerNgoId
   //alert('okay')
   //window.location='../../views/dashboard/screditprofile'
             let postData="screenerId="+localStorage.getItem("Scrid");
@@ -97,7 +97,7 @@ class Profile extends React.Component {
                 postData+="&token=dfjkhsdfaksjfh3756237";
                 
             
-          let _targetPostURL="http://143.244.136.145:3010/api/ngo/screener/updateScreenerNgoId?=";
+          let _targetPostURL="http://159.65.148.197:3010/api/ngo/screener/updateScreenerNgoId?=";
           axios(
           {
           method: 'post',
@@ -126,7 +126,7 @@ class Profile extends React.Component {
 
   getImage(imagUrl){
     if(imagUrl===''){
-      imagUrl='http://143.244.136.145:3010/profile/no-photo-male.jpg';
+      imagUrl='http://159.65.148.197:3010/profile/no-photo-male.jpg';
     }
    return imagUrl;
   }
