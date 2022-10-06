@@ -50,7 +50,7 @@ var screenerFilterParams = {
   debounceMs: 200,
   suppressAndOrCondition: true,
 };
-// http://159.65.148.197:3010/api/generalsurvey/screeningScreener
+// http://143.244.136.145:3010/api/generalsurvey/screeningScreener
 function WeeklyScreenerSevika() {
   const gridRef = useRef();
   const [gridApi, setGridApi] = useState();
@@ -123,7 +123,7 @@ function WeeklyScreenerSevika() {
 
   useEffect(() => {
     axios
-    .post("http://159.65.148.197:3010/api/generalsurvey/screenersevika",{issubscreener:1})
+    .post("http://143.244.136.145:3010/api/generalsurvey/screenersevika",{issubscreener:1})
     .then((response) => {
       
      

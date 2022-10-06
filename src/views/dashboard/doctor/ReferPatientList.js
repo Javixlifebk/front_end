@@ -55,10 +55,7 @@ function ReferPatientList() {
     //document.location='/views/dashboard/screener/profile'
     //this.props.onHeaderClick(this.props.value);
   }
-  const getCaseDetails=(citizenId) =>{
-    localStorage.setItem("citizenId",citizenId);
-    document.location="/dashboard/doctor/patientlist";  
-  }
+ 
   useEffect(() => {
 		  axios.post('http://143.244.136.145:3010/api/citizen/citizenrefer', {token:'dfjkhsdfaksjfh3756237',isUnrefer:true })
 		 .then(response => {
@@ -69,7 +66,12 @@ function ReferPatientList() {
 					  }
 		 },[]);
  })
-
+ 
+ const getCaseDetails=(citizenId) =>{
+  localStorage.setItem("citizenId",citizenId);
+  alert(citizenId,"hellooooooo")
+  document.location="/dashboard/doctor/patientlist";  
+}
   const columns = [
   //  { field: 'doctorId', headerName: 'Doctor Id', width: 150 },
     
@@ -139,7 +141,7 @@ function ReferPatientList() {
       renderCell: (params) => {
         return (
           <>
-            <button className='btn-success' onClick={() => {getCaseDetails(params.citizenId);handleClick(params.caseId)}}>
+            <button className='btn-success' onClick={() => {getCaseDetails(params.citizenId)}}>
             Pick and Prescribe
             </button>
             {/* onClick={() =>this.getCaseDetails(row.citizenId)} */}

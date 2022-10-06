@@ -95,7 +95,7 @@ class Example1 extends React.Component {
 
       const sendPostRequest = async () => {
         try {
-            const resp = await axios.post('http://159.65.148.197:3010/api/ngo/ngolist?=', newPost);
+            const resp = await axios.post('http://143.244.136.145:3010/api/ngo/ngolist?=', newPost);
             this.setState({myrow:resp.data});
         } catch (err) {
             // Handle Error Here
@@ -120,7 +120,7 @@ class Example1 extends React.Component {
          let rows="";
     
          let postData="email="+ localStorage.getItem("_email");
-         let _targetPostURL="http://159.65.148.197:3010/api/ngo/ngolist?=";
+         let _targetPostURL="http://143.244.136.145:3010/api/ngo/ngolist?=";
     
          axios(
            {
