@@ -57,7 +57,7 @@ class Profile extends React.Component {
     if(window.confirm("Do You Really Want to change Password !")===true){
 
     let postData="email=" + localStorage.getItem("doEmail");   
-    let _targetPostURL="http://159.65.148.197:3010/api/auth/forgotpw?=";    
+    let _targetPostURL="http://143.244.136.145:3010/api/auth/forgotpw?=";    
     axios(
       {
         method: 'post',
@@ -109,7 +109,7 @@ class Profile extends React.Component {
 		//this.setState({data:null});
         
       
-		  axios.post('http://159.65.148.197:3010/api/doctor/doctorById?=', {userId:localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237'})
+		  axios.post('http://143.244.136.145:3010/api/doctor/doctorById?=', {userId:localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237'})
 		 .then(response => {
           var recs=response.data.data.data;		
           this.setState({doctorId:recs[0].doctorId});

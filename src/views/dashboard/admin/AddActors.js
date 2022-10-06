@@ -35,7 +35,7 @@ class AddActors extends React.Component {
     "&userName="+this.state.userName+"";
     
 
-let _targetPostURL="http://159.65.148.197:3010/api/auth/register?=";
+let _targetPostURL="http://143.244.136.145:3010/api/auth/register?=";
 axios(
 {
 method: 'post',

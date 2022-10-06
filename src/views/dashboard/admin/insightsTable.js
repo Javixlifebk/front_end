@@ -121,9 +121,10 @@ const filterData = (data) =>
         localStorage.setItem("_screenerId", _screenerId);
         document.location = "/dashboard/citizenlist1";
       }
-      const  getCaseScreener=() =>{
-        // localStorage.setItem("screenerId", screenerId);
+      const  getCaseScreener=(_screenerId) =>{
+        localStorage.setItem("_screenerId", _screenerId);
         document.location = "/dashboard/casesList";
+        console.log(_screenerId, "###################")
         // console.log("screener Id ",screenerId);
       }
     const getColumnSearchProps = (dataIndex) => ({
@@ -304,7 +305,7 @@ const filterData = (data) =>
         render: (_, record) => (
           <button size="middle"
           className="btn-success"
-          onClick={() =>  record.issubscreener === "Sevika" ? getCitizenScreener(record.screenerId) : getCaseScreener()}>
+          onClick={() =>  record.issubscreener === "Sevika" ? getCitizenScreener(record.screenerId) : getCaseScreener(record.screenerId)}>
             <a>view</a>
           </button>
         ),

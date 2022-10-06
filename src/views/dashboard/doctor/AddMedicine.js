@@ -204,7 +204,7 @@ class AddMedicine extends React.Component {
 
 
      
-      let _targetPostURL="http://159.65.148.197:3010/api/doctor/addprescription?=";
+      let _targetPostURL="http://143.244.136.145:3010/api/doctor/addprescription?=";
       axios(
         {
           method: 'post',
