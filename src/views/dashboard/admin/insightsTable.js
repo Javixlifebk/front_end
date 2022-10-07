@@ -271,19 +271,19 @@ const filterData = (data) =>
         filters: [{ text: 'Male', value: 'Male' }, { text: 'Female', value: 'Female' }],
         onFilter: (value, record) => record.sex.indexOf(value) === 0
       },
-      // {
-      //   title: 'Role',
-      //   dataIndex: 'issubscreener',
-      //  key: 'issubscreener',
-      //   render: (_, row) => (
-      //     <p size="middle">
-      //        {/* {row.issubscreener > 0 ? "Sevika" : "Sanyojika"}, */}
-      //     </p>
-      //   ),
+      {
+        title: 'Role',
+        dataIndex: 'issubscreener',
+       key: 'issubscreener',
+        render: (_, row) => (
+          <p size="middle">
+             {/* {row.issubscreener > 0 ? "Sevika" : "Sanyojika"}, */}
+          </p>
+        ),
       
-      //   width: '20%',
-      //   ...getColumnSearchProps('issubscreener'),
-      // },
+        width: '20%',
+        ...getColumnSearchProps('issubscreener'),
+      },
       {
         title: 'Age',
         dataIndex: 'age',
