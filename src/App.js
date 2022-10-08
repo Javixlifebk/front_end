@@ -22,7 +22,7 @@ import UsingFetch from "./components/utility/model/UsingFetch"
 
 import Pages from "./views/dashboard/ngo/pages/Pages"
 
-//import AppRouter from "./Router"
+// Test
 
 
 /*const App = props => {
