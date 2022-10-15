@@ -101,7 +101,7 @@ class EditProfile extends React.Component {
           postData+="&district="+this.state.district+"&address="+this.state.addr;      
    
           
-      let _targetPostURL="http://143.244.136.145:3010/api/pharmacy/addprofile?=";
+      let _targetPostURL="http://javixlife.org:3010/api/pharmacy/addprofile?=";
       axios(
         {
           method: 'post',

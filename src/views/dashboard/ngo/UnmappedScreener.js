@@ -144,10 +144,10 @@ loadRecs(recs)
   
  handleClick(screenerId) {
 
-  if(window.confirm("Are you sure want to Deactivate User !")){
+  if(window.confirm("Are you sure want to Mapped Screener !")){
   let postData="screenerId="+screenerId+"&ismapped=1&token=dfjkhsdfaksjfh3756237"; 
   
-  let _targetPostURL="http://143.244.136.145:3010/api/ngo/updatescreenermap?=";
+  let _targetPostURL="http://javixlife.org:3010/api/ngo/updatescreenermap?=";
   axios(
     {
       method: 'post',
@@ -179,8 +179,8 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		//axios.post('http://143.244.136.145:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
-    axios.post('http://143.244.136.145:3010/api/ngo/screenerunmappedlist', {token:'dfjkhsdfaksjfh3756237',issubscreener:0,ismapped:false})
+		//axios.post('http://javixlife.org:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
+    axios.post('http://javixlife.org:3010/api/ngo/screenerunmappedlist', {token:'dfjkhsdfaksjfh3756237',issubscreener:0,ismapped:false})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

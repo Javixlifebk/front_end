@@ -5,7 +5,7 @@ import { DataGrid, GridToolbar,GridOverlay,GridToolbarContainer,GridFilterPanel,
 import axios from "axios";
 import Button from '@mui/material/Button'
 function CustomToolbar() {
-  // http://143.244.136.145:3010/api/screening/updateCase
+  // http://javixlife.org:3010/api/screening/updateCase
   return (
     <GridToolbarContainer>
       <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
@@ -29,7 +29,7 @@ function ReferPatientList() {
     if(window.confirm("Are you sure want to Deactivate User !")){
     let postData="caseId="+caseId+"&status=2"; 
     
-    let _targetPostURL="http://143.244.136.145:3010/api/screening/updateCase?=";
+    let _targetPostURL="http://javixlife.org:3010/api/screening/updateCase?=";
     axios(
       {
         method: 'post',
@@ -57,7 +57,7 @@ function ReferPatientList() {
   }
  
   useEffect(() => {
-		  axios.post('http://143.244.136.145:3010/api/citizen/citizenrefer', {token:'dfjkhsdfaksjfh3756237',isUnrefer:true })
+		  axios.post('http://javixlife.org:3010/api/citizen/citizenrefer', {token:'dfjkhsdfaksjfh3756237',isUnrefer:true })
 		 .then(response => {
 					if(response.data.status===1)
 					  {
