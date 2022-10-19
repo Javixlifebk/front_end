@@ -222,6 +222,7 @@ const filterData = (data) =>
         // ),
          ...getColumnSearchProps('citizenId'),
       },
+      
     {
         title: "Citizen Name",
         dataIndex: "fullname",
