@@ -23,8 +23,8 @@ class LoginJWT extends React.Component {
     let postData="email="+this.state.email+
                  "&password="+this.state.password+"";
                  
-    // let _targetPostURL="http://143.244.136.145:3010/?=";
-    let _targetPostURL="http://143.244.136.145:3010/api/auth/login?=";
+    // let _targetPostURL="http://javixlife.org:3010/?=";
+    let _targetPostURL="http://javixlife.org:3010/api/auth/login?=";
     axios(
       {
         method: 'post',
@@ -68,7 +68,7 @@ class LoginJWT extends React.Component {
                  axios(
                   {
                     method: 'post',
-                    url: 'http://143.244.136.145:3010/api/login/getjavixid?=',
+                    url: 'http://javixlife.org:3010/api/login/getjavixid?=',
                     data: 'roleId=' + _rolid + '&userid=' + _userid,
                     headers: {'Content-Type': 'application/x-www-form-urlencoded' }
                     }
@@ -103,7 +103,7 @@ class LoginJWT extends React.Component {
 
                                 /************  Resend OTP  ***********/
                                 let ipostData="email="+this.state.email+"";
-                                let _itargetPostURL="http://143.244.136.145:3010/api/auth/resend-verify-otp?=";
+                                let _itargetPostURL="http://javixlife.org:3010/api/auth/resend-verify-otp?=";
                                 axios(
                                   {
                                     method: 'post',
@@ -124,7 +124,7 @@ class LoginJWT extends React.Component {
     //this.props.loginWithJWT(this.state)
     //alert("Hello")
     
-    /*var URL="http://143.244.136.145:3010/api/auth/login"
+    /*var URL="http://javixlife.org:3010/api/auth/login"
     
     axios.get(URL, {headers:{'Access-Control-Allow-Origin': '*'}}).then(res=>{
       alert(res.data);

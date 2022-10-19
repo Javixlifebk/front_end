@@ -93,7 +93,7 @@ function HemoglobinGreenTest() {
    
     const [rows, setUsers] = useState('');
     useEffect(() => {
-        axios.post("http://143.244.136.145:3010/api/labtest/getHemoglobinGreenList" )
+        axios.post("http://javixlife.org:3010/api/labtest/getHemoglobinGreenList" )
        .then(response => {
                  
                   if(response.data.status===1)

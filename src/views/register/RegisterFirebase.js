@@ -30,7 +30,7 @@ class RegisterFirebase extends React.Component {
                   "&userName="+this.state.userName+"";
                   
                
-                  let _targetPostURL="http://143.244.136.145:3010/api/auth/register?=";
+                  let _targetPostURL="http://javixlife.org:3010/api/auth/register?=";
                   axios(
                     {
                       method: 'post',

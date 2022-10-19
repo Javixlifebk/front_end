@@ -58,7 +58,7 @@ class Profile extends React.Component {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://143.244.136.145:3010/api/ngo/screenerById?=', {userId:localStorage.getItem("Scrid"),token:'dfjkhsdfaksjfh3756237' })
+		axios.post('http://javixlife.org:3010/api/ngo/screenerById?=', {userId:localStorage.getItem("Scrid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
         var recs=response.data.data.data;
 

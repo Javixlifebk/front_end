@@ -82,7 +82,7 @@ function InsightsTable() {
    
     const [rows, setUsers] = useState('');
     useEffect(() => {
-        axios.post("http://143.244.136.145:3010/api/ngo/screenerList?=", {
+        axios.post("http://javixlife.org:3010/api/ngo/screenerList?=", {
             token: "dfjkhsdfaksjfh3756237",
             userId: "demoUser",
           })
@@ -121,10 +121,11 @@ const filterData = (data) =>
         localStorage.setItem("_screenerId", _screenerId);
         document.location = "/dashboard/citizenlist1";
       }
-      const  getCaseScreener=(_screenerId) =>{
-        localStorage.setItem("_screenerId", _screenerId);
-        document.location = "/dashboard/casesList";
-        console.log(_screenerId, "###################")
+      const  getCaseScreener=(screenerId) =>{
+        localStorage.setItem("screenerId", screenerId);
+        alert(screenerId, "###################")
+        document.location =  `/dashboard/casesList`;
+       
         // console.log("screener Id ",screenerId);
       }
     const getColumnSearchProps = (dataIndex) => ({
@@ -308,6 +309,7 @@ const filterData = (data) =>
           onClick={() =>  record.issubscreener === "Sevika" ? getCitizenScreener(record.screenerId) : getCaseScreener(record.screenerId)}>
             <a>view</a>
           </button>
+          
         ),
       },
     ];

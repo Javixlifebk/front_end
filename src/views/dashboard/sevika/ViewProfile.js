@@ -54,7 +54,7 @@ class Profile extends React.Component {
 
   getImage(){
     if(this.state.imagurl===''){
-      this.state.imagurl='http://143.244.136.145:3010/profile/no-photo-male.jpg';
+      this.state.imagurl='http://javixlife.org:3010/profile/no-photo-male.jpg';
     }
    return this.state.imagurl;
   }
@@ -63,7 +63,7 @@ class Profile extends React.Component {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://143.244.136.145:3010/api/ngo/screenerById?=', { userId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
+		axios.post('http://javixlife.org:3010/api/ngo/screenerById?=', { userId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
       if(response.data.status===1){
         var recs=response.data.data.data;

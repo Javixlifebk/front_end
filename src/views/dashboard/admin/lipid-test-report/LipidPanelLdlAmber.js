@@ -110,39 +110,99 @@ class LipidPanelLdlAmber extends React.Component {
   this.state = {
       
       action:{"0":"New Issue","1":"Assigned","2":"Resoved","3":"Closed"},
-    columns: [
+      columns: [
       
-      {
-        name: "Patient Details",
-        selector: "User",
-        sortable: true,
-        cell: row => (
-         <div style={{cursor:'pointer'}}  onClick={() =>this.handleClick(row.fullname)}>
-        
-          {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
-          <p className="text-bold-500 mb-0">{row.fullname}</p>         
-          </div>
-        )
-      },
-      {
-        name: "Alerts",
-        selector: "alerts",
-        sortable: true,
-        cell: row => (
-         <div>     
-                                 
-          <p className="text-bold-500 mb-0">
-          {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
-          <span style={{margin:'20px;',padding:'4px;'}}>{this.setBP(row.ldl)}</span>&nbsp;&nbsp;
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
+        {
+          name: "Patient Details",
+          selector: "User",
+          sortable: true,
+          cell: row => (
+           <div style={{cursor:'pointer'}}  onClick={() =>this.handleClick(row.fullname)}>
           
-          </p>
-          </div>
-        )
-      }
-    ],
+            {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
+            <p className="text-bold-500 mb-0">{row.fullname}</p>         
+            </div>
+          )
+        },
+        {
+          name: "Mobile",
+          selector: "mobile",
+          sortable: true,
+          cell: row => (
+           <div style={{cursor:'pointer'}}  >
+          
+            {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
+            <p className="text-bold-500 mb-0">{row.mobile}</p>         
+            </div>
+          )
+        },
+        {
+          name: "Citizen Id",
+          selector: "citizenId",
+          sortable: true,
+          cell: row => (
+           <div style={{cursor:'pointer'}}  >
+          
+            {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
+            <p className="text-bold-500 mb-0">{row.citizenId}</p>         
+            </div>
+          )
+        },
+        {
+          name: "Screener Name",
+          selector: "screenerfullname",
+          sortable: true,
+          cell: row => (
+           <div style={{cursor:'pointer'}}  >
+          
+            {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
+            <p className="text-bold-500 mb-0">{row.screenerfullname}</p>         
+            </div>
+          )
+        },
+        {
+          name: "Address",
+          selector: "address",
+          sortable: true,
+          cell: row => (
+           <div style={{cursor:'pointer'}}  >
+          
+            {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
+            <p className="text-bold-500 mb-0">{row.address}</p>         
+            </div>
+          )
+        },
+        {
+          name: "Date Of On Boarding",
+          selector: "dateOfOnBoarding",
+          sortable: true,
+          cell: row => (
+           <div style={{cursor:'pointer'}}  >
+          
+            {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
+            <p className="text-bold-500 mb-0">{row.dateOfOnBoarding}</p>         
+            </div>
+          )
+        },
+        {
+          name: "Alerts",
+          selector: "alerts",
+          sortable: true,
+          cell: row => (
+           <div>     
+                                   
+            <p className="text-bold-500 mb-0">
+            {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
+            <span style={{margin:'20px;',padding:'4px;'}}>{this.setBP(row.cholesterol)}</span>&nbsp;&nbsp;
+            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
+            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
+            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
+            
+            </p>
+            </div>
+          )
+        }
+      ],
     data: [],
     filteredData: [],
     value: "",
@@ -179,7 +239,7 @@ componentDidMount() {
 		//this.setState({data:null});
     // if(localStorage.getItem("severity")==="1"){
     
-		  axios.post('http://143.244.136.145:3010/api/labtest/LipidPanelTestldlAmberList')
+		  axios.post('http://javixlife.org:3010/api/labtest/LipidPanelTestldlAmberList')
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -191,7 +251,7 @@ componentDidMount() {
 		 });// then
     // }
     // else if(localStorage.getItem("severity")==="0"){
-    //   axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseTestList', {severity:0})
+    //   axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:0})
     //   .then(response => {
     //        if(response.data.status===1)
     //          {
@@ -202,7 +262,7 @@ componentDidMount() {
     //          }
     //   });// then
     // }else if(localStorage.getItem("severity")==="2"){
-    //   axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseTestList', {severity:2})
+    //   axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:2})
     //   .then(response => {
     //        if(response.data.status===1)
     //          {
@@ -273,6 +333,7 @@ componentDidMount() {
             noHeader
             pagination
             subHeader
+            noDataComponent="Loading...."
             subHeaderComponent={
               <CustomHeader value={value} handleFilter={this.handleFilter} />
             }

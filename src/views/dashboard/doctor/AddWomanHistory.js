@@ -119,7 +119,7 @@ class AddWomanHistory extends React.Component {
           postData+="&painwithmenstruation="+this.state.painwithmenstruation+"&useofmedicationforpain="+this.state.useofmedicationforpain+"&misseddays="+this.state.misseddays;
    
           
-      let _targetPostURL="http://143.244.136.145:3010/api/citizen/addWomenHistory?=";
+      let _targetPostURL="http://javixlife.org:3010/api/citizen/addWomenHistory?=";
       axios(
         {
           method: 'post',

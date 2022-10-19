@@ -142,10 +142,10 @@ loadRecs(recs)
  }
  handleClick(doctorId) {
 
-  if(window.confirm("Are you sure want to Deactivate User !")){
+  if(window.confirm("Are you sure want to Unmapped Doctor !")){
   let postData="doctorId="+doctorId+"&ismapped=0&token=dfjkhsdfaksjfh3756237"; 
   
-  let _targetPostURL="http://143.244.136.145:3010/api/doctor/updatemapped?=";
+  let _targetPostURL="http://javixlife.org:3010/api/doctor/updatemapped?=";
   axios(
     {
       method: 'post',
@@ -177,7 +177,7 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://143.244.136.145:3010/api/doctor/mappedList', { token:'dfjkhsdfaksjfh3756237',ismapped:true })
+		axios.post('http://javixlife.org:3010/api/doctor/mappedList', { token:'dfjkhsdfaksjfh3756237',ismapped:true })
 		 .then(response => {
 					if(response.data.status===1)
 					  {

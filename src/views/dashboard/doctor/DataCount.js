@@ -30,7 +30,7 @@ class DataCount extends React.Component {
   this.mounted = true;
   //this.setState({data:null});
       
-    axios.post('http://143.244.136.145:3010/api/screening/getCaseDetails', { doctorId:localStorage.getItem("usermasid") })
+    axios.post('http://javixlife.org:3010/api/screening/getCaseDetails', { doctorId:localStorage.getItem("usermasid") })
    .then(response => {
 
          console.dir("Data Length=" + response.data.data.data.length)
@@ -50,7 +50,7 @@ class DataCount extends React.Component {
     }
   });
 
-  axios.post('http://143.244.136.145:3010/api/screening/getCaseDetails', { doctorId: localStorage.getItem("usermasid"),status:'2' })
+  axios.post('http://javixlife.org:3010/api/screening/getCaseDetails', { doctorId: localStorage.getItem("usermasid"),status:'2' })
   .then(response => {
 
         console.dir("Data Length=" + response.data.data.data.length)
@@ -70,7 +70,7 @@ class DataCount extends React.Component {
    }
  });
 
- axios.post('http://143.244.136.145:3010/api/screening/getCaseDetails', { doctorId: localStorage.getItem("usermasid"),status:'3' })
+ axios.post('http://javixlife.org:3010/api/screening/getCaseDetails', { doctorId: localStorage.getItem("usermasid"),status:'3' })
   .then(response => {
 
         console.dir("Data Length=" + response.data.data.data.length)

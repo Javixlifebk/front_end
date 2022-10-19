@@ -241,7 +241,7 @@ componentDidMount() {
 		//this.setState({data:null});
     // if(localStorage.getItem("severity")==="1"){
     
-		  axios.post('http://143.244.136.145:3010/api/labtest/LipidPanelCholesterolAmberList')
+		  axios.post('http://javixlife.org:3010/api/labtest/LipidPanelCholesterolAmberList')
 		 .then(response => {
 					
 					if(response.data.status===1)
@@ -254,7 +254,7 @@ componentDidMount() {
 		 });// then
     // }
     // else if(localStorage.getItem("severity")==="0"){
-    //   axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseTestList', {severity:0})
+    //   axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:0})
     //   .then(response => {
     // 
     //        if(response.data.status===1)
@@ -266,7 +266,7 @@ componentDidMount() {
     //          }
     //   });// then
     // }else if(localStorage.getItem("severity")==="2"){
-    //   axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseTestList', {severity:2})
+    //   axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:2})
     //   .then(response => {
     //   
     //        if(response.data.status===1)
@@ -336,6 +336,7 @@ componentDidMount() {
             data={value.length ? filteredData : data}
             columns={columns}
             noHeader
+            noDataComponent="Loading...."
             pagination
             subHeader
             subHeaderComponent={

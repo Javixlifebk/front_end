@@ -374,7 +374,7 @@ class AdminDashboard extends React.Component {
 
   getImage(imagUrl) {
     if (imagUrl === null || imagUrl === undefined || imagUrl === "") {
-      imagUrl = "http://143.244.136.145:3010/profile/no-photo-male.jpg";
+      imagUrl = "http://javixlife.org:3010/profile/no-photo-male.jpg";
     }
     return imagUrl;
   }
@@ -383,7 +383,7 @@ class AdminDashboard extends React.Component {
     this.mounted = true;
     
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_bp: "0",
       })
       .then((response) => {
@@ -404,7 +404,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://143.244.136.145:3010/api/labtest/getBloodGlucoseTestCount")
+      .post("http://javixlife.org:3010/api/labtest/getBloodGlucoseTestCount")
       .then((response) => {
         console.dir(response.data.data.data);
 
@@ -434,7 +434,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://143.244.136.145:3010/api/labtest/getHemoglobinCount")
+      .post("http://javixlife.org:3010/api/labtest/getHemoglobinCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -476,7 +476,7 @@ class AdminDashboard extends React.Component {
     //Lipid Segment
 
     axios
-      .post("http://143.244.136.145:3010/api/labtest/getCholestCount")
+      .post("http://javixlife.org:3010/api/labtest/getCholestCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -505,19 +505,19 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://143.244.136.145:3010/api/labtest/gettriCount")
+      .post("http://javixlife.org:3010/api/labtest/gettriCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
-            if (response.data.data.data[i]._id === 2)
+            if (response.data.data.data[i]._id === 3)
               this.setState({
                 severity_tri_red: response.data.data.data[i].count,
               });
-            if (response.data.data.data[i]._id === 1)
+            if (response.data.data.data[i]._id === 2)
               this.setState({
                 severity_tri_amber: response.data.data.data[i].count,
               });
-            if (response.data.data.data[i]._id === 0)
+            if (response.data.data.data[i]._id === 1)
               this.setState({
                 severity_tri_green: response.data.data.data[i].count,
               });
@@ -533,7 +533,7 @@ class AdminDashboard extends React.Component {
         }
       });
     axios
-      .post("http://143.244.136.145:3010/api/labtest/gethdlCount")
+      .post("http://javixlife.org:3010/api/labtest/gethdlCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -561,7 +561,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://143.244.136.145:3010/api/labtest/getldlCount")
+      .post("http://javixlife.org:3010/api/labtest/getldlCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -591,7 +591,7 @@ class AdminDashboard extends React.Component {
     ///End Lipid
 
     axios
-      .post("http://143.244.136.145:3010/api/labtest/getREyeCount")
+      .post("http://javixlife.org:3010/api/labtest/getREyeCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -619,7 +619,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://143.244.136.145:3010/api/labtest/getLEyeCount")
+      .post("http://javixlife.org:3010/api/labtest/getLEyeCount")
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -647,7 +647,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://143.244.136.145:3010/api/ngo/screenerList?=", {
+      .post("http://javixlife.org:3010/api/ngo/screenerList?=", {
         token: "dfjkhsdfaksjfh3756237",
         userId: "demoUser",
       })
@@ -661,7 +661,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_bp: "1",
       })
       .then((response) => {
@@ -682,7 +682,7 @@ class AdminDashboard extends React.Component {
         }
       });
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_bp: "2",
       })
       .then((response) => {
@@ -704,7 +704,7 @@ class AdminDashboard extends React.Component {
     //SPO2
 
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_spo2: "0",
       })
       .then((response) => {
@@ -727,7 +727,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_spo2: "1",
       })
       .then((response) => {
@@ -749,7 +749,7 @@ class AdminDashboard extends React.Component {
         }
       });
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_spo2: "2",
       })
       .then((response) => {
@@ -774,7 +774,7 @@ class AdminDashboard extends React.Component {
     //Temperature
 
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_temperature: "0",
       })
       .then((response) => {
@@ -797,7 +797,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_temperature: "1",
       })
       .then((response) => {
@@ -819,7 +819,7 @@ class AdminDashboard extends React.Component {
         }
       });
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_temperature: "2",
       })
       .then((response) => {
@@ -844,7 +844,7 @@ class AdminDashboard extends React.Component {
     // Heart Rate
 
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_pulse: "0",
       })
       .then((response) => {
@@ -867,7 +867,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_pulse: "1",
       })
       .then((response) => {
@@ -889,7 +889,7 @@ class AdminDashboard extends React.Component {
         }
       });
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_pulse: "2",
       })
       .then((response) => {
@@ -910,7 +910,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_bmi: "0",
       })
       .then((response) => {
@@ -933,7 +933,7 @@ class AdminDashboard extends React.Component {
       });
 
   // ================daily reports===========
-axios.get('http://143.244.136.145:3010/documents/dailyScreeningScreener.csv')
+axios.get('http://javixlife.org:3010/documents/dailyScreeningScreener.csv')
    .then(response => {
 
         this.setState({tabledailyScreeningScreener:response.data});
@@ -943,7 +943,7 @@ axios.get('http://143.244.136.145:3010/documents/dailyScreeningScreener.csv')
    
   });
 
-axios.get('http://143.244.136.145:3010/documents/weeklyScreeningScreener.csv')
+axios.get('http://javixlife.org:3010/documents/weeklyScreeningScreener.csv')
    .then(response => {
 
         this.setState({tableweeklyScreeningScreener:response.data});
@@ -953,7 +953,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningScreener.csv')
    
   });
 
-axios.get('http://143.244.136.145:3010/documents/dailyScreeningSevika.csv')
+axios.get('http://javixlife.org:3010/documents/dailyScreeningSevika.csv')
    .then(response => {
 
         this.setState({tabledailyScreeningSevika:response.data});
@@ -963,7 +963,7 @@ axios.get('http://143.244.136.145:3010/documents/dailyScreeningSevika.csv')
    
   });
 
-axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
+axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
    .then(response => {
 
         this.setState({tableweeklyScreeningSevika:response.data});
@@ -975,7 +975,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
 
 
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_bmi: "1",
       })
       .then((response) => {
@@ -1000,7 +1000,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
 
       
     axios
-      .post("http://143.244.136.145:3010/api/screening/getCount", {
+      .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_bmi: "2",
       })
       .then((response) => {
@@ -1020,7 +1020,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
         }
       });
 // =============================================================
-      axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseTestList', {severity:0})
+      axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:0})
       .then(response => {
    
             console.dir("Data Length=" + response.data.data.data.length)
@@ -1041,7 +1041,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
 
 
     //  ======================================================
-    axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseTestList', {severity:'1' })
+    axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:'1' })
     .then(response => {
   
           console.dir("Data Length=" + response.data.data.data.length)
@@ -1065,7 +1065,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
 
   //  =========================================================================
 
-  axios.post('http://143.244.136.145:3010/api/labtest/getBloodGlucoseTestList', { severity:'2' })
+  axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', { severity:'2' })
   .then(response => {
 
         console.dir("Data Length=" + response.data.data.data.length)
@@ -1418,7 +1418,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/bpRed.csv"
+                  href="http://javixlife.org:3010/documents/bpRed.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1427,7 +1427,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/bpAmber.csv"
+                  href="http://javixlife.org:3010/documents/bpAmber.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1436,7 +1436,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/bpGreen.csv"
+                  href="http://javixlife.org:3010/documents/bpGreen.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1455,7 +1455,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/spo2Red.csv"
+                  href="http://javixlife.org:3010/documents/spo2Red.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1464,7 +1464,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/spo2Amber.csv"
+                  href="http://javixlife.org:3010/documents/spo2Amber.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1473,7 +1473,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/spo2Green.csv"
+                  href="http://javixlife.org:3010/documents/spo2Green.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1495,7 +1495,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/temperatureRed.csv"
+                  href="http://javixlife.org:3010/documents/temperatureRed.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1504,7 +1504,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/temperatureAmber.csv"
+                  href="http://javixlife.org:3010/documents/temperatureAmber.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1513,7 +1513,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/temperatureGreen.csv"
+                  href="http://javixlife.org:3010/documents/temperatureGreen.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1532,7 +1532,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/pulseRed.csv"
+                  href="http://javixlife.org:3010/documents/pulseRed.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1541,7 +1541,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/pulseAmber.csv"
+                  href="http://javixlife.org:3010/documents/pulseAmber.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1550,7 +1550,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/pulseGreen.csv"
+                  href="http://javixlife.org:3010/documents/pulseGreen.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1572,7 +1572,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/bmiRed.csv"
+                  href="http://javixlife.org:3010/documents/bmiRed.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1581,7 +1581,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/bmiAmber.csv"
+                  href="http://javixlife.org:3010/documents/bmiAmber.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1590,7 +1590,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/bmiGreen.csv"
+                  href="http://javixlife.org:3010/documents/bmiGreen.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1612,7 +1612,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                onClick={() =>this.getCaseDetails("green")}
+                href="/dashboard/BloodGlucoseGreen"
                   // target="_blank"
                   style={{color:"blue"}}
                 >
@@ -1622,7 +1622,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
                 </CardBody>
                 <CardBody>
                 <a
-                onClick={() =>this.getCaseDetails("red")}
+               href="/dashboard/BloodGlucoseRed"
                   // target="_blank"
                   style={{color:"blue"}}
                 >
@@ -1632,8 +1632,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
                 </CardBody>
                 <CardBody>
                 <a
-                onClick={() =>this.getCaseDetails("amber")}
-                  // target="_blank"
+               href="/dashboard/BloodGlucoseAmber"
                   style={{color:"blue"}}
                 >
                   {" "}
@@ -1899,7 +1898,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardHeader>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/dump.csv"
+                  href="http://javixlife.org:3010/documents/dump.csv"
                   target="_blank"
                 >
                   General Survey
@@ -1907,7 +1906,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/dumpHealth.csv"
+                  href="http://javixlife.org:3010/documents/dumpHealth.csv"
                   target="_blank"
                 >
                   Health Survey
@@ -1915,7 +1914,7 @@ axios.get('http://143.244.136.145:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://143.244.136.145:3010/documents/dumpSocio.csv"
+                  href="http://javixlife.org:3010/documents/dumpSocio.csv"
                   target="_blank"
                 >
                   SocioEconomic Survey
