@@ -78,6 +78,7 @@ const data = [
     );
   };
   
+
 function ReferPatientList() {
    
     const [rows, setUsers] = useState('');
@@ -249,6 +250,7 @@ const filterData = (data) =>
         ...getColumnSearchProps('mobile'),
       },
     
+      
      
       {
         title: 'Gender',
@@ -258,9 +260,6 @@ const filterData = (data) =>
         filters: [{ text: 'Male', value: 'Male' }, { text: 'Female', value: 'Female' }],
         onFilter: (value, record) => record.sex.indexOf(value) === 0
       },
-      
-      
-   
       {
         title: 'Date',
         dataIndex: 'createdAt',

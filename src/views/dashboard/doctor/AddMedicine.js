@@ -159,6 +159,18 @@ class AddMedicine extends React.Component {
       
     
   }
+  prescribeData(){
+    axios.post('http://javixlife.org:3010/api/citizen/citizenReferList', {isUnrefer:0,citizenId:localStorage.getItem("citizenId")})
+    .then(response => {
+         if(response.data.status===1)
+           {
+             var msg=response.data.message;
+             var recs=response.data.data.data;
+             this.loadRecs(recs);
+             console.log(recs, "111111111111111111111");
+           }
+    });
+  }
 
   handleSubmit = e => {
     e.preventDefault()  
@@ -194,6 +206,7 @@ class AddMedicine extends React.Component {
       this.state.strPMeal+=",,,";
       let dateOfOnBoarding = mydate + '-' +  mydate + '-' + myCurrentDate.getFullYear();
       this.setState()
+   
       let postData="citizenId="+localStorage.getItem("citizenId")+ "&screenerId=161315136114567577&recordId=0";
           postData+="&token=dfjkhsdfaksjfh3756237&doctorId="+localStorage.getItem("usermasid");
           postData+="&caseId="+ localStorage.getItem("caseId")+"&status=3&medicine="+finalMedecine;
@@ -215,6 +228,7 @@ class AddMedicine extends React.Component {
       ).then(res=>{
 
         if(res.data.status===1){
+          console.log(res.data);
           alert('Medicine Added Successfully')
           window["medicineInit"]();
           window.location='/dashboard/patientview'
@@ -661,7 +675,10 @@ class AddMedicine extends React.Component {
                   <Button.Ripple
                     color="primary"
                     type="submit"
-                    className="mr-1 mb-1"                  
+                    className="mr-1 mb-1" 
+                    onClick={() => {
+                      this.prescribeData()
+                    }}                 
                   >
                     Submit
                   </Button.Ripple>

@@ -117,7 +117,7 @@ class BloodGlucoseGreen extends React.Component {
         selector: "User",
         sortable: true,
         cell: row => (
-         <div style={{cursor:'pointer'}}  onClick={() =>this.handleClick(row.fullName)}>
+         <div style={{cursor:'pointer'}} >
         
           {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
           <p className="text-bold-500 mb-0">{row.fullname}</p>         
@@ -222,7 +222,9 @@ componentDidMount() {
 						  var recs=response.data.data.data;
 						  this.loadRecs(recs);
               this.state.casetype="amber";
+              console.log(response.data.data.data);
 					  }
+
 		 });// then
     // }
     // else if(localStorage.getItem("severity")==="0"){

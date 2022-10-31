@@ -225,7 +225,7 @@ componentDidMount() {
         <CardBody className="rdt_Wrapper">
         <Row>
           <Col sm="12">
-          <CardTitle>Encounter List</CardTitle>
+          <CardTitle>Screener Cases List</CardTitle>
           </Col>          
           </Row>
           <Row>
