@@ -28,7 +28,7 @@ function LipidCritical() {
   const [rows, setUsers] = useState([])
   useEffect(() => {
     // http://javixlife.org:3010/api/screening/lipidCritical
-		  axios.post('http://javixlife.org:3010/api/generalsurvey/criticallipid')
+		  axios.post('http://javixlife.org:3010/api/screening/lipidCritical')
 		 .then(response => {
 					if(response.data.status===1)
 					  {

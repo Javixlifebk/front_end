@@ -10,12 +10,23 @@ import {
   Input,
   Button
 } from "reactstrap"
+import { useParams } from "react-router-dom";
 import DataTable from "react-data-table-component"
 import { Star, Search } from "react-feather"
-
 import * as Icon from "react-feather"
 import axios from "axios";
 import profileImg from "../../../assets/img/icons/viewprofile.png"
+import vitalImg from "../../../assets/img/javix/vital.png"
+import downloadIcon from "../../../assets/img/javix/download_small.png"
+import lipidIcon from "../../../assets/img/javix/lipid.png"
+import rapidIcon from "../../../assets/img/javix/rapid.png"
+import sickleIcon from "../../../assets/img/javix/sickle_cell.png"
+import lungIcon from "../../../assets/img/javix/lung.png"
+import hemlIcon from "../../../assets/img/javix/hemo.png"
+import glucoseIcon from "../../../assets/img/javix/gluecose.png"
+import drugIcon from "../../../assets/img/javix/drug.png"
+
+import { Color } from "ag-grid-community"
 const CustomHeader = props => {
   return (
     <div className="d-flex flex-wrap justify-content-between">
@@ -31,73 +42,122 @@ const CustomHeader = props => {
     </div>
   )
 }
+function withParams(Component) {
+  return props => <Component {...props} params={useParams()} />;
+}
+
 
 class PatientList extends React.Component {
 
-    setBMI(val,val1){
-        if(val>18 && val<=25 ){
-            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>BMI:{val}</span>);
-        }else if(val>25 && val<=30){
-            return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>BMI:{val}</span>);
-        }else if(val>30 || val<18){
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>BMI:{val}</span>);
-        }
-    }
-    setBP(bpsys,bpdia,val1){
+  loadData(){
+    localStorage.removeItem("caseReport"); 
+    axios.post('http://javixlife.org:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
+    .then(response => {  
+         if(response.data.status===1){
+             var msg=response.data.message;
+             //var recs=response.data.data.data;
+             if( response.data.data.data.filename!==null){
+              //this.state._myurl=response.data.data.data.filename;
+              //localStorage.setItem("caseReport",response.data.data.data.filename);
+                this.state.imgUrl=response.data.data.data.filename;
+               console.dir("Drug Allery Report" + response.data.data.data.filename); 
+             } 
+           }
+    }).catch(e=>{
+   });
+  }
 
-        if(val1===0 ){
+  handleClick(_userid,_caseid,row) {
+    localStorage.removeItem("caseReport")  
+    localStorage.setItem("citizenId",_userid);
+    localStorage.setItem("caseId",_caseid);
+    this.loadData();
+    
+    localStorage.setItem("caseReport",this.state.imgUrl);
+    var roleId=localStorage.getItem("roleId");
+    if(roleId==='1'){
+  
+      window.location='/dashboard/patientview'
+    }else{
+      window.location='/dashboard/patientviewscreener'
+    }
+    
+  }
+  
+
+
+  setBMI(val,val1){
+    if(val>18 && val<=25 ){
+        return(<span style={{background:'#008000',padding:'4px',color:'white'}}>BMI:{val}</span>);
+    }else if(val>25 && val<=30){
+        return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>BMI:{val}</span>);
+    }else if(val>30 || val<18){
+        return(<span style={{background:'red',padding:'4px',color:'white'}}>BMI:{val}</span>);
+    }
+}
+setSOP2(val,val1){
+  if(val1===0 ){
+      return(<span style={{background:'#008000',padding:'4px',color:'white'}}>SPO2:{val}</span>);
+  }else if(val1===1){
+      return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>SPO2:{val}</span>);
+  }else{
+      return(<span style={{background:'red',padding:'4px',color:'white'}}>SPO2:{val}</span>);
+  }
+}
+setPulse(val,val1){
+  if(val1===0 ){
+      return(<span style={{background:'#008000',padding:'4px',color:'white'}}>Heart:{val}</span>);
+  }else if(val1===1){
+      return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Heart:{val}</span>);
+  }else{
+      return(<span style={{background:'red',padding:'4px',color:'white'}}>Heart:{val}</span>);
+  }
+}
+setTemp(val,val1){
+  if(val1===0){
+      return(<span style={{background:'#008000',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
+  }else if(val1===1){
+      return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
+  }else{
+      return(<span style={{background:'red',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
+  }
+}
+
+setResp(val,val1){
+  if(val1===0 ){
+      return(<span style={{background:'#008000',padding:'4px',color:'white'}}>Resp:{val}</span>);
+  }else if(val1===1){
+      return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Resp:{val}</span>);
+  }else{
+      return(<span style={{background:'red',padding:'4px',color:'white'}}>Resp:{val}</span>);
+  }
+}
+    setBP(bpsys,bpdia){
+
+        if(bpsys<=120 && bpdia<=80){
             return(<span style={{background:'#008000',padding:'4px',color:'white',borderRadius:'25px;'}}>BP:{bpsys}/{bpdia}</span>);
-         }else if(val1===1){
+         }else if((bpsys>120  && bpsys<=160) && (bpdia>80 && bpdia<=110)){
             return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>BP:{bpsys}/{bpdia}</span>);
+         }else if(bpsys>160  &&  bpdia>110){
+            return(<span style={{background:'red',padding:'4px',color:'white'}}>BP:{bpsys}/{bpdia}</span>);
          }else{
             return(<span style={{background:'red',padding:'4px',color:'white'}}>BP:{bpsys}/{bpdia}</span>);
          }
     }
-    setSOP2(val,val1){
-        if(val1===0 ){
-            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>SPO2:{val}</span>);
-        }else if(val1===1){
-            return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>SPO2:{val}</span>);
-        }else{
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>SPO2:{val}</span>);
-        }
-    }
-    setPulse(val,val1){
-        if(val1===0 ){
-            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>Heart:{val}</span>);
-        }else if(val1===1){
-            return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Heart:{val}</span>);
-        }else{
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>Heart:{val}</span>);
-        }
-    }
-    setTemp(val,val1){
-        if(val1===0){
-            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
-        }else if(val1===1){
-            return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
-        }else{
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
-        }
-    }
+  
+  
+ 
 
-    setResp(val,val1){
-        if(val1===0 ){
-            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>Resp:{val}</span>);
-        }else if(val1===1){
-            return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Resp:{val}</span>);
-        }else{
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>Resp:{val}</span>);
-        }
-    }
+    
+
+    
  constructor(props) {
     super(props);	
   this.state = {
-      
-    imgUrl:'',
-      action:{"0":"New Issue","1":"Assigned","2":"Resoved","3":"Closed"},
+    
+    _myurl:'',
+    action:{"0":"New Issue","1":"Assigned","2":"Resoved","3":"Closed"},
     columns: [
-      
       {
         name: "Patient Details",
         selector: "User",
@@ -132,7 +192,18 @@ class PatientList extends React.Component {
           </div>
         )
       }
+      
+    
+   
+         
+        
+                            
+ 
+
     ],
+        
+           
+
     data: [],
     filteredData: [],
     value: "",
@@ -146,22 +217,7 @@ loadRecs(recs)
 	 this.setState({data:recs});
  }
 
- handleClick(_userid,_caseid,row) {
-  localStorage.removeItem("caseReport")  
-  localStorage.setItem("citizenId",_userid);
-  localStorage.setItem("caseId",_caseid);
-  this.loadData();
-  
-  localStorage.setItem("caseReport",this.state.imgUrl);
-  var roleId=localStorage.getItem("roleId");
-  if(roleId==='1'){
 
-    window.location='/dashboard/patientview'
-  }else{
-    window.location='/dashboard/patientviewscreener'
-  }
-  
-}
 
 loadData(){
   localStorage.removeItem("caseReport"); 
@@ -190,29 +246,32 @@ loadData(){
  //alert('okay')
  window.location='/dashboard/reportissue'
  } 
-
 }
-  
+// const { id } = useParams();
+// let { id } = useParams();
+
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-    /*let postData=""
-     if(localStorage.getItem("roleId")==="1"){
-      postData="doctorId:" + localStorage.getItem("usermasid")+ "&token:'dfjkhsdfaksjfh3756237'";
-     }else if(localStorage.getItem("roleId")==="2" || localStorage.getItem("roleId")==="21"){
-      postData="screenerId:" + localStorage.getItem("usermasid")+ "&token:'dfjkhsdfaksjfh3756237'";
-     }*/
-		  axios.post('http://javixlife.org:3010/api/screening/getCaseDetails?=', {citizenId:localStorage.getItem("_citizenId"),token:'dfjkhsdfaksjfh3756237'})
+    let scrId=localStorage.getItem("citizenId");
+    console.log(scrId, '@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+    axios.post('http://javixlife.org:3010/api/screening/getCaseDetails?=', {token:'dfjkhsdfaksjfh3756237',citizenId:scrId})
 		 .then(response => {
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
 						  var recs=response.data.data.data;
 						  this.loadRecs(recs);
+              console.log(recs, "111111111111111111111");
 					  }
 		 });// then
-     localStorage.removeItem("caseReport"); 
-  }
+
+}
+// ====================================
+
+// ======================================
+
+
 
   handleFilter = e => {
     let value = e.target.value
@@ -224,13 +283,13 @@ componentDidMount() {
       filteredData = data.filter(item => {
 		  console.dir(item.userId);
         let startsWithCondition =
-         
-           item.firstName.toLowerCase().startsWith(value.toLowerCase()) ||
-           item.lastname.toLowerCase().startsWith(value.toLowerCase()) 
+          item.userId.toLowerCase().startsWith(value.toLowerCase()) ||
+           item.info.firstName.toLowerCase().startsWith(value.toLowerCase()) ||
+           item.info.lastName.toLowerCase().startsWith(value.toLowerCase()) 
         let includesCondition =
-          
-        item.firsName.toLowerCase().includes(value.toLowerCase()) ||
-        item.lastname.toLowerCase().includes(value.toLowerCase())
+          item.userId.toLowerCase().includes(value.toLowerCase()) ||
+         item.info.firstName.toLowerCase().includes(value.toLowerCase()) ||
+		 item.info.lastName.toLowerCase().includes(value.toLowerCase())
 
         if (startsWithCondition) {
           return startsWithCondition
@@ -245,12 +304,9 @@ componentDidMount() {
 
   /* render for all */
   render() {
-
     let { data, columns, value, filteredData } = this.state
     return (
       <React.Fragment >
-
-
          <Row>
       <Col lg="12" md="12">
       <Card>
@@ -260,11 +316,9 @@ componentDidMount() {
         <CardBody className="rdt_Wrapper">
         <Row>
           <Col sm="12">
-          <CardTitle>Encounters List</CardTitle>
+          <CardTitle>Encounter List</CardTitle>
           </Col>          
           </Row>
-
-          
           <Row>
           <Col sm="12">
           <DataTable
@@ -274,8 +328,8 @@ componentDidMount() {
             noHeader
             pagination
             subHeader
+            noDataComponent="Loading...."
             subHeaderComponent={
-              
               <CustomHeader value={value} handleFilter={this.handleFilter} />
             }
           />

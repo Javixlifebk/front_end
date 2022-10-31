@@ -117,7 +117,8 @@ class BloodGlucoseRed extends React.Component {
         selector: "User",
         sortable: true,
         cell: row => (
-         <div style={{cursor:'pointer'}}  onClick={() =>this.handleClick(row.fullName)}>
+         <div style={{cursor:'pointer'}} 
+         >
         
           {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
           <p className="text-bold-500 mb-0">{row.fullname}</p>         
