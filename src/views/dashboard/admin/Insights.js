@@ -509,15 +509,15 @@ class AdminDashboard extends React.Component {
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
-            if (response.data.data.data[i]._id === 3)
+            if (response.data.data.data[i]._id === 2)
               this.setState({
                 severity_tri_red: response.data.data.data[i].count,
               });
-            if (response.data.data.data[i]._id === 2)
+            if (response.data.data.data[i]._id === 1)
               this.setState({
                 severity_tri_amber: response.data.data.data[i].count,
               });
-            if (response.data.data.data[i]._id === 1)
+            if (response.data.data.data[i]._id === 3)
               this.setState({
                 severity_tri_green: response.data.data.data[i].count,
               });

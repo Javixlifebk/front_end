@@ -314,7 +314,8 @@ const filterData = (data) =>
       },
     ];
     
-    return <Table columns={columns} dataSource={rows} />;
+    return <Table columns={columns} dataSource={rows} 
+    locale={{emptyText:"loading..."}}/>;
   };
 
 export default InsightsTable

@@ -268,6 +268,13 @@ const filterData = (data) =>
          ...getColumnSearchProps('citizenId'),
       },
       {
+        title: 'Case ID',
+        dataIndex: 'caseId',
+        key: 'caseId',
+        width: '20%',
+        ...getColumnSearchProps('caseId'),
+      },
+      {
         title: 'Mobile',
         dataIndex: 'mobile',
         key: 'mobile',
@@ -337,7 +344,8 @@ const filterData = (data) =>
       <CardTitle><b><h3>Hemoglobin Red Cases</h3></b> </CardTitle>
       </Col>          
       </Row>
-    <Table columns={columns} dataSource={rows} />
+    <Table columns={columns} dataSource={rows}
+    locale={{emptyText:"loading..."}} />
     </>
     );
   };
