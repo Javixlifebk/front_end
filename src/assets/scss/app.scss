@@ -4,3 +4,7 @@
 @import "./colors.scss";
 @import "./iconfont.scss";
 @import "./custom-rtl.scss";
+
+.ant-table-container{
+overflow-x: auto !important;
+}
