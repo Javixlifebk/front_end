@@ -271,14 +271,14 @@ const filterData = (data) =>
         title: 'Case ID',
         dataIndex: 'caseId',
         key: 'caseId',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('caseId'),
       },
       {
         title: 'Mobile',
         dataIndex: 'mobile',
         key: 'mobile',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('mobile'),
       },
       
@@ -286,14 +286,14 @@ const filterData = (data) =>
         title: 'Address',
         dataIndex: 'address',
         key: 'address',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('address'),
       },
       {
         title: 'Screener FullName',
         dataIndex: 'screenerfullname',
         key: 'screenerfullname',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('screenerfullname'),
       },
       {
@@ -306,7 +306,7 @@ const filterData = (data) =>
           </p>
         ),
       
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('dateOfOnBoarding'),
       },
      
@@ -314,7 +314,7 @@ const filterData = (data) =>
         title: 'Date',
         dataIndex: 'createdAt',
         key: 'createdAt',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('createdAt'),
       },
     

@@ -211,7 +211,7 @@ const filterData = (data) =>
         title: "Patient Details",
         dataIndex: "fullname",
         key: 'fullname',
-        width:'40%',
+        // width:'40%',
         // render: (text, record) => (
         //   <span>{record.firstName} {record.lastName}</span>
         // ),
@@ -221,35 +221,35 @@ const filterData = (data) =>
         title: 'Mobile',
         dataIndex: 'mobile',
         key: 'mobile',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('mobile'),
       },
       {
         title: 'Case ID',
         dataIndex: 'caseId',
         key: 'caseId',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('caseId'),
       },
       {
         title: 'Citizen ID',
         dataIndex: 'citizenId',
         key: 'citizenId',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('citizenId'),
       },
       {
         title: 'Screener FullName',
         dataIndex: 'screenerfullname',
         key: 'screenerfullname',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('screenerfullname'),
       },
       {
         title: 'Address',
         dataIndex: 'address',
         key: 'address',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('address'),
       },
       {
@@ -262,7 +262,7 @@ const filterData = (data) =>
           </p>
         ),
       
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('dateOfOnBoarding'),
       },
      
@@ -270,7 +270,7 @@ const filterData = (data) =>
         title: 'Date',
         dataIndex: 'createdAt',
         key: 'createdAt',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('createdAt'),
       },
     
