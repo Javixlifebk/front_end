@@ -220,7 +220,7 @@ const filterData = (data) =>
         title: 'Mobile',
         dataIndex: 'mobile',
         key: 'mobile',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('mobile'),
       },
       
@@ -228,14 +228,14 @@ const filterData = (data) =>
         title: 'citizen ID',
         dataIndex: 'citizenId',
         key: 'citizenId',
-        width: '20%',
+        // width: '10%',
         ...getColumnSearchProps('citizenId'),
       },
       {
         title: 'Case ID',
         dataIndex: 'caseId',
         key: 'caseId',
-        width: '20%',
+        // width: '10%',
         ...getColumnSearchProps('caseId'),
       },
       {
@@ -249,7 +249,7 @@ const filterData = (data) =>
         title: 'Address',
         dataIndex: 'address',
         key: 'address',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('address'),
       },
       {
@@ -262,7 +262,7 @@ const filterData = (data) =>
           </p>
         ),
       
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('dateOfOnBoarding'),
       },
      
@@ -270,7 +270,7 @@ const filterData = (data) =>
         title: 'Date',
         dataIndex: 'createdAt',
         key: 'createdAt',
-        width: '20%',
+        // width: '20%',
         ...getColumnSearchProps('createdAt'),
       },
     
