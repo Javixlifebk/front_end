@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useEffect,useRef, useState } from 'react'
+// import { environment } from '../../api'
+// import { Space, Table, Tag } from 'antd';
 import {
   Card,
   CardBody,
@@ -7,352 +9,301 @@ import {
   Row,
   Col,
   Badge,
-  Input,
-  Button
+  // Input,
+  // Button
 } from "reactstrap"
-import DataTable from "react-data-table-component"
-import { Star, Search } from "react-feather"
-import * as Icon from "react-feather"
+import 'antd/dist/antd.css';
+// import './index.css';
+import { SearchOutlined } from '@ant-design/icons';
+import { Button, Input, Space, Table } from 'antd';
+import '@mui/x-data-grid-generator'
+import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
-// import profileImg from "../../../assets/img/icons/viewprofile.png"
-const CustomHeader = props => {
-  return (
-    <div className="d-flex flex-wrap justify-content-between">
-      <div className="add-new">
-        
-      </div>
-      <div className="position-relative has-icon-left mb-1">
-        <Input value={props.value} placeholder="search" onChange={e => props.handleFilter(e)} />
-        <div className="form-control-position">
-          <Search size="15" />
-        </div>
-      </div>
-    </div>
-  )
-}
+import { Star, Search } from "react-feather";
+import Highlighter from 'react-highlight-words';
 
-class LipidPanelcholesterolGreen extends React.Component {
 
-  state = {
-    casetype: "",
-    password: "",
-    remember: false,
-    myexection:''
-  }
-//   else if((bloodglucose>=101 && bloodglucose<=125)) {
-//     return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
-//  }else if(bloodglucose>=126 &&  bloodglucose<60){
-//     return(<span style={{background:'red',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
-//  }
-
-    setBMI(val){
-        if(val>18 && val<=25 ){
-            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>BMI:{val}</span>);
-        }else if(val>25 && val<=30){
-            return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>BMI:{val}</span>);
-        }else if(val>30 || val<18){
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>BMI:{val}</span>);
-        }
-    }
-    setBP(cholesterol){
-
-        if(cholesterol<=200){
-            return(<span style={{background:'#008000',padding:'4px',color:'white',borderRadius:'25px;'}}>cholesterol:{cholesterol}</span>);
-         }else{
-            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>cholesterol:{cholesterol}</span>);
-         }
-    }
-    setSOP2(val){
-        if(val>95 && val<=100 ){
-            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>SPO2:{val}</span>);
-        }else if(val>89 && val<=94){
-            return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>SPO2:{val}</span>);
-        }else if(val<89){
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>SPO2:{val}</span>);
-        }
-    }
-    setPulse(val){
-        if(val>65 && val<=72 ){
-            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>Heart:{val}</span>);
-        }else if(val>72 && val<=83){
-            return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Heart:{val}</span>);
-        }else if(val>83){
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>Heart:{val}</span>);
-        }else{
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>Heart:{val}</span>);
-        }
-    }
-    setTemp(val){
-        if(val>94 && val<=99 ){
-            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
-        }else if(val>99 && val<=103){
-            return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
-        }else if(val>103){
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
-        }else{
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>Temp(F):{val}</span>);
-        }
-    }
-
-    setResp(val){
-        if(val>12 && val<=20 ){
-            return(<span style={{background:'#008000',padding:'4px',color:'white'}}>Resp:{val}</span>);
-        }else if(val>20 && val<=30){
-            return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Resp:{val}</span>);
-        }else if(val>30){
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>Resp:{val}</span>);
-        }else{
-            return(<span style={{background:'red',padding:'4px',color:'white'}}>Resp:{val}</span>);
-        }
-    }
- constructor(props) {
-    super(props);	
-  this.state = {
-      
-      action:{"0":"New Issue","1":"Assigned","2":"Resoved","3":"Closed"},
-      columns: [
-      
-        {
-          name: "Patient Details",
-          selector: "User",
-          sortable: true,
-          cell: row => (
-           <div style={{cursor:'pointer'}}  onClick={() =>this.handleClick(row.fullname)}>
-          
-            {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
-            <p className="text-bold-500 mb-0">{row.fullname}</p>         
-            </div>
-          )
-        },
-        {
-          name: "Mobile",
-          selector: "mobile",
-          sortable: true,
-          cell: row => (
-           <div style={{cursor:'pointer'}}  >
-          
-            {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
-            <p className="text-bold-500 mb-0">{row.mobile}</p>         
-            </div>
-          )
-        },
-        {
-          name: "Citizen Id",
-          selector: "citizenId",
-          sortable: true,
-          cell: row => (
-           <div style={{cursor:'pointer'}}  >
-          
-            {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
-            <p className="text-bold-500 mb-0">{row.citizenId}</p>         
-            </div>
-          )
-        },
-        {
-          name: "Screener Name",
-          selector: "screenerfullname",
-          sortable: true,
-          cell: row => (
-           <div style={{cursor:'pointer'}}  >
-          
-            {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
-            <p className="text-bold-500 mb-0">{row.screenerfullname}</p>         
-            </div>
-          )
-        },
-        {
-          name: "Address",
-          selector: "address",
-          sortable: true,
-          cell: row => (
-           <div style={{cursor:'pointer'}}  >
-          
-            {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
-            <p className="text-bold-500 mb-0">{row.address}</p>         
-            </div>
-          )
-        },
-        {
-          name: "Date Of On Boarding",
-          selector: "dateOfOnBoarding",
-          sortable: true,
-          cell: row => (
-           <div style={{cursor:'pointer'}}  >
-          
-            {/* <p className="text-bold-500 mb-0">{row.citizens[0].firstName + ' ' + row.citizens[0].lastName}</p> */}
-            <p className="text-bold-500 mb-0">{row.dateOfOnBoarding}</p>         
-            </div>
-          )
-        },
-        {
-          name: "Alerts",
-          selector: "alerts",
-          sortable: true,
-          cell: row => (
-           <div>     
-                                   
-            <p className="text-bold-500 mb-0">
-            {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
-            <span style={{margin:'20px;',padding:'4px;'}}>{this.setBP(row.cholesterol)}</span>&nbsp;&nbsp;
-            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
-            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
-            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
-            
-            </p>
-            </div>
-          )
-        }
-      ],
-    data: [],
-    filteredData: [],
-    value: "",
-	recs:[]
-  }
-  this.loadRecs = this.loadRecs.bind(this);
-} // cosntructor
-loadRecs(recs)
- {
-	 
-	 this.setState({data:recs});
-	 
- }
-
- handleClick(_userid) {    
-  localStorage.setItem("citizenId",_userid);
- 
-  window.location='../../views/dashboard/patientview'  
-}
-
- handleSubmit = e => {
-  e.preventDefault()
-  
-
- if(window.confirm("Do you want to raise issue !")){
-
- //alert('okay')
- window.location='../../views/dashboard/reportissue'
- } 
-
-}
-  
-
-componentDidMount() {
-		this.mounted = true;
-		//this.setState({data:null});
-    // if(localStorage.getItem("severity")==="1"){
-    
-		  axios.post('http://javixlife.org:3010/api/labtest/LipidPanelCholesterolGreenList')
-		 .then(response => {
-				
-					if(response.data.status===1)
-					  {
-						  var msg=response.data.message;
-						  var recs=response.data.data.data;
-						  this.loadRecs(recs);
-              this.state.casetype="amber";
-					  }
-		 });// then
-    // }
-    // else if(localStorage.getItem("severity")==="0"){
-    //   axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:0})
-    //   .then(response => {
-    //     
-    //        if(response.data.status===1)
-    //          {
-    //            var msg=response.data.message;
-    //            var recs=response.data.data.data;
-    //            this.loadRecs(recs);
-    //            this.state.casetype="green";
-    //          }
-    //   });// then
-    // }else if(localStorage.getItem("severity")==="2"){
-    //   axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:2})
-    //   .then(response => {
-   
-    //        if(response.data.status===1)
-    //          {
-    //            var msg=response.data.message;
-    //            var recs=response.data.data.data;
-    //            this.loadRecs(recs);
-    //            this.state.casetype="red";
-    //          }
-    //   });// then
-    // }
-  }
-
-  handleFilter = e => {
-    let value = e.target.value
-    let data = this.state.data
-    let filteredData = this.state.filteredData
-    this.setState({ value })
-
-    if (value.length) {
-      filteredData = data.filter(item => {
-		  console.dir(item.userId);
-        let startsWithCondition =
-         
-           item.citizens[0].firstName.toLowerCase().startsWith(value.toLowerCase()) ||
-           item.citizens[0].lastName.toLowerCase().startsWith(value.toLowerCase()) 
-        let includesCondition =
-        
-         item.citizens[0].firstName.toLowerCase().includes(value.toLowerCase()) ||
-		     item.citizens[0].lastName.toLowerCase().includes(value.toLowerCase())
-
-        if (startsWithCondition) {
-          return startsWithCondition
-        } else if (!startsWithCondition && includesCondition) {
-          return includesCondition
-        } else return null 
-      })
-      this.setState({ filteredData })
-    }
-	
-  }
-
-  /* render for all */
-  render() {
-
-    let { data, columns, value, filteredData } = this.state
+  const CustomHeader = (props) => {
     return (
-      <React.Fragment >
+      <div className="d-flex flex-wrap justify-content-between">
+        <div className="add-new"></div>
+        <div className="row">
+          <div className="col-sm-3">
+            <div className="position-relative has-icon-left mb-1">
+              <Input
+                value={props.value.firstName}
+                placeholder="search by name"
+                onChange={(e) => props.handleFilter(e)}
+              />
+              <div className="form-control-position">
+                <Search size="15" />
+              </div>
+            </div>
+          </div>
+          
+        </div>
+     
+      </div>
+    );
+  };
+  
+function LipidPanelcholesterolGreen() {
+   
+    const [rows, setUsers] = useState('');
+    useEffect(() => {
+        axios.post("http://javixlife.org:3010/api/labtest/LipidPanelCholesterolGreenList" )
+       .then(response => {
+                 
+                  if(response.data.status===1)
+                    {
+                        var recs=response.data.data.data;
+                        setUsers(recs);
+                    }
+       },[]);
+     
+},[])
+const filterData = (data) =>
+    data.map((item) => ({
+      key: item,
+      value: item,
+      text: item
+    }));
 
+    const [searchText, setSearchText] = useState('');
+    const [searchedColumn, setSearchedColumn] = useState('');
+    const searchInput = useRef(null);
+  
+    const handleSearch = (selectedKeys, confirm, dataIndex) => {
+      confirm();
+      setSearchText(selectedKeys[0]);
+      setSearchedColumn(dataIndex);
+    };
+  
+    const handleReset = (clearFilters) => {
+      clearFilters();
+      setSearchText('');
+    };
+    const setBP=(cholesterol)=>{
 
-         <Row>
-      <Col lg="12" md="12">
-      <Card>
-        <CardHeader>
-       
-        </CardHeader>
-        <CardBody className="rdt_Wrapper">
-        <Row>
-          <Col sm="12">
-          <CardTitle>Lipid Panel Green Cases</CardTitle>
-          </Col>          
-          </Row>
-          <Row>
-          <Col sm="12">
-          <DataTable
-            className="dataTable-custom"
-            data={value.length ? filteredData : data}
-            columns={columns}
-            noHeader
-            pagination
-            subHeader
-            noDataComponent="Loading...."
-            subHeaderComponent={
-              <CustomHeader value={value} handleFilter={this.handleFilter} />
-            }
-          />
-          </Col>
-          </Row>
-        </CardBody>
-      </Card>
-      </Col>
-      </Row>
-      </React.Fragment>
-    )
+      if(cholesterol<=200){
+        return(<span style={{background:'#008000',padding:'4px',color:'white',borderRadius:'25px;'}}>cholesterol:{cholesterol}</span>);
+     }else{
+        return(<span style={{background:'#008000',padding:'4px',color:'white'}}>cholesterol:{cholesterol}</span>);
+     }
   }
-  /* ENd rebder */
-}
+   const  getCitizenScreener=(_screenerId) =>{
+        localStorage.setItem("_screenerId", _screenerId);
+        document.location = "/dashboard/citizenlist1";
+      }
+      const  getCaseScreener=(_screenerId) =>{
+        localStorage.setItem("_screenerId", _screenerId);
+        document.location = "/dashboard/casesList";
+        console.log(_screenerId, "###################")
+        // console.log("screener Id ",screenerId);
+      }
+    const getColumnSearchProps = (dataIndex) => ({
+      filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
+        <div
+          style={{
+            padding: 8,
+          }}
+        >
+          <Input
+            ref={searchInput}
+            placeholder={`Search ${dataIndex}`}
+            value={selectedKeys[0]}
+            onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
+            onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
+            style={{
+              marginBottom: 8,
+              display: 'block',
+            }}
+          />
+          <Space>
+            <Button
+              type="primary"
+              onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+              icon={<SearchOutlined />}
+              size="small"
+              style={{
+                width: 90,
+              }}
+            >
+              Search
+            </Button>
+            <Button
+              onClick={() => clearFilters && handleReset(clearFilters)}
+              size="small"
+              style={{
+                width: 90,
+              }}
+            >
+              Reset
+            </Button>
+            <Button
+              type="link"
+              size="small"
+              onClick={() => {
+                confirm({
+                  closeDropdown: false,
+                });
+                setSearchText(selectedKeys[0]);
+                setSearchedColumn(dataIndex);
+              }}
+            >
+              Filter
+            </Button>
+          </Space>
+        </div>
+      ),
+      filterIcon: (filtered) => (
+        <SearchOutlined
+          style={{
+            color: filtered ? '#1890ff' : undefined,
+          }}
+        />
+      ),
+      onFilter: (value, record) =>
+        record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
+      onFilterDropdownVisibleChange: (visible) => {
+        if (visible) {
+          setTimeout(() => searchInput.current?.select(), 100);
+        }
+      },
+     
+      render: (text) =>
+        searchedColumn === dataIndex ? (
+          <Highlighter
+            highlightStyle={{
+              backgroundColor: '#ffc069',
+              padding: 0,
+            }}
+            searchWords={[searchText]}
+            autoEscape
+            textToHighlight={text ? text.toString() : ''}
+          />
+        ) : (
+          text
+        ),
+    });
+    
+    const columns = [
+    //   {
+    //     title: 'Name',
+    //     dataIndex: 'firstName',
+    //     key: 'firstName',
+    //     render: (_, { firstName }) => (
+    //         <button>
+    //           {firstName.map((tag) => {
+    //           return (
+    //               <a  key={tag}>
+    //                 {tag.toUpperCase()}
+    //               </a>
+    //             );
+    //           })}
+    //         </button>
+    //       ),
+    //     width: '30%',
+    //     ...getColumnSearchProps('firstName'),
+    //   },
+   
+    {
+        title: "Patient Details",
+        dataIndex: "fullname",
+        key: 'fullname',
+        width:'40%',
+        // render: (text, record) => (
+        //   <span>{record.firstName} {record.lastName}</span>
+        // ),
+         ...getColumnSearchProps('fullname'),
+      },
+      {
+        title: 'Mobile',
+        dataIndex: 'mobile',
+        key: 'mobile',
+        width: '20%',
+        ...getColumnSearchProps('mobile'),
+      },
+      {
+        title: 'Case ID',
+        dataIndex: 'caseId',
+        key: 'caseId',
+        width: '20%',
+        ...getColumnSearchProps('caseId'),
+      },
+      {
+        title: 'Citizen ID',
+        dataIndex: 'citizenId',
+        key: 'citizenId',
+        width: '20%',
+        ...getColumnSearchProps('citizenId'),
+      },
+      {
+        title: 'Screener FullName',
+        dataIndex: 'screenerfullname',
+        key: 'screenerfullname',
+        width: '20%',
+        ...getColumnSearchProps('screenerfullname'),
+      },
+      {
+        title: 'Address',
+        dataIndex: 'address',
+        key: 'address',
+        width: '20%',
+        ...getColumnSearchProps('address'),
+      },
+      {
+        title: 'onBoarding Date',
+        dataIndex: 'dateOfOnBoarding',
+       key: 'dateOfOnBoarding',
+        render: (_, row) => (
+          <p size="middle">
+             {/* {row.issubscreener > 0 ? "Sevika" : "Sanyojika"}, */}
+          </p>
+        ),
+      
+        width: '20%',
+        ...getColumnSearchProps('dateOfOnBoarding'),
+      },
+     
+      {
+        title: 'Date',
+        dataIndex: 'createdAt',
+        key: 'createdAt',
+        width: '20%',
+        ...getColumnSearchProps('createdAt'),
+      },
+    
+      {
+        title: 'Alerts',
+        key: 'alerts',
+        render: (_, record) => (
+          <div>     
+                                 
+          <p className="text-bold-500 mb-0">
+          {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
+          <span style={{margin:'20px;',padding:'4px;'}}>{setBP(record.cholesterol)}</span>&nbsp;&nbsp;
+          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
+          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
+          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
+          
+          </p>
+          </div>
+        ),
+      },
+    ];
+    
+    return (
+      <>
+       <Row>
+      <Col sm="12">
+      <CardTitle><b><h3>Cholesterol Green Cases</h3></b> </CardTitle>
+      </Col>          
+      </Row>
+    <Table columns={columns} dataSource={rows} 
+    locale={{emptyText:"loading..."}}/>
+    </>
+    );
+  };
 
-export default LipidPanelcholesterolGreen;
+export default LipidPanelcholesterolGreen

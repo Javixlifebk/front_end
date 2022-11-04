@@ -21,41 +21,8 @@ import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarE
 import axios from "axios";
 import { Star, Search } from "react-feather";
 import Highlighter from 'react-highlight-words';
-// function CustomToolbar() {
-//   return (
-//     <GridToolbarContainer>
-//       <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
-//       {/* <GridFilterPanel /> */}
-//       <GridToolbarFilterButton />
-//     </GridToolbarContainer>
-//   );
-// }
-const data = [
-    // {
-    //   key: '1',
-    //   name: 'John Brown',
-    //   age: 32,
-    //   address: 'New York No. 1 Lake Park',
-    // },
-    // {
-    //   key: '2',
-    //   name: 'Joe Black',
-    //   age: 42,
-    //   address: 'London No. 1 Lake Park',
-    // },
-    // {
-    //   key: '3',
-    //   name: 'Jim Green',
-    //   age: 32,
-    //   address: 'Sidney No. 1 Lake Park',
-    // },
-    // {
-    //   key: '4',
-    //   name: 'Jim Red',
-    //   age: 32,
-    //   address: 'London No. 2 Lake Park',
-    // },
-  ];
+
+
   const CustomHeader = (props) => {
     return (
       <div className="d-flex flex-wrap justify-content-between">
@@ -75,16 +42,7 @@ const data = [
           </div>
           
         </div>
-        {/* <div className="position-relative has-icon-left mb-1">
-          <Input
-            value={props.value}
-            placeholder="search"
-            onChange={(e) => props.handleFilter(e)}
-          />
-          <div className="form-control-position">
-            <Search size="15" />
-          </div>
-        </div> */}
+     
       </div>
     );
   };
@@ -274,6 +232,13 @@ const filterData = (data) =>
         ...getColumnSearchProps('citizenId'),
       },
       {
+        title: 'Case ID',
+        dataIndex: 'caseId',
+        key: 'caseId',
+        width: '20%',
+        ...getColumnSearchProps('caseId'),
+      },
+      {
         title: 'Screener FullName',
         dataIndex: 'screenerfullname',
         key: 'screenerfullname',
@@ -335,7 +300,8 @@ const filterData = (data) =>
       <CardTitle><b><h3>Hemoglobin Amber Cases</h3></b> </CardTitle>
       </Col>          
       </Row>
-    <Table columns={columns} dataSource={rows} />
+    <Table columns={columns} dataSource={rows} 
+    locale={{emptyText:"loading..."}}/>
     </>
     );
   };

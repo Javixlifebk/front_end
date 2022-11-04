@@ -213,7 +213,6 @@ const filterData = (data) =>
     });
     
     const columns = [
-   
       {
         title: "citizen ID",
         dataIndex: "citizenId",
@@ -223,8 +222,7 @@ const filterData = (data) =>
         // ),
          ...getColumnSearchProps('citizenId'),
       },
-      
-    {
+      {
         title: "Citizen Name",
         dataIndex: "fullname",
         key: 'fullname',
@@ -249,9 +247,6 @@ const filterData = (data) =>
         width: '20%',
         ...getColumnSearchProps('mobile'),
       },
-    
-      
-     
       {
         title: 'Gender',
         dataIndex: 'sex',
@@ -267,7 +262,6 @@ const filterData = (data) =>
         width: '20%',
         ...getColumnSearchProps('createdAt'),
       },
-    
       {
         title: 'Action',
         key: 'action',
@@ -277,7 +271,6 @@ const filterData = (data) =>
           onClick={() => getCaseScreener(record.citizenId)}>
             <a>pick And Prescribe</a>
           </button>
-          
         ),
       },
     ];
