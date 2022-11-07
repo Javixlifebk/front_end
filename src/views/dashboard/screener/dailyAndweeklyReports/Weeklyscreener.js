@@ -94,7 +94,6 @@ function WeeklyScreener() {
     {  minWidth : 100, headerName: 'bilirubin', field: 'bilirubin'  },
     {  minWidth : 100, headerName: 'PH', field: 'PH'  },
     {  minWidth : 100, headerName: 'Urine Glucose', field: 'urineglucose'  },
-    { field: 'urineglucose', headerName: 'Urine Glucose', width: 120 },
     {  minWidth : 100, headerName: 'FVC Predicted', field: 'fvc_predicted'  },
     {  minWidth : 100, headerName: 'FVC Actual', field: 'fvc_actual'  },
     {  minWidth : 100, headerName: 'FVC Predicted Percent', field: 'fvc_predicted_percent'  },
@@ -111,10 +110,11 @@ function WeeklyScreener() {
     {  minWidth : 100, headerName: 'cholesterol', field: 'cholesterol' ,filter: true },
     {  minWidth : 100, headerName: 'hdlcholesterol', field: 'hdlcholesterol' ,filter: true },
     {  minWidth : 100, headerName: 'triglycerides', field: 'triglycerides' ,filter: true },
-    {  minWidth : 100, headerName: 'ldl', field: 'ldl' ,filter: true },
-    {  minWidth : 100, headerName: 'tcl_hdl', field: 'tcl_hdl' ,filter: true },
-    {  minWidth : 100, headerName: 'ldl_hdl', field: 'ldl_hdl' ,filter: true },
-    {  minWidth : 100, headerName: 'non_hdl', field: 'non_hdl' ,filter: true },
+    {  minWidth : 100, headerName: 'LDL', field: 'ldl' ,filter: true },
+    {  minWidth : 100, headerName: 'TC/HDL', field: 'tcl_hdl' ,filter: true },
+    {  minWidth : 100, headerName: 'LDL/HDL', field: 'ldl_hdl' ,filter: true },
+    {  minWidth : 100, headerName: 'NON_HDL', field: 'non_hdl' ,filter: true },
+    {  minWidth : 100, headerName: 'Lipid Panel Glucose', field: 'lipidglucose' ,filter: true },
     
     {
       minWidth : 100, headerName: "Date",
