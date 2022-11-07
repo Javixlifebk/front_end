@@ -95,6 +95,8 @@ function LipidCritical() {
     { field: 'bilirubin', headerName: 'bilirubin', width: 120 },
     { field: 'PH', headerName: 'PH', width: 120 },
     { field: 'urineglucose', headerName: 'Urine Glucose', width: 120 },
+    { field: 'leukocytes', headerName: 'leukocytes', width: 120 },
+ 
     { field: 'fvc_predicted', headerName: 'FVC Predicted', width: 120 },
     { field: 'fvc_actual', headerName: 'FVC Actual', width: 120 },
     { field: 'fvc_predicted_percent', headerName: 'FVC Predicted Percent', width: 120 },
@@ -110,12 +112,12 @@ function LipidCritical() {
     { field: 'cholesterol', headerName: 'Cholesterol', width: 120 },
     { field: 'hdlcholesterol', headerName: 'HdlCholesterol', width: 120 },
     { field: 'triglycerides', headerName: 'Triglycerides', width: 120 },
-    { field: 'ldl', headerName: 'ldl', width: 120 },
-    { field: 'tcl_hdl', headerName: 'tcl hdl', width: 120 },
-    { field: 'ldl_hdl', headerName: 'ldl hdl', width: 120 },
-    { field: 'non_hdl', headerName: 'non_hdl', width: 120 },
+    { field: 'ldl', headerName: 'LDL', width: 120 },
+    { field: 'tcl_hdl', headerName: 'TC/HDL', width: 120 },
+    { field: 'ldl_hdl', headerName: 'LDL/HDL', width: 120 },
+    { field: 'non_hdl', headerName: 'NON_HDL', width: 120 },
     { field: 'lipidglucose', headerName: 'Lipid Panel Glucose', width: 120 },
-   { field: 'glucose', headerName: 'Glucose hdl', width: 120 },
+  //  { field: 'glucose', headerName: 'Glucose hdl', width: 120 },
     { field: 'type', headerName: 'type', width: 120 },
    
   ]
