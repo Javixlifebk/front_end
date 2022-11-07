@@ -297,7 +297,7 @@ const filterData = (data) =>
       <>
        <Row>
       <Col sm="12">
-      <CardTitle><b><h3>LDL Lipid Panel Green Cases</h3></b> </CardTitle>
+      <CardTitle><b><h3>LDL Lipid Panel Red Cases</h3></b> </CardTitle>
       </Col>          
       </Row>
     <Table columns={columns} dataSource={rows}

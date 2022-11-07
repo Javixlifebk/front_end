@@ -62,7 +62,6 @@ function WeeklyScreener() {
     {minWidth : 100, headerName: "citizenId", field: "citizenId" ,filter: true },
     {minWidth : 100, headerName: "screenerId", field: "screenerId",filter: true },
     { minWidth : 100, headerName: "caseId", field: "caseId",filter: true },
-    { minWidth : 100, headerName: "height", field: "height", filter:true },
     {  minWidth : 130, headerName: 'Citizen Name', field: 'fullname',filter: true },
     {  minWidth : 130, headerName: 'Sanyojika Name', field: 'screenerfullname',filter: true },
     { minWidth : 100, headerName: 'DOB', field: 'DOB',filter: true },
@@ -71,7 +70,8 @@ function WeeklyScreener() {
     {  minWidth : 100, headerName: 'Aadhar number', field: 'aadhaar',filter: true  },
     {  minWidth : 100, headerName: 'Mobile number', field: 'Mobile',filter: true  },
     {  minWidth : 100, headerName: 'Address', field: 'address',filter: true  },
-    { minWidth : 100, headerName: 'weight', field: 'weight'  },
+    {  minWidth : 100, headerName: "height", field: "height", filter:true },
+    {  minWidth : 100, headerName: 'weight', field: 'weight'  },
     {  minWidth : 100, headerName: 'bmi', field: 'bmi' },
     {  minWidth : 100, headerName: 'bpsys', field: 'bpsys'  },
     {  minWidth : 100, headerName: 'bpdia', field: 'bpdia' },
@@ -79,8 +79,8 @@ function WeeklyScreener() {
     {  minWidth : 100, headerName: 'pulse', field: 'pulse' },
     {  minWidth : 100, headerName: 'temperature', field: 'temperature'},
     {  minWidth : 100, headerName: 'Arm', field: 'arm'  },
-    {  minWidth : 100, headerName: 'Left Eye Range', field: 'leyeleft'  },
-    {  minWidth : 100, headerName: 'Right Eye Range', field: 'reyeright'  },
+    {  minWidth : 100, headerName: 'Left Eye Range', field:'leyeleft',  cellClass: 'numberType'  },
+    {  minWidth : 100, headerName: 'Right Eye Range', field: 'reyeright' , cellClass: 'textType' },
     {  minWidth : 100, headerName: 'hemoglobins', field: 'hemoglobins' , filter: true}, 
     {  minWidth : 100, headerName: 'Blood Glucose unit', field: 'unit' },
     {  minWidth : 150, headerName: 'Blood Glucose type', field: 'btype' },
@@ -92,18 +92,30 @@ function WeeklyScreener() {
     {  minWidth : 100, headerName: 'specific Gravity', field: 'specificGravity'  },
     {  minWidth : 100, headerName: 'ketone', field: 'ketone'  },
     {  minWidth : 100, headerName: 'bilirubin', field: 'bilirubin'  },
+    {  minWidth : 100, headerName: 'PH', field: 'PH'  },
+    {  minWidth : 100, headerName: 'Urine Glucose', field: 'urineglucose'  },
+    { field: 'urineglucose', headerName: 'Urine Glucose', width: 120 },
     {  minWidth : 100, headerName: 'FVC Predicted', field: 'fvc_predicted'  },
     {  minWidth : 100, headerName: 'FVC Actual', field: 'fvc_actual'  },
     {  minWidth : 100, headerName: 'FVC Predicted Percent', field: 'fvc_predicted_percent'  },
-    {  minWidth : 100, headerName: 'FEV Predicted', field: 'fev1_predicted'  },
+    {  minWidth : 100, headerName: 'FEV1 Predicted', field: 'fev1_predicted'  },
     {  minWidth : 100, headerName: 'FEV1 Actual', field: 'fev1_actual'  },
     {  minWidth : 100, headerName: 'FEV1 Predicted Percent', field: 'fev1_predicted_percent'  },
+    {  minWidth : 100, headerName: 'PEF Actual', field: 'pef_actual'  },
     {  minWidth : 100, headerName: 'PEF Predicted', field: 'pef_predicted'  },
     {  minWidth : 100, headerName: 'PEF Predicted Percent', field: 'pef_predicted_percent'  },
     {  minWidth : 100, headerName: 'FVC1 Predicted', field: 'fvc1_predicted'  },
     {  minWidth : 100, headerName: 'FVC1 Actual', field: 'fvc1_actual'  },
     {  minWidth : 100, headerName: 'FVC1 Predicted Percent', field: 'fvc1_predicted_percent'  }, 
     {  minWidth : 100, headerName: 'type', field: 'type' ,filter: true },
+    {  minWidth : 100, headerName: 'cholesterol', field: 'cholesterol' ,filter: true },
+    {  minWidth : 100, headerName: 'hdlcholesterol', field: 'hdlcholesterol' ,filter: true },
+    {  minWidth : 100, headerName: 'triglycerides', field: 'triglycerides' ,filter: true },
+    {  minWidth : 100, headerName: 'ldl', field: 'ldl' ,filter: true },
+    {  minWidth : 100, headerName: 'tcl_hdl', field: 'tcl_hdl' ,filter: true },
+    {  minWidth : 100, headerName: 'ldl_hdl', field: 'ldl_hdl' ,filter: true },
+    {  minWidth : 100, headerName: 'non_hdl', field: 'non_hdl' ,filter: true },
+    
     {
       minWidth : 100, headerName: "Date",
        field: "createdAt",
@@ -111,6 +123,16 @@ function WeeklyScreener() {
       filterParams: dateFilterParams,
     },
   ];
+  const excelStyles=[
+    {
+      id: 'numberType',
+      numberFormat: {
+        format: '0',
+      },
+    },
+  ]
+  // 
+  
   const defColumnDefs = { flex: 1 };
 
   const onGridReady = (params) => {
@@ -198,6 +220,7 @@ function WeeklyScreener() {
           rowData={rowData}
           suppressExcelExport={true}
           columnDefs={columns}
+          excelStyles={excelStyles}
           defaultColDef={defColumnDefs}
           onGridReady={onGridReady}
           pagination={true}

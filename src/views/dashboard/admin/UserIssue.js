@@ -150,8 +150,8 @@ componentDidMount() {
            item.issue.toLowerCase().startsWith(value.toLowerCase()) ||
            item.issueDetails.toLowerCase().startsWith(value.toLowerCase()) 
         let includesCondition =
+        item.issueNo.toLowerCase().startsWith(value.toLowerCase())
           item.issue.toLowerCase().includes(value.toLowerCase()) ||
-          item.info.firstName.toLowerCase().includes(value.toLowerCase()) ||
 		      item.issueDetails.toLowerCase().includes(value.toLowerCase())
 
         if (startsWithCondition) {
