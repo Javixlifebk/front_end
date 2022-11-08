@@ -118,6 +118,78 @@ class ScreenerCasesList extends React.Component {
           </div>
         )
       },
+      {
+        name: "Email",
+        selector: "Email",
+        sortable: true,
+        cell: row => (
+         <div style={{cursor:'pointer'}} >
+        
+         {/* <p className="text-bold-500 mb-0">{row.fullname}</p>  */}
+          <p className="text-bold-500 mb-0">{row.email}</p>         
+          </div>
+        )
+      },
+      {
+        name: "Mobile Number",
+        selector: "Mobile Number",
+        sortable: true,
+        cell: row => (
+         <div style={{cursor:'pointer'}} >
+        
+         {/* <p className="text-bold-500 mb-0">{row.fullname}</p>  */}
+          <p className="text-bold-500 mb-0">{row.mobile}</p>         
+          </div>
+        )
+      },
+      {
+        name: "Gender",
+        selector: "Gender",
+        sortable: true,
+        cell: row => (
+         <div style={{cursor:'pointer'}} >
+        
+         {/* <p className="text-bold-500 mb-0">{row.fullname}</p>  */}
+          <p className="text-bold-500 mb-0">{row.gender}</p>         
+          </div>
+        )
+      },
+      {
+        name: "Address",
+        selector: "Address",
+        sortable: true,
+        cell: row => (
+         <div style={{cursor:'pointer'}} >
+        
+         {/* <p className="text-bold-500 mb-0">{row.fullname}</p>  */}
+          <p className="text-bold-500 mb-0">{row.address}</p>         
+          </div>
+        )
+      },
+      {
+        name: "Date of Birth",
+        selector: "Date of Birth",
+        sortable: true,
+        cell: row => (
+         <div style={{cursor:'pointer'}} >
+        
+         {/* <p className="text-bold-500 mb-0">{row.fullname}</p>  */}
+          <p className="text-bold-500 mb-0">{row.dob}</p>         
+          </div>
+        )
+      },
+      {
+        name: "Created At",
+        selector: "Gender",
+        sortable: true,
+        cell: row => (
+         <div style={{cursor:'pointer'}} >
+        
+         {/* <p className="text-bold-500 mb-0">{row.fullname}</p>  */}
+          <p className="text-bold-500 mb-0">{row.createdAt}</p>         
+          </div>
+        )
+      },
      
        
 
@@ -225,7 +297,7 @@ componentDidMount() {
         <CardBody className="rdt_Wrapper">
         <Row>
           <Col sm="12">
-          <CardTitle>Screener Cases List</CardTitle>
+          <CardTitle>Cases List</CardTitle>
           </Col>          
           </Row>
           <Row>

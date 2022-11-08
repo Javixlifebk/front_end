@@ -115,7 +115,6 @@ function WeeklyScreener() {
     {  minWidth : 100, headerName: 'LDL/HDL', field: 'ldl_hdl' ,filter: true },
     {  minWidth : 100, headerName: 'NON_HDL', field: 'non_hdl' ,filter: true },
     {  minWidth : 100, headerName: 'Lipid Panel Glucose', field: 'lipidglucose' ,filter: true },
-    
     {
       minWidth : 100, headerName: "Date",
        field: "createdAt",

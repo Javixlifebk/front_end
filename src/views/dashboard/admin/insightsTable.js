@@ -306,7 +306,7 @@ const filterData = (data) =>
         render: (_, record) => (
           <button size="middle"
           className="btn-success"
-          onClick={() =>  record.issubscreener === "Sevika" ? getCitizenScreener(record.screenerId) : getCaseScreener(record.screenerId)}>
+          onClick={() => getCaseScreener(record.screenerId)}>
             <a>view</a>
           </button>
           
