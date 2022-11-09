@@ -121,8 +121,8 @@ const filterData = (data) =>
       }
       const  getCaseScreener=(citizenId) =>{
         localStorage.setItem("citizenId", citizenId);
-        alert(citizenId, "###################")
-        document.location =  `/dashboard/doctor/patientlist`;
+        // alert(citizenId, "###################")
+        document.location =  `/dashboard/doctor/refercaseslist`;
        
         // console.log("screener Id ",screenerId);
       }

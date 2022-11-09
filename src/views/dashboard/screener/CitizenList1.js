@@ -180,10 +180,18 @@ getImage(imagUrl){
  return imagUrl;
 }
 
-getCaseDetails(_citizenId){
-  localStorage.setItem("_citizenId",_citizenId);
-  document.location="/dashboard/doctor/patientlist";  
+getCaseDetails(citizenId){
+  localStorage.setItem("citizenId",citizenId);
+  // alert('citizenId',citizenId)
+  document.location=`/dashboard/doctor/patientlist`;  
 }
+// getCaseDetails=(citizenId) =>{
+//   localStorage.setItem("citizenId", citizenId);
+//   alert(citizenId, "###################")
+//   document.location =  `/dashboard/doctor/refercaseslist`;
+ 
+//   // console.log("screener Id ",screenerId);
+// }
 
 
 componentDidMount() {
