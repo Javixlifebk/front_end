@@ -21,8 +21,41 @@ import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarE
 import axios from "axios";
 import { Star, Search } from "react-feather";
 import Highlighter from 'react-highlight-words';
-
-
+// function CustomToolbar() {
+//   return (
+//     <GridToolbarContainer>
+//       <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
+//       {/* <GridFilterPanel /> */}
+//       <GridToolbarFilterButton />
+//     </GridToolbarContainer>
+//   );
+// }
+const data = [
+    // {
+    //   key: '1',
+    //   name: 'John Brown',
+    //   age: 32,
+    //   address: 'New York No. 1 Lake Park',
+    // },
+    // {
+    //   key: '2',
+    //   name: 'Joe Black',
+    //   age: 42,
+    //   address: 'London No. 1 Lake Park',
+    // },
+    // {
+    //   key: '3',
+    //   name: 'Jim Green',
+    //   age: 32,
+    //   address: 'Sidney No. 1 Lake Park',
+    // },
+    // {
+    //   key: '4',
+    //   name: 'Jim Red',
+    //   age: 32,
+    //   address: 'London No. 2 Lake Park',
+    // },
+  ];
   const CustomHeader = (props) => {
     return (
       <div className="d-flex flex-wrap justify-content-between">
@@ -42,7 +75,16 @@ import Highlighter from 'react-highlight-words';
           </div>
           
         </div>
-     
+        {/* <div className="position-relative has-icon-left mb-1">
+          <Input
+            value={props.value}
+            placeholder="search"
+            onChange={(e) => props.handleFilter(e)}
+          />
+          <div className="form-control-position">
+            <Search size="15" />
+          </div>
+        </div> */}
       </div>
     );
   };
@@ -50,18 +92,40 @@ import Highlighter from 'react-highlight-words';
 function HemoglobinAmberTest() {
    
     const [rows, setUsers] = useState('');
+    
+    const [totalPages, settotal] = useState(1);
+    const [Pages, setpages] = useState(2);
+    const [size, setsize] = useState(3);
     useEffect(() => {
-        axios.post("http://javixlife.org:3010/api/labtest/getHemoglobinAmberList" )
-       .then(response => {
-                 
-                  if(response.data.status===1)
-                    {
-                        var recs=response.data.data.data;
-                        setUsers(recs);
-                    }
-       },[]);
-     
+        
+      fetchRecords(1,100);
 },[])
+
+const fetchRecords = (page,size) => {
+  axios.post("http://javixlife.org:3010/api/labtest/getHemoglobinAmberList" ,{
+    "pageNo":page,
+    "size":size
+})
+ .then(response => {
+           
+            if(response.data.status===1)
+              {
+                  var recs=response.data.data;
+
+                  // console.log(response.data.total);
+                  setUsers(recs);
+
+                  settotal(response.data.total)
+                  console.log("111111111111",response.data.total);
+                  setpages(response.data.pages)
+                  console.log("2222222",response.data.pages);
+                  setsize(response.data.size)
+                  console.log("333333333",response.data.size);
+                  console.log(recs);
+              }
+ },[]);
+};
+
 const filterData = (data) =>
     data.map((item) => ({
       key: item,
@@ -188,111 +252,111 @@ const filterData = (data) =>
     });
     
     const columns = [
-    //   {
-    //     title: 'Name',
-    //     dataIndex: 'firstName',
-    //     key: 'firstName',
-    //     render: (_, { firstName }) => (
-    //         <button>
-    //           {firstName.map((tag) => {
-    //           return (
-    //               <a  key={tag}>
-    //                 {tag.toUpperCase()}
-    //               </a>
-    //             );
-    //           })}
-    //         </button>
-    //       ),
-    //     width: '30%',
-    //     ...getColumnSearchProps('firstName'),
-    //   },
-   
-    {
-        title: "Patient Details",
-        dataIndex: "fullname",
-        key: 'fullname',
-        // render: (text, record) => (
-        //   <span>{record.firstName} {record.lastName}</span>
-        // ),
-         ...getColumnSearchProps('fullname'),
-      },
-      {
-        title: 'Mobile',
-        dataIndex: 'mobile',
-        key: 'mobile',
-        // width: '20%',
-        ...getColumnSearchProps('mobile'),
-      },
-      
-      {
-        title: 'citizen ID',
-        dataIndex: 'citizenId',
-        key: 'citizenId',
-        // width: '10%',
-        ...getColumnSearchProps('citizenId'),
-      },
-      {
-        title: 'Case ID',
-        dataIndex: 'caseId',
-        key: 'caseId',
-        // width: '10%',
-        ...getColumnSearchProps('caseId'),
-      },
-      {
-        title: 'Screener FullName',
-        dataIndex: 'screenerfullname',
-        key: 'screenerfullname',
-        width: '20%',
-        ...getColumnSearchProps('screenerfullname'),
-      },
-      {
-        title: 'Address',
-        dataIndex: 'address',
-        key: 'address',
-        // width: '20%',
-        ...getColumnSearchProps('address'),
-      },
-      {
-        title: 'onBoarding Date',
-        dataIndex: 'dateOfOnBoarding',
-       key: 'dateOfOnBoarding',
-        render: (_, row) => (
-          <p size="middle">
-             {/* {row.issubscreener > 0 ? "Sevika" : "Sanyojika"}, */}
-          </p>
-        ),
-      
-        // width: '20%',
-        ...getColumnSearchProps('dateOfOnBoarding'),
-      },
+      //   {
+      //     title: 'Name',
+      //     dataIndex: 'firstName',
+      //     key: 'firstName',
+      //     render: (_, { firstName }) => (
+      //         <button>
+      //           {firstName.map((tag) => {
+      //           return (
+      //               <a  key={tag}>
+      //                 {tag.toUpperCase()}
+      //               </a>
+      //             );
+      //           })}
+      //         </button>
+      //       ),
+      //     width: '30%',
+      //     ...getColumnSearchProps('firstName'),
+      //   },
      
       {
-        title: 'Date',
-        dataIndex: 'createdAt',
-        key: 'createdAt',
-        // width: '20%',
-        ...getColumnSearchProps('createdAt'),
-      },
-    
-      {
-        title: 'Alerts',
-        key: 'alerts',
-        render: (_, record) => (
-          <div>     
-                                 
-          <p className="text-bold-500 mb-0">
-          {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
-          <span style={{margin:'20px;',padding:'4px;'}}>{setBP(record.hemoglobin)}</span>&nbsp;&nbsp;
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
-          
-          </p>
-          </div>
-        ),
-      },
-    ];
-    
+          title: "Patient Details",
+          dataIndex: "fullname",
+          key: 'fullname',
+          // render: (text, record) => (
+          //   <span>{record.firstName} {record.lastName}</span>
+          // ),
+           ...getColumnSearchProps('fullname'),
+        },
+        {
+          title: 'Mobile',
+          dataIndex: 'mobile',
+          key: 'mobile',
+          // width: '20%',
+          ...getColumnSearchProps('mobile'),
+        },
+        
+        {
+          title: 'citizen ID',
+          dataIndex: 'citizenId',
+          key: 'citizenId',
+          // width: '10%',
+          ...getColumnSearchProps('citizenId'),
+        },
+        {
+          title: 'Case ID',
+          dataIndex: 'caseId',
+          key: 'caseId',
+          // width: '10%',
+          ...getColumnSearchProps('caseId'),
+        },
+        {
+          title: 'Screener FullName',
+          dataIndex: 'screenerfullname',
+          key: 'screenerfullname',
+          width: '20%',
+          ...getColumnSearchProps('screenerfullname'),
+        },
+        {
+          title: 'Address',
+          dataIndex: 'address',
+          key: 'address',
+          // width: '20%',
+          ...getColumnSearchProps('address'),
+        },
+        {
+          title: 'onBoarding Date',
+          dataIndex: 'dateOfOnBoarding',
+         key: 'dateOfOnBoarding',
+          render: (_, row) => (
+            <p size="middle">
+               {/* {row.issubscreener > 0 ? "Sevika" : "Sanyojika"}, */}
+            </p>
+          ),
+        
+          // width: '20%',
+          ...getColumnSearchProps('dateOfOnBoarding'),
+        },
+       
+        {
+          title: 'Date',
+          dataIndex: 'createdAt',
+          key: 'createdAt',
+          // width: '20%',
+          ...getColumnSearchProps('createdAt'),
+        },
+      
+        {
+          title: 'Alerts',
+          key: 'alerts',
+          render: (_, record) => (
+            <div>     
+                                   
+            <p className="text-bold-500 mb-0">
+            {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
+            <span style={{margin:'20px;',padding:'4px;'}}>{setBP(record.hemoglobin)}</span>&nbsp;&nbsp;
+            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
+            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
+            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
+            
+            </p>
+            </div>
+          ),
+        },
+      ];
+      
     return (
       <>
        <Row>
@@ -300,8 +364,22 @@ const filterData = (data) =>
       <CardTitle><b><h3>Hemoglobin Amber Cases</h3></b> </CardTitle>
       </Col>          
       </Row>
-    <Table columns={columns} dataSource={rows} 
-    locale={{emptyText:"loading..."}}/>
+    <Table columns={columns} dataSource={rows}
+    locale={{emptyText:"loading..."}}
+    pagination={{
+      pageSize:size,
+      total:totalPages,
+      onChange: (page,size) => {
+        fetchRecords(page,size);
+        setsize(size)
+      },
+      // total:85,
+      showTotal: (total) => `Total : ${total} Records`
+      // showTotal: (total) =>{ `Total ${total} items`}
+    }}
+    
+    />
+    {/* <span>total:{{totalPages}}</span> */}
     </>
     );
   };

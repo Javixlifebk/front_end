@@ -72,3 +72,18 @@ hr  {
   height: 100%;
   border-right: 3px solid orange;
 }
+.ag-style {
+  height: 280px;
+  width: 100%;
+}
+
+.vertical-middle {
+  display: flex;
+  align-items: center;
+}
+
+.vertical-middle img {
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
