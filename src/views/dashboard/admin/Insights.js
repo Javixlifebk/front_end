@@ -438,8 +438,8 @@ class AdminDashboard extends React.Component {
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
-            if (response.data.data.data[i]._id === 3)
-            var test1 = response.data.data.data[i].count;
+            // if (response.data.data.data[i]._id === 3)
+            // var test1 = response.data.data.data[i].count;
               // this.setState({
               //   severity_hemo_yellow: response.data.data.data[i].count,
               // });
@@ -448,22 +448,22 @@ class AdminDashboard extends React.Component {
                 severity_hemo_red: response.data.data.data[i].count,
               });
             if (response.data.data.data[i]._id === 1)
-            var test2 = response.data.data.data[i].count;
-              // this.setState({
-              //   severity_hemo_amber: response.data.data.data[i].count,
-              // });
+            // var test2 = response.data.data.data[i].count;
+              this.setState({
+                severity_hemo_amber: response.data.data.data[i].count,
+              });
             if (response.data.data.data[i]._id === 0)
               this.setState({
                 severity_hemo_green: response.data.data.data[i].count,
               });
           }
-          var test3 = test1 + test2;
-          if (test3 !='')
-            //var test2 = response.data.data.data[i].count;
-              this.setState({
-                severity_hemo_amber: test3,
-              });
-        } else {
+        //   var test3 = test1 + test2;
+        //   if (test3 !='')
+        //     //var test2 = response.data.data.data[i].count;
+        //       this.setState({
+        //         severity_hemo_amber: test3,
+        //       });
+        // } else {
         }
       })
       .catch((e) => {

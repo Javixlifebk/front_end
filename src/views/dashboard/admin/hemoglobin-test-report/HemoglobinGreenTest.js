@@ -92,18 +92,40 @@ const data = [
 function HemoglobinGreenTest() {
    
     const [rows, setUsers] = useState('');
+    
+    const [totalPages, settotal] = useState(1);
+    const [Pages, setpages] = useState(2);
+    const [size, setsize] = useState(3);
     useEffect(() => {
-        axios.post("http://javixlife.org:3010/api/labtest/getHemoglobinGreenList" )
-       .then(response => {
-                 
-                  if(response.data.status===1)
-                    {
-                        var recs=response.data.data.data;
-                        setUsers(recs);
-                    }
-       },[]);
-     
+        
+      fetchRecords(1,100);
 },[])
+
+const fetchRecords = (page,size) => {
+  axios.post("http://javixlife.org:3010/api/labtest/getHemoglobinGreenList" ,{
+    "pageNo":page,
+    "size":size
+})
+ .then(response => {
+           
+            if(response.data.status===1)
+              {
+                  var recs=response.data.data;
+
+                  // console.log(response.data.total);
+                  setUsers(recs);
+
+                  settotal(response.data.total)
+                  console.log("111111111111",response.data.total);
+                  setpages(response.data.pages)
+                  console.log("2222222",response.data.pages);
+                  setsize(response.data.size)
+                  console.log("333333333",response.data.size);
+                  console.log(recs);
+              }
+ },[]);
+};
+
 const filterData = (data) =>
     data.map((item) => ({
       key: item,
@@ -125,7 +147,7 @@ const filterData = (data) =>
       clearFilters();
       setSearchText('');
     };
-   const setBP =(hemoglobin)=>{
+    const setBP =(hemoglobin)=>{
 
       if(hemoglobin<14 && hemoglobin>18){
           return(<span style={{background:'#008000',padding:'4px',color:'white',borderRadius:'25px;'}}>hemoglobin:{hemoglobin}</span>);
@@ -259,7 +281,7 @@ const filterData = (data) =>
          ...getColumnSearchProps('fullname'),
       },
       {
-        title: "Citizen Id",
+        title: "Citizen ID",
         dataIndex: "citizenId",
         key: 'citizenId',
         // render: (text, record) => (
@@ -317,7 +339,6 @@ const filterData = (data) =>
         // width: '20%',
         ...getColumnSearchProps('createdAt'),
       },
-    
       {
         title: 'Alerts',
         key: 'alerts',
@@ -344,8 +365,22 @@ const filterData = (data) =>
       <CardTitle><b><h3>Hemoglobin Green Cases</h3></b> </CardTitle>
       </Col>          
       </Row>
-    <Table columns={columns} dataSource={rows} 
-    locale={{emptyText:"loading..."}}/>
+    <Table columns={columns} dataSource={rows}
+    locale={{emptyText:"loading..."}}
+    pagination={{
+      pageSize:size,
+      total:totalPages,
+      onChange: (page,size) => {
+        fetchRecords(page,size);
+        setsize(size)
+      },
+      // total:85,
+      showTotal: (total) => `Total : ${total} Records`
+      // showTotal: (total) =>{ `Total ${total} items`}
+    }}
+    
+    />
+    {/* <span>total:{{totalPages}}</span> */}
     </>
     );
   };

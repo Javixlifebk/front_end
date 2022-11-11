@@ -52,11 +52,13 @@ var screenerFilterParams = {
 };
 // http://javixlife.org:3010/api/generalsurvey/screeningScreener
 function WeeklyScreener() {
+  // const perPage = 3;
   const gridRef = useRef();
   const [gridApi, setGridApi] = useState();
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [rowData, setUsers] = useState("");
+  const [perPage, setperPage] = useState("");
 
   const columns = [
     {minWidth : 100, headerName: "citizenId", field: "citizenId" ,filter: true },
@@ -134,9 +136,9 @@ function WeeklyScreener() {
   
   const defColumnDefs = { flex: 1 };
 
-  const onGridReady = (params) => {
-    setGridApi(params);
-  };
+  const onGridReady = (e) => {
+    setGridApi(e.api);
+  }
   const onBtnExport = useCallback(() => {
     gridRef.current.api.exportDataAsCsv();
   }, []);
@@ -161,17 +163,52 @@ function WeeklyScreener() {
       }
     }
   }, [startDate, endDate]);
+  const [totalPages, settotal] = useState("");
+  const [per_page, setpages] = useState("");
+  const [size, setsize] = useState("");
+
 
   useEffect(() => {
+ 
   axios
-    .post("http://javixlife.org:3010/api/generalsurvey/screeningScreener")
+    .post("http://javixlife.org:3010/api/generalsurvey/screeningScreener",{
+      "pageNo":2,
+      "size":100
+  })
     .then((response) => {
       if (response.data.status === 1) {
-        var recs = response.data.data.data;
+        var recs = response.data.data;
         setUsers(recs);
       }
     },[]);
   }, [startDate, endDate]);
+
+
+  // const fetchRecords = (page,perPage) => {
+  //   axios.post("http://javixlife.org:3010/api/generalsurvey/screeningScreener",{
+  //     "pageNo":2,
+  //     "size":perPage
+  // })
+  //  .then(response => {
+             
+  //             if(response.data.status===1)
+  //               {
+  //                   var recs=response.data.data;
+  
+  //                   // console.log(response.data.total);
+  //                   setUsers(response.data.data);
+  
+  //                   settotal(response.data.total)
+  //                   console.log("111111111111",response.data.total);
+  //                   setpages(response.data.total_pages)
+  //                   console.log("2222222",response.data.total_pages);
+  //                   setsize(response.data.per_page)
+  //                   console.log("333333333",response.data.per_page);
+  //                   console.log(recs);
+  //               }
+  //  },[]);
+  // };
+  
   return (
     <div className="App">
       {/* <h2 align="center">Ag Grid with React</h2> */}
@@ -215,14 +252,16 @@ function WeeklyScreener() {
         
         <AgGridReact
         className="pt-5"
-            ref={gridRef}
+          ref={gridRef}
           rowData={rowData}
           suppressExcelExport={true}
           columnDefs={columns}
           excelStyles={excelStyles}
           defaultColDef={defColumnDefs}
           onGridReady={onGridReady}
-          pagination={true}
+           pagination={true}
+         
+       
         />
       </div>
     </div>
