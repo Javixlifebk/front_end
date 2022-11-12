@@ -135,6 +135,7 @@ function WeeklyScreener() {
   // 
   
   const defColumnDefs = { flex: 1 };
+  
 
   const onGridReady = (e) => {
     setGridApi(e.api);
@@ -163,21 +164,25 @@ function WeeklyScreener() {
       }
     }
   }, [startDate, endDate]);
-  const [totalPages, settotal] = useState("");
+  const [totalPages, settotal1] = useState("");
   const [per_page, setpages] = useState("");
-  const [size, setsize] = useState("");
+  const [total, setTotal] = useState("");
 
 
   useEffect(() => {
- 
+    console.log("111111111111111111",total);
   axios
     .post("http://javixlife.org:3010/api/generalsurvey/screeningScreener",{
-      "pageNo":2,
-      "size":100
+      "pageNo":1,
+      "size":per_page,
   })
+ 
     .then((response) => {
       if (response.data.status === 1) {
         var recs = response.data.data;
+        console.log( response.data.data);
+        console.log( response.data.total);
+        setpages(response.data.total)
         setUsers(recs);
       }
     },[]);
@@ -260,7 +265,7 @@ function WeeklyScreener() {
           defaultColDef={defColumnDefs}
           onGridReady={onGridReady}
            pagination={true}
-         
+           paginationPageSize={10}
        
         />
       </div>
