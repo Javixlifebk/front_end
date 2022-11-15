@@ -145,18 +145,11 @@ loadRecs(recs)
  handleClick(screenerId) {
 
   if(window.confirm("Are you sure want to Unmapped Screener !")){
-  let postData="screenerId="+screenerId+"&ismapped=0&token=dfjkhsdfaksjfh3756237"; 
+  // let postData="screenerId="+screenerId+"&ismapped=0&ngoId:0&token=dfjkhsdfaksjfh3756237"; 
   
-  let _targetPostURL="http://javixlife.org:3010/api/ngo/updatescreenermap?=";
-  axios(
-    {
-      method: 'post',
-      url: _targetPostURL,
-      data: postData,
-      headers: {'Content-Type': 'application/x-www-form-urlencoded' }
-      }
-
-  ).then(res=>{
+  // let _targetPostURL="http://javixlife.org:3010/api/ngo/updatescreenermap?=";
+  axios.post('http://javixlife.org:3010/api/ngo/updatescreenermap?=', {screenerId:screenerId ,token:'dfjkhsdfaksjfh3756237',ismapped:0,ngoId:"0"})
+  .then(res=>{
     if(res.data.status===1){
       //alert("Updated Successfully")
       window.location.reload();
@@ -179,9 +172,10 @@ componentWillUnmount(){
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-        
+     console.log( "userId",localStorage.getItem("userId"))
+    const userId=localStorage.getItem("userId")
 		//axios.post('http://javixlife.org:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
-    axios.post('http://javixlife.org:3010/api/ngo/screenermappedlist', {token:'dfjkhsdfaksjfh3756237',issubscreener:0,ismapped:true})
+    axios.post('http://javixlife.org:3010/api/ngo/screenermappedlist', {ngoId:'rakesh' ,token:'dfjkhsdfaksjfh3756237',issubscreener:0,ismapped:true})
 		 .then(response => {
 				
 					if(response.data.status===1)
@@ -204,37 +198,34 @@ handleSubmit = e => {
 }
 
 
-  handleFilter = e => {
-    let value = e.target.value
-    let data = this.state.data
-    let filteredData = this.state.filteredData
-    this.setState({ value })
+handleFilter = e => {
+  let value = e.target.value
+  let data = this.state.data
+  let filteredData = this.state.filteredData
+  this.setState({ value })
 
-    if (value.length) {
-      filteredData = data.filter(item => {
-        let startsWithCondition =
+  if (value.length) {
+    filteredData = data.filter(item => {
+    console.dir(item.userId);
+      let startsWithCondition =
         
-          item.message.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.mobile.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.email.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.revenue.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.status.toLowerCase().startsWith(value.toLowerCase())
-        let includesCondition =
-          item.name.toLowerCase().includes(value.toLowerCase()) ||
-          item.date.toLowerCase().includes(value.toLowerCase()) ||
-          item.email.toLowerCase().includes(value.toLowerCase()) ||
-          item.revenue.toLowerCase().includes(value.toLowerCase()) ||
-          item.status.toLowerCase().includes(value.toLowerCase())
+         item.firstName.toLowerCase().startsWith(value.toLowerCase()) ||
+         item.lastName.toLowerCase().startsWith(value.toLowerCase()) 
+      let includesCondition =
+      
+         item.firstName.toLowerCase().includes(value.toLowerCase()) ||
+         item.lastName.toLowerCase().includes(value.toLowerCase())
 
-        if (startsWithCondition) {
-          return startsWithCondition
-        } else if (!startsWithCondition && includesCondition) {
-          return includesCondition
-        } else return null
-      })
-      this.setState({ filteredData })
-    }
+      if (startsWithCondition) {
+        return startsWithCondition
+      } else if (!startsWithCondition && includesCondition) {
+        return includesCondition
+      } else return null 
+    })
+    this.setState({ filteredData })
   }
+
+}
 
   /* render for all */
   render() {
