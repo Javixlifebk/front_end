@@ -642,7 +642,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/mappedscreener"
+                  navLink: "/dashboard/mappedscreener"
                 },
                 {
                   id: "unmapped",
@@ -650,12 +650,12 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/unmappedscreener"
+                  navLink: "/dashboard/unmappedscreener"
                 }
               ]
             },
             {
-              id: "mapscreener",
+              id: "mapsevika",
               title: "Map Sevika",
               type: "collapse",
               icon: <Icon.Bell size={16} />,               
@@ -666,7 +666,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/mappedsevika"
+                  navLink: "/dashboard/mappedsevika"
                 },
                 {
                   id: "unmapped",
@@ -674,7 +674,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/unmappedsevika"
+                  navLink: "/dashboard/unmappedsevika"
                 }
               ]
             },    
@@ -690,7 +690,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/mappedDoctor"
+                  navLink: "/dashboard/mappedDoctor"
                 },
                 {
                   id: "unmapped",
@@ -698,7 +698,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/unmappedDoctor"
+                  navLink: "/dashboard/unmappedDoctor"
                 }
               ]
             },    

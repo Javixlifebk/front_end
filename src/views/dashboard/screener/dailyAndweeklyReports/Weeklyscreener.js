@@ -265,7 +265,7 @@ function WeeklyScreener() {
           defaultColDef={defColumnDefs}
           onGridReady={onGridReady}
            pagination={true}
-           paginationPageSize={10}
+          //  paginationPageSize={10}
        
         />
       </div>

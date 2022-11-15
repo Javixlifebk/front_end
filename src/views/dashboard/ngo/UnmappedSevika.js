@@ -145,7 +145,7 @@ loadRecs(recs)
  handleClick(screenerId) {
 
   if(window.confirm("Are you sure want to Mapped Sevika !")){
-  let postData="screenerId="+screenerId+"&ismapped=1&token=dfjkhsdfaksjfh3756237"; 
+  let postData="screenerId="+screenerId+"&ismapped=1&token=dfjkhsdfaksjfh3756237&ngoId=rakesh"; 
   
   let _targetPostURL="http://javixlife.org:3010/api/ngo/updatescreenermap?=";
   axios(
@@ -180,7 +180,7 @@ componentDidMount() {
 		//this.setState({data:null});
         
 		//axios.post('http://javixlife.org:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
-    axios.post('http://javixlife.org:3010/api/ngo/sevikaunmappedlist', {token:'dfjkhsdfaksjfh3756237',issubscreener:1,ismapped:false})
+    axios.post('http://javixlife.org:3010/api/ngo/sevikaunmappedlist', {token:'dfjkhsdfaksjfh3756237',issubscreener:1,ismapped:false,ngoId:"0"})
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -201,37 +201,34 @@ handleSubmit = e => {
 }
 
 
-  handleFilter = e => {
-    let value = e.target.value
-    let data = this.state.data
-    let filteredData = this.state.filteredData
-    this.setState({ value })
+handleFilter = e => {
+  let value = e.target.value
+  let data = this.state.data
+  let filteredData = this.state.filteredData
+  this.setState({ value })
 
-    if (value.length) {
-      filteredData = data.filter(item => {
-        let startsWithCondition =
+  if (value.length) {
+    filteredData = data.filter(item => {
+    console.dir(item.userId);
+      let startsWithCondition =
         
-          item.message.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.mobile.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.email.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.revenue.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.status.toLowerCase().startsWith(value.toLowerCase())
-        let includesCondition =
-          item.name.toLowerCase().includes(value.toLowerCase()) ||
-          item.date.toLowerCase().includes(value.toLowerCase()) ||
-          item.email.toLowerCase().includes(value.toLowerCase()) ||
-          item.revenue.toLowerCase().includes(value.toLowerCase()) ||
-          item.status.toLowerCase().includes(value.toLowerCase())
+         item.firstName.toLowerCase().startsWith(value.toLowerCase()) ||
+         item.lastName.toLowerCase().startsWith(value.toLowerCase()) 
+      let includesCondition =
+      
+         item.firstName.toLowerCase().includes(value.toLowerCase()) ||
+         item.lastName.toLowerCase().includes(value.toLowerCase())
 
-        if (startsWithCondition) {
-          return startsWithCondition
-        } else if (!startsWithCondition && includesCondition) {
-          return includesCondition
-        } else return null
-      })
-      this.setState({ filteredData })
-    }
+      if (startsWithCondition) {
+        return startsWithCondition
+      } else if (!startsWithCondition && includesCondition) {
+        return includesCondition
+      } else return null 
+    })
+    this.setState({ filteredData })
   }
+
+}
 
   /* render for all */
   render() {

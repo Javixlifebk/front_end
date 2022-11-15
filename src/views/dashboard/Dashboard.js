@@ -494,14 +494,14 @@ export default class Dashboard extends React.Component {
              
 
 
-              <AppRoute exact path="/mappedscreener/" component={mappedScreener} />
-              <AppRoute exact path="/unmappedscreener/" component={unmappedScreener} />
+              <AppRoute exact path="/dashboard/mappedscreener/" component={mappedScreener} />
+              <AppRoute exact path="/dashboard/unmappedscreener/" component={unmappedScreener} />
 
-              <AppRoute exact path="/mappedsevika" component={mappedSevika} />
-              <AppRoute exact path="/unmappedsevika" component={unmappedSevika} />
+              <AppRoute exact path="/dashboard/mappedsevika" component={mappedSevika} />
+              <AppRoute exact path="/dashboard/unmappedsevika" component={unmappedSevika} />
 
-              <AppRoute exact path="/mappedDoctor" component={mappedDoctor} />
-              <AppRoute exact path="/unmappedDoctor" component={unmappedDoctor} />
+              <AppRoute exact path="/dashboard/mappedDoctor" component={mappedDoctor} />
+              <AppRoute exact path="/dashboard/unmappedDoctor" component={unmappedDoctor} />
 
               <AppRoute exact path="/screditprofile/" component={screenerProfile} />
               <AppRoute exact path="/scrviewprofile/" component={screenerViewProfile} />
