@@ -40,7 +40,7 @@ class JTable extends React.Component {
         sortable: true,
         cell: row => (
           <div>         
-          <div className="text-bold-500 mb-0">{row.info.firstName}&nbsp;{row.lastName}</div>
+          <div className="text-bold-500 mb-0">{row.firstName}&nbsp;{row.lastName}</div>
           </div>
         )
       },
@@ -59,7 +59,7 @@ class JTable extends React.Component {
         selector: "qualification",
         sortable: true,
         cell: row => (
-          <p className="text-bold-500 text-truncate mb-0">{row.info.phoneNo}</p>
+          <p className="text-bold-500 text-truncate mb-0">{row.mobile}</p>
         )
       }     
      
@@ -92,7 +92,9 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		 axios.post('http://javixlife.org:3010/api/auth/authlist', {email:'rahul@gmail.com',status:1,roleId: '21',token:'dfjkhsdfaksjfh3756237' })
+		//  axios.post('http://javixlife.org:3010/api/auth/authlist', {email:'rahul@gmail.com',status:1,roleId: '21',token:'dfjkhsdfaksjfh3756237' })
+		axios.post('http://javixlife.org:3010/api/ngo/sevikalist')
+
 		 .then(response => {
 				
 					if(response.data.status===1)
@@ -116,12 +118,12 @@ componentDidMount() {
       filteredData = data.filter(item => {
         let startsWithCondition =
         
-          item.info.firstName.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.info.lastName.toLowerCase().startsWith(value.toLowerCase()) 
+          item.firstName.toLowerCase().startsWith(value.toLowerCase()) ||
+          item.lastName.toLowerCase().startsWith(value.toLowerCase()) 
          
           let includesCondition =
-          item.info.firstName.toLowerCase().includes(value.toLowerCase()) ||
-          item.info.lastName.toLowerCase().includes(value.toLowerCase()) 
+          item.firstName.toLowerCase().includes(value.toLowerCase()) ||
+          item.lastName.toLowerCase().includes(value.toLowerCase()) 
          
 
         if (startsWithCondition) {

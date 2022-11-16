@@ -265,7 +265,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/screener/dailyAndweeklyReports/Weeklyscreener"
+                  navLink: "/dashboard/screener/dailyAndweeklyReports/Weeklyscreener"
                 },
                 // {
                 //   id: "dailySevikausers",
@@ -281,7 +281,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/screener/dailyAndweeklyReports/WeeklyScreenerSevika"
+                  navLink: "/dashboard/screener/dailyAndweeklyReports/WeeklyScreenerSevika"
                 },
                 // {
                 //   id: "dailycitizenusers",
@@ -321,7 +321,7 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/screener/dailyAndweeklyReports/LipidCritical"
+                  navLink: "/dashboard/screener/dailyAndweeklyReports/LipidCritical"
                 },
                 // {
                 //   id: "unscreenusers",

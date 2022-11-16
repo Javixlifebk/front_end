@@ -145,7 +145,7 @@ componentDidMount() {
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
-						  var recs=response.data.data.data;
+						  var recs=response.data.data;
 						  this.loadRecs(recs);
               localStorage.removeItem("Ngoid")
 					  }

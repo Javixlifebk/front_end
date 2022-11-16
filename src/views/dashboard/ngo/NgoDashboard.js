@@ -120,7 +120,7 @@ class NgoDashboard extends React.Component {
       datasets: [
         {
           label: "Doctors Count",
-          data: [this.state.doctors, this.state.screeners, this.state.ngos, this.state.sevika,this.state.screening,this.state.pharmacies],
+          data: [this.state.doctors, this.state.screeners, this.state.ngos, this.state.sevika, this.state.screening,this.state.pharmacies],
           backgroundColor: themeColors
         }
       ]
@@ -206,9 +206,8 @@ class NgoDashboard extends React.Component {
       </Card>
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
-      <Card style={{textAlign:"center"}} onCli
-      ck={() => {
-                          document.location='/dashboard/admin/screenerlist';
+      <Card style={{textAlign:"center"}} onClick={() => {
+                          document.location='/dashboard/sevikalist';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
