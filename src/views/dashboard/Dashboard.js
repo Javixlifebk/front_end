@@ -512,9 +512,9 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/detaildump" component={detaildump} />
               <AppRoute exact path="/dashboard/editcitizen" component={editCitizen} />
               <AppRoute exact path="/dashboard/caseslist" component={casesList} />
-              <AppRoute exact path="/screener/dailyAndweeklyReports/LipidCritical" component={lipidcritical} />
-              <AppRoute exact path="/screener/dailyAndweeklyReports/Weeklyscreener" component={weeklyscreener} />
-              <AppRoute exact path="/screener/dailyAndweeklyReports/WeeklyScreenerSevika" component={weeklyscreenersevika} />
+              <AppRoute exact path="/dashboard/screener/dailyAndweeklyReports/LipidCritical" component={lipidcritical} />
+              <AppRoute exact path="/dashboard/screener/dailyAndweeklyReports/Weeklyscreener" component={weeklyscreener} />
+              <AppRoute exact path="/dashboard/screener/dailyAndweeklyReports/WeeklyScreenerSevika" component={weeklyscreenersevika} />
               <AppRoute exact path="/dashboard/admin/sevikaCaselist" component={sevikaCaseDetails} />
               
               <AppRoute exact path="/dashboard/admin/AdvancedScreening/" component={advancedScreener} />

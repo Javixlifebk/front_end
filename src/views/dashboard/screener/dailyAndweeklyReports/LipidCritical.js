@@ -10,12 +10,12 @@ import {
   Col,
   Badge,
   // Input,
-  // Button
+  Button
 } from "reactstrap"
 import 'antd/dist/antd.css';
 // import './index.css';
 import { SearchOutlined } from '@ant-design/icons';
-import { Button, Input, Space, Table } from 'antd';
+import {  Input, Space, Table } from 'antd';
 import '@mui/x-data-grid-generator'
 import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
@@ -48,7 +48,7 @@ import {CSVLink} from "react-csv"
     );
   };
   
-function  LipidPanelcholesterolRed() {
+function  LipidCritical() {
    
   const [rows, setUsers] = useState('');
     
@@ -641,18 +641,28 @@ const filterData = (data) =>
       <Row>
       <Col sm="6" ></Col>
       <Col sm="6 d-flex justify-content-end">
-      <Button className="btn btn-primary" >
-      <CSVLink
+      <Button.Ripple
+                    color="primary"
+                    type="submit"
+                    className="mr-1 mb-1"
+                    
+                  >
+                    <CSVLink
               filename={"LipidCriticalCases.csv"}
               data={rows}
               
               onClick={()=>{
                 console.log("The file is downloading")
               }}
+              style={{
+              
+                color: "#fff"
+              }}
             >
               Export
             </CSVLink> 
-             </Button>
+                  </Button.Ripple>
+     
       </Col>          
       </Row>
       <Table columns={columns} dataSource={rows}
@@ -665,7 +675,7 @@ const filterData = (data) =>
         setsize(size)
       },
       // total:85,
-      // showTotal: (total) => `Total : ${total} Records`
+      showTotal: (total) => `Total : ${total} Records`
       // showTotal: (total) =>{ `Total ${total} items`}
     }}
     
@@ -674,4 +684,4 @@ const filterData = (data) =>
     );
   };
 
-export default  LipidPanelcholesterolRed
+export default  LipidCritical
