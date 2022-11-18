@@ -15,16 +15,16 @@ import profileImg from "../../../assets/img/icons/viewprofile.png"
 const CustomHeader = props => {
   return (
     <div className="d-flex flex-wrap justify-content-between">
-      <div className="add-new">
-        
-      </div>
-      <div className="position-relative has-icon-left mb-1">
-        <Input value={props.value} placeholder="search" onChange={e => props.handleFilter(e)} />
-        <div className="form-control-position">
-          <Search size="15" />
-        </div>
+    <div className="add-new">
+      
+    </div>
+    <div className="position-relative has-icon-left mb-1">
+      <Input value={props.value} placeholder="search" onChange={e => props.handleFilter(e)} />
+      <div className="form-control-position">
+        <Search size="15" />
       </div>
     </div>
+  </div>
   )
 }
 
@@ -157,33 +157,34 @@ componentDidMount() {
 		 });// then
 }
 
-  handleFilter = e => {
-    let value = e.target.value
-    let data = this.state.data
-    let filteredData = this.state.filteredData
-    this.setState({ value })
+handleFilter = e => {
+  let value = e.target.value
+  let data = this.state.data
+  let filteredData = this.state.filteredData
+  this.setState({ value })
 
-    if (value.length) {
-      filteredData = data.filter(item => {
-        let startsWithCondition =
+  if (value.length) {
+    filteredData = data.filter(item => {
+    console.dir(item.userId);
+      let startsWithCondition =
         
-          item.firstName.toLowerCase().startsWith(value.toLowerCase()) ||
-          item.lastName.toLowerCase().startsWith(value.toLowerCase()) 
-        
-        let includesCondition =
-          item.firstName.toLowerCase().includes(value.toLowerCase()) ||
-          item.lastName.toLowerCase().includes(value.toLowerCase()) 
-         
+         item.firstName.toLowerCase().startsWith(value.toLowerCase()) ||
+         item.lastName.toLowerCase().startsWith(value.toLowerCase()) 
+      let includesCondition =
+      
+         item.firstName.toLowerCase().includes(value.toLowerCase()) ||
+         item.lastName.toLowerCase().includes(value.toLowerCase())
 
-        if (startsWithCondition) {
-          return startsWithCondition
-        } else if (!startsWithCondition && includesCondition) {
-          return includesCondition
-        } else return null
-      })
-      this.setState({ filteredData })
-    }
+      if (startsWithCondition) {
+        return startsWithCondition
+      } else if (!startsWithCondition && includesCondition) {
+        return includesCondition
+      } else return null 
+    })
+    this.setState({ filteredData })
   }
+
+}
 
   /* render for all */
   render() {

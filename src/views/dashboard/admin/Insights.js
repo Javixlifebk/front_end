@@ -404,7 +404,7 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://javixlife.org:3010/api/labtest/getBloodGlucoseTestCount")
+      .post("http://localhost:3010/api/labtest/getBloodGlucoseTestCount")
       .then((response) => {
         console.dir(response.data.data.data);
 

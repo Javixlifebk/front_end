@@ -654,7 +654,7 @@ function WeeklyScreenerSevika() {
         </Col>
       </Row>
       <Row>
-      <div className="col-sm-6 pb-1">
+      {/* <div className="col-sm-6 pb-1">
             <div className="row">
               <div className="col-sm-6">
              <label className="d-flex"> From :</label>
@@ -677,7 +677,7 @@ function WeeklyScreenerSevika() {
           />
               </div>
             </div>
-          </div>
+          </div> */}
         <Col sm="6" ></Col>
         <Col sm="6 d-flex justify-content-end">
         <Button.Ripple

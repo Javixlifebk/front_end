@@ -114,7 +114,7 @@ class JTable extends React.Component {
           onClick={() =>this.handleClick(row.screenerId)}
           // style={{width:"30px",cursor:"pointer"}}
           className="btn-success"
-        >Unmapped</button>
+        >Unmap</button>
          
           
         )
@@ -162,7 +162,7 @@ loadRecs(recs)
   // let postData="screenerId="+screenerId+"&ismapped=0&token=dfjkhsdfaksjfh3756237&ngoId=0"; 
   
   // let _targetPostURL="http://javixlife.org:3010/api/ngo/updatescreenermap?=";
-  axios.post('http://javixlife.org:3010/api/ngo/updatescreenermap?=', {screenerId:screenerId ,token:'dfjkhsdfaksjfh3756237',ismapped:0,ngoId:"0"})
+  axios.post('http://localhost:3010/api/ngo/updatescreenermap?=', {screenerId:screenerId ,token:'dfjkhsdfaksjfh3756237',ismapped:0,ngoId:"0"})
   
   // axios(
   //   {
@@ -197,7 +197,7 @@ componentDidMount() {
     console.log("userId====",localStorage.getItem("userId"));
         const userId=localStorage.getItem("userId")
 		// axios.post('http://javixlife.org:3010/api/ngo/screenerList', { userId: '4632746328', ngoId:0 ,token:'dfjkhsdfaksjfh3756237',ismapped:true })
-    axios.post('http://javixlife.org:3010/api/ngo/sevikamappedlist', {ngoId: 'rakesh',token:'dfjkhsdfaksjfh3756237',issubscreener:1,ismapped:true})
+    axios.post('http://localhost:3010/api/ngo/sevikamappedlist', {ngoId: 'rakesh',token:'dfjkhsdfaksjfh3756237',issubscreener:1,ismapped:true})
 
 		 .then(response => {
    

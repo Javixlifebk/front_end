@@ -114,7 +114,7 @@ class JTable extends React.Component {
           onClick={() =>this.handleClick(row.screenerId)}
           // style={{width:"30px",cursor:"pointer"}}
           className="btn-success"
-        >Mapped</button>
+        >Map</button>
          
           
         )

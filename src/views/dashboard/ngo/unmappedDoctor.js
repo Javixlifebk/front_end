@@ -113,7 +113,7 @@ class JTable extends React.Component {
           onClick={() =>this.handleClick(row.doctorId)}
           // style={{width:"30px",cursor:"pointer"}}
           className="btn-success"
-        >mapped</button>
+        >map</button>
          
           
         )
