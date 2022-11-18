@@ -179,7 +179,7 @@ componentDidMount() {
 		//this.setState({data:null});
     if(localStorage.getItem("_status")==="1"){
     
-		  axios.post('http://javixlife.org:3010/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('http://javixlife.org:3010/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),token:'dfjkhsdfaksjfh3756237',status:1 })
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -190,6 +190,7 @@ componentDidMount() {
 					  }
 		 });// then
     }else{
+      status:localStorage.getItem("_status")
       axios.post('http://javixlife.org:3010/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),status:localStorage.getItem("_status"),token:'dfjkhsdfaksjfh3756237' })
       .then(response => {
            if(response.data.status===1)

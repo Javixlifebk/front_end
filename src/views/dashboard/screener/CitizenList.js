@@ -274,9 +274,9 @@ const filterData = (data) =>
         <div>
         
         <img
-            // src={getImage(row.info.photo)}
-            src={`http://javixlife.org:3010/profile/no-photo-male.jpg`?`http://javixlife.org:3010/profile/no-photo-male.jpg`: row.info.photo}
-            width="40px"
+            // src={()=>getImage(row.info.photo)}
+             src={`http://javixlife.org:3010/profile/no-photo-male.jpg`?`http://javixlife.org:3010/profile/no-photo-male.jpg`: row.info.photo}
+            width="40vh"
             className="img-fluid img-border rounded-circle box-shadow-1"
           />
           </div>
@@ -287,6 +287,7 @@ const filterData = (data) =>
         title: "Citizen Name",
         dataIndex: "fullname",
         key: 'fullname',
+        width:'10%',
         // render: (text, record) => (
         //   <span>{record.firstName} {record.lastName}</span>
         // ),
@@ -313,21 +314,21 @@ const filterData = (data) =>
         title: 'Email',
         dataIndex: 'email',
         key: 'email',
-        // width: '20%',
+        //  width: '20%',
         ...getColumnSearchProps('email'),
       },
-      {
-        title: 'Address',
-        dataIndex: 'address',
-        key: 'address',
-        // width: '20%',
-        ...getColumnSearchProps('address'),
-      },
+      // {
+      //   title: 'Address',
+      //   dataIndex: 'address',
+      //   key: 'address',
+      //   // width: '20%',
+      //   ...getColumnSearchProps('address'),
+      // },
       {
         title: 'Screener FullName',
         dataIndex: 'screenerfullname',
         key: 'screenerfullname',
-        // width: '20%',
+        width: '40%',
         ...getColumnSearchProps('screenerfullname'),
       },
       {
@@ -350,26 +351,26 @@ const filterData = (data) =>
         key: 'alerts',
         width: '100%',
         render: (_, row) => (
-          <div className='d-flex'>
-          <span>
+          <div className='row '>
+            <div className='col-md-6 d-flex justify-content-center'>
         <img
         src={profileImg}
         alt="porfileImg"
         onClick={() => handleClick(row.citizenId)}
-        style={{width:"80px",cursor:"pointer"}}
+        style={{width:"40px",cursor:"pointer"}}
         className="img-fluid img-border rounded-circle box-shadow-1"
-      />
-      </span>
-    
-      <div>
+      />    
+      </div>
+      <div className='col-md-6 d-flex justify-content-center'>
       <img
         src={pickImg}
         alt="profileImg"
         onClick={() => getCaseDetails(row.citizenId)}
-        style={{width:"80px",cursor:"pointer"}}
+        style={{width:"40px",cursor:"pointer"}}
         className="img-fluid img-border rounded-circle box-shadow-1"
       />
       </div>
+      
           </div>
           
         ),

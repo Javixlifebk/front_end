@@ -146,7 +146,7 @@ const filterData = (data) =>
       }
       const  getCaseScreener=(screenerId) =>{
         localStorage.setItem("screenerId", screenerId);
-        alert(screenerId, "###################")
+        // alert(screenerId, "###################")
         document.location =  `/dashboard/casesList`;
        
         // console.log("screener Id ",screenerId);

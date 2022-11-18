@@ -93,14 +93,20 @@ class NgoDashboard extends React.Component {
           this.setState({screeners:response.data.data.data[0].Screeners}) 
           this.setState({doctors:response.data.data.data[1].Doctors}) 
            this.setState({ngos:response.data.data.data[2].NGO}) 
+           this.setState({prescription:response.data.data.data[3].Prescription})
+           this.setState({advancescreener:response.data.data.data[4].Sanyojika})
             this.setState({pendingadvancescreener:response.data.data.data[5].Sevika})
-            this.setState({advancescreener:response.data.data.data[4].Sanyojika})
             this.setState({citizen:response.data.data.data[6].Citizen})
             this.setState({pharmacies:response.data.data.data[7].Pharmacy})
             this.setState({screening:response.data.data.data[8].Screening})
-            this.setState({sevika:response.data.data.data[10].Sevikas})
-            this.setState({prescription:response.data.data.data[3].Prescription})
             this.setState({NonPrescription:response.data.data.data[9].NonPrescription})
+            this.setState({mapsevika:response.data.data.data[10].mapsevika})
+            this.setState({mapscreener:response.data.data.data[11].mapscreener})
+            this.setState({mapdoctor:response.data.data.data[12].mapdoctor})
+
+            this.setState({sevika:response.data.data.data[13].Sevikas})
+           
+
           
         }else{
         }
@@ -168,11 +174,60 @@ class NgoDashboard extends React.Component {
     return (
  
       <React.Fragment>
+
+
         <Row className="match-height">
           <Col>
             <SalesCard />
           </Col>         
         </Row>
+        <Row className="match-height"  style={{textAlign:"center"}}>
+     
+     
+      <Col lg="4"  style={{textAlign:"center",cursor:'pointer'}}>
+      <Card style={{textAlign:"center"}} onClick={() => {
+                          document.location='/dashboard/mappedscreener';
+                        }}>
+      <CardHeader>
+        <CardTitle></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center"}}>
+      <span style={{textAlign:"center"}}><h5> Mapped Screeners</h5></span>
+            <h5>{this.state.mapscreener}</h5>              
+            
+      </CardBody>
+      </Card>
+      </Col>
+      <Col lg="3" style={{textAlign:"center",cursor:'pointer'}}>
+      <Card style={{textAlign:"center"}} onClick={() => {
+                          document.location='/dashboard/mappedsevika';
+                        }}>
+      <CardHeader>
+        <CardTitle></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center"}}>
+      <span style={{textAlign:"center"}}><h5>Mapped Sevika</h5></span>
+            <h5>{this.state.mapsevika}</h5>              
+          
+      </CardBody>
+      </Card >
+      </Col>
+ 
+      <Col lg="4" style={{textAlign:"center"}}>
+      <Card style={{cursor:'pointer'}}>
+      <CardHeader>
+        <CardTitle style={{textAlign:"center"}}></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center"}} onClick={() => {
+        document.location='/dashboard/mappedDoctor';
+      }}> 
+      <span style={{textAlign:"center"}}><h5>Mapped Doctor</h5></span>                        
+      <h5>{this.state.mapdoctor}</h5>  
+      </CardBody>
+      </Card>
+      </Col>
+   
+      </Row> 
         <Row className="match-height"  style={{textAlign:"center"}}>
       <Col lg="3" style={{textAlign:"center",cursor:'pointer'}}>
 
