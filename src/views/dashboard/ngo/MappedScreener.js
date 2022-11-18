@@ -118,7 +118,21 @@ class JTable extends React.Component {
          
           
         )
-      }
+      },
+      {
+        name: 'view',
+        selector: "",
+        sortable: true,
+        // key: 'action',
+        cell: record => (
+          <button size="middle"
+          className="btn-success"
+          onClick={() => this.getCaseScreener(record.screenerId)}>
+            <a>view</a>
+          </button>
+          
+        ),
+      },
     ],
     data: [],
     filteredData: [],
@@ -196,7 +210,13 @@ handleSubmit = e => {
     e.preventDefault()
     alert(this.state.txscreenerId)
 }
-
+ getCaseScreener=(screenerId) =>{
+  localStorage.setItem("screenerId", screenerId);
+  // alert(screenerId, "###################")
+  document.location =  `/dashboard/casesList`;
+ 
+  // console.log("screener Id ",screenerId);
+}
 
 handleFilter = e => {
   let value = e.target.value

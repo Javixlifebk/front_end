@@ -96,12 +96,12 @@ class JTable extends React.Component {
           <p className="text-bold-500  mb-0">{row.email}</p>
         )
       },
-      {
-        name: "refer",
-        selector: "issue",
+	  {
+        name: "Screener",
+        selector: "screener",
         sortable: true,
         cell: row => (
-          <p className="text-bold-500  mb-0">{row.isUnrefer}</p>
+          <p className="text-bold-500  mb-0">{row.screener[0].firstName + ' ' + row.screener[0].lastName}</p>
         )
       },
       {
@@ -182,25 +182,17 @@ getImage(imagUrl){
 
 getCaseDetails(citizenId){
   localStorage.setItem("citizenId",citizenId);
-  // alert('citizenId',citizenId)
+  // alert(citizenId)
   document.location=`/dashboard/doctor/patientlist`;  
 }
-// getCaseDetails=(citizenId) =>{
-//   localStorage.setItem("citizenId", citizenId);
-//   alert(citizenId, "###################")
-//   document.location =  `/dashboard/doctor/refercaseslist`;
- 
-//   // console.log("screener Id ",screenerId);
-// }
-
 
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		let scrId=localStorage.getItem("_screenerId");
-		  axios.post('http://javixlife.org:3010/api/citizen/citizenList?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId })
+		  axios.post('http://javixlife.org:3010/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
-			
+				
+         
 					if(response.data.status===1){
 						  var msg=response.data.message;
 						  var recs=response.data.data.data;
@@ -244,7 +236,7 @@ componentDidMount() {
 		//this.setState({data:null});
 		  axios.post('http://javixlife.org:3010/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237',v:_v })
 		 .then(response => {
-         
+				
 					if(response.data.status===1){
 						  var msg=response.data.message;
 						  var recs=response.data.data.data;
@@ -259,7 +251,6 @@ componentDidMount() {
          <Row>
       <Col lg="12" md="12">
       <Card>
-	{/*
         <CardHeader style={{textAlign:'right'}}>
         <Button.Ripple
             onClick={this.handleSubmit}
@@ -270,10 +261,9 @@ componentDidMount() {
           </Button.Ripple>
 		 
         </CardHeader>
-*/}
         <CardBody className="rdt_Wrapper">
         <Row>
-		  {/*
+		  
             <Col sm="12">
 			<FormGroup>
                   
@@ -287,7 +277,6 @@ componentDidMount() {
                   />
                 </FormGroup>
 			</Col>
-*/}
 			
           <Col sm="12">
           <CardTitle>Citizen List</CardTitle>
@@ -301,7 +290,8 @@ componentDidMount() {
             className="dataTable-custom"
             data={value.length ? filteredData : data}
             columns={columns}
-            noDataComponent={""}
+             noDataComponent={""}
+            // noDataComponent="Loading...."
             noHeader
             pagination
             
@@ -326,4 +316,3 @@ componentDidMount() {
 }
 
 export default JTable
-

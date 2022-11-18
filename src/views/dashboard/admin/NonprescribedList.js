@@ -81,6 +81,38 @@ class JTable extends React.Component {
           <p className="text-bold-500 text-truncate mb-0">{row.caseId}</p>
         )
       },
+     {
+        name: "Gender",
+        selector: "gender",
+        sortable: true,
+        cell: row => (
+          <p className="text-bold-500 text-truncate mb-0">{row.citizens[0].sex}</p>
+        )
+      },
+      {
+        name: "Email",
+        selector: "email",
+        sortable: true,
+        cell: row => (
+          <p className="text-bold-500 text-truncate mb-0">{row.citizens[0].email}</p>
+        )
+      },
+      // {
+      //   name: "Doctor Name",
+      //   selector: "doctor",
+      //   sortable: true,
+      //   cell: row => (
+      //     <p className="text-bold-500 text-truncate mb-0">{row.doctors[0].firstName}</p>
+      //   )
+      // },
+      {
+        name: "Mobile",
+        selector: "mobile",
+        sortable: true,
+        cell: row => (
+          <p className="text-bold-500 text-truncate mb-0">{row.citizens[0].mobile}</p>
+        )
+      },
       {
         name: "Date",
         selector: "createdAt",
@@ -90,14 +122,7 @@ class JTable extends React.Component {
         )
       },
      
-    //   {
-    //     name: "Qualification",
-    //     selector: "qualification",
-    //     sortable: true,
-    //     cell: row => (
-    //       <p className="text-bold-500 text-truncate mb-0">{row.info.qualification}</p>
-    //     )
-    //   },
+   
     //   {
     //     name: "onBoarding.Date",
     //     selector: "boradingDate",
@@ -200,14 +225,26 @@ componentDidMount() {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Non-Prescribed List<Button.Ripple
+          <CardTitle>Non-Prescribed List
+            {/* <Button.Ripple
                     color="primary"
                     type="submit"
                     className="mr-1 mb-1"
                     onClick={this.handleBack}
                   >
                    Back
-                  </Button.Ripple></CardTitle>
+                  </Button.Ripple> */}
+                  </CardTitle>
+                  <div className="d-flex justify-content-end"> 
+                  <Button.Ripple
+                    color="primary"
+                    type="submit"
+                    className="mr-1 mb-1"
+                    onClick={this.handleBack}
+                  >
+                   Back
+                  </Button.Ripple>
+                  </div>
         </CardHeader>
         <CardBody className="rdt_Wrapper">
           <DataTable
