@@ -47,6 +47,28 @@ const CustomHeader = (props) => {
     </div>
   );
 };
+const dateFilterParams = {
+  comparator: function (filterLocalDateAtMidnight, cellValue) {
+    var dateAsString = cellValue;
+    if (dateAsString == null) return -1;
+    var dateParts = dateAsString.split("-");
+    var cellDate = new Date(
+      Number(dateParts[2]),
+      Number(dateParts[1]) - 1,
+      Number(dateParts[0])
+    );
+    if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) {
+      return 0;
+    }
+    if (cellDate < filterLocalDateAtMidnight) {
+      return -1;
+    }
+    if (cellDate > filterLocalDateAtMidnight) {
+      return 1;
+    }
+  },
+  browserDatePicker: true,
+};
 
 function WeeklyScreenerSevika() {
 
@@ -55,6 +77,9 @@ function WeeklyScreenerSevika() {
   const [totalPages, settotal] = useState(1);
   const [Pages, setpages] = useState(2);
   const [size, setsize] = useState(3);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [gridApi, setGridApi] = useState();
   useEffect(() => {
 
     fetchRecords(1, 10);
@@ -83,6 +108,27 @@ function WeeklyScreenerSevika() {
         }
       }, []);
   };
+  const getFilterType = () => {
+    if (startDate !== "" && endDate !== "") return "inRange";
+    else if (startDate !== "") return "greaterThan";
+    else if (endDate !== "") return "lessThan";
+  };
+  useEffect(() => {
+    if (gridApi) {
+      if (startDate !== "" && endDate !== "" && startDate > endDate) {
+        alert("Start Date should be before End Date");
+        setEndDate("");
+      } else {
+        var dateFilterComponent = gridApi.api.getFilterInstance("createdAt");
+        dateFilterComponent.setModel({
+          type: getFilterType(),
+          dateFrom: startDate ? startDate : endDate,
+          dateTo: endDate,
+        });
+        gridApi.api.onFilterChanged();
+      }
+    }
+  }, [startDate, endDate]);
   const filterData = (data) =>
     data.map((item) => ({
       key: item,
@@ -588,6 +634,7 @@ function WeeklyScreenerSevika() {
       key: 'createdAt',
       // width: '20%',
       ...getColumnSearchProps('createdAt'),
+      onFilter:dateFilterParams
     },
 
   
@@ -607,6 +654,30 @@ function WeeklyScreenerSevika() {
         </Col>
       </Row>
       <Row>
+      <div className="col-sm-6 pb-1">
+            <div className="row">
+              <div className="col-sm-6">
+             <label className="d-flex"> From :</label>
+               <input
+          // style={{ width: 100 }}
+            type="date"
+            className="form-control"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+          />
+              </div>
+              <div className="col-sm-6">
+             <label className="d-flex"> To :</label>
+              <input
+            // style={{ width: 100 }}
+            type="date"
+            className="form-control"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+          />
+              </div>
+            </div>
+          </div>
         <Col sm="6" ></Col>
         <Col sm="6 d-flex justify-content-end">
         <Button.Ripple

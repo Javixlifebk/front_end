@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useEffect,useRef, useState } from 'react'
+// import { environment } from '../../api'
+// import { Space, Table, Tag } from 'antd';
 import {
   Card,
   CardBody,
@@ -6,163 +8,110 @@ import {
   CardTitle,
   Row,
   Col,
-  FormGroup,
-  Label,
   Badge,
-  Input,
-  Button
+  // Input,
+  // Button
 } from "reactstrap"
-import DataTable from "react-data-table-component"
-import { Star, Search } from "react-feather"
+import 'antd/dist/antd.css';
+// import './index.css';
+import { SearchOutlined } from '@ant-design/icons';
+import { Button, Input, Space, Table } from 'antd';
+import '@mui/x-data-grid-generator'
+import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
+import { Star, Search } from "react-feather";
+import Highlighter from 'react-highlight-words';
 import loaderImg from "../../images/loader.gif"
 import profileImg from "../../../assets/img/icons/viewprofile.png"
 import pickImg from "../../../assets/img/icons/activate.png"
+// function CustomToolbar() {
+//   return (
+//     <GridToolbarContainer>
+//       <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
+//       {/* <GridFilterPanel /> */}
+//       <GridToolbarFilterButton />
+//     </GridToolbarContainer>
+//   );
+// }
 
-
-const CustomHeader = props => {
-  return (
-    <div className="d-flex flex-wrap justify-content-between">
-      <div className="add-new">
-        
-      </div>
-      <div className="position-relative has-icon-left mb-1">
-        <Input value={props.value} placeholder="search" onChange={e => props.handleFilter(e)} />
-        <div className="form-control-position">
-          <Search size="15" />
-        </div>
-      </div>
-    </div>
-  )
-}
-
-class JTable extends React.Component {
- constructor(props) {
-    super(props);	
-  this.state = {
-    loader:<h2 align='center'><img src={loaderImg} width='400px' height='300px'></img></h2>,
-     imagurl:'',
-      action:{"0":"New Issue","1":"Assigned","2":"Resoved","3":"Closed"},
-	  gsearch:"",
-    columns: [
-      {
-        name: "Citizen",
-        selector: "ID",
-        sortable: true,
-        style: { 'whiteSpace': 'unset' },
-        minWidth: "50px",
-        cell: row => (
-          <div>
-          
-          <img
-              src={this.getImage(row.info.photo)}
-              width="40px"
-              className="img-fluid img-border rounded-circle box-shadow-1"
-            />
+  const CustomHeader = (props) => {
+    return (
+      <div className="d-flex flex-wrap justify-content-between">
+        <div className="add-new"></div>
+        <div className="row">
+          <div className="col-sm-3">
+            <div className="position-relative has-icon-left mb-1">
+              <Input
+                value={props.value.firstName}
+                placeholder="search by name"
+                onChange={(e) => props.handleFilter(e)}
+              />
+              <div className="form-control-position">
+                <Search size="15" />
+              </div>
             </div>
-        )
-      },
-      {
-        name: "Citizen Name",
-        selector: "User",
-        sortable: true,
-        cell: row => (
-          <p className="text-bold-500 mb-0">{row.firstName + " " + row.lastName}</p>
-        )
-      },
-      {
-        name: "Citizen ID",
-        selector: "User",
-        sortable: true,
-        minWidth: "150px",
-        style: { 'word-break': 'keep-all' },
-        cell: row => (
-          <p className="text-bold-500 mb-0">{row.citizenId}</p>
-        )
-      },
-      {
-        name: "Mobile",
-        selector: "subject",
-        sortable: true,
-        cell: row => (
-          <p className="text-bold-500 mb-0">{row.mobile}</p>
-        )
-      },
-      {
-        name: "Email",
-        selector: "issue",
-        sortable: true,
-        cell: row => (
-          <p className="text-bold-500  mb-0">{row.email}</p>
-        )
-      },
-	  {
-        name: "Screener",
-        selector: "screener",
-        sortable: true,
-        cell: row => (
-          <p className="text-bold-500  mb-0">{row.screener[0].firstName + ' ' + row.screener[0].lastName}</p>
-        )
-      },
-      {
-        name: "On Boarding Date",
-        selector: "date",
-        sortable: true,
-        cell: row => (
-          <p className="text-bold-500  mb-0">{row.createdAt}</p>
-        )
-      },
-      {
-        name: "Action",
-        selector: "satus",
-        sortable: true,
-        cell: row => (
-          <div>
-            <span>
-          <img
-          src={profileImg}
-          alt="porfileImg"
-          onClick={() =>this.handleClick(row.citizenId)}
-          style={{width:"30px",cursor:"pointer"}}
-          className="img-fluid img-border rounded-circle box-shadow-1"
-        />
-        </span>
-        &nbsp;&nbsp;
-        <span>
-        <img
-          src={pickImg}
-          alt="profileImg"
-          onClick={() =>this.getCaseDetails(row.citizenId)}
-          style={{width:"30px",cursor:"pointer"}}
-          className="img-fluid img-border rounded-circle box-shadow-1"
-        />
-        </span>
-
+          </div>
+          
+        </div>
+        {/* <div className="position-relative has-icon-left mb-1">
+          <Input
+            value={props.value}
+            placeholder="search"
+            onChange={(e) => props.handleFilter(e)}
+          />
+          <div className="form-control-position">
+            <Search size="15" />
+          </div>
+        </div> */}
       </div>
-        )
-      }    
-    ],
-    data: [],
-    filteredData: [],
-    value: "",
-	recs:[]
-  }
-  this.loadRecs = this.loadRecs.bind(this);
-} // cosntructor
-loadRecs(recs)
- {
-	 
-	 this.setState({data:recs});
-   this.setState({loader:null});
- }
+    );
+  };
+  
+function CitizenList() {
+   
+    const [rows, setUsers] = useState('');
+    
+    const [totalPages, settotal] = useState(1);
+    const [Pages, setpages] = useState(2);
+    const [size, setsize] = useState(3);
+    useEffect(() => {
+        
+      fetchRecords(1,100);
+},[])
 
- handleClick(_userid) {    
+const fetchRecords = (page,size) => {
+  axios.post("http://javixlife.org:3010/api/citizen/citizenList100?",{
+    "pageNo":page,
+    "size":size,
+    token:'dfjkhsdfaksjfh3756237',
+    // v:_v 
+    })
+ .then(response => {
+           
+            if(response.data.status===1)
+              {
+                  var recs=response.data.data;
+
+                  // console.log(response.data.total);
+                  setUsers(recs);
+
+                  settotal(response.data.total)
+                  console.log("111111111111",response.data.total);
+                  setpages(response.data.pages)
+                  console.log("2222222",response.data.pages);
+                  setsize(response.data.size)
+                  console.log("333333333",response.data.size);
+                  console.log(recs);
+              }
+ },[]);
+};
+const handleClick=(_userid)=> {    
   localStorage.setItem("citizenId",_userid);
   //alert(_userid)
   window.location='/dashboard/citizenprofile'  
 }
 
- handleSubmit() {
+ const handleSubmit=()=> {
   
   //alert('Hellow')
   if(localStorage.getItem("roleId")==="1" || localStorage.getItem("roleId")===1){
@@ -172,147 +121,287 @@ loadRecs(recs)
   window.location='/dashboard/addcitizen'
   }
 }
-  
-getImage(imagUrl){
+const getImage=(imagUrl)=>{
   if(imagUrl===null || imagUrl===undefined || imagUrl==='' ){
     imagUrl='http://javixlife.org:3010/profile/no-photo-male.jpg';
   }
  return imagUrl;
 }
 
-getCaseDetails(citizenId){
+const getCaseDetails=(citizenId)=>{
   localStorage.setItem("citizenId",citizenId);
   // alert(citizenId)
   document.location=`/dashboard/doctor/patientlist`;  
 }
 
-componentDidMount() {
-		this.mounted = true;
-		//this.setState({data:null});
-		  axios.post('http://javixlife.org:3010/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237' })
-		 .then(response => {
-				
-         
-					if(response.data.status===1){
-						  var msg=response.data.message;
-						  var recs=response.data.data.data;
-						  this.loadRecs(recs);
-					  }
-		 });// then
-}
+const filterData = (data) =>
+    data.map((item) => ({
+      key: item,
+      value: item,
+      text: item
+    }));
 
-  handleFilter = e => {
-    let value = e.target.value
-    let data = this.state.data
-    let filteredData = this.state.filteredData
-    this.setState({ value })
+    const [searchText, setSearchText] = useState('');
+    const [searchedColumn, setSearchedColumn] = useState('');
+    const searchInput = useRef(null);
+  
+    const handleSearch = (selectedKeys, confirm, dataIndex) => {
+      confirm();
+      setSearchText(selectedKeys[0]);
+      setSearchedColumn(dataIndex);
+    };
+  
+    const handleReset = (clearFilters) => {
+      clearFilters();
+      setSearchText('');
+    };
 
-    if (value.length) {
-      filteredData = data.filter(item => {
-		  console.dir(item.userId);
-        let startsWithCondition =
-        
-           item.firstName.toLowerCase().startsWith(value.toLowerCase()) ||
-           item.lastName.toLowerCase().startsWith(value.toLowerCase()) 
-        let includesCondition =
-       
-          item.firstName.toLowerCase().includes(value.toLowerCase()) ||
-		      item.lastName.toLowerCase().includes(value.toLowerCase())
-
-        if (startsWithCondition) {
-          return startsWithCondition
-        } else if (!startsWithCondition && includesCondition) {
-          return includesCondition
-        } else return null 
-      })
-      this.setState({ filteredData })
-    }
-	
-  }
-
-  /* render for all */
-  callSearch=_v=>{
-	  
-		//this.setState({data:null});
-		  axios.post('http://javixlife.org:3010/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237',v:_v })
-		 .then(response => {
-				
-					if(response.data.status===1){
-						  var msg=response.data.message;
-						  var recs=response.data.data.data;
-						  this.loadRecs(recs);
-					  }
-		 });// then
-  }
-  render() {
-    let { data, columns, value, filteredData } = this.state
-    return (
-      <React.Fragment >
-         <Row>
-      <Col lg="12" md="12">
-      <Card>
-        <CardHeader style={{textAlign:'right'}}>
-        <Button.Ripple
-            onClick={this.handleSubmit}
-            color="primary"
-            outline
-          >
-            Add Citizen
-          </Button.Ripple>
-		 
-        </CardHeader>
-        <CardBody className="rdt_Wrapper">
-        <Row>
-		  
-            <Col sm="12">
-			<FormGroup>
-                  
-                  <Input
-                    type="text"                    
-                    name="gsearch"
-                    id="gsearch"
-                    placeholder="Search Citizens"
-                    value={this.state.gsearch}
-                    onChange={e => {this.setState({ gsearch: e.target.value });this.callSearch(e.target.value);}}
-                  />
-                </FormGroup>
-			</Col>
-			
-          <Col sm="12">
-          <CardTitle>Citizen List</CardTitle>
-          
-          
-          </Col>          
-          </Row>
-          <Row>
-          <Col sm="12">
-          <DataTable
-            className="dataTable-custom"
-            data={value.length ? filteredData : data}
-            columns={columns}
-             noDataComponent={""}
-            // noDataComponent="Loading...."
-            noHeader
-            pagination
-            subHeader
-            subHeaderComponent={
-              <CustomHeader value={value} handleFilter={this.handleFilter} />
-            }
+  
+      
+    const getColumnSearchProps = (dataIndex) => ({
+      filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
+        <div
+          style={{
+            padding: 8,
+          }}
+        >
+          <Input
+            ref={searchInput}
+            placeholder={`Search ${dataIndex}`}
+            value={selectedKeys[0]}
+            onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
+            onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
+            style={{
+              marginBottom: 8,
+              display: 'block',
+            }}
           />
-          </Col>
-          <Col sm="12">
-          {this.state.recs.length!=0 || this.state.loader}
-          </Col>
-          </Row>
-        </CardBody>
-      </Card>
-      </Col>
+          <Space>
+            <Button
+              type="primary"
+              onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+              icon={<SearchOutlined />}
+              size="small"
+              style={{
+                width: 90,
+              }}
+            >
+              Search
+            </Button>
+            <Button
+              onClick={() => clearFilters && handleReset(clearFilters)}
+              size="small"
+              style={{
+                width: 90,
+              }}
+            >
+              Reset
+            </Button>
+            <Button
+              type="link"
+              size="small"
+              onClick={() => {
+                confirm({
+                  closeDropdown: false,
+                });
+                setSearchText(selectedKeys[0]);
+                setSearchedColumn(dataIndex);
+              }}
+            >
+              Filter
+            </Button>
+          </Space>
+        </div>
+      ),
+      filterIcon: (filtered) => (
+        <SearchOutlined
+          style={{
+            color: filtered ? '#1890ff' : undefined,
+          }}
+        />
+      ),
+      onFilter: (value, record) =>
+        record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
+      onFilterDropdownVisibleChange: (visible) => {
+        if (visible) {
+          setTimeout(() => searchInput.current?.select(), 100);
+        }
+      },
+     
+      render: (text) =>
+        searchedColumn === dataIndex ? (
+          <Highlighter
+            highlightStyle={{
+              backgroundColor: '#ffc069',
+              padding: 0,
+            }}
+            searchWords={[searchText]}
+            autoEscape
+            textToHighlight={text ? text.toString() : ''}
+          />
+        ) : (
+          text
+        ),
+    });
+    
+    const columns = [
+    //   {
+    //     title: 'Name',
+    //     dataIndex: 'firstName',
+    //     key: 'firstName',
+    //     render: (_, { firstName }) => (
+    //         <button>
+    //           {firstName.map((tag) => {
+    //           return (
+    //               <a  key={tag}>
+    //                 {tag.toUpperCase()}
+    //               </a>
+    //             );
+    //           })}
+    //         </button>
+    //       ),
+    //     width: '30%',
+    //     ...getColumnSearchProps('firstName'),
+
+    //   },
+    {
+      title: "Citizen",
+      dataIndex: "ID",
+      key: 'photo',
+      style: { 'whiteSpace': 'unset' },
+      minWidth: "50px",
+      render: (row) => (
+        <div>
+        
+        <img
+            // src={getImage(row.info.photo)}
+            src={`http://javixlife.org:3010/profile/no-photo-male.jpg`?`http://javixlife.org:3010/profile/no-photo-male.jpg`: row.info.photo}
+            width="40px"
+            className="img-fluid img-border rounded-circle box-shadow-1"
+          />
+          </div>
+      )
+    },
+   
+    {
+        title: "Citizen Name",
+        dataIndex: "fullname",
+        key: 'fullname',
+        // render: (text, record) => (
+        //   <span>{record.firstName} {record.lastName}</span>
+        // ),
+         ...getColumnSearchProps('fullname'),
+      },
+      {
+        title: "Citizen ID",
+        dataIndex: "citizenId",
+        key: 'citizenId',
+        // render: (text, record) => (
+        //   <span>{record.firstName} {record.lastName}</span>
+        // ),
+         ...getColumnSearchProps('citizenId'),
+      },
+     
+      {
+        title: 'Mobile',
+        dataIndex: 'mobile',
+        key: 'mobile',
+        // width: '20%',
+        ...getColumnSearchProps('mobile'),
+      },
+      {
+        title: 'Email',
+        dataIndex: 'email',
+        key: 'email',
+        // width: '20%',
+        ...getColumnSearchProps('email'),
+      },
+      {
+        title: 'Address',
+        dataIndex: 'address',
+        key: 'address',
+        // width: '20%',
+        ...getColumnSearchProps('address'),
+      },
+      {
+        title: 'Screener FullName',
+        dataIndex: 'screenerfullname',
+        key: 'screenerfullname',
+        // width: '20%',
+        ...getColumnSearchProps('screenerfullname'),
+      },
+      {
+        title: 'onBoarding Date',
+        dataIndex: 'createdAt',
+       key: 'createdAt',
+        render: (_, row) => (
+          <p size="middle">
+             {/* {row.issubscreener > 0 ? "Sevika" : "Sanyojika"}, */}
+          </p>
+        ),
+      
+        // width: '20%',
+        ...getColumnSearchProps('createdAt'),
+      },
+     
+      
+      {
+        title: 'Action',
+        key: 'alerts',
+        width: '100%',
+        render: (_, row) => (
+          <div className='d-flex'>
+          <span>
+        <img
+        src={profileImg}
+        alt="porfileImg"
+        onClick={() => handleClick(row.citizenId)}
+        style={{width:"80px",cursor:"pointer"}}
+        className="img-fluid img-border rounded-circle box-shadow-1"
+      />
+      </span>
+    
+      <div>
+      <img
+        src={pickImg}
+        alt="profileImg"
+        onClick={() => getCaseDetails(row.citizenId)}
+        style={{width:"80px",cursor:"pointer"}}
+        className="img-fluid img-border rounded-circle box-shadow-1"
+      />
+      </div>
+          </div>
+          
+        ),
+      },
+     
+    ];
+    
+    return (
+      <>
+       <Row>
+      <Col sm="12">
+      <CardTitle><b><h3>Citizen List</h3></b> </CardTitle>
+      </Col>          
       </Row>
-      </React.Fragment>
-    )
-  }
-  /* ENd rebder */
-}
+    <Table columns={columns} dataSource={rows}
+    locale={{emptyText:"loading..."}}
+    pagination={{
+      pageSize:size,
+      total:totalPages,
+      onChange: (page,size) => {
+        fetchRecords(page,size);
+        setsize(size)
+      },
+      // total:85,
+      showTotal: (total) => `Total : ${total} Records`
+      // showTotal: (total) =>{ `Total ${total} items`}
+    }}
+    
+    />
+    {/* <span>total:{{totalPages}}</span> */}
+    </>
+    );
+  };
 
-export default JTable
-
+export default CitizenList

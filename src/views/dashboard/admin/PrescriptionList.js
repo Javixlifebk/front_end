@@ -37,15 +37,9 @@ class JTable extends React.Component {
         name: "Citizen Name",
         selector: (row) => row.firstName + " " + row.lastname,
         sortable: true,
-        // cell: (row) => (
-        //   <button
-        //     className="btn-success"
-        //     onClick={() => this.getCitizenScreener(row.screenerId)}
-        //   >
-        //     {row.firstName + " " + row.lastName}
-        //   </button>
-        // ),
+    
       },
+   
       {
         name: "Screener ID",
         selector: "screenerid",
@@ -65,6 +59,20 @@ class JTable extends React.Component {
           </div>
         )
       },
+   
+      
+      {
+        name: "Doctor Name",
+        selector: (row) => row.docfullname? row.docfullname :" " ,
+        sortable: true,
+     
+      },
+      {
+        name: "Screener Name",
+        selector: (row) => row.screenerfullname? row.screenerfullname :" " ,
+        sortable: true,
+       
+      },
       {
         name: "doctorId",
         selector: "doctorId",
@@ -82,40 +90,32 @@ class JTable extends React.Component {
         )
       },
      
-    //   {
-    //     name: "Qualification",
-    //     selector: "qualification",
-    //     sortable: true,
-    //     cell: row => (
-    //       <p className="text-bold-500 text-truncate mb-0">{row.info.qualification}</p>
-    //     )
-    //   },
-    //   {
-    //     name: "onBoarding.Date",
-    //     selector: "boradingDate",
-    //     sortable: true,
-    //     cell: row => (
-    //       <p className="text-bold-500 mb-0">{row.info.dateOfOnBoarding}</p>
-    //     )
-    //   },
-      ,    
       // {
-      //   name: "Action",
-      //   selector: "",
+      //   name: "Email",
+      //   selector: "email",
       //   sortable: true,
       //   cell: row => (
-      //     <div>
-      //     <img
-      //     src={profileImg}
-      //     alt="porfileImg"
-      //     onClick={() =>this.handleClick(row.prescriptionId)}
-      //     style={{width:"30px",cursor:"pointer"}}
-      //     className="img-fluid img-border rounded-circle box-shadow-1"
-      //   />
-        
-      // </div>
+      //     <p className="text-bold-500 text-truncate mb-0">{row.citizens.email}</p>
       //   )
-      // }
+      // },
+      // {
+      //   name: "Mobile",
+      //   selector: "mobile",
+      //   sortable: true,
+      //   cell: row => (
+      //     <p className="text-bold-500 text-truncate mb-0">{row.citizens.mobile}</p>
+      //   )
+      // },
+      {
+        name: "Date",
+        selector: "createdAt",
+        sortable: true,
+        cell: row => (
+          <p className="text-bold-500 mb-0">{row.createdAt}</p>
+        )
+      },
+        
+   
     ],
     data: [],
     filteredData: [],
@@ -191,15 +191,17 @@ componentDidMount() {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Prescribed List  <Button.Ripple
+          <CardTitle>Prescribed List  
+           </CardTitle>
+        </CardHeader>
+        <div className="d-flex justify-content-end"> <Button.Ripple
                     color="primary"
                     type="submit"
-                    className="mr-1 mb-1"
+                    className="mr-1 mb-1 d-flex justify-content-end"
                     onClick={this.handleBack}
                   >
                    Back
-                  </Button.Ripple></CardTitle>
-        </CardHeader>
+                  </Button.Ripple></div>
         <CardBody className="rdt_Wrapper">
           <DataTable
             className="dataTable-custom"
