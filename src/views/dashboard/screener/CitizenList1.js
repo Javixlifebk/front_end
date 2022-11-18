@@ -242,7 +242,7 @@ componentDidMount() {
   callSearch=_v=>{
 	  
 		//this.setState({data:null});
-		  axios.post('http://javixlife.org:3010/api/citizen/citizenList100?', {token:'dfjkhsdfaksjfh3756237',v:_v })
+		  axios.post('http://javixlife.org:3010/api/citizen/citizenListPagination?', {token:'dfjkhsdfaksjfh3756237',v:_v })
 		 .then(response => {
          
 					if(response.data.status===1){
