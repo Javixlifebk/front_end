@@ -60,7 +60,7 @@ function BloodGlucoseGreen() {
 },[])
 
 const fetchRecords = (page,size) => {
-axios.post("http://localhost:3010/api/labtest/getBloodGlucoseGreenList" ,{
+axios.post("http://javixlife.org:3010/api/labtest/getBloodGlucoseGreenList" ,{
   "pageNo":page,
   "size":size
   })
