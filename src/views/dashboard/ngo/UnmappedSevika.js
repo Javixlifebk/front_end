@@ -159,7 +159,7 @@ loadRecs(recs)
  handleClick(screenerId) {
 
   if(window.confirm("Are you sure want to Mapped Sevika !")){
-  let postData="screenerId="+screenerId+"&ismapped=1&token=dfjkhsdfaksjfh3756237&ngoId=rakesh"; 
+  let postData="screenerId="+screenerId+"&token=dfjkhsdfaksjfh3756237&ngoId=rakesh"; 
   
   let _targetPostURL="http://javixlife.org:3010/api/ngo/updatescreenermap?=";
   axios(
@@ -194,7 +194,7 @@ componentDidMount() {
 		//this.setState({data:null});
         
 		//axios.post('http://javixlife.org:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
-    axios.post('http://javixlife.org:3010/api/ngo/sevikaunmappedlist', {token:'dfjkhsdfaksjfh3756237',issubscreener:1,ismapped:false,ngoId:"0"})
+    axios.post('http://javixlife.org:3010/api/ngo/sevikaunmappedlist', {token:'dfjkhsdfaksjfh3756237',issubscreener:1,ngoId:"0"})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

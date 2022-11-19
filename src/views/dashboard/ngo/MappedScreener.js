@@ -162,7 +162,7 @@ loadRecs(recs)
   // let postData="screenerId="+screenerId+"&ismapped=0&ngoId:0&token=dfjkhsdfaksjfh3756237"; 
   
   // let _targetPostURL="http://javixlife.org:3010/api/ngo/updatescreenermap?=";
-  axios.post('http://javixlife.org:3010/api/ngo/updatescreenermap?=', {screenerId:screenerId ,token:'dfjkhsdfaksjfh3756237',ismapped:0,ngoId:"0"})
+  axios.post('http://javixlife.org:3010/api/ngo/updatescreenermap?=', {screenerId:screenerId ,token:'dfjkhsdfaksjfh3756237',ngoId:"0"})
   .then(res=>{
     if(res.data.status===1){
       //alert("Updated Successfully")
@@ -189,7 +189,7 @@ componentDidMount() {
      console.log( "userId",localStorage.getItem("userId"))
     const userId=localStorage.getItem("userId")
 		//axios.post('http://javixlife.org:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
-    axios.post('http://javixlife.org:3010/api/ngo/screenermappedlist', {ngoId:'rakesh' ,token:'dfjkhsdfaksjfh3756237',issubscreener:0,ismapped:true})
+    axios.post('http://javixlife.org:3010/api/ngo/screenermappedlist', {ngoId:'rakesh' ,token:'dfjkhsdfaksjfh3756237',issubscreener:0})
 		 .then(response => {
 				
 					if(response.data.status===1)
