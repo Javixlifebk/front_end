@@ -616,7 +616,7 @@ function WeeklyScreener() {
     <>
       <Row>
         <Col sm="12">
-          <CardTitle><b><h3>Daily Weekly Screening Screener Report</h3></b> </CardTitle>
+          <CardTitle><b><h3>Daily And Weekly Screening Screener Report</h3></b> </CardTitle>
         </Col>
       </Row>
       <Row>

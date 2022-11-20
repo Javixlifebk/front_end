@@ -22,91 +22,139 @@ class DataCount extends React.Component {
     sevikas:0
 
   }
-  componentDidMount() {
-  if(localStorage.getItem("javixid")===null || localStorage.getItem("javixid")==="0"){
-    document.location="/dashboard/doceditprofile";
-  }
-
-  this.mounted = true;
-  //this.setState({data:null});
-      
-    axios.post('http://javixlife.org:3010/api/screening/getCaseDetails', { doctorId:localStorage.getItem("usermasid") })
-   .then(response => {
-
-         console.dir("Data Length=" + response.data.data.data.length)
-         if(response.data.status===1){
-          this.setState({tcases:response.data.data.data.length}) 
-         }
-        
-        
-        
-   })
-   .catch(e=>{
-    
-    
-    if(e.response.data.status===0){
-      this.state.notfound=0
-
+  componentDidMount () {
+    if (
+      localStorage.getItem ('javixid') === null ||
+      localStorage.getItem ('javixid') === '0'
+    ) {
+      document.location = '/dashboard/doceditprofile';
     }
-  });
 
-  axios.post('http://javixlife.org:3010/api/citizen/citizenRefercount')
-  .then(response => {
+    this.mounted = true;
+    //this.setState({data:null});
 
-        console.dir("Data Length=" + response.data.data)
-        // if(response.data.status===1){
-         this.setState({picked:response.data.data}) 
-        // }
+    axios
+      .post ('http://javixlife.org:3010/api/graph/getlist', {
+        userId: localStorage.getItem ('userid'),
+        token: 'dfjkhsdfaksjfh3756237',
+      })
+      .then (response => {
+        //console.dir(response.data.data.data)
+
+        if (response.data.status === 1) {
+          var recs = response.data.data.data[2];
+          //console.dir(recs)
+          this.setState({screeners:response.data.data.data[0].Screeners}) 
+          this.setState({doctors:response.data.data.data[1].Doctors}) 
+           this.setState({ngos:response.data.data.data[2].NGO}) 
+           this.setState({prescription:response.data.data.data[3].Prescription})
+           this.setState({advancescreener:response.data.data.data[4].Sanyojika})
+            this.setState({pendingadvancescreener:response.data.data.data[5].Sevika})
+            this.setState({citizen:response.data.data.data[6].Citizen})
+            this.setState({pharmacies:response.data.data.data[7].Pharmacy})
+            this.setState({screening:response.data.data.data[8].Screening})
+            this.setState({NonPrescription:response.data.data.data[9].NonPrescription})
+            this.setState({mapsevika:response.data.data.data[10].mapsevika})
+            this.setState({mapscreener:response.data.data.data[11].mapscreener})
+            this.setState({mapdoctor:response.data.data.data[12].mapdoctor})
+            this.setState({citizenprescibeCount:response.data.data.data[13].citizenprescibeCount})
+            this.setState({citizenrefer:response.data.data.data[14].citizenrefer})
+            this.setState({sevika:response.data.data.data[15].Sevikas})
+          
+        } else {
+        }
+      })
+      .catch (e => {
+        if (e.response.data.status === 0) {
+          this.state.notfound = 0
+        }
+      });
+  }
+//   componentDidMount() {
+//   if(localStorage.getItem("javixid")===null || localStorage.getItem("javixid")==="0"){
+//     document.location="/dashboard/doceditprofile";
+//   }
+
+//   this.mounted = true;
+//   //this.setState({data:null});
+      
+//     axios.post('http://javixlife.org:3010/api/screening/getCaseDetails', { doctorId:localStorage.getItem("usermasid") })
+//    .then(response => {
+
+//          console.dir("Data Length=" + response.data.data.data.length)
+//          if(response.data.status===1){
+//           this.setState({tcases:response.data.data.data.length}) 
+//          }
+        
+        
+        
+//    })
+//    .catch(e=>{
+    
+    
+//     if(e.response.data.status===0){
+//       this.state.notfound=0
+
+//     }
+//   });
+
+//   axios.post('http://javixlife.org:3010/api/citizen/citizenRefercount')
+//   .then(response => {
+
+//         console.dir("Data Length=" + response.data.data)
+//         // if(response.data.status===1){
+//          this.setState({picked:response.data.data}) 
+//         // }
        
        
        
-  })
-  .catch(e=>{
+//   })
+//   .catch(e=>{
    
    
-   if(e.response.data.status===0){
-     this.state.notfound=0
+//    if(e.response.data.status===0){
+//      this.state.notfound=0
 
-   }
- });
+//    }
+//  });
 
- axios.post('http://javixlife.org:3010/api/citizen/citizenPrescribeCount')
-  .then(response => {
+//  axios.post('http://javixlife.org:3010/api/citizen/citizenPrescribeCount')
+//   .then(response => {
 
         
-        // if(response.data.data.status===1){
-          console.log("Data Length+++=" + response.data.data)
-         this.setState({prescribed:response.data.data}) 
-        // }
+//         // if(response.data.data.status===1){
+//           console.log("Data Length+++=" + response.data.data)
+//          this.setState({prescribed:response.data.data}) 
+//         // }
        
        
        
-  })
-  .catch(e=>{
+//   })
+//   .catch(e=>{
    
    
-   if(e.response.data.status===0){
-     this.state.notfound=0
+//    if(e.response.data.status===0){
+//      this.state.notfound=0
 
-   }
- });
-}
-getCaseDetails(_type){
-     if(_type==="Total"){
-       localStorage.setItem("_status","1");
-       localStorage.setItem("caseType","Total Cases")
-       document.location="/dashboard/casedetails";
-     }else if(_type=="Picked"){
-      localStorage.setItem("_status","2");
-      localStorage.setItem("caseType","Picked Cases")
-      document.location="/dashboard/casedetails";
-     }
-     else if(_type=="Prescribed"){
-      localStorage.setItem("_status","3");
-      localStorage.setItem("caseType","Prescribed Cases")
-      document.location="/dashboard/casedetails";
-     }
-}
+//    }
+//  });
+// }
+// getCaseDetails(_type){
+//      if(_type==="Total"){
+//        localStorage.setItem("_status","1");
+//        localStorage.setItem("caseType","Total Cases")
+//        document.location="/dashboard/casedetails";
+//      }else if(_type=="Picked"){
+//       localStorage.setItem("_status","2");
+//       localStorage.setItem("caseType","Picked Cases")
+//       document.location="/dashboard/casedetails";
+//      }
+//      else if(_type=="Prescribed"){
+//       localStorage.setItem("_status","3");
+//       localStorage.setItem("caseType","Prescribed Cases")
+//       document.location="/dashboard/casedetails";
+//      }
+// }
   render() {
 
  
@@ -191,7 +239,7 @@ getCaseDetails(_type){
       </CardHeader>
       <CardBody style={{textAlign:"center",cursor:"pointer"}} onClick={() =>{ document.location='/dashboard/doctor/ReferPatientList'}}> 
       <span style={{textAlign:"center"}}><h4>Referred Cases</h4></span>                        
-      <h5>{this.state.picked}</h5>  
+      <h5>{this.state.citizenrefer}</h5>  
       </CardBody>
       </Card>
       </Col>
@@ -202,7 +250,7 @@ getCaseDetails(_type){
       </CardHeader>
       <CardBody style={{textAlign:"center"}}> 
       <span style={{textAlign:"center",cursor:"pointer"}} onClick={() =>{ document.location='/dashboard/admin/PrescriptionList'}}><h4>Prescribed Cases</h4></span>                        
-      <h5>{this.state.prescribed}</h5>  
+      <h5>{this.state.citizenprescibeCount}</h5>  
       
       </CardBody>
       </Card>
@@ -214,7 +262,7 @@ getCaseDetails(_type){
       </CardHeader>
       <CardBody style={{textAlign:"center"}}> 
       <span style={{textAlign:"center",cursor:"pointer"}} onClick={() =>{ document.location='/dashboard/doctor/ReferPatientList'}}><h4>Pending Cases</h4></span>                        
-      <h5>{this.state.picked}</h5>  
+      <h5>{this.state.citizenrefer}</h5>  
       </CardBody>
       </Card>
       </Col>

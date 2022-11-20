@@ -103,8 +103,10 @@ class NgoDashboard extends React.Component {
             this.setState({mapsevika:response.data.data.data[10].mapsevika})
             this.setState({mapscreener:response.data.data.data[11].mapscreener})
             this.setState({mapdoctor:response.data.data.data[12].mapdoctor})
-
-            this.setState({sevika:response.data.data.data[13].Sevikas})
+            this.setState({citizenprescibeCount:response.data.data.data[13].citizenprescibeCount})
+            this.setState({citizenrefer:response.data.data.data[14].citizenrefer})
+            this.setState({sevika:response.data.data.data[15].Sevikas})
+          
            
 
           
@@ -326,7 +328,7 @@ class NgoDashboard extends React.Component {
       <span style={{textAlign:"center"}} onClick={() => {
                           document.location='/dashboard/admin/PrescriptionList';
                         }}><h5>Prescribed</h5></span>
-            <h5>{this.state.prescription}</h5>              
+            <h5>{this.state.citizenprescibeCount}</h5>              
           
       </CardBody>
       </Card>
@@ -341,7 +343,7 @@ class NgoDashboard extends React.Component {
        onClick={() => {
         document.location='/dashboard/admin/nonprescriptionList';
       }}><h5>Non-Prescribed</h5></span>
-            <h5>{this.state.NonPrescription}</h5>              
+            <h5>{this.state.citizenrefer}</h5>              
           
       </CardBody>
       </Card>
