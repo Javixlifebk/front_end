@@ -650,7 +650,7 @@ function WeeklyScreenerSevika() {
     <>
       <Row>
         <Col sm="12">
-          <CardTitle><b><h3>Daily Weekly Screening Sevika Report</h3></b> </CardTitle>
+          <CardTitle><b><h3>Daily And Weekly Screening Sevika Report</h3></b> </CardTitle>
         </Col>
       </Row>
       <Row>

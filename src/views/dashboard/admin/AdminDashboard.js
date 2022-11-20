@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Row, Col, Card,CardHeader,CardTitle,
   CardBody,
   CardImg,  
@@ -115,11 +115,12 @@ class AdminDashboard extends React.Component {
             this.setState({pharmacies:response.data.data.data[7].Pharmacy})
             this.setState({screening:response.data.data.data[8].Screening})
             this.setState({NonPrescription:response.data.data.data[9].NonPrescription})
-            // this.setState({mapsevika:response.data.data.data[10].mapsevika})
-            // this.setState({mapscreener:response.data.data.data[11].mapscreener})
-            // this.setState({mapdoctor:response.data.data.data[12].mapdoctor})
-
-            this.setState({sevika:response.data.data.data[13].Sevikas})
+            this.setState({mapsevika:response.data.data.data[10].mapsevika})
+            this.setState({mapscreener:response.data.data.data[11].mapscreener})
+            this.setState({mapdoctor:response.data.data.data[12].mapdoctor})
+            this.setState({citizenprescibeCount:response.data.data.data[13].citizenprescibeCount})
+            this.setState({citizenrefer:response.data.data.data[14].citizenrefer})
+            this.setState({sevika:response.data.data.data[15].Sevikas})
           
           // this.setState({screeners:response.data.data.data[0].Screeners}) 
           // this.setState({doctors:response.data.data.data[1].Doctors}) 
@@ -263,47 +264,47 @@ getCaseDetails(_type){
       }
     }
     
-  axios.post('http://javixlife.org:3010/api/citizen/citizenRefercount')
-  .then(response => {
+//   axios.post('http://javixlife.org:3010/api/citizen/citizenRefercount')
+//   .then(response => {
 
-        console.dir("Data Length=" + response.data.data)
-        // if(response.data.status===1){
-         this.setState({refer:response.data.data}) 
-        // }
+//         console.dir("Data Length=" + response.data.data)
+//         // if(response.data.status===1){
+//          this.setState({refer:response.data.data}) 
+//         // }
        
        
        
-  })
-  .catch(e=>{
+//   })
+//   .catch(e=>{
    
    
-   if(e.response.data.status===0){
-     this.state.notfound=0
+//    if(e.response.data.status===0){
+//      this.state.notfound=0
 
-   }
- });
+//    }
+//  });
 
- axios.post('http://javixlife.org:3010/api/citizen/citizenPrescribeCount')
-  .then(response => {
+//  axios.post('http://javixlife.org:3010/api/citizen/citizenPrescribeCount')
+//   .then(response => {
 
         
-        // if(response.data.data.status===1){
-          console.log("Data Length+++=" + response.data.data)
-         this.setState({prescribeCitizen:response.data.data}) 
-        // }
+//         // if(response.data.data.status===1){
+//           console.log("Data Length+++=" + response.data.data)
+//          this.setState({prescribeCitizen:response.data.data}) 
+//         // }
        
        
        
-  })
-  .catch(e=>{
+//   })
+//   .catch(e=>{
    
    
-   if(e.response.data.status===0){
-     this.state.notfound=0
+//    if(e.response.data.status===0){
+//      this.state.notfound=0
 
-   }
-  })
-     
+//    }
+//   })
+
     return (
  
      <React.Fragment>
@@ -425,7 +426,7 @@ getCaseDetails(_type){
       <span style={{textAlign:"center"}} onClick={() => {
                           document.location='/dashboard/admin/prescriptionList';
                         }}><h5>Prescribed</h5></span>
-            <h5>{this.state.prescribeCitizen}</h5>              
+            <h5>{this.state.citizenprescibeCount}</h5>              
           
       </CardBody>
       </Card>
@@ -438,7 +439,7 @@ getCaseDetails(_type){
       <CardBody style={{textAlign:"center"}}>
       <span style={{textAlign:"center"}}
        onClick={() =>{ document.location='/dashboard/doctor/ReferPatientList'}}><h5>Non-Prescribed</h5></span>
-            <h5>{this.state.refer}</h5>              
+            <h5>{this.state.citizenrefer}</h5>              
           
       </CardBody>
       </Card>

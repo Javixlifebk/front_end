@@ -105,7 +105,6 @@ class DoctorDashboard extends React.Component {
         if (response.data.status === 1) {
           var recs = response.data.data.data[2];
           //console.dir(recs)
-
           this.setState({screeners:response.data.data.data[0].Screeners}) 
           this.setState({doctors:response.data.data.data[1].Doctors}) 
            this.setState({ngos:response.data.data.data[2].NGO}) 
@@ -119,8 +118,10 @@ class DoctorDashboard extends React.Component {
             this.setState({mapsevika:response.data.data.data[10].mapsevika})
             this.setState({mapscreener:response.data.data.data[11].mapscreener})
             this.setState({mapdoctor:response.data.data.data[12].mapdoctor})
-
-            this.setState({sevika:response.data.data.data[13].Sevikas})
+            this.setState({citizenprescibeCount:response.data.data.data[13].citizenprescibeCount})
+            this.setState({citizenrefer:response.data.data.data[14].citizenrefer})
+            this.setState({sevika:response.data.data.data[15].Sevikas})
+          
         } else {
         }
       })
