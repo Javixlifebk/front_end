@@ -174,6 +174,7 @@ class DoctorDashboard extends React.Component {
         name: 'Screening',
         data: [this.state.screening],
       },
+      // /dashboard/screeningcase
       {
         name: 'Pharmacy',
         data: [this.state.pharmacies],

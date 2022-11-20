@@ -22,6 +22,7 @@ import axios from "axios";
 import { Star, Search } from "react-feather";
 import Highlighter from 'react-highlight-words';
 import { CSVLink } from "react-csv"
+import { style } from '@mui/system';
 
 
 const CustomHeader = (props) => {

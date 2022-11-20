@@ -308,6 +308,9 @@ const referPatient = lazy(() =>
 const doctorDashboard = lazy(() =>
   import("../../views/dashboard/doctor/DoctorDashboard")
 )
+const screeningcaselist = lazy(() =>
+  import("../../views/dashboard/doctor/screeningAllCases")
+)
 const doctorerViewProfile = lazy(() =>
   import("../../views/dashboard/doctor/ViewProfile")
 )
@@ -525,6 +528,7 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/doceditprofile" component={doctorEditProfile} />
               <AppRoute exact path="/dashboard/admin/doctorprofile" component={viewDoctorProfile} />
               <AppRoute exact path="/dashboard/doctor/patientlist" component={patientList} />
+              <AppRoute exact path="/dashboard/screeningcase" component={screeningcaselist} />
               <AppRoute exact path="/dashboard/doctor/refercaseslist" component={patientCaseList} />
               <AppRoute exact path="/dashboard/patientview" component={patientTab} />
               <AppRoute exact path="/dashboard/patientviewscreener" component={patientTabScreener} />
