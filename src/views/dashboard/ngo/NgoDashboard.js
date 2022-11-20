@@ -184,7 +184,7 @@ class NgoDashboard extends React.Component {
         <Row className="match-height"  style={{textAlign:"center"}}>
      
      
-      <Col lg="4"  style={{textAlign:"center",cursor:'pointer'}}>
+      <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
                           document.location='/dashboard/mappedscreener';
                         }}>
@@ -198,7 +198,7 @@ class NgoDashboard extends React.Component {
       </CardBody>
       </Card>
       </Col>
-      <Col lg="3" style={{textAlign:"center",cursor:'pointer'}}>
+      <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
                           document.location='/dashboard/mappedsevika';
                         }}>
@@ -213,7 +213,7 @@ class NgoDashboard extends React.Component {
       </Card >
       </Col>
  
-      <Col lg="4" style={{textAlign:"center"}}>
+      <Col lg="2" style={{textAlign:"center"}}>
       <Card style={{cursor:'pointer'}}>
       <CardHeader>
         <CardTitle style={{textAlign:"center"}}></CardTitle>
@@ -225,54 +225,6 @@ class NgoDashboard extends React.Component {
       <h5>{this.state.mapdoctor}</h5>  
       </CardBody>
       </Card>
-      </Col>
-   
-      </Row> 
-        <Row className="match-height"  style={{textAlign:"center"}}>
-      <Col lg="3" style={{textAlign:"center",cursor:'pointer'}}>
-
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/dashboard/admin/doctorlist';
-                        }}>
-      <CardHeader>
-        <CardTitle></CardTitle>
-      </CardHeader>
-      <CardBody style={{textAlign:"center"}}>
-      <span style={{textAlign:"center"}}><h5>Doctors</h5></span>
-            <h5>{this.state.doctors}</h5>              
-          
-      </CardBody>
-      </Card>
-      
-      </Col>
-     
-      <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/dashboard/admin/screenerlist';
-                        }}>
-      <CardHeader>
-        <CardTitle></CardTitle>
-      </CardHeader>
-      <CardBody style={{textAlign:"center"}}>
-      <span style={{textAlign:"center"}}><h5>Screeners</h5></span>
-            <h5>{this.state.screeners}</h5>              
-            
-      </CardBody>
-      </Card>
-      </Col>
-      <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
-      <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/dashboard/sevikalist';
-                        }}>
-      <CardHeader>
-        <CardTitle></CardTitle>
-      </CardHeader>
-      <CardBody style={{textAlign:"center"}}>
-      <span style={{textAlign:"center"}}><h5>Sevikas</h5></span>
-            <h5>{this.state.sevika}</h5>              
-          
-      </CardBody>
-      </Card >
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
@@ -288,6 +240,54 @@ class NgoDashboard extends React.Component {
       </CardBody>
       </Card>
       </Col>
+   
+      
+      {/* <Col lg="3" style={{textAlign:"center",cursor:'pointer'}}>
+
+      <Card style={{textAlign:"center"}} onClick={() => {
+                          document.location='/dashboard/admin/doctorlist';
+                        }}>
+      <CardHeader>
+        <CardTitle></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center"}}>
+      <span style={{textAlign:"center"}}><h5>Doctors</h5></span>
+            <h5>{this.state.doctors}</h5>              
+          
+      </CardBody>
+      </Card>
+      
+      </Col> */}
+     
+      {/* <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
+      <Card style={{textAlign:"center"}} onClick={() => {
+                          document.location='/dashboard/admin/screenerlist';
+                        }}>
+      <CardHeader>
+        <CardTitle></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center"}}>
+      <span style={{textAlign:"center"}}><h5>Screeners</h5></span>
+            <h5>{this.state.screeners}</h5>              
+            
+      </CardBody>
+      </Card>
+      </Col> */}
+      {/* <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
+      <Card style={{textAlign:"center"}} onClick={() => {
+                          document.location='/dashboard/sevikalist';
+                        }}>
+      <CardHeader>
+        <CardTitle></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center"}}>
+      <span style={{textAlign:"center"}}><h5>Sevikas</h5></span>
+            <h5>{this.state.sevika}</h5>              
+          
+      </CardBody>
+      </Card >
+      </Col> */}
+     
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
                           document.location='/dashboard/citizenlist';

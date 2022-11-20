@@ -274,8 +274,8 @@ const filterData = (data) =>
         <div>
         
         <img
-            // src={()=>getImage(row.info.photo)}
-             src={`http://javixlife.org:3010/profile/no-photo-male.jpg`?`http://javixlife.org:3010/profile/no-photo-male.jpg`: row.info.photo}
+            //  src={()=>getImage(row.info.photo)}
+            src={`http://javixlife.org:3010/profile/no-photo-male.jpg`}
             width="40vh"
             className="img-fluid img-border rounded-circle box-shadow-1"
           />

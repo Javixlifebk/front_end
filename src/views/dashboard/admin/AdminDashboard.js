@@ -263,6 +263,46 @@ getCaseDetails(_type){
       }
     }
     
+  axios.post('http://javixlife.org:3010/api/citizen/citizenRefercount')
+  .then(response => {
+
+        console.dir("Data Length=" + response.data.data)
+        // if(response.data.status===1){
+         this.setState({refer:response.data.data}) 
+        // }
+       
+       
+       
+  })
+  .catch(e=>{
+   
+   
+   if(e.response.data.status===0){
+     this.state.notfound=0
+
+   }
+ });
+
+ axios.post('http://javixlife.org:3010/api/citizen/citizenPrescribeCount')
+  .then(response => {
+
+        
+        // if(response.data.data.status===1){
+          console.log("Data Length+++=" + response.data.data)
+         this.setState({prescribeCitizen:response.data.data}) 
+        // }
+       
+       
+       
+  })
+  .catch(e=>{
+   
+   
+   if(e.response.data.status===0){
+     this.state.notfound=0
+
+   }
+  })
      
     return (
  
@@ -385,7 +425,7 @@ getCaseDetails(_type){
       <span style={{textAlign:"center"}} onClick={() => {
                           document.location='/dashboard/admin/prescriptionList';
                         }}><h5>Prescribed</h5></span>
-            <h5>{this.state.prescription}</h5>              
+            <h5>{this.state.prescribeCitizen}</h5>              
           
       </CardBody>
       </Card>
@@ -397,10 +437,8 @@ getCaseDetails(_type){
       </CardHeader>
       <CardBody style={{textAlign:"center"}}>
       <span style={{textAlign:"center"}}
-       onClick={() => {
-        document.location='/dashboard/admin/nonprescriptionList';
-      }}><h5>Non-Prescribed</h5></span>
-            <h5>{this.state.NonPrescription}</h5>              
+       onClick={() =>{ document.location='/dashboard/doctor/ReferPatientList'}}><h5>Non-Prescribed</h5></span>
+            <h5>{this.state.refer}</h5>              
           
       </CardBody>
       </Card>
