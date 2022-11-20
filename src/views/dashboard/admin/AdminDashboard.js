@@ -390,7 +390,7 @@ getCaseDetails(_type){
       </Col>
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
-                          document.location='/dashboard/citizenlist';
+                          document.location='/dashboard/screeningcase';
                         }}>
       <CardHeader>
         <CardTitle></CardTitle>
