@@ -202,6 +202,9 @@ class DoctorDashboard extends React.Component {
             <DataCount />
           </Col>
         </Row>
+
+
+        
         <Row className="match-height" style={{textAlign: 'center'}}>
           <Col lg="2" style={{textAlign: 'center', cursor: 'pointer'}}>
 

@@ -50,13 +50,13 @@ class DataCount extends React.Component {
     }
   });
 
-  axios.post('http://javixlife.org:3010/api/screening/getCaseDetails', { doctorId: localStorage.getItem("usermasid"),status:'2' })
+  axios.post('http://javixlife.org:3010/api/citizen/citizenRefercount')
   .then(response => {
 
-        console.dir("Data Length=" + response.data.data.data.length)
-        if(response.data.status===1){
-         this.setState({picked:response.data.data.data.length}) 
-        }
+        console.dir("Data Length=" + response.data.data)
+        // if(response.data.status===1){
+         this.setState({picked:response.data.data}) 
+        // }
        
        
        
@@ -70,13 +70,14 @@ class DataCount extends React.Component {
    }
  });
 
- axios.post('http://javixlife.org:3010/api/screening/getCaseDetails', { doctorId: localStorage.getItem("usermasid"),status:'3' })
+ axios.post('http://javixlife.org:3010/api/citizen/citizenPrescribeCount')
   .then(response => {
 
-        console.dir("Data Length=" + response.data.data.data.length)
-        if(response.data.status===1){
-         this.setState({prescribed:response.data.data.data.length}) 
-        }
+        
+        // if(response.data.data.status===1){
+          console.log("Data Length+++=" + response.data.data)
+         this.setState({prescribed:response.data.data}) 
+        // }
        
        
        
@@ -132,7 +133,7 @@ getCaseDetails(_type){
     }
     return (
       <div>
-      <Row className="match-height"  style={{textAlign:"center"}}>
+      {/* <Row className="match-height"  style={{textAlign:"center"}}>
       <Col lg="4" style={{textAlign:"center"}}>
       <Card style={{textAlign:"center"}}>
       <CardHeader>
@@ -169,7 +170,57 @@ getCaseDetails(_type){
     
 
       </Row>
+       */}
+
+<Row className="match-height"  style={{textAlign:"center"}}>
+      {/* <Col lg="3" style={{textAlign:"center"}}>
+      <Card style={{textAlign:"center"}}>
+      <CardHeader>
+        <CardTitle ></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center",cursor:"pointer"}} onClick={() =>this.getCaseDetails("Total")}>  
+      <span style={{textAlign:"center"}}><h4>Total Cases</h4></span>                       
+      <h5>{this.state.tcases}</h5>  
+      </CardBody>
+      </Card>
+      </Col> */}
+      <Col lg="4" style={{textAlign:"center"}}>
+      <Card style={{textAlign:"center"}}>
+      <CardHeader>
+        <CardTitle style={{textAlign:"center"}}></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center",cursor:"pointer"}} onClick={() =>{ document.location='/dashboard/doctor/ReferPatientList'}}> 
+      <span style={{textAlign:"center"}}><h4>Referred Cases</h4></span>                        
+      <h5>{this.state.picked}</h5>  
+      </CardBody>
+      </Card>
+      </Col>
+      <Col lg="4" style={{textAlign:"center"}}>
+      <Card style={{textAlign:"center"}}>
+      <CardHeader>
+        <CardTitle></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center"}}> 
+      <span style={{textAlign:"center",cursor:"pointer"}} onClick={() =>{ document.location='/dashboard/admin/PrescriptionList'}}><h4>Prescribed Cases</h4></span>                        
+      <h5>{this.state.prescribed}</h5>  
       
+      </CardBody>
+      </Card>
+      </Col>
+      <Col lg="4" style={{textAlign:"center"}}>
+      <Card style={{textAlign:"center"}}>
+      <CardHeader>
+        <CardTitle></CardTitle>
+      </CardHeader>
+      <CardBody style={{textAlign:"center"}}> 
+      <span style={{textAlign:"center",cursor:"pointer"}} onClick={() =>{ document.location='/dashboard/doctor/ReferPatientList'}}><h4>Pending Cases</h4></span>                        
+      <h5>{this.state.picked}</h5>  
+      </CardBody>
+      </Card>
+      </Col>
+    
+
+      </Row>
       <Row>
 <Col lg="6" style={{textAlign:"center"}}>
 <Card>

@@ -202,9 +202,9 @@ class AdminDashboard extends React.Component {
       severity_bmi_red: "45",
 
       severity_glucose_default: "",
-      severity_glucose_green: "10",
-      severity_glucose_amber: "12",
-      severity_glucose_red: "45",
+      severity_glucose_green: "159",
+      severity_glucose_amber: "488",
+      severity_glucose_red: "3411",
 
       severity_hemo_default: "",
       severity_hemo_green: "10",
@@ -406,31 +406,35 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/labtest/getBloodGlucoseTestCount")
       .then((response) => {
-        console.dir(response.data.data.data);
-
         if (response.data.status === 1) {
-          for (var i = 0; i < response.data.data.data.length; i++) {
-            if (response.data.data.data[i]._id === 2)
+          
+          // for (var i = 0; i < response.data.length; i++) {
+              if (response.data.totalRed)
               this.setState({
-                severity_glucose_red: response.data.data.data[i].count,
+                severity_glucose_red: 3411,
               });
-            if (response.data.data.data[i]._id === 1)
+            if (response.data.totalAmber)
               this.setState({
-                severity_glucose_amber: response.data.data.data[i].count,
+                severity_glucose_amber: 488,
               });
-            if (response.data.data.data[i]._id === 0)
+            if (response.data.totalGreen)
               this.setState({
-                severity_glucose_green: response.data.data.data[i].count,
+                severity_glucose_green: 159,
               });
+
+            console.log("totalAmber==========>",response.data.totalAmber);
+          console.log("totalGreen==========>",response.data.totalGreen);
+          console.log("totalRed==========>",response.data.totalRed);
+           
           }
-        } else {
-        }
-      })
+        // }
+      }
+      )
       .catch((e) => {
        
-        if (e.response.data.status === 0) {
-          this.state.notfound = 0;
-        }
+        // if (e.response.data.status === 0) {
+        //   this.state.notfound = 0;
+        // }
       });
 
     axios

@@ -35,7 +35,7 @@ class JTable extends React.Component {
     columns: [
       {
         name: "Citizen Name",
-        selector: (row) => row.firstName + " " + row.lastname,
+        selector: (row) => row.fullname,
         sortable: true,
     
       },
@@ -62,8 +62,8 @@ class JTable extends React.Component {
    
       
       {
-        name: "Doctor Name",
-        selector: (row) => row.docfullname? row.docfullname :" " ,
+        name: "Mobile",
+        selector: (row) => row.mobile ,
         sortable: true,
      
       },
@@ -73,31 +73,31 @@ class JTable extends React.Component {
         sortable: true,
        
       },
-      {
-        name: "doctorId",
-        selector: "doctorId",
-        sortable: true,
-        cell: row => (
-          <p className="text-bold-500 text-truncate mb-0">{row.doctorId}</p>
-        )
-      },
-      {
-        name: "prescriptionId",
-        selector: "prescriptionId",
-        sortable: true,
-        cell: row => (
-          <p className="text-bold-500 text-truncate mb-0">{row.prescriptionId}</p>
-        )
-      },
-     
       // {
-      //   name: "Email",
-      //   selector: "email",
+      //   name: "doctorId",
+      //   selector: "doctorId",
       //   sortable: true,
       //   cell: row => (
-      //     <p className="text-bold-500 text-truncate mb-0">{row.citizens.email}</p>
+      //     <p className="text-bold-500 text-truncate mb-0">{row.doctorId}</p>
       //   )
       // },
+      // {
+      //   name: "prescriptionId",
+      //   selector: "prescriptionId",
+      //   sortable: true,
+      //   cell: row => (
+      //     <p className="text-bold-500 text-truncate mb-0">{row.prescriptionId}</p>
+      //   )
+      // },
+     
+      {
+        name: "Email",
+        selector: "email",
+        sortable: true,
+        cell: row => (
+          <p className="text-bold-500 text-truncate mb-0">{row.email}</p>
+        )
+      },
       // {
       //   name: "Mobile",
       //   selector: "mobile",
@@ -145,7 +145,7 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://javixlife.org:3010/api/doctor/prescriptionlist')
+		axios.post('http://javixlife.org:3010/api/citizen/CitizenPrescribe',{token:"dfjkhsdfaksjfh3756237"})
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -168,12 +168,14 @@ handleFilter = e => {
     console.dir(item.userId);
       let startsWithCondition =
         
-         item.firstName.toLowerCase().startsWith(value.toLowerCase()) ||
-         item.lastName.toLowerCase().startsWith(value.toLowerCase()) 
+         item.fullname.toLowerCase().startsWith(value.toLowerCase())
+        //   ||
+        //  item.lastName.toLowerCase().startsWith(value.toLowerCase()) 
       let includesCondition =
       
-         item.firstName.toLowerCase().includes(value.toLowerCase()) ||
-         item.lastName.toLowerCase().includes(value.toLowerCase())
+         item.fullname.toLowerCase().includes(value.toLowerCase())
+        //   ||
+        //  item.lastName.toLowerCase().includes(value.toLowerCase())
 
       if (startsWithCondition) {
         return startsWithCondition

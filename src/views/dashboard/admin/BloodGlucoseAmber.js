@@ -60,7 +60,7 @@ function BloodGlucoseAmber() {
 },[])
 
 const fetchRecords = (page,size) => {
-axios.post("http://javixlife.org:3010/api/labtest/getBloodGlucoseRedList" ,{
+axios.post("http://javixlife.org:3010/api/labtest/getBloodGlucoseAmberList" ,{
   "pageNo":page,
   "size":size
   })
