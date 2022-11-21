@@ -22,6 +22,7 @@ import axios from "axios";
 import { Star, Search } from "react-feather";
 import Highlighter from 'react-highlight-words';
 import {CSVLink} from "react-csv"
+import { Spin, Icon } from 'antd';
 
 
   const CustomHeader = (props) => {
@@ -666,7 +667,8 @@ const filterData = (data) =>
       </Col>          
       </Row>
       <Table columns={columns} dataSource={rows}
-    locale={{emptyText:"loading..."}}
+    // locale={{emptyText:"loading..."}}
+    loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
     pagination={{
       pageSize:size,
       total:totalPages,

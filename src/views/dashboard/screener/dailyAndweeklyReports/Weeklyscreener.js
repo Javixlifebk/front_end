@@ -23,6 +23,9 @@ import { Star, Search } from "react-feather";
 import Highlighter from 'react-highlight-words';
 import { CSVLink } from "react-csv"
 import { style } from '@mui/system';
+import { Spin, Icon } from 'antd';
+
+
 
 
 const CustomHeader = (props) => {
@@ -50,6 +53,11 @@ const CustomHeader = (props) => {
 };
 
 function WeeklyScreener() {
+  // const tableLoading = {
+  //   spinning: loading,
+  //   indicator: <Icon type="loading" style={{ fontSize: 24 }} spin />,
+  // }
+  // const antIcon = {<Icon type="loading" style={{ fontSize: 24 }} spin />};
 
   const [rows, setUsers] = useState('');
 
@@ -646,8 +654,11 @@ function WeeklyScreener() {
                   </Button.Ripple>
         </Col>
       </Row>
+      {/* <Spin indicator={tableLoading} />, */}
       <Table columns={columns} dataSource={rows}
-        locale={{ emptyText: "loading..." }}
+        // locale={{ <Spin indicator={antIcon} /> }}
+        // loading={antIcon}
+        loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
         pagination={{
           pageSize: size,
           total: totalPages,

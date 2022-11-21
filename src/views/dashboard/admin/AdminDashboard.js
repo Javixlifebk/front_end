@@ -144,77 +144,77 @@ class AdminDashboard extends React.Component {
     // }
   });
      
-  axios.post('http://javixlife.org:3010/api/screening/getCaseDetails')
-  .then(response => {
+//   axios.post('http://javixlife.org:3010/api/screening/getCaseDetails')
+//   .then(response => {
 
-        console.dir("Data Length=" + response.data.data.data.length)
-        if(response.data.status===1){
-         this.setState({tcases:response.data.data.data.length}) 
-        }
+//         console.dir("Data Length=" + response.data.data.data.length)
+//         if(response.data.status===1){
+//          this.setState({tcases:response.data.data.data.length}) 
+//         }
        
        
        
-  })
-  .catch(e=>{
-   if(e.response.data.status===0){
-     this.state.notfound=0
+//   })
+//   .catch(e=>{
+//    if(e.response.data.status===0){
+//      this.state.notfound=0
 
-   }
- });
+//    }
+//  });
 
- axios.post('http://javixlife.org:3010/api/screening/getCaseDetails',{status:'2'})
- .then(response => {
+//  axios.post('http://javixlife.org:3010/api/screening/getCaseDetails',{status:'2'})
+//  .then(response => {
 
-       console.dir("Data Length=" + response.data.data.data.length)
-       if(response.data.status===1){
-        this.setState({picked:response.data.data.data.length}) 
-       }
+//        console.dir("Data Length=" + response.data.data.data.length)
+//        if(response.data.status===1){
+//         this.setState({picked:response.data.data.data.length}) 
+//        }
       
       
       
- })
- .catch(e=>{
-  this.state.notfound=0
-  // if(e.response.data.status===0){
-  //   
+//  })
+//  .catch(e=>{
+//   this.state.notfound=0
+//   // if(e.response.data.status===0){
+//   //   
 
-  // }
-});
+//   // }
+// });
 
-axios.post('http://javixlife.org:3010/api/screening/getCaseDetails', {status:'1'})
- .then(response => {
+// axios.post('http://javixlife.org:3010/api/screening/getCaseDetails', {status:'1'})
+//  .then(response => {
 
-       console.dir("Data Length=" + response.data.data.data.length)
-       if(response.data.status===1){
-        this.setState({prescribed:response.data.data.data.length}) 
-       }
+//        console.dir("Data Length=" + response.data.data.data.length)
+//        if(response.data.status===1){
+//         this.setState({prescribed:response.data.data.data.length}) 
+//        }
       
       
       
- })
- .catch(e=>{
-  if(e.response.data.status===0){
-    this.state.notfound=0
+//  })
+//  .catch(e=>{
+//   if(e.response.data.status===0){
+//     this.state.notfound=0
 
-  }
-});
+//   }
+// });
 }
-getCaseDetails(_type){
-    if(_type==="Total"){
-      localStorage.setItem("_status","1");
-      localStorage.setItem("caseType","Total Cases")
-      document.location="/admin/ScreeningCaseDetails";
-    }else if(_type=="Picked"){
-     localStorage.setItem("_status","2");
-     localStorage.setItem("caseType","Pending Cases")
-     document.location="/admin/ScreeningCaseDetails";
-    }
-    else if(_type=="Prescribed"){
-     localStorage.setItem("_status","3");
-     localStorage.setItem("caseType","Completed Cases")
-     document.location="/admin/ScreeningCaseDetails";
-    }
-}
+// getCaseDetails(_type){
+//     if(_type==="Total"){
+//       localStorage.setItem("_status","1");
+//       localStorage.setItem("caseType","Total Cases")
+//       document.location="/admin/ScreeningCaseDetails";
+//     }else if(_type=="Picked"){
+//      localStorage.setItem("_status","2");
+//      localStorage.setItem("caseType","Pending Cases")
+//      document.location="/admin/ScreeningCaseDetails";
+//     }
+//     else if(_type=="Prescribed"){
+//      localStorage.setItem("_status","3");
+//      localStorage.setItem("caseType","Completed Cases")
+//      document.location="/admin/ScreeningCaseDetails";
+//     }
+// }
   render() {
     const data = {
       labels: ["Doctors",  "Screener","NGO", "Sevika","Screening","Pharmacy"],

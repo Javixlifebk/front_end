@@ -1148,22 +1148,22 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
   };
   
  
-  getCaseDetails(severity){
-    if(severity==="green"){
-      // localStorage.setItem("_status","0");
-      localStorage.setItem("caseType","green")
-      document.location="/dashboard/BloodGlucoseGreen";
-    }else if(severity=="amber"){
-    //  localStorage.setItem("_status","1");
-     localStorage.setItem("caseType","amber")
-     document.location="/dashboard/BloodGlucoseAmber";
-    }
-    else if(severity=="red"){
-    //  localStorage.setItem("_status","2");
-     localStorage.setItem("caseType","red")
-     document.location="/dashboard/BloodGlucoseRed";
-    }
-}
+//   getCaseDetails(severity){
+//     if(severity==="green"){
+//       // localStorage.setItem("_status","0");
+//       localStorage.setItem("caseType","green")
+//       document.location="/dashboard/BloodGlucoseGreen";
+//     }else if(severity=="amber"){
+//     //  localStorage.setItem("_status","1");
+//      localStorage.setItem("caseType","amber")
+//      document.location="/dashboard/BloodGlucoseAmber";
+//     }
+//     else if(severity=="red"){
+//     //  localStorage.setItem("_status","2");
+//      localStorage.setItem("caseType","red")
+//      document.location="/dashboard/BloodGlucoseRed";
+//     }
+// }
 // getldlCaseDetails(severity_ldl){
 //   if(severity_ldl==="green"){
 //     // localStorage.setItem("_status","0");
