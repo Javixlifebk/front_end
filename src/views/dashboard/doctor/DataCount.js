@@ -139,32 +139,32 @@ class DataCount extends React.Component {
 //    }
 //  });
 // }
-// getCaseDetails(_type){
-//      if(_type==="Total"){
-//        localStorage.setItem("_status","1");
-//        localStorage.setItem("caseType","Total Cases")
-//        document.location="/dashboard/casedetails";
-//      }else if(_type=="Picked"){
-//       localStorage.setItem("_status","2");
-//       localStorage.setItem("caseType","Picked Cases")
-//       document.location="/dashboard/casedetails";
-//      }
-//      else if(_type=="Prescribed"){
-//       localStorage.setItem("_status","3");
-//       localStorage.setItem("caseType","Prescribed Cases")
-//       document.location="/dashboard/casedetails";
-//      }
-// }
+getCaseDetails(_type){
+     if(_type==="Total"){
+       localStorage.setItem("_status","1");
+       localStorage.setItem("caseType","Total Cases")
+       document.location="/dashboard/casedetails";
+     }else if(_type=="Picked"){
+      localStorage.setItem("_status","2");
+      localStorage.setItem("caseType","Picked Cases")
+      document.location="/dashboard/casedetails";
+     }
+     else if(_type=="Prescribed"){
+      localStorage.setItem("_status","3");
+      localStorage.setItem("caseType","Prescribed Cases")
+      document.location="/dashboard/casedetails";
+     }
+}
   render() {
 
  
 
     const data = {
-      labels: ["Cases",  "Picked Cases","Prescribed"],
+      labels: ["Referred Cases",  "Prescribed Cases","Pending Cases"],
       datasets: [
         {
           label: "Total Cases Count",
-          data: [this.state.tcases, this.state.picked, this.state.prescribed],
+          data: [this.state.citizenrefer, this.state.citizenprescibeCount, this.state.citizenrefer],
           backgroundColor: themeColors
         }
       ]
