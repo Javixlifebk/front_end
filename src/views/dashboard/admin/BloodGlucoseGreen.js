@@ -14,8 +14,9 @@ import {
 } from "reactstrap"
 import 'antd/dist/antd.css';
 // import './index.css';
+import moment from 'moment';
 import { SearchOutlined } from '@ant-design/icons';
-import { Button, Input, Space, Table } from 'antd';
+import { Button, Input, Space, Table,Spin } from 'antd';
 import '@mui/x-data-grid-generator'
 import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
@@ -262,10 +263,15 @@ const filterData = (data) =>
       },
       {
         title: 'Screener FullName',
-        dataIndex: 'screenerfullname',
+        dataIndex:  'screenerfullname',
         key: 'screenerfullname',
         // width: '20%',
-        ...getColumnSearchProps('screenerfullname'),
+        ...getColumnSearchProps('screenerFirstName'),
+        render: (_, row) => (
+          <p size="middle">
+             {row.screenerFirstName} {row.screenerLastName}
+          </p>
+        ),
       },
       {
         title: 'Address',
@@ -281,6 +287,7 @@ const filterData = (data) =>
         render: (_, row) => (
           <p size="middle">
              {/* {row.issubscreener > 0 ? "Sevika" : "Sanyojika"}, */}
+             {moment(row.dateOfOnBoarding).format("DD-MM-YYYY")}
           </p>
         ),
       
@@ -323,7 +330,7 @@ const filterData = (data) =>
       </Col>          
       </Row>
       <Table columns={columns} dataSource={rows}
-    locale={{emptyText:"loading..."}}
+      loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
     pagination={{
       pageSize:size,
       total:totalPages,

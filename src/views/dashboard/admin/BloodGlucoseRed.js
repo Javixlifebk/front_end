@@ -15,7 +15,7 @@ import {
 import 'antd/dist/antd.css';
 // import './index.css';
 import { SearchOutlined } from '@ant-design/icons';
-import { Button, Input, Space, Table } from 'antd';
+import { Button, Input, Space, Table ,Spin} from 'antd';
 import '@mui/x-data-grid-generator'
 import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
@@ -54,6 +54,8 @@ function BloodGlucoseRed() {
   const [totalPages, settotal] = useState(1);
   const [Pages, setpages] = useState(2);
   const [size, setsize] = useState(3);
+  const [mobile, setMobile] = useState("");
+  
   useEffect(() => {
       
     fetchRecords(1,100);
@@ -79,6 +81,8 @@ axios.post("http://javixlife.org:3010/api/labtest/getBloodGlucoseRedList" ,{
                 console.log("2222222",response.data.pages);
                 setsize(response.data.size)
                 console.log("333333333",response.data.size);
+                // setMobile(response.data.data.mobile)
+                // console.log("333333333---",response.data.data.data.mobile);
                 console.log(recs);
             }
 },[]);
@@ -208,7 +212,7 @@ const filterData = (data) =>
           text
         ),
     });
-    
+    // const firstApplicants = tenants.map((tenant) => tenant.applicants[0]);
     const columns = [
     //   {
     //     title: 'Name',
@@ -244,6 +248,7 @@ const filterData = (data) =>
         dataIndex: 'mobile',
         key: 'mobile',
         // width: '20%',
+        
         ...getColumnSearchProps('mobile'),
       },
       {
@@ -262,10 +267,15 @@ const filterData = (data) =>
       },
       {
         title: 'Screener FullName',
-        dataIndex: 'screenerfullname',
+        dataIndex:  'screenerfullname',
         key: 'screenerfullname',
         // width: '20%',
-        ...getColumnSearchProps('screenerfullname'),
+        ...getColumnSearchProps('screenerFirstName'),
+        render: (_, row) => (
+          <p size="middle">
+             {row.screenerFirstName} {row.screenerLastName}
+          </p>
+        ),
       },
       {
         title: 'Address',
@@ -323,7 +333,7 @@ const filterData = (data) =>
       </Col>          
       </Row>
       <Table columns={columns} dataSource={rows}
-    locale={{emptyText:"loading..."}}
+      loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
     pagination={{
       pageSize:size,
       total:totalPages,

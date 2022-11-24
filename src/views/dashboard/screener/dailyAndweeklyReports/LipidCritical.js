@@ -667,7 +667,7 @@ const filterData = (data) =>
       </Col>          
       </Row>
       <Table columns={columns} dataSource={rows}
-    // locale={{emptyText:"loading..."}}
+    //   loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
     loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
     pagination={{
       pageSize:size,
