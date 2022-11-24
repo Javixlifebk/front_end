@@ -15,7 +15,7 @@ import {
 import 'antd/dist/antd.css';
 // import './index.css';
 import { SearchOutlined } from '@ant-design/icons';
-import { Button, Input, Space, Table } from 'antd';
+import { Button, Input, Space, Table ,Spin} from 'antd';
 import '@mui/x-data-grid-generator'
 import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
@@ -322,7 +322,7 @@ const filterData = (data) =>
       </Col>          
       </Row>
       <Table columns={columns} dataSource={rows}
-    locale={{emptyText:"loading..."}}
+      loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
     pagination={{
       pageSize:size,
       total:totalPages,

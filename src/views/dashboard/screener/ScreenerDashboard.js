@@ -110,9 +110,19 @@ class ScreenerDashboard extends React.Component {
           this.setState({screeners:response.data.data.data[0].Screeners}) 
           this.setState({doctors:response.data.data.data[1].Doctors}) 
            this.setState({ngos:response.data.data.data[2].NGO}) 
+           this.setState({prescription:response.data.data.data[3].Prescription})
+           this.setState({advancescreener:response.data.data.data[4].Sanyojika})
+            this.setState({pendingadvancescreener:response.data.data.data[5].Sevika})
+            this.setState({citizen:response.data.data.data[6].Citizen})
             this.setState({pharmacies:response.data.data.data[7].Pharmacy})
-            this.setState({screening:response.data.data.data[6].Citizen})
-            this.setState({sevika:response.data.data.data[10].Sevikas})
+            this.setState({screening:response.data.data.data[8].Screening})
+            this.setState({NonPrescription:response.data.data.data[9].NonPrescription})
+            this.setState({mapsevika:response.data.data.data[10].mapsevika})
+            this.setState({mapscreener:response.data.data.data[11].mapscreener})
+            this.setState({mapdoctor:response.data.data.data[12].mapdoctor})
+            this.setState({citizenprescibeCount:response.data.data.data[13].citizenprescibeCount})
+            this.setState({citizenrefer:response.data.data.data[14].citizenrefer})
+            this.setState({sevika:response.data.data.data[15].Sevikas})
       
         }else{
         }

@@ -701,7 +701,38 @@ class SideMenuContent extends React.Component {
                   navLink: "/dashboard/unmappedDoctor"
                 }
               ]
-            },    
+            },  
+            {
+              id: "Survey ",
+              title: "General Survey Data",
+              type: "item",
+              target:"_blank",
+              icon: <Icon.Activity size={16} />,
+              // navLink: "http://javixlife.org:3010/documents/dump.csv"
+              navLink:"/dashboard/survey/generalSurvey"   
+          
+            },
+            
+            {
+              id: "hSurvey ",
+              title: "Health Survey Data",
+              type: "item",
+              target:"_blank",
+              icon: <Icon.Activity size={16} />,
+              // navLink: "http://javixlife.org:3010/documents/dumpHealth.csv"   
+              navLink:"/dashboard/survey/HealthSurvey"               
+          
+            },
+            {
+              id: "sSurvey ",
+              title: "Socieconomic Survey Data",
+              type: "item",
+              target:"_blank",
+              icon: <Icon.Activity size={16} />,
+              // navLink: "http://javixlife.org:3010/documents/dumpHealth.csv" 
+              navLink: "/dashboard/survey/SocieconomicSurvey"              
+          
+            },  
             {
               id: "usersdaily",
               title: "Daily and Weekly Reports",

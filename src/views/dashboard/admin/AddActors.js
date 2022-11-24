@@ -24,54 +24,46 @@ class AddActors extends React.Component {
 
   
 
+
   handleRegister = e => {
-    e.preventDefault()
-    let postData="firstName="+this.state.txtfname+
-    "&lastName="+this.state.txtlname+
-    "&password="+this.state.password+
-    "&email="+this.state.email+
-    "&phoneNo="+this.state.txtmob+""+
-    "&roleId="+this.state.roleId+""+
-    "&userName="+this.state.userName+"";
+    e.preventDefault();
     
+    let postData="firstName="+this.state.txtfname+
+                  "&lastName="+this.state.txtlname+
+                  "&password="+this.state.password+
+                  "&email="+this.state.email+
+                  "&phoneNo="+this.state.txtmob+""+
+                  "&roleId=1"+
+                  "&userName="+this.state.userName+"";
+                  
+    let _targetPostURL="http://javixlife.org:3010/api/auth/register?=";
+    axios(
+      {
+        method: 'post',
+        url: _targetPostURL,
+        data: postData,
+        headers: {'Content-Type': 'application/x-www-form-urlencoded' }
+        }
 
-let _targetPostURL="http://javixlife.org:3010/api/auth/register?=";
-axios(
-{
-method: 'post',
-url: _targetPostURL,
-data: postData,
-headers: {'Content-Type': 'application/x-www-form-urlencoded' }
-}
+    ).then(res=>{
+           if(res.data.status===1 || res.data.status==="1")
+           { 
+           
+           this.setState({myexection:'Successfully Registered !<br/>Verify your account'});
+           localStorage.setItem("email",this.state.email)
+           document.location="/otp";
+           }
+          })
+          .catch((e)=>{
+           console.dir(e)
+           if(e.response.data.status===0 || e.response.data.status==="0")
+           { 
+           
+           this.setState({myexection:e.response.data.message});
+           }
+           
 
-).then(res=>{
-
-if(res.data.status===1 || res.data.status==="1")
-{ 
-
-this.setState({myexection:'Successfully Registered !<br/>Verify your account'});
-localStorage.setItem("email",this.state.email)
-document.location="/otp";
-}
-})
-.catch((e)=>{
-
-if(e.response.data.status===0 || e.response.data.status==="0")
-{ 
-
-//this.setState({myexection:e.response.data.message});
-
-var i=0;
-//alert(e.response.data.data.length);
-//console.dir(e.response.data.data)
-for(i=0;i<e.response.data.data.length;i++){
-  alert(e.response.data.data[i].msg);
-}
-}
-
-
-});
-
+          });
   }
 
   render() {

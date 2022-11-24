@@ -10,6 +10,7 @@ import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarE
 import axios from "axios";
 import { Star, Search } from "react-feather";
 import Highlighter from 'react-highlight-words';
+import { Spin, Icon } from 'antd';
 // function CustomToolbar() {
 //   return (
 //     <GridToolbarContainer>
@@ -230,7 +231,7 @@ const filterData = (data) =>
             }}
             searchWords={[searchText]}
             autoEscape
-            textToHighlight={text ? text.toString() : ''}
+            textToHighlight={text ? text.toString() : 'not found'}
           />
         ) : (
           text
@@ -340,7 +341,8 @@ const filterData = (data) =>
     return(
       <>
    <Table columns={columns} dataSource={rows}
-    locale={{emptyText:"loading..."}}
+    //   loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
+    loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
     pagination={{
       pageSize:size,
       total:totalPages,

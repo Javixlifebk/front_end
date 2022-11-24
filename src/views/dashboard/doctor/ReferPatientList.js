@@ -269,7 +269,7 @@ const filterData = (data) =>
           <button size="middle"
           className="btn-success"
           onClick={() => getCaseScreener(record.citizenId)}>
-            <a>pick And Prescribe</a>
+            <a>Pick And Prescribe</a>
           </button>
         ),
       },

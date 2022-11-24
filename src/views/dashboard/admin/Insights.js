@@ -202,9 +202,9 @@ class AdminDashboard extends React.Component {
       severity_bmi_red: "45",
 
       severity_glucose_default: "",
-      severity_glucose_green: "159",
-      severity_glucose_amber: "488",
-      severity_glucose_red: "3411",
+      severity_glucose_green: "10",
+      severity_glucose_amber: "12",
+      severity_glucose_red: "45",
 
       severity_hemo_default: "",
       severity_hemo_green: "10",
@@ -411,15 +411,15 @@ class AdminDashboard extends React.Component {
           // for (var i = 0; i < response.data.length; i++) {
               if (response.data.totalRed)
               this.setState({
-                severity_glucose_red: 3411,
+                severity_glucose_red: response.data.totalRed,
               });
             if (response.data.totalAmber)
               this.setState({
-                severity_glucose_amber: 488,
+                severity_glucose_amber: response.data.totalAmber,
               });
             if (response.data.totalGreen)
               this.setState({
-                severity_glucose_green: 159,
+                severity_glucose_green: response.data.totalGreen,
               });
 
             console.log("totalAmber==========>",response.data.totalAmber);
