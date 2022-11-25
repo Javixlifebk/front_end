@@ -110,6 +110,17 @@ const handleClick=(_userid)=> {
   //alert(_userid)
   window.location='/dashboard/citizenprofile'  
 }
+// const handleSubmit=()=> {
+  
+//   //alert('Hellow')
+//   if(localStorage.getItem("roleId")==="1" || localStorage.getItem("roleId")===1){
+//     alert("Sorry as a Doctor you are not entitled for this.");
+
+//   }else{
+//   window.location='/dashboard/addcitizen'
+//   }
+// }
+  
 
  const handleSubmit=()=> {
   
@@ -384,6 +395,17 @@ const filterData = (data) =>
       <Col sm="12">
       <CardTitle><b><h3>Citizen List</h3></b> </CardTitle>
       </Col>          
+      </Row>
+      <Row>
+      <Button.Ripple
+       color="primary"
+       type="submit"
+       className="mr-1 mb-1"
+            outline
+            onClick={()=>handleSubmit}
+          >
+            Add Citizen
+          </Button.Ripple>
       </Row>
     <Table columns={columns} dataSource={rows}
       loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
