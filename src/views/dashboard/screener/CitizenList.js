@@ -10,12 +10,12 @@ import {
   Col,
   Badge,
   // Input,
-  // Button
+  Button
 } from "reactstrap"
 import 'antd/dist/antd.css';
 // import './index.css';
 import { SearchOutlined } from '@ant-design/icons';
-import { Button, Input, Space, Table,Spin } from 'antd';
+import {  Input, Space, Table,Spin } from 'antd';
 import '@mui/x-data-grid-generator'
 import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
@@ -124,7 +124,7 @@ const handleClick=(_userid)=> {
 
  const handleSubmit=()=> {
   
-  //alert('Hellow')
+  alert('Hellow')
   if(localStorage.getItem("roleId")==="1" || localStorage.getItem("roleId")===1){
     alert("Sorry as a Doctor you are not entitled for this.");
 
@@ -397,6 +397,45 @@ const filterData = (data) =>
       </Col>          
       </Row>
       <Row>
+      {/* <div className="col-sm-6 pb-1">
+            <div className="row">
+              <div className="col-sm-6">
+             <label className="d-flex"> From :</label>
+               <input
+          // style={{ width: 100 }}
+            type="date"
+            className="form-control"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+          />
+              </div>
+              <div className="col-sm-6">
+             <label className="d-flex"> To :</label>
+              <input
+            // style={{ width: 100 }}
+            type="date"
+            className="form-control"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+          />
+              </div>
+            </div>
+          </div> */}
+        <Col sm="6" ></Col>
+        <Col sm="6 d-flex justify-content-end">
+        <Button.Ripple
+                    color="primary"
+                    type="submit"
+                    className="mr-1 mb-1"
+                    outline
+                    onClick={()=>handleSubmit()}
+                    
+                  >
+                  Add citizen
+                  </Button.Ripple>
+        </Col>
+      </Row>
+      {/* <Row>
       <Button.Ripple
        color="primary"
        type="submit"
@@ -406,7 +445,7 @@ const filterData = (data) =>
           >
             Add Citizen
           </Button.Ripple>
-      </Row>
+      </Row> */}
     <Table columns={columns} dataSource={rows}
       loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
     pagination={{
