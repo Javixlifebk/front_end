@@ -28,7 +28,12 @@ function HealthSurvey() {
 
 
   const columns = [
-    { field: 'familyId', headerName: 'Family Id', width: 60 },
+    { field: 'familyId', headerName: 'Family Id', width: 100 },
+    { field: 'citizenId', headerName: 'citizenId', width: 100 },
+    // { field: 'firstName', headerName: 'firstName', width: 100 },
+    // { field: 'address', headerName: 'Address', width: 100 },
+    // { field: 'aadhaar', headerName: 'Aadhaar', width: 100 },
+    // { field: 'mobile', headerName: 'mobile', width: 100 },
     { field: 'drinkingWaterSource', headerName: 'Drinking Water Source', width: 150 },
     { field: 'drinkingWaterDistance', headerName: 'Drinking Water Distance', width: 150 },
     { field: 'DistanceOfSubcenters', headerName: 'Distance Of Subcenters', width: 120 },
