@@ -186,14 +186,15 @@ componentDidMount() {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Screener List <Button.Ripple
+          <CardTitle>Screener List</CardTitle>
+           <Button.Ripple
                     color="primary"
                     type="submit"
-                    className="mr-1 mb-1"
+                    className="mr-1 mb-1 float-right"
                     onClick={this.handleBack}
                   >
                    Back
-                  </Button.Ripple></CardTitle>
+                  </Button.Ripple>
         </CardHeader>
         <CardBody className="rdt_Wrapper">
           <DataTable
