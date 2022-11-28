@@ -66,14 +66,14 @@ function WeeklyScreener() {
   const [size, setsize] = useState(3);
   useEffect(() => {
 
-    fetchRecords(5, 1000);
+    fetchRecords(1, 1000);
   }, [])
 
 
   const fetchRecords = (page, size) => {
     axios.post("http://javixlife.org:3010/api/generalsurvey/screeningScreener", {
-      "pageNo": 5,
-      "size": 1000
+      "pageNo": page,
+      "size": size
     })
       .then(response => {
 
