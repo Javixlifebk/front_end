@@ -66,7 +66,7 @@ function WeeklyScreener() {
   const [size, setsize] = useState(3);
   useEffect(() => {
 
-    fetchRecords(1, 8000);
+    fetchRecords(1, 1000);
   }, [])
 
   const fetchRecords = (page, size) => {
