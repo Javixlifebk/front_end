@@ -236,20 +236,20 @@ function WeeklyScreener() {
       ...getColumnSearchProps('fullname'),
     },
    
-    // {
-    //   title: 'Screener Name',
-    //   dataIndex: 'screenerfullname',
-    //   key: 'screenerfullname',
-    //   // width: '20%',
-    //   ...getColumnSearchProps('screenerfullname'),
-    // },
     {
-      title: 'DOB',
-      dataIndex: 'DOB',
-      key: 'DOB',
+      title: 'Screener Name',
+      dataIndex: 'screenerfullname',
+      key: 'screenerfullname',
       // width: '20%',
-      ...getColumnSearchProps('DOB'),
+      ...getColumnSearchProps('screenerfullname'),
     },
+    // {
+    //   title: 'DOB',
+    //   dataIndex: 'DOB',
+    //   key: 'DOB',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('DOB'),
+    // },
     
     {
       title: 'Gender',
