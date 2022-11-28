@@ -204,16 +204,16 @@ function WeeklyScreener() {
 
   const columns = [
 
-    // {
-    //   title: "citizenId ",
-    //   dataIndex: "citizenId",
-    //   key: 'citizenId',
-    //   width: '40%',
-    //   // render: (text, record) => (
-    //   //   <span>{record.firstName} {record.lastName}</span>
-    //   // ),
-    //   ...getColumnSearchProps('citizenId'),
-    // },
+    {
+      title: "citizenId ",
+      dataIndex: "citizenId",
+      key: 'citizenId',
+      width: '40%',
+      // render: (text, record) => (
+      //   <span>{record.firstName} {record.lastName}</span>
+      // ),
+      ...getColumnSearchProps('citizenId'),
+    },
     {
       title: 'caseId',
       dataIndex: 'caseId',
@@ -363,13 +363,13 @@ function WeeklyScreener() {
     //   // width: '20%',
     //   ...getColumnSearchProps('reyeright'),
     // },
-    // {
-    //   title: 'hemoglobins',
-    //   dataIndex: 'hemoglobins',
-    //   key: 'hemoglobins',
-    //   // width: '20%',
-    //   ...getColumnSearchProps('hemoglobins'),
-    // },
+    {
+      title: 'hemoglobins',
+      dataIndex: 'hemoglobins',
+      key: 'hemoglobins',
+      // width: '20%',
+      ...getColumnSearchProps('hemoglobins'),
+    },
     // {
     //   title: 'Blood Glucose unit',
     //   dataIndex: 'unit',
