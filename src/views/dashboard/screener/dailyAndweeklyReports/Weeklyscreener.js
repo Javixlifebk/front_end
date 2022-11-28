@@ -61,7 +61,7 @@ function WeeklyScreener() {
 
   const [rows, setUsers] = useState('');
 
-  // const [totalPages, settotal] = useState(1);
+  const [totalPages, settotal] = useState(1);
   const [Pages, setpages] = useState(2);
   const [size, setsize] = useState(3);
   useEffect(() => {
@@ -82,8 +82,8 @@ function WeeklyScreener() {
           // console.log(response.data.total);
           setUsers(recs);
 
-          // settotal(response.data.total)
-          // console.log("111111111111", response.data.total);
+          settotal(response.data.total)
+          console.log("111111111111", response.data.total);
           setpages(response.data.pages)
           console.log("2222222", response.data.pages);
           setsize(response.data.size)
@@ -661,13 +661,13 @@ function WeeklyScreener() {
         loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
         pagination={{
           pageSize: size,
-          // total: totalPages,
+          total: totalPages,
           onChange: (page, size) => {
             fetchRecords(page, size);
             setsize(size)
           },
           // total:85,
-          // showTotal: (total) => `Total : ${total} Records`
+          showTotal: (total) => `Total : ${total} Records`
           // showTotal: (total) =>{ `Total ${total} items`}
         }}
 
