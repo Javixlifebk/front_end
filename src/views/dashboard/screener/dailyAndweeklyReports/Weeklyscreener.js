@@ -61,12 +61,12 @@ function WeeklyScreener() {
 
   const [rows, setUsers] = useState('');
 
-  const [totalPages, settotal] = useState(1);
+  // const [totalPages, settotal] = useState(1);
   const [Pages, setpages] = useState(2);
   const [size, setsize] = useState(3);
   useEffect(() => {
 
-    fetchRecords(1, 10);
+    fetchRecords(1, 8000);
   }, [])
 
   const fetchRecords = (page, size) => {
@@ -82,8 +82,8 @@ function WeeklyScreener() {
           // console.log(response.data.total);
           setUsers(recs);
 
-          settotal(response.data.total)
-          console.log("111111111111", response.data.total);
+          // settotal(response.data.total)
+          // console.log("111111111111", response.data.total);
           setpages(response.data.pages)
           console.log("2222222", response.data.pages);
           setsize(response.data.size)
@@ -385,224 +385,224 @@ function WeeklyScreener() {
       ...getColumnSearchProps('btype'),
     },
  
-    {
-      title: 'nitrite',
-      dataIndex: 'nitrite',
-      key: 'nitrite',
-      // width: '20%',
-      ...getColumnSearchProps('nitrite'),
-    },
-    {
-      title: 'urobilinogen',
-      dataIndex: 'urobilinogen',
-      key: 'urobilinogen',
-      // width: '20%',
-      ...getColumnSearchProps('urobilinogen'),
-    },
-    {
-      title: 'protein',
-      dataIndex: 'protein',
-      key: 'protein',
-      // width: '20%',
-      ...getColumnSearchProps('protein'),
-    },
-    {
-      title: 'blood',
-      dataIndex: 'blood',
-      key: 'blood',
-      // width: '20%',
-      ...getColumnSearchProps('blood'),
-    },
-    {
-      title: 'specificGravity',
-      dataIndex: 'specificGravity',
-      key: 'specificGravity',
-      // width: '20%',
-      ...getColumnSearchProps('specificGravity'),
-    },
-    {
-      title: 'ketone',
-      dataIndex: 'ketone',
-      key: 'ketone',
-      // width: '20%',
-      ...getColumnSearchProps('ketone'),
-    },
-    {
-      title: 'bilirubin',
-      dataIndex: 'bilirubin',
-      key: 'bilirubin',
-      // width: '20%',
-      ...getColumnSearchProps('bilirubin'),
-    },
-    {
-      title: 'PH',
-      dataIndex: 'PH',
-      key: 'PH',
-      // width: '20%',
-      ...getColumnSearchProps('PH'),
-    },
-    {
-      title: 'Urine Glucose',
-      dataIndex: 'urineglucose',
-      key: 'urineglucose',
-      // width: '20%',
-      ...getColumnSearchProps('urineglucose'),
-    },
-    {
-      title: 'leukocytes',
-      dataIndex: 'leukocytes',
-      key: 'leukocytes',
-      // width: '20%',
-      ...getColumnSearchProps('leukocytes'),
-    },
-    {
-      title: 'FVC Predicted',
-      dataIndex: 'fvc_predicted',
-      key: 'fvc_predicted',
-      // width: '20%',
-      ...getColumnSearchProps('fvc_predicted'),
-    },
-    {
-      title: 'FVC Actual',
-      dataIndex: 'fvc_actual',
-      key: 'fvc_actual',
-      // width: '20%',
-      ...getColumnSearchProps('fvc_actual'),
-    },
-    {
-      title: 'FVC Predicted Percent',
-      dataIndex: 'fvc_predicted_percent',
-      key: 'fvc_predicted_percent',
-      // width: '20%',
-      ...getColumnSearchProps('fvc_predicted_percent'),
-    },
-    {
-      title: 'FEV1 Predicted',
-      dataIndex: 'fev1_predicted',
-      key: 'fev1_predicted',
-      // width: '20%',
-      ...getColumnSearchProps('fev1_predicted'),
-    },
-    {
-      title: 'FEV1 Actual',
-      dataIndex: 'fev1_actual',
-      key: 'fev1_actual',
-      // width: '20%',
-      ...getColumnSearchProps('fev1_actual'),
-    },
-    {
-      title: 'FEV1 Predicted Percent',
-      dataIndex: 'fev1_predicted_percent',
-      key: 'fev1_predicted_percent',
-      // width: '20%',
-      ...getColumnSearchProps('fev1_predicted_percent'),
-    },
-    {
-      title: 'PEF Predicted',
-      dataIndex: 'pef_predicted',
-      key: 'pef_predicted',
-      // width: '20%',
-      ...getColumnSearchProps('pef_predicted'),
-    },
-    {
-      title: 'PEF Actual',
-      dataIndex: 'pef_actual',
-      key: 'pef_actual',
-      // width: '20%',
-      ...getColumnSearchProps('pef_actual'),
-    },
-    {
-      title: 'PEF Predicted Percent',
-      dataIndex: 'pef_predicted_percent',
-      key: 'pef_predicted_percent',
-      // width: '20%',
-      ...getColumnSearchProps('pef_predicted_percent'),
-    },
-    {
-      title: 'FVC1 Predicted',
-      dataIndex: 'fvc1_predicted',
-      key: 'fvc1_predicted',
-      // width: '20%',
-      ...getColumnSearchProps('fvc1_predicted'),
-    },
-    {
-      title: 'FVC1 Actual',
-      dataIndex: 'fvc1_actual',
-      key: 'fvc1_actual',
-      // width: '20%',
-      ...getColumnSearchProps('fvc1_actual'),
-    },
-    {
-      title: 'FVC1 Predicted Percent',
-      dataIndex: 'fvc1_predicted_percent',
-      key: 'fvc1_predicted_percent',
-      // width: '20%',
-      ...getColumnSearchProps('fvc1_predicted_percent'),
-    },
-    {
-      title: 'Cholesterol',
-      dataIndex: 'cholesterol',
-      key: 'cholesterol',
-      // width: '20%',
-      ...getColumnSearchProps('cholesterol'),
-    },
-    {
-      title: 'HDLcholesterol',
-      dataIndex: 'hdlcholesterol',
-      key: 'hdlcholesterol',
-      // width: '20%',
-      ...getColumnSearchProps('hdlcholesterol'),
-    },
-    {
-      title: 'Triglycerides',
-      dataIndex: 'triglycerides',
-      key: 'triglycerides',
-      // width: '20%',
-      ...getColumnSearchProps('triglycerides'),
-    },
-    {
-      title: 'LDL',
-      dataIndex: 'ldl',
-      key: 'ldl',
-      // width: '20%',
-      ...getColumnSearchProps('ldl'),
-    },
-    {
-      title: 'TC/HDL',
-      dataIndex: 'tcl_hdl',
-      key: 'tcl_hdl',
-      // width: '20%',
-      ...getColumnSearchProps('tcl_hdl'),
-    },
-    {
-      title: 'LDL/HDL',
-      dataIndex: 'ldl_hdl',
-      key: 'ldl_hdl',
-      // width: '20%',
-      ...getColumnSearchProps('ldl_hdl'),
-    },
-    {
-      title: 'NON_HDL',
-      dataIndex: 'non_hdl',
-      key: 'non_hdl',
-      // width: '20%',
-      ...getColumnSearchProps('non_hdl'),
-    },
-    {
-      title: 'Lipid Glucose',
-      dataIndex: 'lipidglucose',
-      key: 'lipidglucose',
-      // width: '20%',
-      ...getColumnSearchProps('lipidglucose'),
-    },
+    // {
+    //   title: 'nitrite',
+    //   dataIndex: 'nitrite',
+    //   key: 'nitrite',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('nitrite'),
+    // },
+    // {
+    //   title: 'urobilinogen',
+    //   dataIndex: 'urobilinogen',
+    //   key: 'urobilinogen',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('urobilinogen'),
+    // },
+    // {
+    //   title: 'protein',
+    //   dataIndex: 'protein',
+    //   key: 'protein',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('protein'),
+    // },
+    // {
+    //   title: 'blood',
+    //   dataIndex: 'blood',
+    //   key: 'blood',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('blood'),
+    // },
+    // {
+    //   title: 'specificGravity',
+    //   dataIndex: 'specificGravity',
+    //   key: 'specificGravity',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('specificGravity'),
+    // },
+    // {
+    //   title: 'ketone',
+    //   dataIndex: 'ketone',
+    //   key: 'ketone',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('ketone'),
+    // },
+    // {
+    //   title: 'bilirubin',
+    //   dataIndex: 'bilirubin',
+    //   key: 'bilirubin',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('bilirubin'),
+    // },
+    // {
+    //   title: 'PH',
+    //   dataIndex: 'PH',
+    //   key: 'PH',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('PH'),
+    // },
+    // {
+    //   title: 'Urine Glucose',
+    //   dataIndex: 'urineglucose',
+    //   key: 'urineglucose',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('urineglucose'),
+    // },
+    // {
+    //   title: 'leukocytes',
+    //   dataIndex: 'leukocytes',
+    //   key: 'leukocytes',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('leukocytes'),
+    // },
+    // {
+    //   title: 'FVC Predicted',
+    //   dataIndex: 'fvc_predicted',
+    //   key: 'fvc_predicted',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('fvc_predicted'),
+    // },
+    // {
+    //   title: 'FVC Actual',
+    //   dataIndex: 'fvc_actual',
+    //   key: 'fvc_actual',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('fvc_actual'),
+    // },
+    // {
+    //   title: 'FVC Predicted Percent',
+    //   dataIndex: 'fvc_predicted_percent',
+    //   key: 'fvc_predicted_percent',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('fvc_predicted_percent'),
+    // },
+    // {
+    //   title: 'FEV1 Predicted',
+    //   dataIndex: 'fev1_predicted',
+    //   key: 'fev1_predicted',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('fev1_predicted'),
+    // },
+    // {
+    //   title: 'FEV1 Actual',
+    //   dataIndex: 'fev1_actual',
+    //   key: 'fev1_actual',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('fev1_actual'),
+    // },
+    // {
+    //   title: 'FEV1 Predicted Percent',
+    //   dataIndex: 'fev1_predicted_percent',
+    //   key: 'fev1_predicted_percent',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('fev1_predicted_percent'),
+    // },
+    // {
+    //   title: 'PEF Predicted',
+    //   dataIndex: 'pef_predicted',
+    //   key: 'pef_predicted',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('pef_predicted'),
+    // },
+    // {
+    //   title: 'PEF Actual',
+    //   dataIndex: 'pef_actual',
+    //   key: 'pef_actual',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('pef_actual'),
+    // },
+    // {
+    //   title: 'PEF Predicted Percent',
+    //   dataIndex: 'pef_predicted_percent',
+    //   key: 'pef_predicted_percent',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('pef_predicted_percent'),
+    // },
+    // {
+    //   title: 'FVC1 Predicted',
+    //   dataIndex: 'fvc1_predicted',
+    //   key: 'fvc1_predicted',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('fvc1_predicted'),
+    // },
+    // {
+    //   title: 'FVC1 Actual',
+    //   dataIndex: 'fvc1_actual',
+    //   key: 'fvc1_actual',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('fvc1_actual'),
+    // },
+    // {
+    //   title: 'FVC1 Predicted Percent',
+    //   dataIndex: 'fvc1_predicted_percent',
+    //   key: 'fvc1_predicted_percent',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('fvc1_predicted_percent'),
+    // },
+    // {
+    //   title: 'Cholesterol',
+    //   dataIndex: 'cholesterol',
+    //   key: 'cholesterol',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('cholesterol'),
+    // },
+    // {
+    //   title: 'HDLcholesterol',
+    //   dataIndex: 'hdlcholesterol',
+    //   key: 'hdlcholesterol',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('hdlcholesterol'),
+    // },
+    // {
+    //   title: 'Triglycerides',
+    //   dataIndex: 'triglycerides',
+    //   key: 'triglycerides',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('triglycerides'),
+    // },
+    // {
+    //   title: 'LDL',
+    //   dataIndex: 'ldl',
+    //   key: 'ldl',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('ldl'),
+    // },
+    // {
+    //   title: 'TC/HDL',
+    //   dataIndex: 'tcl_hdl',
+    //   key: 'tcl_hdl',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('tcl_hdl'),
+    // },
+    // {
+    //   title: 'LDL/HDL',
+    //   dataIndex: 'ldl_hdl',
+    //   key: 'ldl_hdl',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('ldl_hdl'),
+    // },
+    // {
+    //   title: 'NON_HDL',
+    //   dataIndex: 'non_hdl',
+    //   key: 'non_hdl',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('non_hdl'),
+    // },
+    // {
+    //   title: 'Lipid Glucose',
+    //   dataIndex: 'lipidglucose',
+    //   key: 'lipidglucose',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('lipidglucose'),
+    // },
 
-    {
-      title: 'type',
-      dataIndex: 'type',
-      key: 'type',
-      // width: '20%',
-      ...getColumnSearchProps('type'),
-    },
+    // {
+    //   title: 'type',
+    //   dataIndex: 'type',
+    //   key: 'type',
+    //   // width: '20%',
+    //   ...getColumnSearchProps('type'),
+    // },
 
     {
       title: 'created At',
@@ -661,13 +661,13 @@ function WeeklyScreener() {
         loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
         pagination={{
           pageSize: size,
-          total: totalPages,
+          // total: totalPages,
           onChange: (page, size) => {
             fetchRecords(page, size);
             setsize(size)
           },
           // total:85,
-          showTotal: (total) => `Total : ${total} Records`
+          // showTotal: (total) => `Total : ${total} Records`
           // showTotal: (total) =>{ `Total ${total} items`}
         }}
 
