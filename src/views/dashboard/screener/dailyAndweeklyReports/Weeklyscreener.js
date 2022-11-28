@@ -243,13 +243,13 @@ function WeeklyScreener() {
     //   // width: '20%',
     //   ...getColumnSearchProps('screenerfullname'),
     // },
-    // {
-    //   title: 'DOB',
-    //   dataIndex: 'DOB',
-    //   key: 'DOB',
-    //   // width: '20%',
-    //   ...getColumnSearchProps('DOB'),
-    // },
+    {
+      title: 'DOB',
+      dataIndex: 'DOB',
+      key: 'DOB',
+      // width: '20%',
+      ...getColumnSearchProps('DOB'),
+    },
     
     {
       title: 'Gender',
@@ -258,13 +258,13 @@ function WeeklyScreener() {
       // width: '20%',
       ...getColumnSearchProps('Gender'),
     },
-    // {
-    //   title: 'Age',
-    //   dataIndex: 'Age',
-    //   key: 'Age',
-    //   // width: '20%',
-    //   ...getColumnSearchProps('Age'),
-    // },
+    {
+      title: 'Age',
+      dataIndex: 'Age',
+      key: 'Age',
+      // width: '20%',
+      ...getColumnSearchProps('Age'),
+    },
     {
       title: 'Aadhar number',
       dataIndex: 'aadhaar',
