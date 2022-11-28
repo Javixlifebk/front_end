@@ -83,7 +83,7 @@ function WeeklyScreenerSevika() {
   const [gridApi, setGridApi] = useState();
   useEffect(() => {
 
-    fetchRecords(1, 10);
+    fetchRecords(1, 1000);
   }, [])
 
   const fetchRecords = (page, size) => {
