@@ -10,17 +10,18 @@ import {
   Col,
   Badge,
   // Input,
-  // Button
+  Button
 } from "reactstrap"
 import 'antd/dist/antd.css';
 // import './index.css';
 import { SearchOutlined } from '@ant-design/icons';
-import { Button, Input, Space, Table,Spin } from 'antd';
+import {  Input, Space, Table,Spin } from 'antd';
 import '@mui/x-data-grid-generator'
 import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
 import { Star, Search } from "react-feather";
 import Highlighter from 'react-highlight-words';
+import { CSVLink } from "react-csv"
 // function CustomToolbar() {
 //   return (
 //     <GridToolbarContainer>
@@ -98,7 +99,7 @@ function ScreeningAllCase() {
     const [size, setsize] = useState(3);
     useEffect(() => {
         
-      fetchRecords(1,100);
+      fetchRecords(1,1000);
 },[])
 
 const fetchRecords = (page,size) => {
@@ -336,6 +337,31 @@ const filterData = (data) =>
       <CardTitle><b><h3>Screening Cases List</h3></b> </CardTitle>
       </Col>          
       </Row>
+      <Row>
+    <Col  sm="6"></Col>
+      <Col sm="6 d-flex justify-content-end">
+        <Button.Ripple
+                    color="primary"
+                    type="submit"
+                    className="mr-1 mb-1"
+                    
+                  >
+                    <CSVLink
+              filename={"citizenReport.csv"}
+              data={rows}
+              
+              onClick={()=>{
+                console.log("The file is downloading")
+              }}
+              style={{
+              
+                color: "#fff"
+              }}
+            >
+              Export
+            </CSVLink> 
+                  </Button.Ripple>
+        </Col></Row>
     <Table columns={columns} dataSource={rows}
       loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
     pagination={{
