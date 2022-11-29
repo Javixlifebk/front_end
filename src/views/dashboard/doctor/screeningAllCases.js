@@ -347,7 +347,7 @@ const filterData = (data) =>
                     
                   >
                     <CSVLink
-              filename={"citizenReport.csv"}
+              filename={"screeningCase.csv"}
               data={rows}
               
               onClick={()=>{
