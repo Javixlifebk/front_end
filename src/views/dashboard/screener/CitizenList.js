@@ -13,6 +13,7 @@ import {
   Button
 } from "reactstrap"
 import 'antd/dist/antd.css';
+import { CSVLink } from "react-csv"
 // import './index.css';
 import { SearchOutlined } from '@ant-design/icons';
 import {  Input, Space, Table,Spin } from 'antd';
@@ -76,7 +77,7 @@ function CitizenList() {
     const [size, setsize] = useState(3);
     useEffect(() => {
         
-      fetchRecords(1,100);
+      fetchRecords(1,1000);
 },[])
 
 const fetchRecords = (page,size) => {
@@ -432,6 +433,32 @@ const filterData = (data) =>
                     
                   >
                   Add citizen
+                  </Button.Ripple>
+        </Col>
+      </Row>
+      <Row>
+        <Col sm="6" ></Col>
+        <Col sm="6 d-flex justify-content-end">
+        <Button.Ripple
+                    color="primary"
+                    type="submit"
+                    className="mr-1 mb-1"
+                    
+                  >
+                    <CSVLink
+              filename={"citizenReport.csv"}
+              data={rows}
+              
+              onClick={()=>{
+                console.log("The file is downloading")
+              }}
+              style={{
+              
+                color: "#fff"
+              }}
+            >
+              Export
+            </CSVLink> 
                   </Button.Ripple>
         </Col>
       </Row>
