@@ -66,15 +66,12 @@ function WeeklyScreener() {
   const [size, setsize] = useState(3);
   useEffect(() => {
 
-    fetchRecords(1, 1000);
+    fetchRecords();
   }, [])
 
 
-  const fetchRecords = (page, size) => {
-    axios.post("http://javixlife.org:3010/api/generalsurvey/screeningScreener", {
-      "pageNo": page,
-      "size": size
-    })
+  const fetchRecords = () => {
+    axios.post("http://javixlife.org:3010/api/generalsurvey/screeningScreener")
       .then(response => {
 
         if (response.data.status === 1) {
