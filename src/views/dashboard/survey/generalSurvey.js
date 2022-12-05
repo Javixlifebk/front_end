@@ -32,14 +32,31 @@ function GeneralSurvey() {
 					  }
 		 },[]);
  },[])
-
+ 
+// console.log("***************",rows.citizens[0]);
   const columns = [
+    
     { field: 'noOfFamilyMembers', headerName: 'No.of Family Member', width: 60 },
     { field: 'nameHead', headerName: 'Family Head Name', width: 150 },
     { field: 'ageHead', headerName: 'Age', width: 150 },
     { field: 'NoOfAdultMales', headerName: 'No.of Adult Males', width: 120 },
     { field: 'NoOfAdultFemales', headerName: 'No.of Adult Females', width: 150 },
     { field: 'NoOfChildrenMales', headerName: 'No.of Children Males', width: 300 },
+    { field: 'screenerfullname', headerName: 'Screener Name', width: 300 },
+    { field: 'mobile', headerName: 'Mobile', width: 150 },
+    { field: 'aadhaar', headerName: 'Aadhar Number', width: 150},
+    { field: 'address', headerName: 'Address', width: 150},
+    {
+      field: 'fullName',
+      headerName: 'Full Name',
+      width: 150,
+      valueGetter: (params) => {
+        console.log("data+++++",params.row.citizens[0].firstName );
+        return <p>{params.row.citizens[0].firstName}</p>
+       
+        } 
+      
+    },
     {
       field: 'NoOfChildrenFemales',
       headerName: 'No.of Children Females',

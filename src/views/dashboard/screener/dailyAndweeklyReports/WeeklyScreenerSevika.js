@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 // import { environment } from '../../api'
 // import { Space, Table, Tag } from 'antd';
+// import jsPDF from "jspdf";
+// import "jspdf-autotable";
 import {
   Card,
   CardBody,
@@ -15,6 +17,9 @@ import {
 import 'antd/dist/antd.css';
 // import './index.css';
 import { SearchOutlined } from '@ant-design/icons';
+// import { useReactToPrint } from 'react-to-print';
+// import { PDFViewer } from '@react-pdf/renderer';
+
 import {  Input, Space, Table } from 'antd';
 import '@mui/x-data-grid-generator'
 import { DataGrid, GridToolbar, GridToolbarContainer, GridFilterPanel, GridToolbarExport, GridToolbarFilterButton } from '@mui/x-data-grid'
@@ -72,6 +77,37 @@ const dateFilterParams = {
 };
 
 function WeeklyScreenerSevika() {
+
+
+  // const componentRef = useRef();
+  // const handlePrint = useReactToPrint({
+  //   content: () => componentRef.current,
+  // });
+
+  // const exportPDF=() =>{
+  //   const unit = "pt";
+  //   const size = "A4"; // Use A1, A2, A3 or A4
+  //   const orientation = "portrait"; // portrait or landscape
+
+  //   const marginLeft = 40;
+  //   const doc = new jsPDF(orientation, unit, size);
+
+  //   doc.setFontSize(15);
+
+  //   const title = "Report";
+  //   const headers = {columns} ;
+
+  //   const data = {rows};
+  //   let content = {
+  //     startY: 50,
+  //     head: headers,
+  //     body: data
+  //   };
+
+  //   doc.text(title, marginLeft, 40);
+  //   // doc.autoTable(content);/
+  //   doc.save("report.pdf")
+  // }
 
   const [rows, setUsers] = useState('');
 
@@ -679,7 +715,9 @@ function WeeklyScreenerSevika() {
               </div>
             </div>
           </div> */}
-        <Col sm="6" ></Col>
+        <Col sm="6" >
+        {/* <button onClick={() => exportPDF()}>Generate Report</button> */}
+        </Col>
         <Col sm="6 d-flex justify-content-end">
         <Button.Ripple
                     color="primary"
@@ -688,7 +726,7 @@ function WeeklyScreenerSevika() {
                     
                   >
                     <CSVLink
-              filename={"ScreenerSevikaReport.csv"}
+              filename={"SevikaReport.csv"}
               data={rows}
               
               onClick={()=>{
@@ -702,8 +740,18 @@ function WeeklyScreenerSevika() {
               Export
             </CSVLink> 
                   </Button.Ripple>
+
+        {/* <Button.Ripple  onClick={handlePrint}  
+              >Export
+                <PDFViewer data={rows}></PDFViewer>
+</Button.Ripple>
+        */}
         </Col>
+
+
       </Row>
+      {/* <div ref={componentRef}> */}
+              
       <Table columns={columns} dataSource={rows}
         // locale={{ emptyText: "loading..." }}
         loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
@@ -720,6 +768,7 @@ function WeeklyScreenerSevika() {
         }}
 
       />
+     {/* </div> */}
     </>
   );
 };
