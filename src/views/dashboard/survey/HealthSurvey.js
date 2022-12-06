@@ -29,11 +29,27 @@ function HealthSurvey() {
 
   const columns = [
     { field: 'familyId', headerName: 'Family Id', width: 100 },
-    { field: 'citizenId', headerName: 'citizenId', width: 100 },
-    // { field: 'firstName', headerName: 'firstName', width: 100 },
-    // { field: 'address', headerName: 'Address', width: 100 },
-    // { field: 'aadhaar', headerName: 'Aadhaar', width: 100 },
-    // { field: 'mobile', headerName: 'mobile', width: 100 },
+    { field: 'citizenId', headerName: 'CitizenId'},
+    { field: 'screenerfullname', headerName: 'Sevika Name' ,width:200 },
+    { field: 'mobile', headerName: 'Mobile' },
+    { field: 'aadhaar', headerName: 'Aadhar Number'},
+    { field: 'address', headerName: 'Address' ,width: 200},
+    {
+      field: 'fullName',
+      headerName: 'Family Members Name',
+      width: 300,
+      renderCell: (params) => {
+        let string = "";
+        for(let j=0;j<params.row.citizens.length;j++){
+          string = string+", "+params.row.citizens[j].firstName+" "+params.row.citizens[j].lastName;
+        }
+        string = string.replace(/^,/, '');
+
+       return <p>{string}</p>
+      }
+
+      
+    },
     { field: 'drinkingWaterSource', headerName: 'Drinking Water Source', width: 150 },
     { field: 'drinkingWaterDistance', headerName: 'Drinking Water Distance', width: 150 },
     { field: 'DistanceOfSubcenters', headerName: 'Distance Of Subcenters', width: 120 },
@@ -71,6 +87,7 @@ function HealthSurvey() {
       
       },
     },
+    { field: 'createdAt', headerName: 'createdAt'},
   ]
 
   return (

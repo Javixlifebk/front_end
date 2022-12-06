@@ -36,32 +36,41 @@ function GeneralSurvey() {
 // console.log("***************",rows.citizens[0]);
   const columns = [
     
-    { field: 'noOfFamilyMembers', headerName: 'No.of Family Member', width: 60 },
-    { field: 'nameHead', headerName: 'Family Head Name', width: 150 },
-    { field: 'ageHead', headerName: 'Age', width: 150 },
-    { field: 'NoOfAdultMales', headerName: 'No.of Adult Males', width: 120 },
-    { field: 'NoOfAdultFemales', headerName: 'No.of Adult Females', width: 150 },
-    { field: 'NoOfChildrenMales', headerName: 'No.of Children Males', width: 300 },
-    { field: 'screenerfullname', headerName: 'Screener Name', width: 300 },
-    { field: 'mobile', headerName: 'Mobile', width: 150 },
-    { field: 'aadhaar', headerName: 'Aadhar Number', width: 150},
-    { field: 'address', headerName: 'Address', width: 150},
+    
+    { field: 'noOfFamilyMembers', headerName: 'No.of Family Member' },
+    { field: 'nameHead', headerName: 'Family Head Name'},
+    { field: 'citizenId', headerName: 'CitizenId'},
+    { field: 'screenerfullname', headerName: 'Sevika Name' ,width:200 },
+    { field: 'mobile', headerName: 'Mobile' },
+    { field: 'aadhaar', headerName: 'Aadhar Number'},
+    { field: 'address', headerName: 'Address' ,width: 200},
     {
       field: 'fullName',
-      headerName: 'Full Name',
-      width: 150,
-      valueGetter: (params) => {
-        console.log("data+++++",params.row.citizens[0].firstName );
-        return <p>{params.row.citizens[0].firstName}</p>
-       
-        } 
+      headerName: 'Family Members Name',
+      width: 300,
+      renderCell: (params) => {
+        let string = "";
+        for(let j=0;j<params.row.citizens.length;j++){
+          string = string+", "+params.row.citizens[j].firstName+" "+params.row.citizens[j].lastName;
+        }
+        string = string.replace(/^,/, '');
+
+       return <p>{string}</p>
+      }
+
       
     },
+
+    { field: 'ageHead', headerName: 'Age'},
+    { field: 'NoOfAdultMales', headerName: 'No.of Adult Males'},
+    { field: 'NoOfAdultFemales', headerName: 'No.of Adult Females'},
+    { field: 'NoOfChildrenMales', headerName: 'No.of Children Males'},
+   
     {
       field: 'NoOfChildrenFemales',
       headerName: 'No.of Children Females',
       sortable: false,
-      width: 100,
+     
       renderCell: (params) => {
         const onClick = (e) => {
           e.stopPropagation() // don't select this row after clicking
@@ -80,6 +89,7 @@ function GeneralSurvey() {
       
       },
     },
+    { field: 'createdAt', headerName: 'createdAt'},
   ]
 
   return (
