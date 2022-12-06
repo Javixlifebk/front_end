@@ -1,2 +1,17 @@
 @import "../node_modules/prismjs/themes/prism-tomorrow";
 @import "./assets/scss/app.scss";
+
+.FamilyMember-scroll {
+    -ms-overflow-style: none !important ;
+    scrollbar-width: none !important; 
+}
+.FamilyMember-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .FamilyMember-scroll{
+    overflow-x: scroll !important;
+  }
+// .FamilyMember-scroll {
+//     overflow-x: scroll !important;
+//     white-space: nowrap;
+// }
