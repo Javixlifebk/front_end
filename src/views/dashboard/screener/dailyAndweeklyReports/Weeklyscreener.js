@@ -66,7 +66,7 @@ function WeeklyScreener() {
   const [size, setsize] = useState(3);
   useEffect(() => {
 
-    fetchRecords(1, 100);
+    fetchRecords(1, 4000);
   }, [])
 
 
@@ -78,7 +78,6 @@ function WeeklyScreener() {
         if (response.data.status === 1) {
           var recs = response.data.data;
 
-          // console.log(response.data.total);
           setUsers(recs);
 
           settotal(response.data.total)
