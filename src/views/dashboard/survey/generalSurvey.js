@@ -47,7 +47,8 @@ function GeneralSurvey() {
     {
       field: 'fullName',
       headerName: 'Family Members Name',
-      width: 300,
+      cellClassName: 'FamilyMember FamilyMember-scroll',
+      // width: 50,
       renderCell: (params) => {
         let string = "";
         for(let j=0;j<params.row.citizens.length;j++){
@@ -111,6 +112,10 @@ function GeneralSurvey() {
               NoRowsOverlay: customNoRowsOverlay
             }}
             getRowId={(rows) => rows._id}
+            style={{
+              whiteSpace: "normal",
+              wordWrap: "break-word"
+            }}
           />
         </div>
       </div>
