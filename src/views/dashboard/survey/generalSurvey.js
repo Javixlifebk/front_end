@@ -44,7 +44,7 @@ function GeneralSurvey() {
 const [selectedFilter, setSelectedFilter] = useState("All");
 
   useEffect(() => {
-		  axios.post('http://javixlife.org:3010/api/generalsurvey/GeneralSurveyList')
+		  axios.post('http://localhost:3010/api/generalsurvey/GeneralSurveyList')
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -61,11 +61,66 @@ const [selectedFilter, setSelectedFilter] = useState("All");
     
     { field: 'noOfFamilyMembers', headerName: 'No.of Family Member' },
     { field: 'nameHead', headerName: 'Family Head Name'},
-    { field: 'citizenId', headerName: 'CitizenId'},
+    { field: 'citizenId', headerName: 'CitizenId',
+    renderCell: (params) => {
+      console.log(params.row)
+      let string='';
+      for(let j=0;j<1;j++){
+        console.log(j);
+        string = params.row.citizenId[j]
+
+      }
+      string = string.replace(/^,/, '');
+      console.log("string",string);
+      return <p>{string}</p>
+
+    }
+  },
     { field: 'screenerfullname', headerName: 'Sevika Name' ,width:200},
-    { field: 'mobile', headerName: 'Mobile' },
-    { field: 'aadhaar', headerName: 'Aadhar Number'},
-    { field: 'address', headerName: 'Address' ,width: 200},
+    { field: 'mobile', headerName: 'Mobile',
+    renderCell: (params) => {
+      console.log(params.row)
+      let string='';
+      for(let j=0;j<1;j++){
+        console.log(j);
+        string = params.row.mobile[j]
+
+      }
+      string = string.replace(/^,/, '');
+      console.log("string",string);
+      return <p>{string}</p>
+
+    }  
+  },
+    { field: 'aadhaar', headerName: 'Aadhar Number',width:150,
+    renderCell: (params) => {
+      console.log(params.row)
+      let string='';
+      for(let j=0;j<1;j++){
+        console.log(j);
+        string = params.row.aadhaar[j]
+
+      }
+      string = string.replace(/^,/, '');
+      console.log("string",string);
+      return <p>{string}</p>
+
+    }},
+    { field: 'address', headerName: 'Address' ,width: 200,
+    renderCell: (params) => {
+      console.log(params.row)
+      let string='';
+      for(let j=0;j<1;j++){
+        console.log(j);
+        string = params.row.address[j]
+
+      }
+      string = string.replace(/^,/, '');
+      console.log("string",string);
+      return <p>{string}</p>
+
+    }
+  },
     {
       field: 'fullName',
       headerName: 'Family Members Name',
