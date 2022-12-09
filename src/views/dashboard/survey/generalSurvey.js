@@ -44,7 +44,7 @@ function GeneralSurvey() {
 const [selectedFilter, setSelectedFilter] = useState("All");
 
   useEffect(() => {
-		  axios.post('http://localhost:3010/api/generalsurvey/GeneralSurveyList')
+		  axios.post('http://javixlife.org:3010/api/generalsurvey/GeneralSurveyList')
 		 .then(response => {
 					if(response.data.status===1)
 					  {
