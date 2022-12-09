@@ -1,7 +1,21 @@
 import React, { useEffect, useState } from 'react'
 // import { environment } from '../../api'
+import PropTypes from 'prop-types';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper';
+import Popper from '@mui/material/Popper';
+
 import '@mui/x-data-grid-generator'
-import { DataGrid, GridToolbar,GridOverlay,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
+import { DataGrid, GridToolbar,GridOverlay,GridToolbarContainer,GridFilterPanel,GridToolbarExport,
+  GridToolbarFilterButton,getGridSingleSelectOperators,
+  GridCellParams,
+  GridColDef,
+  GridComparatorFn,
+  GridFilterItem,
+} from '@mui/x-data-grid'
+
+
 import axios from "axios";
 function CustomToolbar() {
   return (
@@ -20,10 +34,17 @@ function customNoRowsOverlay() {
   )
 }
 
+///expand data 
+
+//expand text end
+
 function GeneralSurvey() {
   const [rows, setUsers] = useState([])
+  // const filterList=[]
+const [selectedFilter, setSelectedFilter] = useState("All");
+
   useEffect(() => {
-		  axios.post('http://javixlife.org:3010/api/generalsurvey/GeneralSurveyList')
+		  axios.post('http://localhost:3010/api/generalsurvey/GeneralSurveyList')
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -32,7 +53,8 @@ function GeneralSurvey() {
 					  }
 		 },[]);
  },[])
- 
+
+
 // console.log("***************",rows.citizens[0]);
   const columns = [
     
@@ -40,7 +62,7 @@ function GeneralSurvey() {
     { field: 'noOfFamilyMembers', headerName: 'No.of Family Member' },
     { field: 'nameHead', headerName: 'Family Head Name'},
     { field: 'citizenId', headerName: 'CitizenId'},
-    { field: 'screenerfullname', headerName: 'Sevika Name' ,width:200 },
+    { field: 'screenerfullname', headerName: 'Sevika Name' ,width:200},
     { field: 'mobile', headerName: 'Mobile' },
     { field: 'aadhaar', headerName: 'Aadhar Number'},
     { field: 'address', headerName: 'Address' ,width: 200},
@@ -48,15 +70,27 @@ function GeneralSurvey() {
       field: 'fullName',
       headerName: 'Family Members Name',
       cellClassName: 'FamilyMember FamilyMember-scroll',
-      // width: 50,
+      sx:{'overflowWrap': 'break-word'},
+      width: 250,
+     height:80,
+
+     "MuiTableRow": {
+      "&.root": {
+        height: "170px"
+      },
+    },
+      
       renderCell: (params) => {
+       
         let string = "";
         for(let j=0;j<params.row.citizens.length;j++){
           string = string+", "+params.row.citizens[j].firstName+" "+params.row.citizens[j].lastName;
         }
         string = string.replace(/^,/, '');
 
-       return <p>{string}</p>
+       return <p className=' memberClass'>{string}</p>
+       
+      
       }
 
       
@@ -90,7 +124,7 @@ function GeneralSurvey() {
       
       },
     },
-    { field: 'createdAt', headerName: 'createdAt'},
+    { field: 'createdAt', headerName: 'Survey Date'},
   ]
 
   return (
@@ -100,6 +134,14 @@ function GeneralSurvey() {
         <h2 className="font-24-31 font-20-26 font-style-normal font-weight-600 colorformhrading titlewadd">
         General Survey
         </h2>
+        {/* <Select onChange={onFilter} value={selectedFilter}>
+        <MenuItem value="All">All</MenuItem>
+        {rows.map((x) => (
+          <MenuItem key={x.screenerfullname} value={x.screenerfullname}>
+            {x.screenerfullname}
+          </MenuItem>
+        ))}
+      </Select> */}
         <div style={{ height: '75vh', width: '100%' }}>
          
           <DataGrid

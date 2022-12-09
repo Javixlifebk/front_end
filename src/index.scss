@@ -4,14 +4,25 @@
 .FamilyMember-scroll {
     -ms-overflow-style: none !important ;
     scrollbar-width: none !important; 
+    text-overflow: ellipsis !important;
+    max-height: auto !important;
+    min-height: auto !important;
 }
 .FamilyMember-scroll::-webkit-scrollbar {
     display: none;
   }
   .FamilyMember-scroll{
-    overflow-x: scroll !important;
+    overflow-y: scroll !important;
+    white-space: normal !important;
+    margin-top: auto !important;
   }
-// .FamilyMember-scroll {
-//     overflow-x: scroll !important;
-//     white-space: nowrap;
-// }
+
+ .css-r11z79-MuiDataGrid-root .MuiDataGrid-row:not(.MuiDataGrid-row--dynamicHeight)>.MuiDataGrid-cell {
+    overflow: hidden;
+    
+}
+
+.memberClass{
+// line-height: 0.9rem !important;
+margin-top: auto !important;
+}
