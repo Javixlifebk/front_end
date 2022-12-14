@@ -58,17 +58,17 @@ function HealthSurvey() {
     { field: 'aadhaar', headerName: 'Aadhar Number'},
     { field: 'address', headerName: 'Address' ,width: 200},
     {
-      field: 'fullName',
+      field: 'firstName',
       headerName: 'Family Members Name',
       width: 300,
       renderCell: (params) => {
-        let string = "";
-        for(let j=0;j<params.row.citizens.length;j++){
-          string = string+", "+params.row.citizens[j].firstName+" "+params.row.citizens[j].lastName;
-        }
-        string = string.replace(/^,/, '');
+        // let string = "";
+        // for(let j=0;j<params.row.citizens.length;j++){
+        //   string = string+", "+params.row.citizens[j].firstName+" "+params.row.citizens[j].lastName;
+        // }
+        // string = string.replace(/^,/, '');
 
-       return <p>{string}</p>
+      //  return <p>{params.row.firstName+""+params.row.lastName}</p>
       }
 
       

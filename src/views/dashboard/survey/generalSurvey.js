@@ -18,18 +18,18 @@ import {
 } from "reactstrap"
 
 import '@mui/x-data-grid-generator'
-import { DataGrid, GridToolbar,GridOverlay } from '@mui/x-data-grid'
+import { DataGrid, GridToolbar,GridOverlay,GridToolbarContainer,GridToolbarFilterButton } from '@mui/x-data-grid'
 
 import axios from "axios";
-// function CustomToolbar() {
-//   return (
-//     <GridToolbarContainer>
-//       <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
-//       {/* <GridFilterPanel /> */}
-//       <GridToolbarFilterButton />
-//     </GridToolbarContainer>
-//   );
-// }
+function CustomToolbar() {
+  return (
+    <GridToolbarContainer>
+      {/* <GridToolbarExport printOptions={{ disableToolbarButton: true }} /> */}
+      {/* <GridFilterPanel /> */}
+      <GridToolbarFilterButton />
+    </GridToolbarContainer>
+  );
+}
 function customNoRowsOverlay() {
   return (
       <GridOverlay>
@@ -251,8 +251,11 @@ const setexportdata=()=>{
             rows={rows}
             columns={columns}
             pageSize={8}
-            components={{ Toolbar: GridToolbar,
-              NoRowsOverlay: customNoRowsOverlay }}
+          
+            components={{
+              Toolbar: CustomToolbar,
+              NoRowsOverlay: customNoRowsOverlay
+            }}
               style={{
                 whiteSpace: "normal",
                 wordWrap: "break-word"
