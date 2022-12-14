@@ -2,8 +2,18 @@ import React, { useEffect, useState } from 'react'
 import '@mui/x-data-grid-generator'
 // import Button from '@mui/material/Button'
 import { DataGrid, GridToolbar,GridOverlay } from '@mui/x-data-grid'
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  CardTitle,
+  Row,
+  Col,
+  Badge,
+  // Input,
+  Button
+} from "reactstrap"
 import axios from "axios";
-
 function customNoRowsOverlay() {
   return (
       <GridOverlay>
@@ -14,6 +24,19 @@ function customNoRowsOverlay() {
 function HealthSurvey() {
 
   const [rows, setUsers] = useState([])
+  const setexportdata=()=>{
+    // fetch('http://javixlife.org:3010/api/generalsurvey/download',urlexport)
+    axios.get('http://javixlife.org:3010/api/healthsurvey/HealthSurveydownload')
+     .then(response => {
+  
+          this.setState({response});
+          
+     })
+     .catch(e=>{
+     
+    });
+  // alert("urlexport");
+  }
  
   useEffect(() => {
 		  axios.post('http://javixlife.org:3010/api/healthsurvey/HealthSurveyList')
@@ -87,7 +110,7 @@ function HealthSurvey() {
       
       },
     },
-    { field: 'createdAt', headerName: 'createdAt'},
+    { field: 'createdAt', headerName: 'Survey Date'},
   ]
 
   return (
@@ -97,6 +120,20 @@ function HealthSurvey() {
         <h2 className="font-24-31 font-20-26 font-style-normal font-weight-600 colorformhrading titlewadd">
         Health Survey
         </h2>
+        <Row><Col sm="6"></Col>
+      <Col sm="6 d-flex justify-content-end">
+      <Button.Ripple
+                    color="primary"
+                    type="submit"
+                    className="mr-1 mb-1"
+                    onClick={()=>setexportdata()}
+                    href="http://javixlife.org:3010/exports/csv-healthsurvey.csv"
+
+                  > Export
+                  
+                  </Button.Ripple>
+      </Col>
+      </Row>
         <div style={{ height: '75vh', width: '100%' }}>
          
           <DataGrid

@@ -282,7 +282,7 @@ function WeeklyScreenerSevika() {
       title: "citizenId ",
       dataIndex: "citizenId",
       key: 'citizenId',
-      width: '40%',
+      width: '100%',
       // render: (text, record) => (
       //   <span>{record.firstName} {record.lastName}</span>
       // ),
@@ -292,14 +292,14 @@ function WeeklyScreenerSevika() {
       title: 'caseId',
       dataIndex: 'caseId',
       key: 'caseId',
-      // width: '20%',
+      width: '70%',
       ...getColumnSearchProps('caseId'),
     },
     {
       title: 'ScreenerId',
       dataIndex: 'screenerId',
       key: 'screenerId',
-      // width: '20%',
+      width: '70%',
       ...getColumnSearchProps('screenerId'),
     },
     {
