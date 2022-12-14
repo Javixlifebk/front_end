@@ -14,6 +14,7 @@ import {
   Label
  
 } from "reactstrap"
+import moment from 'moment';
 
 import { Router, Switch, Route } from "react-router-dom"
 import { connect } from "react-redux"
@@ -289,6 +290,7 @@ class AddCitizen extends React.Component {
                     id="mobileVertical"
                     placeholder="DOB"
                     value={this.state.dob}
+                    max={moment().format("YYYY-MM-DD")}
                     onChange={e => this.setState({ dob: e.target.value })}
                     required
                   />

@@ -5,27 +5,31 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  CardTitle,
+  Row,
+  Col,
+  Badge,
+  // Input,
+  Button
+} from "reactstrap"
 
 import '@mui/x-data-grid-generator'
-import { DataGrid, GridToolbar,GridOverlay,GridToolbarContainer,GridFilterPanel,GridToolbarExport,
-  GridToolbarFilterButton,getGridSingleSelectOperators,
-  GridCellParams,
-  GridColDef,
-  GridComparatorFn,
-  GridFilterItem,
-} from '@mui/x-data-grid'
-
+import { DataGrid, GridToolbar,GridOverlay } from '@mui/x-data-grid'
 
 import axios from "axios";
-function CustomToolbar() {
-  return (
-    <GridToolbarContainer>
-      <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
-      {/* <GridFilterPanel /> */}
-      <GridToolbarFilterButton />
-    </GridToolbarContainer>
-  );
-}
+// function CustomToolbar() {
+//   return (
+//     <GridToolbarContainer>
+//       <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
+//       {/* <GridFilterPanel /> */}
+//       <GridToolbarFilterButton />
+//     </GridToolbarContainer>
+//   );
+// }
 function customNoRowsOverlay() {
   return (
       <GridOverlay>
@@ -41,7 +45,34 @@ function customNoRowsOverlay() {
 function GeneralSurvey() {
   const [rows, setUsers] = useState([])
   // const filterList=[]
-const [selectedFilter, setSelectedFilter] = useState("All");
+// const [selectedFilter, setSelectedFilter] = useState([]);
+// const searchdata=()=>{
+//   axios.post('http://javixlife.org:3010/api/generalsurvey/GeneralSurveyList')
+//  .then(response => {
+//       if(response.data.status===1)
+//         {
+//           var recs=response.data.data.data;
+//           setSelectedFilter(recs);
+//           console.log(recs);
+//         }
+//  },[]);
+
+// }
+// const urlexport="http://javixlife.org:3010/exports/csv-generalsurvey.csv"
+// console.log("+++++++",selectedFilter)
+const setexportdata=()=>{
+  // fetch('http://javixlife.org:3010/api/generalsurvey/download',urlexport)
+  axios.get('http://javixlife.org:3010/api/generalsurvey/download')
+   .then(response => {
+
+        this.setState({response});
+        
+   })
+   .catch(e=>{
+   
+  });
+// alert("urlexport");
+}
 
   useEffect(() => {
 		  axios.post('http://javixlife.org:3010/api/generalsurvey/GeneralSurveyList')
@@ -61,7 +92,8 @@ const [selectedFilter, setSelectedFilter] = useState("All");
     
     { field: 'noOfFamilyMembers', headerName: 'No.of Family Member' },
     { field: 'nameHead', headerName: 'Family Head Name'},
-    { field: 'citizenId', headerName: 'CitizenId',
+    { field: 'familyId', headerName: 'FamilyId' ,width:150},
+    { field: 'citizenId', headerName: 'CitizenId',width:200,
     renderCell: (params) => {
       console.log(params.row)
       let string='';
@@ -188,18 +220,46 @@ const [selectedFilter, setSelectedFilter] = useState("All");
       <div className="container">
         <h2 className="font-24-31 font-20-26 font-style-normal font-weight-600 colorformhrading titlewadd">
         General Survey
-        </h2>
-        {/* <Select onChange={onFilter} value={selectedFilter}>
-        <MenuItem value="All">All</MenuItem>
+        </h2>  
+        {/* <select onChange={()=>searchdata()}>
+        <option value="All">All</option>
         {rows.map((x) => (
-          <MenuItem key={x.screenerfullname} value={x.screenerfullname}>
+          <option key={x.screenerfullname} value={x.screenerfullname}>
             {x.screenerfullname}
-          </MenuItem>
+          </option>
         ))}
-      </Select> */}
+      </select> */}
+      <Row><Col sm="6"></Col>
+      <Col sm="6 d-flex justify-content-end">
+      <Button.Ripple
+                    color="primary"
+                    type="submit"
+                    className="mr-1 mb-1"
+                    onClick={()=>setexportdata()}
+                    href="http://javixlife.org:3010/exports/csv-generalsurvey.csv"
+
+                  > Export
+                  
+                  </Button.Ripple>
+      </Col>
+      </Row>
+      
+      
         <div style={{ height: '75vh', width: '100%' }}>
-         
-          <DataGrid
+        <DataGrid
+            className="pb-3"
+            rows={rows}
+            columns={columns}
+            pageSize={8}
+            components={{ Toolbar: GridToolbar,
+              NoRowsOverlay: customNoRowsOverlay }}
+              style={{
+                whiteSpace: "normal",
+                wordWrap: "break-word"
+              }}
+              getRowId={(rows) => rows._id}
+          />
+          {/* <DataGrid
             className="pb-3"
             rows={rows}
             columns={columns}
@@ -213,7 +273,7 @@ const [selectedFilter, setSelectedFilter] = useState("All");
               whiteSpace: "normal",
               wordWrap: "break-word"
             }}
-          />
+          /> */}
         </div>
       </div>
     </div>
