@@ -145,7 +145,7 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://javixlife.org:3010/api/citizen/CitizenPrescribe',{token:"dfjkhsdfaksjfh3756237"})
+		axios.post('http://javixlife.org:3010/api/citizen/CitizenPrescribe',{token:"dfjkhsdfaksjfh3756237", ngoId:localStorage.getItem("ngoId"), userId:localStorage.getItem("userid"),'isUnrefer': false})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

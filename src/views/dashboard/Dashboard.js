@@ -210,6 +210,7 @@ const ngoScreenerProfile = lazy(() =>
 )
 
 
+
 /**********************End of NGO Section************************** */
 
 //*****************Screener Section****************************** */
@@ -218,6 +219,9 @@ const screenerDashboard = lazy(() =>
   import("../../views/dashboard/screener/ScreenerDashboard")
 )
 
+const screenerEditProfile = lazy(() =>
+  import("../../views/dashboard/screener/EditProfile")
+)
 const screenerViewProfile = lazy(() =>
   import("../../views/dashboard/screener/ViewProfile")
 )
@@ -226,9 +230,7 @@ const citizenProfile = lazy(() =>
   import("../../views/dashboard/screener/CitizenProfile")
 )
 
-const screenerProfile = lazy(() =>
-  import("../../views/dashboard/screener/EditProfile")
-)
+
 
 const addCitizen = lazy(() =>
   import("../../views/dashboard/screener/AddCitizen")
@@ -499,6 +501,7 @@ export default class Dashboard extends React.Component {
 
               <AppRoute exact path="/dashboard/mappedscreener/" component={mappedScreener} />
               <AppRoute exact path="/dashboard/unmappedscreener/" component={unmappedScreener} />
+              <AppRoute exact path="/dashboard/screditprofile/" component={screenerEditProfile} />
 
               <AppRoute exact path="/dashboard/mappedsevika" component={mappedSevika} />
               <AppRoute exact path="/dashboard/unmappedsevika" component={unmappedSevika} />
@@ -506,7 +509,6 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/mappedDoctor" component={mappedDoctor} />
               <AppRoute exact path="/dashboard/unmappedDoctor" component={unmappedDoctor} />
 
-              <AppRoute exact path="/screditprofile/" component={screenerProfile} />
               <AppRoute exact path="/scrviewprofile/" component={screenerViewProfile} />
               <AppRoute exact path="/dashboard/admin/screenerlist" component={screenerList} />
               <AppRoute exact path="/dashboard/admin/screenerprofile" component={viewScreenerProfile} />
@@ -525,7 +527,7 @@ export default class Dashboard extends React.Component {
                 
               <AppRoute exact path="/dashboard/admin/doctorlist/" component={doctorList} />
               <AppRoute exact path="/docviewprofile" component={doctorerViewProfile} />
-              <AppRoute exact path="/doceditprofile" component={doctorEditProfile} />
+              <AppRoute exact path="/dashboard/doceditprofile" component={doctorEditProfile} />
               <AppRoute exact path="/dashboard/admin/doctorprofile" component={viewDoctorProfile} />
               <AppRoute exact path="/dashboard/doctor/patientlist" component={patientList} />
               <AppRoute exact path="/dashboard/screeningcase" component={screeningcaselist} />
@@ -577,7 +579,7 @@ export default class Dashboard extends React.Component {
                  
 
               <AppRoute exact path="/ngoviewprofile" component={ngoViewProfile} />
-              <AppRoute exact path="/ngoeditwprofile" component={ngoEditProfile} />
+              <AppRoute exact path="/dashboard/ngoeditwprofile" component={ngoEditProfile} />
               <AppRoute exact path="/dashboard/ngoscreenerprofile" component={ngoScreenerProfile} />
               <AppRoute exact path="/dashboard/admin/ngolist/" component={ngoList} />
               <AppRoute exact path="/dashboard/admin/nonprescriptionList/" component={nonprescriptionList} />
@@ -592,8 +594,8 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/pharmacyprofile" component={viewPharmacyProfile} />
 
               
-              <AppRoute exact path="/seveditprofile/" component={sevikaProfile} />
-              <AppRoute exact path="/sevviewprofile/" component={sevikaViewProfile} />
+              <AppRoute exact path="/dashboard/seveditprofile/" component={sevikaProfile} />
+              <AppRoute exact path="/dashboard/sevviewprofile/" component={sevikaViewProfile} />
               
               <AppRoute exact path="/dashboard/survey/generalSurvey" component={generalProfile} />
               <AppRoute exact path="/dashboard/survey/HealthSurvey" component={healthProfile} />

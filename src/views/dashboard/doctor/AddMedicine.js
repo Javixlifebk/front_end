@@ -213,6 +213,7 @@ class AddMedicine extends React.Component {
           postData+="&strength="+finalStrength+"&quantity="+finalQty+"&duaration="+finalDuration+ "&direction=" + finalDirection;
           postData+="&frequency="+finalFrequency+"&preparation="+finalPreparation+"&dose="+finalDosages;
           postData+="&route="+finalRoute+"&tests="+this.state.strTests+"&comments="+this.state.strMdescription;
+          postData+="&ngoId="+localStorage.getItem("ngoId")
          
 
 

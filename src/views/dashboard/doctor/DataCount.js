@@ -35,6 +35,7 @@ class DataCount extends React.Component {
 
     axios
       .post ('http://javixlife.org:3010/api/graph/getlist', {
+        ngoId:localStorage.getItem("ngoId"),
         userId: localStorage.getItem ('userid'),
         token: 'dfjkhsdfaksjfh3756237',
       })

@@ -179,7 +179,7 @@ componentDidMount() {
 		//this.setState({data:null});
         
 		//axios.post('http://javixlife.org:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
-    axios.post('http://javixlife.org:3010/api/doctor/unmappedList', {token:'dfjkhsdfaksjfh3756237',ismapped:false })
+    axios.post('http://javixlife.org:3010/api/doctor/unmappedList', {token:'dfjkhsdfaksjfh3756237',ngoId:'0' })
 		 .then(response => {
 					if(response.data.status===1)
 					  {

@@ -255,7 +255,7 @@ componentDidMount() {
 		//this.setState({data:null});
     let scrId=localStorage.getItem("citizenId");
     console.log(scrId, '@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
-    axios.post('http://javixlife.org:3010/api/screening/getCaseDetails?=', {token:'dfjkhsdfaksjfh3756237',citizenId:scrId})
+    axios.post('http://javixlife.org:3010/api/screening/getCaseDetails?=', {token:'dfjkhsdfaksjfh3756237',citizenId:scrId,ngoId:localStorage.getItem("ngoId")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

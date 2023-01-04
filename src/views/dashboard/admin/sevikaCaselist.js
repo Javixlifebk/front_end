@@ -112,7 +112,7 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		 axios.post("http://javixlife.org:3010/api/generalsurvey/screeningScreener")
+		 axios.post("http://javixlife.org:3010/api/generalsurvey/screeningScreener",{ngoId:localStorage.getItem("ngoId")})
     //  http://javixlife.org:3010/api/generalsurvey/screenersevika
 		 .then(response => {
 					if(response.data.status===1)

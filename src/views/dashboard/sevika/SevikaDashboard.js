@@ -30,10 +30,11 @@ class SevikaDashboard extends React.Component {
 
   componentDidMount() {
   
-  if(localStorage.getItem("javixid")===null || localStorage.getItem("javixid")==="0"){
+  if(localStorage.getItem("javixid")=='null' || localStorage.getItem("javixid")=="0"){
     document.location="/dashboard/seveditprofile";
   }
   this.mounted = true;
+
 }
   render() {
     return (

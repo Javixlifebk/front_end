@@ -97,7 +97,7 @@ class AdminDashboard extends React.Component {
   this.mounted = true;
   //this.setState({data:null});
       
-  axios.post('http://javixlife.org:3010/api/graph/getlist', {userId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237'})
+  axios.post('http://javixlife.org:3010/api/graph/getlist', {ngoId:localStorage.getItem('ngoId'),token:'dfjkhsdfaksjfh3756237', ngoLoginId:localStorage.getItem('ngoId')})
    .then(response => {
 
         //console.dir(response.data.data.data)

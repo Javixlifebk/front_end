@@ -62,7 +62,7 @@ function GeneralSurvey() {
 // console.log("+++++++",selectedFilter)
 const setexportdata=()=>{
   // fetch('http://javixlife.org:3010/api/generalsurvey/download',urlexport)
-  axios.get('http://javixlife.org:3010/api/generalsurvey/download')
+  axios.get('http://javixlife.org:3010/api/generalsurvey/download',{ngoId: localStorage.getItem("ngoId"),})
    .then(response => {
 
         this.setState({response});
@@ -75,7 +75,8 @@ const setexportdata=()=>{
 }
 
   useEffect(() => {
-		  axios.post('http://javixlife.org:3010/api/generalsurvey/GeneralSurveyList')
+    
+		  axios.post('http://javixlife.org:3010/api/generalsurvey/GeneralSurveyList', { ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -102,7 +103,7 @@ const setexportdata=()=>{
         string = params.row.citizenId[j]
 
       }
-      string = string.replace(/^,/, '');
+      // string = string.replace(/^,/, '');
       console.log("string",string);
       return <p>{string}</p>
 
@@ -118,7 +119,7 @@ const setexportdata=()=>{
         string = params.row.mobile[j]
 
       }
-      string = string.replace(/^,/, '');
+      // string = string.replace(/^,/, '');
       console.log("string",string);
       return <p>{string}</p>
 
@@ -133,7 +134,7 @@ const setexportdata=()=>{
         string = params.row.aadhaar[j]
 
       }
-      string = string.replace(/^,/, '');
+      // string = string.replace(/^,/, '');
       console.log("string",string);
       return <p>{string}</p>
 
@@ -147,7 +148,7 @@ const setexportdata=()=>{
         string = params.row.address[j]
 
       }
-      string = string.replace(/^,/, '');
+      // string = string.replace(/^,/, '');
       console.log("string",string);
       return <p>{string}</p>
 
@@ -177,23 +178,20 @@ const setexportdata=()=>{
 
        return <p className=' memberClass'>{string}</p>
        
-      
       }
 
-      
     },
-
     { field: 'ageHead', headerName: 'Age'},
     { field: 'NoOfAdultMales', headerName: 'No.of Adult Males'},
     { field: 'NoOfAdultFemales', headerName: 'No.of Adult Females'},
     { field: 'NoOfChildrenMales', headerName: 'No.of Children Males'},
-   
     {
       field: 'NoOfChildrenFemales',
       headerName: 'No.of Children Females',
       sortable: false,
      
       renderCell: (params) => {
+
         const onClick = (e) => {
           e.stopPropagation() // don't select this row after clicking
 

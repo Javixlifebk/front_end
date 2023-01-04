@@ -99,7 +99,8 @@ axios.post("http://javixlife.org:3010/api/ngo/screenerList?=" ,{
   "pageNo":page,
   "size":size,
   token: "dfjkhsdfaksjfh3756237",
-   userId: "demoUser",
+   userId: localStorage.getItem("userid"),
+   ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
   })
 .then(response => {
          

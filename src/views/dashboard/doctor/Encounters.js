@@ -660,7 +660,7 @@ isNull(data,test_type,field_name){
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://javixlife.org:3010/api/screening/getEncounters?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('http://javixlife.org:3010/api/screening/getEncounters?=', { citizenId:localStorage.getItem("citizenId"),ngoId:localStorage.getItem("ngoId"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
 					if(response.data.status===1)
 					  {

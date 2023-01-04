@@ -88,6 +88,7 @@ class DocEditProfile extends React.Component {
     pincode:'',
     fileuploads:'',
     siguploads:'',
+    ngoId:'',
     curTime : new Date().toLocaleString()
   }
 
@@ -109,35 +110,59 @@ onSignHandler=event=>{
 
 }
 
+findDataById(){
+  console.log("useridd",localStorage.getItem("userid"));
+  axios.post('http://javixlife.org:3010/api/doctor/doctorListById',{"doctorLoginId":localStorage.getItem("userid")})
+  .then(response => {
+    if(response){
+      localStorage.setItem ('javixid',localStorage.getItem("userid"))
+    console.log("@@@@@@@@@@@@",response);
+   
+
+    window.location = '/dashboard';
+    }
+})
+}
+
 componentDidMount() {
+  this.findDataById()
+  alert(localStorage.getItem("userid"))
 		this.mounted = true;
-		//this.setState({data:null});
+		// //this.setState({data:null});
         
       
-		  axios.post('http://javixlife.org:3010/api/doctor/doctorById?=', {userId:localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237'})
-		 .then(response => {
-          var recs=response.data.data.data;		
-          this.setState({doctorId:recs[0].doctorId});
-          this.setState({fname:recs[0].firstName});
-          this.setState({lname:recs[0].lastName});
-          this.setState({gender:recs[0].sex});
-          this.setState({email:recs[0].email});
-          this.setState({mobile:recs[0].mobile});
-          this.setState({dob:recs[0].info.dateOfBirth});
-          this.setState({specialization:recs[0].info.specialisation});
-          this.setState({qualification:recs[0].info.qualification});
-          this.setState({country:recs[0].info.country});
-          this.setState({mstate:recs[0].info.state});
-          this.setState({district:recs[0].info.district});
-          this.setState({addr:recs[0].info.address});
-          this.setState({pincode:recs[0].info.pincode});
-          this.setState({imageurl:recs[0].info.photo})
-          this.setState({signature:recs[0].signature});
-          //localStorage.removeItem("Docid");
+		//   axios.post('http://javixlife.org:3010/api/doctor/doctorById?=', {userId:localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237'})
+		//  .then(response => {
+    //       var recs=response.data.data.data;		
+    //       this.setState({doctorId:recs[0].doctorId});
+    //       this.setState({ngoId:recs[0].ngoId});
+    //       this.setState({fname:recs[0].firstName});
+    //       this.setState({lname:recs[0].lastName});
+    //       this.setState({gender:recs[0].sex});
+    //       this.setState({email:recs[0].email});
+    //       this.setState({mobile:recs[0].mobile});
+    //       this.setState({dob:recs[0].info.dateOfBirth});
+    //       this.setState({specialization:recs[0].info.specialisation});
+    //       this.setState({qualification:recs[0].info.qualification});
+    //       this.setState({country:recs[0].info.country});
+    //       this.setState({mstate:recs[0].info.state});
+    //       this.setState({district:recs[0].info.district});
+    //       this.setState({addr:recs[0].info.address});
+    //       this.setState({pincode:recs[0].info.pincode});
+    //       this.setState({imageurl:recs[0].info.photo})
+    //       this.setState({signature:recs[0].signature});
+    //       //localStorage.removeItem("Docid");
 					
-		 });// then
+		//  });// then
 } 
 
+
+// componentDidMount() {
+
+//   this.findDataById()
+
+// this.mounted = true;
+// }
   handleSubmit = e => {
     e.preventDefault()   
 
@@ -156,11 +181,13 @@ componentDidMount() {
       }
 
       var returnUrl="";
+
       const formData = new FormData(); 
       formData.append('profile', this.state.fileuploads);
 
       let dateOfOnBoarding = myCurrentDate.getFullYear() + '-' + mymonth + '-' + mydate;
       let postData="userId="+localStorage.getItem("userid");
+      postData+="&ngoId="+localStorage.getItem("ngoId");
           postData+="&token=dfjkhsdfaksjfh3756237&firstName="+this.state.fname+"&lastName="+this.state.lname;
           postData+="&sex="+this.state.gender+"&mobileNo="+this.state.mobile+"&email="+this.state.email;
           postData+="&dateOfBirth="+this.state.dob+"&dateOfOnBoarding="+dateOfOnBoarding+"&qualification="+this.state.qualification;
@@ -181,7 +208,7 @@ componentDidMount() {
 
         if(res.data.status===1){
           alert('Profile Updated Successfully')
-          document.location="/auth/logout"
+          document.location="/dashboard"
         }
       })
       .catch(e=>{
@@ -326,7 +353,7 @@ componentDidMount() {
         <Col lg="12" md="12">
       <Card >
         <CardHeader>
-          <CardTitle>Doctor Profile</CardTitle>
+          <CardTitle>Doctor Profile edit</CardTitle>
         </CardHeader>
         <CardBody>
         <Form action="/" onSubmit={this.handleSubmit}>

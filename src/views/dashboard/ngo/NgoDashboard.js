@@ -78,10 +78,19 @@ class NgoDashboard extends React.Component {
   }
 
   componentDidMount() {
-  this.mounted = true;
+    if (
+      localStorage.getItem ('javixid')==0 ||
+      localStorage.getItem ('javixid')==null
+    ) {
+      document.location = '/dashboard/ngoeditwprofile';
+    }
+   
+else{
+    this.mounted = true;
+  // this.mounted = true;
   //this.setState({data:null});
       
-  axios.post('http://javixlife.org:3010/api/graph/getlist', { userId: localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
+  axios.post('http://javixlife.org:3010/api/graph/getlist', { ngoId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
    .then(response => {
 
         //console.dir(response.data.data.data)
@@ -121,6 +130,8 @@ class NgoDashboard extends React.Component {
     }
   });
 } 
+  }
+  // }
   render() {
 
     const data = {

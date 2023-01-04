@@ -88,6 +88,7 @@ class EditProfile extends React.Component {
     pincode:'',
     fileuploads:'',
     siguploads:'',
+    // ngoId:'',
     curTime : new Date().toLocaleString()
   }
 
@@ -109,6 +110,25 @@ onSignHandler=event=>{
 
 }
 
+findDataById(){
+  console.log("useridd",localStorage.getItem("userid"));
+  axios.post('http://javixlife.org:3010/api/doctor/doctorListById',{"doctorLoginId":localStorage.getItem("userid")})
+  .then(response => {
+    if(response){
+      localStorage.setItem ('javixid',localStorage.getItem("userid"))
+    console.log("@@@@@@@@@@@@",response);
+   
+
+    window.location = '/dashboard';
+    }
+})
+}
+
+componentDidMount() {
+  this.findDataById()
+  // alert(localStorage.getItem("userid"))
+		this.mounted = true;
+}
 
   handleSubmit = e => {
     e.preventDefault()   
@@ -133,13 +153,15 @@ onSignHandler=event=>{
 
       let dateOfOnBoarding = myCurrentDate.getFullYear() + '-' + mymonth + '-' + mydate;
       let postData="userId="+localStorage.getItem("userid");
+       
+       
           postData+="&token=dfjkhsdfaksjfh3756237&firstName="+this.state.fname+"&lastName="+this.state.lname;
           postData+="&sex="+this.state.gender+"&mobileNo="+this.state.mobile+"&email="+this.state.email;
           postData+="&dateOfBirth="+this.state.dob+"&dateOfOnBoarding="+dateOfOnBoarding+"&qualification="+this.state.qualification;
           postData+="&specialisation="+this.state.specialization+"&country="+this.state.country+"&state="+this.state.mstate;
           postData+="&district="+this.state.district+"&address="+this.state.addr+"&pincode="+this.state.pincode;   
           postData+="&medicalRegNo="+this.state.regno+"&statteMedicalCouncil="+this.state.medcouncil+"&yearOfReg="+this.state.regyear+"&experience="+this.state.experience;   
-    
+          postData+="&ngoId="+localStorage.getItem("ngoId");
       let _targetPostURL="http://javixlife.org:3010/api/doctor/addprofile?=";
       axios(
         {
@@ -153,7 +175,7 @@ onSignHandler=event=>{
 
         if(res.data.status===1){
           alert('Profile Updated Successfully')
-          document.location="/auth/logout"
+          document.location="/dashboard"
         }
       })
       .catch(e=>{
@@ -298,7 +320,7 @@ onSignHandler=event=>{
         <Col lg="12" md="12">
       <Card >
         <CardHeader>
-          <CardTitle>Doctor Profile</CardTitle>
+          <CardTitle>Doctor Profile </CardTitle>
         </CardHeader>
         <CardBody>
         <Form action="/" onSubmit={this.handleSubmit}>

@@ -186,10 +186,10 @@ componentWillUnmount(){
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-     console.log( "userId",localStorage.getItem("userId"))
+     console.log("id",localStorage.getItem("userid"))
     const userId=localStorage.getItem("userId")
 		//axios.post('http://javixlife.org:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
-    axios.post('http://javixlife.org:3010/api/ngo/screenermappedlist', {ngoId:'rakesh' ,token:'dfjkhsdfaksjfh3756237',issubscreener:0})
+    axios.post('http://javixlife.org:3010/api/ngo/screenermappedlist', {ngoId:localStorage.getItem("userid") ,token:'dfjkhsdfaksjfh3756237',issubscreener:0})
 		 .then(response => {
 				
 					if(response.data.status===1)
@@ -244,7 +244,7 @@ handleFilter = e => {
     })
     this.setState({ filteredData })
   }
-
+  
 }
 
   /* render for all */

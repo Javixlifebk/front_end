@@ -37,8 +37,8 @@ class ScreenerDashboard extends React.Component {
 
   state = {
     doctors:0,
-    ngos:0,
-    screeners:0,
+    // ngos:0,
+    // screeners:0,
     pharmacies:0,
     screening:0,
     sevikas:0,
@@ -98,10 +98,10 @@ class ScreenerDashboard extends React.Component {
   this.mounted = true;
   //this.setState({data:null});
       
-  axios.post('http://javixlife.org:3010/api/graph/getlist', { userId: localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
+  axios.post('http://javixlife.org:3010/api/graph/getlist', {token:'dfjkhsdfaksjfh3756237',ngoId:localStorage.getItem("ngoId") ,userId:localStorage.getItem("userid"), ngoLoginId:localStorage.getItem('ngoId')})
    .then(response => {
 
-        //console.dir(response.data.data.data)
+        //console.dir(response.data.data.data)ngoLoginId:localStorage.getItem("ngoId")
         
         if(response.data.status===1){
           var recs=response.data.data.data[2];	
@@ -137,7 +137,8 @@ class ScreenerDashboard extends React.Component {
 }
   render() {
     const data = {
-      labels: ["Doctors",  "Screener","NGO", "Sevika","Screening","Pharmacy"],
+      // labels: ["Doctors",  "Screener","NGO", "Sevika","Screening","Pharmacy"],
+      labels: ["Doctors", "Sevika","Screening","Pharmacy"],
       datasets: [
         {
           label: "Doctors Count",
@@ -152,14 +153,14 @@ class ScreenerDashboard extends React.Component {
         name: "Doctors",
         data: [this.state.doctors]
       },
-      {
-        name: "Screener",
-        data: [this.state.screeners]
-      },
-      {
-        name: "NGO",
-        data: [this.state.ngos]
-      },
+      // {
+      //   name: "Screener",
+      //   data: [this.state.screeners]
+      // },
+      // {
+      //   name: "NGO",
+      //   data: [this.state.ngos]
+      // },
       {
         name: "Sevika",
         data: [this.state.sevika]
@@ -218,7 +219,7 @@ class ScreenerDashboard extends React.Component {
       </Card>
       
       </Col>
-      <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
+     {/* <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
                           document.location='/dashboard/admin/ngolist';
                         }}> 
@@ -232,8 +233,9 @@ class ScreenerDashboard extends React.Component {
       </CardBody>
       
       </Card>
-      </Col>
-      <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
+      </Col> */}
+        
+      {/* <Col lg="2"  style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
                           document.location='/dashboard/admin/screenerlist';
                         }}>
@@ -246,7 +248,7 @@ class ScreenerDashboard extends React.Component {
             
       </CardBody>
       </Card>
-      </Col>
+      </Col> */}
       <Col lg="2" style={{textAlign:"center",cursor:'pointer'}}>
       <Card style={{textAlign:"center"}} onClick={() => {
                           document.location='/dashboard/sevikalist';
@@ -270,7 +272,7 @@ class ScreenerDashboard extends React.Component {
       </CardHeader>
       <CardBody style={{textAlign:"center"}}>
       <span style={{textAlign:"center"}}><h5>Citizen Screened</h5></span>
-            <h5>{this.state.screening}</h5>              
+            <h5>{this.state.citizen}</h5>              
           
       </CardBody>
       </Card>

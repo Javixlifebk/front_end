@@ -5,10 +5,13 @@ import {
   UncontrolledDropdown,
   DropdownMenu,
   DropdownItem,
-  DropdownToggle
+  DropdownToggle,
+  FormGroup
   
 } from "reactstrap"
 //import PerfectScrollbar from "react-perfect-scrollbar"
+
+import Select from "react-select"
 import axios from "axios"
 import * as Icon from "react-feather"
 import classnames from "classnames"
@@ -18,6 +21,7 @@ import Autocomplete from "../../../components/@vuexy/autoComplete/AutoCompleteCo
 import { history } from "../../../history"
 //import { IntlContext } from "../../../utility/context/Internationalization"
 import userImg from "../../../assets/img/pages/admin-icon.png"
+import { LeftSquareFilled } from "@ant-design/icons"
 
 const handleNavigation = (e, path) => {
   e.preventDefault()
@@ -97,7 +101,28 @@ class NavbarUser extends React.PureComponent {
     suggestions: []
   }
 
+  
+async getOptions(){
+  const res = await axios.post('http://javixlife.org:3010/api/ngo/allngoList')
+  const data = res.data.data.data
+    console.log(data);
+
+  const options = data.map(d => ({
+    "value" : d.ngoLoginId,
+    "label" : d.name
+  }))
+  this.setState({selectOptions: options})
+}
+   handleChange(e){
+   this.setState({ngoLoginId:e.value, name:e.label})
+   localStorage.setItem("ngoId",e.value);
+   window.location.reload(false);
+
+  }
+
   componentDidMount() {
+    this.getOptions()
+
     axios.get("/api/main-search/data").then(({ data }) => {
       this.setState({ suggestions: data.searchResult })
     })
@@ -126,9 +151,20 @@ class NavbarUser extends React.PureComponent {
     
 
     return (
-      <ul className="nav navbar-nav navbar-nav-user float-right">
+      <>
+      {localStorage.getItem("roleId")=='91' ? (
+       <FormGroup style={{width:"30%"}}>
+       <label>select NGO</label>
+       <Select options={this.state.selectOptions} onChange={this.handleChange.bind(this)}/>
+     
+     </FormGroup>):(
+      <p></p>)
+     }
+     
+      <ul className="nav navbar-nav navbar-nav-user float-right align-items-center">
+     
       
-
+{/* 
         <NavItem className="nav-search" onClick={this.handleNavbarSearch}>
           <NavLink className="nav-link-search">
             <Icon.Search size={21} data-tour="search" />
@@ -232,7 +268,9 @@ class NavbarUser extends React.PureComponent {
                         </div>
                       ) : null}
                     </div>
+                    
                   </li>
+                
                 )
               }}
               onSuggestionsShown={userInput => {
@@ -254,7 +292,7 @@ class NavbarUser extends React.PureComponent {
               />
             </div>
           </div>
-        </NavItem>
+        </NavItem> */}
         
     
         <UncontrolledDropdown tag="li" className="dropdown-user nav-item">
@@ -277,7 +315,12 @@ class NavbarUser extends React.PureComponent {
           </DropdownToggle>
           <UserDropdown {...this.props} />
         </UncontrolledDropdown>
+      
+      
+          
       </ul>
+        
+      </>
     )
   }
 }

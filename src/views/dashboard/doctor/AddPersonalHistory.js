@@ -103,6 +103,7 @@ class AddPersonalHistory extends React.Component {
           postData+="&bornraised="+this.state.bornraised+"&birthproblem="+this.state.birthproblem;
           postData+="&maritalstatus="+this.state.maritalstatus+"&ocupation="+this.state.ocupation;
           postData+="&notworking="+working+"&legalproblems="+this.state.legalproblems + "&highesteducation=" +this.state.highesteducation;
+          postData+="&ngoId="+localStorage.getItem("ngoId")
          
       let _targetPostURL="http://javixlife.org:3010/api/citizen/addPersonalHistory?=";
       axios(

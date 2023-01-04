@@ -63,7 +63,8 @@ function LipidPanelcholesterolAmber() {
 const fetchRecords = (page,size) => {
 axios.post("http://javixlife.org:3010/api/labtest/LipidPanelCholesterolAmberList" ,{
   "pageNo":page,
-  "size":size
+  "size":size,
+  ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
   })
 .then(response => {
          
@@ -105,14 +106,14 @@ const filterData = (data) =>
       clearFilters();
       setSearchText('');
     };
-    const setBP=(cholesterol)=>{
+  //   const setBP=(cholesterol)=>{
 
-      if(cholesterol>=185 &&  cholesterol<230){
-              return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>cholesterol:{cholesterol}</span>);
-           }else{
-          return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>cholesterol:{cholesterol}</span>);
-       }
-  }
+  //     if(cholesterol>=185 &&  cholesterol<230){
+  //             return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>cholesterol:{cholesterol}</span>);
+  //          }else{
+  //         return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>cholesterol:{cholesterol}</span>);
+  //      }
+  // }
    const  getCitizenScreener=(_screenerId) =>{
         localStorage.setItem("_screenerId", _screenerId);
         document.location = "/dashboard/citizenlist1";
@@ -304,7 +305,7 @@ const filterData = (data) =>
                                  
           <p className="text-bold-500 mb-0">
           {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
-          <span style={{margin:'20px;',padding:'4px;'}}>{setBP(record.cholesterol)}</span>&nbsp;&nbsp;
+          <span style={{margin:'50px;',background:'#FFBF00',color:'white',padding:'8%'}}>{record.cholesterol}</span>&nbsp;&nbsp;
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}

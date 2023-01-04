@@ -40,6 +40,7 @@ class LoginJWT extends React.Component {
               if(res.data.status===1 || res.data.status==="1")
                 { 
                  let _token=res.data.data.data.token;
+                 let ngoId=res.data.data.data.ngoId;
                  let _email=res.data.data.data.email;
                  let _firstName=res.data.data.data.firstName;
                  let _lastName=res.data.data.data.lastName;
@@ -52,6 +53,7 @@ class LoginJWT extends React.Component {
                  localStorage.setItem("lastName",_lastName);
                  localStorage.setItem("ntoken",_token);
                  localStorage.setItem("roleId",_rolid);
+                 localStorage.setItem("ngoId",ngoId);
                  localStorage.setItem("userid",_userid);
                  if(_javixid===null){                
                       localStorage.setItem("javixid","0");
@@ -192,7 +194,7 @@ class LoginJWT extends React.Component {
             <Button.Ripple color="primary" type="submit">
                 Login
               </Button.Ripple>
-              <Button.Ripple
+              {/* <Button.Ripple
                 color="primary"
                 outline
                 onClick={() => {
@@ -201,7 +203,7 @@ class LoginJWT extends React.Component {
                 }}
               >
                 Register
-              </Button.Ripple>
+              </Button.Ripple> */}
              
             </div>
           </Form>

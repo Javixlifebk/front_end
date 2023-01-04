@@ -104,7 +104,8 @@ function HemoglobinAmberTest() {
 const fetchRecords = (page,size) => {
   axios.post("http://javixlife.org:3010/api/labtest/getHemoglobinAmberList" ,{
     "pageNo":page,
-    "size":size
+    "size":size,
+    ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
 })
  .then(response => {
            
@@ -365,7 +366,8 @@ const filterData = (data) =>
       </Col>          
       </Row>
     <Table columns={columns} dataSource={rows}
-     loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
+     loading={{indicator: <div><Spin /></div> ,spinning:!rows}} 
+
     pagination={{
       pageSize:size,
       total:totalPages,

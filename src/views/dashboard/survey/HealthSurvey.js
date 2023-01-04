@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '@mui/x-data-grid-generator'
 // import Button from '@mui/material/Button'
-import { DataGrid, GridToolbar,GridOverlay } from '@mui/x-data-grid'
+// import { DataGrid, GridToolbar,GridOverlay } from '@mui/x-data-grid'
 import {
   Card,
   CardBody,
@@ -13,7 +13,18 @@ import {
   // Input,
   Button
 } from "reactstrap"
+import { DataGrid, GridToolbar,GridOverlay,GridToolbarContainer,GridToolbarFilterButton } from '@mui/x-data-grid'
+
 import axios from "axios";
+function CustomToolbar() {
+  return (
+    <GridToolbarContainer>
+      {/* <GridToolbarExport printOptions={{ disableToolbarButton: true }} /> */}
+      {/* <GridFilterPanel /> */}
+      <GridToolbarFilterButton />
+    </GridToolbarContainer>
+  );
+}
 function customNoRowsOverlay() {
   return (
       <GridOverlay>
@@ -26,7 +37,7 @@ function HealthSurvey() {
   const [rows, setUsers] = useState([])
   const setexportdata=()=>{
     // fetch('http://javixlife.org:3010/api/generalsurvey/download',urlexport)
-    axios.get('http://javixlife.org:3010/api/healthsurvey/HealthSurveydownload')
+    axios.get('http://javixlife.org:3010/api/healthsurvey/HealthSurveydownload',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid"),})
      .then(response => {
   
           this.setState({response});
@@ -39,7 +50,7 @@ function HealthSurvey() {
   }
  
   useEffect(() => {
-		  axios.post('http://javixlife.org:3010/api/healthsurvey/HealthSurveyList')
+		  axios.post('http://javixlife.org:3010/api/healthsurvey/HealthSurveyList',{ngoId: localStorage.getItem("ngoId"),})
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -141,8 +152,12 @@ function HealthSurvey() {
             rows={rows}
             columns={columns}
             pageSize={8}
-            components={{ Toolbar: GridToolbar,
-              NoRowsOverlay: customNoRowsOverlay }}
+            // components={{ Toolbar: GridToolbar,
+            //   NoRowsOverlay: customNoRowsOverlay }}
+              components={{
+                Toolbar: CustomToolbar,
+                NoRowsOverlay: customNoRowsOverlay
+              }}
               getRowId={(rows) => rows._id}
           />
         </div>
