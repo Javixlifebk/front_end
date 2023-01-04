@@ -1,6 +1,7 @@
 import React, { useEffect,useRef, useState } from 'react'
 // import { environment } from '../../api'
 // import { Space, Table, Tag } from 'antd';
+// import {Image, Button} from 'antd';
 import {
   Card,
   CardBody,
@@ -77,7 +78,7 @@ function CitizenList() {
     const [size, setsize] = useState(3);
     useEffect(() => {
         
-      fetchRecords(1,1000);
+      fetchRecords(1,100);
 },[])
 
 const fetchRecords = (page,size) => {
@@ -85,6 +86,7 @@ const fetchRecords = (page,size) => {
     "pageNo":page,
     "size":size,
     token:'dfjkhsdfaksjfh3756237',
+    ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
     // v:_v 
     })
  .then(response => {
@@ -125,7 +127,7 @@ const handleClick=(_userid)=> {
 
  const handleSubmit=()=> {
   
-  alert('Hellow')
+ 
   if(localStorage.getItem("roleId")==="1" || localStorage.getItem("roleId")===1){
     alert("Sorry as a Doctor you are not entitled for this.");
 
@@ -286,11 +288,14 @@ const filterData = (data) =>
         <div>
         
         <img
-            //  src={()=>getImage(row.info.photo)}
+            //  src={()=>getImage(row.photo)}
             src={`http://javixlife.org:3010/profile/no-photo-male.jpg`}
             width="40vh"
             className="img-fluid img-border rounded-circle box-shadow-1"
           />
+
+
+
           </div>
       )
     },

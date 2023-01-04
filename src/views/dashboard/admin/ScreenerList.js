@@ -27,6 +27,8 @@ const CustomHeader = props => {
     </div>
   )
 }
+const page=1;
+const size=10;
 
 class JTable extends React.Component {
  constructor(props) {
@@ -133,21 +135,24 @@ loadRecs(recs)
  handleBack() {    
   window.location='/dashboard/admin/ngolist'
 }
+
   
 componentWillUnmount(){ 
    this.mounted = false;}
-componentDidMount() {
+ 
+componentDidMount(page,size) {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://javixlife.org:3010/api/ngo/screenerList', {userId:localStorage.getItem("userid"),ngoId:localStorage.getItem("Ngoid"),token:'dfjkhsdfaksjfh3756237' })
+		axios.post('http://javixlife.org:3010/api/ngo/screenerLists', {"pageNo": page,
+    "size": size,ngoId:localStorage.getItem("ngoId"),token:'dfjkhsdfaksjfh3756237'})
 		 .then(response => {
 					if(response.data.status===1)
 					  {
 						  var msg=response.data.message;
 						  var recs=response.data.data;
 						  this.loadRecs(recs);
-              localStorage.removeItem("Ngoid")
+              // localStorage.removeItem("Ngoid")
 					  }
 		 });// then
 }

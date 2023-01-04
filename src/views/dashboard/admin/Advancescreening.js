@@ -15,7 +15,7 @@ import {
 import 'antd/dist/antd.css';
 // import './index.css';
 import { SearchOutlined } from '@ant-design/icons';
-import {  Input, Space, Table } from 'antd';
+import {  Input, Space, Table ,Spin} from 'antd';
 import '@mui/x-data-grid-generator'
 import { DataGrid, GridToolbar, GridToolbarContainer, GridFilterPanel, GridToolbarExport, GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
@@ -88,7 +88,8 @@ function PendingAdvancedScreening() {
   const fetchRecords = (page, size) => {
     axios.post("http://javixlife.org:3010/api/generalsurvey/screeningScreener", {
       "pageNo": page,
-      "size": size
+      "size": size,
+      'ngoId':localStorage.getItem("userid")
     })
       .then(response => {
 
@@ -396,7 +397,7 @@ function PendingAdvancedScreening() {
         </Col> */}
       </Row>
       <Table columns={columns} dataSource={rows}
-        locale={{ emptyText: "loading..." }}
+        loading={{indicator: <div><Spin /></div> ,spinning:!rows}} 
         pagination={{
           pageSize: size,
           total: totalPages,

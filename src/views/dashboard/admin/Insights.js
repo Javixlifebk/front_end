@@ -57,6 +57,10 @@ const $primary = "#28C76F",
 const themeColors = [$primary, $success, $danger, $warning, $label_color];
 
 //End of Pie Chart
+const headers = {
+  'Content-Type': "multipart/form-data"
+  
+}
 
 const CustomHeader = (props) => {
   return (
@@ -181,66 +185,66 @@ class AdminDashboard extends React.Component {
     // "------*********-------",props.value.issubscreener;
     this.state = {
       severity_bp_default: "",
-      severity_bp_green: "10",
-      severity_bp_amber: "12",
-      severity_bp_red: "45",
+      severity_bp_green: "",
+      severity_bp_amber: "",
+      severity_bp_red: "",
       severity_spo2_default: "",
-      severity_spo2_green: "10",
-      severity_spo2_amber: "12",
-      severity_spo2_red: "45",
+      severity_spo2_green: "",
+      severity_spo2_amber: "",
+      severity_spo2_red: "",
       severity_temp_default: "",
-      severity_temp_green: "10",
-      severity_temp_amber: "12",
-      severity_temp_red: "45",
+      severity_temp_green: "",
+      severity_temp_amber: "",
+      severity_temp_red: "",
       severity_hr_default: "",
-      severity_hr_green: "10",
-      severity_hr_amber: "12",
-      severity_hr_red: "45",
+      severity_hr_green: "",
+      severity_hr_amber: "",
+      severity_hr_red: "",
       severity_bmi_default: "",
-      severity_bmi_green: "10",
-      severity_bmi_amber: "12",
-      severity_bmi_red: "45",
+      severity_bmi_green: "",
+      severity_bmi_amber: "",
+      severity_bmi_red: "",
 
       severity_glucose_default: "",
-      severity_glucose_green: "10",
-      severity_glucose_amber: "12",
-      severity_glucose_red: "45",
+      severity_glucose_green: "",
+      severity_glucose_amber: "",
+      severity_glucose_red: "",
 
       severity_hemo_default: "",
-      severity_hemo_green: "10",
-      severity_hemo_amber: "12",
-      severity_hemo_red: "20",
+      severity_hemo_green: "",
+      severity_hemo_amber: "",
+      severity_hemo_red: "",
       // severity_hemo_yellow: "45",
 
       severity_ldl_default: "",
-      severity_ldl_green: "10",
-      severity_ldl_amber: "12",
-      severity_ldl_red: "45",
+      severity_ldl_green: "",
+      severity_ldl_amber: "",
+      severity_ldl_red: "",
 
       severity_hdl_default: "",
-      severity_hdl_green: "10",
-      severity_hdl_amber: "12",
-      severity_hdl_red: "45",
+      severity_hdl_green: "",
+      severity_hdl_amber: "",
+      severity_hdl_red: "",
 
       severity_tri_default: "",
-      severity_tri_green: "10",
-      severity_tri_amber: "12",
-      severity_tri_red: "45",
+      severity_tri_green: "",
+      severity_tri_amber: "",
+      severity_tri_red: "",
 
       severity_chol_default: "",
-      severity_chol_green: "10",
-      severity_chol_amber: "12",
-      severity_chol_red: "45",
+      severity_chol_green: "",
+      severity_chol_amber: "",
+      severity_chol_red: "",
 
       severity_leye_default: "",
-      severity_leye_green: "10",
-      severity_leye_amber: "12",
-      severity_leye_red: "45",
+      severity_leye_green: "",
+      severity_leye_amber: "",
+      severity_leye_red: "",
 
       severity_reye_default: "",
-      severity_reye_green: "10",
-      severity_reye_amber: "12",
-      severity_reye_red: "45",
+      severity_reye_green: "",
+      severity_reye_amber: "",
+      severity_reye_red: "",
       tabledailyScreeningScreener: "",
       tableweeklyScreeningScreener: "",
       tabledailyScreeningSevika: "",
@@ -385,6 +389,7 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_bp: "0",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -404,41 +409,39 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://javixlife.org:3010/api/labtest/getBloodGlucoseTestCount")
+      .post("http://javixlife.org:3010/api/labtest/getBloodGlucoseTestCount",{ 
+        ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
       .then((response) => {
-        if (response.data.status === 1) {
-          
-          // for (var i = 0; i < response.data.length; i++) {
-              if (response.data.totalRed)
-              this.setState({
-                severity_glucose_red: response.data.totalRed,
-              });
-            if (response.data.totalAmber)
-              this.setState({
-                severity_glucose_amber: response.data.totalAmber,
-              });
-            if (response.data.totalGreen)
-              this.setState({
-                severity_glucose_green: response.data.totalGreen,
-              });
+        console.log("Checking......................................");
+        console.dir(response.data.data.data);
 
-            console.log("totalAmber==========>",response.data.totalAmber);
-          console.log("totalGreen==========>",response.data.totalGreen);
-          console.log("totalRed==========>",response.data.totalRed);
-           
+        if (response.data.status === 1) {
+          for (var i = 0; i < response.data.data.data.length; i++) {
+            if (response.data.data.data[i]._id === 2)
+              this.setState({
+                severity_glucose_red: response.data.data.data[i].count,
+              });
+            if (response.data.data.data[i]._id === 1)
+              this.setState({
+                severity_glucose_amber: response.data.data.data[i].count,
+              });
+            if (response.data.data.data[i]._id === 0)
+              this.setState({
+                severity_glucose_green: response.data.data.data[i].count,
+              });
           }
-        // }
-      }
-      )
+        } 
+      })
       .catch((e) => {
        
-        // if (e.response.data.status === 0) {
-        //   this.state.notfound = 0;
-        // }
+        if (e.response.data.status === 0) {
+          this.state.notfound = 0;
+        }
       });
 
     axios
-      .post("http://javixlife.org:3010/api/labtest/getHemoglobinCount")
+      .post("http://javixlife.org:3010/api/labtest/getHemoglobinCount", { 
+        ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -480,7 +483,8 @@ class AdminDashboard extends React.Component {
     //Lipid Segment
 
     axios
-      .post("http://javixlife.org:3010/api/labtest/getCholestCount")
+      .post("http://javixlife.org:3010/api/labtest/getCholestCount",{ 
+        ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -494,6 +498,7 @@ class AdminDashboard extends React.Component {
               });
             if (response.data.data.data[i]._id === 0)
               this.setState({
+
                 severity_chol_green: response.data.data.data[i].count,
               });
           }
@@ -509,7 +514,8 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://javixlife.org:3010/api/labtest/gettriCount")
+      .post("http://javixlife.org:3010/api/labtest/gettriCount",{
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -521,7 +527,7 @@ class AdminDashboard extends React.Component {
               this.setState({
                 severity_tri_amber: response.data.data.data[i].count,
               });
-            if (response.data.data.data[i]._id === 3)
+            if (response.data.data.data[i]._id === 0)
               this.setState({
                 severity_tri_green: response.data.data.data[i].count,
               });
@@ -537,7 +543,8 @@ class AdminDashboard extends React.Component {
         }
       });
     axios
-      .post("http://javixlife.org:3010/api/labtest/gethdlCount")
+      .post("http://javixlife.org:3010/api/labtest/gethdlCount",{
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -565,7 +572,8 @@ class AdminDashboard extends React.Component {
       });
 
     axios
-      .post("http://javixlife.org:3010/api/labtest/getldlCount")
+      .post("http://javixlife.org:3010/api/labtest/getldlCount",{
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -588,14 +596,18 @@ class AdminDashboard extends React.Component {
       })
       .catch((e) => {
         if (e.response.data.status === 0) {
-          this.state.notfound = 0;
+          this.state.notfound = "0";
         }
       });
 
     ///End Lipid
-
+  //   var headers = {
+  //     'Content-Type': "multipart/form-data"
+      
+  // }
     axios
-      .post("http://javixlife.org:3010/api/labtest/getREyeCount")
+      .post("http://javixlife.org:3010/api/labtest/getREyeCount",{
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
       .then((response) => {
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
@@ -621,10 +633,14 @@ class AdminDashboard extends React.Component {
           this.state.notfound = 0;
         }
       });
-
+    
     axios
-      .post("http://javixlife.org:3010/api/labtest/getLEyeCount")
+      .post("http://javixlife.org:3010/api/labtest/getLEyeCount",{
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+      
+    })
       .then((response) => {
+              
         if (response.data.status === 1) {
           for (var i = 0; i < response.data.data.data.length; i++) {
             if (response.data.data.data[i]._id === 2)
@@ -653,7 +669,8 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/ngo/screenerList?=", {
         token: "dfjkhsdfaksjfh3756237",
-        userId: "demoUser",
+        userId: localStorage.getItem("userid"),
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         if (response.data.status === 1) {
@@ -667,6 +684,7 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_bp: "1",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -688,6 +706,7 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_bp: "2",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -710,6 +729,7 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_spo2: "0",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -733,6 +753,7 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_spo2: "1",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -755,6 +776,7 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_spo2: "2",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -780,6 +802,7 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_temperature: "0",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -803,6 +826,7 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_temperature: "1",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -825,6 +849,7 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_temperature: "2",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -850,6 +875,7 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_pulse: "0",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -873,6 +899,7 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_pulse: "1",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -895,6 +922,7 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_pulse: "2",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -916,6 +944,7 @@ class AdminDashboard extends React.Component {
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_bmi: "0",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -981,6 +1010,7 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_bmi: "1",
+         ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -1006,6 +1036,7 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_bmi: "2",
+        ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
       })
       .then((response) => {
         console.dir(response.data.data.data[0].count);
@@ -1024,70 +1055,70 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
         }
       });
 // =============================================================
-      axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:0})
-      .then(response => {
+    //   axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:0, ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
+    //   .then(response => {
    
-            console.dir("Data Length=" + response.data.data.data.length)
-            if(response.data.status===1){
-             this.setState({green:response.data.data.data.length}) 
-            }
+    //         console.dir("Data Length=" + response.data.data.data.length)
+    //         if(response.data.status===1){
+    //          this.setState({green:response.data.data.data.length}) 
+    //         }
            
            
            
-      })
-      .catch(e=>{
+    //   })
+    //   .catch(e=>{
    
-       if(e.response.data.status===0){
-         this.state.notfound=0
+    //    if(e.response.data.status===0){
+    //      this.state.notfound=0
    
-       }
-     });
+    //    }
+    //  });
 
 
     //  ======================================================
-    axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:'1' })
-    .then(response => {
+  //   axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:'1' , ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
+  //   .then(response => {
   
-          console.dir("Data Length=" + response.data.data.data.length)
-          if(response.data.status===1){
-           this.setState({amber:response.data.data.data.length}) 
-          }
+  //         console.dir("Data Length=" + response.data.data.data.length)
+  //         if(response.data.status===1){
+  //          this.setState({amber:response.data.data.data.length}) 
+  //         }
          
          
          
-    })
-    .catch(e=>{
+  //   })
+  //   .catch(e=>{
   
    
-     if(e.response.data.status===0){
-       this.state.notfound=0
+  //    if(e.response.data.status===0){
+  //      this.state.notfound=0
   
-     }
-   });
+  //    }
+  //  });
 
 
 
   //  =========================================================================
 
-  axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', { severity:'2' })
-  .then(response => {
+//   axios.post('http://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', { severity:'2', ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid") },{"headers" : headers})
+//   .then(response => {
 
-        console.dir("Data Length=" + response.data.data.data.length)
-        if(response.data.status===1){
-         this.setState({red:response.data.data.data.length}) 
-        }
+//         console.dir("Data Length=" + response.data.data.data.length)
+//         if(response.data.status===1){
+//          this.setState({red:response.data.data.data.length}) 
+//         }
        
        
        
-  })
-  .catch(e=>{
+//   })
+//   .catch(e=>{
 
  
-   if(e.response.data.status===0){
-     this.state.notfound=0
+//    if(e.response.data.status===0){
+//      this.state.notfound=0
 
-   }
- });
+//    }
+//  });
 
     }
   handleFilter = (e) => {
@@ -1966,7 +1997,7 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
       </div>
 
           </Col>
-          <Col sm="12">{this.state.recs.length != 0 || this.state.loader}</Col>
+          {/* <Col sm="12">{this.state.recs.length != 0 || this.state.loader}</Col> */}
         </Row>
       </React.Fragment>
     );

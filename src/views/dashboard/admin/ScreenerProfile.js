@@ -62,6 +62,7 @@ class Profile extends React.Component {
 		 .then(response => {
         var recs=response.data.data.data;
 
+        
           //console.dir(response)
           //this.state.screenerId=response.data.screenerId
           this.setState({screenerId:recs[0].screenerId});         

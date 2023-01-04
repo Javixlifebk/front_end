@@ -2,10 +2,35 @@ import React, { Component } from "react"
 import { NavLink } from "react-router-dom"
 import { Disc, X, Circle } from "react-feather"
 import classnames from "classnames"
+import axios from 'axios';
 import brandLogo from "../../../../assets/img/logo/logo.png"
+// import brandLogo from "../../../../assets/img/logo/javixLogo.png"
 class SidebarHeader extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        items: [],
+        DataisLoaded: false
+    };
+}
   /*<div className="brand-logo" /> */
+  componentDidMount() {
+		this.mounted = true;
+    
+		//this.setState({data:null});
+    axios.post("http://javixlife.org:3010/api/ngo/ngoList",{ngoLoginId:localStorage.getItem("ngoId")})
+    .then(response => {
+                   this.setState(response.data)
+                   console.log(response.data.data.data);
+
+})}
+
+
+
   render() {
+    const { DataisLoaded, items } = this.state;
+    console.log(this.state.items);
     let {
       toggleSidebarMenu,
       activeTheme,
@@ -20,10 +45,18 @@ class SidebarHeader extends Component {
           <li className="nav-item mr-auto">
             <NavLink to="/" className="navbar-brand">
             
-              <img style={{width:'100px',height:'40px'}} src={brandLogo}/>
+              <img style={{width:'170px',height:'40px'}} className="rounded" src={brandLogo}/>
               
             </NavLink>
           </li>
+          {items.map((item) => ( 
+                <div>
+
+                   <img style={{width:'100px',height:'40px'}} src={ item.image }/>
+                    {/* { item.client_logo },  */}
+                   
+                    </div>
+                ))}
           <li className="nav-item nav-toggle">
             <div className="nav-link modern-nav-toggle">
               {collapsed === false ? (

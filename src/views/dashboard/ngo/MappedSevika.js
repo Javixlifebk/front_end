@@ -195,9 +195,9 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
     console.log("userId====",localStorage.getItem("userId"));
-        const userId=localStorage.getItem("userId")
+        const userId=localStorage.getItem("userid")
 		// axios.post('http://javixlife.org:3010/api/ngo/screenerList', { userId: '4632746328', ngoId:0 ,token:'dfjkhsdfaksjfh3756237',ismapped:true })
-    axios.post('http://javixlife.org:3010/api/ngo/sevikamappedlist', {ngoId: 'rakesh',token:'dfjkhsdfaksjfh3756237',issubscreener:1})
+    axios.post('http://javixlife.org:3010/api/ngo/sevikamappedlist', {ngoId: userId,token:'dfjkhsdfaksjfh3756237',issubscreener:1})
 
 		 .then(response => {
    

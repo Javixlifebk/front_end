@@ -117,6 +117,7 @@ class AddWomanHistory extends React.Component {
           postData+="&menopauseage="+this.state.menopauseage+"&isregular="+period+"&lastmenstrualperiod="+this.state.lastmenstrualperiod;
           postData+="&numberofdaysbleeding="+this.state.numberofdaysbleeding+"&intervalbetweenperiods="+this.state.intervalbetweenperiods+"&flow="+this.state.flow;
           postData+="&painwithmenstruation="+this.state.painwithmenstruation+"&useofmedicationforpain="+this.state.useofmedicationforpain+"&misseddays="+this.state.misseddays;
+          postData+="&ngoId="+localStorage.getItem("ngoId")
    
           
       let _targetPostURL="http://javixlife.org:3010/api/citizen/addWomenHistory?=";

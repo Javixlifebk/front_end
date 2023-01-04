@@ -62,7 +62,8 @@ function LipidPanelcholesterolGreen() {
 const fetchRecords = (page,size) => {
 axios.post("http://javixlife.org:3010/api/labtest/LipidPanelCholesterolGreenList" ,{
   "pageNo":page,
-  "size":size
+  "size":size,
+  ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
   })
 .then(response => {
          
@@ -107,7 +108,7 @@ const filterData = (data) =>
     const setBP=(cholesterol)=>{
 
       if(cholesterol<=200){
-        return(<span style={{background:'#008000',padding:'4px',color:'white',borderRadius:'25px;'}}>cholesterol:{cholesterol}</span>);
+        return(<span style={{background:'#008000',color:'white',padding:'4px',borderRadius:'25px;'}}>cholesterol:{cholesterol}</span>);
      }else{
         return(<span style={{background:'#008000',padding:'4px',color:'white'}}>cholesterol:{cholesterol}</span>);
      }
@@ -303,7 +304,7 @@ const filterData = (data) =>
                                  
           <p className="text-bold-500 mb-0">
           {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
-          <span style={{margin:'20px;',padding:'4px;'}}>{setBP(record.cholesterol)}</span>&nbsp;&nbsp;
+          <span style={{margin:'50px;',padding:'8%;',background:'#008000',color:'white'}}>{record.cholesterol}</span>&nbsp;&nbsp;
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
           {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}

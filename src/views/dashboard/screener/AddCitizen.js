@@ -96,6 +96,24 @@ class AddCitizen extends React.Component {
     })
 
 }
+// findDataById(){
+//   console.log("useridd",localStorage.getItem("screenerId"));
+//   axios.post('http://javixlife.org:3010/api/ngo/screenerListById',{screenerId:localStorage.getItem("screenerId")})
+//   .then(response => {
+//     if(response){
+//       localStorage.setItem ('javixid',localStorage.getItem("screenerId"))
+//     console.log("@@@@@@@@@@@@",response);
+   
+
+//     window.location = '/dashboard';
+//     }
+// })
+// }
+
+componentDidMount(){
+  // this.findDataById()
+  console.log("get screenerId",localStorage.getItem("screenerId"));
+}
 
   handleSubmit = e => {
     e.preventDefault()   
@@ -115,15 +133,16 @@ class AddCitizen extends React.Component {
           alert("Please select Gender");
           return;
         }
-        
+      
         let dateOfOnBoarding = mydate;
-        let postData="screenerId="+localStorage.getItem("usermasid");
+        let postData="screenerId="+localStorage.getItem("javixid");
             postData+="&token=dfjkhsdfaksjfh3756237&firstName="+this.state.fname+"&lastName="+this.state.lname;
             postData+="&sex="+this.state.gender+"&mobileNo="+this.state.mobile+"&email="+this.state.email;
             postData+="&dateOfBirth="+this.state.dob+"&dateOfOnBoarding="+dateOfOnBoarding+"&bloodGroup="+this.state.bgroup;
             postData+="&aadhaar="+this.state.aadhaar+"&country="+this.state.country+"&state="+this.state.mstate;
             postData+="&district="+this.state.district+"&pincode="+this.state.pincode+"&address="+this.state.addr+"&photo="+returnUrl;      
-     
+            postData+="&ngoId="+localStorage.getItem("ngoId");
+            // postData+="screenerId="+localStorage.getItem("javixid");
             
         let _targetPostURL="http://javixlife.org:3010/api/citizen/addprofile";
         axios(

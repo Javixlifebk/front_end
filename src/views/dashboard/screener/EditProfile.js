@@ -82,7 +82,26 @@ class EditProfile extends React.Component {
     myexection:'',
     curTime : new Date().toLocaleString()
   }
-
+  findDataById(){
+    console.log("useridd",localStorage.getItem("screenerId"));
+    console.log("screenerId",localStorage.getItem("screenerId"));
+    axios.post('http://javixlife.org:3010/api/ngo/screenerListById',{'screenerLoginId':localStorage.getItem("userid")})
+    .then(response => {
+      if(response){
+        localStorage.setItem ('javixid',localStorage.getItem("userid"))
+        localStorage.setItem ("screenerId",response.data.data.data[0].screenerId)
+      console.log("@@@@@@@@@@@@",response.data.data.data[0].screenerId);
+     
+  
+      window.location = '/dashboard';
+      }
+  })
+  }
+  
+  componentDidMount(){
+    this.findDataById()
+  }
+  
   handleSubmit = e => {
       e.preventDefault() 
 
@@ -96,12 +115,13 @@ class EditProfile extends React.Component {
 
       let dateOfOnBoarding = myCurrentDate.getFullYear() + '-' + mydate + '-' + myCurrentDate.getDate();
       let postData="userId="+localStorage.getItem("userid");
+      
           postData+="&token=dfjkhsdfaksjfh3756237&firstName="+this.state.fname+"&lastName="+this.state.lname;
           postData+="&sex="+this.state.gender+"&mobileNo="+this.state.mobile+"&email="+this.state.email;
           postData+="&dateOfBirth="+this.state.dob+"&dateOfOnBoarding="+dateOfOnBoarding+"&qualification="+this.state.qualification;
           postData+="&specialisation="+this.state.specialization+"&country="+this.state.country+"&state="+this.state.mstate;
           postData+="&district="+this.state.district+"&pincode="+this.state.pincode+"&address="+this.state.addr;      
-   
+          postData+="&ngoId="+localStorage.getItem("ngoId");
       let _targetPostURL="http://javixlife.org:3010/api/ngo/screener/addprofile?=";
       axios(
         {
@@ -116,7 +136,7 @@ class EditProfile extends React.Component {
       
         if(res.data.status===1){
           alert('Profile Updated Successfully')
-          window.location='/dashboard/scrviewprofile'
+          window.location='/dashboard'
         }
       })
       .catch(e=>{

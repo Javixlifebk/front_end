@@ -1,16 +1,37 @@
 import React from "react"
-import { Form, FormGroup, Input, Label, Button } from "reactstrap"
+// import { Form, FormGroup, Input, Label, Button } from "reactstrap"
 import Checkbox from "../../../components/@vuexy/checkbox/CheckboxesVuexy"
 import { Check } from "react-feather"
 import { connect } from "react-redux"
 //import { history } from "../../history"
 //import { useAuth0 } from "../../authServices/auth0/auth0Service"
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardBody,
+  FormGroup,
+  Row,
+  Col,
+  Input,
+  Form,
+  Button,
+  Label
+ 
+} from "reactstrap"
 import { useAuth0 } from "../../../authServices/auth0/auth0Service"
 import Select from "react-select"
 import axios from 'axios';
+// import { ReceiptRounded } from "@mui/icons-material"
 
 class AddActors extends React.Component {
   state = {
+    selectOptions : [],
+    id: "",
+    name: '',
+    ngoId: "",
+    ngoLoginId:"",
+    owner: '',
     txtfname:'',
     txtlname:'',
     txtmob:'',
@@ -19,22 +40,35 @@ class AddActors extends React.Component {
     confirmPass:'',
     roleId:'',
     confirmAccept:true,
-    myexection:''
+    myexection:'',
+    fileuploads:'',
+    siguploads:'',
+    // emailerr:'',
+    // usernameerr:''
   }
 
   
 
 
   handleRegister = e => {
+
     e.preventDefault();
-    
+    const formData = new FormData(); 
+    formData.append('logo', this.state.fileuploads);
+    formData.append('client_logo', this.state.fileuploads);
     let postData="firstName="+this.state.txtfname+
                   "&lastName="+this.state.txtlname+
                   "&password="+this.state.password+
                   "&email="+this.state.email+
                   "&phoneNo="+this.state.txtmob+""+
-                  "&roleId=1"+
+                  "&roleId="+this.state.roleId+""+
+                  "&ngoId="+this.state.ngoLoginId+""+
                   "&userName="+this.state.userName+"";
+                  localStorage.setItem ('ngoId',this.state.ngoLoginId)
+      // if(this.state.roleId === 3){
+      //   this.state.ngoId="Na"
+      // }
+      
                   
     let _targetPostURL="http://javixlife.org:3010/api/auth/register?=";
     axios(
@@ -59,15 +93,59 @@ class AddActors extends React.Component {
            if(e.response.data.status===0 || e.response.data.status==="0")
            { 
            
-           this.setState({myexection:e.response.data.message});
+           this.setState({myexection:e.response.data.messege});
+          // this.setState({emailerr:e.response.data.data[0].msg});
+          // this.setState({usernameerr:e.response.data.data[1].msg});
+          
            }
            
 
           });
   }
 
-  render() {
+ 
+async getOptions(){
+  const res = await axios.post('http://javixlife.org:3010/api/ngo/allngoList')
+  const data = res.data.data.data
+    console.log(data);
+  const options = data.map(d => ({
+    "value" : d.ngoLoginId,
+    "label" : d.name
+  }))
+  this.setState({selectOptions: options})
+}
+   handleChange(e){
+   this.setState({ngoLoginId:e.value, name:e.label})
+  }
 
+
+//   onChangeHandler=event=>{
+
+//     this.setState({
+//       fileuploads: event.target.files[0],
+//       loaded: 0,
+//     })
+
+// }
+
+// onSignHandler=event=>{
+//   this.setState({
+//     siguploads: event.target.files[0],
+//     loaded: 0,
+//   })
+
+// }
+  componentDidMount(){
+    this.getOptions()
+    
+}
+
+
+
+
+
+  render() {
+  console.log(this.state.selecOptions)
     const bloodGroup = [
         { value: "Select Actors", label: "Select Actors", color: "#00B8D9", isFixed: true },
         { value: "Doctor", label: "Doctor", color: "#00B8D9", isFixed: true,roleId:1 },
@@ -80,6 +158,7 @@ class AddActors extends React.Component {
 
     return (
       <Form onSubmit={this.handleRegister}>
+      
         <FormGroup className="form-label-group">
         <div style={{color:"#cd098e",fontWeight:"bold"}}>Actors Registration Form</div>
         </FormGroup>
@@ -92,7 +171,7 @@ class AddActors extends React.Component {
                 classNamePrefix="select"            
                 onChange={e =>{ 
 
-                  this.setState({ bgroup: e.value })
+                  this.setState({bgroup:e.value })
                   this.setState({roleId:e.roleId })
 
               }
@@ -101,6 +180,23 @@ class AddActors extends React.Component {
               />
               
                 </FormGroup>
+{ this.state.roleId !== 3 ?(
+ 
+      <FormGroup>
+         <div>
+        <Select options={this.state.selectOptions} onChange={this.handleChange.bind(this)}/>
+      </div>
+      </FormGroup>
+):(
+  <div></div>
+//   <FormGroup>
+//   <div>
+//  <Select options={this.state.selectOptions} onChange={this.handleChange.bind(this)}/>
+// </div>
+// </FormGroup>
+)
+  }
+ 
        <FormGroup className="form-label-group">
 
           <Input
@@ -143,6 +239,8 @@ class AddActors extends React.Component {
             value={this.state.email}
             onChange={e => this.setState({ email: e.target.value })}
           />
+           {/* <span> { this.state.emailerr &&
+  <h6 className="error" style={{color:"red"}}> { this.state.emailerr } </h6> }</span> */}
           <Label>Email</Label>
         </FormGroup>
         <FormGroup className="form-label-group">
@@ -154,6 +252,8 @@ class AddActors extends React.Component {
             value={this.state.userName}
             onChange={e => this.setState({ userName: e.target.value })}
           />
+           {/* <span> { this.state.usernameerr &&
+  <h6 className="error" style={{color:"red"}}> { this.state.usernameerr } </h6> }</span> */}
           <Label>User Name</Label>
         </FormGroup>
         <FormGroup className="form-label-group">
@@ -185,6 +285,36 @@ class AddActors extends React.Component {
             defaultChecked={true}
           />
         </FormGroup>
+        {/* <Row>
+              <Col sm="12">
+                <FormGroup>
+                  <Label for="nameVertical">Upload Photo</Label>
+                  <Input
+                    type="file"                    
+                    name="fileuploads"
+                    id="imgphoto"
+                    placeholder="Upload Photo"                   
+                    onChange={this.onChangeHandler}
+                    required
+                  />
+                </FormGroup>
+              </Col>
+              </Row>
+              <Row>
+              <Col sm="12">
+                <FormGroup>
+                  <Label for="nameVertical">Upload Signature</Label>
+                  <Input
+                    type="file"                    
+                    name="fileuploads"
+                    id="imgsignature"
+                    placeholder="Upload Signature"                   
+                    onChange={this.onSignHandler}
+                    required
+                  />
+                </FormGroup>
+              </Col>
+              </Row> */}
         <div className="d-flex justify-content-between">
          
           <Button.Ripple color="primary" type="submit">

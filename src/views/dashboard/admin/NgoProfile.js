@@ -67,10 +67,13 @@ class Profile extends React.Component {
   }
   }
 
+
   componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-        
+   
+ 
+
 		axios.post('http://javixlife.org:3010/api/ngo/ngoById?=', {userId:localStorage.getItem("Ngoid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
           var recs=response.data.data.data;		
@@ -89,7 +92,9 @@ class Profile extends React.Component {
           this.setState({district:recs[0].info.district});
           this.setState({addr:recs[0].info.address});
 					localStorage.removeItem("Ngoid");
+
 		 });// then
+     document.location = '/dashboard';
 } 
 
 

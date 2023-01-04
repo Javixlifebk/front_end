@@ -29,7 +29,7 @@ const themeColors = [$primary, $success, $danger, $warning, $label_color];
 
 class DoctorDashboard extends React.Component {
   state = {
-    doctors: 0,
+    // doctors: 0,
     ngos: 0,
     screeners: 0,
     pharmacies: 0,
@@ -98,6 +98,8 @@ class DoctorDashboard extends React.Component {
       .post ('http://javixlife.org:3010/api/graph/getlist', {
         userId: localStorage.getItem ('userid'),
         token: 'dfjkhsdfaksjfh3756237',
+        ngoId: localStorage.getItem ('ngoId'),
+        ngoLoginId:localStorage.getItem('ngoId')
       })
       .then (response => {
         //console.dir(response.data.data.data)
@@ -133,15 +135,15 @@ class DoctorDashboard extends React.Component {
   }
   render () {
     const data = {
-      labels: ['Doctors', 'Screener', 'NGO', 'Sevika', 'Screening', 'Pharmacy'],
+      labels: ['Screener', 'Sevika', 'Screening', 'Pharmacy'],
       datasets: [
         {
           label: ['Doctors Count'],
 
           data: [
-            this.state.doctors,
+            // this.state.doctors,
             this.state.screeners,
-            this.state.ngos,
+            // this.state.ngos,
             this.state.sevika,
             this.state.screening,
             this.state.pharmacies,
@@ -152,20 +154,20 @@ class DoctorDashboard extends React.Component {
     }
 
     const series = [
-      {
-        name: 'Doctors',
-        data: [this.state.doctors],
-        //  click:this.getCitizenScreener()
-      },
+      // {
+      //   name: 'Doctors',
+      //   data: [this.state.doctors],
+      //   //  click:this.getCitizenScreener()
+      // },
       {
         name: 'Screener',
         data: [this.state.screeners],
         link: '/dashboard/casedetails',
       },
-      {
-        name: 'NGO',
-        data: [this.state.ngos],
-      },
+      // {
+      //   name: 'NGO',
+      //   data: [this.state.ngos],
+      // },
       {
         name: 'Sevika',
         data: [this.state.sevika],
@@ -208,7 +210,7 @@ class DoctorDashboard extends React.Component {
 
         
         <Row className="match-height" style={{textAlign: 'center'}}>
-          <Col lg="2" style={{textAlign: 'center', cursor: 'pointer'}}>
+          {/* <Col lg="2" style={{textAlign: 'center', cursor: 'pointer'}}>
 
             <Card
               style={{textAlign: 'center'}}
@@ -225,8 +227,8 @@ class DoctorDashboard extends React.Component {
 
               </CardBody>
             </Card>
-          </Col>
-          <Col lg="2" style={{textAlign: 'center', cursor: 'pointer'}}>
+          </Col> */}
+          {/* <Col lg="2" style={{textAlign: 'center', cursor: 'pointer'}}>
             <Card
               style={{textAlign: 'center'}}
               onClick={() => {
@@ -243,7 +245,7 @@ class DoctorDashboard extends React.Component {
               </CardBody>
 
             </Card>
-          </Col>
+          </Col> */}
           <Col lg="2" style={{textAlign: 'center', cursor: 'pointer'}}>
             <Card
               style={{textAlign: 'center'}}

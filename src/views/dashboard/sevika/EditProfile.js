@@ -82,10 +82,28 @@ class EditProfile extends React.Component {
     pincode:'',
     curTime : new Date().toLocaleString()
   }
+  findDataById(){
+    console.log("useridd",localStorage.getItem("userid"));
+    axios.post('http://javixlife.org:3010/api/ngo/sevikaListById',{"screenerLoginId":localStorage.getItem("userid")})
+    .then(response => {
+      if(response){
+        // localStorage.setItem ('javixid',localStorage.getItem("userid"))
+      console.log("+++++++++++++++", localStorage.setItem ("screenerId",response.data.data.data[0].screenerId))
+        localStorage.setItem ("javixid",localStorage.getItem("screenerId"))
 
+      console.log("@@@@@@@@@@@@",response);
+      // console.log("usermasid",localStorage.setItem("usermasid",response));
+  
+      window.location = '/dashboard';
+      
+      }
+  })
+  }
+  
+  
   componentDidMount() {
   
- 
+    this.findDataById()
  
   this.mounted = true;
 }
@@ -109,7 +127,7 @@ class EditProfile extends React.Component {
           postData+="&dateOfBirth="+this.state.dob+"&dateOfOnBoarding="+dateOfOnBoarding+"&qualification="+this.state.qualification;
           postData+="&specialisation="+this.state.specialization+"&country="+this.state.country+"&state="+this.state.mstate;
           postData+="&district="+this.state.district+"&pincode="+this.state.pincode+"&address="+this.state.addr;      
-   
+          postData+="&ngoId="+localStorage.getItem("ngoId");
           
       let _targetPostURL="http://javixlife.org:3010/api/ngo/screener/addprofile?=";
       axios(
@@ -124,7 +142,8 @@ class EditProfile extends React.Component {
 
         if(res.data.status===1){
           alert('Profile Updated Successfully')
-          window.location='/dashboard/sevviewprofile'
+          window.location='/dashboard'
+          
         }
       })
       .catch(e=>{

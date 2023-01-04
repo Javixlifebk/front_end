@@ -215,7 +215,9 @@ class SideMenuContent extends React.Component {
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
-                  navLink: "/dashboard/commingsoon"
+                  
+                  navLink: "/dashboard/pharmacylist"
+                  // navLink: "/dashboard/commingsoon"
                 }
               ]
             },            

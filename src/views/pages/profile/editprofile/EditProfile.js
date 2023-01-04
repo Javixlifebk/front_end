@@ -65,6 +65,7 @@ const mapStateToProps = state => {
 const AppRoute = connect(mapStateToProps)(RouteConfig)
 class EditProfile extends React.Component {
   
+ 
   state = {
     ngoregno:'',
     regdate:'',
@@ -80,12 +81,55 @@ class EditProfile extends React.Component {
     district:'',
     addr:'',
     myexection:'',
+    // image:'',
+    client_logo:'',
+    javixid:'',
     curTime : new Date().toLocaleString()
   }
 
+  
+
+  onChangeHandler=event=>{
+
+    this.setState({
+      image: event.target.files[0],
+      loaded: 0,
+    })
+
+}
+
+
+onSignHandler=event=>{
+
+  this.setState({
+    client_logo: event.target.files[0],
+    loaded: 0,
+  })
+
+}
+// if(ngo){
+ findDataById(){
+  console.log("useridd",localStorage.getItem("userid"));
+  axios.post('http://javixlife.org:3010/api/ngo/ngoFindbyId',{ngoLoginId:localStorage.getItem("userid")})
+  .then(response => {
+    if(response){
+      localStorage.setItem ('javixid',localStorage.getItem("userid"))
+    console.log("@@@@@@@@@@@@",response);
+   
+
+    window.location = '/dashboard';
+    }
+})
+}
+
   handleSubmit = e => {
+
     e.preventDefault()
 
+
+ 
+
+    console.log(localStorage.setItem ('javixid',localStorage.getItem("userid"))); 
     var myCurrentDate = new Date();
       let mydate='';
       if((myCurrentDate.getMonth()+1)<=9){
@@ -94,6 +138,16 @@ class EditProfile extends React.Component {
         mydate=myCurrentDate.getMonth()+1;
       }
 
+     
+      var returnUrl="";
+      const formData = new FormData(); 
+      // formData.append('image', this.state.image)
+      formData.append('client_logo', this.state.client_logo)
+      formData.append('ngoId', localStorage.getItem("userid"))
+      axios.post("http://javixlife.org:3010/api/logo/addbanner", formData, { 
+        // receive two    parameter endpoint url ,form data
+    })
+
           let dateOfOnBoarding = myCurrentDate.getFullYear() + '-' + mydate + '-' + myCurrentDate.getDate();
           let postData="userId="+localStorage.getItem("userid");
           postData+="&token=dfjkhsdfaksjfh3756237&ngoName="+this.state.ngoname+"&ownerName="+this.state.ownername;
@@ -101,7 +155,7 @@ class EditProfile extends React.Component {
           postData+="&ngoRegistrationNo="+this.state.ngoregno+"&dateOfOnBoarding="+dateOfOnBoarding+"&dateOfRegistration="+this.state.regdate;
           postData+="&country="+this.state.country+"&state="+this.state.mstate;
           postData+="&district="+this.state.district+"&address="+this.state.addr;      
-   
+          
           
       let _targetPostURL="http://javixlife.org:3010/api/ngo/addprofile?=";
       axios(
@@ -113,16 +167,22 @@ class EditProfile extends React.Component {
           }
   
       ).then(res=>{
-
+        returnUrl= res.data['profile-url'];
         if(res.data.status===1){
           alert('Profile Updated Successfully')
+          document.location = '/dashboard';
         }
+       
       })
       .catch(e=>{
         
       });
 
 
+  }
+ 
+  componentDidMount(){
+    this.findDataById()
   }
   render() {
     const colourOptions = [
@@ -171,7 +231,7 @@ class EditProfile extends React.Component {
       
       
     return (
-     
+      <React.StrictMode>
         <React.Fragment >
          
         <Row>
@@ -329,6 +389,34 @@ class EditProfile extends React.Component {
                   />
                 </FormGroup>
               </Col>
+              <Row>
+              {/* <Col sm="6">
+                <FormGroup>
+                  <Label for="nameVertical">Upload Logo</Label>
+                  <Input
+                    type="file"                    
+                    name="image"
+                    id="imgsignature"
+                    placeholder="Upload Signature"                   
+                    onChange={this.onChangeHandler}
+                    required
+                  />
+                </FormGroup>
+              </Col> */}
+              <Col sm="6">
+                <FormGroup>
+                  <Label for="nameVertical">Upload Client Logo</Label>
+                  <Input
+                    type="file"                    
+                    name="client_logo"
+                    id="client_logo"
+                    placeholder="Upload photo"                   
+                    onChange={this.onSignHandler}
+                    required
+                  />
+                </FormGroup>
+              </Col>
+              </Row>
           
               <Col sm="12">
                 <FormGroup>
@@ -358,6 +446,7 @@ class EditProfile extends React.Component {
       </Row>
    
       </React.Fragment>
+      </React.StrictMode>
     )
   }
 }

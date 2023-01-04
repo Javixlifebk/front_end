@@ -105,6 +105,7 @@ class AddAllergy extends React.Component {
     else      
     postData+="&token=dfjkhsdfaksjfh3756237"+"&screenerId="+localStorage.getItem("usermasid") ;
     postData+="&status=1" +"&recordUrl="+returnUrl+"&type="+this.state.doctype+"&description="+this.state.fname;
+    postData+="&ngoId="+localStorage.getItem("ngoId")
     let _targetPostURL="http://javixlife.org:3010/api/citizen/addDocuments?=";
     axios(
       {

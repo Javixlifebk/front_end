@@ -538,3 +538,11 @@
     opacity: 0;
   }
 }
+.navbar-container .search-input.open {
+  position: absolute;
+  width: 70% !important; 
+  z-index: 1;
+}
+.navbarsearchlogo{
+  margin-left: 30% !important;
+}

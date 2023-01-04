@@ -87,7 +87,8 @@ class ScreenerCasesList extends React.Component {
         cell: row => (
          <div style={{cursor:'pointer'}} >
         
-         <p className="text-bold-500 mb-0">{row.fullname}</p> 
+         <p className="text-bold-500 mb-0">{row.citizens.firstName}</p> &nbsp;
+         <span className="text-bold-500 mb-0">{row.citizens.lastName}</span>
           {/* <p className="text-bold-500 mb-0">{row.citizenId}</p>          */}
           </div>
         )
@@ -236,7 +237,7 @@ componentDidMount() {
 		//this.setState({data:null});
     let scrId=localStorage.getItem("screenerId");
     console.log(scrId, '@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
-    axios.post('http://javixlife.org:3010/api/screening/getscreenercases?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId})
+    axios.post('http://javixlife.org:3010/api/screening/getscreenercases?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId,ngoId:localStorage.getItem("ngoId")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -254,34 +255,35 @@ componentDidMount() {
 
 
 
-  handleFilter = e => {
-    let value = e.target.value
-    let data = this.state.data
-    let filteredData = this.state.filteredData
-    this.setState({ value })
+handleFilter = e => {
+  let value = e.target.value
+  let data = this.state.data
+  let filteredData = this.state.filteredData
+  this.setState({ value })
 
-    if (value.length) {
-      filteredData = data.filter(item => {
-		  console.dir(item.userId);
-        let startsWithCondition =
-          item.userId.toLowerCase().startsWith(value.toLowerCase()) ||
-           item.info.firstName.toLowerCase().startsWith(value.toLowerCase()) ||
-           item.info.lastName.toLowerCase().startsWith(value.toLowerCase()) 
-        let includesCondition =
-          item.userId.toLowerCase().includes(value.toLowerCase()) ||
-         item.info.firstName.toLowerCase().includes(value.toLowerCase()) ||
-		 item.info.lastName.toLowerCase().includes(value.toLowerCase())
+  if (value.length) {
+    filteredData = data.filter(item => {
+      console.log(item.citizens.firstName,"helloa");
+      let startsWithCondition =
+     
+      item.citizens.firstName.toLowerCase().startsWith(value.toLowerCase()) ||
+      item.citizens.lastName.toLowerCase().startsWith(value.toLowerCase()) 
+      
+      let includesCondition =
+      item.citizens.firstName.toLowerCase().includes(value.toLowerCase()) ||
+      item.citizens.lastName.toLowerCase().includes(value.toLowerCase()) 
+       
 
-        if (startsWithCondition) {
-          return startsWithCondition
-        } else if (!startsWithCondition && includesCondition) {
-          return includesCondition
-        } else return null 
-      })
-      this.setState({ filteredData })
-    }
-	
+      if (startsWithCondition) {
+        return startsWithCondition
+      } else if (!startsWithCondition && includesCondition) {
+        return includesCondition
+      } else return null
+    })
+    this.setState({ filteredData })
   }
+}
+
 
   /* render for all */
   render() {

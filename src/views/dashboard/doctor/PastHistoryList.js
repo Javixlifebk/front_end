@@ -160,7 +160,7 @@ for (const [key, value] of Object.entries(row)) {
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://javixlife.org:3010/api/citizen/getHistoryMedical?=', { citizenId:localStorage.getItem("citizenId")})
+		  axios.post('http://javixlife.org:3010/api/citizen/getHistoryMedical?=', { citizenId:localStorage.getItem("citizenId"),ngoId:localStorage.getItem("ngoId")})
 		 .then(response => {
 					if(response.data.status===1){
 						  var msg=response.data.message;

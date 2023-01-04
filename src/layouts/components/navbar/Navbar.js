@@ -30,7 +30,7 @@ const UserName = props => {
   return username
 }
 const ThemeNavbar = props => {
-
+  
   const colorsArr = [ "primary", "danger", "success", "info", "warning", "dark"]
   const navbarTypes = ["floating" , "static" , "sticky" , "hidden"]
   return (
@@ -78,13 +78,15 @@ const ThemeNavbar = props => {
                   handleAppOverlay={props.handleAppOverlay}
                 />
               </div>
+            
               {props.horizontal ? (
                 <div className="logo d-flex align-items-center">
                   <div className="brand-logo mr-50"></div>
                   <h2 className="text-primary brand-text mb-0">Vuexy</h2>
                 </div>
               ) : null}
-              <NavbarUser
+              
+              <NavbarUser className="navbarsearchlogo"
                 handleAppOverlay={props.handleAppOverlay}
                 changeCurrentLang={props.changeCurrentLang}
                
@@ -98,7 +100,9 @@ const ThemeNavbar = props => {
                 logoutWithJWT={props.logoutWithJWT}
                 logoutWithFirebase={props.logoutWithFirebase}
               />
+              
             </div>
+           
           </div>
         </div>
       </Navbar>
