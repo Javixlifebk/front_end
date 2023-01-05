@@ -160,7 +160,8 @@ class AddMedicine extends React.Component {
     
   }
   prescribeData(){
-    axios.post('http://javixlife.org:3010/api/citizen/citizenReferList', {isUnrefer:0,citizenId:localStorage.getItem("citizenId")})
+    //isUnrefer:2 prescription list
+    axios.post('http://javixlife.org:3010/api/citizen/citizenReferList', {isUnrefer:2,citizenId:localStorage.getItem("citizenId")})
     .then(response => {
          if(response.data.status===1)
            {
