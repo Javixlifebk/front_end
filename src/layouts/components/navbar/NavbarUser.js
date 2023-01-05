@@ -97,7 +97,7 @@ class NavbarUser extends React.PureComponent {
   state = {
     navbarSearch: false,
     langDropdown: false,
-    
+    data:[],
     suggestions: []
   }
 
@@ -105,12 +105,34 @@ class NavbarUser extends React.PureComponent {
 async getOptions(){
   const res = await axios.post('http://javixlife.org:3010/api/ngo/allngoList')
   const data = res.data.data.data
-    console.log(data);
+    console.log("data",data);
+    let options ={}
+    //  options= {'value':'',
+    // 'label':"select ngo"}
+    options.value=''
+    options.label='Select NGO'
 
-  const options = data.map(d => ({
+// options.push(defaultValue)
+   options = data.map(d => ({
+    
     "value" : d.ngoLoginId,
     "label" : d.name
   }))
+
+       let optionsDefault= {'value':'',
+    'label':"select ngo"}
+    options.push(optionsDefault)
+    options.reverse();
+    // options = grep(options, function(e) {
+    //   return e.value != "rakesh";
+    // });
+
+    options = options.filter(function( obj ) {
+      return obj.value !== "rakesh";
+    });
+  console.log(typeof(options));
+  console.log(options);
+ 
   this.setState({selectOptions: options})
 }
    handleChange(e){
@@ -155,7 +177,18 @@ async getOptions(){
       {localStorage.getItem("roleId")=='91' ? (
        <FormGroup style={{width:"30%"}}>
        <label>select NGO</label>
-       <Select options={this.state.selectOptions} onChange={this.handleChange.bind(this)}/>
+       {/* <select onChange={this.handleChange.bind(this)}><option>
+        select ngo</option>
+        this.data.map(d  ({
+        <option value={this.state.selectOptions.value}>{this.state.selectOptions.label}</option>}))
+        </select> */}
+       <Select  isSearchable={false}     options={this.state.selectOptions} onChange={this.handleChange.bind(this)} 
+       defaultValue={{"value" : '',
+       "label" : 'select ngo'}}>
+        
+
+      
+       </Select>
      
      </FormGroup>):(
       <p></p>)

@@ -1,7 +1,7 @@
 import React from "react"
 import { Card, CardBody, Button, Row, Col } from "reactstrap"
 import notAuthImg from "../../../assets/img/pages/not-authorized.png"
-import JavixLogo from "../../../assets/img/logo/logo_javix.png"
+import JavixLogo from "../../../assets/img/logo/logo.png"
 
 class NotAuthorized extends React.Component {
   render() {
@@ -17,9 +17,10 @@ class NotAuthorized extends React.Component {
                 className="img-fluid align-self-center mt-75"
               />
               <img
+              
                 src={JavixLogo}
                 alt="notAuthImg"
-                className="img-fluid align-self-center mt-75"
+                className="img-fluid align-self-center mt-75 ml-5 rounded"
               />
               <h1 className="font-large-2 my-2">Welcome to Javix Life Healthcare!</h1>
               <p className="pt-2 mb-0">

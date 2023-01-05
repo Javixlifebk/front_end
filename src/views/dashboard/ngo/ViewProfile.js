@@ -65,11 +65,19 @@ class Profile extends React.Component {
   window.location='/dashboard/ngoeditwprofile'
   }
   }
-
+  getLogo(){
+    axios.post('http://javixlife.org:3010/api/logo/getLogo',{ngoId:localStorage.getItem("ngoId")})
+        .then(response => {
+                       this.setState({response:response.data[0].client_logo})
+                       console.log("=========",this.state.response);
+                      //  console.log(response.data.data.data);
+        })
+      // console.log("data+++++",data);
+  }
   componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-        
+        this.getLogo()
 		axios.post('http://javixlife.org:3010/api/ngo/ngoById?=', { userId:localStorage.getItem("ngoId"), userId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
       if(response.data.status===1){
@@ -124,7 +132,7 @@ getImage(){
         <Row>
             <Col sm="4">
             <img
-              src={this.getImage(this.state.photo)}
+              src={this.state.response}
               alt="porfileImg"
               className="img-fluid img-border rounded-circle box-shadow-1"
             />
