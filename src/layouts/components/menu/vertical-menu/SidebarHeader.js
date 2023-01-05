@@ -18,7 +18,7 @@ class SidebarHeader extends Component {
 }
 
 getLogo(){
-  axios.post('http://javixlife.org:3010/api/logo/getLogo',{ngoId:localStorage.getItem("ngoId")})
+  axios.post('http://javixlife.org:3010/api/logo/getLogo',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
       .then(response => {
                      this.setState({response:response.data[0].client_logo})
                      console.log("=========",this.state.response);
