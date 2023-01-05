@@ -10,7 +10,7 @@ import axios from 'axios';
 //import { history } from "../../../../../../history"
 //import { useAuth0 } from "../../authServices/auth0/auth0Service"
 import loginImg from "../../../assets/img/pages/reset-password.png"
-import JavixLogo from "../../../assets/img/logo/logo_javix.png"
+import JavixLogo from "../../../assets/img/logo/logo.png"
 import LoadingSpinner from "../../register/LoadingSpinner";
 
 
@@ -89,7 +89,7 @@ class Forgotpassword extends React.Component {
         >
           
         <Card className="bg-authentication rounded-0 mb-0 w-100">
-          <div style={{textAlign:"center"}}><p><img src={JavixLogo} width="100" alt="loginImg" /></p>
+          <div style={{textAlign:"center"}}><p><img src={JavixLogo} style={{width:'25%'}} className="rounded mt-2" alt="loginImg" /></p>
                 <p>Javix Life Healthcare</p></div>
         <Row className="m-0">
         <Col

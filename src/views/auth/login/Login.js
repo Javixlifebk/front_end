@@ -10,7 +10,7 @@ import {
 } from "reactstrap"
 
 import loginImg from "../../../assets/img/pages/login.png"
-import JavixLogo from "../../../assets/img/logo/logo_javix.png"
+import JavixLogo from "../../../assets/img/logo/logo.png"
 import "../../../assets/scss/pages/authentication.scss"
 import LoginJWT from "./LoginJWT"
 import Footer from "../../../layouts/components/footer/Footer"
@@ -46,7 +46,7 @@ class Login extends React.Component {
                 lg="6"
                 className="d-lg-block d-none text-center align-self-center px-1 py-0"
               >
-                <img src={JavixLogo} width="100" alt="loginImg" />
+                <img src={JavixLogo} style={{width:"45%"}} className="rounded" alt="loginImg" />
                 <p>Javix Life Healthcare</p>
                 <img src={loginImg} alt="loginImg" />
               </Col>

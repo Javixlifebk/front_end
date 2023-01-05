@@ -11,25 +11,40 @@ class SidebarHeader extends Component {
 
     this.state = {
         items: [],
-        DataisLoaded: false
+        DataisLoaded: false,
+        response:''
     };
+    
+}
+
+getLogo(){
+  axios.post('http://javixlife.org:3010/api/logo/getLogo',{ngoId:localStorage.getItem("ngoId")})
+      .then(response => {
+                     this.setState({response:response.data[0].client_logo})
+                     console.log("=========",this.state.response);
+                    //  console.log(response.data.data.data);
+      })
+    // console.log("data+++++",data);
 }
   /*<div className="brand-logo" /> */
   componentDidMount() {
 		this.mounted = true;
+    this.getLogo();
     
 		//this.setState({data:null});
-    axios.post("http://javixlife.org:3010/api/ngo/ngoList",{ngoLoginId:localStorage.getItem("ngoId")})
-    .then(response => {
-                   this.setState(response.data)
-                   console.log(response.data.data.data);
+//     axios.post("http://javixlife.org:3010/api/ngo/ngoList",{ngoLoginId:localStorage.getItem("ngoId")})
+//     .then(response => {
+//                    this.setState(response.data)
+//                    console.log(response.data.data.data);
 
-})}
+// })
+}
 
 
 
   render() {
-    const { DataisLoaded, items } = this.state;
+    const { DataisLoaded, response } = this.state;
+    console.log("=========",this.state.response);
     console.log(this.state.items);
     let {
       toggleSidebarMenu,
@@ -42,6 +57,7 @@ class SidebarHeader extends Component {
     return (
       <div className="navbar-header"> 
         <ul className="nav navbar-nav flex-row">
+      
           <li className="nav-item mr-auto">
             <NavLink to="/" className="navbar-brand">
             
@@ -49,14 +65,25 @@ class SidebarHeader extends Component {
               
             </NavLink>
           </li>
-          {items.map((item) => ( 
-                <div>
+        
+          {localStorage.getItem("roleId")=='3' ? (
+          <li className="nav-item w-100 ">
+            <NavLink to="/" className="navbar-brand">
+            <img style={{width:'170px',height:'40px'}} className="rounded" src={this.state.response}/>
+            </NavLink>
+          </li>
+          ):(
+           <span></span>
+          )
+          }
+         
+          <li className="nav-item ">
 
-                   <img style={{width:'100px',height:'40px'}} src={ item.image }/>
-                    {/* { item.client_logo },  */}
-                   
-                    </div>
-                ))}
+      
+ {/* { item.client_logo },  */}
+
+    </li>
+               
           <li className="nav-item nav-toggle">
             <div className="nav-link modern-nav-toggle">
               {collapsed === false ? (
