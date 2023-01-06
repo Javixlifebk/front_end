@@ -44,8 +44,7 @@ getLogo(){
 
   render() {
     const { DataisLoaded, response } = this.state;
-    console.log("=========",this.state.response);
-    console.log(this.state.items);
+   
     let {
       toggleSidebarMenu,
       activeTheme,

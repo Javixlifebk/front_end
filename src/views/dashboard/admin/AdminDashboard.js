@@ -426,7 +426,7 @@ class AdminDashboard extends React.Component {
       <span style={{textAlign:"center"}} onClick={() => {
                           document.location='/dashboard/admin/prescriptionList';
                         }}><h5>Prescribed</h5></span>
-            <h5>{this.state.prescription}</h5>              
+            <h5>{this.state.citizenprescibeCount}</h5>              
           
       </CardBody>
       </Card>
