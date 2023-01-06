@@ -20,8 +20,15 @@ class SidebarHeader extends Component {
 getLogo(){
   axios.post('http://javixlife.org:3010/api/logo/getLogo',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
       .then(response => {
-                     this.setState({response:response.data[0].client_logo})
-                     console.log("=========",this.state.response);
+                  if(response){
+                    this.setState({response:response.data.data.data[0].client_logo})
+                    // console.log("++__++",response.data.data.data[0].client_logo);
+                  
+                    
+                  }else{
+                    this.setState({response:'null'})
+                    console.log("=========",response);
+                  }
                     //  console.log(response.data.data.data);
       })
     // console.log("data+++++",data);
