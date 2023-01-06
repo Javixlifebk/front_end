@@ -34,6 +34,10 @@ $chip-avatar-bg: #c3c3c3;
 $avatar-bg: $chip-avatar-bg;
 $swiper-bg: #f2f4f4;
 $hover-color: #eee;
+[dir=ltr] .main-menu .navbar-header .modern-nav-toggle {
+  animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+  display: none !important;
+}
 
 //  ------------------------------
 //    Buttons
