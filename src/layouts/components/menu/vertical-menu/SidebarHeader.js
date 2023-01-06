@@ -17,19 +17,19 @@ class SidebarHeader extends Component {
     
 }
 
-// getLogo(){
-//   axios.post('http://javixlife.org:3010/api/logo/getLogo',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
-//       .then(response => {
-//                      this.setState({response:response.data[0].client_logo})
-//                      console.log("=========",this.state.response);
-//                     //  console.log(response.data.data.data);
-//       })
-//     // console.log("data+++++",data);
-// }
+getLogo(){
+  axios.post('http://javixlife.org:3010/api/logo/getLogo',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
+      .then(response => {
+                     this.setState({response:response.data[0].client_logo})
+                     console.log("=========",this.state.response);
+                    //  console.log(response.data.data.data);
+      })
+    // console.log("data+++++",data);
+}
   /*<div className="brand-logo" /> */
   componentDidMount() {
 		this.mounted = true;
-    // this.getLogo();
+    this.getLogo();
     
 		//this.setState({data:null});
 //     axios.post("http://javixlife.org:3010/api/ngo/ngoList",{ngoLoginId:localStorage.getItem("ngoId")})
