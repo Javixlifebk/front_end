@@ -64,7 +64,7 @@ getLogo(){
       <div className="navbar-header"> 
         <ul className="nav navbar-nav flex-row">
       
-          <li className="nav-item mr-auto">
+          <li className=" mr-auto">
             <NavLink to="/" className="navbar-brand">
             
               <img style={{width:'170px',height:'40px'}} className="rounded" src={brandLogo}/>
@@ -74,14 +74,14 @@ getLogo(){
         
           {localStorage.getItem("roleId")=='3' ? (
 
-          <li className="nav-item w-100 ">
+          <li className="w-100 ">
             {this.state.response ? (
             <NavLink to="/" className="navbar-brand">
             <img style={{width:'170px',height:'40px'}} className="rounded" src={this.state.response}/>
             </NavLink>):(
-              <NavLink to="/" className="navbar-brand">
+              <div  >
               {/* <img style={{width:'170px',height:'40px'}} className="rounded" src={this.state.response}/> */}
-              </NavLink>
+              </div>
             )
             }
           </li>
