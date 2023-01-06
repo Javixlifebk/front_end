@@ -73,10 +73,17 @@ getLogo(){
           </li>
         
           {localStorage.getItem("roleId")=='3' ? (
+
           <li className="nav-item w-100 ">
+            {this.state.response ? (
             <NavLink to="/" className="navbar-brand">
             <img style={{width:'170px',height:'40px'}} className="rounded" src={this.state.response}/>
-            </NavLink>
+            </NavLink>):(
+              <NavLink to="/" className="navbar-brand">
+              {/* <img style={{width:'170px',height:'40px'}} className="rounded" src={this.state.response}/> */}
+              </NavLink>
+            )
+            }
           </li>
           ):(
            <span></span>
