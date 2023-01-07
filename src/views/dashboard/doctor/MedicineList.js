@@ -98,7 +98,7 @@ loadRecs(recs)
  handleClick(_caseId)  {    
 
 
-  axios.post('http://javixlife.org:3010/api/report/createPrescriptionReport?=', { caseId:_caseId})
+  axios.post('http://javixlife.org:3010/api/report/createPrescriptionReport?=', { caseId:_caseId,ngoId:localStorage.getItem("ngoId")})
   .then(response => {
        if(response.data.status===1)
          {
