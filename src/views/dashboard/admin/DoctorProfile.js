@@ -126,7 +126,7 @@ class Profile extends React.Component {
           this.setState({district:recs[0].info.district});
           this.setState({addr:recs[0].info.address});
           this.setState({pincode:recs[0].info.pincode});
-          this.setState({imageurl:recs[0].info.photo})
+          this.setState({imageurl:recs[0].photo})
           this.setState({signature:recs[0].signature});
           localStorage.setItem("doEmail",this.state.email)
           //localStorage.removeItem("Docid");
