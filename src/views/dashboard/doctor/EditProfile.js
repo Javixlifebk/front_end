@@ -86,8 +86,8 @@ class EditProfile extends React.Component {
     myexection:'',
     doctortype:'',
     pincode:'',
-    fileuploads:'',
-    siguploads:'',
+    photo:'',
+    signature:'',
     // ngoId:'',
     curTime : new Date().toLocaleString()
   }
@@ -95,7 +95,7 @@ class EditProfile extends React.Component {
   onChangeHandler=event=>{
 
     this.setState({
-      fileuploads: event.target.files[0],
+      photo: event.target.files[0],
       loaded: 0,
     })
 
@@ -104,7 +104,7 @@ class EditProfile extends React.Component {
 onSignHandler=event=>{
 
   this.setState({
-    siguploads: event.target.files[0],
+    signature: event.target.files[0],
     loaded: 0,
   })
 
@@ -149,7 +149,13 @@ componentDidMount() {
 
       var returnUrl="";
       const formData = new FormData(); 
-      formData.append('profile', this.state.fileuploads);
+      formData.append('photo', this.state.photo);
+      formData.append('signature', this.state.signature);
+      formData.append('doctorLoginId', localStorage.getItem("userid"))
+      formData.append('ngoId', localStorage.getItem("ngoId"))
+      axios.post("http://javixlife.org:3010/api/doctor/addDoctorDoc", formData, { 
+        // receive two    parameter endpoint url ,form data
+    })
 
       let dateOfOnBoarding = myCurrentDate.getFullYear() + '-' + mymonth + '-' + mydate;
       let postData="userId="+localStorage.getItem("userid");
@@ -601,7 +607,7 @@ componentDidMount() {
                   <Label for="nameVertical">Upload Photo</Label>
                   <Input
                     type="file"                    
-                    name="fileuploads"
+                    name="photo"
                     id="imgphoto"
                     placeholder="Upload Photo"                   
                     onChange={this.onChangeHandler}
@@ -616,7 +622,7 @@ componentDidMount() {
                   <Label for="nameVertical">Upload Signature</Label>
                   <Input
                     type="file"                    
-                    name="fileuploads"
+                    name="signature"
                     id="imgsignature"
                     placeholder="Upload Signature"                   
                     onChange={this.onSignHandler}
