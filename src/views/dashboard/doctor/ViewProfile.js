@@ -74,7 +74,7 @@ class Profile extends React.Component {
           this.setState({district:recs[0].info.district});
           this.setState({pincode:recs[0].info.pincode});
           this.setState({addr:recs[0].info.address});
-          this.setState({imageurl:recs[0].info.photo})
+          this.setState({imageurl:recs[0].photo})
           this.setState({signature:recs[0].signature});
           
         }else{
