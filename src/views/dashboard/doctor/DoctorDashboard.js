@@ -168,6 +168,7 @@ class DoctorDashboard extends React.Component {
       //   name: 'NGO',
       //   data: [this.state.ngos],
       // },
+      
       {
         name: 'Sevika',
         data: [this.state.sevika],
