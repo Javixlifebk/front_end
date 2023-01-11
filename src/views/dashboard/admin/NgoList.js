@@ -129,6 +129,7 @@ loadRecs(recs)
 	 this.setState({data:recs});
 	 
  }
+ 
  handleClick(_userid) {    
   localStorage.setItem("Ngoid",_userid);
   window.location='/dashboard/admin/ngoprofile'  

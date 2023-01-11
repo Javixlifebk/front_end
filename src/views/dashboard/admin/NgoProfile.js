@@ -36,6 +36,7 @@ class Profile extends React.Component {
         district:'',
         addr:'',
         myexection:'',
+        photo:""
   }
 
  
@@ -74,7 +75,10 @@ class Profile extends React.Component {
    
  
 
-		axios.post('http://javixlife.org:3010/api/ngo/ngoById?=', {userId:localStorage.getItem("Ngoid"),token:'dfjkhsdfaksjfh3756237' })
+		axios.post('http://javixlife.org:3010/api/ngo/ngoById?=', {
+      ngoLoginId:localStorage.getItem("Ngoid"),
+      
+      token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
           var recs=response.data.data.data;		
           this.setState({ngoId:recs[0].ngoId});
@@ -91,10 +95,11 @@ class Profile extends React.Component {
           this.setState({mstate:recs[0].info.state});
           this.setState({district:recs[0].info.district});
           this.setState({addr:recs[0].info.address});
+          this.setState({photo:recs[0].client_logo});
 					localStorage.removeItem("Ngoid");
 
 		 });// then
-     document.location = '/dashboard';
+    //  document.location = '/dashboard';
 } 
 
 
@@ -114,7 +119,7 @@ class Profile extends React.Component {
         <Row>
             <Col sm="4">
             <img
-              src={profileImg}
+              src={this.state.photo}
               alt="porfileImg"
               className="img-fluid img-border rounded-circle box-shadow-1"
             />
