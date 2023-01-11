@@ -134,7 +134,7 @@ getSplit(_var){
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://javixlife.org:3010/api/doctor/prescriptionList?=', { citizenId:localStorage.getItem("citizenId"), ngoId:localStorage.getItem("ngoId")})
+		  axios.post('http://javixlife.org:3010/api/doctor/prescriptionList?=', {citizenId:localStorage.getItem("citizenId"), ngoId:localStorage.getItem("ngoId")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

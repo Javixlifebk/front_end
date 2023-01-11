@@ -98,7 +98,9 @@ class NavbarUser extends React.PureComponent {
     navbarSearch: false,
     langDropdown: false,
     data:[],
-    suggestions: []
+    suggestions: [],
+    selectedNgo:"",
+    selectedNgoID:""
   }
 
   
@@ -119,10 +121,10 @@ async getOptions(){
     "label" : d.name
   }))
 
-       let optionsDefault= {'value':'',
-    'label':"select ngo"}
-    options.push(optionsDefault)
-    options.reverse();
+    //    let optionsDefault= {'value':'',
+    // 'label':"select ngo"}
+    // options.push(optionsDefault)
+    // options.reverse();
     // options = grep(options, function(e) {
     //   return e.value != "rakesh";
     // });
@@ -138,10 +140,12 @@ async getOptions(){
    handleChange(e){
    this.setState({ngoLoginId:e.value, name:e.label})
    localStorage.setItem("ngoId",e.value);
+   localStorage.setItem("ngoName",e.label);
    window.location.reload(false);
 
   }
-
+  selectedNgoID=localStorage.getItem("ngoId");
+  selectedNgo=localStorage.getItem("ngoName");
   componentDidMount() {
     this.getOptions()
 
@@ -175,21 +179,14 @@ async getOptions(){
     return (
       <>
       {localStorage.getItem("roleId")=='91' ? (
+        // --ngo Dashboard dropdown --
        <FormGroup style={{width:"30%"}}>
-       <label>select NGO</label>
-       {/* <select onChange={this.handleChange.bind(this)}><option>
-        select ngo</option>
-        this.data.map(d  ({
-        <option value={this.state.selectOptions.value}>{this.state.selectOptions.label}</option>}))
-        </select> */}
-       <Select  isSearchable={false}     options={this.state.selectOptions} onChange={this.handleChange.bind(this)} 
-       defaultValue={{"value" : '',
-       "label" : 'select ngo'}}>
-        
-
-      
+       <label>select NGO</label>      
+       <Select isSearchable={false}  options={this.state.selectOptions} onChange={this.handleChange.bind(this)} 
+       defaultValue={ {"value":this.selectedNgoID,"label":this.selectedNgo} ? {"value":this.selectedNgoID,"label":this.selectedNgo}: {"value":"","label":"select ngo"}}>
        </Select>
-     
+       <span><b>{this.selectedNgo}</b></span>
+     {/* {"label":this.selectedNgo} */}
      </FormGroup>):(
       <p></p>)
      }
