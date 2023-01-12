@@ -185,7 +185,7 @@ async getOptions(){
        <Select isSearchable={false}  options={this.state.selectOptions} onChange={this.handleChange.bind(this)} 
        defaultValue={ {"value":this.selectedNgoID,"label":this.selectedNgo} ? {"value":this.selectedNgoID,"label":this.selectedNgo}: {"value":"","label":"select ngo"}}>
        </Select>
-       <span><b>{this.selectedNgo}</b></span>
+       {/* <span><b>{this.selectedNgo}</b></span> */}
      {/* {"label":this.selectedNgo} */}
      </FormGroup>):(
       <p></p>)
