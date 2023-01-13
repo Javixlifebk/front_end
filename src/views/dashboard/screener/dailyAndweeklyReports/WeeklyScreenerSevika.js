@@ -755,7 +755,8 @@ function WeeklyScreenerSevika() {
               
       <Table columns={columns} dataSource={rows}
         // locale={{ emptyText: "loading..." }}
-        loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
+        className="antdTableSevika"
+        // loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
         pagination={{
           pageSize: size,
           total: totalPages,

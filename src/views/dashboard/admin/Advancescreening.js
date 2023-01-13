@@ -89,7 +89,8 @@ function PendingAdvancedScreening() {
     axios.post("http://javixlife.org:3010/api/generalsurvey/screeningScreener", {
       "pageNo": page,
       "size": size,
-      'ngoId':localStorage.getItem("userid")
+      ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+
     })
       .then(response => {
 

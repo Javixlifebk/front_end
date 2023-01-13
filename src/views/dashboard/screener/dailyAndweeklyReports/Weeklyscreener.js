@@ -655,10 +655,10 @@ function WeeklyScreener() {
         </Col>
       </Row>
       {/* <Spin indicator={tableLoading} />, */}
-      <Table columns={columns} dataSource={rows}
+      <Table columns={columns} dataSource={rows} className="antdTable"
         // locale={{ <Spin indicator={antIcon} /> }}
         // loading={antIcon}
-        loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
+        // loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
         pagination={{
           pageSize: size,
           total: totalPages,

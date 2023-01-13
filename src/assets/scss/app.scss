@@ -8,3 +8,12 @@
 .ant-table-container{
 overflow-x: auto !important;
 }
+
+.ant-table {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border-radius: 2px;
+    
+    box-shadow: 0 4px 25px 0 RGB(0 0 0 / 10%) !important;
+  }
