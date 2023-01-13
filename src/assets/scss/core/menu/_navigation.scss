@@ -77,13 +77,15 @@
     }
   }
 
-  .navbar-header {
-    height: 100%;
+  .main-menu .navbar-header {
+    height: auto;
     width: $menu-expanded-width;
     height: $navbar-height;
     position: relative;
     padding: 0.35rem 1rem 0.3rem 1.64rem;
     transition: 300ms ease all;
+    display: flex;
+    justify-content: center !important;
     .navbar-brand {
       // padding: 15px 0px;
       display: flex;

@@ -15,7 +15,7 @@ import {
 import 'antd/dist/antd.css';
 // import './index.css';
 import { SearchOutlined } from '@ant-design/icons';
-import {  Input, Space, Table } from 'antd';
+import {  Input, Space, Table, Empty } from 'antd';
 import '@mui/x-data-grid-generator'
 import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
@@ -60,6 +60,19 @@ function  LipidCritical() {
       
     fetchRecords(1,10);
 },[])
+
+// let locale = {
+//   emptyText: (
+//     <span>
+//       <p>
+//       {/* <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+//       n */}
+//       no data
+//       </p>
+    
+//     </span>
+//   )
+// };
 
 const fetchRecords = (page,size) => {
 axios.post("http://javixlife.org:3010/api/screening/lipidCritical" ,{
@@ -667,9 +680,10 @@ const filterData = (data) =>
      
       </Col>          
       </Row>
-      <Table columns={columns} dataSource={rows}
-    //   loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
-    loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
+      <Table columns={columns} dataSource={rows} className="antdTable"
+      // locale={locale}
+    //  loading={{ indicator:No ,spinning:!rows}} 
+    // loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
     pagination={{
       pageSize:size,
       total:totalPages,
