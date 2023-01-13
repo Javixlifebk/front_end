@@ -180,7 +180,7 @@ async getOptions(){
       <>
       {localStorage.getItem("roleId")=='91' ? (
         // --ngo Dashboard dropdown --
-       <FormGroup style={{width:"30%"}}>
+       <FormGroup style={{width:"30%"}} className="mb-0">
        <label>select NGO</label>      
        <Select isSearchable={false}  options={this.state.selectOptions} onChange={this.handleChange.bind(this)} 
        defaultValue={ {"value":this.selectedNgoID,"label":this.selectedNgo} ? {"value":this.selectedNgoID,"label":this.selectedNgo}: {"value":"","label":"select ngo"}}>

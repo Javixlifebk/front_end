@@ -62,10 +62,10 @@ getLogo(){
     } = this.props
     return (
       <div className="navbar-header"> 
-        <ul className="nav navbar-nav flex-row">
+        <ul className="nav navbar-nav flex-row d-flex justify-content-center pt-2">
       
-          <li className=" mr-auto">
-            <NavLink to="/" className="navbar-brand">
+          <li className="">
+            <NavLink to="/" className="navbar-brand ">
             
               <img style={{width:'170px',height:'40px'}} className="rounded" src={brandLogo}/>
               
@@ -76,7 +76,7 @@ getLogo(){
 
           <li className="w-100 ">
             {this.state.response ? (
-            <NavLink to="/" className="navbar-brand">
+            <NavLink to="/" className="navbar-brand d-flex justify-content-center">
             <img style={{width:'170px',height:'40px'}} className="rounded" src={this.state.response}/>
             </NavLink>):(
               <div  >
