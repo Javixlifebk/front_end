@@ -79,7 +79,7 @@ class NgoDashboard extends React.Component {
 
   }
   getAdvancedScr(){
-    axios.post('http://javixlife.org:3010/api/generalsurvey/screeningScreenerCount',{ngoId:localStorage.getItem('ngoId')})
+    axios.post('http://javixlife.org:3010/api/generalsurvey/screeningScreenerCount',{ngoId:localStorage.getItem("userid")})
 .then(response => {
 
      //  console.log("Data Length=" + response.data)
@@ -102,7 +102,7 @@ class NgoDashboard extends React.Component {
  }
 
   getPendingSevika(){
-     axios.post('http://javixlife.org:3010/api/generalsurvey/screeningSevikaCount',{ngoId:localStorage.getItem('ngoId')})
+     axios.post('http://javixlife.org:3010/api/generalsurvey/screeningSevikaCount',{ngoId:localStorage.getItem("userid")})
  .then(response => {
 
       //  console.log("Data Length=" + response.data)
