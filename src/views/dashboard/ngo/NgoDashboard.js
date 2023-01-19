@@ -30,6 +30,8 @@ class NgoDashboard extends React.Component {
     pharmacies:0,
     screening:0,
     sevikas:0,
+    pendingsevika:0,
+    advancescr:0,
     citizen:0,
     options: {
       colors: this.props.themeColors,
@@ -76,6 +78,51 @@ class NgoDashboard extends React.Component {
 
 
   }
+  getAdvancedScr(){
+    axios.post('http://javixlife.org:3010/api/generalsurvey/screeningScreenerCount',{ngoId:localStorage.getItem('ngoId')})
+.then(response => {
+
+     //  console.log("Data Length=" + response.data)
+     //  if(response.data.status===1){
+       this.setState({advancescr:response.data.data.data[0].count}) 
+       console.log(response.data.data);
+     // / }
+     
+     
+     
+})
+.catch(e=>{
+ this.state.notfound=0
+ // if(e.response.data.status===0){
+ //   
+
+ // }
+});
+
+ }
+
+  getPendingSevika(){
+     axios.post('http://javixlife.org:3010/api/generalsurvey/screeningSevikaCount',{ngoId:localStorage.getItem('ngoId')})
+ .then(response => {
+
+      //  console.log("Data Length=" + response.data)
+      //  if(response.data.status===1){
+        this.setState({pendingsevika:response.data.data.data[0].count}) 
+        console.log(response.data.data);
+      // / }
+      
+      
+      
+ })
+ .catch(e=>{
+  this.state.notfound=0
+  // if(e.response.data.status===0){
+  //   
+
+  // }
+});
+
+  }
 
   componentDidMount() {
     if (
@@ -89,6 +136,8 @@ else{
     this.mounted = true;
   // this.mounted = true;
   //this.setState({data:null});
+  this.getPendingSevika()
+  this.getAdvancedScr()
       
   axios.post('http://javixlife.org:3010/api/graph/getlist', { ngoId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
    .then(response => {
@@ -369,7 +418,7 @@ else{
         document.location='/dashboard/admin/PendingadvancedScreening';
       }}> 
       <span style={{textAlign:"center"}}><h5>Advanced Screening Pending Cases</h5></span>                        
-      <h5>{this.state.pendingadvancescreener}</h5>  
+      <h5>{this.state.pendingsevika}</h5>  
       </CardBody>
       </Card>
       </Col>
@@ -383,7 +432,7 @@ else{
         document.location='/dashboard/admin/AdvancedScreening';
       }}>
         <h5>Advanced Screening Total Cases</h5></span>                        
-      <h5>{this.state.advancescreener}</h5>  
+      <h5>{this.state.advancescr}</h5>  
       </CardBody>
       </Card>
       </Col>

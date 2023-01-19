@@ -40,6 +40,8 @@ class AdminDashboard extends React.Component {
   state = {
     doctors:0,
     ngos:0,
+    pendingsevika:0,
+    advancescr:0,
     screeners:0,
     pharmacies:0,
     screening:0,
@@ -89,12 +91,60 @@ class AdminDashboard extends React.Component {
 
 
   }
+  getAdvancedScr(){
+    axios.post('http://javixlife.org:3010/api/generalsurvey/screeningScreenerCount',{ngoId:localStorage.getItem('ngoId')})
+.then(response => {
+
+     //  console.log("Data Length=" + response.data)
+     //  if(response.data.status===1){
+       this.setState({advancescr:response.data.data.data[0].count}) 
+       console.log(response.data.data);
+     // / }
+     
+     
+     
+})
+.catch(e=>{
+ this.state.notfound=0
+ // if(e.response.data.status===0){
+ //   
+
+ // }
+});
+
+ }
+
+  getPendingSevika(){
+     axios.post('http://javixlife.org:3010/api/generalsurvey/screeningSevikaCount',{ngoId:localStorage.getItem('ngoId')})
+ .then(response => {
+
+      //  console.log("Data Length=" + response.data)
+      //  if(response.data.status===1){
+        this.setState({pendingsevika:response.data.data.data[0].count}) 
+        console.log(response.data.data);
+      // / }
+      
+      
+      
+ })
+ .catch(e=>{
+  this.state.notfound=0
+  // if(e.response.data.status===0){
+  //   
+
+  // }
+});
+
+  }
+
   componentDidMount() {
   if(localStorage.getItem("javixid")===null || localStorage.getItem("javixid")==="0"){
     ///document.location="/views/dashboard/doceditprofile";
   }
 
   this.mounted = true;
+  this.getPendingSevika()
+  this.getAdvancedScr()
   //this.setState({data:null});
       
   axios.post('http://javixlife.org:3010/api/graph/getlist', {ngoId:localStorage.getItem('ngoId'),token:'dfjkhsdfaksjfh3756237', ngoLoginId:localStorage.getItem('ngoId')})
@@ -464,7 +514,7 @@ class AdminDashboard extends React.Component {
         document.location='/dashboard/admin/PendingadvancedScreening';
       }}> 
       <span style={{textAlign:"center"}}><h5>Advanced Screening Pending Cases</h5></span>                        
-      <h5>{this.state.pendingadvancescreener}</h5>  
+      <h5>{this.state.pendingsevika}</h5>  
       </CardBody>
       </Card>
       </Col>
@@ -478,7 +528,7 @@ class AdminDashboard extends React.Component {
         document.location='/dashboard/admin/AdvancedScreening';
       }}>
         <h5>Advanced Screening Total Cases</h5></span>                        
-      <h5>{this.state.advancescreener}</h5>  
+      <h5>{this.state.advancescr}</h5>  
       </CardBody>
       </Card>
       </Col>
