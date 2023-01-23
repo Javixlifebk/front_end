@@ -382,10 +382,209 @@ class AdminDashboard extends React.Component {
     }
     return imagUrl;
   }
+getbpGreenReport(){
+  axios.get('http://javixlife.org:3010/api/report/createBPGreencsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getbpAmberReport(){
+  axios.get('http://javixlife.org:3010/api/report/createBPAmbercsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getbpRedReport(){
+  axios.get('http://javixlife.org:3010/api/report/createBPRedcsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+
+getbmiGreenReport(){
+  axios.get('http://javixlife.org:3010/api/report/createBmiGreencsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getbmiAmberReport(){
+  axios.get('http://javixlife.org:3010/api/report/createbmiAmbercsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getbmiRedReport(){
+  axios.get('http://javixlife.org:3010/api/report/createbmiRedcsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+
+getspo2GreenReport(){
+  axios.get('http://javixlife.org:3010/api/report/createSpoGreencsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getspo2AmberReport(){
+  axios.get('http://javixlife.org:3010/api/report/createSpoAmbercsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getspo2RedReport(){
+  axios.get('http://javixlife.org:3010/api/report/createSpoRedcsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+
+
+getPulseGreenReport(){
+  axios.get('http://javixlife.org:3010/api/report/createPulseGreencsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getPulseAmberReport(){
+  axios.get('http://javixlife.org:3010/api/report/createPulseAmbercsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getPulseRedReport(){
+  axios.get('http://javixlife.org:3010/api/report/createPulseRedcsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getTempGreenReport(){
+  axios.get('http://javixlife.org:3010/api/report/createTempGreencsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getTempAmberReport(){
+  axios.get('http://javixlife.org:3010/api/report/createTempAmbercsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getTempRedReport(){
+  axios.get('http://javixlife.org:3010/api/report/createTempRedcsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
 
   componentDidMount() {
     this.mounted = true;
-    
+    this.getbpGreenReport();
+    this.getbpAmberReport();
+    this.getbpRedReport();
+    this.getbmiGreenReport();
+    this.getbmiAmberReport();
+     this.getbmiRedReport();
+     this.getspo2GreenReport();
+     this.getspo2AmberReport();
+    this.getspo2RedReport();
+    this.getPulseGreenReport();
+this.getPulseAmberReport();
+this.getPulseRedReport();
+this.getTempGreenReport();
+this.getTempAmberReport();
+this.getTempRedReport();
+            
     axios
       .post("http://javixlife.org:3010/api/screening/getCount", {
         severity_bp: "0",
@@ -1453,7 +1652,8 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/bpRed.csv"
+                  // href="http://javixlife.org:3010/documents/bpRed.csv"
+                  href="http://javixlife.org:3010/exports/csv-bpAmberReport.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1462,7 +1662,8 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/bpAmber.csv"
+                // href="http://javixlife.org:3010/documents/bpAmber.csv"
+                  href="http://javixlife.org:3010/exports/csv-bpAmberReport.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1471,7 +1672,8 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/bpGreen.csv"
+                // href="http://javixlife.org:3010/documents/bpGreen.csv"
+                  href="http://javixlife.org:3010/exports/csv-bpAmberReport.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1490,7 +1692,9 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/spo2Red.csv"
+                  // href="http://javixlife.org:3010/documents/spo2Red.csv"
+                  href="http://javixlife.org:3010/exports/csv-spo2RedReport.csv"
+                  
                   target="_blank"
                 >
                   {" "}
@@ -1499,7 +1703,8 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/spo2Amber.csv"
+                  // href="http://javixlife.org:3010/documents/spo2Amber.csv"
+                   href="http://javixlife.org:3010/exports/csv-spo2AmberReport.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1508,7 +1713,8 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/spo2Green.csv"
+                  // href="http://javixlife.org:3010/documents/spo2Green.csv"
+                   href="http://javixlife.org:3010/exports/csv-spo2GreenReport.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1530,7 +1736,8 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/temperatureRed.csv"
+                  // href="http://javixlife.org:3010/documents/temperatureRed.csv"
+                  href="http://javixlife.org:3010/exports/csv-temperatureRedReport.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1539,7 +1746,8 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/temperatureAmber.csv"
+                  // href="http://javixlife.org:3010/documents/temperatureAmber.csv"
+                  href="http://javixlife.org:3010/exports/csv-temperatureAmberReport.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1548,7 +1756,8 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/temperatureGreen.csv"
+                  // href="http://javixlife.org:3010/documents/temperatureGreen.csv"
+                  href="http://javixlife.org:3010/exports/csv-temperatureGreenReport.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1567,7 +1776,8 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/pulseRed.csv"
+                  // href="http://javixlife.org:3010/documents/pulseRed.csv"
+                  href="http://javixlife.org:3010/exports/csv-PulseRedReport.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1576,7 +1786,8 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/pulseAmber.csv"
+                  // href="http://javixlife.org:3010/documents/pulseAmber.csv"
+                  href="http://javixlife.org:3010/exports/csv-PulseAmberReport.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1585,11 +1796,12 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/pulseGreen.csv"
+                  // href="http://javixlife.org:3010/documents/pulseGreen.csv"
+                  href="http://javixlife.org:3010/exports/csv-pulseGreenReport.csv"
                   target="_blank"
                 >
                   {" "}
-                  HEART RATE Red Cases{" "}
+                  HEART RATE Green Cases{" "}
                 </a>
               </CardBody>
             </Card>
@@ -1607,7 +1819,9 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/bmiRed.csv"
+                  // href="http://javixlife.org:3010/documents/bmiRed.csv"
+                  href="http://javixlife.org:3010/exports/csv-bmiReport.csv"
+                 
                   target="_blank"
                 >
                   {" "}
@@ -1616,7 +1830,8 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/bmiAmber.csv"
+                  // href="http://javixlife.org:3010/documents/bmiAmber.csv"
+                  href="http://javixlife.org:3010/exports/csv-bmiReport.csv"
                   target="_blank"
                 >
                   {" "}
@@ -1625,7 +1840,8 @@ axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
               </CardBody>
               <CardBody>
                 <a
-                  href="http://javixlife.org:3010/documents/bmiGreen.csv"
+                  // href="http://javixlife.org:3010/documents/bmiGreen.csv"
+                  href="http://javixlife.org:3010/exports/csv-bmiReport.csv"
                   target="_blank"
                 >
                   {" "}
