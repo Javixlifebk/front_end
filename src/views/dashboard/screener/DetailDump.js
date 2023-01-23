@@ -188,6 +188,79 @@ getImage(imagUrl){
  return imagUrl;
 }
 
+getdailycitizenReport(){
+  axios.get('http://javixlife.org:3010/api/report/createCitizenCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getweekcitizenReport(){
+  axios.get('http://javixlife.org:3010/api/report/createWeeklyCitizencsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getdailycitizendetailReport(){
+  axios.get('http://javixlife.org:3010/api/report/createCitizenDetailCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getweekcitizendetailReport(){
+  axios.get('http://javixlife.org:3010/api/report/weeklyCitizenDetailcsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getscreenerReport(){
+  axios.get('http://javixlife.org:3010/api/report/ScreeningScreenerCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+getsevikaReport(){
+  axios.get('http://javixlife.org:3010/api/report/ScreeningSevikaCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+
+       this.setState({response});
+       
+  })
+  .catch(e=>{
+  
+ });
+}
+
 getCaseDetails(_citizenId){
   localStorage.setItem("_citizenId",_citizenId);
   document.location="/dashboard/doctor/patientlist";  
@@ -196,7 +269,12 @@ getCaseDetails(_citizenId){
 componentDidMount() {
 
 this.mounted = true;
-
+this.getdailycitizenReport();
+this.getweekcitizenReport();
+this.getdailycitizendetailReport();
+this.getweekcitizendetailReport();
+this.getscreenerReport();
+this.getsevikaReport();
 axios.get('http://javixlife.org:3010/documents/dailyScreeningScreener.csv')
    .then(response => {
 
@@ -369,7 +447,8 @@ display: "block",
 "table-layout": "auto"
 }}>
 {/* <DailyWeeklyReports/> */}
-<center><h2>Daily Screening Screener <a href="http://javixlife.org:3010/documents/dailyScreeningScreener.csv" target="_blank">Download</a></h2>
+<center><h2>Daily Screening Screener <a href="http://javixlife.org:3010/exports/csv-screeningScreener
+.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tabledailyScreeningScreener" aria-expanded="false" aria-controls="tabledailyScreeningScreener">
     Collapse/Expand
   </button>
@@ -389,7 +468,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Weekly Screening Screener <a href="http://javixlife.org:3010/documents/weeklyScreeningScreener.csv" target="_blank">Download</a></h2>
+<center><h2>Weekly Screening Screener <a href="http://javixlife.org:3010/exports/csv-screeningScreener.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tableweeklyScreeningScreener" aria-expanded="false" aria-controls="tableweeklyScreeningScreener">
     Collapse/Expand
   </button>
@@ -409,7 +488,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Daily Screening Sevika <a href="http://javixlife.org:3010/documents/dailyScreeningSevika.csv" target="_blank">Download</a></h2>
+<center><h2>Daily Screening Sevika <a href="http://javixlife.org:3010/exports/csv-screeningSevika.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tabledailyScreeningSevika" aria-expanded="false" aria-controls="tabledailyScreeningSevika">
     Collapse/Expand
   </button>
@@ -429,7 +508,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Weekly Screening Sevika <a href="http://javixlife.org:3010/documents/weeklyScreeningSevika.csv" target="_blank">Download</a></h2>
+<center><h2>Weekly Screening Sevika <a href="http://javixlife.org:3010/exports/csv-screeningSevika.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tableweeklyScreeningSevika" aria-expanded="false" aria-controls="tableweeklyScreeningSevika">
     Collapse/Expand
   </button>
@@ -452,7 +531,9 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Daily Citizens <a href="http://javixlife.org:3010/documents/dailyCitizens.csv" target="_blank">Download</a></h2>
+  
+{/* <center><h2>Daily Citizens <a href="http://javixlife.org:3010/documents/dailyCitizens.csv" target="_blank">Download</a></h2> */}
+<center><h2>Daily Citizens <a  href="http://javixlife.org:3010/exports/csv-dailyCitizens.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tabledailyCitizens" aria-expanded="false" aria-controls="tabledailyCitizens">
     Collapse/Expand
   </button>
@@ -475,7 +556,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Daily Citizen Details <a href="http://javixlife.org:3010/documents/dailyCitizenDetails.csv" target="_blank">Download</a></h2>
+<center><h2>Daily Citizen Details <a href="http://javixlife.org:3010/exports/csv-dailyCitizenDetails.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tabledailyCitizenDetails" aria-expanded="false" aria-controls="tabledailyCitizenDetails">
     Collapse/Expand
   </button>
@@ -498,7 +579,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Weekly Citizens <a href="http://javixlife.org:3010/documents/weeklyCitizens.csv" target="_blank">Download</a></h2>
+<center><h2>Weekly Citizens <a  href="http://javixlife.org:3010/exports/csv-weeklyCitizens.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tableweeklyCitizens" aria-expanded="false" aria-controls="tableweeklyCitizens">
     Collapse/Expand
   </button>
@@ -519,9 +600,9 @@ tableClassName="table table-striped table-hover"
 <Row style={{
 overflow: "auto",
 display: "block",
-"table-layout": "auto"
+// "table-layout": "auto" href="http://javixlife.org:3010/documents/weeklyCitizenDetails.csv"
 }}>
-<center><h2>Weekly Citizen Details <a href="http://javixlife.org:3010/documents/weeklyCitizenDetails.csv" target="_blank">Download</a></h2>
+<center><h2>Weekly Citizen Details <a href="http://javixlife.org:3010/exports/csv-weeklyCitizenDetails.csv" target="_blank">Download</a></h2>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tableweeklyCitizenDetails" aria-expanded="false" aria-controls="tableweeklyCitizenDetails">
     Collapse/Expand
   </button>
