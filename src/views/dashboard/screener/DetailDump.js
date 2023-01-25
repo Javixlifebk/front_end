@@ -189,7 +189,7 @@ getImage(imagUrl){
 }
 
 getdailycitizenReport(){
-  axios.get('http://javixlife.org:3010/api/report/createCitizenCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+  axios.post('http://javixlife.org:3010/api/report/createCitizenCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
 })
   .then(response => {
 
@@ -201,7 +201,7 @@ getdailycitizenReport(){
  });
 }
 getweekcitizenReport(){
-  axios.get('http://javixlife.org:3010/api/report/createWeeklyCitizencsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+  axios.post('http://javixlife.org:3010/api/report/createWeeklyCitizencsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
 })
   .then(response => {
 
@@ -213,7 +213,7 @@ getweekcitizenReport(){
  });
 }
 getdailycitizendetailReport(){
-  axios.get('http://javixlife.org:3010/api/report/createCitizenDetailCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+  axios.post('http://javixlife.org:3010/api/report/createCitizenDetailCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
 })
   .then(response => {
 
@@ -225,7 +225,7 @@ getdailycitizendetailReport(){
  });
 }
 getweekcitizendetailReport(){
-  axios.get('http://javixlife.org:3010/api/report/weeklyCitizenDetailcsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+  axios.post('http://javixlife.org:3010/api/report/weeklyCitizenDetailcsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
 })
   .then(response => {
 
@@ -237,7 +237,7 @@ getweekcitizendetailReport(){
  });
 }
 getscreenerReport(){
-  axios.get('http://javixlife.org:3010/api/report/ScreeningScreenerCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+  axios.post('http://javixlife.org:3010/api/report/ScreeningScreenerCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
 })
   .then(response => {
 
@@ -249,7 +249,7 @@ getscreenerReport(){
  });
 }
 getsevikaReport(){
-  axios.get('http://javixlife.org:3010/api/report/ScreeningSevikaCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+  axios.post('http://javixlife.org:3010/api/report/ScreeningSevikaCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
 })
   .then(response => {
 
