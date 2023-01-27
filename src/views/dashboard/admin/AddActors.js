@@ -43,6 +43,7 @@ class AddActors extends React.Component {
     myexection:'',
     fileuploads:'',
     siguploads:'',
+    errors:'',
     // emailerr:'',
     // usernameerr:''
   }
@@ -89,11 +90,12 @@ class AddActors extends React.Component {
            }
           })
           .catch((e)=>{
-           console.dir(e)
+          //  console.dir(e)
            if(e.response.data.status===0 || e.response.data.status==="0")
            { 
            
-           this.setState({myexection:e.response.data.messege});
+          //  this.setState({myexection:e.response.data.messege});
+          this.setState({errors:e.response.data.data});  
           // this.setState({emailerr:e.response.data.data[0].msg});
           // this.setState({usernameerr:e.response.data.data[1].msg});
           
@@ -178,7 +180,14 @@ async getOptions(){
             }
                 required
               />
-
+ { 
+            this.state.errors !='' ? this.state.errors.map((el) => {
+              if(el.param ==='roleId') {
+                return <p style={{"color":"red"}}>{el.msg}</p>
+              } 
+            })
+            : ''
+          }
                 </FormGroup>
 { this.state.roleId !== 3 ?(
  
@@ -207,6 +216,14 @@ async getOptions(){
             onChange={e => this.setState({ txtfname: e.target.value })}
           />
           <Label>First Name</Label>
+          { 
+            this.state.errors !='' ? this.state.errors.map((el) => {
+              if(el.param ==='firstName') {
+                return <p style={{"color":"red"}}>{el.msg}</p>
+              } 
+            })
+            : ''
+          }
         </FormGroup>
         <FormGroup className="form-label-group">
           <Input
@@ -217,6 +234,14 @@ async getOptions(){
             onChange={e => this.setState({ txtlname: e.target.value })}
           />
           <Label>Last Name</Label>
+          { 
+            this.state.errors !='' ? this.state.errors.map((el) => {
+              if(el.param ==='lastName') {
+                return <p style={{"color":"red"}}>{el.msg}</p>
+              } 
+            })
+            : ''
+          }
         </FormGroup>
 
         <FormGroup className="form-label-group">
@@ -230,6 +255,14 @@ async getOptions(){
             onChange={e => this.setState({ txtmob: e.target.value })}
           />
           <Label>Mobile No</Label>
+          { 
+            this.state.errors !='' ? this.state.errors.map((el) => {
+              if(el.param ==='phoneNo') {
+                return <p style={{"color":"red"}}>{el.msg}</p>
+              } 
+            })
+            : ''
+          }
         </FormGroup>
         <FormGroup className="form-label-group">
           <Input
@@ -242,6 +275,14 @@ async getOptions(){
            {/* <span> { this.state.emailerr &&
   <h6 className="error" style={{color:"red"}}> { this.state.emailerr } </h6> }</span> */}
           <Label>Email</Label>
+          { 
+            this.state.errors !='' ? this.state.errors.map((el) => {
+              if(el.param ==='email') {
+                return <p style={{"color":"red"}}>{el.msg}</p>
+              } 
+            })
+            : ''
+          }
         </FormGroup>
         <FormGroup className="form-label-group">
           <Input
@@ -255,6 +296,14 @@ async getOptions(){
            {/* <span> { this.state.usernameerr &&
   <h6 className="error" style={{color:"red"}}> { this.state.usernameerr } </h6> }</span> */}
           <Label>User Name</Label>
+          { 
+            this.state.errors !='' ? this.state.errors.map((el) => {
+              if(el.param ==='userName') {
+                return <p style={{"color":"red"}}>{el.msg}</p>
+              } 
+            })
+            : ''
+          }
         </FormGroup>
         <FormGroup className="form-label-group">
           <Input
@@ -265,6 +314,14 @@ async getOptions(){
             onChange={e => this.setState({ password: e.target.value })}
           />
           <Label>Password</Label>
+          { 
+            this.state.errors !='' ? this.state.errors.map((el) => {
+              if(el.param ==='password') {
+                return <p style={{"color":"red"}}>{el.msg}</p>
+              } 
+            })
+            : ''
+          }
         </FormGroup>
       
         <FormGroup className="form-label-group">
