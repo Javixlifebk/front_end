@@ -49,7 +49,7 @@ class JTable extends React.Component {
         selector: "ngoRegNo",
         sortable: true,
         cell: row => (
-          <p className="text-bold-500 text-truncate mb-0">{row.ngoRegistrationNo}</p>
+          <p className="text-bold-500 text-truncate mb-0">{row.ngoRegistrationNo.replace('%26%23x2F%3B','/')}</p>
         )
       },
 	   {
