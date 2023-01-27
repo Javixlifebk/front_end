@@ -225,7 +225,7 @@ class Profile extends React.Component {
                     <Col sm="8">
                     <div className="mt-1">
                     <h6 className="mb-0">Address:</h6>
-                    <p>{this.state.addr}</p>
+                    <p>{this.state.addr.replace('&#x2F;','/')}</p>
                     </div>
                     </Col>                   
                 </Row>
