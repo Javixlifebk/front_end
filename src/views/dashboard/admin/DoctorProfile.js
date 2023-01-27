@@ -259,7 +259,7 @@ class Profile extends React.Component {
                     <Col sm="4">
                     <div className="mt-1">
                     <h6 className="mb-0">Pin Code :</h6>
-                    <p>{this.state.pinode}</p>
+                    <p>{this.state.pincode}</p>
                     </div>
                     </Col>
                 </Row>
