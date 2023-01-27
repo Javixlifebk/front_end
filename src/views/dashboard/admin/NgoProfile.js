@@ -158,7 +158,7 @@ class Profile extends React.Component {
                     <Col sm="4">
                     <div className="mt-1">
                     <h6 className="mb-0">Registration No:</h6>
-                    <p>{this.state.ngoRegistrationNo.replace('%26%23x2F%3B','/')}</p>
+                    <p>{this.state.ngoRegistrationNo.replace('&#x2F;','/')}</p>
                     {/* row.ngoRegistrationNo.replace('%26%23x2F%3B','/') */}
                     </div>
                     </Col>
