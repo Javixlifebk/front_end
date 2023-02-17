@@ -74,12 +74,8 @@ axios.post("http://javixlife.org:3010/api/labtest/LipidPaneltriglyGreenList" ,{
                 setUsers(recs);
 
                 settotal(response.data.total)
-                console.log("111111111111",response.data.total);
                 setpages(response.data.pages)
-                console.log("2222222",response.data.pages);
                 setsize(response.data.size)
-                console.log("333333333",response.data.size);
-                console.log(recs);
             }
 },[]);
 };
@@ -119,8 +115,6 @@ const filterData = (data) =>
       const  getCaseScreener=(_screenerId) =>{
         localStorage.setItem("_screenerId", _screenerId);
         document.location = "/dashboard/casesList";
-        console.log(_screenerId, "###################")
-        // console.log("screener Id ",screenerId);
       }
     const getColumnSearchProps = (dataIndex) => ({
       filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (

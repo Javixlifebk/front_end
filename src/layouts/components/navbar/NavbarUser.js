@@ -132,8 +132,12 @@ async getOptions(){
     options = options.filter(function( obj ) {
       return obj.value !== "rakesh";
     });
-  console.log(typeof(options));
-  console.log(options);
+
+    let optionsDefault= {'value':'',
+    'label':"select ngo"}
+    options.push(optionsDefault)
+    options.reverse();
+
  
   this.setState({selectOptions: options})
 }
@@ -182,8 +186,10 @@ async getOptions(){
         // --ngo Dashboard dropdown --
        <FormGroup style={{width:"30%"}} className="mb-0">
        <label>select NGO</label>      
-       <Select isSearchable={false}  options={this.state.selectOptions} onChange={this.handleChange.bind(this)} 
-       defaultValue={ {"value":this.selectedNgoID,"label":this.selectedNgo} ? {"value":this.selectedNgoID,"label":this.selectedNgo}: {"value":"","label":"select ngo"}}>
+       <Select isSearchable={false}
+        defaultValue={{ label: localStorage.getItem("ngoName"), value: localStorage.getItem("ngoId") }}
+        options={this.state.selectOptions} onChange={this.handleChange.bind(this)}
+       >
        </Select>
        {/* <span><b>{this.selectedNgo}</b></span> */}
      {/* {"label":this.selectedNgo} */}

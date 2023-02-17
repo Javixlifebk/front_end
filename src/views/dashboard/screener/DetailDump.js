@@ -188,221 +188,81 @@ getImage(imagUrl){
  return imagUrl;
 }
 
-getdailycitizenReport(){
-  axios.post('http://javixlife.org:3010/api/report/createCitizenCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
-})
-  .then(response => {
 
-       this.setState({response});
-       
-  })
-  .catch(e=>{
-  
- });
-}
-getweekcitizenReport(){
-  axios.post('http://javixlife.org:3010/api/report/createWeeklyCitizencsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
-})
-  .then(response => {
 
-       this.setState({response});
-       
-  })
-  .catch(e=>{
-  
- });
-}
-getdailycitizendetailReport(){
-  axios.post('http://javixlife.org:3010/api/report/createCitizenDetailCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
-})
-  .then(response => {
 
-       this.setState({response});
-       
-  })
-  .catch(e=>{
-  
- });
-}
-getweekcitizendetailReport(){
-  axios.post('http://javixlife.org:3010/api/report/weeklyCitizenDetailcsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
-})
-  .then(response => {
 
-       this.setState({response});
-       
-  })
-  .catch(e=>{
-  
- });
-}
-getscreenerReport(){
-  axios.post('http://javixlife.org:3010/api/report/ScreeningScreenerCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
-})
-  .then(response => {
 
-       this.setState({response});
-       
-  })
-  .catch(e=>{
-  
- });
-}
-getsevikaReport(){
-  axios.post('http://javixlife.org:3010/api/report/ScreeningSevikaCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
-})
-  .then(response => {
 
-       this.setState({response});
-       
-  })
-  .catch(e=>{
-  
- });
-}
 
 getCaseDetails(_citizenId){
   localStorage.setItem("_citizenId",_citizenId);
   document.location="/dashboard/doctor/patientlist";  
 }
 
+
+//14.02.2023
+getDailyScreeningScreener() {
+  axios.post('http://javixlife.org:3010/api/report/ScreeningScreenerCsv' ,{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+   .then(response => {
+    window.open("http://javixlife.org:3010/exports/csv-screeningScreener.csv")
+   }).catch(e=>{
+  });
+}
+
+
+getdailycitizenReport() {
+  axios.post('http://javixlife.org:3010/api/report/createCitizenCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+    window.open("http://javixlife.org:3010/exports/csv-dailyCitizens.csv")
+  }).catch(e=>{
+ });
+}
+
+getweekcitizenReport() {
+  axios.post('http://javixlife.org:3010/api/report/createWeeklyCitizencsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+    window.open("http://javixlife.org:3010/exports/csv-weeklyCitizens.csv")
+  })
+  .catch(e=>{
+ });
+}
+
+getdailycitizendetailReport(){
+  axios.post('http://javixlife.org:3010/api/report/createCitizenDetailCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+    window.open("http://javixlife.org:3010/exports/csv-dailyCitizenDetails.csv")
+  })
+  .catch(e=>{
+ });
+}
+
+getweekcitizendetailReport() {
+  axios.post('http://javixlife.org:3010/api/report/weeklyCitizenDetailcsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+    window.open("http://javixlife.org:3010/exports/csv-weeklyCitizenDetails.csv")
+  })
+  .catch(e=>{
+ });
+}
+
+getsevikaReport() {
+  axios.post('http://javixlife.org:3010/api/report/ScreeningSevikaCsv',{ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
+})
+  .then(response => {
+    window.open("http://javixlife.org:3010/exports/csv-screeningSevika.csv")
+  })
+  .catch(e=>{
+ });
+}
+
 componentDidMount() {
-
-this.mounted = true;
-this.getdailycitizenReport();
-this.getweekcitizenReport();
-this.getdailycitizendetailReport();
-this.getweekcitizendetailReport();
-this.getscreenerReport();
-this.getsevikaReport();
-axios.get('http://javixlife.org:3010/documents/dailyScreeningScreener.csv')
-   .then(response => {
-
-        this.setState({tabledailyScreeningScreener:response.data});
-        
-   })
-   .catch(e=>{
-   
-  });
-
-axios.get('http://javixlife.org:3010/documents/weeklyScreeningScreener.csv')
-   .then(response => {
-
-        this.setState({tableweeklyScreeningScreener:response.data});
-        
-   })
-   .catch(e=>{
-   
-  });
-
-axios.get('http://javixlife.org:3010/documents/dailyScreeningSevika.csv')
-   .then(response => {
-
-        this.setState({tabledailyScreeningSevika:response.data});
-        
-   })
-   .catch(e=>{
-   
-  });
-
-axios.get('http://javixlife.org:3010/documents/weeklyScreeningSevika.csv')
-   .then(response => {
-
-        this.setState({tableweeklyScreeningSevika:response.data});
-        
-   })
-   .catch(e=>{
-   
-  });
-
-//
-
-axios.get('http://javixlife.org:3010/documents/dailyCitizens.csv')
-   .then(response => {
-
-        this.setState({tabledailyCitizens:response.data});
-        
-   })
-   .catch(e=>{
-   
-  });
-axios.get('http://javixlife.org:3010/documents/dailyCitizenDetails.csv')
-   .then(response => {
-
-        this.setState({tabledailyCitizenDetails:response.data});
-        
-   })
-   .catch(e=>{
-   
-  });
-axios.get('http://javixlife.org:3010/documents/weeklyCitizens.csv')
-   .then(response => {
-
-        this.setState({tableweeklyCitizens:response.data});
-        
-   })
-   .catch(e=>{
-   
-  });
-axios.get('http://javixlife.org:3010/documents/weeklyCitizenDetails.csv')
-   .then(response => {
-
-        this.setState({tableweeklyCitizenDetails:response.data});
-        
-   })
-   .catch(e=>{
-   
-  });
-axios.get('http://javixlife.org:3010/documents/lipidCriticalCitizens.csv')
-   .then(response => {
-
-        this.setState({tablelipidCriticalCitizens:response.data});
-        
-   })
-   .catch(e=>{
-   
-  });
-axios.get('http://javixlife.org:3010/documents/unscreened.csv')
-   .then(response => {
-
-        this.setState({tableunscreened:response.data});
-        
-   })
-   .catch(e=>{
-   
-  });
-
-axios.get('http://javixlife.org:3010/documents/dump.csv')
-   .then(response => {
-
-        this.setState({tablegeneral:response.data});
-        
-   })
-   .catch(e=>{
-   
-  });
-  
-axios.get('http://javixlife.org:3010/documents/dumpHealth.csv')
-   .then(response => {
-
-        this.setState({tablehealth:response.data});
-        
-   })
-   .catch(e=>{
-   
-  });
-  
-axios.get('http://javixlife.org:3010/documents/dumpSocio.csv')
-   .then(response => {
-
-        this.setState({tablesocio:response.data});
-        
-   })
-   .catch(e=>{
-   
-  });
-
-		
+  this.mounted = true;
 }
 
   handleFilter = e => {
@@ -447,20 +307,9 @@ display: "block",
 "table-layout": "auto"
 }}>
 {/* <DailyWeeklyReports/> */}
-<center><h2>Daily Screening Screener <a href="http://javixlife.org:3010/exports/csv-screeningScreener
-.csv" target="_blank">Download</a></h2>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tabledailyScreeningScreener" aria-expanded="false" aria-controls="tabledailyScreeningScreener">
-    Collapse/Expand
-  </button>
+<center><h2>
+  <a onClick={this.getDailyScreeningScreener}>Daily Screening Screener Download</a></h2>
 </center>
-<Col sm="12" className="collapse" id="tabledailyScreeningScreener">
-<CsvToHtmlTable
-data={this.state.tabledailyScreeningScreener}
-csvDelimiter=","
-tableClassName="table table-striped table-hover"
-
-/>
-</Col>
 </Row>
 <hr style={{"margin-top":"10px"}}/>
 <Row style={{
@@ -468,19 +317,8 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Weekly Screening Screener <a href="http://javixlife.org:3010/exports/csv-screeningScreener.csv" target="_blank">Download</a></h2>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tableweeklyScreeningScreener" aria-expanded="false" aria-controls="tableweeklyScreeningScreener">
-    Collapse/Expand
-  </button>
+<center><h2> <a onClick={this.getDailyScreeningScreener} >Weekly Screening Screener Download</a></h2>
 </center>
-<Col sm="12" className="collapse" id="tableweeklyScreeningScreener">
-<CsvToHtmlTable
-data={this.state.tableweeklyScreeningScreener}
-csvDelimiter=","
-tableClassName="table table-striped table-hover"
-
-/>
-</Col>
 </Row>
 <hr style={{"margin-top":"10px"}}/>
 <Row style={{
@@ -488,19 +326,8 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Daily Screening Sevika <a href="http://javixlife.org:3010/exports/csv-screeningSevika.csv" target="_blank">Download</a></h2>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tabledailyScreeningSevika" aria-expanded="false" aria-controls="tabledailyScreeningSevika">
-    Collapse/Expand
-  </button>
+<center><h2> <a onClick={this.getsevikaReport} >Daily Screening Sevika Download</a></h2>
 </center>
-<Col sm="12" className="collapse" id="tabledailyScreeningSevika">
-<CsvToHtmlTable
-data={this.state.tabledailyScreeningSevika}
-csvDelimiter=","
-tableClassName="table table-striped table-hover"
-
-/>
-</Col>
 </Row>
 <hr style={{"margin-top":"10px"}}/>
 <Row style={{
@@ -508,20 +335,8 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Weekly Screening Sevika <a href="http://javixlife.org:3010/exports/csv-screeningSevika.csv" target="_blank">Download</a></h2>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tableweeklyScreeningSevika" aria-expanded="false" aria-controls="tableweeklyScreeningSevika">
-    Collapse/Expand
-  </button>
+<center><h2> <a onClick={this.getsevikaReport}>Weekly Screening Sevika Download</a></h2>
 </center>
-<Col sm="12" className="collapse" id="tableweeklyScreeningSevika">
-
-<CsvToHtmlTable
-data={this.state.tableweeklyScreeningSevika}
-csvDelimiter=","
-tableClassName="table table-striped table-hover"
-
-/>
-</Col>
 </Row>
 
 
@@ -533,10 +348,7 @@ display: "block",
 }}>
   
 {/* <center><h2>Daily Citizens <a href="http://javixlife.org:3010/documents/dailyCitizens.csv" target="_blank">Download</a></h2> */}
-<center><h2>Daily Citizens <a  href="http://javixlife.org:3010/exports/csv-dailyCitizens.csv" target="_blank">Download</a></h2>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tabledailyCitizens" aria-expanded="false" aria-controls="tabledailyCitizens">
-    Collapse/Expand
-  </button>
+<center><h2><a  onClick={this.getdailycitizenReport} >Daily Citizens Download</a></h2>
 </center>
 <Col sm="12" className="collapse" id="tabledailyCitizens">
 
@@ -556,10 +368,7 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Daily Citizen Details <a href="http://javixlife.org:3010/exports/csv-dailyCitizenDetails.csv" target="_blank">Download</a></h2>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tabledailyCitizenDetails" aria-expanded="false" aria-controls="tabledailyCitizenDetails">
-    Collapse/Expand
-  </button>
+<center><h2> <a onClick={this.getdailycitizendetailReport} > Daily Citizen Details Download</a></h2>
 </center>
 <Col sm="12" className="collapse" id="tabledailyCitizenDetails">
 
@@ -579,20 +388,9 @@ overflow: "auto",
 display: "block",
 "table-layout": "auto"
 }}>
-<center><h2>Weekly Citizens <a  href="http://javixlife.org:3010/exports/csv-weeklyCitizens.csv" target="_blank">Download</a></h2>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tableweeklyCitizens" aria-expanded="false" aria-controls="tableweeklyCitizens">
-    Collapse/Expand
-  </button>
+<center><h2> <a  onClick={this.getweekcitizenReport}>Weekly Citizens Download</a></h2>
 </center>
-<Col sm="12" className="collapse" id="tableweeklyCitizens">
 
-<CsvToHtmlTable
-data={this.state.tableweeklyCitizens}
-csvDelimiter=","
-tableClassName="table table-striped table-hover"
-
-/>
-</Col>
 </Row>
 
 <hr style={{"margin-top":"10px"}}/>
@@ -600,22 +398,9 @@ tableClassName="table table-striped table-hover"
 <Row style={{
 overflow: "auto",
 display: "block",
-// "table-layout": "auto" href="http://javixlife.org:3010/documents/weeklyCitizenDetails.csv"
 }}>
-<center><h2>Weekly Citizen Details <a href="http://javixlife.org:3010/exports/csv-weeklyCitizenDetails.csv" target="_blank">Download</a></h2>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tableweeklyCitizenDetails" aria-expanded="false" aria-controls="tableweeklyCitizenDetails">
-    Collapse/Expand
-  </button>
+<center><h2><a onClick={this.getweekcitizendetailReport} target="_blank">Weekly Citizen Details Download</a></h2>
 </center>
-<Col sm="12" className="collapse" id="tableweeklyCitizenDetails">
-
-<CsvToHtmlTable
-data={this.state.tableweeklyCitizenDetails}
-csvDelimiter=","
-tableClassName="table table-striped table-hover"
-
-/>
-</Col>
 </Row>
 
 <hr style={{"margin-top":"10px"}}/>

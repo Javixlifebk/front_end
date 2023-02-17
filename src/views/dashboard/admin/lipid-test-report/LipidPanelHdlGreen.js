@@ -74,12 +74,8 @@ axios.post("http://javixlife.org:3010/api/labtest/LipidPanelhdlGreenList" ,{
                 setUsers(recs);
 
                 settotal(response.data.total)
-                console.log("111111111111",response.data.total);
                 setpages(response.data.pages)
-                console.log("2222222",response.data.pages);
                 setsize(response.data.size)
-                console.log("333333333",response.data.size);
-                console.log(recs);
             }
 },[]);
 };

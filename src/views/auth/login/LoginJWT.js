@@ -53,7 +53,9 @@ class LoginJWT extends React.Component {
                  localStorage.setItem("lastName",_lastName);
                  localStorage.setItem("ntoken",_token);
                  localStorage.setItem("roleId",_rolid);
-                 localStorage.setItem("ngoId",ngoId);
+                 if(res.data.data.data.roleId != 91) {
+                  localStorage.setItem("ngoId",ngoId);
+                 }
                  localStorage.setItem("userid",_userid);
                  if(_javixid===null){                
                       localStorage.setItem("javixid","0");

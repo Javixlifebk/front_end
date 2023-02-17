@@ -71,17 +71,10 @@ axios.post("http://javixlife.org:3010/api/labtest/LipidPanelCholesterolAmberList
           if(response.data.status===1)
             {
                 var recs=response.data.data;
-
-                // console.log(response.data.total);
                 setUsers(recs);
-
                 settotal(response.data.total)
-                console.log("111111111111",response.data.total);
                 setpages(response.data.pages)
-                console.log("2222222",response.data.pages);
                 setsize(response.data.size)
-                console.log("333333333",response.data.size);
-                console.log(recs);
             }
 },[]);
 };
