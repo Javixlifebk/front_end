@@ -187,7 +187,7 @@ async getOptions(){
        <FormGroup style={{width:"30%"}} className="mb-0">
        <label>select NGO</label>      
        <Select isSearchable={false}
-        defaultValue={{ label: localStorage.getItem("ngoName"), value: localStorage.getItem("ngoId") }}
+        defaultValue={  localStorage.getItem("ngoId")  ? { label: localStorage.getItem("ngoName"), value: localStorage.getItem("ngoId") }  :  {"value":"","label":"select ngo"} }
         options={this.state.selectOptions} onChange={this.handleChange.bind(this)}
        >
        </Select>
