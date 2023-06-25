@@ -103,7 +103,7 @@ loadRecs(recs)
  }
 
  handleClick(_userid) {    
-  axios.post('http://javixlife.org:3010/api/citizen/documentList?=', {citizenId:localStorage.getItem("citizenId")})
+  axios.post('http://18.60.238.252:3010/api/citizen/documentList?=', {citizenId:localStorage.getItem("citizenId")})
   .then(response => {
       
        if(response.data.status===1)
@@ -132,7 +132,7 @@ loadRecs(recs)
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://javixlife.org:3010/api/citizen/documentsList?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237'})
+		  axios.post('http://18.60.238.252:3010/api/citizen/documentsList?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237'})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

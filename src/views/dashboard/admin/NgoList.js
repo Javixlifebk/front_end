@@ -144,7 +144,7 @@ componentWillUnmount(){  this.mounted = false;}
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		axios.post('http://javixlife.org:3010/api/ngo/ngoList', {status:1 ,ngoLoginId:localStorage.getItem("ngoId")})
+		axios.post('http://18.60.238.252:3010/api/ngo/ngoList', {status:1 ,ngoLoginId:localStorage.getItem("ngoId")})
 		 .then(response => {
 					
 					if(response.data.status===1)

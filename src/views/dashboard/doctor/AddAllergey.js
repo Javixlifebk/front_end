@@ -100,7 +100,7 @@ class AddAllergy extends React.Component {
           postData+="&allergies="+this.state.allergies+"&allergydate="+this.state.curTime +"&allergyType="+this.state.allergyType;
           postData+="&ngoId="+localStorage.getItem("ngoId")
          
-      let _targetPostURL="http://javixlife.org:3010/api/citizen/addAllergy?=";
+      let _targetPostURL="http://18.60.238.252:3010/api/citizen/addAllergy?=";
       axios(
         {
           method: 'post',

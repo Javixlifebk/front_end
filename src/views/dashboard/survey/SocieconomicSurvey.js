@@ -38,8 +38,8 @@ function SocieconomicSurvey() {
   const [rows, setUsers] = useState([])
 
   const setexportdata=()=>{
-    // fetch('http://javixlife.org:3010/api/generalsurvey/download',urlexport)
-    axios.get('http://javixlife.org:3010/api/socioeconomicsurvey/SocioEconomicdownload',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid"),})
+    // fetch('http://18.60.238.252:3010/api/generalsurvey/download',urlexport)
+    axios.get('http://18.60.238.252:3010/api/socioeconomicsurvey/SocioEconomicdownload',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid"),})
      .then(response => {
   
           this.setState({response});
@@ -53,7 +53,7 @@ function SocieconomicSurvey() {
  
  
   useEffect(() => {
-		  axios.post('http://javixlife.org:3010/api/socioeconomicsurvey/SocioEconomicSurveyList',{ngoId: localStorage.getItem("ngoId"),})
+		  axios.post('http://18.60.238.252:3010/api/socioeconomicsurvey/SocioEconomicSurveyList',{ngoId: localStorage.getItem("ngoId"),})
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -142,7 +142,7 @@ function SocieconomicSurvey() {
                     type="submit"
                     className="mr-1 mb-1"
                     onClick={()=>setexportdata()}
-                    href="http://javixlife.org:3010/exports/csv-socioeconomicsurvey.csv"
+                    href="http://18.60.238.252:3010/exports/csv-socioeconomicsurvey.csv"
 
                   > Export
                   
