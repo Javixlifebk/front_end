@@ -75,7 +75,7 @@ class Profile extends React.Component {
    
  
 
-		axios.post('https://javixlife.org:3010/api/ngo/ngoById?=', {
+		axios.post('http://127.0.0.1:3010/api/ngo/ngoById?=', {
       ngoLoginId:localStorage.getItem("Ngoid"),
       
       token:'dfjkhsdfaksjfh3756237' })

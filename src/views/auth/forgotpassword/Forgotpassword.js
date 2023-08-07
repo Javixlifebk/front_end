@@ -33,7 +33,7 @@ class Forgotpassword extends React.Component {
         
     });*/              
 
-                    let _targetPostURL="https://javixlife.org:3010/api/auth/forgotpw?=";
+                    let _targetPostURL="http://127.0.0.1:3010/api/auth/forgotpw?=";
                     this.setState({ loading: true }, () => {
                     axios(
                       {

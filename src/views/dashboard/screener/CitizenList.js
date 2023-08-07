@@ -82,7 +82,7 @@ function CitizenList() {
 },[])
 
 const fetchRecords = (page,size) => {
-  axios.post("https://javixlife.org:3010/api/citizen/citizenListPagination?",{
+  axios.post("http://127.0.0.1:3010/api/citizen/citizenListPagination?",{
     "pageNo":page,
     "size":size,
     token:'dfjkhsdfaksjfh3756237',
@@ -138,7 +138,7 @@ const handleClick=(_userid)=> {
 }
 const getImage=(imagUrl)=>{
   if(imagUrl===null || imagUrl===undefined || imagUrl==='' ){
-    imagUrl='https://javixlife.org:3010/profile/no-photo-male.jpg';
+    imagUrl='http://127.0.0.1:3010/profile/no-photo-male.jpg';
   }
  return imagUrl;
 }
@@ -290,7 +290,7 @@ const filterData = (data) =>
         
         <img
             //  src={()=>getImage(row.photo)}
-            src={`https://javixlife.org:3010/profile/no-photo-male.jpg`}
+            src={`http://127.0.0.1:3010/profile/no-photo-male.jpg`}
             width="40vh"
             className="img-fluid img-border rounded-circle box-shadow-1"
           />

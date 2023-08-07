@@ -75,7 +75,7 @@ function  LipidCritical() {
 // };
 
 const fetchRecords = (page,size) => {
-axios.post("https://javixlife.org:3010/api/screening/lipidCritical" ,{
+axios.post("http://127.0.0.1:3010/api/screening/lipidCritical" ,{
   "pageNo":page,
   "size":size,
   ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")

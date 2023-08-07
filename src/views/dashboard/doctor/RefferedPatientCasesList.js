@@ -51,7 +51,7 @@ class PatientList extends React.Component {
 
   loadData(){
     localStorage.removeItem("caseReport"); 
-    axios.post('https://javixlife.org:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
+    axios.post('http://127.0.0.1:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
     .then(response => {  
          if(response.data.status===1){
              var msg=response.data.message;
@@ -221,7 +221,7 @@ loadRecs(recs)
 
 loadData(){
   localStorage.removeItem("caseReport"); 
-  axios.post('https://javixlife.org:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
+  axios.post('http://127.0.0.1:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
   .then(response => {  
        if(response.data.status===1){
            var msg=response.data.message;
@@ -255,7 +255,7 @@ componentDidMount() {
 		//this.setState({data:null});
     let scrId=localStorage.getItem("citizenId");
     console.log(scrId, '@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
-    axios.post('https://javixlife.org:3010/api/screening/getCaseDetails?=', {token:'dfjkhsdfaksjfh3756237',citizenId:scrId,ngoId:localStorage.getItem("ngoId")})
+    axios.post('http://127.0.0.1:3010/api/screening/getCaseDetails?=', {token:'dfjkhsdfaksjfh3756237',citizenId:scrId,ngoId:localStorage.getItem("ngoId")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

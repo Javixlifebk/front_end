@@ -105,7 +105,7 @@ class NavbarUser extends React.PureComponent {
 
   
 async getOptions(){
-  const res = await axios.post('https://javixlife.org:3010/api/ngo/allngoList')
+  const res = await axios.post('http://127.0.0.1:3010/api/ngo/allngoList')
   const data = res.data.data.data
     console.log("data",data);
     let options ={}

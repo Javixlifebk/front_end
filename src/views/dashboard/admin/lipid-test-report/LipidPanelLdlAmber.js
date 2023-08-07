@@ -60,7 +60,7 @@ function  LipidPanelLdlAmber() {
 },[])
 
 const fetchRecords = (page,size) => {
-axios.post("https://javixlife.org:3010/api/labtest/LipidPanelTestldlAmberList" ,{
+axios.post("http://127.0.0.1:3010/api/labtest/LipidPanelTestldlAmberList" ,{
   "pageNo":page,
   "size":size,
   ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")

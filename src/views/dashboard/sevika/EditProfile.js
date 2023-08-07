@@ -84,7 +84,7 @@ class EditProfile extends React.Component {
   }
   findDataById(){
     console.log("useridd",localStorage.getItem("userid"));
-    axios.post('https://javixlife.org:3010/api/ngo/sevikaListById',{"screenerLoginId":localStorage.getItem("userid")})
+    axios.post('http://127.0.0.1:3010/api/ngo/sevikaListById',{"screenerLoginId":localStorage.getItem("userid")})
     .then(response => {
       if(response){
         // localStorage.setItem ('javixid',localStorage.getItem("userid"))
@@ -129,7 +129,7 @@ class EditProfile extends React.Component {
           postData+="&district="+this.state.district+"&pincode="+this.state.pincode+"&address="+this.state.addr;      
           postData+="&ngoId="+localStorage.getItem("ngoId");
           
-      let _targetPostURL="https://javixlife.org:3010/api/ngo/screener/addprofile?=";
+      let _targetPostURL="http://127.0.0.1:3010/api/ngo/screener/addprofile?=";
       axios(
         {
           method: 'post',
