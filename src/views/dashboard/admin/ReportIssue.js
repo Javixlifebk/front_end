@@ -81,7 +81,7 @@ class ReportIssue extends React.Component {
          
           
       
-      let _targetPostURL="http://18.60.238.252:3010/api/issues/addIssue?=";
+      let _targetPostURL="https://javixlife.org:3010/api/issues/addIssue?=";
       axios(
         {
           method: 'post',

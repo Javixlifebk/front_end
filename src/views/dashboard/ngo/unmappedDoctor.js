@@ -146,7 +146,7 @@ loadRecs(recs)
   if(window.confirm("Are you sure want to Mapped Doctor !")){
   let postData="doctorId="+doctorId+"&ismapped=1&token=dfjkhsdfaksjfh3756237"; 
   
-  let _targetPostURL="http://18.60.238.252:3010/api/doctor/updatemapped?=";
+  let _targetPostURL="https://javixlife.org:3010/api/doctor/updatemapped?=";
   axios(
     {
       method: 'post',
@@ -178,8 +178,8 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		//axios.post('http://18.60.238.252:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
-    axios.post('http://18.60.238.252:3010/api/doctor/unmappedList', {token:'dfjkhsdfaksjfh3756237',ngoId:'0' })
+		//axios.post('https://javixlife.org:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
+    axios.post('https://javixlife.org:3010/api/doctor/unmappedList', {token:'dfjkhsdfaksjfh3756237',ngoId:'0' })
 		 .then(response => {
 					if(response.data.status===1)
 					  {

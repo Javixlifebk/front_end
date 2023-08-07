@@ -160,7 +160,7 @@ for (const [key, value] of Object.entries(row)) {
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://18.60.238.252:3010/api/citizen/getHistoryMedical?=', { citizenId:localStorage.getItem("citizenId"),ngoId:localStorage.getItem("ngoId")})
+		  axios.post('https://javixlife.org:3010/api/citizen/getHistoryMedical?=', { citizenId:localStorage.getItem("citizenId"),ngoId:localStorage.getItem("ngoId")})
 		 .then(response => {
 					if(response.data.status===1){
 						  var msg=response.data.message;
@@ -170,7 +170,7 @@ componentDidMount() {
 		 }).catch(e=>{
     });
     
-  /* axios.post('http://18.60.238.252:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
+  /* axios.post('https://javixlife.org:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
   .then(response => {  
        if(response.data.status===1){
            var msg=response.data.message;

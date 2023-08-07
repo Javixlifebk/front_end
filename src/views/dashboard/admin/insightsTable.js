@@ -78,7 +78,7 @@ const data = [
       </div>
     );
   };
-  // axios.post("http://18.60.238.252:3010/api/ngo/screenerList?=", {
+  // axios.post("https://javixlife.org:3010/api/ngo/screenerList?=", {
   //           token: "dfjkhsdfaksjfh3756237",
   //           userId: "demoUser",
   //         })
@@ -95,7 +95,7 @@ function InsightsTable() {
 },[])
 
 const fetchRecords = (page,size) => {
-axios.post("http://18.60.238.252:3010/api/ngo/screenerList?=" ,{
+axios.post("https://javixlife.org:3010/api/ngo/screenerList?=" ,{
   "pageNo":page,
   "size":size,
   token: "dfjkhsdfaksjfh3756237",

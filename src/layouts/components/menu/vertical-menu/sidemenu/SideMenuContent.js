@@ -136,7 +136,7 @@ class SideMenuContent extends React.Component {
     let menus="";
     let postData="email="+ localStorage.getItem("_email");
    
-    let _targetPostURL="http://18.60.238.252:3010/api/auth/mymenulist?=";
+    let _targetPostURL="https://javixlife.org:3010/api/auth/mymenulist?=";
     
     /*axios(
       {
@@ -350,7 +350,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://18.60.238.252:3010/documents/dump.csv"
+              // navLink: "https://javixlife.org:3010/documents/dump.csv"
               navLink:"/dashboard/survey/generalSurvey"   
           
             },
@@ -361,7 +361,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://18.60.238.252:3010/documents/dumpHealth.csv"   
+              // navLink: "https://javixlife.org:3010/documents/dumpHealth.csv"   
               navLink:"/dashboard/survey/HealthSurvey"               
           
             },
@@ -371,7 +371,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://18.60.238.252:3010/documents/dumpHealth.csv" 
+              // navLink: "https://javixlife.org:3010/documents/dumpHealth.csv" 
               navLink: "/dashboard/survey/SocieconomicSurvey"              
           
             },
@@ -710,7 +710,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://18.60.238.252:3010/documents/dump.csv"
+              // navLink: "https://javixlife.org:3010/documents/dump.csv"
               navLink:"/dashboard/survey/generalSurvey"   
           
             },
@@ -721,7 +721,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://18.60.238.252:3010/documents/dumpHealth.csv"   
+              // navLink: "https://javixlife.org:3010/documents/dumpHealth.csv"   
               navLink:"/dashboard/survey/HealthSurvey"               
           
             },
@@ -731,7 +731,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://18.60.238.252:3010/documents/dumpHealth.csv" 
+              // navLink: "https://javixlife.org:3010/documents/dumpHealth.csv" 
               navLink: "/dashboard/survey/SocieconomicSurvey"              
           
             },  

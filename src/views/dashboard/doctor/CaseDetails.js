@@ -179,7 +179,7 @@ componentDidMount() {
 		//this.setState({data:null});
     if(localStorage.getItem("_status")==="1"){
     
-		  axios.post('http://18.60.238.252:3010/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),token:'dfjkhsdfaksjfh3756237',status:1 ,ngoId:localStorage.getItem("ngoId")})
+		  axios.post('https://javixlife.org:3010/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),token:'dfjkhsdfaksjfh3756237',status:1 ,ngoId:localStorage.getItem("ngoId")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -191,7 +191,7 @@ componentDidMount() {
 		 });// then
     }else{
       status:localStorage.getItem("_status")
-      axios.post('http://18.60.238.252:3010/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),status:localStorage.getItem("_status"),token:'dfjkhsdfaksjfh3756237',ngoId:localStorage.getItem("ngoId") })
+      axios.post('https://javixlife.org:3010/api/screening/getCaseDetails?=', { doctorId:localStorage.getItem("usermasid"),status:localStorage.getItem("_status"),token:'dfjkhsdfaksjfh3756237',ngoId:localStorage.getItem("ngoId") })
       .then(response => {
            if(response.data.status===1)
              {

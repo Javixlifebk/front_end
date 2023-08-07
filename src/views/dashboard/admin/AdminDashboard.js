@@ -92,7 +92,7 @@ class AdminDashboard extends React.Component {
 
   }
   getAdvancedScr(){
-    axios.post('http://18.60.238.252:3010/api/generalsurvey/screeningScreenerCount',{ngoId:localStorage.getItem('ngoId')})
+    axios.post('https://javixlife.org:3010/api/generalsurvey/screeningScreenerCount',{ngoId:localStorage.getItem('ngoId')})
 .then(response => {
 
      //  console.log("Data Length=" + response.data)
@@ -115,7 +115,7 @@ class AdminDashboard extends React.Component {
  }
 
   getPendingSevika(){
-     axios.post('http://18.60.238.252:3010/api/generalsurvey/screeningSevikaCount',{ngoId:localStorage.getItem('ngoId')})
+     axios.post('https://javixlife.org:3010/api/generalsurvey/screeningSevikaCount',{ngoId:localStorage.getItem('ngoId')})
  .then(response => {
 
       //  console.log("Data Length=" + response.data)
@@ -147,7 +147,7 @@ class AdminDashboard extends React.Component {
   this.getAdvancedScr()
   //this.setState({data:null});
       
-  axios.post('http://18.60.238.252:3010/api/graph/getlist', {ngoId:localStorage.getItem('ngoId'),token:'dfjkhsdfaksjfh3756237', ngoLoginId:localStorage.getItem('ngoId')})
+  axios.post('https://javixlife.org:3010/api/graph/getlist', {ngoId:localStorage.getItem('ngoId'),token:'dfjkhsdfaksjfh3756237', ngoLoginId:localStorage.getItem('ngoId')})
    .then(response => {
 
         //console.dir(response.data.data.data)
@@ -194,7 +194,7 @@ class AdminDashboard extends React.Component {
     // }
   });
      
-//   axios.post('http://18.60.238.252:3010/api/screening/getCaseDetails')
+//   axios.post('https://javixlife.org:3010/api/screening/getCaseDetails')
 //   .then(response => {
 
 //         console.dir("Data Length=" + response.data.data.data.length)
@@ -212,7 +212,7 @@ class AdminDashboard extends React.Component {
 //    }
 //  });
 
-//  axios.post('http://18.60.238.252:3010/api/screening/getCaseDetails',{status:'2'})
+//  axios.post('https://javixlife.org:3010/api/screening/getCaseDetails',{status:'2'})
 //  .then(response => {
 
 //        console.dir("Data Length=" + response.data.data.data.length)
@@ -231,7 +231,7 @@ class AdminDashboard extends React.Component {
 //   // }
 // });
 
-// axios.post('http://18.60.238.252:3010/api/screening/getCaseDetails', {status:'1'})
+// axios.post('https://javixlife.org:3010/api/screening/getCaseDetails', {status:'1'})
 //  .then(response => {
 
 //        console.dir("Data Length=" + response.data.data.data.length)
@@ -314,7 +314,7 @@ class AdminDashboard extends React.Component {
       }
     }
     
-//   axios.post('http://18.60.238.252:3010/api/citizen/citizenRefercount')
+//   axios.post('https://javixlife.org:3010/api/citizen/citizenRefercount')
 //   .then(response => {
 
 //         console.dir("Data Length=" + response.data.data)
@@ -334,7 +334,7 @@ class AdminDashboard extends React.Component {
 //    }
 //  });
 
-//  axios.post('http://18.60.238.252:3010/api/citizen/citizenPrescribeCount')
+//  axios.post('https://javixlife.org:3010/api/citizen/citizenPrescribeCount')
 //   .then(response => {
 
         
