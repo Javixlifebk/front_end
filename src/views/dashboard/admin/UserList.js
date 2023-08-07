@@ -138,7 +138,7 @@ loadRecs(recs)
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://127.0.0.1:3010/api/auth/authlist', { email:'jilani.it@gmail.com',status:1 })
+		  axios.post('http://18.60.238.252:3010/api/auth/authlist', { email:'jilani.it@gmail.com',status:1 })
 		 .then(response => {
 				
 					if(response.data.status===1)

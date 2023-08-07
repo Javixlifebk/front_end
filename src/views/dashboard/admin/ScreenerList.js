@@ -144,7 +144,7 @@ componentDidMount(page,size) {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://127.0.0.1:3010/api/ngo/screenerLists', {"pageNo": page,
+		axios.post('http://18.60.238.252:3010/api/ngo/screenerLists', {"pageNo": page,
     "size": size,ngoId:localStorage.getItem("ngoId"),token:'dfjkhsdfaksjfh3756237'})
 		 .then(response => {
 					if(response.data.status===1)

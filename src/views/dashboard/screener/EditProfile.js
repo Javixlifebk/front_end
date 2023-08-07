@@ -85,7 +85,7 @@ class EditProfile extends React.Component {
   findDataById(){
     console.log("useridd",localStorage.getItem("screenerId"));
     console.log("screenerId",localStorage.getItem("screenerId"));
-    axios.post('http://127.0.0.1:3010/api/ngo/screenerListById',{'screenerLoginId':localStorage.getItem("userid")})
+    axios.post('http://18.60.238.252:3010/api/ngo/screenerListById',{'screenerLoginId':localStorage.getItem("userid")})
     .then(response => {
       if(response){
         localStorage.setItem ('javixid',localStorage.getItem("userid"))
@@ -122,7 +122,7 @@ class EditProfile extends React.Component {
           postData+="&specialisation="+this.state.specialization+"&country="+this.state.country+"&state="+this.state.mstate;
           postData+="&district="+this.state.district+"&pincode="+this.state.pincode+"&address="+this.state.addr;      
           postData+="&ngoId="+localStorage.getItem("ngoId");
-      let _targetPostURL="http://127.0.0.1:3010/api/ngo/screener/addprofile?=";
+      let _targetPostURL="http://18.60.238.252:3010/api/ngo/screener/addprofile?=";
       axios(
         {
           method: 'post',

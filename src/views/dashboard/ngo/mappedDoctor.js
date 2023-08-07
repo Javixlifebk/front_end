@@ -145,7 +145,7 @@ loadRecs(recs)
   if(window.confirm("Are you sure want to Unmapped Doctor !")){
   let postData="ngoId="+userId+"&ismapped=0&token=dfjkhsdfaksjfh3756237"; 
   
-  let _targetPostURL="http://127.0.0.1:3010/api/doctor/updatemapped?=";
+  let _targetPostURL="http://18.60.238.252:3010/api/doctor/updatemapped?=";
   axios(
     {
       method: 'post',
@@ -177,7 +177,7 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://127.0.0.1:3010/api/doctor/mappedList', {ngoId: localStorage.getItem("userid"), token:'dfjkhsdfaksjfh3756237'})
+		axios.post('http://18.60.238.252:3010/api/doctor/mappedList', {ngoId: localStorage.getItem("userid"), token:'dfjkhsdfaksjfh3756237'})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

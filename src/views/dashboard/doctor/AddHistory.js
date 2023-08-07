@@ -149,7 +149,7 @@ class EditProfile extends React.Component {
       postData+="&hiv_aids="+this.state.hiv_aids+"&other="+this.state.other;
       postData+="&ngoId="+localStorage.getItem("ngoId")
           
-      let _targetPostURL="http://127.0.0.1:3010/api/citizen/addHistory?=";
+      let _targetPostURL="http://18.60.238.252:3010/api/citizen/addHistory?=";
       axios(
         {
           method: 'post',

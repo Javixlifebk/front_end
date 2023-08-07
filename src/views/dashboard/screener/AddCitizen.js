@@ -98,7 +98,7 @@ class AddCitizen extends React.Component {
 }
 // findDataById(){
 //   console.log("useridd",localStorage.getItem("screenerId"));
-//   axios.post('http://127.0.0.1:3010/api/ngo/screenerListById',{screenerId:localStorage.getItem("screenerId")})
+//   axios.post('http://18.60.238.252:3010/api/ngo/screenerListById',{screenerId:localStorage.getItem("screenerId")})
 //   .then(response => {
 //     if(response){
 //       localStorage.setItem ('javixid',localStorage.getItem("screenerId"))
@@ -124,7 +124,7 @@ componentDidMount(){
       var returnUrl="";
       const formData = new FormData(); 
       formData.append('profile', this.state.fileuploads)
-      axios.post("http://127.0.0.1:3010/upload/profile", formData, { 
+      axios.post("http://18.60.238.252:3010/upload/profile", formData, { 
         // receive two    parameter endpoint url ,form data
     })
     .then(res => {
@@ -144,7 +144,7 @@ componentDidMount(){
             postData+="&ngoId="+localStorage.getItem("ngoId");
             // postData+="screenerId="+localStorage.getItem("javixid");
             
-        let _targetPostURL="http://127.0.0.1:3010/api/citizen/addprofile";
+        let _targetPostURL="http://18.60.238.252:3010/api/citizen/addprofile";
         axios(
           {
             method: 'post',

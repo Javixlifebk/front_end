@@ -31,7 +31,7 @@ class ResetPwd extends React.Component {
       let postData="email="+localStorage.getItem("email")+
                     "&existpassword="+this.state.txtKeys+"&newpassword="+this.state.txtNpwd;
 
-                    let _targetPostURL="http://127.0.0.1:3010/api/auth/updatepw?=";
+                    let _targetPostURL="http://18.60.238.252:3010/api/auth/updatepw?=";
                     axios(
                       {
                         method: 'post',
@@ -168,7 +168,7 @@ class ResetPwd extends React.Component {
                   let postData="email="+localStorage.getItem("email")+""              
 
                 
-                  let _targetPostURL="http://127.0.0.1:3010/api/auth/resend-verify-otp?=";
+                  let _targetPostURL="http://18.60.238.252:3010/api/auth/resend-verify-otp?=";
                   axios(
                     {
                       method: 'post',

@@ -59,7 +59,7 @@ function LipidPaneltriglyRed() {
 },[])
 
 const fetchRecords = (page,size) => {
-axios.post("http://127.0.0.1:3010/api/labtest/LipidPaneltriglyRedList" ,{
+axios.post("http://18.60.238.252:3010/api/labtest/LipidPaneltriglyRedList" ,{
   "pageNo":page,
   "size":size,
   ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")

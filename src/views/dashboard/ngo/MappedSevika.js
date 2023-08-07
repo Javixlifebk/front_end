@@ -161,8 +161,8 @@ loadRecs(recs)
   if(window.confirm("Are you sure want to Unmapped Sevika !")){
   // let postData="screenerId="+screenerId+"&ismapped=0&token=dfjkhsdfaksjfh3756237&ngoId=0"; 
   
-  // let _targetPostURL="http://127.0.0.1:3010/api/ngo/updatescreenermap?=";
-  axios.post('http://127.0.0.1:3010/api/ngo/updatescreenermap?=', {screenerId:screenerId ,token:'dfjkhsdfaksjfh3756237',ngoId:"0"})
+  // let _targetPostURL="http://18.60.238.252:3010/api/ngo/updatescreenermap?=";
+  axios.post('http://18.60.238.252:3010/api/ngo/updatescreenermap?=', {screenerId:screenerId ,token:'dfjkhsdfaksjfh3756237',ngoId:"0"})
   
   // axios(
   //   {
@@ -196,8 +196,8 @@ componentDidMount() {
 		//this.setState({data:null});
     console.log("userId====",localStorage.getItem("userId"));
         const userId=localStorage.getItem("userid")
-		// axios.post('http://127.0.0.1:3010/api/ngo/screenerList', { userId: '4632746328', ngoId:0 ,token:'dfjkhsdfaksjfh3756237',ismapped:true })
-    axios.post('http://127.0.0.1:3010/api/ngo/sevikamappedlist', {ngoId: userId,token:'dfjkhsdfaksjfh3756237',issubscreener:1})
+		// axios.post('http://18.60.238.252:3010/api/ngo/screenerList', { userId: '4632746328', ngoId:0 ,token:'dfjkhsdfaksjfh3756237',ismapped:true })
+    axios.post('http://18.60.238.252:3010/api/ngo/sevikamappedlist', {ngoId: userId,token:'dfjkhsdfaksjfh3756237',issubscreener:1})
 
 		 .then(response => {
    

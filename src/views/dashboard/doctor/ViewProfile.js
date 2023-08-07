@@ -56,7 +56,7 @@ class Profile extends React.Component {
 		//this.setState({data:null});
         
       
-		  axios.post('http://127.0.0.1:3010/api/doctor/doctorById?=', {userId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('http://18.60.238.252:3010/api/doctor/doctorById?=', {userId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
       if(response.data.status===1){
           var recs=response.data.data.data;		

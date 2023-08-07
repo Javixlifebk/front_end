@@ -161,7 +161,7 @@ loadRecs(recs)
   if(window.confirm("Are you sure want to Mapped Screener !")){
   let postData="screenerId="+screenerId+"&token=dfjkhsdfaksjfh3756237&ngoId=rakesh"; 
   
-  let _targetPostURL="http://127.0.0.1:3010/api/ngo/updatescreenermap?=";
+  let _targetPostURL="http://18.60.238.252:3010/api/ngo/updatescreenermap?=";
   axios(
     {
       method: 'post',
@@ -193,8 +193,8 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		//axios.post('http://127.0.0.1:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
-    axios.post('http://127.0.0.1:3010/api/ngo/screenerunmappedlist', {token:'dfjkhsdfaksjfh3756237',issubscreener:0,ngoId:"0"})
+		//axios.post('http://18.60.238.252:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
+    axios.post('http://18.60.238.252:3010/api/ngo/screenerunmappedlist', {token:'dfjkhsdfaksjfh3756237',issubscreener:0,ngoId:"0"})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

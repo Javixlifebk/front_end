@@ -124,7 +124,7 @@ loadRecs(recs)
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://127.0.0.1:3010/api/issues/issuesAll', {userId:'rakesh',status:'2',ngoId:localStorage.getItem("ngoId") })
+		  axios.post('http://18.60.238.252:3010/api/issues/issuesAll', {userId:'rakesh',status:'2',ngoId:localStorage.getItem("ngoId") })
 		 .then(response => {
 					
 					if(response.data.status===1)

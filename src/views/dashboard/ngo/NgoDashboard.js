@@ -79,7 +79,7 @@ class NgoDashboard extends React.Component {
 
   }
   getAdvancedScr(){
-    axios.post('http://127.0.0.1:3010/api/generalsurvey/screeningScreenerCount',{ngoId:localStorage.getItem("userid")})
+    axios.post('http://18.60.238.252:3010/api/generalsurvey/screeningScreenerCount',{ngoId:localStorage.getItem("userid")})
 .then(response => {
 
      //  console.log("Data Length=" + response.data)
@@ -102,7 +102,7 @@ class NgoDashboard extends React.Component {
  }
 
   getPendingSevika(){
-     axios.post('http://127.0.0.1:3010/api/generalsurvey/screeningSevikaCount',{ngoId:localStorage.getItem("userid")})
+     axios.post('http://18.60.238.252:3010/api/generalsurvey/screeningSevikaCount',{ngoId:localStorage.getItem("userid")})
  .then(response => {
 
       //  console.log("Data Length=" + response.data)
@@ -139,7 +139,7 @@ else{
   this.getPendingSevika()
   this.getAdvancedScr()
       
-  axios.post('http://127.0.0.1:3010/api/graph/getlist', { ngoId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
+  axios.post('http://18.60.238.252:3010/api/graph/getlist', { ngoId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
    .then(response => {
 
         //console.dir(response.data.data.data)

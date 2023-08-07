@@ -92,8 +92,8 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		//  axios.post('http://127.0.0.1:3010/api/auth/authlist', {email:'rahul@gmail.com',status:1,roleId: '21',token:'dfjkhsdfaksjfh3756237' })
-		axios.post('http://127.0.0.1:3010/api/ngo/sevikalist',{ngoId:localStorage.getItem("ngoId")})
+		//  axios.post('http://18.60.238.252:3010/api/auth/authlist', {email:'rahul@gmail.com',status:1,roleId: '21',token:'dfjkhsdfaksjfh3756237' })
+		axios.post('http://18.60.238.252:3010/api/ngo/sevikalist',{ngoId:localStorage.getItem("ngoId")})
 
 		 .then(response => {
 				

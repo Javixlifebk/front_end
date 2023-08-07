@@ -36,8 +36,8 @@ function HealthSurvey() {
 
   const [rows, setUsers] = useState([])
   const setexportdata=()=>{
-    // fetch('http://127.0.0.1:3010/api/generalsurvey/download',urlexport)
-    axios.get('http://127.0.0.1:3010/api/healthsurvey/HealthSurveydownload',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid"),})
+    // fetch('http://18.60.238.252:3010/api/generalsurvey/download',urlexport)
+    axios.get('http://18.60.238.252:3010/api/healthsurvey/HealthSurveydownload',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid"),})
      .then(response => {
   
           this.setState({response});
@@ -50,7 +50,7 @@ function HealthSurvey() {
   }
  
   useEffect(() => {
-		  axios.post('http://127.0.0.1:3010/api/healthsurvey/HealthSurveyList',{ngoId: localStorage.getItem("ngoId"),})
+		  axios.post('http://18.60.238.252:3010/api/healthsurvey/HealthSurveyList',{ngoId: localStorage.getItem("ngoId"),})
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -138,7 +138,7 @@ function HealthSurvey() {
                     type="submit"
                     className="mr-1 mb-1"
                     onClick={()=>setexportdata()}
-                    href="http://127.0.0.1:3010/exports/csv-healthsurvey.csv"
+                    href="http://18.60.238.252:3010/exports/csv-healthsurvey.csv"
 
                   > Export
                   

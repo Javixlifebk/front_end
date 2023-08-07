@@ -32,7 +32,7 @@ class RegisterPharmacy extends React.Component {
                   "&roleId=21"+
                   "&userName="+this.state.userName+"";
                   
-    let _targetPostURL="http://127.0.0.1:3010/api/auth/register?=";
+    let _targetPostURL="http://18.60.238.252:3010/api/auth/register?=";
     axios(
       {
         method: 'post',
