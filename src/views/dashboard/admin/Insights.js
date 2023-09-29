@@ -422,21 +422,21 @@ class AdminDashboard extends React.Component {
         return imagUrl;
     }
     getbpGreenReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createBPGreencsv', {
+        axios.post('https://javixlife.org/api/report/createBPGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-bpGreenReport.csv")
         }).catch(e => {});
     }
     getbpAmberReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createBPAmbercsv', {
+        axios.post('https://javixlife.org/api/report/createBPAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-bpAmberReport.csv")
         }).catch(e => {});
     }
     getbpRedReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createBPRedcsv', {
+        axios.post('https://javixlife.org/api/report/createBPRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-bpRedReport.csv")
@@ -444,21 +444,21 @@ class AdminDashboard extends React.Component {
     }
 
     getbmiGreenReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createBmiGreencsv', {
+        axios.post('https://javixlife.org/api/report/createBmiGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-bmiGreenReport.csv")
         }).catch(e => {});
     }
     getbmiAmberReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createbmiAmbercsv', {
+        axios.post('https://javixlife.org/api/report/createbmiAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-bmiAmberReport.csv")
         }).catch(e => {});
     }
     getbmiRedReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createbmiRedcsv', {
+        axios.post('https://javixlife.org/api/report/createbmiRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-bmiRedReport.csv")
@@ -466,21 +466,21 @@ class AdminDashboard extends React.Component {
     }
 
     getspo2GreenReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createSpoGreencsv', {
+        axios.post('https://javixlife.org/api/report/createSpoGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-spo2GreenReport.csv")
         }).catch(e => {});
     }
     getspo2AmberReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createSpoAmbercsv', {
+        axios.post('https://javixlife.org/api/report/createSpoAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-spo2AmberReport.csv")
         }).catch(e => {});
     }
     getspo2RedReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createSpoRedcsv', {
+        axios.post('https://javixlife.org/api/report/createSpoRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-spo2RedReport.csv")
@@ -489,42 +489,42 @@ class AdminDashboard extends React.Component {
 
 
     getPulseGreenReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createPulseGreencsv', {
+        axios.post('https://javixlife.org/api/report/createPulseGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-pulseGreenReport.csv")
         }).catch(e => {});
     }
     getPulseAmberReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createPulseAmbercsv', {
+        axios.post('https://javixlife.org/api/report/createPulseAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-PulseAmberReport.csv")
         }).catch(e => {});
     }
     getPulseRedReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createPulseRedcsv', {
+        axios.post('https://javixlife.org/api/report/createPulseRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-PulseRedReport.csv")
         }).catch(e => {});
     }
     getTempGreenReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createTempGreencsv', {
+        axios.post('https://javixlife.org/api/report/createTempGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-temperatureGreenReport.csv")
         }).catch(e => {});
     }
     getTempAmberReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createTempAmbercsv', {
+        axios.post('https://javixlife.org/api/report/createTempAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-temperatureAmberReport.csv")
         }).catch(e => {});
     }
     getTempRedReport() {
-        axios.post('http://18.60.238.252:3010/api/report/createTempRedcsv', {
+        axios.post('https://javixlife.org/api/report/createTempRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-temperatureRedReport.csv")
@@ -534,7 +534,7 @@ class AdminDashboard extends React.Component {
     componentDidMount() {
         this.mounted = true;
 
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_bp: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -549,7 +549,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("http://18.60.238.252:3010/api/labtest/getBloodGlucoseTestCount", {
+        axios.post("https://javixlife.org/api/labtest/getBloodGlucoseTestCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             console.log("Checking......................................");
@@ -575,7 +575,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("http://18.60.238.252:3010/api/labtest/getHemoglobinCount", {
+        axios.post("https://javixlife.org/api/labtest/getHemoglobinCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -613,7 +613,7 @@ class AdminDashboard extends React.Component {
 
         // Lipid Segment
 
-        axios.post("http://18.60.238.252:3010/api/labtest/getCholestCount", {
+        axios.post("https://javixlife.org/api/labtest/getCholestCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -636,7 +636,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("http://18.60.238.252:3010/api/labtest/gettriCount", {
+        axios.post("https://javixlife.org/api/labtest/gettriCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -658,7 +658,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("http://18.60.238.252:3010/api/labtest/gethdlCount", {
+        axios.post("https://javixlife.org/api/labtest/gethdlCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -680,7 +680,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("http://18.60.238.252:3010/api/labtest/getldlCount", {
+        axios.post("https://javixlife.org/api/labtest/getldlCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -707,7 +707,7 @@ class AdminDashboard extends React.Component {
         //     'Content-Type': "multipart/form-data"
 
         // }
-        axios.post("http://18.60.238.252:3010/api/labtest/getREyeCount", {
+        axios.post("https://javixlife.org/api/labtest/getREyeCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -729,7 +729,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("http://18.60.238.252:3010/api/labtest/getLEyeCount", {
+        axios.post("https://javixlife.org/api/labtest/getLEyeCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
 
         }).then((response) => {
@@ -753,7 +753,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("http://18.60.238.252:3010/api/ngo/screenerList?=", {
+        axios.post("https://javixlife.org/api/ngo/screenerList?=", {
             token: "dfjkhsdfaksjfh3756237",
             userId: localStorage.getItem("userid"),
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
@@ -766,7 +766,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_bp: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -780,7 +780,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_bp: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -797,7 +797,7 @@ class AdminDashboard extends React.Component {
 
         // SPO2
 
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_spo2: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -813,7 +813,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_spo2: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -828,7 +828,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_spo2: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -846,7 +846,7 @@ class AdminDashboard extends React.Component {
 
         // Temperature
 
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_temperature: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -862,7 +862,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_temperature: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -877,7 +877,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_temperature: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -895,7 +895,7 @@ class AdminDashboard extends React.Component {
 
         // Heart Rate
 
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_pulse: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -911,7 +911,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_pulse: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -926,7 +926,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_pulse: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -942,7 +942,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_bmi: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -984,7 +984,7 @@ class AdminDashboard extends React.Component {
         }).catch(e => {});
 
 
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_bmi: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -1001,7 +1001,7 @@ class AdminDashboard extends React.Component {
         });
 
 
-        axios.post("http://18.60.238.252:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_bmi: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -1017,7 +1017,7 @@ class AdminDashboard extends React.Component {
             }
         });
         // =============================================================
-        // axios.post('http://18.60.238.252:3010/api/labtest/getBloodGlucoseTestList', {severity:0, ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
+        // axios.post('https://javixlife.org/api/labtest/getBloodGlucoseTestList', {severity:0, ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
         // .then(response => {
 
         //         console.dir("Data Length=" + response.data.data.data.length)
@@ -1037,7 +1037,7 @@ class AdminDashboard extends React.Component {
 
 
         // ======================================================
-        // axios.post('http://18.60.238.252:3010/api/labtest/getBloodGlucoseTestList', {severity:'1' , ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
+        // axios.post('https://javixlife.org/api/labtest/getBloodGlucoseTestList', {severity:'1' , ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
         // .then(response => {
 
         //         console.dir("Data Length=" + response.data.data.data.length)
@@ -1059,7 +1059,7 @@ class AdminDashboard extends React.Component {
 
         // =========================================================================
 
-        // axios.post('http://18.60.238.252:3010/api/labtest/getBloodGlucoseTestList', { severity:'2', ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid") },{"headers" : headers})
+        // axios.post('https://javixlife.org/api/labtest/getBloodGlucoseTestList', { severity:'2', ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid") },{"headers" : headers})
         // .then(response => {
 
         //         console.dir("Data Length=" + response.data.data.data.length)

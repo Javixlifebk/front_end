@@ -237,7 +237,7 @@ componentDidMount() {
 		//this.setState({data:null});
     let scrId=localStorage.getItem("screenerId");
     console.log(scrId, '@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
-    axios.post('http://18.60.238.252:3010/api/screening/getscreenercases?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId,ngoId:localStorage.getItem("ngoId")})
+    axios.post('https://javixlife.org/api/screening/getscreenercases?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId,ngoId:localStorage.getItem("ngoId")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

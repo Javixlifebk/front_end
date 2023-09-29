@@ -95,7 +95,7 @@ class DoctorDashboard extends React.Component {
     //this.setState({data:null});
 
     axios
-      .post ('http://18.60.238.252:3010/api/graph/getlist', {
+      .post ('https://javixlife.org/api/graph/getlist', {
         userId: localStorage.getItem ('userid'),
         token: 'dfjkhsdfaksjfh3756237',
         ngoId: localStorage.getItem ('ngoId'),

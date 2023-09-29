@@ -82,7 +82,7 @@ function CitizenList() {
 },[])
 
 const fetchRecords = (page,size) => {
-  axios.post("http://18.60.238.252:3010/api/citizen/citizenListPagination?",{
+  axios.post("https://javixlife.org/api/citizen/citizenListPagination?",{
     "pageNo":page,
     "size":size,
     token:'dfjkhsdfaksjfh3756237',

@@ -57,7 +57,7 @@ class PatientProfile extends React.Component {
   componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		axios.post('http://18.60.238.252:3010/api/citizen/citizenList?=', { citizenId: localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237',ngoId: localStorage.getItem("ngoId") })
+		axios.post('https://javixlife.org/api/citizen/citizenList?=', { citizenId: localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237',ngoId: localStorage.getItem("ngoId") })
 		 .then(response => {
       if(response.data.status===1){
         var recs=response.data.data.data;

@@ -112,8 +112,8 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		 axios.post("http://18.60.238.252:3010/api/generalsurvey/screeningScreener",{ngoId:localStorage.getItem("ngoId")})
-    //  http://18.60.238.252:3010/api/generalsurvey/screenersevika
+		 axios.post("https://javixlife.org/api/generalsurvey/screeningScreener",{ngoId:localStorage.getItem("ngoId")})
+    //  https://javixlife.org/api/generalsurvey/screenersevika
 		 .then(response => {
 					if(response.data.status===1)
 					  {

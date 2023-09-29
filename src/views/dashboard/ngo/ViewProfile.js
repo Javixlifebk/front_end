@@ -66,7 +66,7 @@ class Profile extends React.Component {
   }
   }
   getLogo(){
-    axios.post('http://18.60.238.252:3010/api/logo/getLogo',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
+    axios.post('https://javixlife.org/api/logo/getLogo',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
         .then(response => {
                        this.setState({response:response.data[0].client_logo})
                        console.log("=========",this.state.response);
@@ -78,7 +78,7 @@ class Profile extends React.Component {
 		this.mounted = true;
 		//this.setState({data:null});
         this.getLogo()
-		axios.post('http://18.60.238.252:3010/api/ngo/ngoById?=', { userId:localStorage.getItem("ngoId"), userId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
+		axios.post('https://javixlife.org/api/ngo/ngoById?=', { userId:localStorage.getItem("ngoId"), userId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
       if(response.data.status===1){
           var recs=response.data.data.data;		

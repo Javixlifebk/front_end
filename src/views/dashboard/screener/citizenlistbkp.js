@@ -189,7 +189,7 @@ getCaseDetails(citizenId){
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://18.60.238.252:3010/api/citizen/citizenListPagination?', {token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('https://javixlife.org/api/citizen/citizenListPagination?', {token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
 				
          
@@ -234,7 +234,7 @@ componentDidMount() {
   callSearch=_v=>{
 	  
 		//this.setState({data:null});
-		  axios.post('http://18.60.238.252:3010/api/citizen/citizenListPagination?', {token:'dfjkhsdfaksjfh3756237',v:_v })
+		  axios.post('https://javixlife.org/api/citizen/citizenListPagination?', {token:'dfjkhsdfaksjfh3756237',v:_v })
 		 .then(response => {
 				
 					if(response.data.status===1){

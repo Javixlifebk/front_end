@@ -178,7 +178,7 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://18.60.238.252:3010/api/screening/getCaseDetails', {status:'2',  ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
+		axios.post('https://javixlife.org/api/screening/getCaseDetails', {status:'2',  ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
 		 .then(response => {
 					
 					if(response.data.status===1)

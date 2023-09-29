@@ -98,7 +98,7 @@ class AddCitizen extends React.Component {
 }
 // findDataById(){
 //   console.log("useridd",localStorage.getItem("screenerId"));
-//   axios.post('http://18.60.238.252:3010/api/ngo/screenerListById',{screenerId:localStorage.getItem("screenerId")})
+//   axios.post('https://javixlife.org/api/ngo/screenerListById',{screenerId:localStorage.getItem("screenerId")})
 //   .then(response => {
 //     if(response){
 //       localStorage.setItem ('javixid',localStorage.getItem("screenerId"))
@@ -144,7 +144,7 @@ componentDidMount(){
             postData+="&ngoId="+localStorage.getItem("ngoId");
             // postData+="screenerId="+localStorage.getItem("javixid");
             
-        let _targetPostURL="http://18.60.238.252:3010/api/citizen/addprofile";
+        let _targetPostURL="https://javixlife.org/api/citizen/addprofile";
         axios(
           {
             method: 'post',

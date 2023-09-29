@@ -123,7 +123,7 @@ loadRecs(recs)
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://18.60.238.252:3010/api/issues/issuesByUser',{userId:localStorage.getItem("userid") })
+		  axios.post('https://javixlife.org/api/issues/issuesByUser',{userId:localStorage.getItem("userid") })
 		 .then(response => {
 					
 					if(response.data.status===1)
