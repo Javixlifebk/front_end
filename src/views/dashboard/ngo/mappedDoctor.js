@@ -190,7 +190,7 @@ handleClick(doctorId, userId) {
   //this.props.onHeaderClick(this.props.value);
 }
   
-componentWillUnmount(){ this.mounted = false;}
+componentWillUnmount() { this.mounted = false}
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
