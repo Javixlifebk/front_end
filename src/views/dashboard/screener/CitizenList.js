@@ -279,26 +279,41 @@ const filterData = (data) =>
     //     ...getColumnSearchProps('firstName'),
 
     //   },
-    {
-      title: "Citizen",
-      dataIndex: "ID",
-      key: 'photo',
-      style: { 'whiteSpace': 'unset' },
-      minWidth: "50px",
-      render: (row) => (
-        <div>
+    // {
+    //   title: "Citizen",
+    //   dataIndex: "ID",
+    //   key: 'photo',
+    //   style: { 'whiteSpace': 'unset' },
+    //   minWidth: "50px",
+    //   render: (row) => (
+    //     <div>
         
+    //     <img
+    //         //  src={()=>getImage(row.photo)}
+    //         src={`http://18.60.238.252:3010/profile/no-photo-male.jpg`}
+    //         width="40vh"
+    //         className="img-fluid img-border rounded-circle box-shadow-1"
+    //       />
+
+
+
+    //       </div>
+    //   )
+    // },
+
+    {
+      title: "Photo",
+      dataIndex: "photo",
+      key: "photo",
+      render: (photo) => (
         <img
-            //  src={()=>getImage(row.photo)}
-            src={`http://18.60.238.252:3010/profile/no-photo-male.jpg`}
-            width="40vh"
-            className="img-fluid img-border rounded-circle box-shadow-1"
-          />
-
-
-
-          </div>
-      )
+          src={photo || 'http://javixlife.org/profile/no-photo-male.jpg'}
+          width="70px"
+          height="70px"
+          alt="Citizen Photo"
+          className="img-fluid"
+        />
+      ),
     },
    
     {

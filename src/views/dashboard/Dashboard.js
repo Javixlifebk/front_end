@@ -595,7 +595,7 @@ export default class Dashboard extends React.Component {
 
               
               <AppRoute exact path="/dashboard/seveditprofile/" component={sevikaProfile} />
-              <AppRoute exact path="/dashboard/sevviewprofile/" component={sevikaViewProfile} />
+              <AppRoute exact path="/seviewprofile/" component={sevikaViewProfile} />
               
               <AppRoute exact path="/dashboard/survey/generalSurvey" component={generalProfile} />
               <AppRoute exact path="/dashboard/survey/HealthSurvey" component={healthProfile} />

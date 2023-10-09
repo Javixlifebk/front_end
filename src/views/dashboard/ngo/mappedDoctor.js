@@ -140,31 +140,49 @@ loadRecs(recs)
 	 
 	 this.setState({data:recs});
  }
- handleClick(userId) {
+//  handleClick(userId) {
+
+//   if(window.confirm("Are you sure want to Unmapped Doctor !")){
+//   let postData="ngoId="+userId+"&ismapped=0&token=dfjkhsdfaksjfh3756237"; 
+  
+//   let _targetPostURL="https://javixlife.org/api/doctor/updatemapped?=";
+//   axios(
+//     {
+//       method: 'post',
+//       url: _targetPostURL,
+//       data: postData,
+//       headers: {'Content-Type': 'application/x-www-form-urlencoded' }
+//       }
+
+//   ).then(res=>{
+//     if(res.data.status===1){
+//       //alert("Updated Successfully")
+//       window.location.reload();
+
+//     }
+                              
+
+//   })
+//   .catch(e=>{
+//   });
+// }
+
+
+handleClick(doctorId, userId) {
 
   if(window.confirm("Are you sure want to Unmapped Doctor !")){
-  let postData="ngoId="+userId+"&ismapped=0&token=dfjkhsdfaksjfh3756237"; 
-  
-  let _targetPostURL="https://javixlife.org/api/doctor/updatemapped?=";
-  axios(
-    {
-      method: 'post',
-      url: _targetPostURL,
-      data: postData,
-      headers: {'Content-Type': 'application/x-www-form-urlencoded' }
-      }
-
-  ).then(res=>{
+  axios.post('https://javixlife.org/api/doctor/updatemapped?=', {doctorId:doctorId ,token:'dfjkhsdfaksjfh3756237',ismapped:true, ngoId:"0"})
+  .then(res=>{
+    console.log(doctorId, "doctorIddoctorId");
+    console.log(userId, "ngoIdngoIdngoIdngoId");
     if(res.data.status===1){
       //alert("Updated Successfully")
       window.location.reload();
-
     }
-                              
-
   })
   .catch(e=>{
   });
+}
 }
   //alert(_userid)
   //localStorage.setItem("Sid",scrid)

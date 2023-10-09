@@ -157,7 +157,8 @@ componentDidMount(){
   
           
           if(res.data.status===1){
-            alert('Profile Updated Successfully')
+            // alert('Profile Updated Successfully')
+            alert('Citizen Added Successfully')
             window.location='/dashboard/addcitizen'
           }
           else if (res.status===400) {

@@ -236,8 +236,8 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
     let scrId=localStorage.getItem("screenerId");
-    console.log(scrId, '@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
-    axios.post('https://javixlife.org/api/screening/getscreenercases?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId,ngoId:localStorage.getItem("ngoId")})
+    let ngoId=localStorage.getItem("userid");
+    axios.post('https://javixlife.org/api/screening/getscreenercases?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId,ngoId:ngoId})
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -290,7 +290,7 @@ handleFilter = e => {
     let { data, columns, value, filteredData } = this.state
     return (
       <React.Fragment >
-         <Row>
+         {/* <Row>
       <Col lg="12" md="12">
       <Card>
         <CardHeader>
@@ -321,7 +321,29 @@ handleFilter = e => {
         </CardBody>
       </Card>
       </Col>
-      </Row>
+      </Row> */}
+
+
+<Row>
+            <Col sm="12">
+              {data.length === 0 ? (
+                <p className="d-flex justify-content-center">No data available</p>
+              ) : (
+                <DataTable
+                  className="dataTable-custom"
+                  data={value.length ? filteredData : data}
+                  columns={columns}
+                  noHeader
+                  pagination
+                  subHeader
+                  noDataComponent="Loading...."
+                  subHeaderComponent={
+                    <CustomHeader value={value} handleFilter={this.handleFilter} />
+                  }
+                />
+              )}
+            </Col>
+          </Row>
       </React.Fragment>
     )
   }

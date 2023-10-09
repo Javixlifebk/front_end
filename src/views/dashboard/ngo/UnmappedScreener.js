@@ -156,36 +156,69 @@ loadRecs(recs)
 	 this.setState({data:recs});
  }
   
- handleClick(screenerId) {
+//  handleClick(screenerId) {
 
-  if(window.confirm("Are you sure want to Mapped Screener !")){
-  let postData="screenerId="+screenerId+"&token=dfjkhsdfaksjfh3756237&ngoId=rakesh"; 
+//   if(window.confirm("Are you sure want to Mapped Screener !")){
+//   let postData="screenerId="+screenerId+"&token=dfjkhsdfaksjfh3756237&ngoId=rakesh"; 
   
-  let _targetPostURL="https://javixlife.org/api/ngo/updatescreenermap?=";
-  axios(
-    {
-      method: 'post',
-      url: _targetPostURL,
-      data: postData,
-      headers: {'Content-Type': 'application/x-www-form-urlencoded' }
-      }
+//   let _targetPostURL="https://javixlife.org/api/ngo/updatescreenermap?=";
+//   axios(
+//     {
+//       method: 'post',
+//       url: _targetPostURL,
+//       data: postData,
+//       headers: {'Content-Type': 'application/x-www-form-urlencoded' }
+//       }
 
-  ).then(res=>{
-    if(res.data.status===1){
-      //alert("Updated Successfully")
-      window.location.reload();
+//   ).then(res=>{
+//     if(res.data.status===1){
+//       //alert("Updated Successfully")
+//       window.location.reload();
 
-    }
+//     }
                               
 
-  })
-  .catch(e=>{
-  });
-}
-  //alert(_userid)
-  //localStorage.setItem("Sid",scrid)
-  //document.location='/views/dashboard/screener/profile'
-  //this.props.onHeaderClick(this.props.value);
+//   })
+//   .catch(e=>{
+//   });
+// }
+//   //alert(_userid)
+//   //localStorage.setItem("Sid",scrid)
+//   //document.location='/views/dashboard/screener/profile'
+//   //this.props.onHeaderClick(this.props.value);
+// }
+
+
+handleClick(screenerId) {
+  const ngoId = localStorage.getItem("userid"); // Make ngoId dynamic
+  if (window.confirm("Are you sure you want to map the screener?")) {
+    // Create an object with the data to be sent
+    const postData = {
+      screenerId,
+      token: 'dfjkhsdfaksjfh3756237',
+      ngoId,
+      ismapped: true
+    };
+      // Define the target URL
+      const targetPostURL = "https://javixlife.org/api/ngo/updatescreenermap";
+
+      // Send the POST request using axios
+      axios.post(targetPostURL, postData, {
+        headers: {
+          'Content-Type': 'application/json' // Use application/json for JSON data
+        }
+      })
+      .then((res) => {
+        if (res.data.status === 1) {
+          // alert("Updated Successfully")
+          window.location.reload();
+        }
+      })
+      .catch((e) => {
+        // Handle any errors here
+      });
+    }
+    // Other code that may follow
 }
 
 componentWillUnmount(){  this.mounted = false;}

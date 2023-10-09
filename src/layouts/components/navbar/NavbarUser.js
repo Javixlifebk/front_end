@@ -44,7 +44,7 @@ const handleNavProfile = (e) => {
         history.push("/ngoviewprofile");
         break;
     case '21':
-        history.push("/sevviewprofile");
+        history.push("/seviewprofile");
         break;
   }
   

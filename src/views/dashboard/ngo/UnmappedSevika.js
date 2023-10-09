@@ -156,36 +156,63 @@ loadRecs(recs)
 	 this.setState({data:recs});
  }
   
- handleClick(screenerId) {
+//  handleClick(screenerId) {
 
-  if(window.confirm("Are you sure want to Mapped Sevika !")){
-  let postData="screenerId="+screenerId+"&token=dfjkhsdfaksjfh3756237&ngoId=rakesh"; 
+//   if(window.confirm("Are you sure want to Mapped Sevika !")){
+//   let postData="screenerId="+screenerId+"&token=dfjkhsdfaksjfh3756237&ngoId=rakesh"; 
   
-  let _targetPostURL="https://javixlife.org/api/ngo/updatescreenermap?=";
-  axios(
-    {
-      method: 'post',
-      url: _targetPostURL,
-      data: postData,
-      headers: {'Content-Type': 'application/x-www-form-urlencoded' }
-      }
+//   let _targetPostURL="https://javixlife.org/api/ngo/updatescreenermap?=";
+//   axios(
+//     {
+//       method: 'post',
+//       url: _targetPostURL,
+//       data: postData,
+//       headers: {'Content-Type': 'application/x-www-form-urlencoded' }
+//       }
 
-  ).then(res=>{
+//   ).then(res=>{
+//     if(res.data.status===1){
+//       //alert("Updated Successfully")
+//       window.location.reload();
+
+//     }
+                              
+
+//   })
+//   .catch(e=>{
+//   });
+// }
+//   //alert(_userid)
+//   //localStorage.setItem("Sid",scrid)
+//   //document.location='/views/dashboard/screener/profile'
+//   //this.props.onHeaderClick(this.props.value);
+// }
+
+
+handleClick(screenerId) {
+  const ngoId = localStorage.getItem("userid"); // Make ngoId dynamic
+  if(window.confirm("Are you sure want to Mapped Sevika !")){
+  const postData = {
+    screenerId,
+    token: 'dfjkhsdfaksjfh3756237',
+    ngoId,
+    ismapped: true
+  };
+  const targetPostURL = "https://javixlife.org/api/ngo/updatescreenermap";
+  axios.post(targetPostURL, postData, {
+    headers: {
+      'Content-Type': 'application/json' // Use application/json for JSON data
+    }
+  })
+  .then(res=>{
     if(res.data.status===1){
       //alert("Updated Successfully")
       window.location.reload();
-
     }
-                              
-
   })
   .catch(e=>{
   });
 }
-  //alert(_userid)
-  //localStorage.setItem("Sid",scrid)
-  //document.location='/views/dashboard/screener/profile'
-  //this.props.onHeaderClick(this.props.value);
 }
 
 componentWillUnmount(){ this.mounted = false;}
