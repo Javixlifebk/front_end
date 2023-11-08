@@ -83,7 +83,7 @@ function ReferPatientList() {
    
     const [rows, setUsers] = useState('');
     useEffect(() => {
-        axios.post("https://javixlife.org/api/citizen/citizenrefer", {token:'dfjkhsdfaksjfh3756237',isUnrefer:1 ,ngoId:localStorage.getItem("ngoId")})
+        axios.post("http://localhost:3010/api/citizen/citizenrefer", {token:'dfjkhsdfaksjfh3756237',isUnrefer:1 ,ngoId:localStorage.getItem("ngoId")})
        .then(response => {
                  
                   if(response.data.status===1)

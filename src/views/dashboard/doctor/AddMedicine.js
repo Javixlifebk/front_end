@@ -161,7 +161,7 @@ class AddMedicine extends React.Component {
   }
   prescribeData(){
     //isUnrefer:2 prescription list
-    axios.post('https://javixlife.org/api/citizen/citizenReferList', {isUnrefer:2,citizenId:localStorage.getItem("citizenId")})
+    axios.post('http://localhost:3010/api/citizen/citizenReferList', {isUnrefer:2,citizenId:localStorage.getItem("citizenId")})
     .then(response => {
          if(response.data.status===1)
            {
@@ -219,7 +219,7 @@ class AddMedicine extends React.Component {
 
 
      
-      let _targetPostURL="https://javixlife.org/api/doctor/addprescription?=";
+      let _targetPostURL="http://localhost:3010/api/doctor/addprescription?=";
       axios(
         {
           method: 'post',

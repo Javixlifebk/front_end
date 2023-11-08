@@ -47,7 +47,7 @@ function GeneralSurvey() {
   // const filterList=[]
 // const [selectedFilter, setSelectedFilter] = useState([]);
 // const searchdata=()=>{
-//   axios.post('https://javixlife.org/api/generalsurvey/GeneralSurveyList')
+//   axios.post('http://localhost:3010/api/generalsurvey/GeneralSurveyList')
 //  .then(response => {
 //       if(response.data.status===1)
 //         {
@@ -61,8 +61,8 @@ function GeneralSurvey() {
 // const urlexport="http://18.60.238.252:3010/exports/csv-generalsurvey.csv"
 // console.log("+++++++",selectedFilter)
 const setexportdata=()=>{
-  // fetch('https://javixlife.org/api/generalsurvey/download',urlexport)
-  axios.get('https://javixlife.org/api/generalsurvey/download',{ngoId: localStorage.getItem("ngoId"),})
+  // fetch('http://localhost:3010/api/generalsurvey/download',urlexport)
+  axios.get('http://localhost:3010/api/generalsurvey/download',{ngoId: localStorage.getItem("ngoId"),})
    .then(response => {
 
         this.setState({response});
@@ -76,7 +76,7 @@ const setexportdata=()=>{
 
   useEffect(() => {
     
-		  axios.post('https://javixlife.org/api/generalsurvey/GeneralSurveyList', { ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
+		  axios.post('http://localhost:3010/api/generalsurvey/GeneralSurveyList', { ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

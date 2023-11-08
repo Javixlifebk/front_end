@@ -233,7 +233,7 @@ class JTable extends React.Component {
 
     // 14.02.2023
     getDailyScreeningScreener() {
-        axios.post('https://javixlife.org/api/report/ScreeningScreenerCsv', {
+        axios.post('http://localhost:3010/api/report/ScreeningScreenerCsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-screeningScreener.csv")
@@ -242,7 +242,7 @@ class JTable extends React.Component {
 
 
     getdailycitizenReport() {
-        axios.post('https://javixlife.org/api/report/createCitizenCsv', {
+        axios.post('http://localhost:3010/api/report/createCitizenCsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-dailyCitizens.csv")
@@ -250,7 +250,7 @@ class JTable extends React.Component {
     }
 
     getweekcitizenReport() {
-        axios.post('https://javixlife.org/api/report/createWeeklyCitizencsv', {
+        axios.post('http://localhost:3010/api/report/createWeeklyCitizencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-weeklyCitizens.csv")
@@ -258,7 +258,7 @@ class JTable extends React.Component {
     }
 
     getdailycitizendetailReport() {
-        axios.post('https://javixlife.org/api/report/createCitizenDetailCsv', {
+        axios.post('http://localhost:3010/api/report/createCitizenDetailCsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-dailyCitizenDetails.csv")
@@ -266,7 +266,7 @@ class JTable extends React.Component {
     }
 
     getweekcitizendetailReport() {
-        axios.post('https://javixlife.org/api/report/weeklyCitizenDetailcsv', {
+        axios.post('http://localhost:3010/api/report/weeklyCitizenDetailcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-weeklyCitizenDetails.csv")
@@ -274,7 +274,7 @@ class JTable extends React.Component {
     }
 
     getsevikaReport() {
-        axios.post('https://javixlife.org/api/report/ScreeningSevikaCsv', {
+        axios.post('http://localhost:3010/api/report/ScreeningSevikaCsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-screeningSevika.csv")
@@ -282,7 +282,7 @@ class JTable extends React.Component {
     }
 
     getLipidCriticalCitizens() {
-        axios.post('https://javixlife.org/api/report/lipidCriticalCitizensDetailcsv', {
+        axios.post('http://localhost:3010/api/report/lipidCriticalCitizensDetailcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-lipidCriticalCitizensDetail.csv")
@@ -290,7 +290,7 @@ class JTable extends React.Component {
     }
 
     getUnscreenedCitizenDetailcsv() {
-        axios.post('https://javixlife.org/api/report/unscreenedCitizenDetailcsv', {
+        axios.post('http://localhost:3010/api/report/unscreenedCitizenDetailcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-unscreenedCitizenDetailcsv.csv")
@@ -298,7 +298,7 @@ class JTable extends React.Component {
     }
 
     generalSurveyCSV() {
-        axios.post('https://javixlife.org/api/report/generalSurveyCSV', {
+        axios.post('http://localhost:3010/api/report/generalSurveyCSV', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-generalSurveyCSV.csv")
@@ -306,7 +306,7 @@ class JTable extends React.Component {
     }
 
     healthSurveyCSV() {
-        axios.post('https://javixlife.org/api/report/healthSurveyCSV', {
+        axios.post('http://localhost:3010/api/report/healthSurveyCSV', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-healthSurveyCSV.csv")
@@ -314,7 +314,7 @@ class JTable extends React.Component {
     }
 
     socioEconomicSurveyCSV() {
-        axios.post('https://javixlife.org/api/report/socioEconomicSurveyCSV', {
+        axios.post('http://localhost:3010/api/report/socioEconomicSurveyCSV', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-socioEconomicSurveyCSV.csv")

@@ -136,7 +136,7 @@ class SideMenuContent extends React.Component {
     let menus="";
     let postData="email="+ localStorage.getItem("_email");
    
-    let _targetPostURL="https://javixlife.org/api/auth/mymenulist?=";
+    let _targetPostURL="http://localhost:3010/api/auth/mymenulist?=";
     
     /*axios(
       {

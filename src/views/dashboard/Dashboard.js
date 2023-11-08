@@ -104,6 +104,17 @@ const insights = lazy(() =>
   import("../../views/dashboard/admin/Insights")
 )
 
+const BloodPressureGreen = lazy(() =>
+  import("../../views/dashboard/admin/blood-pressure-test-report/BloodPressureGreen")
+)
+const BloodPressureAmber = lazy(() =>
+  import("../../views/dashboard/admin/blood-pressure-test-report/BloodPressureAmber")
+)
+const BloodPressureRed = lazy(() =>
+  import("../../views/dashboard/admin/blood-pressure-test-report/BloodPressureRed")
+)
+
+
 const BloodGlucoseGreen = lazy(() =>
   import("../../views/dashboard/admin/BloodGlucoseGreen")
 )
@@ -113,6 +124,7 @@ const BloodGlucoseAmber = lazy(() =>
 const BloodGlucoseRed = lazy(() =>
   import("../../views/dashboard/admin/BloodGlucoseRed")
 )
+
 
 const hemoglobinGreen = lazy(() =>
   import("../../views/dashboard/admin/hemoglobin-test-report/HemoglobinGreenTest")
@@ -546,6 +558,10 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/admin/issueaddressing" component={issueAddressing} />
               <AppRoute exact path="/dashboard/admin/issuelistalladdressed" component={issueListAddressed} />
               <AppRoute exact path="/dashboard/insights" component={insights} />
+
+              <AppRoute exact path="/dashboard/BloodPressureGreen" component={BloodPressureGreen} />
+              <AppRoute exact path="/dashboard/BloodPressureAmber" component={BloodPressureAmber} />
+              <AppRoute exact path="/dashboard/BloodPressureRed" component={BloodPressureRed} />
 
               <AppRoute exact path="/dashboard/BloodGlucoseGreen" component={BloodGlucoseGreen} />
               <AppRoute exact path="/dashboard/BloodGlucoseAmber" component={BloodGlucoseAmber} />

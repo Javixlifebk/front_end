@@ -62,7 +62,7 @@ function BloodGlucoseRed() {
 },[])
 
 const fetchRecords = (page,size) => {
-axios.post("https://javixlife.org/api/labtest/getBloodGlucoseRedList" ,{
+axios.post("http://localhost:3010/api/labtest/getBloodGlucoseRedList" ,{
   "pageNo":page,
   "size":size,
   ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")

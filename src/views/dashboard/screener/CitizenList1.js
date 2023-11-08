@@ -198,7 +198,7 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
 		let scrId=localStorage.getItem("_screenerId");
-		  axios.post('https://javixlife.org/api/citizen/citizenList?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId })
+		  axios.post('http://localhost:3010/api/citizen/citizenList?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId })
 		 .then(response => {
 			
 					if(response.data.status===1){
@@ -242,7 +242,7 @@ componentDidMount() {
   callSearch=_v=>{
 	  
 		//this.setState({data:null});
-		  axios.post('https://javixlife.org/api/citizen/citizenListPagination?', {token:'dfjkhsdfaksjfh3756237',v:_v ,'isUnrefer':0,})
+		  axios.post('http://localhost:3010/api/citizen/citizenListPagination?', {token:'dfjkhsdfaksjfh3756237',v:_v ,'isUnrefer':0,})
 		 .then(response => {
          
 					if(response.data.status===1){

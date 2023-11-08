@@ -38,8 +38,8 @@ function SocieconomicSurvey() {
   const [rows, setUsers] = useState([])
 
   const setexportdata=()=>{
-    // fetch('https://javixlife.org/api/generalsurvey/download',urlexport)
-    axios.get('https://javixlife.org/api/socioeconomicsurvey/SocioEconomicdownload',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid"),})
+    // fetch('http://localhost:3010/api/generalsurvey/download',urlexport)
+    axios.get('http://localhost:3010/api/socioeconomicsurvey/SocioEconomicdownload',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid"),})
      .then(response => {
   
           this.setState({response});
@@ -53,7 +53,7 @@ function SocieconomicSurvey() {
  
  
   useEffect(() => {
-		  axios.post('https://javixlife.org/api/socioeconomicsurvey/SocioEconomicSurveyList',{ngoId: localStorage.getItem("ngoId"),})
+		  axios.post('http://localhost:3010/api/socioeconomicsurvey/SocioEconomicSurveyList',{ngoId: localStorage.getItem("ngoId"),})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

@@ -125,7 +125,7 @@ loadRecs(recs)
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('https://javixlife.org/api/auth/authlist', {email:'jilani.it@gmail.com',status:1 })
+		  axios.post('http://localhost:3010/api/auth/authlist', {email:'jilani.it@gmail.com',status:1 })
 		 .then(response => {
 					
 					if(response.data.status===1)

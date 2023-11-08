@@ -102,7 +102,7 @@ componentDidMount() {
 this.mounted = true;
 //this.setState({data:null});
     
-axios.post('https://javixlife.org/api/citizen/citizenById?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
+axios.post('http://localhost:3010/api/citizen/citizenById?=', { citizenId:localStorage.getItem("citizenId"),token:'dfjkhsdfaksjfh3756237' })
  .then(response => {
   if(response.data.status===1){
     var recs=response.data.data.data;
@@ -161,7 +161,7 @@ axios.post('https://javixlife.org/api/citizen/citizenById?=', { citizenId:localS
     //   axios.post("http://18.60.238.252:3010/upload/profile", formData, { 
     //     // receive two    parameter endpoint url ,form data
     // })
-    axios.post(`https://javixlife.org/api/citizen/profile/${citizenId}`, formData, { 
+    axios.post(`http://localhost:3010/api/citizen/profile/${citizenId}`, formData, { 
       // receive two    parameter endpoint url ,form data
   })
     .then(res => {
@@ -190,7 +190,7 @@ axios.post('https://javixlife.org/api/citizen/citizenById?=', { citizenId:localS
             postData+="&district="+this.state.district+"&pincode="+this.state.pincode+"&address="+this.state.addr+"&photo="+this.state.photo;      
      
             
-        let _targetPostURL="https://javixlife.org/api/citizen/updateCitizen";
+        let _targetPostURL="http://localhost:3010/api/citizen/updateCitizen";
         axios(
           {
             method: 'post',

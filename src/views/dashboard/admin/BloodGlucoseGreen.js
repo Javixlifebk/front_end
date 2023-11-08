@@ -61,7 +61,7 @@ function BloodGlucoseGreen() {
 },[])
 
 const fetchRecords = (page,size) => {
-axios.post("https://javixlife.org/api/labtest/getBloodGlucoseGreenList" ,{
+axios.post("http://localhost:3010/api/labtest/getBloodGlucoseGreenList" ,{
   "pageNo":page,
   "size":size,
   ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")

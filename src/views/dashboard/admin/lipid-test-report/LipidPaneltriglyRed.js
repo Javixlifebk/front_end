@@ -59,7 +59,7 @@ function LipidPaneltriglyRed() {
 },[])
 
 const fetchRecords = (page,size) => {
-axios.post("https://javixlife.org/api/labtest/LipidPaneltriglyRedList" ,{
+axios.post("http://localhost:3010/api/labtest/LipidPaneltriglyRedList" ,{
   "pageNo":page,
   "size":size,
   ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")

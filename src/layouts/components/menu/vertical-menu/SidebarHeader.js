@@ -18,7 +18,7 @@ class SidebarHeader extends Component {
 }
 
 getLogo(){
-  axios.post('https://javixlife.org/api/logo/getLogo',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
+  axios.post('http://localhost:3010/api/logo/getLogo',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
       .then(response => {
                   if(response){
                     this.setState({response:response.data.data.data[0].client_logo})
@@ -39,7 +39,7 @@ getLogo(){
     this.getLogo();
     
 		//this.setState({data:null});
-//     axios.post("https://javixlife.org/api/ngo/ngoList",{ngoLoginId:localStorage.getItem("ngoId")})
+//     axios.post("http://localhost:3010/api/ngo/ngoList",{ngoLoginId:localStorage.getItem("ngoId")})
 //     .then(response => {
 //                    this.setState(response.data)
 //                    console.log(response.data.data.data);

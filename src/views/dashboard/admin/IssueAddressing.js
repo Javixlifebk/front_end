@@ -97,7 +97,7 @@ class AddAllergy extends React.Component {
     postData+="&token=dfjkhsdfaksjfh3756237";
     postData+="&comments="+this.state.fname;
     postData+="&status="+this.state.doctype;
-    let _targetPostURL="https://javixlife.org/api/issues/issuesUpdate?=";
+    let _targetPostURL="http://localhost:3010/api/issues/issuesUpdate?=";
     axios(
       {
         method: 'post',

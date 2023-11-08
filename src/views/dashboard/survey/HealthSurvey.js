@@ -36,8 +36,8 @@ function HealthSurvey() {
 
   const [rows, setUsers] = useState([])
   const setexportdata=()=>{
-    // fetch('https://javixlife.org/api/generalsurvey/download',urlexport)
-    axios.get('https://javixlife.org/api/healthsurvey/HealthSurveydownload',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid"),})
+    // fetch('http://localhost:3010/api/generalsurvey/download',urlexport)
+    axios.get('http://localhost:3010/api/healthsurvey/HealthSurveydownload',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid"),})
      .then(response => {
   
           this.setState({response});
@@ -50,7 +50,7 @@ function HealthSurvey() {
   }
  
   useEffect(() => {
-		  axios.post('https://javixlife.org/api/healthsurvey/HealthSurveyList',{ngoId: localStorage.getItem("ngoId"),})
+		  axios.post('http://localhost:3010/api/healthsurvey/HealthSurveyList',{ngoId: localStorage.getItem("ngoId"),})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

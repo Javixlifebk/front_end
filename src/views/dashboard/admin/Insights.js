@@ -422,21 +422,21 @@ class AdminDashboard extends React.Component {
         return imagUrl;
     }
     getbpGreenReport() {
-        axios.post('https://javixlife.org/api/report/createBPGreencsv', {
+        axios.post('http://localhost:3010/api/report/createBPGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-bpGreenReport.csv")
         }).catch(e => {});
     }
     getbpAmberReport() {
-        axios.post('https://javixlife.org/api/report/createBPAmbercsv', {
+        axios.post('http://localhost:3010/api/report/createBPAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-bpAmberReport.csv")
         }).catch(e => {});
     }
     getbpRedReport() {
-        axios.post('https://javixlife.org/api/report/createBPRedcsv', {
+        axios.post('http://localhost:3010/api/report/createBPRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-bpRedReport.csv")
@@ -444,21 +444,21 @@ class AdminDashboard extends React.Component {
     }
 
     getbmiGreenReport() {
-        axios.post('https://javixlife.org/api/report/createBmiGreencsv', {
+        axios.post('http://localhost:3010/api/report/createBmiGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-bmiGreenReport.csv")
         }).catch(e => {});
     }
     getbmiAmberReport() {
-        axios.post('https://javixlife.org/api/report/createbmiAmbercsv', {
+        axios.post('http://localhost:3010/api/report/createbmiAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-bmiAmberReport.csv")
         }).catch(e => {});
     }
     getbmiRedReport() {
-        axios.post('https://javixlife.org/api/report/createbmiRedcsv', {
+        axios.post('http://localhost:3010/api/report/createbmiRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-bmiRedReport.csv")
@@ -466,21 +466,21 @@ class AdminDashboard extends React.Component {
     }
 
     getspo2GreenReport() {
-        axios.post('https://javixlife.org/api/report/createSpoGreencsv', {
+        axios.post('http://localhost:3010/api/report/createSpoGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-spo2GreenReport.csv")
         }).catch(e => {});
     }
     getspo2AmberReport() {
-        axios.post('https://javixlife.org/api/report/createSpoAmbercsv', {
+        axios.post('http://localhost:3010/api/report/createSpoAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-spo2AmberReport.csv")
         }).catch(e => {});
     }
     getspo2RedReport() {
-        axios.post('https://javixlife.org/api/report/createSpoRedcsv', {
+        axios.post('http://localhost:3010/api/report/createSpoRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-spo2RedReport.csv")
@@ -489,42 +489,42 @@ class AdminDashboard extends React.Component {
 
 
     getPulseGreenReport() {
-        axios.post('https://javixlife.org/api/report/createPulseGreencsv', {
+        axios.post('http://localhost:3010/api/report/createPulseGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-pulseGreenReport.csv")
         }).catch(e => {});
     }
     getPulseAmberReport() {
-        axios.post('https://javixlife.org/api/report/createPulseAmbercsv', {
+        axios.post('http://localhost:3010/api/report/createPulseAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-PulseAmberReport.csv")
         }).catch(e => {});
     }
     getPulseRedReport() {
-        axios.post('https://javixlife.org/api/report/createPulseRedcsv', {
+        axios.post('http://localhost:3010/api/report/createPulseRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-PulseRedReport.csv")
         }).catch(e => {});
     }
     getTempGreenReport() {
-        axios.post('https://javixlife.org/api/report/createTempGreencsv', {
+        axios.post('http://localhost:3010/api/report/createTempGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-temperatureGreenReport.csv")
         }).catch(e => {});
     }
     getTempAmberReport() {
-        axios.post('https://javixlife.org/api/report/createTempAmbercsv', {
+        axios.post('http://localhost:3010/api/report/createTempAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-temperatureAmberReport.csv")
         }).catch(e => {});
     }
     getTempRedReport() {
-        axios.post('https://javixlife.org/api/report/createTempRedcsv', {
+        axios.post('http://localhost:3010/api/report/createTempRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
             window.open("http://18.60.238.252:3010/exports/csv-temperatureRedReport.csv")
@@ -534,7 +534,7 @@ class AdminDashboard extends React.Component {
     componentDidMount() {
         this.mounted = true;
 
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_bp: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -549,7 +549,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org/api/labtest/getBloodGlucoseTestCount", {
+        axios.post("http://localhost:3010/api/labtest/getBloodGlucoseTestCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             console.log("Checking......................................");
@@ -575,7 +575,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org/api/labtest/getHemoglobinCount", {
+        axios.post("http://localhost:3010/api/labtest/getHemoglobinCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -613,7 +613,7 @@ class AdminDashboard extends React.Component {
 
         // Lipid Segment
 
-        axios.post("https://javixlife.org/api/labtest/getCholestCount", {
+        axios.post("http://localhost:3010/api/labtest/getCholestCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -636,7 +636,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org/api/labtest/gettriCount", {
+        axios.post("http://localhost:3010/api/labtest/gettriCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -658,7 +658,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("https://javixlife.org/api/labtest/gethdlCount", {
+        axios.post("http://localhost:3010/api/labtest/gethdlCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -680,7 +680,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org/api/labtest/getldlCount", {
+        axios.post("http://localhost:3010/api/labtest/getldlCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -707,7 +707,7 @@ class AdminDashboard extends React.Component {
         //     'Content-Type': "multipart/form-data"
 
         // }
-        axios.post("https://javixlife.org/api/labtest/getREyeCount", {
+        axios.post("http://localhost:3010/api/labtest/getREyeCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -729,7 +729,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org/api/labtest/getLEyeCount", {
+        axios.post("http://localhost:3010/api/labtest/getLEyeCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
 
         }).then((response) => {
@@ -753,7 +753,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org/api/ngo/screenerList?=", {
+        axios.post("http://localhost:3010/api/ngo/screenerList?=", {
             token: "dfjkhsdfaksjfh3756237",
             userId: localStorage.getItem("userid"),
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
@@ -766,7 +766,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_bp: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -780,7 +780,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_bp: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -797,7 +797,7 @@ class AdminDashboard extends React.Component {
 
         // SPO2
 
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_spo2: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -813,7 +813,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_spo2: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -828,7 +828,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_spo2: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -846,7 +846,7 @@ class AdminDashboard extends React.Component {
 
         // Temperature
 
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_temperature: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -862,7 +862,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_temperature: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -877,7 +877,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_temperature: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -895,7 +895,7 @@ class AdminDashboard extends React.Component {
 
         // Heart Rate
 
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_pulse: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -911,7 +911,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_pulse: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -926,7 +926,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_pulse: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -942,7 +942,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_bmi: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -984,7 +984,7 @@ class AdminDashboard extends React.Component {
         }).catch(e => {});
 
 
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_bmi: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -1001,7 +1001,7 @@ class AdminDashboard extends React.Component {
         });
 
 
-        axios.post("https://javixlife.org/api/screening/getCount", {
+        axios.post("http://localhost:3010/api/screening/getCount", {
             severity_bmi: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -1017,7 +1017,7 @@ class AdminDashboard extends React.Component {
             }
         });
         // =============================================================
-        // axios.post('https://javixlife.org/api/labtest/getBloodGlucoseTestList', {severity:0, ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
+        // axios.post('http://localhost:3010/api/labtest/getBloodGlucoseTestList', {severity:0, ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
         // .then(response => {
 
         //         console.dir("Data Length=" + response.data.data.data.length)
@@ -1037,7 +1037,7 @@ class AdminDashboard extends React.Component {
 
 
         // ======================================================
-        // axios.post('https://javixlife.org/api/labtest/getBloodGlucoseTestList', {severity:'1' , ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
+        // axios.post('http://localhost:3010/api/labtest/getBloodGlucoseTestList', {severity:'1' , ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
         // .then(response => {
 
         //         console.dir("Data Length=" + response.data.data.data.length)
@@ -1059,7 +1059,7 @@ class AdminDashboard extends React.Component {
 
         // =========================================================================
 
-        // axios.post('https://javixlife.org/api/labtest/getBloodGlucoseTestList', { severity:'2', ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid") },{"headers" : headers})
+        // axios.post('http://localhost:3010/api/labtest/getBloodGlucoseTestList', { severity:'2', ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid") },{"headers" : headers})
         // .then(response => {
 
         //         console.dir("Data Length=" + response.data.data.data.length)
@@ -1393,14 +1393,15 @@ class AdminDashboard extends React.Component {
                                     options={options}
                                     height={300}/>
                             </CardBody>
-                            <CardBody>
+                            {/* Commnent BY Satish CSV */}
+                            {/* <CardBody>
                                 <a // href="http://18.60.238.252:3010/documents/bpRed.csv"
                                     onClick={
                                         this.getbpRedReport
                                 }>
                                     {" "}
                                     BP Red Cases{" "} </a>
-                            </CardBody>
+                            </CardBody> 
                             <CardBody>
                                 <a // href="http://18.60.238.252:3010/documents/bpAmber.csv"
                                     onClick={
@@ -1416,11 +1417,48 @@ class AdminDashboard extends React.Component {
                                 }>
                                     {" "}
                                     BP Green Cases{" "} </a>
+                            </CardBody>*/}
+                            {/* Commnent BY Satish CSV */}
+                            <CardBody>
+                                <a href="/dashboard/BloodPressureGreen"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    Blood Pressure Green Cases{" "} </a>
                             </CardBody>
+
+                            <CardBody>
+                                <a href="/dashboard/BloodPressureAmber"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    Blood Pressure Amber Cases{" "} </a>
+                            </CardBody>
+
+
+                            <CardBody>
+                                <a href="/dashboard/BloodPressureRed"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    Blood Pressure Red Cases{" "} </a>
+                            </CardBody>
+
+
                         </Card>
                     </Col>
                     <Col>
                         <Card>
+                             
                             <CardHeader>
                                 <CardTitle>SPO2</CardTitle>
                             </CardHeader>
@@ -1429,6 +1467,8 @@ class AdminDashboard extends React.Component {
                                     options={options}
                                     height={300}/>
                             </CardBody>
+                            {/* Commented by Satish 07.11.23 */}
+                            {/*
                             <CardBody>
                                 <a // href="http://18.60.238.252:3010/documents/spo2Red.csv"
                                     onClick={
@@ -1453,6 +1493,42 @@ class AdminDashboard extends React.Component {
                                     {" "}
                                     SPO2 Green Cases{" "} </a>
                             </CardBody>
+
+                            */}
+                            {/* Comment BY Satish CSV */}
+                            <CardBody>
+                                <a href="/dashboard/SPO2Green"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    SPO2 Green Cases{" "} </a>
+                            </CardBody>
+
+                            <CardBody>
+                                <a href="/dashboard/SPO2Amber"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    SPO2 Amber Cases{" "} </a>
+                            </CardBody>
+
+
+                            <CardBody>
+                                <a href="/dashboard/SPO2Red"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    SPO2 Red Cases{" "} </a>
+                            </CardBody>
                         </Card>
                     </Col>
                 </Row>
@@ -1463,7 +1539,7 @@ class AdminDashboard extends React.Component {
                 }>
                     <Col>
                         <Card>
-                            <CardHeader>
+                           <CardHeader>
                                 <CardTitle>Temperature</CardTitle>
                             </CardHeader>
                             <CardBody>
@@ -1471,6 +1547,8 @@ class AdminDashboard extends React.Component {
                                     options={options}
                                     height={300}/>
                             </CardBody>
+                              {/* Comment By Satish */}
+                            {/*
                             <CardBody>
                                 <a // href="http://18.60.238.252:3010/documents/temperatureRed.csv"
                                     onClick={
@@ -1495,6 +1573,43 @@ class AdminDashboard extends React.Component {
                                     {" "}
                                     TEMP Green Cases{" "} </a>
                             </CardBody>
+
+                            
+                            */}
+                            {/* Comment BY Satish CSV */}
+                            <CardBody>
+                                <a href="/dashboard/TEMPGreen"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    TEMP Green Cases{" "} </a>
+                            </CardBody>
+
+                            <CardBody>
+                                <a href="/dashboard/TEMPAmber"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    TEMP Amber Cases{" "} </a>
+                            </CardBody>
+
+
+                            <CardBody>
+                                <a href="/dashboard/TEMPRed"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    TEMP Red Cases{" "} </a>
+                            </CardBody>
                         </Card>
                     </Col>
                     <Col>
@@ -1507,7 +1622,8 @@ class AdminDashboard extends React.Component {
                                     options={options}
                                     height={300}/>
                             </CardBody>
-                            <CardBody>
+                            {/* Comment By Satish 07.11 */}
+                            {/* <CardBody> 
                                 <a // href="http://18.60.238.252:3010/documents/pulseRed.csv"
                                     onClick={
                                         this.getPulseRedReport
@@ -1535,6 +1651,40 @@ class AdminDashboard extends React.Component {
                                     {" "}
                                     HEART RATE Green Cases{" "} </a>
                             </CardBody>
+                             {/* Comment BY Satish CSV */}
+                            <CardBody>
+                                <a href="/dashboard/HEARTRATEGreen"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    HEART RATE Green Cases{" "} </a>
+                            </CardBody>
+
+                            <CardBody>
+                                <a href="/dashboard/HEARTRATEAmber"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    HEART RATE Amber Cases{" "} </a>
+                            </CardBody>
+
+
+                            <CardBody>
+                                <a href="/dashboard/HEARTRATERed"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    HEART RATE Red Cases{" "} </a>
+                            </CardBody>
                         </Card>
                     </Col>
                 </Row>
@@ -1553,6 +1703,8 @@ class AdminDashboard extends React.Component {
                                     options={options}
                                     height={300}/>
                             </CardBody>
+                            {/* Comment By Satish 07.11 */}
+                            {/* 
                             <CardBody>
                                 <a // href="http://18.60.238.252:3010/documents/bmiRed.csv"
                                     onClick={
@@ -1576,6 +1728,41 @@ class AdminDashboard extends React.Component {
                                 }>
                                     {" "}
                                     BMI Green Cases{" "} </a>
+                            </CardBody>
+
+                              {/* Comment BY Satish CSV */}
+                            <CardBody>
+                                <a href="/dashboard/BMIGreen"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    BMI Green Cases{" "} </a>
+                            </CardBody>
+
+                            <CardBody>
+                                <a href="/dashboard/BMIAmber"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    BMI Amber Cases{" "} </a>
+                            </CardBody>
+
+
+                            <CardBody>
+                                <a href="/dashboard/BMIRed"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    BMI Red Cases{" "} </a>
                             </CardBody>
                         </Card>
                     </Col>
@@ -1924,6 +2111,8 @@ class AdminDashboard extends React.Component {
             </Card>
           </Col>
         </Row> */}
+
+        {/* Satish Commented */}
                 <Row>
                     <Col>
                         <Card>
@@ -1933,16 +2122,16 @@ class AdminDashboard extends React.Component {
                                     Daily and Weekly Reports
                                 </CardTitle>
                             </CardHeader>
-                            <Button className="bg-color"
+                            {/* <Button className="bg-color"
                                 onClick={
                                     () => this.getDumpPage()
                             }>
                                 {" "}
-                                Click to Access{" "} </Button>
+                                Click to Access{" "} </Button> */}
                         </Card>
                     </Col>
                 </Row>
-
+        {/* Satish Commented */}
                 <Row>
                     <Col sm="12">
                         {/* <DataTable
