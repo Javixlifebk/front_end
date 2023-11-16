@@ -114,6 +114,52 @@ const BloodPressureRed = lazy(() =>
   import("../../views/dashboard/admin/blood-pressure-test-report/BloodPressureRed")
 )
 
+const Spo2Green = lazy(() =>
+  import("../../views/dashboard/admin/spo2-test-report/Spo2Green")
+)
+const Spo2Amber = lazy(() =>
+  import("../../views/dashboard/admin/spo2-test-report/Spo2Amber")
+)
+const Spo2Red = lazy(() =>
+  import("../../views/dashboard/admin/spo2-test-report/Spo2Red")
+)
+
+
+const TempratureGreen = lazy(() =>
+  import("../../views/dashboard/admin/temprature-test-report/TempratureGreen")
+)
+const TempratureAmber = lazy(() =>
+  import("../../views/dashboard/admin/temprature-test-report/TempratureAmber")
+)
+const TempratureRed = lazy(() =>
+  import("../../views/dashboard/admin/temprature-test-report/TempratureRed")
+)
+
+
+const HeartRateGreen = lazy(() =>
+  import("../../views/dashboard/admin/heartRate-test-report/HeartRateGreen")
+)
+const HeartRateAmber = lazy(() =>
+  import("../../views/dashboard/admin/heartRate-test-report/HeartRateAmber")
+)
+const HeartRateRed = lazy(() =>
+  import("../../views/dashboard/admin/heartRate-test-report/HeartRateRed")
+)
+
+const BMIGreen = lazy(() =>
+  import("../../views/dashboard/admin/bmi-test-report/BMIGreen")
+)
+const BMIAmber = lazy(() =>
+  import("../../views/dashboard/admin/bmi-test-report/BMIAmber")
+)
+const BMIRed = lazy(() =>
+  import("../../views/dashboard/admin/bmi-test-report/BMIRed")
+)
+
+
+
+
+
 
 const BloodGlucoseGreen = lazy(() =>
   import("../../views/dashboard/admin/BloodGlucoseGreen")
@@ -558,6 +604,27 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/admin/issueaddressing" component={issueAddressing} />
               <AppRoute exact path="/dashboard/admin/issuelistalladdressed" component={issueListAddressed} />
               <AppRoute exact path="/dashboard/insights" component={insights} />
+
+              {/* SPO2 */}
+              <AppRoute exact path="/dashboard/Spo2Green" component={Spo2Green} />
+              <AppRoute exact path="/dashboard/Spo2Amber" component={Spo2Amber} />
+              <AppRoute exact path="/dashboard/Spo2Red" component={Spo2Red} />
+
+              {/* Temprature */}
+              <AppRoute exact path="/dashboard/TempratureGreen" component={TempratureGreen} />
+              <AppRoute exact path="/dashboard/TempratureAmber" component={TempratureAmber} />
+              <AppRoute exact path="/dashboard/TempratureRed" component={TempratureRed} />
+
+               {/* Heart Rate */}
+               <AppRoute exact path="/dashboard/HeartRateGreen" component={HeartRateGreen} />
+              <AppRoute exact path="/dashboard/HeartRateAmber" component={HeartRateAmber} />
+              <AppRoute exact path="/dashboard/HeartRateRed" component={HeartRateRed} />
+
+               {/* BMI */}
+               <AppRoute exact path="/dashboard/BMIGreen" component={BMIGreen} />
+              <AppRoute exact path="/dashboard/BMIAmber" component={BMIAmber} />
+              <AppRoute exact path="/dashboard/BMIRed" component={BMIRed} />
+
 
               <AppRoute exact path="/dashboard/BloodPressureGreen" component={BloodPressureGreen} />
               <AppRoute exact path="/dashboard/BloodPressureAmber" component={BloodPressureAmber} />

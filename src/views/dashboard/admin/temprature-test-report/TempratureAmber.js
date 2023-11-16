@@ -15,7 +15,7 @@ import {
 import 'antd/dist/antd.css';
 // import './index.css';
 import { SearchOutlined } from '@ant-design/icons';
-import { Button, Input, Space, Table ,Spin} from 'antd';
+import { Button, Input, Space, Table,Spin } from 'antd';
 import '@mui/x-data-grid-generator'
 import { DataGrid, GridToolbar,GridToolbarContainer,GridFilterPanel,GridToolbarExport,GridToolbarFilterButton } from '@mui/x-data-grid'
 import axios from "axios";
@@ -89,7 +89,7 @@ const data = [
     );
   };
   
-function HemoglobinRedTest() {
+function HemoglobinAmberTest() {
    
     const [rows, setUsers] = useState('');
     
@@ -102,11 +102,11 @@ function HemoglobinRedTest() {
 },[])
 
 const fetchRecords = (page,size) => {
-  axios.post("http://localhost:3010/api/labtest/getBloodPressureRedList" ,{
+  axios.post("http://localhost:3010/api/labtest/Blood Pressure" ,{
     "pageNo":page,
     "size":size,
     ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
-    })
+})
  .then(response => {
            
             if(response.data.status===1)
@@ -150,10 +150,10 @@ const filterData = (data) =>
     };
     const setBP=(hemoglobin)=>{
 
-      if(hemoglobin>17 &&  hemoglobin<12 ){
-              return(<span style={{background:'red',padding:'4px',color:'white'}}>Blood Pressure:{hemoglobin}</span>);
+      if(hemoglobin>13.5 &&  hemoglobin<17.5){
+              return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Blood Pressure :{hemoglobin}</span>);
            }else{
-          return(<span style={{background:'red',padding:'4px',color:'white'}}>Blood Pressure:{hemoglobin}</span>);
+          return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Blood Pressure :{hemoglobin}</span>);
        }
   }
    const  getCitizenScreener=(_screenerId) =>{
@@ -253,122 +253,121 @@ const filterData = (data) =>
     });
     
     const columns = [
-    //   {
-    //     title: 'Name',
-    //     dataIndex: 'firstName',
-    //     key: 'firstName',
-    //     render: (_, { firstName }) => (
-    //         <button>
-    //           {firstName.map((tag) => {
-    //           return (
-    //               <a  key={tag}>
-    //                 {tag.toUpperCase()}
-    //               </a>
-    //             );
-    //           })}
-    //         </button>
-    //       ),
-    //     width: '30%',
-    //     ...getColumnSearchProps('firstName'),
-    //   },
-   
-    {
-        title: "Patient Details",
-        dataIndex: "fullname",
-        key: 'fullname',
-        // render: (text, record) => (
-        //   <span>{record.firstName} {record.lastName}</span>
-        // ),
-         ...getColumnSearchProps('fullname'),
-      },
-      {
-        title: "Citizen ID",
-        dataIndex: "citizenId",
-        key: 'citizenId',
-        // render: (text, record) => (
-        //   <span>{record.firstName} {record.lastName}</span>
-        // ),
-         ...getColumnSearchProps('citizenId'),
-      },
-      {
-        title: 'Case ID',
-        dataIndex: 'caseId',
-        key: 'caseId',
-        // width: '20%',
-        ...getColumnSearchProps('caseId'),
-      },
-      {
-        title: 'Mobile',
-        dataIndex: 'mobile',
-        key: 'mobile',
-        // width: '20%',
-        ...getColumnSearchProps('mobile'),
-      },
-      
-      {
-        title: 'Address',
-        dataIndex: 'address',
-        key: 'address',
-        // width: '20%',
-        ...getColumnSearchProps('address'),
-      },
-      {
-        title: 'Screener FullName',
-        dataIndex: 'screenerfullname',
-        key: 'screenerfullname',
-        // width: '20%',
-        ...getColumnSearchProps('screenerfullname'),
-      },
-      {
-        title: 'onBoarding Date',
-        dataIndex: 'dateOfOnBoarding',
-       key: 'dateOfOnBoarding',
-        render: (_, row) => (
-          <p size="middle">
-             {/* {row.issubscreener > 0 ? "Sevika" : "Sanyojika"}, */}
-          </p>
-        ),
-      
-        // width: '20%',
-        ...getColumnSearchProps('dateOfOnBoarding'),
-      },
+      //   {
+      //     title: 'Name',
+      //     dataIndex: 'firstName',
+      //     key: 'firstName',
+      //     render: (_, { firstName }) => (
+      //         <button>
+      //           {firstName.map((tag) => {
+      //           return (
+      //               <a  key={tag}>
+      //                 {tag.toUpperCase()}
+      //               </a>
+      //             );
+      //           })}
+      //         </button>
+      //       ),
+      //     width: '30%',
+      //     ...getColumnSearchProps('firstName'),
+      //   },
      
       {
-        title: 'Date',
-        dataIndex: 'createdAt',
-        key: 'createdAt',
-        // width: '20%',
-        ...getColumnSearchProps('createdAt'),
-      },
-    
-      {
-        title: 'Alerts',
-        key: 'alerts',
-        render: (_, record) => (
-          <div>     
-                                 
-          <p className="text-bold-500 mb-0">
-          {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
-          <span style={{margin:'20px;',padding:'4px;'}}>{setBP(record.hemoglobin)}</span>&nbsp;&nbsp;
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
-          
-          </p>
-          </div>
-        ),
-      },
-    ];
-    
+          title: "Patient Details",
+          dataIndex: "fullname",
+          key: 'fullname',
+          // render: (text, record) => (
+          //   <span>{record.firstName} {record.lastName}</span>
+          // ),
+           ...getColumnSearchProps('fullname'),
+        },
+        {
+          title: 'Mobile',
+          dataIndex: 'mobile',
+          key: 'mobile',
+          // width: '20%',
+          ...getColumnSearchProps('mobile'),
+        },
+        
+        {
+          title: 'citizen ID',
+          dataIndex: 'citizenId',
+          key: 'citizenId',
+          // width: '10%',
+          ...getColumnSearchProps('citizenId'),
+        },
+        {
+          title: 'Case ID',
+          dataIndex: 'caseId',
+          key: 'caseId',
+          // width: '10%',
+          ...getColumnSearchProps('caseId'),
+        },
+        {
+          title: 'Screener FullName',
+          dataIndex: 'screenerfullname',
+          key: 'screenerfullname',
+          width: '20%',
+          ...getColumnSearchProps('screenerfullname'),
+        },
+        {
+          title: 'Address',
+          dataIndex: 'address',
+          key: 'address',
+          // width: '20%',
+          ...getColumnSearchProps('address'),
+        },
+        {
+          title: 'onBoarding Date',
+          dataIndex: 'dateOfOnBoarding',
+         key: 'dateOfOnBoarding',
+          render: (_, row) => (
+            <p size="middle">
+               {/* {row.issubscreener > 0 ? "Sevika" : "Sanyojika"}, */}
+            </p>
+          ),
+        
+          // width: '20%',
+          ...getColumnSearchProps('dateOfOnBoarding'),
+        },
+       
+        {
+          title: 'Date',
+          dataIndex: 'createdAt',
+          key: 'createdAt',
+          // width: '20%',
+          ...getColumnSearchProps('createdAt'),
+        },
+      
+        {
+          title: 'Alerts',
+          key: 'alerts',
+          render: (_, record) => (
+            <div>     
+                                   
+            <p className="text-bold-500 mb-0">
+            {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
+            <span style={{margin:'20px;',padding:'4px;'}}>{setBP(record.hemoglobin)}</span>&nbsp;&nbsp;
+            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
+            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
+            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
+            
+            </p>
+            </div>
+          ),
+        },
+      ];
+      
     return (
       <>
        <Row>
       <Col sm="12">
-      <CardTitle><b><h3>Blood Pressure Red Cases</h3></b> </CardTitle>
+      <CardTitle><b><h3>Temprature Amber Cases</h3></b> </CardTitle>
       </Col>          
       </Row>
     <Table columns={columns} dataSource={rows}
-    loading={{ indicator: <div><Spin /></div> ,spinning:!rows}} 
+     loading={{indicator: <div><Spin /></div> ,spinning:!rows}} 
+
     pagination={{
       pageSize:size,
       total:totalPages,
@@ -387,4 +386,4 @@ const filterData = (data) =>
     );
   };
 
-export default HemoglobinRedTest
+export default HemoglobinAmberTest
