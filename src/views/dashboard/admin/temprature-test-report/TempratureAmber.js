@@ -102,7 +102,7 @@ function HemoglobinAmberTest() {
 },[])
 
 const fetchRecords = (page,size) => {
-  axios.post("http://localhost:3010/api/labtest/Blood Pressure" ,{
+  axios.post("http://localhost:3010/api/labtest/getTempratureAmberList" ,{
     "pageNo":page,
     "size":size,
     ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
@@ -151,9 +151,9 @@ const filterData = (data) =>
     const setBP=(hemoglobin)=>{
 
       if(hemoglobin>13.5 &&  hemoglobin<17.5){
-              return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Blood Pressure :{hemoglobin}</span>);
+              return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Temprature :{hemoglobin}</span>);
            }else{
-          return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Blood Pressure :{hemoglobin}</span>);
+          return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Temprature :{hemoglobin}</span>);
        }
   }
    const  getCitizenScreener=(_screenerId) =>{

@@ -329,9 +329,9 @@ componentDidMount() {
             pagination
             subHeader
             noDataComponent="Loading...."
-            subHeaderComponent={
-              <CustomHeader value={value} handleFilter={this.handleFilter} />
-            }
+            // subHeaderComponent={
+            //   <CustomHeader value={value} handleFilter={this.handleFilter} />
+            // }
           />
           </Col>
           </Row>

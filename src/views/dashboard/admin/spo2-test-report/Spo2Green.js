@@ -102,7 +102,7 @@ function HemoglobinGreenTest() {
 },[])
 
 const fetchRecords = (page,size) => {
-  axios.post("http://localhost:3010/api/labtest/getBloodPressureGreenList" ,{
+  axios.post("http://localhost:3010/api/labtest/getSPO2GreenList" ,{
     "pageNo":page,
     "size":size,
     ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
@@ -151,9 +151,9 @@ const filterData = (data) =>
     const setBP =(hemoglobin)=>{
 
       if(hemoglobin<14 && hemoglobin>18){
-          return(<span style={{background:'#008000',padding:'4px',color:'white',borderRadius:'25px;'}}>Blood Pressure:{hemoglobin}</span>);
+          return(<span style={{background:'#008000',padding:'4px',color:'white',borderRadius:'25px;'}}>SPO2:{hemoglobin}</span>);
        }else{
-          return(<span style={{background:'#008000',padding:'4px',color:'white'}}>Blood Pressure:{hemoglobin}</span>);
+          return(<span style={{background:'#008000',padding:'4px',color:'white'}}>SPO2:{hemoglobin}</span>);
        }
   }
    const  getCitizenScreener=(_screenerId) =>{
@@ -363,7 +363,7 @@ const filterData = (data) =>
       <>
        <Row>
       <Col sm="12">
-      <CardTitle><b><h3>Blood Pressure Green Cases</h3></b> </CardTitle>
+      <CardTitle><b><h3>SPO2 Green Cases</h3></b> </CardTitle>
       </Col>          
       </Row>
     <Table columns={columns} dataSource={rows}
