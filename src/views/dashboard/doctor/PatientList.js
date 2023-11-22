@@ -50,8 +50,8 @@ function withParams(Component) {
 class PatientList extends React.Component {
 
   loadData(){
-    localStorage.removeItem("caseReport"); 
-    axios.post('http://localhost:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
+    // localStorage.removeItem("caseReport"); 
+    axios.post('https://javixlife.org:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
     .then(response => {  
          if(response.data.status===1){
              var msg=response.data.message;
@@ -68,7 +68,7 @@ class PatientList extends React.Component {
   }
 
   handleClick(_userid,_caseid,row) {
-    localStorage.removeItem("caseReport")  
+    // localStorage.removeItem("caseReport")  
     localStorage.setItem("citizenId",_userid);
     localStorage.setItem("caseId",_caseid);
     this.loadData();
@@ -220,8 +220,8 @@ loadRecs(recs)
 
 
 loadData(){
-  localStorage.removeItem("caseReport"); 
-  axios.post('http://localhost:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
+  // localStorage.removeItem("caseReport"); 
+  axios.post('https://javixlife.org:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
   .then(response => {  
        if(response.data.status===1){
            var msg=response.data.message;
@@ -255,7 +255,7 @@ componentDidMount() {
 		//this.setState({data:null});
     let scrId=localStorage.getItem("citizenId");
     console.log(scrId, '@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
-    axios.post('http://localhost:3010/api/screening/getCaseDetails?=', {token:'dfjkhsdfaksjfh3756237',citizenId:scrId,ngoId:localStorage.getItem("ngoId")})
+    axios.post('https://javixlife.org:3010/api/screening/getCaseDetails?=', {token:'dfjkhsdfaksjfh3756237',citizenId:scrId,ngoId:localStorage.getItem("ngoId")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

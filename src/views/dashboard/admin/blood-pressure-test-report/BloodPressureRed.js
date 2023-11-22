@@ -102,7 +102,7 @@ function HemoglobinRedTest() {
 },[])
 
 const fetchRecords = (page,size) => {
-  axios.post("http://localhost:3010/api/labtest/getBloodPressureRedList" ,{
+  axios.post("https://javixlife.org:3010/api/labtest/getBloodPressureRedList" ,{
     "pageNo":page,
     "size":size,
     ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")

@@ -129,7 +129,7 @@ loadRecs(recs)
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('http://localhost:3010/api/pharmacy/pharmacyList', {userId:'rahulpandeyjaiho@gmail.com',token:"dfjkhsdfaksjfh3756237", ngoId:localStorage.getItem("ngoId")})
+		  axios.post('https://javixlife.org:3010/api/pharmacy/pharmacyList', {userId:'rahulpandeyjaiho@gmail.com',token:"dfjkhsdfaksjfh3756237", ngoId:localStorage.getItem("ngoId")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

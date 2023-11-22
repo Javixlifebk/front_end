@@ -123,7 +123,7 @@ function WeeklyScreenerSevika() {
   }, [])
 
   const fetchRecords = (page, size) => {
-    axios.post("http://localhost:3010/api/generalsurvey/screenersevika", {
+    axios.post("https://javixlife.org:3010/api/generalsurvey/screenersevika", {
       "pageNo": page,
       "size": size,
       ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")

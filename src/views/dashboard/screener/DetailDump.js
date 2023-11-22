@@ -219,7 +219,7 @@ class JTable extends React.Component {
 
     getImage(imagUrl) {
         if (imagUrl === null || imagUrl === undefined || imagUrl === '') {
-            imagUrl = 'http://18.60.238.252:3010/profile/no-photo-male.jpg';
+            imagUrl = 'https://javixlife.org:3010/profile/no-photo-male.jpg';
         }
         return imagUrl;
     }
@@ -233,91 +233,91 @@ class JTable extends React.Component {
 
     // 14.02.2023
     getDailyScreeningScreener() {
-        axios.post('http://localhost:3010/api/report/ScreeningScreenerCsv', {
+        axios.post('https://javixlife.org:3010/api/report/ScreeningScreenerCsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-screeningScreener.csv")
+            window.open("https://javixlife.org:3010/exports/csv-screeningScreener.csv")
         }).catch(e => {});
     }
 
 
     getdailycitizenReport() {
-        axios.post('http://localhost:3010/api/report/createCitizenCsv', {
+        axios.post('https://javixlife.org:3010/api/report/createCitizenCsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-dailyCitizens.csv")
+            window.open("https://javixlife.org:3010/exports/csv-dailyCitizens.csv")
         }).catch(e => {});
     }
 
     getweekcitizenReport() {
-        axios.post('http://localhost:3010/api/report/createWeeklyCitizencsv', {
+        axios.post('https://javixlife.org:3010/api/report/createWeeklyCitizencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-weeklyCitizens.csv")
+            window.open("https://javixlife.org:3010/exports/csv-weeklyCitizens.csv")
         }).catch(e => {});
     }
 
     getdailycitizendetailReport() {
-        axios.post('http://localhost:3010/api/report/createCitizenDetailCsv', {
+        axios.post('https://javixlife.org:3010/api/report/createCitizenDetailCsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-dailyCitizenDetails.csv")
+            window.open("https://javixlife.org:3010/exports/csv-dailyCitizenDetails.csv")
         }).catch(e => {});
     }
 
     getweekcitizendetailReport() {
-        axios.post('http://localhost:3010/api/report/weeklyCitizenDetailcsv', {
+        axios.post('https://javixlife.org:3010/api/report/weeklyCitizenDetailcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-weeklyCitizenDetails.csv")
+            window.open("https://javixlife.org:3010/exports/csv-weeklyCitizenDetails.csv")
         }).catch(e => {});
     }
 
     getsevikaReport() {
-        axios.post('http://localhost:3010/api/report/ScreeningSevikaCsv', {
+        axios.post('https://javixlife.org:3010/api/report/ScreeningSevikaCsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-screeningSevika.csv")
+            window.open("https://javixlife.org:3010/exports/csv-screeningSevika.csv")
         }).catch(e => {});
     }
 
     getLipidCriticalCitizens() {
-        axios.post('http://localhost:3010/api/report/lipidCriticalCitizensDetailcsv', {
+        axios.post('https://javixlife.org:3010/api/report/lipidCriticalCitizensDetailcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-lipidCriticalCitizensDetail.csv")
+            window.open("https://javixlife.org:3010/exports/csv-lipidCriticalCitizensDetail.csv")
         }).catch(e => {});
     }
 
     getUnscreenedCitizenDetailcsv() {
-        axios.post('http://localhost:3010/api/report/unscreenedCitizenDetailcsv', {
+        axios.post('https://javixlife.org:3010/api/report/unscreenedCitizenDetailcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-unscreenedCitizenDetailcsv.csv")
+            window.open("https://javixlife.org:3010/exports/csv-unscreenedCitizenDetailcsv.csv")
         }).catch(e => {});
     }
 
     generalSurveyCSV() {
-        axios.post('http://localhost:3010/api/report/generalSurveyCSV', {
+        axios.post('https://javixlife.org:3010/api/report/generalSurveyCSV', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-generalSurveyCSV.csv")
+            window.open("https://javixlife.org:3010/exports/csv-generalSurveyCSV.csv")
         }).catch(e => {});
     }
 
     healthSurveyCSV() {
-        axios.post('http://localhost:3010/api/report/healthSurveyCSV', {
+        axios.post('https://javixlife.org:3010/api/report/healthSurveyCSV', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-healthSurveyCSV.csv")
+            window.open("https://javixlife.org:3010/exports/csv-healthSurveyCSV.csv")
         }).catch(e => {});
     }
 
     socioEconomicSurveyCSV() {
-        axios.post('http://localhost:3010/api/report/socioEconomicSurveyCSV', {
+        axios.post('https://javixlife.org:3010/api/report/socioEconomicSurveyCSV', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-socioEconomicSurveyCSV.csv")
+            window.open("https://javixlife.org:3010/exports/csv-socioEconomicSurveyCSV.csv")
         }).catch(e => {});
     }
     componentDidMount() {
@@ -442,7 +442,7 @@ class JTable extends React.Component {
                             }
                         }>
 
-                            {/* <center><h2>Daily Citizens <a href="http://18.60.238.252:3010/documents/dailyCitizens.csv" target="_blank">Download</a></h2> */}
+                            {/* <center><h2>Daily Citizens <a href="https://javixlife.org:3010/documents/dailyCitizens.csv" target="_blank">Download</a></h2> */}
                             <center>
                                 <h2>
                                     <a onClick={

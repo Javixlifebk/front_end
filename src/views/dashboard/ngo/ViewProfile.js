@@ -66,7 +66,7 @@ class Profile extends React.Component {
   }
   }
   getLogo(){
-    axios.post('http://localhost:3010/api/logo/getLogo',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
+    axios.post('https://javixlife.org:3010/api/logo/getLogo',{ ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")})
         .then(response => {
                        this.setState({response:response.data[0].client_logo})
                        console.log("=========",this.state.response);
@@ -78,7 +78,7 @@ class Profile extends React.Component {
 		this.mounted = true;
 		//this.setState({data:null});
         this.getLogo()
-		axios.post('http://localhost:3010/api/ngo/ngoById?=', { userId:localStorage.getItem("ngoId"), userId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
+		axios.post('https://javixlife.org:3010/api/ngo/ngoById?=', { userId:localStorage.getItem("ngoId"), userId:localStorage.getItem("userid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
       if(response.data.status===1){
           var recs=response.data.data.data;		
@@ -111,7 +111,7 @@ class Profile extends React.Component {
 
 getImage(){
   if(this.state.imagurl===''){
-    this.state.imagurl='http://18.60.238.252:3010/profile/no-photo-male.jpg';
+    this.state.imagurl='https://javixlife.org:3010/profile/no-photo-male.jpg';
   }
  return this.state.imagurl;
 }

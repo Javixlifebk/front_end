@@ -145,7 +145,7 @@ loadRecs(recs)
 //   if(window.confirm("Are you sure want to Unmapped Doctor !")){
 //   let postData="ngoId="+userId+"&ismapped=0&token=dfjkhsdfaksjfh3756237"; 
   
-//   let _targetPostURL="http://localhost:3010/api/doctor/updatemapped?=";
+//   let _targetPostURL="https://javixlife.org:3010/api/doctor/updatemapped?=";
 //   axios(
 //     {
 //       method: 'post',
@@ -171,7 +171,7 @@ loadRecs(recs)
 handleClick(doctorId, userId) {
 
   if(window.confirm("Are you sure want to Unmapped Doctor !")){
-  axios.post('http://localhost:3010/api/doctor/updatemapped?=', {doctorId:doctorId ,token:'dfjkhsdfaksjfh3756237',ismapped:true, ngoId:"0"})
+  axios.post('https://javixlife.org:3010/api/doctor/updatemapped?=', {doctorId:doctorId ,token:'dfjkhsdfaksjfh3756237',ismapped:true, ngoId:"0"})
   .then(res=>{
     console.log(doctorId, "doctorIddoctorId");
     console.log(userId, "ngoIdngoIdngoIdngoId");
@@ -195,7 +195,7 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('http://localhost:3010/api/doctor/mappedList', {ngoId: localStorage.getItem("userid"), token:'dfjkhsdfaksjfh3756237'})
+		axios.post('https://javixlife.org:3010/api/doctor/mappedList', {ngoId: localStorage.getItem("userid"), token:'dfjkhsdfaksjfh3756237'})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

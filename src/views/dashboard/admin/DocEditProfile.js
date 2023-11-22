@@ -112,7 +112,7 @@ onSignHandler=event=>{
 
 findDataById(){
   console.log("useridd",localStorage.getItem("userid"));
-  axios.post('http://localhost:3010/api/doctor/doctorListById',{"doctorLoginId":localStorage.getItem("userid")})
+  axios.post('https://javixlife.org:3010/api/doctor/doctorListById',{"doctorLoginId":localStorage.getItem("userid")})
   .then(response => {
     if(response){
       localStorage.setItem ('javixid',localStorage.getItem("userid"))
@@ -131,7 +131,7 @@ componentDidMount() {
 		// //this.setState({data:null});
         
       
-		//   axios.post('http://localhost:3010/api/doctor/doctorById?=', {userId:localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237'})
+		//   axios.post('https://javixlife.org:3010/api/doctor/doctorById?=', {userId:localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237'})
 		//  .then(response => {
     //       var recs=response.data.data.data;		
     //       this.setState({doctorId:recs[0].doctorId});
@@ -195,7 +195,7 @@ componentDidMount() {
           postData+="&district="+this.state.district+"&address="+this.state.addr+"&pincode="+this.state.pincode;   
           postData+="&medicalRegNo="+this.state.regno+"&statteMedicalCouncil="+this.state.medcouncil+"&yearOfReg="+this.state.regyear+"&experience="+this.state.experience;   
     
-      let _targetPostURL="http://localhost:3010/api/doctor/addprofile?=";
+      let _targetPostURL="https://javixlife.org:3010/api/doctor/addprofile?=";
       axios(
         {
           method: 'post',

@@ -23,8 +23,8 @@ class LoginJWT extends React.Component {
     let postData="email="+this.state.email+
                  "&password="+this.state.password+"";
                  
-    // let _targetPostURL="http://18.60.238.252:3010/?=";
-    let _targetPostURL="http://localhost:3010/api/auth/login?=";
+    // let _targetPostURL="https://javixlife.org:3010/?=";
+    let _targetPostURL="https://javixlife.org:3010/api/auth/login?=";
     axios(
       {
         method: 'post',
@@ -72,7 +72,7 @@ class LoginJWT extends React.Component {
                  axios(
                   {
                     method: 'post',
-                    url: 'http://localhost:3010/api/login/getjavixid?=',
+                    url: 'https://javixlife.org:3010/api/login/getjavixid?=',
                     data: 'roleId=' + _rolid + '&userid=' + _userid,
                     headers: {'Content-Type': 'application/x-www-form-urlencoded' }
                     }
@@ -107,7 +107,7 @@ class LoginJWT extends React.Component {
 
                                 /************  Resend OTP  ***********/
                                 let ipostData="email="+this.state.email+"";
-                                let _itargetPostURL="http://localhost:3010/api/auth/resend-verify-otp?=";
+                                let _itargetPostURL="https://javixlife.org:3010/api/auth/resend-verify-otp?=";
                                 axios(
                                   {
                                     method: 'post',
@@ -128,7 +128,7 @@ class LoginJWT extends React.Component {
     //this.props.loginWithJWT(this.state)
     //alert("Hello")
     
-    /*var URL="http://localhost:3010/api/auth/login"
+    /*var URL="https://javixlife.org:3010/api/auth/login"
     
     axios.get(URL, {headers:{'Access-Control-Allow-Origin': '*'}}).then(res=>{
       alert(res.data);

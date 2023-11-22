@@ -29,7 +29,7 @@ class Otp extends React.Component {
                     "&otp="+this.state.txtOtp+"";
 
                   
-                    let _targetPostURL="http://localhost:3010/api/auth/verify-otp?=";
+                    let _targetPostURL="https://javixlife.org:3010/api/auth/verify-otp?=";
                     axios(
                       {
                         method: 'post',
@@ -143,7 +143,7 @@ class Otp extends React.Component {
                   let postData="email="+localStorage.getItem("email")+""              
 
                 
-                  let _targetPostURL="http://localhost:3010/api/auth/resend-verify-otp?=";
+                  let _targetPostURL="https://javixlife.org:3010/api/auth/resend-verify-otp?=";
                   axios(
                     {
                       method: 'post',

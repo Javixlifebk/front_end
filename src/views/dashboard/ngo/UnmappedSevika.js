@@ -161,7 +161,7 @@ loadRecs(recs)
 //   if(window.confirm("Are you sure want to Mapped Sevika !")){
 //   let postData="screenerId="+screenerId+"&token=dfjkhsdfaksjfh3756237&ngoId=rakesh"; 
   
-//   let _targetPostURL="http://localhost:3010/api/ngo/updatescreenermap?=";
+//   let _targetPostURL="https://javixlife.org:3010/api/ngo/updatescreenermap?=";
 //   axios(
 //     {
 //       method: 'post',
@@ -198,7 +198,7 @@ handleClick(screenerId) {
     ngoId,
     ismapped: true
   };
-  const targetPostURL = "http://localhost:3010/api/ngo/updatescreenermap";
+  const targetPostURL = "https://javixlife.org:3010/api/ngo/updatescreenermap";
   axios.post(targetPostURL, postData, {
     headers: {
       'Content-Type': 'application/json' // Use application/json for JSON data
@@ -220,8 +220,8 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		//axios.post('http://localhost:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
-    axios.post('http://localhost:3010/api/ngo/sevikaunmappedlist', {token:'dfjkhsdfaksjfh3756237',issubscreener:1,ngoId:"0"})
+		//axios.post('https://javixlife.org:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
+    axios.post('https://javixlife.org:3010/api/ngo/sevikaunmappedlist', {token:'dfjkhsdfaksjfh3756237',issubscreener:1,ngoId:"0"})
 		 .then(response => {
 					if(response.data.status===1)
 					  {
