@@ -52,11 +52,11 @@ class PatientList extends React.Component {
      //alert(caseId)
 
      //RequestBody body = RequestBody.create(mediaType, "caseId=" + rec.caseid);
-     //String url="https://javixlife.org:3010/api/report/createCaseReport";
+     //String url="https://javixlife.org/api/report/createCaseReport";
 
      
      var _url="http://google.co.in";
-     /*axios.post('https://javixlife.org:3010/api/report/createCaseReport?=', { caseId:caseId,token:'dfjkhsdfaksjfh3756237' })
+     /*axios.post('https://javixlife.org/api/report/createCaseReport?=', { caseId:caseId,token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
         
 					if(response.data.status===1)
@@ -660,7 +660,7 @@ isNull(data,test_type,field_name){
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('https://javixlife.org:3010/api/screening/getEncounters?=', { citizenId:localStorage.getItem("citizenId"),ngoId:localStorage.getItem("ngoId"),token:'dfjkhsdfaksjfh3756237' })
+		  axios.post('https://javixlife.org/api/screening/getEncounters?=', { citizenId:localStorage.getItem("citizenId"),ngoId:localStorage.getItem("ngoId"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
 					if(response.data.status===1)
 					  {
@@ -672,7 +672,7 @@ componentDidMount() {
 
    
 
-     axios.post('https://javixlife.org:3010/api/report/createCaseReport?=', { caseId:localStorage.getItem("caseId"),token:'dfjkhsdfaksjfh3756237' })
+     axios.post('https://javixlife.org/api/report/createCaseReport?=', { caseId:localStorage.getItem("caseId"),token:'dfjkhsdfaksjfh3756237' })
     .then(response => {
        
          if(response.data.status===1)

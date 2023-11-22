@@ -98,7 +98,7 @@ loadRecs(recs)
  handleClick(_caseId)  {    
 
 
-  axios.post('https://javixlife.org:3010/api/report/createPrescriptionReport?=', { ngoId:localStorage.getItem("ngoId"),caseId:_caseId})
+  axios.post('https://javixlife.org/api/report/createPrescriptionReport?=', { ngoId:localStorage.getItem("ngoId"),caseId:_caseId})
   .then(response => {
        if(response.data.status===1)
          {
@@ -134,7 +134,7 @@ getSplit(_var){
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('https://javixlife.org:3010/api/doctor/prescriptionList?=', {citizenId:localStorage.getItem("citizenId"), ngoId:localStorage.getItem("ngoId")})
+		  axios.post('https://javixlife.org/api/doctor/prescriptionList?=', {citizenId:localStorage.getItem("citizenId"), ngoId:localStorage.getItem("ngoId")})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

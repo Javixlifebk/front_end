@@ -103,7 +103,7 @@ function ScreeningAllCase() {
 },[])
 
 const fetchRecords = (page,size) => {
-  axios.post("https://javixlife.org:3010/api/screening/screeningcasesList" ,{
+  axios.post("https://javixlife.org/api/screening/screeningcasesList" ,{
     "pageNo":page,
     "size":size,
     'userId':localStorage.getItem("userid"),

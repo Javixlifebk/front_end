@@ -10,7 +10,7 @@ class navigationConfig extends React.Component{
   getData() {   
     let postData="email="+ localStorage.getItem("_email");
   
-    let _targetPostURL="https://javixlife.org:3010/api/auth/mymenulist?=";
+    let _targetPostURL="https://javixlife.org/api/auth/mymenulist?=";
     axios(
       {
         method: 'post',

@@ -30,7 +30,7 @@ class RegisterJWT extends React.Component {
                   "&roleId=1"+
                   "&userName="+this.state.userName+"";
                   
-    let _targetPostURL="https://javixlife.org:3010/api/auth/register?=";
+    let _targetPostURL="https://javixlife.org/api/auth/register?=";
     axios(
       {
         method: 'post',

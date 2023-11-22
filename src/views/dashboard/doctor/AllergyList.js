@@ -98,7 +98,7 @@ loadRecs(recs)
  }
 
  handleClick(_userid) {    
-  axios.post('https://javixlife.org:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
+  axios.post('https://javixlife.org/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
 
   .then(response => {  
        if(response.data.status===1){
@@ -125,7 +125,7 @@ loadRecs(recs)
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
-		  axios.post('https://javixlife.org:3010/api/citizen/getHistoryAllergy?=', { citizenId:localStorage.getItem("citizenId")})
+		  axios.post('https://javixlife.org/api/citizen/getHistoryAllergy?=', { citizenId:localStorage.getItem("citizenId")})
 		 .then(response => {
 				  
 					if(response.data.status===1)
@@ -139,7 +139,7 @@ componentDidMount() {
      
     });
 
-  /*axios.post('https://javixlife.org:3010/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
+  /*axios.post('https://javixlife.org/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
   .then(response => {  
        if(response.data.status===1){
            var msg=response.data.message;

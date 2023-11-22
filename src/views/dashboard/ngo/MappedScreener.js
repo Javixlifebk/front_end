@@ -161,8 +161,8 @@ loadRecs(recs)
   if(window.confirm("Are you sure want to Unmapped Screener !")){
   // let postData="screenerId="+screenerId+"&ismapped=0&ngoId:0&token=dfjkhsdfaksjfh3756237"; 
   
-  // let _targetPostURL="https://javixlife.org:3010/api/ngo/updatescreenermap?=";
-  axios.post('https://javixlife.org:3010/api/ngo/updatescreenermap?=', {screenerId:screenerId ,token:'dfjkhsdfaksjfh3756237',ngoId:"0"})
+  // let _targetPostURL="https://javixlife.org/api/ngo/updatescreenermap?=";
+  axios.post('https://javixlife.org/api/ngo/updatescreenermap?=', {screenerId:screenerId ,token:'dfjkhsdfaksjfh3756237',ngoId:"0"})
   .then(res=>{
     if(res.data.status===1){
       //alert("Updated Successfully")
@@ -188,8 +188,8 @@ componentDidMount() {
 		//this.setState({data:null});
      console.log("id",localStorage.getItem("userid"))
     const userId=localStorage.getItem("userId")
-		//axios.post('https://javixlife.org:3010/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
-    axios.post('https://javixlife.org:3010/api/ngo/screenermappedlist', {ngoId:localStorage.getItem("userid") ,token:'dfjkhsdfaksjfh3756237',issubscreener:0})
+		//axios.post('https://javixlife.org/api/ngo/screenerList', { userId: '4632746328',ngoId:'0',token:'dfjkhsdfaksjfh3756237' })
+    axios.post('https://javixlife.org/api/ngo/screenermappedlist', {ngoId:localStorage.getItem("userid") ,token:'dfjkhsdfaksjfh3756237',issubscreener:0})
 		 .then(response => {
 				
 					if(response.data.status===1)

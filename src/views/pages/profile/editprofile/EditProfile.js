@@ -110,7 +110,7 @@ onSignHandler=event=>{
 // if(ngo){
  findDataById(){
   console.log("useridd",localStorage.getItem("userid"));
-  axios.post('https://javixlife.org:3010/api/ngo/ngoFindbyId',{ngoLoginId:localStorage.getItem("userid")})
+  axios.post('https://javixlife.org/api/ngo/ngoFindbyId',{ngoLoginId:localStorage.getItem("userid")})
   .then(response => {
     if(response){
       localStorage.setItem ('javixid',localStorage.getItem("userid"))
@@ -144,7 +144,7 @@ onSignHandler=event=>{
       // formData.append('image', this.state.image)
       formData.append('client_logo', this.state.client_logo)
       formData.append('ngoId', localStorage.getItem("userid"))
-      axios.post("https://javixlife.org:3010/api/logo/addbanner", formData, { 
+      axios.post("https://javixlife.org/api/logo/addbanner", formData, { 
         // receive two    parameter endpoint url ,form data
     })
 
@@ -157,7 +157,7 @@ onSignHandler=event=>{
           postData+="&district="+this.state.district+"&address="+this.state.addr;      
           
           
-      let _targetPostURL="https://javixlife.org:3010/api/ngo/addprofile?=";
+      let _targetPostURL="https://javixlife.org/api/ngo/addprofile?=";
       axios(
         {
           method: 'post',

@@ -244,7 +244,7 @@ componentDidMount() {
     }  else if(localStorage.getItem("roleId") == "1") {
       ngoId=localStorage.getItem("ngoId");
     }
-    axios.post('https://javixlife.org:3010/api/screening/getscreenercases?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId,ngoId:ngoId})
+    axios.post('https://javixlife.org/api/screening/getscreenercases?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId,ngoId:ngoId})
 		 .then(response => {
 					if(response.data.status===1)
 					  {

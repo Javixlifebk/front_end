@@ -57,7 +57,7 @@ class Profile extends React.Component {
     if(window.confirm("Do You Really Want to change Password !")===true){
 
     let postData="email=" + localStorage.getItem("doEmail");   
-    let _targetPostURL="https://javixlife.org:3010/api/auth/forgotpw?=";    
+    let _targetPostURL="https://javixlife.org/api/auth/forgotpw?=";    
     axios(
       {
         method: 'post',
@@ -109,7 +109,7 @@ class Profile extends React.Component {
 		//this.setState({data:null});
         
       
-		  axios.post('https://javixlife.org:3010/api/doctor/doctorById?=162480116265360010', {userId:localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237'})
+		  axios.post('https://javixlife.org/api/doctor/doctorById?=162480116265360010', {userId:localStorage.getItem("Docid"),token:'dfjkhsdfaksjfh3756237'})
 		 .then(response => {
           var recs=response.data.data.data;		
           this.setState({doctorId:recs[0].doctorId});

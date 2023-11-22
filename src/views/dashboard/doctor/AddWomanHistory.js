@@ -120,7 +120,7 @@ class AddWomanHistory extends React.Component {
           postData+="&ngoId="+localStorage.getItem("ngoId")
    
           
-      let _targetPostURL="https://javixlife.org:3010/api/citizen/addWomenHistory?=";
+      let _targetPostURL="https://javixlife.org/api/citizen/addWomenHistory?=";
       axios(
         {
           method: 'post',

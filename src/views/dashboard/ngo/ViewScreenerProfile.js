@@ -57,7 +57,7 @@ class Profile extends React.Component {
 		this.mounted = true;
 		//this.setState({data:null});
         
-		axios.post('https://javixlife.org:3010/api/ngo/screenerById?=', { screenerId:localStorage.getItem("Scrid"),token:'dfjkhsdfaksjfh3756237' })
+		axios.post('https://javixlife.org/api/ngo/screenerById?=', { screenerId:localStorage.getItem("Scrid"),token:'dfjkhsdfaksjfh3756237' })
 		 .then(response => {
         var recs=response.data.data.data;
 
@@ -89,7 +89,7 @@ class Profile extends React.Component {
  if(window.confirm("Do you want to map screener !")){
 
 
-  //https://javixlife.org:3010/api/ngo/screener/updateScreenerNgoId
+  //https://javixlife.org/api/ngo/screener/updateScreenerNgoId
   //alert('okay')
   //window.location='../../views/dashboard/screditprofile'
             let postData="screenerId="+localStorage.getItem("Scrid");
@@ -97,7 +97,7 @@ class Profile extends React.Component {
                 postData+="&token=dfjkhsdfaksjfh3756237";
                 
             
-          let _targetPostURL="https://javixlife.org:3010/api/ngo/screener/updateScreenerNgoId?=";
+          let _targetPostURL="https://javixlife.org/api/ngo/screener/updateScreenerNgoId?=";
           axios(
           {
           method: 'post',
@@ -126,7 +126,7 @@ class Profile extends React.Component {
 
   getImage(imagUrl){
     if(imagUrl===''){
-      imagUrl='https://javixlife.org:3010/profile/no-photo-male.jpg';
+      imagUrl='https://javixlife.org/profile/no-photo-male.jpg';
     }
    return imagUrl;
   }

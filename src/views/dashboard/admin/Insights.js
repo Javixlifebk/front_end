@@ -417,124 +417,124 @@ class AdminDashboard extends React.Component {
 
     getImage(imagUrl) {
         if (imagUrl === null || imagUrl === undefined || imagUrl === "") {
-            imagUrl = "https://javixlife.org:3010/profile/no-photo-male.jpg";
+            imagUrl = "https://javixlife.org/profile/no-photo-male.jpg";
         }
         return imagUrl;
     }
     getbpGreenReport() {
-        axios.post('https://javixlife.org:3010/api/report/createBPGreencsv', {
+        axios.post('https://javixlife.org/api/report/createBPGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-bpGreenReport.csv")
+            window.open("https://javixlife.org/exports/csv-bpGreenReport.csv")
         }).catch(e => {});
     }
     getbpAmberReport() {
-        axios.post('https://javixlife.org:3010/api/report/createBPAmbercsv', {
+        axios.post('https://javixlife.org/api/report/createBPAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-bpAmberReport.csv")
+            window.open("https://javixlife.org/exports/csv-bpAmberReport.csv")
         }).catch(e => {});
     }
     getbpRedReport() {
-        axios.post('https://javixlife.org:3010/api/report/createBPRedcsv', {
+        axios.post('https://javixlife.org/api/report/createBPRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-bpRedReport.csv")
+            window.open("https://javixlife.org/exports/csv-bpRedReport.csv")
         }).catch(e => {});
     }
 
     getbmiGreenReport() {
-        axios.post('https://javixlife.org:3010/api/report/createBmiGreencsv', {
+        axios.post('https://javixlife.org/api/report/createBmiGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-bmiGreenReport.csv")
+            window.open("https://javixlife.org/exports/csv-bmiGreenReport.csv")
         }).catch(e => {});
     }
     getbmiAmberReport() {
-        axios.post('https://javixlife.org:3010/api/report/createbmiAmbercsv', {
+        axios.post('https://javixlife.org/api/report/createbmiAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-bmiAmberReport.csv")
+            window.open("https://javixlife.org/exports/csv-bmiAmberReport.csv")
         }).catch(e => {});
     }
     getbmiRedReport() {
-        axios.post('https://javixlife.org:3010/api/report/createbmiRedcsv', {
+        axios.post('https://javixlife.org/api/report/createbmiRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-bmiRedReport.csv")
+            window.open("https://javixlife.org/exports/csv-bmiRedReport.csv")
         }).catch(e => {});
     }
 
     getspo2GreenReport() {
-        axios.post('https://javixlife.org:3010/api/report/createSpoGreencsv', {
+        axios.post('https://javixlife.org/api/report/createSpoGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-spo2GreenReport.csv")
+            window.open("https://javixlife.org/exports/csv-spo2GreenReport.csv")
         }).catch(e => {});
     }
     getspo2AmberReport() {
-        axios.post('https://javixlife.org:3010/api/report/createSpoAmbercsv', {
+        axios.post('https://javixlife.org/api/report/createSpoAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-spo2AmberReport.csv")
+            window.open("https://javixlife.org/exports/csv-spo2AmberReport.csv")
         }).catch(e => {});
     }
     getspo2RedReport() {
-        axios.post('https://javixlife.org:3010/api/report/createSpoRedcsv', {
+        axios.post('https://javixlife.org/api/report/createSpoRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-spo2RedReport.csv")
+            window.open("https://javixlife.org/exports/csv-spo2RedReport.csv")
         }).catch(e => {});
     }
 
 
     getPulseGreenReport() {
-        axios.post('https://javixlife.org:3010/api/report/createPulseGreencsv', {
+        axios.post('https://javixlife.org/api/report/createPulseGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-pulseGreenReport.csv")
+            window.open("https://javixlife.org/exports/csv-pulseGreenReport.csv")
         }).catch(e => {});
     }
     getPulseAmberReport() {
-        axios.post('https://javixlife.org:3010/api/report/createPulseAmbercsv', {
+        axios.post('https://javixlife.org/api/report/createPulseAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-PulseAmberReport.csv")
+            window.open("https://javixlife.org/exports/csv-PulseAmberReport.csv")
         }).catch(e => {});
     }
     getPulseRedReport() {
-        axios.post('https://javixlife.org:3010/api/report/createPulseRedcsv', {
+        axios.post('https://javixlife.org/api/report/createPulseRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-PulseRedReport.csv")
+            window.open("https://javixlife.org/exports/csv-PulseRedReport.csv")
         }).catch(e => {});
     }
     getTempGreenReport() {
-        axios.post('https://javixlife.org:3010/api/report/createTempGreencsv', {
+        axios.post('https://javixlife.org/api/report/createTempGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-temperatureGreenReport.csv")
+            window.open("https://javixlife.org/exports/csv-temperatureGreenReport.csv")
         }).catch(e => {});
     }
     getTempAmberReport() {
-        axios.post('https://javixlife.org:3010/api/report/createTempAmbercsv', {
+        axios.post('https://javixlife.org/api/report/createTempAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-temperatureAmberReport.csv")
+            window.open("https://javixlife.org/exports/csv-temperatureAmberReport.csv")
         }).catch(e => {});
     }
     getTempRedReport() {
-        axios.post('https://javixlife.org:3010/api/report/createTempRedcsv', {
+        axios.post('https://javixlife.org/api/report/createTempRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("https://javixlife.org:3010/exports/csv-temperatureRedReport.csv")
+            window.open("https://javixlife.org/exports/csv-temperatureRedReport.csv")
         }).catch(e => {});
     }
 
     componentDidMount() {
         this.mounted = true;
 
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_bp: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -549,7 +549,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org:3010/api/labtest/getBloodGlucoseTestCount", {
+        axios.post("https://javixlife.org/api/labtest/getBloodGlucoseTestCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             console.log("Checking......................................");
@@ -575,7 +575,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org:3010/api/labtest/getHemoglobinCount", {
+        axios.post("https://javixlife.org/api/labtest/getHemoglobinCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -613,7 +613,7 @@ class AdminDashboard extends React.Component {
 
         // Lipid Segment
 
-        axios.post("https://javixlife.org:3010/api/labtest/getCholestCount", {
+        axios.post("https://javixlife.org/api/labtest/getCholestCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -636,7 +636,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org:3010/api/labtest/gettriCount", {
+        axios.post("https://javixlife.org/api/labtest/gettriCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -658,7 +658,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("https://javixlife.org:3010/api/labtest/gethdlCount", {
+        axios.post("https://javixlife.org/api/labtest/gethdlCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -680,7 +680,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org:3010/api/labtest/getldlCount", {
+        axios.post("https://javixlife.org/api/labtest/getldlCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -707,7 +707,7 @@ class AdminDashboard extends React.Component {
         //     'Content-Type': "multipart/form-data"
 
         // }
-        axios.post("https://javixlife.org:3010/api/labtest/getREyeCount", {
+        axios.post("https://javixlife.org/api/labtest/getREyeCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
             if (response.data.status === 1) {
@@ -729,7 +729,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org:3010/api/labtest/getLEyeCount", {
+        axios.post("https://javixlife.org/api/labtest/getLEyeCount", {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
 
         }).then((response) => {
@@ -753,7 +753,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org:3010/api/ngo/screenerList?=", {
+        axios.post("https://javixlife.org/api/ngo/screenerList?=", {
             token: "dfjkhsdfaksjfh3756237",
             userId: localStorage.getItem("userid"),
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
@@ -766,7 +766,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_bp: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -780,7 +780,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_bp: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -797,7 +797,7 @@ class AdminDashboard extends React.Component {
 
         // SPO2
 
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_spo2: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -813,7 +813,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_spo2: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -828,7 +828,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_spo2: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -846,7 +846,7 @@ class AdminDashboard extends React.Component {
 
         // Temperature
 
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_temperature: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -862,7 +862,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_temperature: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -877,7 +877,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_temperature: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -895,7 +895,7 @@ class AdminDashboard extends React.Component {
 
         // Heart Rate
 
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_pulse: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -911,7 +911,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_pulse: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -926,7 +926,7 @@ class AdminDashboard extends React.Component {
                 this.state.notfound = 0;
             }
         });
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_pulse: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -942,7 +942,7 @@ class AdminDashboard extends React.Component {
             }
         });
 
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_bmi: "0",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -959,32 +959,32 @@ class AdminDashboard extends React.Component {
         });
 
         // ================daily reports===========
-        axios.get('https://javixlife.org:3010/documents/dailyScreeningScreener.csv').then(response => {
+        axios.get('https://javixlife.org/documents/dailyScreeningScreener.csv').then(response => {
 
             this.setState({tabledailyScreeningScreener: response.data});
 
         }).catch(e => {});
 
-        axios.get('https://javixlife.org:3010/documents/weeklyScreeningScreener.csv').then(response => {
+        axios.get('https://javixlife.org/documents/weeklyScreeningScreener.csv').then(response => {
 
             this.setState({tableweeklyScreeningScreener: response.data});
 
         }).catch(e => {});
 
-        axios.get('https://javixlife.org:3010/documents/dailyScreeningSevika.csv').then(response => {
+        axios.get('https://javixlife.org/documents/dailyScreeningSevika.csv').then(response => {
 
             this.setState({tabledailyScreeningSevika: response.data});
 
         }).catch(e => {});
 
-        axios.get('https://javixlife.org:3010/documents/weeklyScreeningSevika.csv').then(response => {
+        axios.get('https://javixlife.org/documents/weeklyScreeningSevika.csv').then(response => {
 
             this.setState({tableweeklyScreeningSevika: response.data});
 
         }).catch(e => {});
 
 
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_bmi: "1",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -1001,7 +1001,7 @@ class AdminDashboard extends React.Component {
         });
 
 
-        axios.post("https://javixlife.org:3010/api/screening/getCount", {
+        axios.post("https://javixlife.org/api/screening/getCount", {
             severity_bmi: "2",
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then((response) => {
@@ -1017,7 +1017,7 @@ class AdminDashboard extends React.Component {
             }
         });
         // =============================================================
-        // axios.post('https://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:0, ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
+        // axios.post('https://javixlife.org/api/labtest/getBloodGlucoseTestList', {severity:0, ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
         // .then(response => {
 
         //         console.dir("Data Length=" + response.data.data.data.length)
@@ -1037,7 +1037,7 @@ class AdminDashboard extends React.Component {
 
 
         // ======================================================
-        // axios.post('https://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', {severity:'1' , ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
+        // axios.post('https://javixlife.org/api/labtest/getBloodGlucoseTestList', {severity:'1' , ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")},{"headers" : headers})
         // .then(response => {
 
         //         console.dir("Data Length=" + response.data.data.data.length)
@@ -1059,7 +1059,7 @@ class AdminDashboard extends React.Component {
 
         // =========================================================================
 
-        // axios.post('https://javixlife.org:3010/api/labtest/getBloodGlucoseTestList', { severity:'2', ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid") },{"headers" : headers})
+        // axios.post('https://javixlife.org/api/labtest/getBloodGlucoseTestList', { severity:'2', ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid") },{"headers" : headers})
         // .then(response => {
 
         //         console.dir("Data Length=" + response.data.data.data.length)
@@ -1395,7 +1395,7 @@ class AdminDashboard extends React.Component {
                             </CardBody>
                             {/* Commnent BY Satish CSV */}
                             {/* <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/bpRed.csv"
+                                <a // href="https://javixlife.org/documents/bpRed.csv"
                                     onClick={
                                         this.getbpRedReport
                                 }>
@@ -1403,7 +1403,7 @@ class AdminDashboard extends React.Component {
                                     BP Red Cases{" "} </a>
                             </CardBody> 
                             <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/bpAmber.csv"
+                                <a // href="https://javixlife.org/documents/bpAmber.csv"
                                     onClick={
                                         this.getbpAmberReport
                                 }>
@@ -1411,7 +1411,7 @@ class AdminDashboard extends React.Component {
                                     BP Amber Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/bpGreen.csv"
+                                <a // href="https://javixlife.org/documents/bpGreen.csv"
                                     onClick={
                                         this.getbpGreenReport
                                 }>
@@ -1470,7 +1470,7 @@ class AdminDashboard extends React.Component {
                             {/* Commented by Satish 07.11.23 */}
                             {/*
                             <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/spo2Red.csv"
+                                <a // href="https://javixlife.org/documents/spo2Red.csv"
                                     onClick={
                                         this.getspo2RedReport
                                 }>
@@ -1478,7 +1478,7 @@ class AdminDashboard extends React.Component {
                                     SPO2 Red Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/spo2Amber.csv"
+                                <a // href="https://javixlife.org/documents/spo2Amber.csv"
                                     onClick={
                                         this.getspo2AmberReport
                                 }>
@@ -1486,7 +1486,7 @@ class AdminDashboard extends React.Component {
                                     SPO2 Amber Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/spo2Green.csv"
+                                <a // href="https://javixlife.org/documents/spo2Green.csv"
                                     onClick={
                                         this.getspo2GreenReport
                                 }>
@@ -1550,7 +1550,7 @@ class AdminDashboard extends React.Component {
                               {/* Comment By Satish */}
                             {/*
                             <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/temperatureRed.csv"
+                                <a // href="https://javixlife.org/documents/temperatureRed.csv"
                                     onClick={
                                         this.getTempRedReport
                                 }>
@@ -1558,7 +1558,7 @@ class AdminDashboard extends React.Component {
                                     TEMP Red Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/temperatureAmber.csv"
+                                <a // href="https://javixlife.org/documents/temperatureAmber.csv"
                                     onClick={
                                         this.getTempAmberReport
                                 }>
@@ -1566,7 +1566,7 @@ class AdminDashboard extends React.Component {
                                     TEMP Amber Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/temperatureGreen.csv"
+                                <a // href="https://javixlife.org/documents/temperatureGreen.csv"
                                     onClick={
                                         this.getTempGreenReport
                                 }>
@@ -1624,7 +1624,7 @@ class AdminDashboard extends React.Component {
                             </CardBody>
                             {/* Comment By Satish 07.11 */}
                             {/* <CardBody> 
-                                <a // href="https://javixlife.org:3010/documents/pulseRed.csv"
+                                <a // href="https://javixlife.org/documents/pulseRed.csv"
                                     onClick={
                                         this.getPulseRedReport
                                     }
@@ -1634,7 +1634,7 @@ class AdminDashboard extends React.Component {
                                     HEART RATE Red Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/pulseAmber.csv"
+                                <a // href="https://javixlife.org/documents/pulseAmber.csv"
                                     onClick={
                                         this.getPulseAmberReport
                                     }
@@ -1644,7 +1644,7 @@ class AdminDashboard extends React.Component {
                                     HEART RATE Amber Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/pulseGreen.csv"
+                                <a // href="https://javixlife.org/documents/pulseGreen.csv"
                                     onClick={
                                         this.getPulseGreenReport
                                 }>
@@ -1706,7 +1706,7 @@ class AdminDashboard extends React.Component {
                             {/* Comment By Satish 07.11 */}
                             {/* 
                             <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/bmiRed.csv"
+                                <a // href="https://javixlife.org/documents/bmiRed.csv"
                                     onClick={
                                         this.getbmiRedReport
                                 }>
@@ -1714,7 +1714,7 @@ class AdminDashboard extends React.Component {
                                     BMI Red Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/bmiAmber.csv"
+                                <a // href="https://javixlife.org/documents/bmiAmber.csv"
                                     onClick={
                                         this.getbmiAmberReport
                                 }>
@@ -1722,7 +1722,7 @@ class AdminDashboard extends React.Component {
                                     BMI Amber Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="https://javixlife.org:3010/documents/bmiGreen.csv"
+                                <a // href="https://javixlife.org/documents/bmiGreen.csv"
                                     onClick={
                                         this.getbmiGreenReport
                                 }>
@@ -2086,7 +2086,7 @@ class AdminDashboard extends React.Component {
               </CardHeader>
               <CardBody>
                 <a
-                  href="https://javixlife.org:3010/documents/dump.csv"
+                  href="https://javixlife.org/documents/dump.csv"
                   target="_blank"
                 >
                   General Survey
@@ -2094,7 +2094,7 @@ class AdminDashboard extends React.Component {
               </CardBody>
               <CardBody>
                 <a
-                  href="https://javixlife.org:3010/documents/dumpHealth.csv"
+                  href="https://javixlife.org/documents/dumpHealth.csv"
                   target="_blank"
                 >
                   Health Survey
@@ -2102,7 +2102,7 @@ class AdminDashboard extends React.Component {
               </CardBody>
               <CardBody>
                 <a
-                  href="https://javixlife.org:3010/documents/dumpSocio.csv"
+                  href="https://javixlife.org/documents/dumpSocio.csv"
                   target="_blank"
                 >
                   SocioEconomic Survey

@@ -102,7 +102,7 @@ function HemoglobinGreenTest() {
 },[])
 
 const fetchRecords = (page,size) => {
-  axios.post("https://javixlife.org:3010/api/labtest/getHemoglobinGreenList" ,{
+  axios.post("https://javixlife.org/api/labtest/getHemoglobinGreenList" ,{
     "pageNo":page,
     "size":size,
     ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")

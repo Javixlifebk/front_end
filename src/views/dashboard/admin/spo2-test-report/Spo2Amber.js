@@ -102,7 +102,7 @@ function HemoglobinAmberTest() {
 },[])
 
 const fetchRecords = (page,size) => {
-  axios.post("https://javixlife.org:3010/api/labtest/getSPO2AmberList" ,{
+  axios.post("https://javixlife.org/api/labtest/getSPO2AmberList" ,{
     "pageNo":page,
     "size":size,
     ngoId:(localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")

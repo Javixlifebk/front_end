@@ -34,7 +34,7 @@ class DataCount extends React.Component {
     //this.setState({data:null});
 
     axios
-      .post ('https://javixlife.org:3010/api/graph/getlist', {
+      .post ('https://javixlife.org/api/graph/getlist', {
         ngoId:localStorage.getItem("ngoId"),
         userId: localStorage.getItem ('userid'),
         token: 'dfjkhsdfaksjfh3756237',
@@ -79,7 +79,7 @@ class DataCount extends React.Component {
 //   this.mounted = true;
 //   //this.setState({data:null});
       
-//     axios.post('https://javixlife.org:3010/api/screening/getCaseDetails', { doctorId:localStorage.getItem("usermasid") })
+//     axios.post('https://javixlife.org/api/screening/getCaseDetails', { doctorId:localStorage.getItem("usermasid") })
 //    .then(response => {
 
 //          console.dir("Data Length=" + response.data.data.data.length)
@@ -99,7 +99,7 @@ class DataCount extends React.Component {
 //     }
 //   });
 
-//   axios.post('https://javixlife.org:3010/api/citizen/citizenRefercount')
+//   axios.post('https://javixlife.org/api/citizen/citizenRefercount')
 //   .then(response => {
 
 //         console.dir("Data Length=" + response.data.data)
@@ -119,7 +119,7 @@ class DataCount extends React.Component {
 //    }
 //  });
 
-//  axios.post('https://javixlife.org:3010/api/citizen/citizenPrescribeCount')
+//  axios.post('https://javixlife.org/api/citizen/citizenPrescribeCount')
 //   .then(response => {
 
         
