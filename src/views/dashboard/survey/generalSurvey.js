@@ -58,7 +58,7 @@ function GeneralSurvey() {
 //  },[]);
 
 // }
-// const urlexport="http://18.60.238.252:3010/exports/csv-generalsurvey.csv"
+// const urlexport="https://javixlife.org/exports/csv-generalsurvey.csv"
 // console.log("+++++++",selectedFilter)
 const setexportdata=()=>{
   // fetch('https://javixlife.org/api/generalsurvey/download',urlexport)
@@ -234,7 +234,7 @@ const setexportdata=()=>{
                     type="submit"
                     className="mr-1 mb-1"
                     onClick={()=>setexportdata()}
-                    href="http://18.60.238.252:3010/exports/csv-generalsurvey.csv"
+                    href="https://javixlife.org/exports/csv-generalsurvey.csv"
 
                   > Export
                   

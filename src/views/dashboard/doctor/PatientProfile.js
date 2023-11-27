@@ -93,7 +93,7 @@ class PatientProfile extends React.Component {
 
   getImage(imagUrl){
     if(imagUrl===''){
-      imagUrl='http://18.60.238.252:3010/profile/no-photo-male.jpg';
+      imagUrl='https://javixlife.org/profile/no-photo-male.jpg';
     }
   return imagUrl;
   }

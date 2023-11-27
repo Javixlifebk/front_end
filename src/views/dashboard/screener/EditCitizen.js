@@ -158,7 +158,7 @@ axios.post('https://javixlife.org/api/citizen/citizenById?=', { citizenId:localS
       const formData = new FormData(); 
       formData.append('profile', this.state.fileuploads);
       const citizenId = localStorage.getItem("citizenId"); 
-    //   axios.post("http://18.60.238.252:3010/upload/profile", formData, { 
+    //   axios.post("https://javixlife.org/upload/profile", formData, { 
     //     // receive two    parameter endpoint url ,form data
     // })
     axios.post(`https://javixlife.org/api/citizen/profile/${citizenId}`, formData, { 

@@ -161,7 +161,7 @@ class EditProfile extends React.Component {
       ).then(res=>{
 
         if(res.data.status===1){
-          alert('Past History Updated Successfully')
+          alert('Medical History Updated Successfully')
           window.location='/dashboard/patientview'
         }
       })
@@ -196,7 +196,7 @@ class EditProfile extends React.Component {
             className="modal-dialog-centered"
           >
              <ModalHeader toggle={this.toggleModal}>
-              Add Patient Past History
+              Add Patient Medical History
             </ModalHeader>
             <ModalBody >
         <Form action="/" onSubmit={this.handleSubmit}>         

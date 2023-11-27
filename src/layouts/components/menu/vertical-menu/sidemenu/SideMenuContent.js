@@ -165,7 +165,7 @@ class SideMenuContent extends React.Component {
             },
             {
               id: "actors",
-              title: "Add Actors",
+              title: "Add Users",
               type: "item",
               icon: <Icon.User size={16} />,
               navLink: "/dashboard/add-actors"
@@ -319,7 +319,7 @@ class SideMenuContent extends React.Component {
                 // },
                 {
                   id: "lipidusers",
-                  title: "Lipid Critical Citizens",
+                  title: "Patient List For Lipid Panel Test",
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],
@@ -350,7 +350,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://18.60.238.252:3010/documents/dump.csv"
+              // navLink: "https://javixlife.org/documents/dump.csv"
               navLink:"/dashboard/survey/generalSurvey"   
           
             },
@@ -361,7 +361,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://18.60.238.252:3010/documents/dumpHealth.csv"   
+              // navLink: "https://javixlife.org/documents/dumpHealth.csv"   
               navLink:"/dashboard/survey/HealthSurvey"               
           
             },
@@ -371,7 +371,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://18.60.238.252:3010/documents/dumpHealth.csv" 
+              // navLink: "https://javixlife.org/documents/dumpHealth.csv" 
               navLink: "/dashboard/survey/SocieconomicSurvey"              
           
             },
@@ -710,7 +710,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://18.60.238.252:3010/documents/dump.csv"
+              // navLink: "https://javixlife.org/documents/dump.csv"
               navLink:"/dashboard/survey/generalSurvey"   
           
             },
@@ -721,7 +721,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://18.60.238.252:3010/documents/dumpHealth.csv"   
+              // navLink: "https://javixlife.org/documents/dumpHealth.csv"   
               navLink:"/dashboard/survey/HealthSurvey"               
           
             },
@@ -731,7 +731,7 @@ class SideMenuContent extends React.Component {
               type: "item",
               target:"_blank",
               icon: <Icon.Activity size={16} />,
-              // navLink: "http://18.60.238.252:3010/documents/dumpHealth.csv" 
+              // navLink: "https://javixlife.org/documents/dumpHealth.csv" 
               navLink: "/dashboard/survey/SocieconomicSurvey"              
           
             },  
@@ -808,7 +808,7 @@ class SideMenuContent extends React.Component {
                 // },
                 {
                   id: "lipidusers",
-                  title: "Lipid Critical Citizens",
+                  title: "Patient List For Lipid Panel Test",
                   type: "item",
                   icon: <Icon.ArrowRight size={16} />,
                   permissions: ["admin", "editor"],

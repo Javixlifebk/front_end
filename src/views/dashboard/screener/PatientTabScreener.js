@@ -124,7 +124,7 @@ class PatientTabScreener extends React.Component {
                           this.toggle("5")
                         }}
                       >
-                        Past History
+                        Medical History
                       </NavLink>
                     </NavItem>
 

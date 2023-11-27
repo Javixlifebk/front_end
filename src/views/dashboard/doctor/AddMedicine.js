@@ -183,14 +183,16 @@ class AddMedicine extends React.Component {
         mydate="0"+myCurrentDate.getMonth()+1;
       }
       // get Deleted Rows Index and Remove Rows from; this.state
-      var delInds=window["getDeletedRowsIndex"];
-      if(delInds!=null && delInds.length>=1)
-      {
-        for(var i=0;i<delInds.length;i++)
-        {
-          var di=delInds[i]; // remo
-        }
-      }
+      // var delInds=window["getDeletedRowsIndex"];
+      
+      // if(delInds!=null && delInds.length>=1)
+      // {
+      //   for(var i=0;i<delInds.length;i++)
+      //   {
+      //     var di=delInds[i]; // remo
+      //     console.log(di, "Savitaaaaaaaaaaaaaaaaaaaaaaaa");
+      //   }
+      // }
       var finalMedecine=this.state.colsMedicine.join(",,,");
       var finalStrength=this.state.colsStrength.join(",,,");
       var finalSUnit=this.state.colsSUnit.join(",,,");
@@ -213,7 +215,7 @@ class AddMedicine extends React.Component {
           postData+="&caseId="+ localStorage.getItem("caseId")+"&status=3&medicine="+finalMedecine;
           postData+="&strength="+finalStrength+"&quantity="+finalQty+"&duaration="+finalDuration+ "&direction=" + finalDirection;
           postData+="&frequency="+finalFrequency+"&preparation="+finalPreparation+"&dose="+finalDosages;
-          postData+="&route="+finalRoute+"&tests="+this.state.strTests+"&comments="+this.state.strMdescription;
+          postData+="&route="+finalRoute+"&tests="+this.state.strTests+"&cause="+this.state.strCause+"&comments="+this.state.strMdescription;
           postData+="&ngoId="+localStorage.getItem("ngoId")
          
 
@@ -244,8 +246,44 @@ class AddMedicine extends React.Component {
     alert('Hello');
   } 
   
+  removeRow = index => {
+    this.setState(prevState => {
+      // Create copies of the arrays in the previous state
+      let colsMedicine = [...prevState.colsMedicine];
+      let colsStrength = [...prevState.colsStrength];
+      let colsSUnit = [...prevState.colsSUnit];
+      // ... Repeat for other arrays
+  
+      // Remove the element at the specified index
+      colsMedicine.splice(index, 1);
+      colsStrength.splice(index, 1);
+      colsSUnit.splice(index, 1);
+      // ... Repeat for other arrays
+  
+      // Return the updated state
+      return {
+        colsMedicine,
+        colsStrength,
+        colsSUnit,
+        // ... Repeat for other arrays
+      };
+    }, () => {
+      // This callback is called after the state has been updated
+      // Log the values after updating state
+      console.log('After State Remove:', this.state);
+    });
+  
+    // Clear the deleted rows array
+    window["getDeletedRowsIndex"]([]);
+  };
+  
+  
+
   addRow = e => {
     e.preventDefault() 
+     // Log the values before updating state
+  console.log('Before State Update:', this.state);
+
     this.setState({
       colsMedicine: [...this.state.colsMedicine, this.state.strMedicine]
       
@@ -293,13 +331,33 @@ class AddMedicine extends React.Component {
       colsQty: [...this.state.colsQty, this.state.strQty]
     })
   
+
+      // Log the values after updating state
+  console.log('After State Update:', this.state);
     /*this.setState({
      
     })*/
+
+  // Clear the input fields and dropdowns
+  this.setState({
+    strMedicine: '',
+    strStrength: '',
+    spnSUnit: 'Unit',
+    strDosage: '',
+    spnDUnit: 'Unit',
+    strPreparation: 'Preparation',
+    strRoute: 'Route',
+    strDirection: 'Direction',
+    strFrequency: 'Frequency',
+    strDuration: '',
+    strDrUnit: '',
+    strQty: '',
+  });
     //this.colsMedicine.push(this.strMedicine);
     //this.colsDosage.push(this.strDosage);
     window["addMedicine"](this.state);
   } 
+  
   render() {
     const mealType = [
       { value: "Meal Type", label: "Meal Type", color: "#00B8D9", isFixed: true },
@@ -322,7 +380,7 @@ class AddMedicine extends React.Component {
 
     const strSUnit=[
       { value: "Unit", label: "Unit", color: "#00B8D9", isFixed: true },
-
+      { value: "N/A", label: "N/A", color: "#00B8D9", isFixed: true },
       { value: "mg", label: "mg", color: "#00B8D9", isFixed: true },
       { value: "gm", label: "gm", color: "#00B8D9", isFixed: true },
       { value: "ng", label: "ng", color: "#00B8D9", isFixed: true },
@@ -334,7 +392,7 @@ class AddMedicine extends React.Component {
 
     const strDUnit=[
       { value: "Unit", label: "Unit", color: "#00B8D9", isFixed: true },
-
+      { value: "N/A", label: "N/A", color: "#00B8D9", isFixed: true },
       { value: "ml", label: "ml", color: "#00B8D9", isFixed: true },
       { value: "unit", label: "unit", color: "#00B8D9", isFixed: true },
       { value: "table spoon", label: "table spoon", color: "#00B8D9", isFixed: true },
@@ -343,7 +401,7 @@ class AddMedicine extends React.Component {
 
     const strDrUnit=[
       { value: "Unit", label: "Unit", color: "#00B8D9", isFixed: true },
-
+      { value: "N/A", label: "N/A", color: "#00B8D9", isFixed: true },
       { value: "hours", label: "hours", color: "#00B8D9", isFixed: true },
       { value: "days", label: "days", color: "#00B8D9", isFixed: true },
       { value: "tweeks", label: "weeks", color: "#00B8D9", isFixed: true },
@@ -352,11 +410,12 @@ class AddMedicine extends React.Component {
 
     const strPreparation=[
       { value: "Preparation", label: "Preparation", color: "#00B8D9", isFixed: true },
-   
+      { value: "N/A", label: "N/A", color: "#00B8D9", isFixed: true },
       { value: "Tablet", label: "Tablet", color: "#00B8D9", isFixed: true },
       { value: "Capsule", label: "Capsule", color: "#00B8D9", isFixed: true },
       { value: "Softgel", label: "Softgel", color: "#00B8D9", isFixed: true },
       { value: "Injection", label: "Injection", color: "#00B8D9", isFixed: true },
+      { value: "Syrup", label: "Syrup", color: "#00B8D9", isFixed: true },
       { value: "Drops", label: "Drops", color: "#00B8D9", isFixed: true }, 
       { value: "Ointment", label: "Ointment", color: "#00B8D9", isFixed: true },
       { value: "Suppository", label: "Suppository", color: "#00B8D9", isFixed: true }        
@@ -364,7 +423,7 @@ class AddMedicine extends React.Component {
 
     const stRoute=[
       { value: "Route", label: "Route", color: "#00B8D9", isFixed: true },
-
+      { value: "N/A", label: "N/A", color: "#00B8D9", isFixed: true },
       { value: "Topical", label: "Topical", color: "#00B8D9", isFixed: true },
       { value: "Oral", label: "Oral", color: "#00B8D9", isFixed: true },
       { value: "Rectal", label: "Rectal", color: "#00B8D9", isFixed: true },
@@ -392,7 +451,7 @@ class AddMedicine extends React.Component {
 
     const strFrequency=[
       { value: "Frequency", label: "Frequency", color: "#00B8D9", isFixed: true },
-  
+      { value: "N/A", label: "N/A", color: "#00B8D9", isFixed: true },
       { value: "If required", label: "If required", color: "#00B8D9", isFixed: true },
       { value: "Immediately", label: "Immediately", color: "#00B8D9", isFixed: true },
       { value: "Once a day", label: "Once a day", color: "#00B8D9", isFixed: true },
@@ -478,7 +537,8 @@ class AddMedicine extends React.Component {
                   classNamePrefix="Unit"
                   placeholder="Unit"             
                   onChange={e => this.setState({spnSUnit: e.value })}
-                  
+                  // value={{ value: this.state.spnSUnit, label: this.state.spnSUnit }}
+                  value={this.state.spnSUnit ? { value: this.state.spnSUnit, label: this.state.spnSUnit } : null}
               />
                 </FormGroup>
               </Col>
@@ -508,7 +568,8 @@ class AddMedicine extends React.Component {
                   classNamePrefix="Unit"
                   placeholder="Unit"               
                   onChange={e => this.setState({spnDUnit: e.value })}
-                  
+                  // value={{ value: this.state.spnDUnit, label: this.state.spnDUnit }}
+                  value={this.state.spnDUnit ? { value: this.state.spnDUnit, label: this.state.spnDUnit } : null}
               />
                 </FormGroup>
               </Col>
@@ -523,7 +584,8 @@ class AddMedicine extends React.Component {
                   classNamePrefix="Unit"
                   placeholder="Preparation"               
                   onChange={e => this.setState({strPreparation: e.value })}
-                  
+                  // value={{ value: this.state.strPreparation, label: this.state.strPreparation }}
+                  value={this.state.strPreparation ? { value: this.state.strPreparation, label: this.state.strPreparation } : null}
               />
                 </FormGroup>
               </Col>
@@ -536,7 +598,9 @@ class AddMedicine extends React.Component {
                   classNamePrefix="Unit"
                   placeholder="Route"               
                   onChange={e => this.setState({strRoute: e.value })}
-                  
+                  // value={{ value: this.state.strRoute, label: this.state.strRoute }}
+                  value={this.state.strRoute ? { value: this.state.strRoute, label: this.state.strRoute } : null}
+
               />
                 </FormGroup>
               </Col>
@@ -551,7 +615,8 @@ class AddMedicine extends React.Component {
                   classNamePrefix="Unit"
                   placeholder="Direction"               
                   onChange={e => this.setState({strDirection: e.value })}
-                  
+                  // value={{ value: this.state.strDirection, label: this.state.strDirection }}
+                  value={this.state.strDirection ? { value: this.state.strDirection, label: this.state.strDirection } : null}
               />
                 </FormGroup>
               </Col>
@@ -565,7 +630,8 @@ class AddMedicine extends React.Component {
                   classNamePrefix="Unit"
                   placeholder="Frequency"               
                   onChange={e => this.setState({strFrequency: e.value })}
-                  
+                  // value={{ value: this.state.strFrequency, label: this.state.strFrequency }}
+                  value={this.state.strFrequency ? { value: this.state.strFrequency, label: this.state.strFrequency } : null}
               />
                 </FormGroup>
               </Col>
@@ -595,7 +661,9 @@ class AddMedicine extends React.Component {
                   classNamePrefix="Unit"
                   placeholder="Unit"               
                   onChange={e => this.setState({strDrUnit: e.value })}
-                  
+                  // value={{ value: this.state.strDrUnit, label: this.state.strDrUnit }}
+                  value={this.state.strDrUnit ? { value: this.state.strDrUnit, label: this.state.strDrUnit } : null}
+
               />
                 </FormGroup>
               </Col>
@@ -625,7 +693,7 @@ class AddMedicine extends React.Component {
                           <th className="text-center">Action</th>
                         </tr>
                       </thead>
-                      <tbody id="tbody">
+                      <tbody id="tbody"   onClick={this.removeRow}>
                 
                       </tbody>
                     </table>
@@ -666,6 +734,22 @@ class AddMedicine extends React.Component {
                     placeholder="Add Tests"
                     value={this.state.strTests}
                     onChange={e => this.setState({ strTests: e.target.value })}
+                    
+                  />
+                </FormGroup>
+              </Col>
+
+              <Col sm="12">
+                <FormGroup>
+                  <Label for="cause">Add Cause</Label>
+                  <Input
+                    type="textarea"
+                    
+                    name="cause"
+                    id="cause"
+                    placeholder="Add Cause"
+                    value={this.state.strCause}
+                    onChange={e => this.setState({ strCause: e.target.value })}
                     
                   />
                 </FormGroup>

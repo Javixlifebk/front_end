@@ -124,7 +124,7 @@ componentDidMount(){
       var returnUrl="";
       const formData = new FormData(); 
       formData.append('profile', this.state.fileuploads)
-      axios.post("http://18.60.238.252:3010/upload/profile", formData, { 
+      axios.post("https://javixlife.org/upload/profile", formData, { 
         // receive two    parameter endpoint url ,form data
     })
     .then(res => {

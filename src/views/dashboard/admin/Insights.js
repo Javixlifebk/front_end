@@ -417,7 +417,7 @@ class AdminDashboard extends React.Component {
 
     getImage(imagUrl) {
         if (imagUrl === null || imagUrl === undefined || imagUrl === "") {
-            imagUrl = "http://18.60.238.252:3010/profile/no-photo-male.jpg";
+            imagUrl = "https://javixlife.org/profile/no-photo-male.jpg";
         }
         return imagUrl;
     }
@@ -425,21 +425,21 @@ class AdminDashboard extends React.Component {
         axios.post('https://javixlife.org/api/report/createBPGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-bpGreenReport.csv")
+            window.open("https://javixlife.org/exports/csv-bpGreenReport.csv")
         }).catch(e => {});
     }
     getbpAmberReport() {
         axios.post('https://javixlife.org/api/report/createBPAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-bpAmberReport.csv")
+            window.open("https://javixlife.org/exports/csv-bpAmberReport.csv")
         }).catch(e => {});
     }
     getbpRedReport() {
         axios.post('https://javixlife.org/api/report/createBPRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-bpRedReport.csv")
+            window.open("https://javixlife.org/exports/csv-bpRedReport.csv")
         }).catch(e => {});
     }
 
@@ -447,21 +447,21 @@ class AdminDashboard extends React.Component {
         axios.post('https://javixlife.org/api/report/createBmiGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-bmiGreenReport.csv")
+            window.open("https://javixlife.org/exports/csv-bmiGreenReport.csv")
         }).catch(e => {});
     }
     getbmiAmberReport() {
         axios.post('https://javixlife.org/api/report/createbmiAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-bmiAmberReport.csv")
+            window.open("https://javixlife.org/exports/csv-bmiAmberReport.csv")
         }).catch(e => {});
     }
     getbmiRedReport() {
         axios.post('https://javixlife.org/api/report/createbmiRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-bmiRedReport.csv")
+            window.open("https://javixlife.org/exports/csv-bmiRedReport.csv")
         }).catch(e => {});
     }
 
@@ -469,21 +469,21 @@ class AdminDashboard extends React.Component {
         axios.post('https://javixlife.org/api/report/createSpoGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-spo2GreenReport.csv")
+            window.open("https://javixlife.org/exports/csv-spo2GreenReport.csv")
         }).catch(e => {});
     }
     getspo2AmberReport() {
         axios.post('https://javixlife.org/api/report/createSpoAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-spo2AmberReport.csv")
+            window.open("https://javixlife.org/exports/csv-spo2AmberReport.csv")
         }).catch(e => {});
     }
     getspo2RedReport() {
         axios.post('https://javixlife.org/api/report/createSpoRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-spo2RedReport.csv")
+            window.open("https://javixlife.org/exports/csv-spo2RedReport.csv")
         }).catch(e => {});
     }
 
@@ -492,42 +492,42 @@ class AdminDashboard extends React.Component {
         axios.post('https://javixlife.org/api/report/createPulseGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-pulseGreenReport.csv")
+            window.open("https://javixlife.org/exports/csv-pulseGreenReport.csv")
         }).catch(e => {});
     }
     getPulseAmberReport() {
         axios.post('https://javixlife.org/api/report/createPulseAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-PulseAmberReport.csv")
+            window.open("https://javixlife.org/exports/csv-PulseAmberReport.csv")
         }).catch(e => {});
     }
     getPulseRedReport() {
         axios.post('https://javixlife.org/api/report/createPulseRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-PulseRedReport.csv")
+            window.open("https://javixlife.org/exports/csv-PulseRedReport.csv")
         }).catch(e => {});
     }
     getTempGreenReport() {
         axios.post('https://javixlife.org/api/report/createTempGreencsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-temperatureGreenReport.csv")
+            window.open("https://javixlife.org/exports/csv-temperatureGreenReport.csv")
         }).catch(e => {});
     }
     getTempAmberReport() {
         axios.post('https://javixlife.org/api/report/createTempAmbercsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-temperatureAmberReport.csv")
+            window.open("https://javixlife.org/exports/csv-temperatureAmberReport.csv")
         }).catch(e => {});
     }
     getTempRedReport() {
         axios.post('https://javixlife.org/api/report/createTempRedcsv', {
             ngoId: (localStorage.getItem("ngoId")) ? localStorage.getItem("ngoId") : localStorage.getItem("userid")
         }).then(response => {
-            window.open("http://18.60.238.252:3010/exports/csv-temperatureRedReport.csv")
+            window.open("https://javixlife.org/exports/csv-temperatureRedReport.csv")
         }).catch(e => {});
     }
 
@@ -959,25 +959,25 @@ class AdminDashboard extends React.Component {
         });
 
         // ================daily reports===========
-        axios.get('http://18.60.238.252:3010/documents/dailyScreeningScreener.csv').then(response => {
+        axios.get('https://javixlife.org/documents/dailyScreeningScreener.csv').then(response => {
 
             this.setState({tabledailyScreeningScreener: response.data});
 
         }).catch(e => {});
 
-        axios.get('http://18.60.238.252:3010/documents/weeklyScreeningScreener.csv').then(response => {
+        axios.get('https://javixlife.org/documents/weeklyScreeningScreener.csv').then(response => {
 
             this.setState({tableweeklyScreeningScreener: response.data});
 
         }).catch(e => {});
 
-        axios.get('http://18.60.238.252:3010/documents/dailyScreeningSevika.csv').then(response => {
+        axios.get('https://javixlife.org/documents/dailyScreeningSevika.csv').then(response => {
 
             this.setState({tabledailyScreeningSevika: response.data});
 
         }).catch(e => {});
 
-        axios.get('http://18.60.238.252:3010/documents/weeklyScreeningSevika.csv').then(response => {
+        axios.get('https://javixlife.org/documents/weeklyScreeningSevika.csv').then(response => {
 
             this.setState({tableweeklyScreeningSevika: response.data});
 
@@ -1394,7 +1394,7 @@ class AdminDashboard extends React.Component {
                                     height={300}/>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/bpRed.csv"
+                                <a // href="https://javixlife.org/documents/bpRed.csv"
                                     onClick={
                                         this.getbpRedReport
                                 }>
@@ -1402,7 +1402,7 @@ class AdminDashboard extends React.Component {
                                     BP Red Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/bpAmber.csv"
+                                <a // href="https://javixlife.org/documents/bpAmber.csv"
                                     onClick={
                                         this.getbpAmberReport
                                 }>
@@ -1410,7 +1410,7 @@ class AdminDashboard extends React.Component {
                                     BP Amber Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/bpGreen.csv"
+                                <a // href="https://javixlife.org/documents/bpGreen.csv"
                                     onClick={
                                         this.getbpGreenReport
                                 }>
@@ -1430,7 +1430,7 @@ class AdminDashboard extends React.Component {
                                     height={300}/>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/spo2Red.csv"
+                                <a // href="https://javixlife.org/documents/spo2Red.csv"
                                     onClick={
                                         this.getspo2RedReport
                                 }>
@@ -1438,7 +1438,7 @@ class AdminDashboard extends React.Component {
                                     SPO2 Red Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/spo2Amber.csv"
+                                <a // href="https://javixlife.org/documents/spo2Amber.csv"
                                     onClick={
                                         this.getspo2AmberReport
                                 }>
@@ -1446,7 +1446,7 @@ class AdminDashboard extends React.Component {
                                     SPO2 Amber Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/spo2Green.csv"
+                                <a // href="https://javixlife.org/documents/spo2Green.csv"
                                     onClick={
                                         this.getspo2GreenReport
                                 }>
@@ -1472,7 +1472,7 @@ class AdminDashboard extends React.Component {
                                     height={300}/>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/temperatureRed.csv"
+                                <a // href="https://javixlife.org/documents/temperatureRed.csv"
                                     onClick={
                                         this.getTempRedReport
                                 }>
@@ -1480,7 +1480,7 @@ class AdminDashboard extends React.Component {
                                     TEMP Red Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/temperatureAmber.csv"
+                                <a // href="https://javixlife.org/documents/temperatureAmber.csv"
                                     onClick={
                                         this.getTempAmberReport
                                 }>
@@ -1488,7 +1488,7 @@ class AdminDashboard extends React.Component {
                                     TEMP Amber Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/temperatureGreen.csv"
+                                <a // href="https://javixlife.org/documents/temperatureGreen.csv"
                                     onClick={
                                         this.getTempGreenReport
                                 }>
@@ -1508,7 +1508,7 @@ class AdminDashboard extends React.Component {
                                     height={300}/>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/pulseRed.csv"
+                                <a // href="https://javixlife.org/documents/pulseRed.csv"
                                     onClick={
                                         this.getPulseRedReport
                                     }
@@ -1518,7 +1518,7 @@ class AdminDashboard extends React.Component {
                                     HEART RATE Red Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/pulseAmber.csv"
+                                <a // href="https://javixlife.org/documents/pulseAmber.csv"
                                     onClick={
                                         this.getPulseAmberReport
                                     }
@@ -1528,7 +1528,7 @@ class AdminDashboard extends React.Component {
                                     HEART RATE Amber Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/pulseGreen.csv"
+                                <a // href="https://javixlife.org/documents/pulseGreen.csv"
                                     onClick={
                                         this.getPulseGreenReport
                                 }>
@@ -1554,7 +1554,7 @@ class AdminDashboard extends React.Component {
                                     height={300}/>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/bmiRed.csv"
+                                <a // href="https://javixlife.org/documents/bmiRed.csv"
                                     onClick={
                                         this.getbmiRedReport
                                 }>
@@ -1562,7 +1562,7 @@ class AdminDashboard extends React.Component {
                                     BMI Red Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/bmiAmber.csv"
+                                <a // href="https://javixlife.org/documents/bmiAmber.csv"
                                     onClick={
                                         this.getbmiAmberReport
                                 }>
@@ -1570,7 +1570,7 @@ class AdminDashboard extends React.Component {
                                     BMI Amber Cases{" "} </a>
                             </CardBody>
                             <CardBody>
-                                <a // href="http://18.60.238.252:3010/documents/bmiGreen.csv"
+                                <a // href="https://javixlife.org/documents/bmiGreen.csv"
                                     onClick={
                                         this.getbmiGreenReport
                                 }>
@@ -1899,7 +1899,7 @@ class AdminDashboard extends React.Component {
               </CardHeader>
               <CardBody>
                 <a
-                  href="http://18.60.238.252:3010/documents/dump.csv"
+                  href="https://javixlife.org/documents/dump.csv"
                   target="_blank"
                 >
                   General Survey
@@ -1907,7 +1907,7 @@ class AdminDashboard extends React.Component {
               </CardBody>
               <CardBody>
                 <a
-                  href="http://18.60.238.252:3010/documents/dumpHealth.csv"
+                  href="https://javixlife.org/documents/dumpHealth.csv"
                   target="_blank"
                 >
                   Health Survey
@@ -1915,7 +1915,7 @@ class AdminDashboard extends React.Component {
               </CardBody>
               <CardBody>
                 <a
-                  href="http://18.60.238.252:3010/documents/dumpSocio.csv"
+                  href="https://javixlife.org/documents/dumpSocio.csv"
                   target="_blank"
                 >
                   SocioEconomic Survey
@@ -1933,12 +1933,12 @@ class AdminDashboard extends React.Component {
                                     Daily and Weekly Reports
                                 </CardTitle>
                             </CardHeader>
-                            <Button className="bg-color"
+                            {/* <Button className="bg-color"
                                 onClick={
                                     () => this.getDumpPage()
                             }>
                                 {" "}
-                                Click to Access{" "} </Button>
+                                Click to Access{" "} </Button> */}
                         </Card>
                     </Col>
                 </Row>

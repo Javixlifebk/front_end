@@ -237,7 +237,7 @@ componentDidMount() {
         <Row>
           <Col lg="12" md="12"> </Col>
           <Col sm="12">
-          <CardTitle>Past History List</CardTitle>
+          <CardTitle>Medical History List</CardTitle>
           </Col>          
           </Row>
      

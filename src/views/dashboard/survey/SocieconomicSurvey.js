@@ -142,7 +142,7 @@ function SocieconomicSurvey() {
                     type="submit"
                     className="mr-1 mb-1"
                     onClick={()=>setexportdata()}
-                    href="http://18.60.238.252:3010/exports/csv-socioeconomicsurvey.csv"
+                    href="https://javixlife.org/exports/csv-socioeconomicsurvey.csv"
 
                   > Export
                   

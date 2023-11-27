@@ -23,7 +23,7 @@ class LoginJWT extends React.Component {
     let postData="email="+this.state.email+
                  "&password="+this.state.password+"";
                  
-    // let _targetPostURL="http://18.60.238.252:3010/?=";
+    // let _targetPostURL="https://javixlife.org/?=";
     let _targetPostURL="https://javixlife.org/api/auth/login?=";
     axios(
       {

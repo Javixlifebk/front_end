@@ -11,8 +11,10 @@ import {
 import DataTable from "react-data-table-component"
 import { Star, Search } from "react-feather"
 import axios from "axios";
+import pickImg from "../../../assets/img/icons/activate.png"
 import profileImg from "../../../assets/img/icons/viewprofile.png"
 const CustomHeader = props => {
+  
   return (
     <div className="d-flex flex-wrap justify-content-between">
     <div className="add-new">
@@ -108,14 +110,42 @@ class JTable extends React.Component {
       // },
       {
         name: "Date",
-        selector: "createdAt",
+        selector: "updatedAt",
         sortable: true,
         cell: row => (
-          <p className="text-bold-500 mb-0">{row.createdAt}</p>
+          <p className="text-bold-500 mb-0">{row.updatedAt}</p>
         )
       },
         
-   
+      {
+        name: "Action",
+        selector: "satus",
+        sortable: true,
+        cell: row => (
+          <div>
+            <span>
+          <img
+          src={profileImg}
+          alt="porfileImg"
+          onClick={() =>this.handleClick(row.citizenId)}
+          style={{width:"30px",cursor:"pointer"}}
+          className="img-fluid img-border rounded-circle box-shadow-1"
+        />
+        </span>
+        &nbsp;&nbsp;
+        <span>
+        <img
+          src={pickImg}
+          alt="profileImg"
+          onClick={() =>this.getCaseDetails(row.citizenId)}
+          style={{width:"30px",cursor:"pointer"}}
+          className="img-fluid img-border rounded-circle box-shadow-1"
+        />
+        </span>
+
+      </div>
+        )
+      }  
     ],
     data: [],
     filteredData: [],
@@ -132,7 +162,23 @@ loadRecs(recs)
 
  handleClick(_userid) {    
   localStorage.setItem("Scrid",_userid);
-  window.location='/dashboard/admin/screenerprofile'  
+  localStorage.setItem("citizenId",_userid);
+  // window.location='/dashboard/admin/screenerprofile'  
+  window.location='/dashboard/citizenprofile'  
+}
+
+getImage(imagUrl){
+  if(imagUrl===null || imagUrl===undefined || imagUrl==='' ){
+    imagUrl='https://javixlife.org/profile/no-photo-male.jpg';
+  }
+ return imagUrl;
+}
+
+getCaseDetails(citizenId){
+  localStorage.setItem("citizenId",citizenId);
+  console.log(localStorage.setItem("citizenId",citizenId), "savitah");
+  // alert(citizenId)
+  document.location=`/dashboard/doctor/patientlist`;  
 }
 
  handleBack() {    

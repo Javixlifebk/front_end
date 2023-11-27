@@ -111,7 +111,7 @@ class Profile extends React.Component {
 
 getImage(){
   if(this.state.imagurl===''){
-    this.state.imagurl='http://18.60.238.252:3010/profile/no-photo-male.jpg';
+    this.state.imagurl='https://javixlife.org/profile/no-photo-male.jpg';
   }
  return this.state.imagurl;
 }

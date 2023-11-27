@@ -162,7 +162,7 @@ async getOptions(){
       <Form onSubmit={this.handleRegister}>
       
         <FormGroup className="form-label-group">
-        <div style={{color:"#cd098e",fontWeight:"bold"}}>Actors Registration Form</div>
+        <div style={{color:"#cd098e",fontWeight:"bold"}}>Users Registration Form</div>
         </FormGroup>
         <FormGroup>
                                     
