@@ -1622,12 +1622,8 @@ class AdminDashboard extends React.Component {
                                     options={options}
                                     height={300}/>
                             </CardBody>
-<<<<<<< HEAD
-                            <CardBody>
-=======
                             {/* Comment By Satish 07.11 */}
                             {/* <CardBody> 
->>>>>>> e369decccd78b8d218f47cba150742c803665f0f
                                 <a // href="https://javixlife.org/documents/pulseRed.csv"
                                     onClick={
                                         this.getPulseRedReport
