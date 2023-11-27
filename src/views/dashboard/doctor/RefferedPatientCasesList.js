@@ -50,7 +50,7 @@ function withParams(Component) {
 class PatientList extends React.Component {
 
   loadData(){
-    localStorage.removeItem("caseReport"); 
+    // localStorage.removeItem("caseReport"); 
     axios.post('https://javixlife.org/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
     .then(response => {  
          if(response.data.status===1){
@@ -60,6 +60,7 @@ class PatientList extends React.Component {
               //this.state._myurl=response.data.data.data.filename;
               //localStorage.setItem("caseReport",response.data.data.data.filename);
                 this.state.imgUrl=response.data.data.data.filename;
+                localStorage.setItem("caseReport",this.state.imgUrl);
                console.dir("Drug Allery Report" + response.data.data.data.filename); 
              } 
            }
@@ -68,7 +69,7 @@ class PatientList extends React.Component {
   }
 
   handleClick(_userid,_caseid,row) {
-    localStorage.removeItem("caseReport")  
+    // localStorage.removeItem("caseReport")  
     localStorage.setItem("citizenId",_userid);
     localStorage.setItem("caseId",_caseid);
     this.loadData();
@@ -220,7 +221,7 @@ loadRecs(recs)
 
 
 loadData(){
-  localStorage.removeItem("caseReport"); 
+  // localStorage.removeItem("caseReport"); 
   axios.post('https://javixlife.org/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
   .then(response => {  
        if(response.data.status===1){

@@ -236,7 +236,14 @@ componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
     let scrId=localStorage.getItem("screenerId");
-    let ngoId=localStorage.getItem("userid");
+    let ngoId= '';
+    if(localStorage.getItem("roleId") =="91") {
+      ngoId=localStorage.getItem("ngoId");
+    } else if(localStorage.getItem("roleId") == "3") {
+      ngoId=localStorage.getItem("ngoId");
+    }  else if(localStorage.getItem("roleId") == "1") {
+      ngoId=localStorage.getItem("ngoId");
+    }
     axios.post('https://javixlife.org/api/screening/getscreenercases?', {token:'dfjkhsdfaksjfh3756237',screenerId:scrId,ngoId:ngoId})
 		 .then(response => {
 					if(response.data.status===1)

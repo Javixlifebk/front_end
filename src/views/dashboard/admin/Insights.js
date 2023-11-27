@@ -1393,14 +1393,15 @@ class AdminDashboard extends React.Component {
                                     options={options}
                                     height={300}/>
                             </CardBody>
-                            <CardBody>
+                            {/* Commnent BY Satish CSV */}
+                            {/* <CardBody>
                                 <a // href="https://javixlife.org/documents/bpRed.csv"
                                     onClick={
                                         this.getbpRedReport
                                 }>
                                     {" "}
                                     BP Red Cases{" "} </a>
-                            </CardBody>
+                            </CardBody> 
                             <CardBody>
                                 <a // href="https://javixlife.org/documents/bpAmber.csv"
                                     onClick={
@@ -1416,11 +1417,48 @@ class AdminDashboard extends React.Component {
                                 }>
                                     {" "}
                                     BP Green Cases{" "} </a>
+                            </CardBody>*/}
+                            {/* Commnent BY Satish CSV */}
+                            <CardBody>
+                                <a href="/dashboard/BloodPressureGreen"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    Blood Pressure Green Cases{" "} </a>
                             </CardBody>
+
+                            <CardBody>
+                                <a href="/dashboard/BloodPressureAmber"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    Blood Pressure Amber Cases{" "} </a>
+                            </CardBody>
+
+
+                            <CardBody>
+                                <a href="/dashboard/BloodPressureRed"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    Blood Pressure Red Cases{" "} </a>
+                            </CardBody>
+
+
                         </Card>
                     </Col>
                     <Col>
                         <Card>
+                             
                             <CardHeader>
                                 <CardTitle>SPO2</CardTitle>
                             </CardHeader>
@@ -1429,6 +1467,8 @@ class AdminDashboard extends React.Component {
                                     options={options}
                                     height={300}/>
                             </CardBody>
+                            {/* Commented by Satish 07.11.23 */}
+                            {/*
                             <CardBody>
                                 <a // href="https://javixlife.org/documents/spo2Red.csv"
                                     onClick={
@@ -1453,6 +1493,42 @@ class AdminDashboard extends React.Component {
                                     {" "}
                                     SPO2 Green Cases{" "} </a>
                             </CardBody>
+
+                            */}
+                            {/* Comment BY Satish CSV */}
+                            <CardBody>
+                                <a href="/dashboard/SPO2Green"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    SPO2 Green Cases{" "} </a>
+                            </CardBody>
+
+                            <CardBody>
+                                <a href="/dashboard/SPO2Amber"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    SPO2 Amber Cases{" "} </a>
+                            </CardBody>
+
+
+                            <CardBody>
+                                <a href="/dashboard/SPO2Red"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    SPO2 Red Cases{" "} </a>
+                            </CardBody>
                         </Card>
                     </Col>
                 </Row>
@@ -1463,7 +1539,7 @@ class AdminDashboard extends React.Component {
                 }>
                     <Col>
                         <Card>
-                            <CardHeader>
+                           <CardHeader>
                                 <CardTitle>Temperature</CardTitle>
                             </CardHeader>
                             <CardBody>
@@ -1471,6 +1547,8 @@ class AdminDashboard extends React.Component {
                                     options={options}
                                     height={300}/>
                             </CardBody>
+                              {/* Comment By Satish */}
+                            {/*
                             <CardBody>
                                 <a // href="https://javixlife.org/documents/temperatureRed.csv"
                                     onClick={
@@ -1495,6 +1573,43 @@ class AdminDashboard extends React.Component {
                                     {" "}
                                     TEMP Green Cases{" "} </a>
                             </CardBody>
+
+                            
+                            */}
+                            {/* Comment BY Satish CSV */}
+                            <CardBody>
+                                <a href="/dashboard/TEMPGreen"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    TEMP Green Cases{" "} </a>
+                            </CardBody>
+
+                            <CardBody>
+                                <a href="/dashboard/TEMPAmber"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    TEMP Amber Cases{" "} </a>
+                            </CardBody>
+
+
+                            <CardBody>
+                                <a href="/dashboard/TEMPRed"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    TEMP Red Cases{" "} </a>
+                            </CardBody>
                         </Card>
                     </Col>
                     <Col>
@@ -1507,7 +1622,12 @@ class AdminDashboard extends React.Component {
                                     options={options}
                                     height={300}/>
                             </CardBody>
+<<<<<<< HEAD
                             <CardBody>
+=======
+                            {/* Comment By Satish 07.11 */}
+                            {/* <CardBody> 
+>>>>>>> e369decccd78b8d218f47cba150742c803665f0f
                                 <a // href="https://javixlife.org/documents/pulseRed.csv"
                                     onClick={
                                         this.getPulseRedReport
@@ -1535,6 +1655,40 @@ class AdminDashboard extends React.Component {
                                     {" "}
                                     HEART RATE Green Cases{" "} </a>
                             </CardBody>
+                             {/* Comment BY Satish CSV */}
+                            <CardBody>
+                                <a href="/dashboard/HEARTRATEGreen"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    HEART RATE Green Cases{" "} </a>
+                            </CardBody>
+
+                            <CardBody>
+                                <a href="/dashboard/HEARTRATEAmber"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    HEART RATE Amber Cases{" "} </a>
+                            </CardBody>
+
+
+                            <CardBody>
+                                <a href="/dashboard/HEARTRATERed"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    HEART RATE Red Cases{" "} </a>
+                            </CardBody>
                         </Card>
                     </Col>
                 </Row>
@@ -1553,6 +1707,8 @@ class AdminDashboard extends React.Component {
                                     options={options}
                                     height={300}/>
                             </CardBody>
+                            {/* Comment By Satish 07.11 */}
+                            {/* 
                             <CardBody>
                                 <a // href="https://javixlife.org/documents/bmiRed.csv"
                                     onClick={
@@ -1576,6 +1732,41 @@ class AdminDashboard extends React.Component {
                                 }>
                                     {" "}
                                     BMI Green Cases{" "} </a>
+                            </CardBody>
+
+                              {/* Comment BY Satish CSV */}
+                            <CardBody>
+                                <a href="/dashboard/BMIGreen"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    BMI Green Cases{" "} </a>
+                            </CardBody>
+
+                            <CardBody>
+                                <a href="/dashboard/BMIAmber"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    BMI Amber Cases{" "} </a>
+                            </CardBody>
+
+
+                            <CardBody>
+                                <a href="/dashboard/BMIRed"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    BMI Red Cases{" "} </a>
                             </CardBody>
                         </Card>
                     </Col>
@@ -1924,6 +2115,8 @@ class AdminDashboard extends React.Component {
             </Card>
           </Col>
         </Row> */}
+
+        {/* Satish Commented */}
                 <Row>
                     <Col>
                         <Card>
@@ -1942,7 +2135,7 @@ class AdminDashboard extends React.Component {
                         </Card>
                     </Col>
                 </Row>
-
+        {/* Satish Commented */}
                 <Row>
                     <Col sm="12">
                         {/* <DataTable
