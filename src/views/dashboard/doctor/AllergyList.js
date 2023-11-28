@@ -124,8 +124,13 @@ loadRecs(recs)
 
 componentDidMount() {
 		this.mounted = true;
+    const citizenId = localStorage.getItem("citizenId");
+    console.log(citizenId, "citizen iddddd");
+
+    const ngoId =localStorage.getItem("ngoId");
+    console.log(ngoId, "citizen iddddd");
 		//this.setState({data:null});
-		  axios.post('https://javixlife.org/api/citizen/getHistoryAllergy?=', { citizenId:localStorage.getItem("citizenId")})
+		  axios.post('https://javixlife.org/api/citizen/getHistoryAllergy?=', {citizenId, ngoId})
 		 .then(response => {
 				  
 					if(response.data.status===1)
