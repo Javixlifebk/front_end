@@ -33,6 +33,7 @@ import DocumentList from "./DocumentList"
 import Encounter from "./Encounters"
 import MedicineList from "./MedicineList"
 import Modal from "../../../components/reactstrap/modal/Modal"
+import personImage from "../../../assets/img/person.jpg"
 
 
 import "../../../assets/scss/pages/authentication.scss"

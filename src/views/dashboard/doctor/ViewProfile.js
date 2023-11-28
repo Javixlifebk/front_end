@@ -4,7 +4,7 @@ import { Row, Col, Button, Spinner,Card, CardHeader, CardTitle, CardBody,FormGro
 import { MoreHorizontal, Facebook, Instagram, Twitter } from "react-feather"
 
 import Breadcrumbs from "../../../components/@vuexy/breadCrumbs/BreadCrumb"
-
+import personImage from "../../../assets/img/person.jpg"
 /*import ProfileHeader from "./ProfileHeader"
 import AboutCard from "./AboutCard"
 import SuggestedPages from "./SuggestedPages"
@@ -74,7 +74,11 @@ class Profile extends React.Component {
           this.setState({district:recs[0].info.district});
           this.setState({pincode:recs[0].info.pincode});
           this.setState({addr:recs[0].info.address});
-          this.setState({imageurl:recs[0].photo})
+          if(recs[0].photo) {
+            this.setState({imageurl:recs[0].photo})
+          } else {
+            this.setState({imageurl:personImage})
+          }
           this.setState({signature:recs[0].signature});
           
         }else{
@@ -108,12 +112,19 @@ class Profile extends React.Component {
               alt="porfileImg"
               className="img-fluid img-border rounded-circle box-shadow-1"
             />
-            <p>Signature</p>
-            <img
-              src={this.state.signature}
-              alt="porfileImg"
-              className="img-fluid img-border rounded-circle box-shadow-1"
-            />
+            {this.state.signature ?
+              <>
+                <p>Signature</p>
+                            
+                <img
+                  src={this.state.signature}
+                  alt="porfileImg"
+                  className="img-fluid img-border rounded-circle box-shadow-1"
+                />
+              </>
+              : ""
+
+            }
             </div>
             </Col> 
            
