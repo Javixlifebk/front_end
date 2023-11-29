@@ -246,36 +246,57 @@ class AddMedicine extends React.Component {
     alert('Hello');
   } 
   
+  // removeRow = index => {
+  //   this.setState(prevState => {
+  //     // Create copies of the arrays in the previous state
+  //     let colsMedicine = [...prevState.colsMedicine];
+  //     let colsStrength = [...prevState.colsStrength];
+  //     let colsSUnit = [...prevState.colsSUnit];
+  //     // ... Repeat for other arrays
+  
+  //     // Remove the element at the specified index
+  //     colsMedicine.splice(index, 1);
+  //     colsStrength.splice(index, 1);
+  //     colsSUnit.splice(index, 1);
+  //     // ... Repeat for other arrays
+  
+  //     // Return the updated state
+  //     return {
+  //       colsMedicine,
+  //       colsStrength,
+  //       colsSUnit,
+  //       // ... Repeat for other arrays
+  //     };
+  //   }, () => {
+  //     // This callback is called after the state has been updated
+  //     // Log the values after updating state
+  //     console.log('After State Remove:', this.state);
+  //   });
+  
+  //   // Clear the deleted rows array
+  //   window["getDeletedRowsIndex"]([]);
+  // };
+
   removeRow = index => {
     this.setState(prevState => {
-      // Create copies of the arrays in the previous state
-      let colsMedicine = [...prevState.colsMedicine];
-      let colsStrength = [...prevState.colsStrength];
-      let colsSUnit = [...prevState.colsSUnit];
+      const updatedMedicine = prevState.colsMedicine.filter((_, i) => i !== index);
+      const updatedStrength = prevState.colsStrength.filter((_, i) => i !== index);
+      const updatedSUnit = prevState.colsSUnit.filter((_, i) => i !== index);
       // ... Repeat for other arrays
   
-      // Remove the element at the specified index
-      colsMedicine.splice(index, 1);
-      colsStrength.splice(index, 1);
-      colsSUnit.splice(index, 1);
-      // ... Repeat for other arrays
-  
-      // Return the updated state
       return {
-        colsMedicine,
-        colsStrength,
-        colsSUnit,
+        colsMedicine: updatedMedicine,
+        colsStrength: updatedStrength,
+        colsSUnit: updatedSUnit,
         // ... Repeat for other arrays
       };
     }, () => {
-      // This callback is called after the state has been updated
-      // Log the values after updating state
       console.log('After State Remove:', this.state);
     });
   
-    // Clear the deleted rows array
-    window["getDeletedRowsIndex"]([]);
+    window.getDeletedRowsIndex([]); // Not sure what this does
   };
+  
   
   
 
