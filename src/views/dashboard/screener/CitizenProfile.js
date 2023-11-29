@@ -5,6 +5,7 @@ import { MoreHorizontal, Facebook, Instagram, Twitter } from "react-feather"
 
 import Breadcrumbs from "../../../components/@vuexy/breadCrumbs/BreadCrumb"
 import ProfileHeader from "./ProfileHeader"
+import personImage from "../../../assets/img/person.jpg"
 /*import ProfileHeader from "./ProfileHeader"
 import AboutCard from "./AboutCard"
 import SuggestedPages from "./SuggestedPages"
@@ -80,7 +81,12 @@ class CitizenProfile extends React.Component {
           this.setState({district:recs[0].info.district});
           this.setState({pincode:recs[0].info.pincode});
           this.setState({addr:recs[0].info.address});
-          this.setState({photo:recs[0].info.photo});
+          if(recs[0].info.photo) {
+            this.setState({photo:recs[0].info.photo})
+          } else {
+            this.setState({photo:personImage})
+          }
+          // this.setState({photo:recs[0].info.photo});
           this.setState({bgroup:recs[0].info.bloodGroup});
           
         }else{
@@ -106,12 +112,12 @@ class CitizenProfile extends React.Component {
   }
   }
 
-  getImage(imagUrl){
-    if(imagUrl !=="" || typeof imagUrl !== 'undefined' ){
-      return imagUrl;
-    }
-    return profileImg;
-  }
+  // getImage(imagUrl){
+  //   if(imagUrl !=="" || typeof imagUrl !== 'undefined' ){
+  //     return imagUrl;
+  //   }
+  //   return profileImg;
+  // }
   
   render() {
     return (
@@ -132,11 +138,11 @@ class CitizenProfile extends React.Component {
             <Col sm="4">
               <div>
               <img
-                src={this.state.photo}
-                alt="" 
-                className="img-fluid img-border rounded-circle box-shadow-1"
-              />
-              
+              src={this.state.photo}
+              alt="porfileImg"
+              className="img-fluid img-border rounded-circle box-shadow-1"
+              style={{width:'200px', height:'200px'}}
+            />
             </div>
             </Col> 
            

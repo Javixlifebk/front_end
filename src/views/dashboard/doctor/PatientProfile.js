@@ -4,6 +4,7 @@ import { Row, Col, Button, Spinner,Card, CardHeader, CardTitle, CardBody,FormGro
 import { MoreHorizontal, Facebook, Instagram, Twitter } from "react-feather"
 
 import Breadcrumbs from "../../../components/@vuexy/breadCrumbs/BreadCrumb"
+import personImage from "../../../assets/img/person.jpg"
 
 /*import ProfileHeader from "./ProfileHeader"
 import AboutCard from "./AboutCard"
@@ -78,7 +79,11 @@ class PatientProfile extends React.Component {
           this.setState({addr:recs[0].info.address});
           this.setState({pincode:recs[0].info.pincode});
           this.setState({bgroup:recs[0].info.bloodGroup});
-          this.setState({imageurl:recs[0].info.photo});
+          if(recs[0].info.photo) {
+            this.setState({imageurl:recs[0].info.photo});
+          } else {
+            this.setState({imageurl:personImage})
+          }
           
         }else{
         }
@@ -90,14 +95,6 @@ class PatientProfile extends React.Component {
       }
     });
 }
-
-  getImage(imagUrl){
-    if(imagUrl===''){
-      imagUrl='https://javixlife.org/profile/no-photo-male.jpg';
-    }
-  return imagUrl;
-  }
-
   handleSubmit = e => {
     e.preventDefault()
    
@@ -129,10 +126,11 @@ class PatientProfile extends React.Component {
             <Col sm="4">
               <div>
               <img
-                src={this.getImage(this.state.imageurl)}
-                alt="porfileImg"
-                className="img-fluid img-border rounded-circle box-shadow-1"
-              />
+              src={this.state.imageurl}
+              alt="porfileImg"
+              className="img-fluid img-border rounded-circle box-shadow-1"
+              style={{width:'200px', height:'200px'}}
+            />
               
             </div>
             </Col> 

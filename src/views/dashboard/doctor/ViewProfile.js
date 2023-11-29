@@ -4,7 +4,7 @@ import { Row, Col, Button, Spinner,Card, CardHeader, CardTitle, CardBody,FormGro
 import { MoreHorizontal, Facebook, Instagram, Twitter } from "react-feather"
 
 import Breadcrumbs from "../../../components/@vuexy/breadCrumbs/BreadCrumb"
-
+import personImage from "../../../assets/img/person.jpg"
 /*import ProfileHeader from "./ProfileHeader"
 import AboutCard from "./AboutCard"
 import SuggestedPages from "./SuggestedPages"
@@ -60,31 +60,26 @@ class Profile extends React.Component {
 		 .then(response => {
       if(response.data.status===1){
           var recs=response.data.data.data;		
-          const user = recs[0];
-
-          if (user) {
-            this.setState((prevState) => ({
-              doctorId: user.doctorId,
-              fname: user.firstName,
-              lname: user.lastName,
-              gender: user.sex,
-              email: user.email,
-              mobile: user.mobile,
-              dob: user.info.dateOfBirth,
-              specialization: user.info.specialisation,
-              qualification: user.info.qualification,
-              country: user.info.country,
-              mstate: user.info.state,
-              district: user.info.district,
-              pincode: user.info.pincode,
-              addr: user.info.address,
-              imageurl: user.photo || 'https://javixlife.org/profile/no-photo-male.jpg',
-              signature: user.signature || 'https://javixlife.org/profile/no-photo-male.jpg',
-            }));
+          this.setState({doctorId:recs[0].doctorId});
+          this.setState({fname:recs[0].firstName});
+          this.setState({lname:recs[0].lastName});
+          this.setState({gender:recs[0].sex});
+          this.setState({email:recs[0].email});
+          this.setState({mobile:recs[0].mobile});
+          this.setState({dob:recs[0].info.dateOfBirth});
+          this.setState({specialization:recs[0].info.specialisation});
+          this.setState({qualification:recs[0].info.qualification});
+          this.setState({country:recs[0].info.country});
+          this.setState({mstate:recs[0].info.state});
+          this.setState({district:recs[0].info.district});
+          this.setState({pincode:recs[0].info.pincode});
+          this.setState({addr:recs[0].info.address});
+          if(recs[0].info.photo) {
+            this.setState({imageurl:recs[0].info.photo})
           } else {
-            this.setState({ notfound: 0 });
+            this.setState({imageurl:personImage})
           }
-  
+          this.setState({signature:recs[0].signature});
           
         }else{
         }
@@ -97,19 +92,7 @@ class Profile extends React.Component {
     });
 } 
 
-getImage() {
-  if (this.state.imageurl === "") {
-    this.setState({ imageurl: 'https://javixlife.org/profile/no-photo-male.jpg' });
-  }
-  return this.state.imageurl;
-}
 
-getImageSg() {
-  if (this.state.signature === "") {
-    this.setState({ signature: 'https://javixlife.org/profile/no-photo-male.jpg' });
-  }
-  return this.state.signature;
-}
 
   render() {
     return (
@@ -123,35 +106,28 @@ getImageSg() {
         <CardBody>
         <Row><Col sm="12" style={{textAlign:"center",color:"red"}}>{this.state.notfound===0?"Not Found Records Found, Edit Profile !":""}</Col></Row>
         <Row>
-            <Col sm="4">
-
-            <div>
-  <img
-    src={this.getImage()}
-    alt="profileImg"
-    className="img-fluid img-border rounded-circle box-shadow-1"
-  />
-</div>
-<div>
-  <img
-    src={this.getImageSg()}
-    alt="profileImg"
-    className="img-fluid img-border rounded-circle box-shadow-1"
-  />
-</div>
-              {/* <div>
+            <Col sm="4">          
+               <div>
             <img
               src={this.state.imageurl}
               alt="porfileImg"
               className="img-fluid img-border rounded-circle box-shadow-1"
+              style={{width:'200px', height:'200px'}}
             />
-            <p>Signature</p>
-            <img
-              src={this.state.signature}
-              alt="porfileImg"
-              className="img-fluid img-border rounded-circle box-shadow-1"
-            />
-            </div> */}
+            {this.state.signature ?
+              <>
+                <p>Signature</p>
+                            
+                <img
+                  src={this.state.signature}
+                  alt="porfileImg"
+                  className="img-fluid img-border rounded-circle box-shadow-1"
+                />
+              </>
+              : ""
+
+            }
+            </div>
             </Col> 
            
             <Col sm="8">

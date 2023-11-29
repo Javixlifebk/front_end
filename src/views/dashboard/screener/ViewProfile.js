@@ -5,6 +5,7 @@ import { MoreHorizontal, Facebook, Instagram, Twitter } from "react-feather"
 
 import Breadcrumbs from "../../../components/@vuexy/breadCrumbs/BreadCrumb"
 import ProfileHeader from "./ProfileHeader"
+import personImage from "../../../assets/img/person.jpg"
 /*import ProfileHeader from "./ProfileHeader"
 import AboutCard from "./AboutCard"
 import SuggestedPages from "./SuggestedPages"
@@ -77,7 +78,12 @@ class Profile extends React.Component {
           this.setState({district:recs[0].info.district});
           this.setState({addr:recs[0].info.address});
           this.setState({pincode:recs[0].info.pincode});
-          this.setState({photo:recs[0].info.photo});
+          if(recs[0].photo) {
+            this.setState({photo:recs[0].photo})
+          } else {
+            this.setState({photo:personImage})
+          }
+          // this.setState({photo:recs[0].info.photo});
           
         }else{
         }
@@ -101,13 +107,6 @@ class Profile extends React.Component {
   window.location='/dashboard/screditprofile'
   }
   }
-
-  getImage(imagUrl){
-    if(imagUrl===''){
-      imagUrl='https://javixlife.org/profile/no-photo-male.jpg';
-    }
-   return imagUrl;
-  }
   render() {
     return (
       <React.Fragment>
@@ -126,12 +125,12 @@ class Profile extends React.Component {
         <Row>
             <Col sm="4">
               <div>
-              <img
-                src={this.getImage(this.state.photo)}
-                alt="porfileImg"
-                className="img-fluid img-border rounded-circle box-shadow-1"
-              />
-              
+               <img
+              src={this.state.photo}
+              alt="porfileImg"
+              className="img-fluid img-border rounded-circle box-shadow-1"
+              style={{width:'200px', height:'200px'}}
+            />
             </div>
             </Col> 
            
