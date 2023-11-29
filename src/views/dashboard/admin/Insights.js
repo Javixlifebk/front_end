@@ -2119,7 +2119,7 @@ class AdminDashboard extends React.Component {
                             <CardHeader>
                                 <CardTitle className="col d-flex justify-content-center">
                                     {" "}
-                                    Daily and Weekly Reports
+                                    Sevika and Srceener Report
                                 </CardTitle>
                             </CardHeader>
                             {/* <Button className="bg-color"
