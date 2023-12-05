@@ -1578,7 +1578,7 @@ class AdminDashboard extends React.Component {
                             */}
                             {/* Comment BY Satish CSV */}
                             <CardBody>
-                                <a href="/dashboard/TEMPGreen"
+                                <a href="/dashboard/TempratureGreen"
                                     // onClick={() =>this.getCaseDetails("green")}
                                     // target="_blank"
                                     style={
@@ -1589,7 +1589,7 @@ class AdminDashboard extends React.Component {
                             </CardBody>
 
                             <CardBody>
-                                <a href="/dashboard/TEMPAmber"
+                                <a href="/dashboard/TempratureAmber"
                                     // onClick={() =>this.getCaseDetails("green")}
                                     // target="_blank"
                                     style={
@@ -1601,7 +1601,7 @@ class AdminDashboard extends React.Component {
 
 
                             <CardBody>
-                                <a href="/dashboard/TEMPRed"
+                                <a href="/dashboard/TempratureRed"
                                     // onClick={() =>this.getCaseDetails("green")}
                                     // target="_blank"
                                     style={
