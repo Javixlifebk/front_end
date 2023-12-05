@@ -148,12 +148,11 @@ const filterData = (data) =>
       clearFilters();
       setSearchText('');
     };
+    
     const setBP=(bpsys,bpdia)=>{
+          return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>BP Sys:{bpsys} | BP Dia:{bpdia}</span>);
+    }
 
- 
-          return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>Blood Pressure Sys:{bpsys} | Blood Pressure Dia:{bpdia}</span>);
-       
-  }
    const  getCitizenScreener=(_screenerId) =>{
         localStorage.setItem("_screenerId", _screenerId);
         document.location = "/dashboard/citizenlist1";
@@ -344,12 +343,7 @@ const filterData = (data) =>
             <div>     
                                    
             <p className="text-bold-500 mb-0">
-            {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
             <span style={{margin:'20px;',padding:'4px;'}}>{setBP(record.bpsys,record.bpdia)}</span>&nbsp;&nbsp;
-            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
-            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
-            {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
-            
             </p>
             </div>
           ),
