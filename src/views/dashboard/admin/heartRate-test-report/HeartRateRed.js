@@ -148,13 +148,10 @@ const filterData = (data) =>
       clearFilters();
       setSearchText('');
     };
-    const setBP=(hemoglobin)=>{
+    const setBP=(pulse)=>{
 
-      if(hemoglobin>17 &&  hemoglobin<12 ){
-              return(<span style={{background:'red',padding:'4px',color:'white'}}>Heartrate:{hemoglobin}</span>);
-           }else{
-          return(<span style={{background:'red',padding:'4px',color:'white'}}>Heartrate:{hemoglobin}</span>);
-       }
+     
+          return(<span style={{background:'red',padding:'4px',color:'white'}}>Heartrate:{pulse}</span>);
   }
    const  getCitizenScreener=(_screenerId) =>{
         localStorage.setItem("_screenerId", _screenerId);
@@ -348,11 +345,7 @@ const filterData = (data) =>
           <div>     
                                  
           <p className="text-bold-500 mb-0">
-          {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
-          <span style={{margin:'20px;',padding:'4px;'}}>{setBP(record.hemoglobin)}</span>&nbsp;&nbsp;
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
+          <span style={{margin:'20px;',padding:'4px;'}}>{setBP(record.pulse)}</span>&nbsp;&nbsp;
           
           </p>
           </div>
