@@ -2010,6 +2010,35 @@ class AdminDashboard extends React.Component {
                                     options={options}
                                     height={300}/>
                             </CardBody>
+
+                            <CardBody>
+                                <a href="/dashboard/RightEyeTestGreen"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    Right Eye Green Cases{" "} </a>
+                            </CardBody>
+                            <CardBody>
+                                <a href="/dashboard/RightEyeTestRed"
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    Right Eye Red Cases{" "} </a>
+                            </CardBody>
+                            <CardBody>
+                                <a href="/dashboard/RightEyeTestAmber"
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    Right Eye Amber Cases{" "} </a>
+                            </CardBody>
                         </Card>
                     </Col>
                 </Row>
@@ -2027,6 +2056,35 @@ class AdminDashboard extends React.Component {
                                 <Pie data={data_leye}
                                     options={options}
                                     height={300}/>
+                            </CardBody>
+
+                            <CardBody>
+                                <a href="/dashboard/LeftEyeTestGreen"
+                                    // onClick={() =>this.getCaseDetails("green")}
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    Left Eye Green Cases{" "} </a>
+                            </CardBody>
+                            <CardBody>
+                                <a href="/dashboard/LeftEyeTestRed"
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    Left Eye Red Cases{" "} </a>
+                            </CardBody>
+                            <CardBody>
+                                <a href="/dashboard/LeftEyeTestAmber"
+                                    // target="_blank"
+                                    style={
+                                        {color: "blue"}
+                                }>
+                                    {" "}
+                                    Left Eye Amber Cases{" "} </a>
                             </CardBody>
                         </Card>
                     </Col>

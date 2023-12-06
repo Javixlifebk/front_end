@@ -182,6 +182,26 @@ const hemoglobinRed = lazy(() =>
   import("../../views/dashboard/admin/hemoglobin-test-report/HemoglobinRedTest")
 )
 
+const RightEyeTestGreen = lazy(() =>
+  import("../../views/dashboard/admin/right-eye-test-report/RightEyeTestGreenTest")
+)
+const RightEyeTestAmber = lazy(() =>
+  import("../../views/dashboard/admin/right-eye-test-report/RightEyeTestAmberTest")
+)
+const RightEyeTestRed = lazy(() =>
+  import("../../views/dashboard/admin/right-eye-test-report/RightEyeTestRedTest")
+)
+
+const LeftEyeTestGreen = lazy(() =>
+  import("../../views/dashboard/admin/left-eye-test-report/LeftEyeTestGreenTest")
+)
+const LeftEyeTestAmber = lazy(() =>
+  import("../../views/dashboard/admin/left-eye-test-report/LeftEyeTestAmberTest")
+)
+const LeftEyeTestRed = lazy(() =>
+  import("../../views/dashboard/admin/left-eye-test-report/LeftEyeTestRedTest")
+)
+
 
 const ldlLipidPanelRed = lazy(() =>
   import("../../views/dashboard/admin/lipid-test-report/LipidPanelLdlRed")
@@ -637,6 +657,14 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/HemoglobinGreen" component={hemoglobinGreen} />
               <AppRoute exact path="/dashboard/HemoglobinAmber" component={hemoglobinAmber} />
               <AppRoute exact path="/dashboard/HemoglobinRed" component={hemoglobinRed} />
+
+              <AppRoute exact path="/dashboaRightEyeTestGreen" component={RightEyeTestGreen} />
+              <AppRoute exact path="/dashboaRightEyeTestRed" component={RightEyeTestRed} />
+              <AppRoute exact path="/dashboaRightEyeTestAmber" component={RightEyeTestAmber} />
+
+              <AppRoute exact path="/dashboaLeftEyeTestGreen" component={LeftEyeTestGreen} />
+              <AppRoute exact path="/dashboaLeftEyeTestRed" component={LeftEyeTestRed} />
+              <AppRoute exact path="/dashboaLeftEyeTestAmber" component={LeftEyeTestAmber} />
 
 
               <AppRoute exact path="/dashboard/LipidPanelLdlGreen" component={ldlLipidPanelGreen} />
