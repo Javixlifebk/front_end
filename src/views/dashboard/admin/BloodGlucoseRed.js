@@ -113,7 +113,7 @@ const filterData = (data) =>
     const setBP=(bloodglucose)=>{
       return(<span style={{background:'red',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
     }
-  }
+  
    const  getCitizenScreener=(_screenerId) =>{
         localStorage.setItem("_screenerId", _screenerId);
         document.location = "/dashboard/citizenlist1";
