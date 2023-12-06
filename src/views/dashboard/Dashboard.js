@@ -658,13 +658,13 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/HemoglobinAmber" component={hemoglobinAmber} />
               <AppRoute exact path="/dashboard/HemoglobinRed" component={hemoglobinRed} />
 
-              <AppRoute exact path="/dashboaRightEyeTestGreen" component={RightEyeTestGreen} />
-              <AppRoute exact path="/dashboaRightEyeTestRed" component={RightEyeTestRed} />
-              <AppRoute exact path="/dashboaRightEyeTestAmber" component={RightEyeTestAmber} />
+              <AppRoute exact path="/dashboard/RightEyeTestGreen" component={RightEyeTestGreen} />
+              <AppRoute exact path="/dashboard/RightEyeTestRed" component={RightEyeTestRed} />
+              <AppRoute exact path="/dashboard/RightEyeTestAmber" component={RightEyeTestAmber} />
 
-              <AppRoute exact path="/dashboaLeftEyeTestGreen" component={LeftEyeTestGreen} />
-              <AppRoute exact path="/dashboaLeftEyeTestRed" component={LeftEyeTestRed} />
-              <AppRoute exact path="/dashboaLeftEyeTestAmber" component={LeftEyeTestAmber} />
+              <AppRoute exact path="/dashboard/LeftEyeTestGreen" component={LeftEyeTestGreen} />
+              <AppRoute exact path="/dashboard/LeftEyeTestRed" component={LeftEyeTestRed} />
+              <AppRoute exact path="/dashboard/LeftEyeTestAmber" component={LeftEyeTestAmber} />
 
 
               <AppRoute exact path="/dashboard/LipidPanelLdlGreen" component={ldlLipidPanelGreen} />
