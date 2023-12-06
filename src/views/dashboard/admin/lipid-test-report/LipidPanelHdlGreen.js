@@ -55,7 +55,7 @@ function  LipidPanelHdlGreen() {
   const [size, setsize] = useState(3);
   useEffect(() => {
       
-    fetchRecords(1,10);
+    fetchRecords(1,100);
 },[])
 
 const fetchRecords = (page,size) => {
