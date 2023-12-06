@@ -149,7 +149,7 @@ const filterData = (data) =>
       setSearchText('');
     };
     const setBP=(bpsys,bpdia)=>{
-      return(<span style={{background:'#FFBF00',padding:'4px',color:'white'}}>BP Sys:{bpsys} | BP Dia:{bpdia}</span>);
+      return(<span style={{background:'red',padding:'4px',color:'white'}}>BP Sys:{bpsys} | BP Dia:{bpdia}</span>);
     }
 
    const  getCitizenScreener=(_screenerId) =>{

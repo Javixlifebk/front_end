@@ -111,12 +111,8 @@ const filterData = (data) =>
       setSearchText('');
     };
     const setBP=(bloodglucose)=>{
-
-      if(bloodglucose>125 &&  bloodglucose<60){
-        return(<span style={{background:'red',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
-     }else{
-    return(<span style={{background:'red',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
- }
+      return(<span style={{background:'red',padding:'4px',color:'white'}}>bloodglucose:{bloodglucose}</span>);
+    }
   }
    const  getCitizenScreener=(_screenerId) =>{
         localStorage.setItem("_screenerId", _screenerId);
@@ -314,12 +310,7 @@ const filterData = (data) =>
           <div>     
                                  
           <p className="text-bold-500 mb-0">
-          {/* <span>{this.setBMI(row.bmi)}</span>&nbsp;&nbsp; */}
           <span style={{margin:'20px;',padding:'4px;'}}>{setBP(record.bloodglucose)}</span>&nbsp;&nbsp;
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setSOP2(row.spo2)}</span>&nbsp;&nbsp; */}
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setPulse(row.pulse)}</span>&nbsp;&nbsp; */}
-          {/* <span style={{margin:'20px;',padding:'4px;'}}>{this.setTemp(row.temperature)}</span>&nbsp;&nbsp; */}
-          
           </p>
           </div>
         ),
