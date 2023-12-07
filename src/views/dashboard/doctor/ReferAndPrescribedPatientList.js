@@ -214,7 +214,7 @@ const filterData = (data) =>
     
     const columns = [
       {
-        title: "citizen ID",
+        title: "citizen ID -",
         dataIndex: "citizenId",
         key: 'citizenId',
         // render: (text, record) => (
