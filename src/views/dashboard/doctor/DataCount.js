@@ -238,8 +238,8 @@ getCaseDetails(_type){
       <CardHeader>
         <CardTitle style={{textAlign:"center"}}></CardTitle>
       </CardHeader>
-      <CardBody style={{textAlign:"center",cursor:"pointer"}} onClick={() =>{ document.location='/dashboard/doctor/ReferPatientList'}}> 
-      <span style={{textAlign:"center"}}><h4>Referred Cases</h4></span>                        
+      <CardBody style={{textAlign:"center",cursor:"pointer"}} onClick={() =>{ document.location='/dashboard/doctor/ReferAndPrescribedPatient'}}> 
+      <span style={{textAlign:"center"}}><h4>All Prescribed and Referred Cases</h4></span>                        
       <h5>{this.state.citizenrefer}</h5>  
       </CardBody>
       </Card>

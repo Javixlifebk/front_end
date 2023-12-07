@@ -381,6 +381,10 @@ const referPatient = lazy(() =>
   import("../../views/dashboard/doctor/ReferPatientList")
 )
 
+const referAndPrescribedPatient = lazy(() =>
+  import("../../views/dashboard/doctor/ReferAndPrescribedPatientList")
+)
+
 /**********************End of Sevika Section************************** */
 
 
@@ -712,6 +716,9 @@ export default class Dashboard extends React.Component {
               <AppRoute exact path="/dashboard/survey/HealthSurvey" component={healthProfile} />
               <AppRoute exact path="/dashboard/survey/SocieconomicSurvey" component={socieProfile} />
               <AppRoute exact path="/dashboard/doctor/ReferPatientList" component={referPatient} />
+              <AppRoute exact path="/dashboard/doctor/ReferAndPrescribedPatient" component={referAndPrescribedPatient} />
+
+              
               
 
               <AppRoute exact path="/directory/" component={userDirectory} />             
