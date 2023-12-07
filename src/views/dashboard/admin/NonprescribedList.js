@@ -115,10 +115,10 @@ class JTable extends React.Component {
       },
       {
         name: "Date",
-        selector: "createdAt",
+        selector: "updatedAt",
         sortable: true,
         cell: row => (
-          <p className="text-bold-500 mb-0">{row.createdAt}</p>
+          <p className="text-bold-500 mb-0">{row.updatedAt}</p>
         )
       },
      

@@ -257,10 +257,10 @@ const filterData = (data) =>
       },
       {
         title: 'Date',
-        dataIndex: 'createdAt',
-        key: 'createdAt',
+        dataIndex: 'updatedAt',
+        key: 'updatedAt',
         width: '20%',
-        ...getColumnSearchProps('createdAt'),
+        ...getColumnSearchProps('updatedAt'),
       },
       {
         title: 'Action',

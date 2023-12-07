@@ -156,12 +156,14 @@ axios.post('https://javixlife.org/api/citizen/citizenById?=', { citizenId:localS
 
       var returnUrl="";
       const formData = new FormData(); 
-      formData.append('profile', this.state.fileuploads);
+      // formData.append('profile', this.state.fileuploads);
+      formData.append('photo', this.state.fileuploads);
       const citizenId = localStorage.getItem("citizenId"); 
     //   axios.post("https://javixlife.org/upload/profile", formData, { 
     //     // receive two    parameter endpoint url ,form data
     // })
-    axios.post(`https://javixlife.org/api/citizen/profile/${citizenId}`, formData, { 
+    // axios.post(`https://javixlife.org/api/citizen/profile/${citizenId}`, formData, { 
+      axios.post(`https://javixlife.org/upload/profile/${citizenId}`, formData, { 
       // receive two    parameter endpoint url ,form data
   })
     .then(res => {
