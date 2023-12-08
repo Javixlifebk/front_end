@@ -60,8 +60,9 @@ class DataCount extends React.Component {
             this.setState({mapdoctor:response.data.data.data[12].mapdoctor})
             this.setState({citizenprescibeCount:response.data.data.data[13].citizenprescibeCount})
             this.setState({citizenrefer:response.data.data.data[14].citizenrefer})
-            this.setState({sevika:response.data.data.data[15].Sevikas})
-          
+            this.setState({AllAndNonPrescription:response.data.data.data[15].AllAndNonPrescription})
+            this.setState({sevika:response.data.data.data[16].Sevikas})
+            
         } else {
         }
       })
@@ -240,7 +241,7 @@ getCaseDetails(_type){
       </CardHeader>
       <CardBody style={{textAlign:"center",cursor:"pointer"}} onClick={() =>{ document.location='/dashboard/doctor/ReferAndPrescribedPatient'}}> 
       <span style={{textAlign:"center"}}><h4>All Prescribed and Referred Cases</h4></span>                        
-      <h5>{this.state.citizenrefer}</h5>  
+      <h5>{this.state.AllAndNonPrescription}</h5>  
       </CardBody>
       </Card>
       </Col>
