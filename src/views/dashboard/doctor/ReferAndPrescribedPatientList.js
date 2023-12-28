@@ -45,6 +45,15 @@ const data = [
     //   address: 'London No. 2 Lake Park',
     // },
   ];
+  let p_status= [
+    {
+      0:'Not Done',
+      1:'Not Done',
+      2:'Not Done',
+      3:'Done',
+    }
+  ]
+  
   const CustomHeader = (props) => {
     return (
       <div className="d-flex flex-wrap justify-content-between">
@@ -211,7 +220,7 @@ const filterData = (data) =>
           text
         ),
     });
-    
+    // console.log(p_status,"==========================status")
     const columns = [
       {
         title: "citizen ID -",
@@ -255,12 +264,29 @@ const filterData = (data) =>
         filters: [{ text: 'Male', value: 'Male' }, { text: 'Female', value: 'Female' }],
         onFilter: (value, record) => record.sex.indexOf(value) === 0
       },
+      // {
+      //   title: 'Status',
+      //   dataIndex: 'pstatus',       
+      //   key: 'pstatus',
+      //   width: '20%',
+      //   ...getColumnSearchProps('pstatus'),
+      // },
+ 
+        {
+          title: 'Status',
+          dataIndex: 'pstatus',
+          key: 'pstatus',
+          width: '20%',
+          ...getColumnSearchProps('pstatus'),
+          render: (text) => p_status[0][text],
+        },
+     
       {
         title: 'Date',
-        dataIndex: 'updatedAt',
-        key: 'updatedAt',
+        dataIndex: 'createdAt',
+        key: 'createdAt',
         width: '20%',
-        ...getColumnSearchProps('updatedAt'),
+        ...getColumnSearchProps('createdAt'),
       },
       {
         title: 'Action',

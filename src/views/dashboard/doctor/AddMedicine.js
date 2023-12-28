@@ -952,7 +952,7 @@ this.setState({ isRowBeingRemoved: false });
                               >
                                 <td>{item.colsMedicine}</td>
                                 <td class="text-center">
-                                <button onClick={() => { this.setRemoveButtonClicked(); this.removeRow(index); }}>Remove Row</button>
+                                <button class="btn btn-danger remove" onClick={() => { this.setRemoveButtonClicked(); this.removeRow(index); }}>Remove Row</button>
 
                                   {/* <button onClick={() => this.removeRow(index)}>
                                     Remove Row
