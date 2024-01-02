@@ -255,7 +255,7 @@ this.setState({ isRowBeingRemoved: false });
       .then((res) => {
         if (res.data && res.data.status === 1) {
           console.log(res.data);
-          alert("add new ");
+          // alert("add new ");
           alert("Medicine Added Successfully");
           window["medicineInit"]();
           window.location = "/dashboard/patientview";
@@ -324,36 +324,6 @@ this.setState({ isRowBeingRemoved: false });
   setRemoveButtonClicked = () => {
     this.setState({ removeButtonClicked: true });
   };
-
-  //   removeRow = index => {
-  //     // Create a copy of the addNewRowFeild array
-  //     const updatedRows = [...this.state.addNewRowFeild];
-
-  //     // Check if the index is valid
-  //     if (index >= 0 && index < updatedRows.length) {
-  //       // Log the row that is about to be removed
-  //       console.log(`Removing row at index ${index}:`, updatedRows[index]);
-
-  //       // Remove the row at the specified index
-  //     const removedRow = updatedRows.splice(index, 1)[0];
-  //     // console.log('Removed row========================:', removedRow);
-
-  //     // Update the state with the modified array
-  //     this.setState({
-  //       addNewRowFeild: updatedRows,
-  //     });
-
-  //     // Log the updated addNewRowFeild array
-  //     console.log('Updated addNewRowFeild===================:', updatedRows);
-
-  //     // Log that the row has been successfully removed
-  //     console.log(`Row at index ${index} removed successfully.`);
-  //   } else {
-  //     // Log that the index is invalid
-  //     console.log(`Invalid index: ${index}. No row removed.`);
-  //   }
-  // };
-
   addRow = (e) => {
     e.preventDefault();
 
