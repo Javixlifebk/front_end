@@ -282,7 +282,13 @@ function HemoglobinAmberTest() {
     //     width: '30%',
     //     ...getColumnSearchProps('firstName'),
     //   },
-
+    {
+      title: 'Sr. No.',
+      dataIndex: 'serialNo',
+      key: 'serialNo',
+      render: (_, __, index) => index + 1,
+      width: '5%',
+    },
     {
       title: "Patient Details",
       dataIndex: "fullname",
