@@ -81,8 +81,15 @@ class PersonalHistoryList extends React.Component {
           sortable: true,
           cell: row => (
            <div>
-              
-            <p><a href={localStorage.getItem("caseReport")} target='blank'><img width="32px" src={pdfImg}/></a></p>     
+               <p><a href="#"><img style={{cursor:'pointer'}}  
+                src={pdfImg}
+                width="32px"
+                alt="pdfImg"
+                onClick={() =>this.handleClick(row.citizenId)}
+                target="_blank"
+                className="img-fluid img-border rounded-circle box-shadow-1"
+              /></a></p>
+            {/* <p><a href={localStorage.getItem("caseReport")} target='blank'><img width="32px" src={pdfImg}/></a></p>      */}
           </div>
           )}         
       
@@ -100,10 +107,44 @@ loadRecs(recs)
 	 this.setState({data:recs});
  }
 
- handleClick(_userid) {    
-  localStorage.setItem("citizenId",_userid);
-  window.location='/dashboard/patientview'  
+//  handleClick(_userid) {    
+//   localStorage.setItem("citizenId",_userid);
+//   window.location='/dashboard/patientview'  
+// }
+handleClick(_citizenId)  {    
+  const citizenId = localStorage.getItem("citizenId");
+  axios.post('https://javixlife.org/api/report/createPersonalReport?=', {citizenId:_citizenId, ngoId:localStorage.getItem("ngoId")})
+
+  .then(response => {  
+       if(response.data.status===1){
+           var msg=response.data.message;
+           var recs=response.data.data.data;
+           window.open(response.data.data.data.filename, '_blank');
+          //  console.dir("Drug Allery Report" + response); 
+         
+         }
+  }).catch(e=>{
+ });
 }
+
+getSplit(_var){
+
+  //var arr=_var.split(",,,")
+
+  return(<p></p>)
+}
+ handleSubmit = e => {
+  e.preventDefault()
+  
+
+ if(window.confirm("Do you want to raise issue !")){
+
+ //alert('okay')
+ window.location='/dashboard/reportissue'
+ } 
+
+}
+
 
  handleSubmit = e => {
   e.preventDefault()

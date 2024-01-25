@@ -106,8 +106,15 @@ class PatientList extends React.Component {
           sortable: true,
           cell: row => (
            <div>
-             {this.handleClick(0)}          
-            <p><a href={localStorage.getItem("caseReport")} target='blank'><img width="32px" src={pdfImg}/></a></p>     
+            <p><a href="#"><img style={{cursor:'pointer'}}  
+                src={pdfImg}
+                width="32px"
+                alt="pdfImg"
+                onClick={() =>this.handleClick(row.citizenId)}
+                className="img-fluid img-border rounded-circle box-shadow-1"
+              /></a></p>
+             {/* {this.handleClick(0)}          
+            <p><a href={localStorage.getItem("caseReport")} target='blank'><img width="32px" src={pdfImg}/></a></p>      */}
           </div>
           )}         
       
@@ -124,14 +131,34 @@ loadRecs(recs){
  }
 
 
- handleClick(_userid) {    
-  
- 
+//  handleClick(_userid) {    
+  handleClick(_citizenId)  {    
+
+   axios.post('https://javixlife.org/api/report/createMedicalHistReport?=', {citizenId:_citizenId, ngoId:localStorage.getItem("ngoId")})
+  .then(response => {  
+       if(response.data.status===1){
+           var msg=response.data.message;
+           var recs=response.data.data.data;
+           window.open(response.data.data.data.filename, '_blank');
+          //  document.location=response.data.data.data.filename;
+           //var recs=response.data.data.data;
+          //  if( response.data.data.data.filename!==null){
+          //   this.state._myurl=response.data.data.data.filename;
+          //     console.dir("Drug Allery Report" + response.data.data.data.filename); 
+          //  } 
+         }
+  }).catch(e=>{
+ });
 
 
 }
+getSplit(_var){
 
- handleSubmit = e => {
+  //var arr=_var.split(",,,")
+
+  return(<p></p>)
+}
+handleSubmit = e => {
   e.preventDefault()
   
 
@@ -170,18 +197,7 @@ componentDidMount() {
 		 }).catch(e=>{
     });
     
-  /* axios.post('https://javixlife.org/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
-  .then(response => {  
-       if(response.data.status===1){
-           var msg=response.data.message;
-           //var recs=response.data.data.data;
-           if( response.data.data.data.filename!==null){
-            this.state._myurl=response.data.data.data.filename;
-              console.dir("Drug Allery Report" + response.data.data.data.filename); 
-           } 
-         }
-  }).catch(e=>{
- });*/
+
  
 }
 

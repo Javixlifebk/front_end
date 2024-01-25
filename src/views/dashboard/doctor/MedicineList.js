@@ -104,7 +104,8 @@ loadRecs(recs)
          {
            var msg=response.data.message;
            var recs=response.data.data.data;
-           document.location=response.data.data.data.filename;
+           window.open(response.data.data.data.filename, '_blank');
+          //  document.location=response.data.data.data.filename;
            //alert(response.data.data.data.filename);
            //this.state.fileUrl=response.data.data.data.filename;
            

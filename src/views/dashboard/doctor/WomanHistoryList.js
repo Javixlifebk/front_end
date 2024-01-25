@@ -78,8 +78,14 @@ class PatientList extends React.Component {
           sortable: true,
           cell: row => (
            <div>
-               
-            <p><a href={localStorage.getItem("caseReport")} target='blank'><img width="32px" src={pdfImg}/></a></p>     
+                <p><a href="#"><img style={{cursor:'pointer'}}  
+                src={pdfImg}
+                width="32px"
+                alt="pdfImg"
+                onClick={() =>this.handleClick(row.citizenId)}
+                className="img-fluid img-border rounded-circle box-shadow-1"
+              /></a></p>
+            {/* <p><a href={localStorage.getItem("caseReport")} target='blank'><img width="32px" src={pdfImg}/></a></p>      */}
           </div>
           )}   
       
@@ -97,18 +103,50 @@ loadRecs(recs)
 	 this.setState({data:recs});
  }
 
- handleClick(_userid) {    
-  axios.post('https://javixlife.org/api/citizen/getHistoryWomen', { citizenId:_userid})
-  .then(response => {
-       if(response.data.status===1)
-         {
+//  handleClick(_userid) {    
+//   axios.post('https://javixlife.org/api/citizen/getHistoryWomen', { citizenId:_userid})
+//   .then(response => {
+//        if(response.data.status===1)
+//          {
+//            var msg=response.data.message;
+//            var recs=response.data.data.data;
+           
+           
+//          }
+//   }).catch(e=>{
+//  });
+// }
+handleClick(_citizenId)  {    
+  const citizenId = localStorage.getItem("citizenId");
+  axios.post('https://javixlife.org/api/report/createReproductiveReport?=', {citizenId:_citizenId, ngoId:localStorage.getItem("ngoId")})
+
+  .then(response => {  
+       if(response.data.status===1){
            var msg=response.data.message;
            var recs=response.data.data.data;
-           
-           
+           document.location=response.data.data.data.filename;
+          //  console.dir("Drug Allery Report" + response);  
          }
   }).catch(e=>{
  });
+}
+
+getSplit(_var){
+
+  //var arr=_var.split(",,,")
+
+  return(<p></p>)
+}
+ handleSubmit = e => {
+  e.preventDefault()
+  
+
+ if(window.confirm("Do you want to raise issue !")){
+
+ //alert('okay')
+ window.location='/dashboard/reportissue'
+ } 
+
 }
 
  handleSubmit = e => {
@@ -123,7 +161,6 @@ loadRecs(recs)
 
 }
   
-
 componentDidMount() {
 		this.mounted = true;
 		//this.setState({data:null});
@@ -137,21 +174,6 @@ componentDidMount() {
 					  }
 		 }).catch(e=>{
     });
-
-
-    /*axios.post('https://javixlife.org/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
-
-  .then(response => {  
-       if(response.data.status===1){
-           var msg=response.data.message;
-           //var recs=response.data.data.data;
-           if( response.data.data.data.filename!==null){
-            this.state._myurl=response.data.data.data.filename;
-              //console.dir("Drug Allery Report" + response.data.data.data.filename); 
-           } 
-         }
-  }).catch(e=>{
- });*/
 }
 
   handleFilter = e => {

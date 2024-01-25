@@ -80,7 +80,22 @@ class PatientList extends React.Component {
           cell: row => (
            <div>
               
-            <p><a href={localStorage.getItem("caseReport")} target='blank'><img width="32px" src={pdfImg}/></a></p>     
+              <p><a href="#"><img style={{cursor:'pointer'}}  
+                src={pdfImg}
+                width="32px"
+                alt="pdfImg"
+                onClick={() =>this.handleClick(row.citizenId)}
+                className="img-fluid img-border rounded-circle box-shadow-1"
+              /></a></p>
+              {/* <p><a href="#"><img style={{cursor:'pointer'}}  
+                src={pdfImg}
+                width="32px"
+                alt="pdfImg"
+                onClick={() =>this.handleClick(row.caseId)}
+                className="img-fluid img-border rounded-circle box-shadow-1"
+              /></a></p>    */}
+
+            {/* <p><a href={localStorage.getItem("caseReport")} target='blank'><img width="32px" src={pdfImg}/></a></p>      */}
           </div>
           )}  
     ],
@@ -97,22 +112,34 @@ loadRecs(recs)
 	 this.setState({data:recs});
  }
 
- handleClick(_userid) {    
-  axios.post('https://javixlife.org/api/report/createHistoryReport?=', { citizenId:localStorage.getItem("citizenId")})
+
+//  handleClick(_userid) {   
+  
+handleClick(_citizenId)  {    
+  axios.post('https://javixlife.org/api/report/createAllergiesReport?=', {citizenId:_citizenId, ngoId:localStorage.getItem("ngoId")})
 
   .then(response => {  
        if(response.data.status===1){
            var msg=response.data.message;
            var recs=response.data.data.data;
-           console.dir("Drug Allery Report" + response);  
+           window.open(response.data.data.data.filename, '_blank');
+          //  document.location=response.data.data.data.filename;
+          //  console.dir("Drug Allery Report" + response);  
          }
   }).catch(e=>{
  });
 }
 
+getSplit(_var){
+
+  //var arr=_var.split(",,,")
+
+  return(<p></p>)
+}
  handleSubmit = e => {
   e.preventDefault()
   
+
  if(window.confirm("Do you want to raise issue !")){
 
  //alert('okay')
@@ -130,7 +157,7 @@ componentDidMount() {
     const ngoId =localStorage.getItem("ngoId");
     console.log(ngoId, "citizen iddddd");
 		//this.setState({data:null});
-		  axios.post('https://javixlife.org/api/citizen/getHistoryAllergy?=', {citizenId, ngoId})
+		  axios.post('https://javixlife.org/api/citizen/getHistoryAllergy?=', {citizenId, ngoId:localStorage.getItem("ngoId")})
 		 .then(response => {
 				  
 					if(response.data.status===1)
